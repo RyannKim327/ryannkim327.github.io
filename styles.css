@@ -29,6 +29,10 @@ header{
 	box-shadow: 3px 0 5px #ffffff;
 	justify-content: space-between;
 	align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 }
 
 header > .logo{
