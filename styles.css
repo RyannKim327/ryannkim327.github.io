@@ -228,6 +228,16 @@ main > #projects > #lists-projects > .my-lists > .myRepo:hover{
 	color: #ffffff;
 }
 
+main > #projects > #lists-projects > .my-lists > .myRepo > h3{
+	font-family: 'Times New Roman', Times, serif;
+	text-align: center;
+}
+
+main > #projects > #lists-projects > .my-lists > .myRepo > h5{
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
+}
+
 /* Footer */
 
 footer{

@@ -31,7 +31,16 @@ function clicker(id) {
 }
 
 function fetching(){
-	fetch(`https://api.github.com/users/RyannKim327/repos`).then((r) => {
+	const colors = {
+		"java": "orange",
+		"javascript": "yellow",
+		"python": "blue",
+		"c#": "green",
+		"kotlin": "violet",
+		"css": "magenta",
+		"html": "red"
+	}
+	fetch(`https://api.github.com/users/RyannKim327/repos?sort=name&per_page=150`).then((r) => {
 		return r.json()
 	}).then((r) => {
 		const data = r
@@ -46,11 +55,20 @@ function fetching(){
 				title.textContent = e.name
 				subtitle.textContent = e.description
 				base.classList.add("myRepo")
+				if(e.language != null){
+					base.style.borderColor = colors[e.language.toLowerCase()]
+				}
 				base.onclick = () => {
-					location.href = e.html_url
+					if(e.homepage){
+						location.href = e.homepage
+					}else{
+						location.href = e.html_url
+					}
 				}
 				base.appendChild(title)
-				base.appendChild(subtitle)
+				if(e.description){
+					base.appendChild(subtitle)
+				}
 				o_base.appendChild(base)
 			}	
 		})
