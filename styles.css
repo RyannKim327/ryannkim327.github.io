@@ -1,0 +1,176 @@
+*{
+	outline: 0;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	overflow: hidden;
+	background-image: url('img/bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: #ffffff;
+	height: 100vh;
+	width: 100%;
+}
+
+/* Header */
+
+header{
+	display: flex;
+	flex-direction: row;
+	padding: 1em;
+	padding-top: 2em;
+	margin-top: -1em;
+	border-radius: .5em;
+	box-shadow: 3px 0 5px #ffffff;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header > .logo{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+header > .logo > img{
+	height: 3em;
+	margin-right: 1em;
+	border-radius: 5em;
+}
+
+header > .logo > .headings{
+	display: flex;
+	flex-direction: column;
+}
+
+header > .logo > .headings > h5{
+	padding-left: 1em;
+}
+
+header > nav > ul,
+header > nav > ul > li{
+	display: flex;
+	flex-direction: row;
+}
+
+header > nav > ul > li{
+	list-style: none;
+}
+
+header > nav > ul > li{
+	border: 1px #ffffff solid;
+	border-radius: 5em;
+	padding: .5em 1em;
+	cursor: pointer;
+}
+
+header > nav > ul > li:hover{
+	border-color: transparent;
+	background-color: #ffffff50;
+	color: #000000;
+}
+
+header > nav > ul > li:nth-child(even){
+	margin: 0 .5em;
+}
+
+/* Main */
+
+main{
+	max-height: 80vh;
+	box-sizing:border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	margin: .5em 0;
+	color: wheat;
+	overflow-y: scroll;
+}
+
+/* Contents */
+
+main > .base{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 80vh;
+}
+
+main > #home{
+	text-align: center;
+}
+
+main > #home > blockquote{
+	align-self: center;
+	display: flex;
+	flex-direction: row;
+	padding-left: 1em;
+	border-left: 5px #aaaaaa solid;
+	max-width: 50%;
+	text-align: center;
+}
+
+main > #home > button{
+	align-self: center;
+	margin: .5em;
+	padding: .5em 1em;
+	border-radius: 5em;
+	width: fit-content;
+	border: 1px #0000ff solid;
+	background-color: transparent;
+	color: #ffffff;
+	font-weight: bold;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+main > #home > button:hover{
+	background-color: #0000ffaa;
+	color: #000000;
+}
+
+/* About */
+
+main > #about{
+	text-align: center;
+}
+
+main > #about > blockquote{
+	align-self: center;
+	max-width: 75%;
+}
+
+/* Footer */
+
+footer{
+	text-align: center;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	padding: 1em;
+	padding-bottom: 2em;
+	margin-bottom: -1em;
+	border-radius: .5em;
+	box-shadow: -3px 0 5px #ffffff;
+}
+
+/* Scrollbars */
+
+::-webkit-scrollbar{
+	background-color: transparent;
+	border-radius: 5em;
+	width: .5em;
+	margin-right: 0.5em;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #0000ff50;
+	border-radius: 5em;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: #0000ff;
+}
