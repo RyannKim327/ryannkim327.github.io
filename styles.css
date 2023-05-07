@@ -164,17 +164,21 @@ main > #contact{
 main > #contact > a{
 	display: flex;
 	flex-direction: row;
-	border-bottom: 1px #ff00ff solid;
+	border-bottom: 1px #ff0090 solid;
 	padding: .25em .75em;
-	border-bottom-left-radius: .75em;
-	border-bottom-right-radius: .75em;
-	color: #ff00ff;
+	border-radius: .75em;
+	color: #ff0090;
 	width: 15%;
 	text-decoration: none;
 }
 
-main > #contact > a > .content:nth-child(even){
-	margin: .75em 0;
+main > #contact > a:hover{
+	background-color: #ff0090;
+	color: #ffffff;
+}
+
+main > #contact > a:nth-child(even){
+	margin: .5em 0;
 }
 
 main > #contact > a > .content > * {
