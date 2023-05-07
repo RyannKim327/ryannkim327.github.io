@@ -178,7 +178,7 @@ main > #contact > a{
 }
 
 main > #contact > a:hover{
-	background-color: #ff0090;
+	background-color: #ff0090aa;
 	color: #ffffff;
 }
 
@@ -203,7 +203,7 @@ main > #projects > #lists-projects{
 	display: flex;
 	flex-direction: column;
 	overflow-y: scroll;
-	justify-content: center;
+	align-items: center;
 }
 
 main > #projects > #lists-projects > .my-lists{
@@ -220,6 +220,7 @@ main > #projects > #lists-projects > .my-lists > .myRepo{
 	margin: .5em;
 	padding: .5em;
 	border-radius: .75em;
+	cursor: pointer;
 }
 
 main > #projects > #lists-projects > .my-lists > .myRepo:hover{

@@ -39,15 +39,20 @@ function fetching(){
 		o_base.classList.add("my-lists")
 		data.map((e, i) => {
 			console.log(e)
-			let base = document.createElement("div")
-			let title = document.createElement("h3")
-			let subtitle = document.createElement("h5")
-			title.textContent = e.name
-			subtitle.textContent = e.description
-			base.classList.add("myRepo")
-			base.appendChild(title)
-			base.appendChild(subtitle)
-			o_base.appendChild(base)
+			if(!e.fork){
+				let base = document.createElement("div")
+				let title = document.createElement("h3")
+				let subtitle = document.createElement("h5")
+				title.textContent = e.name
+				subtitle.textContent = e.description
+				base.classList.add("myRepo")
+				base.onclick = () => {
+					location.href = e.html_url
+				}
+				base.appendChild(title)
+				base.appendChild(subtitle)
+				o_base.appendChild(base)
+			}	
 		})
 		$("#lists-projects").appendChild(o_base)
 	}).catch((e) => {
