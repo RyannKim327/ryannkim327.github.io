@@ -44,7 +44,9 @@
 			<div class="base" id="contact">
 				<h1>Contact</h1>
 				<div class="contact-base">
-					<form action="">
+					<form action="https://formsubmit.co/dfda6cacc7871df19f455c5d23c93d82" method="post">
+						<input type="hidden" name="_captcha" value="false">
+						<input type="hidden" name="_subject" value="Portfolio">
 						<table>
 							<caption>
 								<h2>Contact form</h2>
@@ -53,9 +55,32 @@
 								<td>
 									<label for="email">Email</label>
 								</td>
-								<td>:</td>
+								<td>:&emsp;</td>
 								<td>
-									<input type="email" name="email" id="email">
+									<input type="email" name="email" id="email" required>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="name">Your name</label>
+								</td>
+								<td>:&emsp;</td>
+								<td>
+									<input type="text" name="name" id="name" required>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="message">Body</label>
+								</td>
+								<td>:&emsp;</td>
+								<td>
+									<textarea type="text" name="message" id="message" cols="20" rows="5"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+									<input type="submit" value="Send Email">
 								</td>
 							</tr>
 						</table>

@@ -173,6 +173,21 @@ main > #contact > .contact-base{
 	width: 100%;
 }
 
+main > #contact > .contact-base > form input,
+main > #contact > .contact-base > form textarea {
+	background-color: transparent;
+	border: 1.5px #ff0090 solid;
+	border-top: 0;
+	border-radius: .5em;
+	margin-top: .5em;
+	padding: .25em .5em;
+	resize: none;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
 main > #contact > .contact-base > .others{
 	display: flex;
 	flex-direction: column;
@@ -195,6 +210,8 @@ main > #contact > .contact-base > .others > a{
 	text-decoration: none;
 }
 
+main > #contact > .contact-base > form input:hover,
+main > #contact > .contact-base > form textarea:hover,
 main > #contact > .contact-base > .others > a:hover{
 	background-color: #ff0090aa;
 	color: #ffffff;
