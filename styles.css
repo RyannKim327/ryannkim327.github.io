@@ -22,9 +22,8 @@ header{
 	display: flex;
 	flex-direction: row;
 	padding: 1em;
-	padding-top: 2em;
-	margin-top: -1em;
-	border-radius: .5em;
+	border-bottom-left-radius: .5em;
+	border-bottom-right-radius: .5em;
 	box-shadow: 3px 0 5px #ffffff;
 	justify-content: space-between;
 	align-items: center;
@@ -151,9 +150,8 @@ footer{
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	padding: 1em;
-	padding-bottom: 2em;
-	margin-bottom: -1em;
-	border-radius: .5em;
+	border-top-left-radius: .5em;
+	border-top-right-radius: .5em;
 	box-shadow: -3px 0 5px #ffffff;
 }
 
