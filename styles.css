@@ -1,9 +1,11 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');	
 *{
 	outline: 0;
 	border: 0;
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	user-select: none;
 }
 
 body{
@@ -98,6 +100,12 @@ main > .base{
 	height: 80vh;
 }
 
+main > .base > h1{
+	margin-bottom: 1em;
+}
+
+/* Home */
+
 main > #home{
 	text-align: center;
 }
@@ -140,6 +148,37 @@ main > #about > blockquote{
 	align-self: center;
 	max-width: 75%;
 }
+
+/* Contact */
+
+main > #contact{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+main > #contact > a{
+	display: flex;
+	flex-direction: row;
+	border-bottom: 1px #ff00ff solid;
+	padding: .25em .75em;
+	border-bottom-left-radius: .75em;
+	border-bottom-right-radius: .75em;
+	color: #ff00ff;
+	width: 15%;
+	text-decoration: none;
+}
+
+main > #contact > a > .content:nth-child(even){
+	margin: .75em 0;
+}
+
+main > #contact > a > .content > * {
+	margin: 0 .25em;
+}
+
+/* Projects */
+
 
 /* Footer */
 
