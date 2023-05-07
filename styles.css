@@ -199,10 +199,11 @@ main > #projects {
 	align-items: center;
 	width: 100%;
 }
+
 main > #projects > #lists-projects{
 	display: flex;
 	flex-direction: column;
-	overflow-y: scroll;
+	overflow-y: auto;
 	align-items: center;
 }
 
@@ -268,6 +269,10 @@ footer{
 
 ::-webkit-scrollbar-thumb:hover{
 	background-color: #0000ff;
+}
+
+main > #projects > #lists-projects::-webkit-scrollbar{
+	width: 0;
 }
 
 /* Languages Hover */
