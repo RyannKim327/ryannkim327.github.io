@@ -32,13 +32,14 @@ function clicker(id) {
 
 function fetching(){
 	const colors = {
-		"java": "orange",
-		"javascript": "yellow",
-		"python": "blue",
-		"c#": "green",
-		"kotlin": "violet",
-		"css": "magenta",
-		"html": "red"
+		"java": "#ffaa00",
+		"javascript": "#ffff00",
+		"python": "#0000ff",
+		"c#": "#005000",
+		"kotlin": "#ff0090",
+		"css": "#ff00ff",
+		"html": "#ff0000",
+		"jupyter notebook": "#ffaa00"
 	}
 	fetch(`https://api.github.com/users/RyannKim327/repos?sort=name&per_page=150`).then((r) => {
 		return r.json()
@@ -48,7 +49,7 @@ function fetching(){
 		o_base.classList.add("my-lists")
 		data.map((e, i) => {
 			console.log(e)
-			if(!e.fork){
+			if(!e.fork || !e.name == "RyannKim327"){
 				let base = document.createElement("div")
 				let title = document.createElement("h3")
 				let subtitle = document.createElement("h5")
@@ -57,12 +58,18 @@ function fetching(){
 				base.classList.add("myRepo")
 				if(e.language != null){
 					base.style.borderColor = colors[e.language.toLowerCase()]
+					base.classList.add(`${e.language.toLowerCase().replace("#", "s").replace("+", "p").replace(/\s/, "-")}`)
 				}
-				base.onclick = () => {
-					if(e.homepage){
-						location.href = e.homepage
-					}else{
-						location.href = e.html_url
+
+				if(e.private){
+					alert("A private repository")
+				}else{
+					base.onclick = () => {
+						if(e.homepage){
+							location.href = e.homepage
+						}else{
+							location.href = e.html_url
+						}
 					}
 				}
 				base.appendChild(title)
