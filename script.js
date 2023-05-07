@@ -53,13 +53,17 @@ function fetching(){
 			if(!e.fork || !e.name == "RyannKim327"){
 				let base = document.createElement("div")
 				let title = document.createElement("h3")
-				let subtitle = document.createElement("h5")
+				let subtitle = document.createElement("h6")
+				let language = document.createElement("span")
+				language.classList.add("titleLanguage")
 				title.textContent = e.name
 				subtitle.textContent = e.description
 				base.classList.add("myRepo")
 				if(e.language != null){
 					base.style.borderColor = colors[e.language.toLowerCase()]
 					base.classList.add(`${e.language.toLowerCase().replace("#", "s").replace("+", "p").replace(/\s/, "-")}`)
+					title.textContent += " - "
+					language.textContent = `${e.language}`
 				}
 
 				if(e.private){
@@ -73,6 +77,7 @@ function fetching(){
 						}
 					}
 				}
+				title.appendChild(language)
 				base.appendChild(title)
 				if(e.description){
 					base.appendChild(subtitle)

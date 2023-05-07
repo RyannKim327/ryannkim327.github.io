@@ -256,11 +256,18 @@ main > #projects > #lists-projects > .my-lists > .myRepo:hover{
 main > #projects > #lists-projects > .my-lists > .myRepo > h3{
 	font-family: 'Times New Roman', Times, serif;
 	text-align: center;
+	border-bottom: 1px #ffffff solid;
+	width: 100%;
 }
 
-main > #projects > #lists-projects > .my-lists > .myRepo > h5{
+main > #projects > #lists-projects > .my-lists > .myRepo > h6{
 	font-family: 'Courier New', Courier, monospace;
 	text-align: center;
+	margin-top: .5em;
+}
+
+main > #projects > #lists-projects > .my-lists > .myRepo > h3 > .titleLanguage{
+	font-size: xx-small;
 }
 
 /* Footer */
