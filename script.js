@@ -67,9 +67,9 @@ function fetching(){
 				}else{
 					base.onclick = () => {
 						if(e.homepage){
-							location.href = e.homepage
+							window.open(e.homepage)
 						}else{
-							location.href = e.html_url
+							window.open(e.html_url)
 						}
 					}
 				}
