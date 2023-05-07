@@ -44,6 +44,7 @@ function fetching(){
 	fetch(`https://api.github.com/users/RyannKim327/repos?sort=name&per_page=150`).then((r) => {
 		return r.json()
 	}).then((r) => {
+		let total = 0
 		const data = r
 		let o_base =  document.createElement("div")
 		o_base.classList.add("my-lists")
@@ -77,8 +78,10 @@ function fetching(){
 					base.appendChild(subtitle)
 				}
 				o_base.appendChild(base)
+				total++
 			}	
 		})
+		$("#total").textContent = `Total Projects: ${total}`
 		$("#lists-projects").appendChild(o_base)
 	}).catch((e) => {
 		console.error(`Error [Github]: ${e}`)

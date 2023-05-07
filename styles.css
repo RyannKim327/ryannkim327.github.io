@@ -200,11 +200,16 @@ main > #projects {
 	width: 100%;
 }
 
+main > #projects > h1{
+	margin: 0;
+}
+
 main > #projects > #lists-projects{
 	display: flex;
 	flex-direction: column;
 	overflow-y: auto;
 	align-items: center;
+	margin-top: 1em;
 }
 
 main > #projects > #lists-projects > .my-lists{
