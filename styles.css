@@ -193,6 +193,40 @@ main > #contact > a > .content > * {
 /* Projects */
 
 
+main > #projects {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+main > #projects > #lists-projects{
+	display: flex;
+	flex-direction: column;
+	overflow-y: scroll;
+	justify-content: center;
+}
+
+main > #projects > #lists-projects > .my-lists{
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+}
+
+main > #projects > #lists-projects > .my-lists > .myRepo{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px #ff0090 solid;
+	border-top: 0;
+	margin: .5em;
+	padding: .5em;
+	border-radius: .75em;
+}
+
+main > #projects > #lists-projects > .my-lists > .myRepo:hover{
+	background-color: #ff0090aa;
+	color: #ffffff;
+}
+
 /* Footer */
 
 footer{
