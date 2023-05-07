@@ -102,6 +102,11 @@ main > .base{
 	flex-direction: column;
 	justify-content: center;
 	height: 80vh;
+	border-bottom: 1px #ff0090 solid;
+}
+
+main > .base:last-child{
+	border: 0;
 }
 
 main > .base > h1{
