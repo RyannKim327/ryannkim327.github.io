@@ -383,42 +383,44 @@ main > #projects > #lists-projects::-webkit-scrollbar{
 
 /* Languages Hover */
 
-main > #projects > #lists-projects > .my-lists > .java:hover{
-	background-color: #ffaa0075;
-	color: #ffffff;
-}
+main > #projects > #lists-projects > .my-lists{
+	.java:hover{
+		background-color: #ffaa0075;
+		color: #ffffff;
+	}
+	
+	.javascript:hover{
+		background-color: #ffff0075;
+		color: #ffffff;
+	}
+	
+	.python:hover{
+		background-color: #0000ff75;
+		color: #ffffff;
+	}
 
-main > #projects > #lists-projects > .my-lists > .javascript:hover{
-	background-color: #ffff0075;
-	color: #ffffff;
-}
+	.cs:hover{
+		background-color: #00500075;
+		color: #ffffff;
+	}
 
-main > #projects > #lists-projects > .my-lists > .python:hover{
-	background-color: #0000ff75;
-	color: #ffffff;
-}
+	.kotlin:hover{
+		background-color: #ff009075;
+		color: #ffffff;
+	}
 
-main > #projects > #lists-projects > .my-lists > .cs:hover{
-	background-color: #00500075;
-	color: #ffffff;
-}
+	.css:hover{
+		background-color: #ff00ff75;
+		color: #ffffff;
+	}
 
-main > #projects > #lists-projects > .my-lists > .kotlin:hover{
-	background-color: #ff009075;
-	color: #ffffff;
-}
+	.html:hover{
+		background-color: #ff000075;
+		color: #ffffff;
+	}
 
-main > #projects > #lists-projects > .my-lists > .css:hover{
-	background-color: #ff00ff75;
-	color: #ffffff;
-}
-
-main > #projects > #lists-projects > .my-lists > .html:hover{
-	background-color: #ff000075;
-	color: #ffffff;
-}
-
-main > #projects > #lists-projects > .my-lists > .jupyter-notebook:hover{
-	background-color: #ffaa0075;
-	color: #ffffff;
+	.jupyter-notebook:hover{
+		background-color: #ffaa0075;
+		color: #ffffff;
+	}
 }
