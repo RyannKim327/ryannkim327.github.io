@@ -100,9 +100,11 @@ main{
 main > .base{
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	justify-content: center;
 	height: 80vh;
 	border-bottom: 1px #ff0090 solid;
+	width: 100%;
 }
 
 main > .base:last-child{
@@ -159,13 +161,6 @@ main > #about > blockquote{
 }
 
 /* Contact */
-
-main > #contact{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
 main > #contact > .contact-base{
 	display: flex;
 	flex-direction: row;
@@ -227,14 +222,6 @@ main > #contact > .contact-base > .others > a > .content > * {
 }
 
 /* Projects */
-
-main > #projects {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
-}
-
 main > #projects > h1{
 	margin: 0;
 }
@@ -285,6 +272,75 @@ main > #projects > #lists-projects > .my-lists > .myRepo > h6{
 
 main > #projects > #lists-projects > .my-lists > .myRepo > h3 > .titleLanguage{
 	font-size: xx-small;
+}
+
+
+/* Proress */
+main > #progress > #graph{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-height: 80vh;
+}
+
+main > #progress > #graph > span{
+	display: flex;
+	flex-direction: column;
+	align-self: flex-end;
+	text-align: center;
+	width: 5%;
+}
+
+main > #progress > #graph > span > label{
+	padding: .5em 0;
+}
+
+main > #progress > #graph > span > .data-graph{
+	background-color: #ff009090;
+	border: 2px #ff0090 solid;
+	align-self: center;
+	border-top-left-radius: .5em;
+	border-top-right-radius: .5em;
+	width: 10%;
+	padding: 0 1em;
+	margin: 0 .25em;
+}
+
+main > #progress > #graph > span{
+	.java{
+		background-color: #ffaa0090;
+		border: 2px #ffaa00 solid;
+	}
+	.javascript{
+		background-color: #ffff0090;
+		border: 2px #ffff00 solid;
+	}
+	.python{
+		background-color: #0000ff90;
+		border: 2px #0000ff solid;
+	}
+	.cs{
+		background-color: #00500090;
+		border: 2px #005000 solid;
+	}
+	.kotlin{
+		background-color: #ff009090;
+		border: 2px #ff0090 solid;
+	}
+	.css{
+		background-color: #ff00ff90;
+		border: 2px #ff00ff solid;
+	}
+	.html{
+		background-color: #ff000090;
+		border: 2px #ff0000 solid;
+	}
+	.jupyter-notebook{
+		background-color: #ffaa0090;
+		border: 2px #ffaa00 solid;
+	}
 }
 
 /* Footer */

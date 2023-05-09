@@ -41,6 +41,7 @@ function fetching(){
 		"html": "#ff0000",
 		"jupyter notebook": "#ffaa00"
 	}
+	let languages = {}
 	fetch(`https://api.github.com/users/RyannKim327/repos?sort=name&per_page=150`).then((r) => {
 		return r.json()
 	}).then((r) => {
@@ -49,7 +50,14 @@ function fetching(){
 		let o_base =  document.createElement("div")
 		o_base.classList.add("my-lists")
 		data.map((e, i) => {
-			console.log(e)
+			let lang = e.language
+			if(e.language === null){
+				lang = "unknown"
+			}
+			if(languages[lang] === undefined){
+				languages[lang] = 0
+			}
+			languages[lang]++
 			if(!e.fork || !e.name == "RyannKim327"){
 				let base = document.createElement("div")
 				let title = document.createElement("h3")
@@ -61,7 +69,7 @@ function fetching(){
 				base.classList.add("myRepo")
 				if(e.language != null){
 					base.style.borderColor = colors[e.language.toLowerCase()]
-					base.classList.add(`${e.language.toLowerCase().replace("#", "s").replace("+", "p").replace(/\s/, "-")}`)
+					base.classList.add(`${e.language.toLowerCase().replace("#", "s").replace("++", "pp").replace(/\s/, "-")}`)
 					title.textContent += " - "
 					language.textContent = `${e.language}`
 				}
@@ -88,8 +96,28 @@ function fetching(){
 		})
 		$("#total").textContent = `Total Projects: ${total}`
 		$("#lists-projects").appendChild(o_base)
+		graph(languages)
 	}).catch((e) => {
 		console.error(`Error [Github]: ${e}`)
 		$("#projects").textContent = "Something went wrong"
+	})
+}
+
+function graph(languages){
+	let language = Object.keys(languages)
+	console.log(languages)
+	language.map((e, i) => {
+		let parent = document.createElement("span")
+		let label = document.createElement("label")
+		let entity = document.createElement("span")
+		console.log(languages[e])
+		entity.style.height = (languages[e] * 0.75) + "vh"
+		entity.classList.add("data-graph")
+		entity.classList.add(e.toLowerCase().replace("++", "pp").replace("\#", "s"). replace(/\s/, "-"))
+		
+		label.textContent = e
+		parent.appendChild(label)
+		parent.appendChild(entity)
+		$("#graph").appendChild(parent)
 	})
 }
