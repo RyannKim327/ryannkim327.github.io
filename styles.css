@@ -181,6 +181,7 @@ main > #contact > .contact-base > form textarea {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	color: #ffffff;
 }
 
 main > #contact > .contact-base > .others{
