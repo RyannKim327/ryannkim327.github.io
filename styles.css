@@ -476,4 +476,9 @@ main > #projects > #lists-projects > .my-lists > .jupyter-notebook:hover{
 		background-color: #0000aa;
 		color: #ffffff;
 	}
+
+	main > #progress > #graph > span > .data-graph{
+		margin: 0 0.1em;
+		width: 5%;
+	}
 }
