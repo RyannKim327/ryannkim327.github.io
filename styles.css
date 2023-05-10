@@ -56,6 +56,10 @@ header > .logo > .headings > h5{
 	padding-left: 1em;
 }
 
+header > nav > #nav{
+	display: none;
+}
+
 header > nav > ul,
 header > nav > ul > li{
 	display: flex;
@@ -362,6 +366,7 @@ footer{
 	border-top-left-radius: .5em;
 	border-top-right-radius: .5em;
 	box-shadow: -3px 0 5px #ffffff;
+	overflow: hidden;
 }
 
 /* Scrollbars */
@@ -427,6 +432,47 @@ main > #projects > #lists-projects > .my-lists{
 
 	.jupyter-notebook:hover{
 		background-color: #ffaa0075;
+		color: #ffffff;
+	}
+}
+
+/* Mobile */
+
+/* Nav */
+
+@media only screen and (max-width: 760px){
+	header > nav > #nav{
+		display: flex;
+	}
+	header > nav > ul{
+		display: none;
+		position: absolute;
+		right: .5em;
+		top: .5em;
+		width: 15%;
+		background-color: #000090aa;
+		flex-direction: row;
+		justify-content: center;
+		padding: 1em;
+		border: 1px #000000 solid;
+	}
+	
+	header > nav > ul > li{
+		border-radius: 0;
+		border: 0;
+		border-bottom: 1px #000000 solid;
+	}
+	
+	header > nav > ul > li:last-child{
+		border-bottom: 0;
+	}
+
+	header > nav > ul > li:nth-child(even){
+		margin: 0;
+	}
+
+	header > nav > ul > li:hover{
+		background-color: #0000aa;
 		color: #ffffff;
 	}
 }

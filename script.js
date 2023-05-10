@@ -22,12 +22,18 @@ window.onload = () => {
 	// Projects on Github
 	fetching()
 
+	// Mobile Navi Click
+	$("#nav").onclick = () => {
+		$("#navi").style.display = "flex"
+	}
+
 }
 
 function clicker(id) {
 	$(id).scrollIntoView({
 		behavior: 'smooth'
 	}, true)
+	$("#navi").style.display = "none"
 }
 
 function fetching(){
