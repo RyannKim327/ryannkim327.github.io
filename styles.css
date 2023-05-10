@@ -97,6 +97,7 @@ main{
 	-webkit-box-sizing: border-box;
 	margin: .5em 0;
 	color: wheat;
+	overflow-x: hidden;
 	overflow-y: scroll;
 }
 
@@ -166,6 +167,11 @@ main > #about > blockquote{
 }
 
 /* Contact */
+
+main > #contact {
+	flex-wrap: wrap;
+}
+
 main > #contact > .contact-base{
 	display: flex;
 	flex-direction: row;
@@ -228,6 +234,7 @@ main > #contact > .contact-base > .others > a > .content > * {
 }
 
 /* Projects */
+
 main > #projects > h1{
 	margin: 0;
 }
@@ -302,6 +309,7 @@ main > #progress > #graph > span{
 	align-self: flex-end;
 	text-align: center;
 	width: 5%;
+	overflow: hidden;
 }
 
 main > #progress > #graph > span > label{
@@ -318,7 +326,6 @@ main > #progress > #graph > span > .data-graph{
 	padding: 0 1em;
 	margin: 0 .25em;
 }
-
 
 main > #progress > #graph > span > .java{
 	background-color: #ffaa0090;

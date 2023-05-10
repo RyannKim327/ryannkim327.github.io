@@ -111,12 +111,10 @@ function fetching(){
 
 function graph(languages){
 	let language = Object.keys(languages)
-	console.log(languages)
 	language.map((e, i) => {
 		let parent = document.createElement("span")
 		let label = document.createElement("label")
 		let entity = document.createElement("span")
-		console.log(languages[e])
 		entity.style.height = (languages[e] * 0.75) + "vh"
 		entity.classList.add("data-graph")
 		entity.classList.add(e.toLowerCase().replace("++", "pp").replace("\#", "s"). replace(/\s/, "-"))
