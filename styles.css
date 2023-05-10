@@ -262,6 +262,7 @@ main > #projects > #lists-projects > .my-lists > .myRepo{
 	padding: .5em;
 	border-radius: .75em;
 	cursor: pointer;
+	overflow: hidden;
 }
 
 main > #projects > #lists-projects > .my-lists > .myRepo:hover{
