@@ -168,13 +168,10 @@ main > #about > blockquote{
 
 /* Contact */
 
-main > #contact {
-	flex-wrap: wrap;
-}
-
 main > #contact > .contact-base{
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: center;
 	width: 100%;
 }
