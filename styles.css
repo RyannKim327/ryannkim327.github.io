@@ -1,4 +1,4 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');	
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
 *{
 	outline: 0;
 	border: 0;
@@ -60,6 +60,7 @@ header > nav > ul,
 header > nav > ul > li{
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 header > nav > ul > li{
@@ -236,8 +237,10 @@ main > #projects > #lists-projects{
 }
 
 main > #projects > #lists-projects > .my-lists{
-	display: grid;
-	grid-template-columns: 33% 33% 33%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 main > #projects > #lists-projects > .my-lists > .myRepo{
@@ -245,6 +248,7 @@ main > #projects > #lists-projects > .my-lists > .myRepo{
 	flex-direction: column;
 	align-items: center;
 	border: 1.75px #ff0090 solid;
+	width: 30%;
 	border-top: 0;
 	margin: .5em;
 	padding: .5em;
@@ -277,6 +281,7 @@ main > #projects > #lists-projects > .my-lists > .myRepo > h3 > .titleLanguage{
 
 
 /* Proress */
+
 main > #progress > #graph{
 	display: flex;
 	flex-direction: row;
