@@ -319,39 +319,38 @@ main > #progress > #graph > span > .data-graph{
 	margin: 0 .25em;
 }
 
-main > #progress > #graph > span{
-	.java{
-		background-color: #ffaa0090;
-		border: 2px #ffaa00 solid;
-	}
-	.javascript{
-		background-color: #ffff0090;
-		border: 2px #ffff00 solid;
-	}
-	.python{
-		background-color: #0000ff90;
-		border: 2px #0000ff solid;
-	}
-	.cs{
-		background-color: #00500090;
-		border: 2px #005000 solid;
-	}
-	.kotlin{
-		background-color: #ff009090;
-		border: 2px #ff0090 solid;
-	}
-	.css{
-		background-color: #ff00ff90;
-		border: 2px #ff00ff solid;
-	}
-	.html{
-		background-color: #ff000090;
-		border: 2px #ff0000 solid;
-	}
-	.jupyter-notebook{
-		background-color: #ffaa0090;
-		border: 2px #ffaa00 solid;
-	}
+
+main > #progress > #graph > span > .java{
+	background-color: #ffaa0090;
+	border: 2px #ffaa00 solid;
+}
+main > #progress > #graph > span > .javascript{
+	background-color: #ffff0090;
+	border: 2px #ffff00 solid;
+}
+main > #progress > #graph > span > .python{
+	background-color: #0000ff90;
+	border: 2px #0000ff solid;
+}
+main > #progress > #graph > span > .cs{
+	background-color: #00500090;
+	border: 2px #005000 solid;
+}
+main > #progress > #graph > span > .kotlin{
+	background-color: #ff009090;
+	border: 2px #ff0090 solid;
+}
+main > #progress > #graph > span > .css{
+	background-color: #ff00ff90;
+	border: 2px #ff00ff solid;
+}
+main > #progress > #graph > span > .html{
+	background-color: #ff000090;
+	border: 2px #ff0000 solid;
+}
+main > #progress > #graph > span > .jupyter-notebook{
+	background-color: #ffaa0090;
+	border: 2px #ffaa00 solid;
 }
 
 /* Footer */
@@ -394,46 +393,44 @@ main > #projects > #lists-projects::-webkit-scrollbar{
 
 /* Languages Hover */
 
-main > #projects > #lists-projects > .my-lists{
-	.java:hover{
-		background-color: #ffaa0075;
-		color: #ffffff;
-	}
-	
-	.javascript:hover{
-		background-color: #ffff0075;
-		color: #ffffff;
-	}
-	
-	.python:hover{
-		background-color: #0000ff75;
-		color: #ffffff;
-	}
+main > #projects > #lists-projects > .my-lists > .java:hover{
+	background-color: #ffaa0075;
+	color: #ffffff;
+}
 
-	.cs:hover{
-		background-color: #00500075;
-		color: #ffffff;
-	}
+main > #projects > #lists-projects > .my-lists > .javascript:hover{
+	background-color: #ffff0075;
+	color: #ffffff;
+}
 
-	.kotlin:hover{
-		background-color: #ff009075;
-		color: #ffffff;
-	}
+main > #projects > #lists-projects > .my-lists > .python:hover{
+	background-color: #0000ff75;
+	color: #ffffff;
+}
 
-	.css:hover{
-		background-color: #ff00ff75;
-		color: #ffffff;
-	}
+main > #projects > #lists-projects > .my-lists > .cs:hover{
+	background-color: #00500075;
+	color: #ffffff;
+}
 
-	.html:hover{
-		background-color: #ff000075;
-		color: #ffffff;
-	}
+main > #projects > #lists-projects > .my-lists > .kotlin:hover{
+	background-color: #ff009075;
+	color: #ffffff;
+}
 
-	.jupyter-notebook:hover{
-		background-color: #ffaa0075;
-		color: #ffffff;
-	}
+main > #projects > #lists-projects > .my-lists > .css:hover{
+	background-color: #ff00ff75;
+	color: #ffffff;
+}
+
+main > #projects > #lists-projects > .my-lists > .html:hover{
+	background-color: #ff000075;
+	color: #ffffff;
+}
+
+main > #projects > #lists-projects > .my-lists > .jupyter-notebook:hover{
+	background-color: #ffaa0075;
+	color: #ffffff;
 }
 
 /* Mobile */
