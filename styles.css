@@ -24,6 +24,7 @@ header{
 	display: flex;
 	flex-direction: row;
 	padding: 1em;
+	height: 10vh;
 	border-bottom-left-radius: .5em;
 	border-bottom-right-radius: .5em;
 	box-shadow: 3px 0 5px #ffffff;
@@ -370,6 +371,7 @@ main > #progress > #graph > span > .jupyter-notebook{
 /* Footer */
 
 footer{
+	height: 10vh;
 	text-align: center;
 	width: 100%;
 	box-sizing: border-box;
@@ -380,6 +382,7 @@ footer{
 	border-top-right-radius: .5em;
 	box-shadow: -3px 0 5px #ffffff;
 	overflow: hidden;
+	border-bottom: 0;
 }
 
 /* Scrollbars */
