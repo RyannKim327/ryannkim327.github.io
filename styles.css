@@ -181,6 +181,7 @@ main > #contact > .contact-base{
 
 main > #contact > .contact-base > * {
 	max-width: 100%;
+	align-self: center;
 }
 
 main > #contact > .contact-base > form input,
