@@ -33,7 +33,9 @@ function clicker(id) {
 	$(id).scrollIntoView({
 		behavior: 'smooth'
 	}, true)
-	$("#navi").style.display = "none"
+	if($("#nav").style.display != "none"){
+		$("#navi").style.display = "none"
+	}
 }
 
 function fetching(){
