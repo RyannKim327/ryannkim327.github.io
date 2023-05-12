@@ -122,6 +122,7 @@ function graph(languages){
 		entity.classList.add(e.toLowerCase().replace("++", "pp").replace("\#", "s"). replace(/\s/, "-"))
 		
 		label.textContent = e
+		parent.title = e
 		parent.appendChild(label)
 		parent.appendChild(entity)
 		$("#graph").appendChild(parent)
