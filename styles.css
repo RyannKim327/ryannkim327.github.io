@@ -110,7 +110,7 @@ main > .base{
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: calc(100vh - 20vh);
+	height: calc(100vh - 15vh);
 	border-bottom: 1px #ff0090 solid;
 	width: 100%;
 }
@@ -332,6 +332,7 @@ main > #progress > #graph > span > label{
 main > #progress > #graph > span > .data-graph{
 	background-color: #ff009090;
 	border: 2px #ff0090 solid;
+	border-top: 0;
 	align-self: center;
 	border-top-left-radius: .5em;
 	border-top-right-radius: .5em;
