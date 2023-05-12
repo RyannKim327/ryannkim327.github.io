@@ -332,46 +332,54 @@ main > #progress > #graph > span > label{
 main > #progress > #graph > span > .data-graph{
 	background-color: #ff009090;
 	border: 2px #ff0090 solid;
-	border-top: 0;
 	align-self: center;
 	border-top-left-radius: .5em;
 	border-top-right-radius: .5em;
 	width: 10%;
 	padding: 0 1em;
-	margin: 0 .25em;
+	margin: 0 .15em;
+	border-top: 0;
 }
 
 main > #progress > #graph > span > .java{
 	background-color: #ffaa0090;
 	border: 2px #ffaa00 solid;
+	border-top: 0;
 }
 main > #progress > #graph > span > .javascript{
 	background-color: #ffff0090;
 	border: 2px #ffff00 solid;
+	border-top: 0;
 }
 main > #progress > #graph > span > .python{
 	background-color: #0000ff90;
 	border: 2px #0000ff solid;
+	border-top: 0;
 }
 main > #progress > #graph > span > .cs{
 	background-color: #00500090;
 	border: 2px #005000 solid;
+	border-top: 0;
 }
 main > #progress > #graph > span > .kotlin{
 	background-color: #ff009090;
 	border: 2px #ff0090 solid;
+	border-top: 0;
 }
 main > #progress > #graph > span > .css{
 	background-color: #ff00ff90;
 	border: 2px #ff00ff solid;
+	border-top: 0;
 }
 main > #progress > #graph > span > .html{
 	background-color: #ff000090;
 	border: 2px #ff0000 solid;
+	border-top: 0;
 }
 main > #progress > #graph > span > .jupyter-notebook{
 	background-color: #ffaa0090;
 	border: 2px #ffaa00 solid;
+	border-top: 0;
 }
 
 /* Footer */
