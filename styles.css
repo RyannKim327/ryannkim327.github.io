@@ -93,8 +93,8 @@ header > nav > ul > li:nth-child(even){
 /* Main */
 
 main{
-	max-height: 85vh;
-	box-sizing:border-box;
+	max-height: 80vh;
+	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	margin: .5em 0;
@@ -110,7 +110,7 @@ main > .base{
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: calc(100vh - 15vh);
+	height: 80vh;
 	border-bottom: 1px #ff0090 solid;
 	width: 100%;
 }
@@ -206,6 +206,8 @@ main > #contact > .contact-base > .others{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+	align-self: center;
 	flex-wrap: wrap;
 	width: 50%;
 	box-sizing: border-box;
@@ -216,6 +218,8 @@ main > #contact > .contact-base > .others{
 main > #contact > .contact-base > .others > a{
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
+	overflow: hidden;
 	border: 1px #ff0090 solid;
 	border-top: 0;
 	padding: .25em .75em;
@@ -325,6 +329,10 @@ main > #progress > #graph > span{
 	overflow: hidden;
 }
 
+main > #progress > #graph > span:nth-child(even){
+	margin: 0 .5em;
+}
+
 main > #progress > #graph > span > label{
 	padding: .5em 0;
 }
@@ -335,7 +343,7 @@ main > #progress > #graph > span > .data-graph{
 	align-self: center;
 	border-top-left-radius: .5em;
 	border-top-right-radius: .5em;
-	width: 10%;
+	width: 75%;
 	padding: 0 1em;
 	margin: 0 .15em;
 	border-top: 0;
@@ -385,7 +393,7 @@ main > #progress > #graph > span > .jupyter-notebook{
 /* Footer */
 
 footer{
-	height: 5vh;
+	height: 8vh;
 	text-align: center;
 	width: 100%;
 	box-sizing: border-box;
