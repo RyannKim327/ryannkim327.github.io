@@ -50,7 +50,7 @@ function fetching(){
 		"jupyter notebook": "#ffaa00"
 	}
 	let languages = {}
-	fetch(`https://api.github.com/users/RyannKim327/repos?sort=name&per_page=150`).then((r) => {
+	fetch(`https://api.github.com/users/RyannKim327/repos?sort=name&per_page=1000`).then((r) => {
 		return r.json()
 	}).then((r) => {
 		let total = 0
