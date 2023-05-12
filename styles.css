@@ -93,7 +93,7 @@ header > nav > ul > li:nth-child(even){
 /* Main */
 
 main{
-	max-height: 79vh;
+	max-height: 85vh;
 	box-sizing:border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -300,7 +300,7 @@ main > #projects > #lists-projects > .my-lists > .myRepo > h3 > .titleLanguage{
 	font-size: xx-small;
 }
 
-/* Proress */
+/* Progress */
 
 main > #progress > h1{
 	text-align: center;
@@ -376,7 +376,7 @@ main > #progress > #graph > span > .jupyter-notebook{
 /* Footer */
 
 footer{
-	height: 10vh;
+	height: 5vh;
 	text-align: center;
 	width: 100%;
 	box-sizing: border-box;
