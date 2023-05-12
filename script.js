@@ -66,7 +66,7 @@ function fetching(){
 				languages[lang] = 0
 			}
 			languages[lang]++
-			if(!e.fork && !e.name == "RyannKim327"){
+			if(!e.fork || !e.name == "RyannKim327"){
 				let base = document.createElement("div")
 				let title = document.createElement("h3")
 				let subtitle = document.createElement("h6")
