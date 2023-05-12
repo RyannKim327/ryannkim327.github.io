@@ -33,7 +33,8 @@ function clicker(id) {
 	$(id).scrollIntoView({
 		behavior: 'smooth'
 	}, true)
-	if(window.getWidth() ){
+	alert(window.getWidth())
+	if(window.getWidth() >= 1000){
 		$("#navi").style.display = "none"
 	}
 }
