@@ -340,13 +340,13 @@ main > #progress > #graph > span > label{
 main > #progress > #graph > span > .data-graph{
 	background-color: #ff009090;
 	border: 2px #ff0090 solid;
-	align-self: center;
-	border-top-left-radius: .5em;
-	border-top-right-radius: .5em;
+	align-self: baseline;
+	border-top-left-radius: .25em;
+	border-top-right-radius: .25em;
 	width: 75%;
 	padding: 0 1em;
 	margin: 0 .15em;
-	border-top: 0;
+	border-bottom: 0;
 }
 
 main > #progress > #graph > span > .java{
