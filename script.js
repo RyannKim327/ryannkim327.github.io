@@ -33,8 +33,7 @@ function clicker(id) {
 	$(id).scrollIntoView({
 		behavior: 'smooth'
 	}, true)
-	alert($("#nav").style.display)
-	if($("#nav").style.display === "flex"){
+	if(window.getWidth() ){
 		$("#navi").style.display = "none"
 	}
 }
