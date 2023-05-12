@@ -345,6 +345,7 @@ main > #progress > #graph > span > .java{
 	background-color: #ffaa0090;
 	border: 2px #ffaa00 solid;
 	border-top: 0;
+	box-shadow: 0 0 5px #ffaa0090;
 }
 main > #progress > #graph > span > .javascript{
 	background-color: #ffff0090;
