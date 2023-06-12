@@ -75,7 +75,7 @@ header > nav > ul > li{
 
 header > nav > ul > li{
 	border: 1px #ffffff solid;
-	border-radius: 5em;
+	border-radius: .5em;
 	padding: .5em 1em;
 	cursor: pointer;
 }
@@ -83,7 +83,7 @@ header > nav > ul > li{
 header > nav > ul > li:hover{
 	border-color: transparent;
 	background-color: #ffffff50;
-	color: #000000;
+	color: #ffffff;
 }
 
 header > nav > ul > li:nth-child(even){
@@ -161,11 +161,32 @@ main > #home > button:hover{
 
 main > #about{
 	text-align: center;
+	align-items: center;
 }
 
-main > #about > blockquote{
+main > #about > .container {
 	align-self: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-around;
+}
+
+main > #about > .container > div{
+	max-width: 50%;
+}
+
+main > #about > .container > div > img {
+	width: 15em;
+	height: 15em;
+	border-radius: 50%;
+	box-shadow: 3px 3px 5px #000000;
+}
+
+main > #about > .container > .info > blockquote{
 	max-width: 75%;
+	text-align: justify;
 }
 
 /* Contact */
@@ -270,9 +291,11 @@ main > #projects > #lists-projects > .my-lists > .myRepo{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border: 1.75px #ff0090 solid;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: 1px 1px 10px #ff0090ef,
+	-1px -1px 5px #ff009025;
 	width: 30%;
-	border-top: 0;
 	margin: .5em;
 	padding: .5em;
 	border-radius: .75em;
@@ -350,44 +373,48 @@ main > #progress > #graph > span > .data-graph{
 }
 
 main > #progress > #graph > span > .java{
-	background-color: #ffaa0090;
-	border: 2px #ffaa00 solid;
-	border-top: 0;
+	background-color: #b0721990;
+	border: 2px #b07219 solid;
 }
 main > #progress > #graph > span > .javascript{
-	background-color: #ffff0090;
-	border: 2px #ffff00 solid;
-	border-top: 0;
+	background-color: #f1e05a90;
+	border: 2px #f1e05a solid;
 }
 main > #progress > #graph > span > .python{
-	background-color: #0000ff90;
-	border: 2px #0000ff solid;
-	border-top: 0;
+	background-color: #3572a590;
+	border: 2px #3572a5 solid;
 }
 main > #progress > #graph > span > .cs{
-	background-color: #00500090;
-	border: 2px #005000 solid;
-	border-top: 0;
+	background-color: #17860090;
+	border: 2px #178600 solid;
 }
 main > #progress > #graph > span > .kotlin{
-	background-color: #ff009090;
-	border: 2px #ff0090 solid;
-	border-top: 0;
+	background-color: #a97bff90;
+	border: 2px #a97bff solid;
 }
 main > #progress > #graph > span > .css{
-	background-color: #ff00ff90;
-	border: 2px #ff00ff solid;
-	border-top: 0;
+	background-color: #563d7c90;
+	border: 2px #563d7c solid;
 }
 main > #progress > #graph > span > .html{
-	background-color: #ff000090;
-	border: 2px #ff0000 solid;
-	border-top: 0;
+	background-color: #e34c2690;
+	border: 2px #e34c26 solid;
 }
 main > #progress > #graph > span > .jupyter-notebook{
-	background-color: #ffaa0090;
-	border: 2px #ffaa00 solid;
-	border-top: 0;
+	background-color: #da5b0b90;
+	border: 2px #da5b0b solid;
+}
+main > #progress > #graph > span > .php{
+	background-color: #da5b0b90;
+	border: 2px #da5b0b solid;
+}
+main > #progress > #graph > span > .julia{
+	background-color: #a270ba90;
+	border: 2px #a270ba solid;
+}
+main > #progress > #graph > span > .cpp{
+	background-color: #f34b7d90;
+	border: 2px #f34b7d solid;
 }
 
 /* Footer */
@@ -418,12 +445,13 @@ footer{
 
 ::-webkit-scrollbar-thumb{
 	border: 2px #0000ff solid;
-	border-right: 0;
+	background-color: #0000ff50;
 	border-radius: 5em;
 }
 
 ::-webkit-scrollbar-thumb:hover{
-	background-color: #000090;
+	background-color: #0000ff;
+	border: 0;
 }
 
 main > #projects > #lists-projects::-webkit-scrollbar{
