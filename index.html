@@ -1,147 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Ryann Kim Sesgundo</title>
-		<meta name="og:description" content="My Portfolio">
-		<link rel="icon" href="img/logo.jpg">
-		<link rel="stylesheet" href="styles.css">
-	</head>
-	<body>
-		<header>
-			<div class="logo">
-				<img src="img/logo.jpg" alt="logo">
-				<div class="headings">
-					<h3>My Sample Portfolio</h3>
-					<h5>Ryann Kim Sesgundo</h5>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ryann Kim Sesgundo</title>
+	<meta name="og:description" content="My Portfolio">
+	<link rel="icon" href="img/logo.jpg">
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<header>
+		<div class="logo">
+			<img src="img/logo.jpg" alt="logo">
+			<div class="headings">
+				<h3>My Sample Portfolio</h3>
+				<h5>Ryann Kim Sesgundo</h5>
+			</div>
+		</div>
+		<nav>
+			<i class="fa-solid fa-bars fa-2xl" id="nav"></i>
+			<ul id="navi">
+				<li onclick="clicker('#home')">Home</li>
+				<li onclick="clicker('#about')">About</li>
+				<li onclick="clicker('#contact')">Contact</li>
+				<li onclick="clicker('#progress')">Progress</li>
+				<li onclick="clicker('#projects')">Projects</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<div class="base" id="home">
+			<h1>Welcome to my Portfolio</h1>
+			<blockquote id="typing">
+				&emsp;I am Ryann Kim Sesgundo, a second year student of Dalubhasaan ng Lungsod ng Lucena.
+			</blockquote>
+			<button onclick="clicker('#projects')">See my projects</button>
+		</div>
+		<div class="base" id="about">
+			<h1>About</h1>
+			<div class="container">
+				<div>
+					<img src="img/ako-pero-transparent.png" alt="">
+				</div>
+				<div class="info">
+					<blockquote>
+						&emsp;I'm currently a first year student of Dalubhasaan ng Lungsod ng Lucena, formerly known as Lucena City
+						College. I'm still trying to learn more about these technologies, so that I can work and fit in myself in
+						any kind of work and technological fields
+					</blockquote>
 				</div>
 			</div>
-			<nav>
-				<i class="fa-solid fa-bars fa-2xl" id="nav"></i>
-				<ul id="navi">
-					<li onclick="clicker('#home')">Home</li>
-					<li onclick="clicker('#about')">About</li>
-					<li onclick="clicker('#contact')">Contact</li>
-					<li onclick="clicker('#progress')">Progress</li>
-					<li onclick="clicker('#projects')">Projects</li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<div class="base" id="home">
-				<h1>Welcome to my Portfolio</h1>
-				<blockquote id="typing">
-					&emsp;I am Ryann Kim Sesgundo, a first year student of Dalubhasaan ng Lungsod ng Lucena.
-				</blockquote>
-				<button onclick="clicker('#projects')">See my projects</button>
-			</div>
-			<div class="base" id="about">
-				<h1>About</h1>
-				<div class="container">
-					<div>
-						<img src="img/ako.png" alt="">
-					</div>
-					<div class="info">
-						<blockquote>
-							&emsp;I'm currently a first year student of Dalubhasaan ng Lungsod ng Lucena, formerly known as Lucena City College. I'm still trying to learn more about these technologies, so that I can work and fit in myself in any kind of work and technological fields
-						</blockquote>
-					</div>
-				</div>
-			</div>
-			<div class="base" id="contact">
-				<h1>Contact</h1>
-				<div class="contact-base">
-					<form action="https://formsubmit.co/dfda6cacc7871df19f455c5d23c93d82" method="post">
-						<input type="hidden" name="_captcha" value="false">
-						<input type="hidden" name="_subject" value="Portfolio">
-						<input type="hidden" name="_next" value="https://ryannkim327.vercel.app/">
-						<table>
-							<caption>
-								<h2>Contact form</h2>
-							</caption>
-							<tr>
-								<td>
-									<label for="email">Email</label>
-								</td>
-								<td>:&emsp;</td>
-								<td>
-									<input type="email" name="email" id="email" required>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label for="name">Your name</label>
-								</td>
-								<td>:&emsp;</td>
-								<td>
-									<input type="text" name="name" id="name" required>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label for="message">Body</label>
-								</td>
-								<td>:&emsp;</td>
-								<td>
-									<textarea type="text" name="message" id="message" cols="20" rows="5"></textarea>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="3">
-									<input type="submit" value="Send Email">
-								</td>
-							</tr>
-						</table>
-					</form>
-					<div class="others">
-						<a href="https://facebook.com/MPOP.ph" target="_blank">
-							<span class="content">
-								<i class="fa-brands fa-facebook"></i>
+		</div>
+		<div class="base" id="contact">
+			<h1>Contact</h1>
+			<div class="contact-base">
+				<form action="https://formsubmit.co/weryses19@gmail.com" method="post">
+					<!-- input type="hidden" name="_captcha" value="false">
+					<input type="hidden" name="_subject" value="Portfolio">
+					<input type="hidden" name="_next" value="https://ryannkim327.vercel.app/" -->
+					<table>
+						<caption>
+							<h2>Contact form</h2>
+						</caption>
+						<tr>
+							<td>
+								<label for="email">Email</label>
+							</td>
+							<td>:&emsp;</td>
+							<td>
+								<input type="email" name="email" id="email" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="name">Your name</label>
+							</td>
+							<td>:&emsp;</td>
+							<td>
+								<input type="text" name="name" id="name" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="message">Body</label>
+							</td>
+							<td>:&emsp;</td>
+							<td>
+								<textarea type="text" name="message" id="message" cols="20" rows="5"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<input type="submit" value="Send Email">
+							</td>
+						</tr>
+					</table>
+				</form>
+				<div class="others">
+					<a href="https://facebook.com/MPOP.ph" target="_blank">
+						<span class="content">
+							<i class="fa-brands fa-facebook"></i>
 							<span>@MPOP.ph</span>
 						</span>
-						</a>
-						<a href="https://github.com/RyannKim327" target="_blank">
-							<span class="content">
-								<i class="fa-brands fa-github"></i>
-								<span>@RyannKim327</span>
-							</span>
-						</a>
-						<a href="https://stackoverflow.com/users/12174634/ryannkim327" target="_blank">
-							<span class="content">
-								<i class="fa-brands fa-stack-overflow"></i>
-								<span>@RyannKim327</span>
-							</span>
-						</a>
-						<a href="linkedin.com/in/RyannKim327/" target="_blank">
-							<span class="content">
-								<i class="fa-brands fa-linkedin"></i>
-								<span>@RyannKim327</span>
-							</span>
-						</a>
-						<a href="https://discord.com/users/RyannKim327#8928" target="_blank">
-							<span class="content">
-								<i class="fa-brands fa-discord"></i>
-								<span>RyannKim327#8928</span>
-							</span>
-						</a>
-					</div>
+					</a>
+					<a href="https://github.com/RyannKim327" target="_blank">
+						<span class="content">
+							<i class="fa-brands fa-github"></i>
+							<span>@RyannKim327</span>
+						</span>
+					</a>
+					<a href="https://stackoverflow.com/users/12174634/ryannkim327" target="_blank">
+						<span class="content">
+							<i class="fa-brands fa-stack-overflow"></i>
+							<span>@RyannKim327</span>
+						</span>
+					</a>
+					<a href="https://linkedin.com/in/RyannKim327/" target="_blank">
+						<span class="content">
+							<i class="fa-brands fa-linkedin"></i>
+							<span>@RyannKim327</span>
+						</span>
+					</a>
+					<a href="https://discord.com/users/RyannKim327#8928" target="_blank">
+						<span class="content">
+							<i class="fa-brands fa-discord"></i>
+							<span>RyannKim327</span>
+						</span>
+					</a>
 				</div>
 			</div>
-			<div class="base" id="progress">
-				<h1>Common used languages</h1>
-				<div id="graph"></div>
-			</div>
-			<div class="base" id="projects">
-				<h1>Projects</h1>
-				<h3 id="total"></h3>
-				<div id="lists-projects"></div>
-			</div>
-		</main>
-		<footer>
-			<h4>Developed by MPOP Reverse II</h4>
-		</footer>
-	</body>
-	<script src="script.js"></script>
+		</div>
+		<div class="base" id="progress">
+			<h1>Common used languages</h1>
+			<div id="graph"></div>
+		</div>
+		<div class="base" id="projects">
+			<h1>Projects</h1>
+			<h3 id="total"></h3>
+			<div id="lists-projects"></div>
+		</div>
+	</main>
+	<footer>
+		<h4>Developed by MPOP Reverse II</h4>
+	</footer>
+</body>
+<script src="script.js"></script>
+
 </html>

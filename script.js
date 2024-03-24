@@ -50,7 +50,8 @@ function fetching(){
 		"jupyter notebook": "#da5b0b",
 		"php": "#4f5d95",
 		"julia": "#a270ba",
-		"c++": "#f34b7d"
+		"c++": "#f34b7d",
+		"typescript": "#3178c6"
 	}
 	let languages = {}
 	fetch(`https://api.github.com/users/RyannKim327/repos?sort=name&per_page=1000`).then((r) => {

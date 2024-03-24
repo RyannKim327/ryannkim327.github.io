@@ -1,6 +1,6 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
 
-*{
+* {
 	outline: 0;
 	border: 0;
 	padding: 0;
@@ -9,7 +9,7 @@
 	user-select: none;
 }
 
-body{
+body {
 	overflow: hidden;
 	background-image: url('img/bg.jpg');
 	background-size: cover;
@@ -21,7 +21,9 @@ body{
 
 /* Header */
 
-header{
+header {
+	position: sticky;
+	top: 0;
 	display: flex;
 	flex-direction: row;
 	padding: 1em;
@@ -37,62 +39,62 @@ header{
 	-webkit-box-sizing: border-box;
 }
 
-header > .logo{
+header>.logo {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
 
-header > .logo > img{
+header>.logo>img {
 	height: 3em;
 	margin-right: 1em;
 	border-radius: 5em;
 }
 
-header > .logo > .headings{
+header>.logo>.headings {
 	display: flex;
 	flex-direction: column;
 }
 
-header > .logo > .headings > h5{
+header>.logo>.headings>h5 {
 	padding-left: 1em;
 }
 
-header > nav > #nav{
+header>nav>#nav {
 	display: none;
 }
 
-header > nav > ul,
-header > nav > ul > li{
+header>nav>ul,
+header>nav>ul>li {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 }
 
-header > nav > ul > li{
+header>nav>ul>li {
 	list-style: none;
 }
 
-header > nav > ul > li{
+header>nav>ul>li {
 	border: 1px #ffffff solid;
 	border-radius: .5em;
 	padding: .5em 1em;
 	cursor: pointer;
 }
 
-header > nav > ul > li:hover{
+header>nav>ul>li:hover {
 	border-color: transparent;
 	background-color: #ffffff50;
 	color: #ffffff;
 }
 
-header > nav > ul > li:nth-child(even){
+header>nav>ul>li:nth-child(even) {
 	margin: 0 .5em;
 }
 
 /* Main */
 
-main{
+main {
 	max-height: 80vh;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -105,7 +107,7 @@ main{
 
 /* Contents */
 
-main > .base{
+main>.base {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -115,21 +117,21 @@ main > .base{
 	width: 100%;
 }
 
-main > .base:last-child{
+main>.base:last-child {
 	border: 0;
 }
 
-main > .base > h1{
+main>.base>h1 {
 	margin-bottom: 1em;
 }
 
 /* Home */
 
-main > #home{
+main>#home {
 	text-align: center;
 }
 
-main > #home > blockquote{
+main>#home>blockquote {
 	align-self: center;
 	display: flex;
 	flex-direction: row;
@@ -139,7 +141,7 @@ main > #home > blockquote{
 	text-align: center;
 }
 
-main > #home > button{
+main>#home>button {
 	align-self: center;
 	margin: .5em;
 	padding: .5em 1em;
@@ -152,19 +154,19 @@ main > #home > button{
 	font-family: 'Times New Roman', Times, serif;
 }
 
-main > #home > button:hover{
+main>#home>button:hover {
 	background-color: #0000ffaa;
 	color: #ffffff;
 }
 
 /* About */
 
-main > #about{
+main>#about {
 	text-align: center;
 	align-items: center;
 }
 
-main > #about > .container {
+main>#about>.container {
 	align-self: center;
 	display: flex;
 	flex-direction: row;
@@ -173,42 +175,64 @@ main > #about > .container {
 	justify-content: space-around;
 }
 
-main > #about > .container > div{
+main>#about>.container>div {
 	max-width: 50%;
 }
 
-main > #about > .container > div > img {
-	width: 15em;
-	height: 15em;
-	border-radius: 50%;
-	box-shadow: 3px 3px 5px #000000;
+main>#about>.container>div>img {
+	width: 15rem;
+	height: 15rem;
+	border-radius: 1rem;
+	border: 1px #ff0090 solid;
+	filter: drop-shadow(3px 3px 5px #000000);
 }
 
-main > #about > .container > .info > blockquote{
-	max-width: 75%;
+main>#about>.container>.info>blockquote {
+	width: 75%;
 	text-align: justify;
+}
+
+@media only screen and (max-width: 768px) {
+	main>#about>.container {
+		flex-direction: column;
+		font-size: 1rem;
+	}
+
+	main>#about>.container>.info {
+		max-width: 90%;
+	}
+
+	main>#about>.container>.info>blockquote {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	main>#about>.container>div>img {
+		width: 10rem;
+		height: 10rem;
+	}
 }
 
 /* Contact */
 
-main > #contact > .contact-base{
+main>#contact>.contact-base {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
+	justify-content: space-around;
+	align-items: space-around;
 	width: 100%;
 }
 
-main > #contact > .contact-base > * {
+main>#contact>.contact-base>* {
 	max-width: 100%;
 	align-self: center;
 	align-items: center;
 	justify-content: center;
 }
 
-main > #contact > .contact-base > form input,
-main > #contact > .contact-base > form textarea {
+main>#contact>.contact-base>form input,
+main>#contact>.contact-base>form textarea {
 	background-color: transparent;
 	border: 1.5px #ff0090 solid;
 	border-top: 0;
@@ -223,7 +247,7 @@ main > #contact > .contact-base > form textarea {
 	color: #ffffff;
 }
 
-main > #contact > .contact-base > .others{
+main>#contact>.contact-base>.others {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -236,7 +260,7 @@ main > #contact > .contact-base > .others{
 	-webkit-box-sizing: border-box;
 }
 
-main > #contact > .contact-base > .others > a{
+main>#contact>.contact-base>.others>a {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -246,33 +270,42 @@ main > #contact > .contact-base > .others > a{
 	padding: .25em .75em;
 	border-radius: .75em;
 	color: #ff0090;
-	width: 30%;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	text-decoration: none;
 }
 
-main > #contact > .contact-base > form input:hover,
-main > #contact > .contact-base > form textarea:hover,
-main > #contact > .contact-base > .others > a:hover{
+main>#contact>.contact-base>form input:hover,
+main>#contact>.contact-base>form textarea:hover,
+main>#contact>.contact-base>.others>a:hover {
 	background-color: #ff0090aa;
 	color: #ffffff;
 	border: 0;
 }
 
-main > #contact > .contact-base > .others > a:nth-child(even){
+main>#contact>.contact-base>.others>a:nth-child(even) {
 	margin: .5em 0;
 }
 
-main > #contact > .contact-base > .others > a > .content > * {
+main>#contact>.contact-base>.others>a>.content>* {
 	margin: 0 .25em;
+}
+
+@media only screen and (max-width: 768px) {
+	main>#contact>.contact-base>.others {
+		max-width: 90%;
+	}
 }
 
 /* Projects */
 
-main > #projects > h1{
+main>#projects>h1 {
 	margin: 0;
 }
 
-main > #projects > #lists-projects{
+main>#projects>#lists-projects {
 	display: flex;
 	flex-direction: column;
 	overflow-y: auto;
@@ -280,21 +313,21 @@ main > #projects > #lists-projects{
 	margin-top: 1em;
 }
 
-main > #projects > #lists-projects > .my-lists{
+main>#projects>#lists-projects>.my-lists {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 
-main > #projects > #lists-projects > .my-lists > .myRepo{
+main>#projects>#lists-projects>.my-lists>.myRepo {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	border-width: 1px;
 	border-style: solid;
 	box-shadow: 1px 1px 10px #ff0090ef,
-	-1px -1px 5px #ff009025;
+		-1px -1px 5px #ff009025;
 	width: 30%;
 	margin: .5em;
 	padding: .5em;
@@ -303,13 +336,13 @@ main > #projects > #lists-projects > .my-lists > .myRepo{
 	overflow: hidden;
 }
 
-main > #projects > #lists-projects > .my-lists > .myRepo:hover{
+main>#projects>#lists-projects>.my-lists>.myRepo:hover {
 	background-color: #ff0090aa;
 	color: #ffffff;
 	border-width: 0;
 }
 
-main > #projects > #lists-projects > .my-lists > .myRepo > h3{
+main>#projects>#lists-projects>.my-lists>.myRepo>h3 {
 	font-family: 'Times New Roman', Times, serif;
 	text-align: center;
 	border-bottom: 1px #ffffff solid;
@@ -317,23 +350,23 @@ main > #projects > #lists-projects > .my-lists > .myRepo > h3{
 	overflow: hidden;
 }
 
-main > #projects > #lists-projects > .my-lists > .myRepo > h6{
+main>#projects>#lists-projects>.my-lists>.myRepo>h6 {
 	font-family: 'Courier New', Courier, monospace;
 	text-align: center;
 	margin-top: .5em;
 }
 
-main > #projects > #lists-projects > .my-lists > .myRepo > h3 > .titleLanguage{
+main>#projects>#lists-projects>.my-lists>.myRepo>h3>.titleLanguage {
 	font-size: xx-small;
 }
 
 /* Progress */
 
-main > #progress > h1{
+main>#progress>h1 {
 	text-align: center;
 }
 
-main > #progress > #graph{
+main>#progress>#graph {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -341,26 +374,29 @@ main > #progress > #graph{
 	width: 100%;
 	max-height: 80vh;
 	overflow-y: auto;
+	overflow-x: auto;
 }
 
-main > #progress > #graph > span{
+main>#progress>#graph>span {
 	display: flex;
 	flex-direction: column;
 	align-self: flex-end;
 	text-align: center;
-	width: 5%;
-	overflow: hidden;
+	max-width: 5%;
+	overflow-x: hidden;
 }
 
-main > #progress > #graph > span:nth-child(even){
+main>#progress>#graph>span:nth-child(even) {
 	margin: 0 .5em;
 }
 
-main > #progress > #graph > span > label{
+main>#progress>#graph>span>label {
 	padding: .5em 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
-main > #progress > #graph > span > .data-graph{
+main>#progress>#graph>span>.data-graph {
 	background-color: #ff009090;
 	border: 2px #ff0090 solid;
 	align-self: baseline;
@@ -372,54 +408,69 @@ main > #progress > #graph > span > .data-graph{
 	border-bottom: 0;
 }
 
-main > #progress > #graph > span > .java{
+main>#progress>#graph>span>.java {
 	background-color: #b0721990;
 	border: 2px #b07219 solid;
 }
-main > #progress > #graph > span > .javascript{
+
+main>#progress>#graph>span>.javascript {
 	background-color: #f1e05a90;
 	border: 2px #f1e05a solid;
 }
-main > #progress > #graph > span > .python{
+
+main>#progress>#graph>span>.python {
 	background-color: #3572a590;
 	border: 2px #3572a5 solid;
 }
-main > #progress > #graph > span > .cs{
+
+main>#progress>#graph>span>.cs {
 	background-color: #17860090;
 	border: 2px #178600 solid;
 }
-main > #progress > #graph > span > .kotlin{
+
+main>#progress>#graph>span>.kotlin {
 	background-color: #a97bff90;
 	border: 2px #a97bff solid;
 }
-main > #progress > #graph > span > .css{
+
+main>#progress>#graph>span>.css {
 	background-color: #563d7c90;
 	border: 2px #563d7c solid;
 }
-main > #progress > #graph > span > .html{
+
+main>#progress>#graph>span>.html {
 	background-color: #e34c2690;
 	border: 2px #e34c26 solid;
 }
-main > #progress > #graph > span > .jupyter-notebook{
+
+main>#progress>#graph>span>.jupyter-notebook {
 	background-color: #da5b0b90;
 	border: 2px #da5b0b solid;
 }
-main > #progress > #graph > span > .php{
+
+main>#progress>#graph>span>.php {
 	background-color: #da5b0b90;
 	border: 2px #da5b0b solid;
 }
-main > #progress > #graph > span > .julia{
+
+main>#progress>#graph>span>.julia {
 	background-color: #a270ba90;
 	border: 2px #a270ba solid;
 }
-main > #progress > #graph > span > .cpp{
+
+main>#progress>#graph>span>.cpp {
 	background-color: #f34b7d90;
 	border: 2px #f34b7d solid;
 }
 
+main>#progress>#graph>span>.typescript {
+	background-color: #3178c690;
+	border: 2px #3178c6 solid;
+}
+
 /* Footer */
 
-footer{
+footer {
 	height: 8vh;
 	text-align: center;
 	width: 100%;
@@ -432,91 +483,92 @@ footer{
 	box-shadow: -3px 0 5px #ffffff;
 	overflow: hidden;
 	border-bottom: 0;
+	position: sticky;
+	bottom: 0;
 }
 
 /* Scrollbars */
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
 	background-color: transparent;
 	border-radius: 5em;
 	width: .5em;
 	margin-right: 0.5em;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
 	border: 2px #0000ff solid;
 	background-color: #0000ff50;
 	border-radius: 5em;
 }
 
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
 	background-color: #0000ff;
 	border: 0;
 }
 
-main > #projects > #lists-projects::-webkit-scrollbar{
+main>#projects>#lists-projects::-webkit-scrollbar {
 	width: 0;
 }
 
 /* Languages Hover */
 
-main > #projects > #lists-projects > .my-lists > .java:hover{
+main>#projects>#lists-projects>.my-lists>.java:hover {
 	background-color: #ffaa0075;
 	box-shadow: 0 0 5px #ffaa0075;
 	color: #ffffff;
 }
 
-main > #projects > #lists-projects > .my-lists > .javascript:hover{
+main>#projects>#lists-projects>.my-lists>.javascript:hover {
 	background-color: #ffff0075;
 	box-shadow: 0 0 5px #ffff0075;
 	color: #ffffff;
 }
 
-main > #projects > #lists-projects > .my-lists > .python:hover{
+main>#projects>#lists-projects>.my-lists>.python:hover {
 	background-color: #0000ff75;
 	box-shadow: 0 0 5px #0000ff75;
 	color: #ffffff;
 }
 
-main > #projects > #lists-projects > .my-lists > .cs:hover{
+main>#projects>#lists-projects>.my-lists>.cs:hover {
 	background-color: #00500075;
 	box-shadow: 0 0 5px #00500075;
 	color: #ffffff;
 }
 
-main > #projects > #lists-projects > .my-lists > .kotlin:hover{
+main>#projects>#lists-projects>.my-lists>.kotlin:hover {
 	background-color: #ff009075;
 	box-shadow: 0 0 5px #ff009075;
 	color: #ffffff;
 }
 
-main > #projects > #lists-projects > .my-lists > .css:hover{
+main>#projects>#lists-projects>.my-lists>.css:hover {
 	background-color: #ff00ff75;
 	box-shadow: 0 0 5px #ff00ff75;
 	color: #ffffff;
 }
 
-main > #projects > #lists-projects > .my-lists > .html:hover{
+main>#projects>#lists-projects>.my-lists>.html:hover {
 	background-color: #ff000075;
 	box-shadow: 0 0 5px #ff000075;
 	color: #ffffff;
 }
 
-main > #projects > #lists-projects > .my-lists > .jupyter-notebook:hover{
+main>#projects>#lists-projects>.my-lists>.jupyter-notebook:hover {
 	background-color: #ffaa0075;
 	box-shadow: 0 0 5px #ffaa0075;
 	color: #ffffff;
 }
 
-/* Mobile */
-
 /* Nav */
 
-@media only screen and (max-width: 1000px){
-	header > nav > #nav{
+@media only screen and (max-width: 1000px) {
+	header>nav>#nav {
 		display: flex;
 	}
-	header > nav > ul{
+
+	header>nav>ul {
 		display: none;
 		position: absolute;
 		right: .5em;
@@ -528,27 +580,27 @@ main > #projects > #lists-projects > .my-lists > .jupyter-notebook:hover{
 		padding: 1em;
 		border: 1px #000000 solid;
 	}
-	
-	header > nav > ul > li{
+
+	header>nav>ul>li {
 		border-radius: 0;
 		border: 0;
 		border-bottom: 1px #000000 solid;
 	}
-	
-	header > nav > ul > li:last-child{
+
+	header>nav>ul>li:last-child {
 		border-bottom: 0;
 	}
 
-	header > nav > ul > li:nth-child(even){
+	header>nav>ul>li:nth-child(even) {
 		margin: 0;
 	}
 
-	header > nav > ul > li:hover{
+	header>nav>ul>li:hover {
 		background-color: #0000aa;
 		color: #ffffff;
 	}
 
-	main > #progress > #graph > span > .data-graph{
+	main>#progress>#graph>span>.data-graph {
 		margin: 0 0.1em;
 		width: 5%;
 	}
