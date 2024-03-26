@@ -219,8 +219,8 @@ main>#contact>.contact-base {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: space-around;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 }
 
@@ -229,6 +229,21 @@ main>#contact>.contact-base>* {
 	align-self: center;
 	align-items: center;
 	justify-content: center;
+}
+
+main>#contact>.contact-base>form,
+main>#contact>.contact-base>.others {
+	width: 40%;
+}
+
+main>#contact>.contact-base>form {
+	align-items: flex-start;
+	align-content: flex-start;
+}
+
+main>#contact>.contact-base>.others {
+	align-items: flex-end;
+	align-content: flex-end;
 }
 
 main>#contact>.contact-base>form input,
@@ -251,10 +266,10 @@ main>#contact>.contact-base>.others {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-end;
+	justify-items: flex-end;
 	align-self: center;
 	flex-wrap: wrap;
-	width: 50%;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -264,22 +279,24 @@ main>#contact>.contact-base>.others>a {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	overflow: hidden;
+	/* overflow: hidden; */
 	border: 1px #ff0090 solid;
 	border-top: 0;
 	padding: .25em .75em;
 	border-radius: .75em;
 	color: #ff0090;
-	width: 100%;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	text-decoration: none;
+	width: 10rem;
+	align-items: flex-end;
+	justify-self: flex-end;
 }
 
 main>#contact>.contact-base>form input:hover,
-main>#contact>.contact-base>form textarea:hover,
-main>#contact>.contact-base>.others>a:hover {
+main>#contact>.contact-base>form textarea:hover {
+	/* main>#contact>.contact-base>.others>a:hover { */
 	background-color: #ff0090aa;
 	color: #ffffff;
 	border: 0;
@@ -289,8 +306,34 @@ main>#contact>.contact-base>.others>a:nth-child(even) {
 	margin: .5em 0;
 }
 
+main>#contact>.contact-base>.others>a>.content {
+	display: flex;
+	flex-direction: row;
+	width: 1em;
+}
+
 main>#contact>.contact-base>.others>a>.content>* {
 	margin: 0 .25em;
+}
+
+main>#contact>.contact-base>.others>a {
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	width: 3rem;
+}
+
+main>#contact>.contact-base>.others>a>i {
+	width: 1rem;
+	padding-right: 1rem;
+}
+
+main>#contact>.contact-base>.others>a>.content>span {
+	display: inline;
+}
+
+main>#contact>.contact-base>.others>a:hover {
+	width: 5rem;
 }
 
 @media only screen and (max-width: 768px) {
