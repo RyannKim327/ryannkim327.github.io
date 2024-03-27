@@ -218,10 +218,13 @@ main>#about>.container>.info>blockquote {
 main>#contact>.contact-base {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
+	align-content: center;
+	justify-items: center;
+	width: 100vw;
+	border: 1px red solid;
 }
 
 main>#contact>.contact-base>* {
@@ -229,21 +232,22 @@ main>#contact>.contact-base>* {
 	align-self: center;
 	align-items: center;
 	justify-content: center;
-}
-
-main>#contact>.contact-base>form,
-main>#contact>.contact-base>.others {
-	width: 40%;
+	justify-items: center;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 }
 
 main>#contact>.contact-base>form {
 	align-items: flex-start;
 	align-content: flex-start;
+	width: 25vw;
 }
 
 main>#contact>.contact-base>.others {
 	align-items: flex-end;
 	align-content: flex-end;
+	/* width: 25vw; */
 }
 
 main>#contact>.contact-base>form input,
@@ -289,8 +293,7 @@ main>#contact>.contact-base>.others>a {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	text-decoration: none;
-	width: 10rem;
-	align-items: flex-end;
+	align-self: flex-end;
 	justify-self: flex-end;
 }
 
@@ -299,7 +302,7 @@ main>#contact>.contact-base>form textarea:hover {
 	/* main>#contact>.contact-base>.others>a:hover { */
 	background-color: #ff0090aa;
 	color: #ffffff;
-	border: 0;
+	border: 1px transparent solid;
 }
 
 main>#contact>.contact-base>.others>a:nth-child(even) {
@@ -309,7 +312,6 @@ main>#contact>.contact-base>.others>a:nth-child(even) {
 main>#contact>.contact-base>.others>a>.content {
 	display: flex;
 	flex-direction: row;
-	width: 1em;
 }
 
 main>#contact>.contact-base>.others>a>.content>* {
@@ -320,25 +322,55 @@ main>#contact>.contact-base>.others>a {
 	display: flex;
 	flex-direction: row;
 	overflow: hidden;
-	width: 3rem;
+	width: 2.75rem;
 }
 
-main>#contact>.contact-base>.others>a>i {
-	width: 1rem;
-	padding-right: 1rem;
+main>#contact>.contact-base>.others>a>.content>i {
+	margin: 0 .25rem;
 }
 
 main>#contact>.contact-base>.others>a>.content>span {
-	display: inline;
+	display: block;
+	margin-left: 1rem;
+	;
 }
 
 main>#contact>.contact-base>.others>a:hover {
-	width: 5rem;
+	width: auto;
 }
 
 @media only screen and (max-width: 768px) {
 	main>#contact>.contact-base>.others {
 		max-width: 90%;
+	}
+}
+
+@media only screen and (max-width: 760px) {
+	main>#contact>.contact-base {
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-items: center;
+		align-items: center;
+		justify-content: center;
+		align-content: center;
+	}
+
+	main>#contact>.contact-base>.others {
+		display: flex;
+		flex-direction: row;
+	}
+
+	main>#contact>.contact-base>.others>a:nth-child(even) {
+		margin: 0 .25rem;
+	}
+
+	main>#contact>.contact-base>.others>a>* {
+		margin: 0;
+		padding: 0;
+	}
+
+	main>#contact>.contact-base>.others>a>span {
+		display: none;
 	}
 }
 
