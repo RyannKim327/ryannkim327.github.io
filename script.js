@@ -7,6 +7,7 @@ window.onload = () => {
 	// Home
 
 	// Typing
+	/*
 	const typing = $("#typing")
 	let i = 0;
 	const message = typing.textContent
@@ -18,7 +19,7 @@ window.onload = () => {
 			i++
 		}
 	}, 75)
-
+*/
 	// Projects on Github
 	fetching()
 
@@ -113,7 +114,7 @@ function fetching(){
 		graph(languages)
 	}).catch((e) => {
 		console.error(`Error [Github]: ${e}`)
-		$("#projects").textContent = "Something went wrong"
+		// $("#projects").textContent = "Something went wrong"
 	})
 }
 

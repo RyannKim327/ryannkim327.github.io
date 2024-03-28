@@ -7,14 +7,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ryann Kim Sesgundo</title>
 	<meta name="og:description" content="My Portfolio">
-	<link rel="icon" href="img/logo.jpg">
+	<link rel="icon" href="assets/img/logo.jpg">
 	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 	<header>
 		<div class="logo">
-			<img src="img/logo.jpg" alt="logo">
+			<img src="assets/img/logo.jpg" alt="logo">
 			<div class="headings">
 				<h3>My Sample Portfolio</h3>
 				<h5>Ryann Kim Sesgundo</h5>
@@ -33,17 +33,18 @@
 	</header>
 	<main>
 		<div class="base" id="home">
-			<h1>Welcome to my Portfolio</h1>
-			<blockquote id="typing">
-				&emsp;I am Ryann Kim Sesgundo, a second year student of Dalubhasaan ng Lungsod ng Lucena.
-			</blockquote>
-			<button onclick="clicker('#projects')">See my projects</button>
+			<span class="myname">
+				<h3>I am</h3>
+				<h1>Ryann Kim Sesgundo</h1>
+			</span>
+			<img src="assets/img/ako-pero-transparent.png">
+			<!-- <button onclick="clicker('#projects')">See my projects</button> -->
 		</div>
 		<div class="base" id="about">
 			<h1>About</h1>
 			<div class="container">
 				<div>
-					<img src="img/ako-pero-transparent.png" alt="">
+					<img src="assets/img/prof.jpg" alt="">
 				</div>
 				<div class="info">
 					<blockquote>
@@ -135,9 +136,15 @@
 			<div id="graph"></div>
 		</div>
 		<div class="base" id="projects">
-			<h1>Projects</h1>
+			<!--h1>Projects</h1>
 			<h3 id="total"></h3>
-			<div id="lists-projects"></div>
+			<div id="lists-projects"></div-->
+			<div style="background-image: url(assets/projects/baybayin-keyboard.png);">
+				<h3>Baybayin keyboard</h3>
+			</div>
+			<div style="background-image: url(assets/projects/chatapp.png);">
+				<h3>Chatapp</h3>
+			</div>
 		</div>
 	</main>
 	<footer>

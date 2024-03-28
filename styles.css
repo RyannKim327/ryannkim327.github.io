@@ -11,7 +11,7 @@
 
 body {
 	overflow: hidden;
-	background-image: url('img/bg.jpg');
+	background-image: url('assets/img/bg.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	color: #ffffff;
@@ -128,7 +128,31 @@ main>.base>h1 {
 /* Home */
 
 main>#home {
+	display: flex;
+	flex-direction: row;
 	text-align: center;
+}
+
+main>#home>.myname {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	padding-left: 2rem;
+	max-width: 75%;
+}
+
+main>#home>.myname>h1 {
+	font-size: 5rem;
+}
+
+main>#home>.myname>h3 {
+	font-size: 3rem;
+	padding-left: 2.5rem;
+	text-wrap: wrap;
+}
+
+main>#home>img {
+	filter: drop-shadow(0 0 5px #ff0090);
 }
 
 main>#home>blockquote {
@@ -139,6 +163,16 @@ main>#home>blockquote {
 	border-left: 5px #aaaaaa solid;
 	max-width: 50%;
 	text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+	main>#home>img {
+		display: none;
+	}
+
+	main>#home>.myname {
+		max-width: 100vw;
+	}
 }
 
 main>#home>button {
@@ -183,14 +217,16 @@ main>#about>.container>div>img {
 	width: 15rem;
 	height: 15rem;
 	border-radius: 1rem;
-	border: 1px #ff0090 solid;
-	filter: drop-shadow(3px 3px 5px #000000);
+	/* filter: drop-shadow(3px 3px 5px #ff0090); */
 }
 
 main>#about>.container>.info>blockquote {
 	width: 75%;
 	text-align: justify;
+	font-size: 1.5rem;
 }
+
+/* Mobile view in about section */
 
 @media only screen and (max-width: 768px) {
 	main>#about>.container {
@@ -200,6 +236,8 @@ main>#about>.container>.info>blockquote {
 
 	main>#about>.container>.info {
 		max-width: 90%;
+		max-height: 25%;
+		overflow: auto;
 	}
 
 	main>#about>.container>.info>blockquote {
@@ -224,7 +262,6 @@ main>#contact>.contact-base {
 	align-content: center;
 	justify-items: center;
 	width: 100vw;
-	border: 1px red solid;
 }
 
 main>#contact>.contact-base>* {
@@ -241,13 +278,13 @@ main>#contact>.contact-base>* {
 main>#contact>.contact-base>form {
 	align-items: flex-start;
 	align-content: flex-start;
-	width: 25vw;
+	width: 30vw;
 }
 
 main>#contact>.contact-base>.others {
 	align-items: flex-end;
 	align-content: flex-end;
-	/* width: 25vw; */
+	width: 15vw;
 }
 
 main>#contact>.contact-base>form input,
@@ -332,20 +369,38 @@ main>#contact>.contact-base>.others>a>.content>i {
 main>#contact>.contact-base>.others>a>.content>span {
 	display: block;
 	margin-left: 1rem;
-	;
 }
 
 main>#contact>.contact-base>.others>a:hover {
 	width: auto;
 }
 
+/* Mobile view of contact */
+
 @media only screen and (max-width: 768px) {
 	main>#contact>.contact-base>.others {
 		max-width: 90%;
+		width: 90%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-items: center;
+		justify-content: center;
 	}
-}
 
-@media only screen and (max-width: 760px) {
+	main>#contact>.contact-base>form {
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+		align-content: center;
+		justify-content: center;
+	}
+
+	main>#contact>.contact-base>form>table {
+		justify-self: center;
+		align-self: center;
+	}
+
 	main>#contact>.contact-base {
 		flex-direction: column;
 		flex-wrap: wrap;
@@ -353,11 +408,6 @@ main>#contact>.contact-base>.others>a:hover {
 		align-items: center;
 		justify-content: center;
 		align-content: center;
-	}
-
-	main>#contact>.contact-base>.others {
-		display: flex;
-		flex-direction: row;
 	}
 
 	main>#contact>.contact-base>.others>a:nth-child(even) {
@@ -375,6 +425,31 @@ main>#contact>.contact-base>.others>a:hover {
 }
 
 /* Projects */
+
+main>#projects {
+	display: grid;
+	grid-template-columns: 30vw 30vw 30vw;
+	grid-template-rows: 100% 100%;
+	grid-gap: .5rem;
+	max-width: 100vw;
+	overflow: hidden;
+	/* width: 100vw; */
+}
+
+main>#projects>* {
+	display: block;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 30%;
+}
+
+main>#projects>div>h3 {
+	font-size: 1rem;
+}
 
 main>#projects>h1 {
 	margin: 0;
