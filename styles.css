@@ -151,8 +151,13 @@ main>#home>.myname>h3 {
 	text-wrap: wrap;
 }
 
+main>#home>.myname>h5 {
+	font-size: 1.5rem;
+}
+
 main>#home>img {
 	filter: drop-shadow(0 0 5px #ff0090);
+	animation: slideImg 5s;
 }
 
 main>#home>blockquote {
@@ -163,6 +168,20 @@ main>#home>blockquote {
 	border-left: 5px #aaaaaa solid;
 	max-width: 50%;
 	text-align: center;
+}
+
+@keyframes slideImg {
+	0% {
+		transform: translateX(100%);
+	}
+
+	25% {
+		transform: translateX(90%);
+	}
+
+	100% {
+		transform: translateX(0%);
+	}
 }
 
 @media only screen and (max-width: 768px) {

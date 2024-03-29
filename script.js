@@ -21,13 +21,17 @@ window.onload = () => {
 	}, 75)
 */
 	// Projects on Github
-	fetching()
+	// fetching()
 
 	// Mobile Navi Click
 	$("#nav").onclick = () => {
 		$("#navi").style.display = "flex"
 	}
-
+	console.log("E") 
+	document.querySelector("main").onscroll = () => {
+		console.log("Lorem Ipsum")
+		console.log(document.querySelector("main").scrollTop)
+	}
 }
 
 function clicker(id) {

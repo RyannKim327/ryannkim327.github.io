@@ -9,6 +9,7 @@
 	<meta name="og:description" content="My Portfolio">
 	<link rel="icon" href="assets/img/logo.jpg">
 	<link rel="stylesheet" href="styles.css">
+	<script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
 </head>
 
 <body>
@@ -21,12 +22,12 @@
 			</div>
 		</div>
 		<nav>
-			<i class="fa-solid fa-bars fa-2xl" id="nav"></i>
-			<ul id="navi">
+			<i class="fa-solid fa-bars fa-2x1" id="nav"></i>
+			<ul id="navi" class="display: flex;">
 				<li onclick="clicker('#home')">Home</li>
 				<li onclick="clicker('#about')">About</li>
 				<li onclick="clicker('#contact')">Contact</li>
-				<li onclick="clicker('#progress')">Progress</li>
+				<!-- <li onclick="clicker('#progress')">Progress</li> -->
 				<li onclick="clicker('#projects')">Projects</li>
 			</ul>
 		</nav>
@@ -36,8 +37,9 @@
 			<span class="myname">
 				<h3>I am</h3>
 				<h1>Ryann Kim Sesgundo</h1>
+				<h5 id="nameIntro">Kunyareng Dev na nag aaral sa Dalubhasaan ng Lungsod ng Lucena</h5>
 			</span>
-			<img src="assets/img/ako-pero-transparent.png">
+			<img alt="RyannKim327" id="ako" src="assets/img/ako-pero-transparent.png">
 			<!-- <button onclick="clicker('#projects')">See my projects</button> -->
 		</div>
 		<div class="base" id="about">
@@ -131,10 +133,10 @@
 				</form>
 			</div>
 		</div>
-		<div class="base" id="progress">
-			<h1>Common used languages</h1>
-			<div id="graph"></div>
-		</div>
+		<!-- <div class="base" id="progress"> -->
+		<!-- <h1>Common used languages</h1> -->
+		<!-- <div id="graph"></div> -->
+		<!-- </div> -->
 		<div class="base" id="projects">
 			<!--h1>Projects</h1>
 			<h3 id="total"></h3>
@@ -146,11 +148,16 @@
 				<h3>Chatapp</h3>
 			</div>
 		</div>
+		<div class="effect" id="following"></div>
 	</main>
 	<footer>
 		<h4>Developed by MPOP Reverse II</h4>
 	</footer>
 </body>
+<script async>
+	new cursoreffects.followingDotCursor({element: document.querySelector("#following")})
+</script>
 <script src="script.js"></script>
+<!-- <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script> -->
 
 </html>
