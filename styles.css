@@ -13,7 +13,9 @@ body {
 	overflow: hidden;
 	background-image: url('assets/img/bg.jpg');
 	background-size: cover;
+	background-attachment: fixed;
 	background-repeat: no-repeat;
+	background-position: center;
 	color: #ffffff;
 	height: 100vh;
 	width: 100%;
@@ -37,6 +39,11 @@ header {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	z-index: 1;
+	background-image: url('assets/img/bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
 }
 
 header>.logo {
@@ -95,7 +102,7 @@ header>nav>ul>li:nth-child(even) {
 /* Main */
 
 main {
-	max-height: 80vh;
+	max-height: 100vh;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -112,13 +119,8 @@ main>.base {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 80vh;
-	border-bottom: 1px #ff0090 solid;
-	width: 100%;
-}
-
-main>.base:last-child {
-	border: 0;
+	height: 100vh;
+	/* width: 100%; */
 }
 
 main>.base>h1 {
@@ -529,118 +531,10 @@ main>#projects>#lists-projects>.my-lists>.myRepo>h3>.titleLanguage {
 	font-size: xx-small;
 }
 
-/* Progress */
-
-main>#progress>h1 {
-	text-align: center;
-}
-
-main>#progress>#graph {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	max-height: 80vh;
-	overflow-y: auto;
-	overflow-x: auto;
-}
-
-main>#progress>#graph>span {
-	display: flex;
-	flex-direction: column;
-	align-self: flex-end;
-	text-align: center;
-	max-width: 5%;
-	overflow-x: hidden;
-}
-
-main>#progress>#graph>span:nth-child(even) {
-	margin: 0 .5em;
-}
-
-main>#progress>#graph>span>label {
-	padding: .5em 0;
-	text-overflow: ellipsis;
-	overflow: hidden;
-}
-
-main>#progress>#graph>span>.data-graph {
-	background-color: #ff009090;
-	border: 2px #ff0090 solid;
-	align-self: baseline;
-	border-top-left-radius: .25em;
-	border-top-right-radius: .25em;
-	width: 75%;
-	padding: 0 1em;
-	margin: 0 .15em;
-	border-bottom: 0;
-}
-
-main>#progress>#graph>span>.java {
-	background-color: #b0721990;
-	border: 2px #b07219 solid;
-}
-
-main>#progress>#graph>span>.javascript {
-	background-color: #f1e05a90;
-	border: 2px #f1e05a solid;
-}
-
-main>#progress>#graph>span>.python {
-	background-color: #3572a590;
-	border: 2px #3572a5 solid;
-}
-
-main>#progress>#graph>span>.cs {
-	background-color: #17860090;
-	border: 2px #178600 solid;
-}
-
-main>#progress>#graph>span>.kotlin {
-	background-color: #a97bff90;
-	border: 2px #a97bff solid;
-}
-
-main>#progress>#graph>span>.css {
-	background-color: #563d7c90;
-	border: 2px #563d7c solid;
-}
-
-main>#progress>#graph>span>.html {
-	background-color: #e34c2690;
-	border: 2px #e34c26 solid;
-}
-
-main>#progress>#graph>span>.jupyter-notebook {
-	background-color: #da5b0b90;
-	border: 2px #da5b0b solid;
-}
-
-main>#progress>#graph>span>.php {
-	background-color: #da5b0b90;
-	border: 2px #da5b0b solid;
-}
-
-main>#progress>#graph>span>.julia {
-	background-color: #a270ba90;
-	border: 2px #a270ba solid;
-}
-
-main>#progress>#graph>span>.cpp {
-	background-color: #f34b7d90;
-	border: 2px #f34b7d solid;
-}
-
-main>#progress>#graph>span>.typescript {
-	background-color: #3178c690;
-	border: 2px #3178c6 solid;
-}
-
 /* Footer */
 
 footer {
-	height: 8vh;
+	/* height: 8vh; */
 	text-align: center;
 	width: 100%;
 	box-sizing: border-box;
@@ -650,10 +544,7 @@ footer {
 	border-top-left-radius: .5em;
 	border-top-right-radius: .5em;
 	box-shadow: -3px 0 5px #ffffff;
-	overflow: hidden;
 	border-bottom: 0;
-	position: sticky;
-	bottom: 0;
 }
 
 /* Scrollbars */
