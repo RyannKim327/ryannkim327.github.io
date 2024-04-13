@@ -93,6 +93,7 @@ main {
     .title {
       margin-top: 10%;
       font-family: "Times New Roman", serif;
+      text-align: center;
     }
   }
 
@@ -230,6 +231,46 @@ main {
       }
     }
 
+  }
+
+  #projects {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+
+    #project-contents {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        padding: .5rem;
+        margin: .5rem;
+        width: 30vw;
+        overflow: hidden;
+
+        img {
+          box-shadow: 3px 3px 5px #00000090,
+            3px 3px 5px inset #ffffff90;
+          border-radius: .25rem;
+          aspect-ratio: 16 / 9;
+        }
+
+        .name {
+          justify-self: flex-end;
+          align-self: flex-end;
+          margin: .25rem;
+          padding: .15rem;
+          border-radius: .25rem;
+          margin-top: -2.15rem;
+          background-color: rgba(255, 255, 255, 0.3);
+          backdrop-filter: blur(50px);
+        }
+      }
+    }
   }
 
   footer {
