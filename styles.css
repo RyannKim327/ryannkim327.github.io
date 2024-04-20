@@ -180,6 +180,8 @@ main {
           li {
             display: flex;
             flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
             color: #005000;
             border-bottom: 1px #005000 solid;
             border-radius: .5rem;
@@ -187,16 +189,54 @@ main {
             margin: .25rem 0;
             box-shadow: 0 3px 5px #00500090;
             overflow-x: hidden;
-            width: 2rem;
-            transition: width 0.3s ease;
+            width: 2.5rem;
+            transition: width 0.5s ease, color 1.5s ease, box-shadow 1.5s ease;
 
-            i {
-              margin-right: 1.5rem;
+            i::before {
+              justify-self: center;
+              margin-right: 1.25rem;
             }
           }
 
-          li:hover {
+          #facebook {
+            color: #4267b2;
+            border-color: #4267b2;
+            box-shadow: 0 3px 5px #4267b2;
+          }
+
+          #github {
+            color: #24292e;
+            border-color: #24292e;
+            box-shadow: 0 3px 5px #24292e;
+          }
+
+          #stackoverflow {
+            color: #f48024;
+            border-color: #f48024;
+            box-shadow: 0 3px 5px #f48024;
+          }
+
+          #linkedin {
+            color: #0e76a8;
+            border-color: #0e76a8;
+            box-shadow: 0 3px 5px #0e76a8;
+          }
+
+          #discord {
+            color: #7289d9;
+            border-color: #7289d9;
+            box-shadow: 0 3px 5px #7289d9;
+          }
+
+          #facebook:hover,
+          #github:hover,
+          #stackoverflow:hover,
+          #linkedin:hover,
+          #discord:hover {
+            border-color: #005000;
+            box-shadow: 0 3px 5px #005000;
             width: 12rem;
+            color: #005000;
           }
         }
       }
@@ -221,6 +261,10 @@ main {
           font-size: 1rem;
           padding: 0 .25rem;
           border-radius: .25rem;
+          width: 100%;
+          box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
         }
 
         textarea,
