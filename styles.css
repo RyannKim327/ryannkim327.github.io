@@ -108,16 +108,26 @@ main {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      padding-left: 3rem;
+
+      * {
+        /* border: 1px red solid; */
+        /* height: 100%; */
+        max-width: 75%;
+      }
 
       h1 {
         font-variant: small-caps;
-        font-size: 3rem;
+        font-size: 5rem;
         color: #005000;
       }
 
       h3 {
         color: #555555;
-        font-style: 3rem;
+        font-size: 3rem;
         font-variant: small-caps;
         padding: 0 1.5rem;
         text-shadow: 1px 1px 3px #00300090;
@@ -126,8 +136,9 @@ main {
       p {
         font-family: "Times New Roman", serif;
         color: #555555;
-        font-size: 1.25rem;
+        font-size: 2rem;
         font-weight: bold;
+        padding-top: 2rem;
       }
     }
   }

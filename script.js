@@ -55,9 +55,12 @@ function validation(e){
 }
 
 window.onload = () => {
-  const mgaAnak = $(".project-locators")
-  mgaAnak.onclick = () => {
-    const locator = mgaAnak.getAttribute("data-location")
-    window.open(locator, '_blank').focus()
+  const mgaAnak = document.querySelectorAll(".references")
+  console.log(mgaAnak)
+  for(let i in mgaAnak){
+    mgaAnak[i].onclick = () => {
+      const locator = mgaAnak[i].getAttribute("data-location")
+      window.open(locator, '_blank').focus()
+    }
   }
 }
