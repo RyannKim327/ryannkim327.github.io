@@ -71,7 +71,9 @@ window.onload = () => {
       window.open(locator, '_blank').focus()
     }
   }
-  $("#email_form").onsubmit = async () => {
+  /* TODO: I comment para magamit
+   * $("#email_form").onsubmit = async () => {
+    return
     const email_prii = "weryses19@gmail.com"
     await fetch(`https://formsubmit.co/${email_prii}`, {
       method: "POST",
@@ -87,5 +89,5 @@ window.onload = () => {
     }).catch(error => {
       console.error(error)
     })
-  }
+  }*/
 }
