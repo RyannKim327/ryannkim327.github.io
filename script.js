@@ -71,13 +71,17 @@ window.onload = () => {
       window.open(locator, '_blank').focus()
     }
   }
-  _("#email_form").onsubmit = async () => {
-    const email_form = ""
+  $("#email_form").onsubmit = async () => {
+    const email_form = "weryses19@gmail.com"
     await fetch(`https://formsubmit.co/${email_prii}`, {
       method: "POST",
       body: JSON.stringify({
-        name: _("#name")
+        name: $("#name").value,
+        email: $("#email").value,
+        message: $("#content").value
       })
+    }).then(response => {
+      return response.json()
     })
   }
 }
