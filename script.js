@@ -53,7 +53,7 @@ function validation(e, type){
   }
   if(valid){
     const submit = document.createElement("input")
-    submit.type = "button"
+    submit.type = "submit"
     submit.value = "Send Email"
     submit.style.width = "100%"
     submit.style.backgroudColor = "transparent"
