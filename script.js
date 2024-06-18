@@ -72,7 +72,7 @@ window.onload = () => {
     }
   }
   $("#email_form").onsubmit = async () => {
-    const email_form = "weryses19@gmail.com"
+    const email_prii = "weryses19@gmail.com"
     await fetch(`https://formsubmit.co/${email_prii}`, {
       method: "POST",
       body: JSON.stringify({
@@ -82,6 +82,10 @@ window.onload = () => {
       })
     }).then(response => {
       return response.json()
+    }).then(result => {
+      console.log(JSON.stringify(result))
+    }).catch(error => {
+      console.error(error)
     })
   }
 }
