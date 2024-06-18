@@ -8,7 +8,8 @@ function scroll_(identity){
   }, true)
 }
 
-function validation(e){
+function validation(e, type){
+  if(!type) type = "input"
   const _parent = $("#email_form")
   if(_parent.children.length > 3){
     _parent.removeChild(_parent.children[3])
@@ -18,28 +19,36 @@ function validation(e){
     const email_format = /^([a-z0-9]+)@([a-z]+)\.([com|net|org]+)/gi
     if(email_format.test(e.value)){
       valid = true
-      e.parentElement.style.color = "#005000"
-      e.parentElement.style.borderColor = "#005000"
-      e.style.color = "#005000"
-      e.previousElementSibling.style.color = "#005000"
+      e.parentElement.style.color = "#74c69d"
+      e.parentElement.style.borderColor = "#74c69d"
+      e.style.color = "#74c69d"
+      e.previousElementSibling.style.color = "#74c69d"
     }else{
-      e.parentElement.style.color = 'red'
-      e.parentElement.style.borderColor = "red"
-      e.style.color = "red"
-      e.previousElementSibling.style.color = 'red'
+      e.parentElement.style.color = '#ef233c'
+      e.parentElement.style.borderColor = "#ef233c"
+      e.style.color = "#ef233c"
+      e.previousElementSibling.style.color = '#ef233c'
     }
   }else{
     if(e.value.trim().length >= 10){
       valid = true
-      e.parentElement.style.color = "#005000"
-      e.parentElement.style.borderColor = "#005000"
-      e.style.color = "#005000"
-      e.previousElementSibling.style.color = "#005000"
+      if(type != "input"){
+        e.style.borderColor = '#74c69d'
+      }else{
+        e.parentElement.style.color = "#74c69d"
+        e.parentElement.style.borderColor = "#74c69d"
+        e.previousElementSibling.style.color = "#74c69d"
+      }
+      e.style.color = "#74c69d"
     }else{
-      e.parentElement.style.color = 'red'
-      e.parentElement.style.borderColor = "red"
-      e.style.color = "red"
-      e.previousElementSibling.style.color = 'red'
+      if(type != "input"){
+        e.style.borderColor = '#ef233c'
+      }else{
+        e.parentElement.style.color = '#ef233c'
+        e.parentElement.style.borderColor = "#ef233c"
+        e.previousElementSibling.style.color = '#ef233c'
+      }
+      e.style.color = "#ef233c"
     }
   }
   if(valid){
@@ -48,7 +57,7 @@ function validation(e){
     submit.value = "Send Email"
     submit.style.width = "100%"
     submit.style.backgroudColor = "transparent"
-    submit.style.border = "1px #005000 solid"
+    submit.style.border = "1px #74c69d solid"
     submit.style.borderRadius = ".25rem"
     _parent.appendChild(submit)
   }
@@ -56,11 +65,19 @@ function validation(e){
 
 window.onload = () => {
   const mgaAnak = document.querySelectorAll(".references")
-  console.log(mgaAnak)
   for(let i in mgaAnak){
     mgaAnak[i].onclick = () => {
       const locator = mgaAnak[i].getAttribute("data-location")
       window.open(locator, '_blank').focus()
     }
+  }
+  _("#email_form").onsubmit = async () => {
+    const email_form = ""
+    await fetch(`https://formsubmit.co/${email_prii}`, {
+      method: "POST",
+      body: JSON.stringify({
+        name: _("#name")
+      })
+    })
   }
 }
