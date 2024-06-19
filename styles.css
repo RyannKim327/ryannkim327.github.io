@@ -64,19 +64,28 @@ main {
       }
     }
 
-    nav > ul {
-      display: flex;
-      flex-direction: row;
-      list-style: none;
-
-      li {
+    nav {
+      span {
+        display: none;
         padding: 0.1rem 0.5rem;
         border-radius: 0.25rem;
-        box-shadow: 0 1px 5px #415a77;
+        box-shadow: 1px 5px #415a77;
       }
 
-      li:nth-child(even) {
-        margin: 0 0.75rem;
+      ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+
+        li {
+          padding: 0.1rem 0.5rem;
+          border-radius: 0.25rem;
+          box-shadow: 0 1px 5px #415a77;
+        }
+
+        li:nth-child(even) {
+          margin: 0 0.75rem;
+        }
       }
     }
   }
@@ -359,24 +368,53 @@ main {
 @media only screen and (max-width: 800px) {
   main {
     header {
+      flex-direction: column;
+      /* align-items: flex-start; */
+      width: 100vw;
+      box-sizing: border-box;
+
       .headings {
+        align-self: flex-start;
         .title {
           font-size: 0.5rem;
         }
       }
+
       nav {
+        span {
+          display: none;
+          margin: 1rem;
+        }
+
         ul {
+          display: flex;
+          padding: 0.5rem;
+          justify-content: space-around;
+          box-sizing: border-box;
           font-size: 0.5rem;
+
+          li {
+            margin: 0 2rem;
+          }
         }
       }
     }
     #home {
       .intro {
-        /* justify-items: center; */
-        /* align-items: center; */
-        /* justify-content: center; */
-
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        h1 {
+          text-align: center;
+          font-size: 3rem;
+        }
+        h3 {
+          padding: 0;
+          margin: 0;
+          font-size: 2rem;
+        }
         p {
+          font-size: 1rem;
           align-self: center;
           text-align: center;
         }
@@ -385,6 +423,18 @@ main {
         display: none;
       }
     }
+
+    #about {
+      div {
+        img {
+          width: 7rem;
+        }
+        blockquote {
+          font-size: 0.75rem;
+        }
+      }
+    }
+
     #contact {
       div {
         flex-direction: column;

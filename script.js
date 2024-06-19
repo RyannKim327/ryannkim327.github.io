@@ -63,6 +63,13 @@ function validation(e, type){
   }
 }
 
+function nav_toggle(){
+  const navs = $("#navs")
+  if(navs.style.display == "none"){
+    
+  }
+}
+
 window.onload = () => {
   const mgaAnak = document.querySelectorAll(".references")
   for(let i in mgaAnak){
@@ -71,6 +78,7 @@ window.onload = () => {
       window.open(locator, '_blank').focus()
     }
   }
+
   /* TODO: I comment para magamit
    * $("#email_form").onsubmit = async () => {
     return
