@@ -358,6 +358,18 @@ main {
 
 @media only screen and (max-width: 800px) {
   main {
+    header {
+      .headings {
+        .title {
+          font-size: 0.5rem;
+        }
+      }
+      nav {
+        ul {
+          font-size: 0.5rem;
+        }
+      }
+    }
     #home {
       .intro {
         /* justify-items: center; */
