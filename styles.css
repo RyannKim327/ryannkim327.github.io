@@ -400,11 +400,15 @@ main {
       }
     }
     #home {
+      max-width: 100vw;
+      width: 100vw;
       .intro {
         justify-items: center;
         align-items: center;
         justify-content: center;
         h1 {
+          margin: 0;
+          padding: 0;
           text-align: center;
           font-size: 3rem;
         }
@@ -414,6 +418,8 @@ main {
           font-size: 2rem;
         }
         p {
+          padding: 0;
+          margin: 0;
           font-size: 1rem;
           align-self: center;
           text-align: center;
