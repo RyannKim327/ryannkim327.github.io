@@ -132,6 +132,7 @@ main {
         font-variant: small-caps;
         padding: 0 1.5rem;
         text-shadow: 1px 1px 3px #00300090;
+        text-align: left;
       }
 
       p {
@@ -323,8 +324,8 @@ main {
     width: 100vw;
 
     #project-contents {
-      display: flex;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: 30vw 30vw 30vw;
       justify-content: center;
       align-items: center;
 
@@ -353,6 +354,8 @@ main {
           margin-top: -2.15rem;
           background-color: rgba(255, 255, 255, 0.3);
           backdrop-filter: blur(50px);
+          color: #000000;
+          font-size: 1rem;
         }
       }
     }
