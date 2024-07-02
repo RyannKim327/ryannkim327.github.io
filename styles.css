@@ -532,5 +532,26 @@ main {
         }
       }
     }
+
+    #projects {
+      #project-contents {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        overflow: scroll;
+
+        .container {
+          display: flex;
+          flex-direction: column;
+          width: 80%;
+          height: 100vh;
+
+          img {
+            height: 100%;
+            aspect-ratio: 3 / 2;
+          }
+        }
+      }
+    }
   }
 }
