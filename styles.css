@@ -18,13 +18,24 @@ body {
   color: #e0e1dd;
 }
 
+#moving-randoms {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: -1;
+}
+
 /* Header */
 
 main {
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -o-box-sizing: border-box;
+  position: absolute;
+  z-index: 1;
 
   > header {
     background-color: #66666690;
@@ -41,6 +52,7 @@ main {
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     box-shadow: 0 0 3px #e0e1dd;
+    z-index: 1;
 
     .headings {
       display: flex;
@@ -91,6 +103,9 @@ main {
   }
 
   > div {
+    height: 100vh;
+    box-sizing: border-box;
+
     .title {
       margin-top: 10%;
       font-family: "Times New Roman", serif;
@@ -147,10 +162,19 @@ main {
 
   /* About */
   #about {
+    background-color: #f1faff;
+    background-image: url("assets/background/coding-background.jpg");
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
+
+    h1 {
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
 
     div {
       display: flex;
@@ -158,7 +182,10 @@ main {
       justify-items: space-around;
       justify-content: space-around;
       align-items: center;
-      width: 100vw;
+      margin: 0 1rem;
+      border-radius: 0.5rem;
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
 
       img {
         aspect-ratio: 1 / 1;
@@ -322,12 +349,23 @@ main {
     display: flex;
     flex-direction: column;
     width: 100vw;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    h1 {
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
 
     #project-contents {
       display: grid;
       grid-template-columns: 30vw 30vw 30vw;
       justify-content: center;
       align-items: center;
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(1px);
 
       .container {
         display: flex;
@@ -361,10 +399,11 @@ main {
     }
   }
 
-  footer {
+  > footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 1.5rem;
   }
 }
 
@@ -394,7 +433,7 @@ main {
           padding: 0.5rem;
           justify-content: space-around;
           box-sizing: border-box;
-          font-size: 0.5rem;
+          font-size: 0.75rem;
 
           li {
             margin: 0 2rem;
@@ -405,10 +444,15 @@ main {
     #home {
       max-width: 100vw;
       width: 100vw;
+      margin: 0;
+      padding: 0;
+
       .intro {
         justify-items: center;
         align-items: center;
         justify-content: center;
+        margin: 0;
+        padding: 0;
         h1 {
           margin: 0;
           padding: 0;
@@ -435,11 +479,12 @@ main {
 
     #about {
       div {
+        flex-direction: column;
         img {
           width: 7rem;
         }
         blockquote {
-          font-size: 0.75rem;
+          font-size: 1rem;
         }
       }
     }

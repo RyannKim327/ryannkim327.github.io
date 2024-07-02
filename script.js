@@ -77,6 +77,13 @@ window.onload = () => {
       const locator = mgaAnak[i].getAttribute("data-location")
       window.open(locator, '_blank').focus()
     }
+    mgaAnak[i].onmouseout = () => {
+      $("#projects").style.backgroundImage = "";
+    }
+    mgaAnak[i].onmouseover = () => {
+      const anakis = mgaAnak[i].children[0].src
+      $("#projects").style.backgroundImage = `url("${anakis}")`
+    }
   }
 
   /* TODO: I comment para magamit
