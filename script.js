@@ -86,6 +86,27 @@ window.onload = () => {
     }
   }
 
+  let random = 0
+  setInterval(() => {
+    const stacks = [
+      "HTML, CSS, JavaScript",
+      "HTML, CSS, JavaScript, PHP, MySQL",
+      "HTML, CSS, JavaScript, Django, SQLite",
+      "Django, ReactJs, Tailwind",
+      "Java (Android)",
+      "Kotlin (Andriod)",
+      "JavaScript (NodeJs), ReactJs, Express",
+      "Python Desktop Application (GUI)",
+      "Java Desktop Application",
+      "Python Flask",
+      "Python (PyGame)",
+      "Typescript, NodeJs",
+      "WebScraping (Python and NodeJs)"
+    ]
+    $("#stack").textContent = `Uses: ${stacks[random % stacks.length]}`
+    random++
+  }, 5000)
+
   /* TODO: I comment para magamit
    * $("#email_form").onsubmit = async () => {
     return
