@@ -118,12 +118,13 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     .intro {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-content: center;
       box-sizing: border-box;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
@@ -137,13 +138,13 @@ main {
 
       h1 {
         font-variant: small-caps;
-        font-size: 5rem;
+        font-size: 4rem;
         color: #e0e1dd;
       }
 
       h3 {
         color: #778da9;
-        font-size: 3rem;
+        font-size: 2rem;
         font-variant: small-caps;
         padding: 0 1.5rem;
         text-shadow: 1px 1px 3px #00300090;
@@ -153,10 +154,16 @@ main {
       p {
         font-family: "Times New Roman", serif;
         color: #778da9;
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: bold;
         padding-top: 2rem;
       }
+    }
+    img {
+      background-color: #e0e1dd;
+      width: 25%;
+      border-radius: 0.5rem;
+      filter: drop-shadow(3px 3px 8px #333333);
     }
   }
 
@@ -195,10 +202,11 @@ main {
       img {
         aspect-ratio: 1 / 1;
         width: 15rem;
+        padding: 0.5rem;
       }
 
       blockquote {
-        font-size: 1.5rem;
+        font-size: 1rem;
         width: 50%;
       }
     }
@@ -355,6 +363,10 @@ main {
     display: flex;
     flex-direction: column;
     width: 100vw;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -372,6 +384,7 @@ main {
       align-items: center;
       background-color: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(1px);
+      box-sizing: border-box;
 
       .container {
         display: flex;
