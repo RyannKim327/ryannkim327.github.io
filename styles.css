@@ -23,6 +23,36 @@ body {
   width: 100vw;
   position: fixed;
   z-index: -1;
+
+  > .raindrop {
+    background-color: lightblue;
+    position: relative;
+    /* border-radius: 100% 5% 100% 50%; */
+    /* padding: 0.15rem 0.5rem; */
+    animation-name: drop;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    color: white;
+    opacity: 0;
+    background-color: transparent;
+    white-space: nowrap;
+  }
+}
+
+@keyframes drop {
+  0% {
+    top: -15%;
+    opacity: 0.9;
+    transform: rotate(45deg);
+  }
+  50% {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
 }
 
 /* Header */
@@ -58,6 +88,7 @@ main {
       display: flex;
       flex-direction: row;
       align-items: center;
+      padding: 0 0.75rem;
 
       img {
         width: 2.5rem;
@@ -159,6 +190,7 @@ main {
         padding-top: 2rem;
       }
     }
+
     img {
       background-color: #e0e1dd;
       width: 25%;
@@ -177,9 +209,8 @@ main {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    align-content: center;
     justify-content: space-evenly;
+    align-items: center;
     justify-items: center;
 
     .title {
@@ -216,7 +247,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 
     div {
       display: flex;
@@ -365,7 +396,7 @@ main {
     width: 100vw;
     align-content: center;
     justify-content: center;
-    align-items: center;
+    align-items: space-evenly;
     justify-items: center;
     background-position: center;
     background-attachment: fixed;
@@ -554,19 +585,27 @@ main {
 
     #projects {
       #project-contents {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: auto auto;
         box-sizing: border-box;
         overflow: scroll;
 
         .container {
           display: flex;
           flex-direction: column;
-          width: 80%;
-          height: 100vh;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+          justify-items: center;
+          aspect-ratio: 3 / 2;
+
+          .name {
+            margin: 0;
+            font-size: small;
+          }
 
           img {
-            height: 100%;
+            width: 100%;
             aspect-ratio: 3 / 2;
           }
         }

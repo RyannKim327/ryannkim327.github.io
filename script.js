@@ -63,14 +63,36 @@ function validation(e, type){
   }
 }
 
-function nav_toggle(){
-  const navs = $("#navs")
-  if(navs.style.display == "none"){
-    
+function moving_anims(){
+  // TODO: Create a simple raindrop animation
+  
+  // INFO: Lists of some jokes and random text related to programming
+  const tags = [
+    "print(\"Hello World\")",
+    "if(hindi_ka_nya_gusto)",
+    "// Kinomment baka magamit",
+    "<p>This is Paragraph</p>",
+    "<marquee>Umaandar gar</marquee>",
+    "DELETE * FROM past WHERE memories = 'bad';",
+    "Syntax Error: Wala yong semi-color mo",
+    "Indentation Error: I need some space",
+    "ArrayOutOfBounce: Ikaw na ang magbounce gar."
+  ]
+  
+  const a = $("#moving-randoms")
+  for(let _ = 0; _ < 50; _++){
+    const b = document.createElement("span")
+    b.classList.add("raindrop")
+    b.style.animationDuration = `${(Math.random() * 15) + 5}s`
+    b.style.margin = Math.floor(Math.random() * window.innerWidth)
+    b.textContent = tags[Math.floor(Math.random() * tags.length)]
+    a.appendChild(b)
   }
 }
 
 window.onload = () => {
+  scroll_("#home")
+  moving_anims()
   const mgaAnak = document.querySelectorAll(".references")
   for(let i in mgaAnak){
     mgaAnak[i].onclick = () => {
