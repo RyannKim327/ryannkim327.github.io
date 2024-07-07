@@ -9,6 +9,7 @@ function scroll_(identity){
 }
 
 function validation(e, type){
+  // TODO: Create an input validator for form (Contact us section)
   if(!type) type = "input"
   const _parent = $("#email_form")
   if(_parent.children.length > 3){
@@ -79,11 +80,13 @@ function moving_anims(){
     "ArrayOutOfBounce: Ikaw na ang magbounce gar.",
     "git commit -m \"ent na sana kaso baka mawala pa sya sa akin\"",
     "git push origin to-her-heart",
-    "HelloWorld(\"print\")"
+    "HelloWorld(\"print\")",
+    "public static void main(Stirng[] args)"
   ]
-  
+
+  // TODO: Create a random programming related texts as background and animations.
   const a = $("#moving-randoms")
-  for(let _ = 0; _ < 100; _++){
+  for(let _ = 0; _ < 50; _++){
     const b = document.createElement("span")
     
     const ad = (Math.random() * 15) + 15
@@ -92,15 +95,16 @@ function moving_anims(){
     b.style.animationDuration = `${ad}s`
     b.style.fontSize = `${(Math.random() * 45) + 5}px`
     b.style.top = `${(Math.random() * (window.innerHeight)) - 200}px`
-    b.style.left = `${(Math.random() * (window.innerWidth)) - 500}px`
-
+    b.style.left = `${(Math.random() * (window.innerWidth)) - 1000}px`
+    b.textContent = tags[Math.floor(Math.random() * tags.length)]
+    
     setInterval(() => {
       b.style.fontSize = `${(Math.random() * 45) + 5}px`
       b.style.top = `${(Math.random() * (window.innerHeight)) - 200}px`
-      b.style.left = `${(Math.random() * (window.innerWidth)) - 500}px`
+      b.style.left = `${(Math.random() * (window.innerWidth)) - 1000}px`
+      b.textContent = tags[Math.floor(Math.random() * tags.length)]
     }, ad * 1000)
-    
-    b.textContent = tags[Math.floor(Math.random() * tags.length)]
+
     a.appendChild(b)
   }
 }

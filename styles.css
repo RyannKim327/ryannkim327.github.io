@@ -16,6 +16,8 @@
 body {
   background-color: #1b263b;
   color: #e0e1dd;
+  width: 100vw;
+  height: 100vh;
 }
 
 #moving-randoms {
@@ -40,7 +42,7 @@ body {
     opacity: 0;
   }
   50% {
-    opacity: 0.25;
+    opacity: 0.5;
   }
   100% {
     opacity: 0;
@@ -184,7 +186,7 @@ main {
     }
 
     img {
-      background-color: #e0e1dd;
+      background-color: #e0e1dd50;
       width: 25%;
       border-radius: 0.5rem;
       filter: drop-shadow(3px 3px 8px #333333);
