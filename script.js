@@ -89,7 +89,7 @@ function moving_anims(){
   for(let _ = 0; _ < 50; _++){
     const b = document.createElement("span")
     
-    const ad = (Math.random() * 15) + 15
+    const ad = (Math.random() * 5) + 15
     
     b.classList.add("wisdom")
     b.style.animationDuration = `${ad}s`
