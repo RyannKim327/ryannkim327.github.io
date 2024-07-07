@@ -73,18 +73,33 @@ function moving_anims(){
     "// Kinomment baka magamit",
     "<p>This is Paragraph</p>",
     "<marquee>Umaandar gar</marquee>",
-    "DELETE * FROM past WHERE memories = 'bad';",
+    "DELETE FROM past WHERE memories = 'bad';",
     "Syntax Error: Wala yong semi-color mo",
     "Indentation Error: I need some space",
-    "ArrayOutOfBounce: Ikaw na ang magbounce gar."
+    "ArrayOutOfBounce: Ikaw na ang magbounce gar.",
+    "git commit -m \"ent na sana kaso baka mawala pa sya sa akin\"",
+    "git push origin to-her-heart",
+    "HelloWorld(\"print\")"
   ]
   
   const a = $("#moving-randoms")
-  for(let _ = 0; _ < 50; _++){
+  for(let _ = 0; _ < 100; _++){
     const b = document.createElement("span")
-    b.classList.add("raindrop")
-    b.style.animationDuration = `${(Math.random() * 15) + 5}s`
-    b.style.margin = Math.floor(Math.random() * window.innerWidth)
+    
+    const ad = (Math.random() * 15) + 15
+    
+    b.classList.add("wisdom")
+    b.style.animationDuration = `${ad}s`
+    b.style.fontSize = `${(Math.random() * 45) + 5}px`
+    b.style.top = `${(Math.random() * (window.innerHeight)) - 200}px`
+    b.style.left = `${(Math.random() * (window.innerWidth)) - 500}px`
+
+    setInterval(() => {
+      b.style.fontSize = `${(Math.random() * 45) + 5}px`
+      b.style.top = `${(Math.random() * (window.innerHeight)) - 200}px`
+      b.style.left = `${(Math.random() * (window.innerWidth)) - 500}px`
+    }, ad * 1000)
+    
     b.textContent = tags[Math.floor(Math.random() * tags.length)]
     a.appendChild(b)
   }

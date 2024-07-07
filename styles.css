@@ -24,33 +24,25 @@ body {
   position: fixed;
   z-index: -1;
 
-  > .raindrop {
-    background-color: lightblue;
+  > .wisdom {
     position: relative;
-    /* border-radius: 100% 5% 100% 50%; */
-    /* padding: 0.15rem 0.5rem; */
-    animation-name: drop;
+    animation-name: fade;
     animation-delay: 1s;
     animation-iteration-count: infinite;
     color: white;
     opacity: 0;
-    background-color: transparent;
     white-space: nowrap;
   }
 }
 
-@keyframes drop {
+@keyframes fade {
   0% {
-    top: -15%;
-    opacity: 0.9;
-    transform: rotate(45deg);
+    opacity: 0;
   }
   50% {
-    opacity: 0;
-    transform: rotate(180deg);
+    opacity: 0.25;
   }
   100% {
-    top: 100%;
     opacity: 0;
   }
 }
