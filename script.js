@@ -75,13 +75,13 @@ function moving_anims(){
     "<p>This is Paragraph</p>",
     "<marquee>Umaandar gar</marquee>",
     "DELETE FROM past WHERE memories = 'bad';",
-    "Syntax Error: Wala yong semi-color mo",
+    "Syntax Error: Wala yong semi-colon mo",
     "Indentation Error: I need some space",
     "ArrayOutOfBounce: Ikaw na ang magbounce gar.",
     "git commit -m \"ent na sana kaso baka mawala pa sya sa akin\"",
     "git push origin to-her-heart",
     "HelloWorld(\"print\")",
-    "public static void main(Stirng[] args)"
+    "public static void main(String[] args)"
   ]
 
   // TODO: Create a random programming related texts as background and animations.
