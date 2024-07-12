@@ -68,20 +68,21 @@ main {
 
   > header {
     background-color: #66666690;
-    background-image: linear-gradient(to bottom, #011627ef, #1b263bef);
+    background-image: linear-gradient(to bottom, #011627de, #1b263bde);
     color: #ffffff;
     display: flex;
     flex-direction: row;
-    width: 100vw;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem;
     position: sticky;
+    left: 0;
+    right: 0;
     top: 0;
+    margin: 0 0.5rem;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     box-shadow: 0 0 3px #e0e1dd;
-    z-index: 1;
 
     .headings {
       display: flex;
@@ -135,6 +136,7 @@ main {
   > div {
     height: 100vh;
     box-sizing: border-box;
+    z-index: -1;
 
     .title {
       margin-top: 10%;
@@ -161,8 +163,6 @@ main {
       padding-left: 3rem;
 
       * {
-        /* border: 1px red solid; */
-        /* height: 100%; */
         max-width: 75%;
       }
 
@@ -453,6 +453,7 @@ main {
     flex-direction: row;
     justify-content: center;
     margin-top: 1.5rem;
+    padding: 1rem 0;
     text-align: center;
   }
 }
