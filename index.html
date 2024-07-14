@@ -1,219 +1,64 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>Ryann Kim Sesgundo is a Dev</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Ryann Kim Sesgundo is a Dev" />
-    <meta
-      name="description"
-      content="Hello, I am Ryann Kim Sesgundo, a web and android developer"
-    />
-    <meta
-      name="og:description"
-      content="Hello, I am Ryann Kim Sesgundo, a web and android developer"
-    />
-    <meta
-      name="og:keywords"
-      content="MPOP, MPOP Reverse, MPOP Reverse II, mpoprevii, sulat baybayin x, sulat baybayin, ryannkim327, mpop.ph"
-    />
-    <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
-    <link type="text/css" rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio</title>
+    <link href="assets/styles.css" rel="stylesheet" />
   </head>
-
   <body>
-    <div id="moving-randoms"></div>
-    <main>
-      <header>
-        <div class="headings">
-          <img src="assets/img/logo.jpg" alt="Logo of MPOP Reverse II" />
-          <div class="title">
-            <h1>My Sample Portfolio</h1>
-            <h3>Ryann Kim Sesgundo</h3>
-          </div>
-        </div>
-        <nav>
-          <span onclick="nav_toggle()">
-            <i class="fa-solid fa-bars"></i>
-          </span>
-          <ul id="navs">
-            <li onclick="scroll_('#home')">Home</li>
-            <li onclick="scroll_('#about')">About</li>
-            <li onclick="scroll_('#contact')">Contact</li>
-            <li onclick="scroll_('#projects')">Projects</li>
-          </ul>
-        </nav>
-      </header>
-
-      <div id="home">
-        <div class="intro">
-          <h3 class="title">I am</h3>
-          <h1>Ryann Kim M. Sesgundo</h1>
-          <p>A student of Dalubhasaan ng Lungsod ng Lucena</p>
-        </div>
-        <img
-          src="assets/img/ako-pero-transparent.png"
-          alt="Developer Profile Photo"
-        />
-      </div>
-      <div id="about">
-        <div class="title">
-          <h1>About</h1>
-          <p id="stack">A developer uses</p>
-        </div>
+    <div class="main-container">
+      <aside>
         <div>
-          <img src="assets/img/prof.jpg" alt="Developer Profile Photo(2)" />
-          <blockquote>
-            &emsp;I'm currently a second year student of Dalubhasaan ng Lungsod
-            ng Lucena, formerly City College of Lucena. I'm still trying to
-            learn more about these technologies, so that I can work and fit in
-            myself in any kind of work and technological fields.
-          </blockquote>
+          <img src="assets/img/prof.jpg" alt="Profile Photo" />
+          <h3>Ryann Kim M. Sesgundo</h3>
         </div>
-      </div>
-      <div id="contact">
-        <h1 class="title">Contact</h1>
-        <div>
-          <section>
-            <ul>
-              <li
-                class="references"
-                data-location="https://facebook.com/MPOP.ph"
-                id="facebook"
-              >
-                <i class="fa-brands fa-facebook"></i>
-                <label>@MPOP.ph</label>
-              </li>
-              <li
-                class="references"
-                data-location="https://github.com/RyannKim327"
-                id="github"
-              >
-                <i class="fa-brands fa-github"></i>
-                <label>@RyannKim327</label>
-              </li>
-              <li
-                class="references"
-                data-location="https://stackoverflow.com/users/12174634/ryannkim327"
-                id="stackoverflow"
-              >
-                <i class="fa-brands fa-stack-overflow"></i>
-                <label>@RyannKim327</label>
-              </li>
-              <li
-                class="references"
-                data-location="https://linkedin.com/in/RyannKim327"
-                id="linkedin"
-              >
-                <i class="fa-brands fa-linkedin"></i>
-                <label>@RyannKim327</label>
-              </li>
-              <li
-                class="references"
-                data-location="https://discord.com/channels/@RyannKim327"
-                id="discord"
-              >
-                <i class="fa-brands fa-discord"></i>
-                <label>@RyannKim327</label>
-              </li>
+      </aside>
+      <section>
+        <header>
+          <h1 id="Section">Welcome</h1>
+          <nav>
+            <ul id="navigation-list">
+              <li to="home" class="active">Home</li>
+              <li to="about">About</li>
+              <li to="experience">Experiences</li>
+              <li to="project">Projects</li>
+              <li to="contact">Contact</li>
             </ul>
-          </section>
-          <form
-            class="form"
-            id="email_form"
-            method="POST"
-            action="https://formsubmit.co/weryses19@gmail.com"
-          >
-            <label
-              ><i class="fa-solid fa-user"></i>
-              <input
-                onkeyup="validation(this)"
-                id="name"
-                type="text"
-                name="name"
-            /></label>
-            <label
-              ><i class="fa-solid fa-envelope"></i>
-              <input
-                onkeyup="validation(this)"
-                id="email"
-                type="email"
-                name="email"
-            /></label>
-            <textarea
-              row="5"
-              id="content"
-              onkeyup="validation(this, 'textarea')"
-              name="message"
-            ></textarea>
-          </form>
-        </div>
-      </div>
-      <div id="projects">
-        <h1 class="title">Projects</h1>
-        <div id="project-contents">
-          <div
-            class="container references"
-            data-location="https://chat-app-y7a7.onrender.com"
-            title="A realtime chat application made with NodeJS"
-          >
-            <img src="assets/projects/chatapp.png" alt="chatapp" />
-            <h3 class="name">Chat-App</h3>
+          </nav>
+        </header>
+        <main>
+          <div id="home" class="z ui">
+            <h1>Hello, I am Ryann Kim M. Sesgundo</h1>
+            <h3>A Web and Android Developer</h3>
           </div>
-          <div
-            class="container references"
-            data-location="https://ryannkim327.is-a.dev/Baybayin-Keyboard"
-            title="A web-based keyboard specialized for baybayin"
-          >
-            <img
-              src="assets/projects/baybayin-keyboard.png"
-              alt="Baybayin Keyboard"
-            />
-            <h3 class="name">Baybayin Keyboard</h3>
+          <div id="about" class="z">
+            <p>Hello World</p>
           </div>
-          <div
-            class="container references"
-            data-location="https://ryannkim327.is-a.dev/FacebookBot"
-            title="A web-based information for my facebook bot"
-          >
-            <img
-              src="assets/projects/aria-bot.png"
-              alt="AR!A Bot Web interface"
-            />
-            <h3 class="name">ar!a bot (web)</h3>
+          <div id="experience" class="z">
+            <div>
+              <span>
+                <h3>2016</h3>
+                <h6>Where Everything Starts</h6>
+              </span>
+              <span>
+                <h3>2017</h3>
+                <h6>Where she go to me</h6>
+              </span>
+            </div>
           </div>
-          <div
-            class="container references"
-            data-location="https://ryannkim327.is-a.dev/Web-Challenges-for-Newbie"
-            title="A project-compillation repository developed for newbies"
-          >
-            <img
-              src="assets/projects/web-samples.png"
-              alt="Web Challenges for Newbies"
-            />
-            <h3 class="name">Web challenges</h3>
+          <div id="project" class="z">
+            <p>Projects</p>
           </div>
-          <div
-            class="container references"
-            data-location="https://github.com/RyannKim327/video-downloader-extension/releases/"
-            title="A Browser Extension designed to download files from different platforms"
-          >
-            <img src="assets/projects/avd-ext.png" alt="AVD Chrome Extension" />
-            <h3 class="name">AVD Chrome Extension</h3>
+          <div id="contact" class="z">
+            <p>Contact</p>
           </div>
-          <div
-            class="container references"
-            data-location="https://github.com/RyannKim327/Ai-Haibara/raw/main/app.apk"
-            title="An android application where you can use an AI"
-          >
-            <img src="assets/projects/ai-haibara.png" alt="Ai Haibara" />
-            <h3 class="name">Ai Haibara</h3>
-          </div>
-        </div>
-      </div>
-      <footer>
-        <h3>Developed under the name of MPOP Reverse II</h3>
-      </footer>
-    </main>
-    <script src="script.js"></script>
+        </main>
+      </section>
+    </div>
+    <footer>
+      <h3 id="developer">Developed by RyannKim327</h3>
+    </footer>
+    <script src="assets/script.js"></script>
   </body>
 </html>
