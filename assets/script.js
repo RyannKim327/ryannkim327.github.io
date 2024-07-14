@@ -35,6 +35,7 @@ window.onload = () => {
     const to = e.getAttribute("to")
     e.onclick = () => {
       show(to)
+      $("#section").textContent = to[0].toUpperCase() + to.substring(1)
       for(let i = 0; i < el.length; i++){
         el[i].classList.remove("active")
       }
