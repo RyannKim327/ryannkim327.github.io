@@ -205,12 +205,13 @@ body {
           grid-template-columns: auto auto auto;
           width: 100%;
           box-sizing: border-box;
+          gap: 10px;
 
           > div{
             aspect-ratio: 16 / 9;
-            width: 30%;
+            width: 100%;
             box-sizing: border-box;
-
+            
             > img{
               width: 100%;
             }
