@@ -26,6 +26,16 @@ function show(ui){
   }
 }
 
+function languages(){
+  const l = $("#languages")
+  setInterval(() => {
+    const u = [
+      ["html5", "css", "js"],
+      ["html5", "css", "js", "php", "mysql"]
+    ]
+  })
+}
+
 window.onload = () => {
   const navs = document.getElementById("navigation-list")
   const el = navs.children
@@ -43,6 +53,8 @@ window.onload = () => {
     }
   }
 
+  languages()
+
   // TODO: To Automate things
   const current = new Date()
   const year = new Date([2001, 4, 27])
@@ -52,3 +64,5 @@ window.onload = () => {
   $("#hs").textContent = "Highschool: Calubcub 1.0 National Highschool"
   $("#elem").textContent = "Elementary: Bataan Elementary School"
 }
+
+
