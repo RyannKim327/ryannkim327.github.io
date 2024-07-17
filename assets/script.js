@@ -28,12 +28,35 @@ function show(ui){
 
 function languages(){
   const l = $("#languages")
-  setInterval(() => {
+  const lang = () => {
+    l.innerHTML = ""
     const u = [
-      ["html5", "css", "js"],
-      ["html5", "css", "js", "php", "mysql"]
+      ["dev-html5", "dev-css3", "dev-javascript"],
+      ["dev-html5", "dev-css3", "dev-javascript", "dev-php", "dev-mysql"],
+      ["dev-html5", "dev-css3", "dev-javascript", "dev-django"],
+      ["dev-react", "md-tailwind", "dev-django"],
+      ["dev-java", "md-xml", "dev-android"],
+      ["dev-react", "md-nodejs"],
+      ["dev-html5", "dev-css3", "dev-javascript", "md-nodejs"],
+      ["dev-git", "cod-github"]
+      ["md-nodejs", "fa-npm"]
     ]
-  })
+    let m = Math.floor(Math.random() * u.length)
+    while(m >= u.length){
+      m = Math.floor(Math.random() * u.length)
+    }
+    const d = u[m]
+    for(let i = 0; i < d.length; i++){
+      const x = d[i]
+      const y = document.createElement("i")
+      y.classList.add("nf")
+      y.classList.add(`nf-${x}`)
+      y.textContent = x.match(/([\w])\-([\w]+)/i)[2]
+      l.appendChild(y)
+    }
+  }
+  lang()
+  setInterval(lang, 5000)
 }
 
 window.onload = () => {
