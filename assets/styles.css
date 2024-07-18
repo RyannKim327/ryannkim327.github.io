@@ -306,9 +306,9 @@ body {
                   display: flex;
                   flex-direction: row;
                   align-items: center;
-                  justify-content: flex-end;
+                  justify-content: space-between;
                   border-radius: 0.25rem;
-                  padding: 0.15rem;
+                  padding: 0.15rem 0.5rem;
                   box-shadow: 3px 3px 5px var(--shadow-color);
                   transition: width 0.5s ease;
                   margin: 0.5rem 0.75rem;
@@ -343,6 +343,10 @@ body {
                   background-color: transparent;
                   color: var(--color);
                   border: 0;
+                }
+
+                > input {
+                  padding: 0 0.5rem;
                 }
               }
               > textarea {

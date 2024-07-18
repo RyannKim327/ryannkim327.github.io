@@ -92,7 +92,7 @@ window.onload = () => {
   // TODO: To Automate things
   const current = new Date()
   const year = new Date([2001, 4, 27])
-  $("#age").textContent = `Age: ${current.getFullYear() - year.getFullYear()}`
+  $("#age").innerHTML += `${current.getFullYear() - year.getFullYear()}`
   $("#college").textContent = "College: Dalubhasaan ng Lungsod ng Lucena"
   $("#shs").textContent = "Senior High: AMA Computer Colleges"
   $("#hs").textContent = "Highschool: Calubcub 1.0 National Highschool"
