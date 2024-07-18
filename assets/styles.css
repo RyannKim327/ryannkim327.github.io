@@ -24,6 +24,7 @@
   box-sizing: border-box;
   outline: none;
   user-select: none;
+  resize: none;
 }
 
 body {
@@ -267,6 +268,79 @@ body {
                   list-style: none;
                 }
               }
+            }
+          }
+        }
+
+        > #contact {
+          display: flex;
+          flex-direction: row;
+
+          > .left-wing {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 25%;
+
+            > ul {
+              list-style: none;
+
+              > li {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+                border-radius: 0.25rem;
+                padding: 0.15rem;
+                /* box-shadow: 3px 3px 5px var(--shadow-color); */
+                transition: width 0.5s ease;
+                margin: 0.5rem 0.75rem;
+
+                > span {
+                  padding: 0 0.5rem;
+                  overflow: hidden;
+                  display: none;
+                  transition: 0.5s;
+                }
+              }
+
+              > #fb:hover,
+              > #gh:hover,
+              > #sof:hover,
+              > #dc:hover,
+              > #in:hover {
+                margin: 0 0.75rem;
+                box-shadow: 3px 3px 5px var(--shadow-color);
+
+                > span {
+                  display: inline;
+                  transition: 0.5s;
+                }
+              }
+            }
+          }
+
+          form {
+            display: flex;
+            flex-direction: column;
+
+            > label,
+            > textarea,
+            input[type="submit"] {
+              border-radius: 0.5rem;
+              box-shadow: 3px 3px 5px var(--shadow-color);
+              padding: 0.15rem 0.5rem;
+
+              > input,
+              ~ textarea,
+              ~ input[type="submit"] {
+                background-color: transparent;
+                color: var(--color);
+                border: 0;
+              }
+            }
+            > textarea {
+              height: 4rem;
             }
           }
         }

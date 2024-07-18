@@ -59,6 +59,16 @@ function languages(){
   setInterval(lang, 5000)
 }
 
+function references(){
+  const refs = document.getElementsByClassName("references")
+  for(let i = 0; i < refs.length; i++){
+    const ref = refs[i]
+    ref.onclick = () => {
+      window.open(ref.getAttribute("url"), "_blank").focus()
+    }
+  }
+}
+
 window.onload = () => {
   const navs = document.getElementById("navigation-list")
   const el = navs.children
@@ -77,6 +87,7 @@ window.onload = () => {
   }
 
   languages()
+  references()
 
   // TODO: To Automate things
   const current = new Date()

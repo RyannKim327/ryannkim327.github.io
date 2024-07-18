@@ -181,6 +181,7 @@
             <div
               class="references"
               url="https://ryannkim327.is-a.dev/Baybayin-Keyboard"
+              title="A web-based keyboard with Baybayin Characters"
             >
               <img
                 src="assets/projects/baybayin-keyboard.png"
@@ -191,6 +192,7 @@
             <div
               class="references"
               url="https://ryannkim327.is-a.dev/FacebookBot"
+              title="A Facebook Bot develoepd with NodeJS"
             >
               <img src="assets/projects/aria-bot.png" alt="Aria Bot" />
               <h3>Aria Bot</h3>
@@ -198,6 +200,7 @@
             <div
               class="references"
               url="https://github.com/RyannKim327/video-downloader-extension/releases"
+              title="A Chromium Extension for browser to download audio and videos."
             >
               <img src="assets/projects/avd-ext.png" alt="AVD Extension" />
               <h3>AVD Chrome Extension</h3>
@@ -205,20 +208,23 @@
             <div
               class="references"
               url="https://github.com/RyannKim327/Ai-Haibara/raw/main/app.apk"
+              title="An android application with AI implemented powered by Hercai"
             >
               <img src="assets/projects/ai-haibara.png" alt="Ai Haibara" />
               <h3>AI Haibara</h3>
             </div>
             <div
               class="references"
-              url="https://github.com/RyannKim327/Ai-Haibara/raw/main/app.apk"
+              url="https://chat-app-y7a7.onrender.com"
+              title="A real-time chat application developed with NodeJS"
             >
-              <img src="assets/projects/chatapp.png" alt="Ai Haibara" />
-              <h3>AI Haibara</h3>
+              <img src="assets/projects/chatapp.png" alt="Chat-app" />
+              <h3>Chat-app<h3>
             </div>
             <div
               class="references"
               url="https://ryannkim327.is-a.dev/Web-Challenges-for-Newbie"
+              title="A web-based compillation project for newbies"
             >
               <img
                 src="assets/projects/web-samples.png"
@@ -228,6 +234,50 @@
             </div>
           </div>
           <div id="contact" class="z">
+            <div class="left-wing">
+              <ul>
+                <li
+                  class="references"
+                  id="fb"
+                  url="https://facebook.com/MPOP.ph"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                  <span>@MPOP.ph</span>
+                </li>
+                <li
+                  class="references"
+                  id="gh"
+                  url="https://github.com/RyannKim327"
+                >
+                  <i class="fa-brands fa-github"></i>
+                  <span>@RyannKim327</span>
+                </li>
+                <li
+                  class="references"
+                  id="sof"
+                  url="https://stackoverflow.com/users/12174634/ryannkim327"
+                >
+                  <i class="fa-brands fa-stack-overflow"></i>
+                  <span>@RyannKim327</span>
+                </li>
+                <li
+                  class="references"
+                  id="in"
+                  url="https://linkedin.com/in/RyannKim327"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                  <span>@RyannKim327</span>
+                </li>
+                <li
+                  class="references"
+                  id="dc"
+                  url="https://discord.com/channels/@RyannKim327"
+                >
+                  <i class="fa-brands fa-discord"></i>
+                  <span>@RyannKim327</span>
+                </li>
+              </ul>
+            </div>
             <form
               class="form"
               id="email_form"
@@ -237,19 +287,19 @@
               <label>
                 <i class="fa-solid fa-user"></i>
                 <input
-                  onkeyup="validation(this)"
                   id="name"
                   type="text"
                   name="name"
+                  required
                 />
               </label>
               <label>
                 <i class="fa-solid fa-envelope"></i>
                 <input
-                  onkeyup="validation(this)"
                   id="email"
                   type="email"
                   name="email"
+                  required
                 />
               </label>
               <textarea
@@ -257,7 +307,9 @@
                 id="content"
                 onkeyup="validation(this, 'textarea')"
                 name="message"
+                required
               ></textarea>
+              <input type="submit" value="Send Email" />
             </form>
           </div>
         </main>
