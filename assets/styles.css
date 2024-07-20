@@ -116,7 +116,7 @@ body {
         }
 
         > nav {
-          background-color: var(--background-nav);
+          /* background-color: var(--background-nav); */
           border-radius: 0.25rem 0.25rem 0 0.25rem;
           margin: -0.25rem;
           padding: 0;
@@ -124,13 +124,24 @@ body {
           > ul {
             display: flex;
             flex-direction: row;
+            border-left: 1px var(--background-nav) solid;
+            border-bottom: 1px var(--background-nav) solid;
+            border-radius: 0 0 0 0.25rem;
 
             > li {
               list-style: none;
               padding: 0.5rem 0.75rem;
               cursor: pointer;
-              transition: background-color 1s;
-              margin-top: 0.25rem !important;
+              transition: color 0.5s;
+            }
+
+            > li::after {
+              background-color: var(--background-nav);
+              content: "";
+              display: block;
+              height: 2px;
+              width: 0;
+              transition: width 0.5s;
             }
 
             > li:first-child {
@@ -146,9 +157,12 @@ body {
             }
 
             > .active {
-              border-radius: 0.25rem 0.25rem 0 0;
-              background-color: var(--background);
-              transition: background-color 1s;
+              color: var(--background-nav);
+            }
+
+            > .active::after {
+              background-color: var(--background-nav);
+              width: 100%;
             }
           }
         }
