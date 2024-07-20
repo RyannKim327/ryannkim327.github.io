@@ -42,7 +42,7 @@ function languages(){
       ["md-nodejs", "fa-npm"]
     ]
     let m = Math.floor(Math.random() * u.length)
-    while(m >= u.length){
+    while(!u[m]){
       m = Math.floor(Math.random() * u.length)
     }
     const d = u[m]
@@ -89,14 +89,4 @@ window.onload = () => {
   languages()
   references()
 
-  // TODO: To Automate things
-  const current = new Date()
-  const year = new Date([2001, 4, 27])
-  $("#age").innerHTML += `${current.getFullYear() - year.getFullYear()}`
-  $("#college").textContent = "College: Dalubhasaan ng Lungsod ng Lucena"
-  $("#shs").textContent = "Senior High: AMA Computer Colleges"
-  $("#hs").textContent = "Highschool: Calubcub 1.0 National Highschool"
-  $("#elem").textContent = "Elementary: Bataan Elementary School"
 }
-
-

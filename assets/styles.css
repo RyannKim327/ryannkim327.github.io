@@ -72,7 +72,30 @@ body {
         > ul {
           > li {
             list-style: none;
-            font-size: small;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+
+            > span {
+              box-shadow: 3px 3px 5px var(--shadow-color);
+              border-radius: 0.5rem;
+              color: var(--background-nav);
+              padding: 0.25rem;
+              display: flex;
+              width: 2.25rem;
+              align-items: center;
+              justify-content: center;
+              box-sizing: border-box;
+              aspect-ratio: 1 / 1;
+              margin: 0.25rem;
+
+              > i:before,
+              > i,
+              > i:after {
+                font-size: large;
+                color: var(--background-nav);
+              }
+            }
           }
         }
       }
@@ -94,7 +117,9 @@ body {
 
         > nav {
           background-color: var(--background-nav);
-          border-radius: 0.25rem 0.5rem 0 0.25rem;
+          border-radius: 0.25rem 0.25rem 0 0.25rem;
+          margin: -0.25rem;
+          padding: 0;
 
           > ul {
             display: flex;
@@ -239,7 +264,7 @@ body {
 
               > ul {
                 > li {
-                  margin-right: 1.5rem;
+                  margin-left: 1.5rem;
                   list-style: none;
                 }
               }
