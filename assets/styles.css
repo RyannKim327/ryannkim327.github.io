@@ -6,6 +6,7 @@
   --color: #ffffff;
   --background-nav: #76abae;
   --shadow-color: #111420;
+  --inset-shadow: #386769;
 }
 
 ::-webkit-scrollbar {
@@ -39,7 +40,9 @@ body {
     > * {
       margin: 0.5rem;
       border-radius: 0.5rem;
-      box-shadow: 3px 3px 8px var(--shadow-color);
+      box-shadow:
+        3px 3px 8px var(--shadow-color),
+        1px 1px 1px inset var(--inset-shadow);
       padding: 0.25rem;
       height: calc(100% - 1rem);
     }
@@ -124,8 +127,9 @@ body {
           > ul {
             display: flex;
             flex-direction: row;
-            border-left: 1px var(--background-nav) solid;
-            border-bottom: 1px var(--background-nav) solid;
+            /* border-left: 1px var(--background-nav) solid; */
+            /* border-bottom: 1px var(--background-nav) solid; */
+            box-shadow: -3px 3px 3px var(--inset-shadow);
             border-radius: 0 0 0 0.25rem;
 
             > li {
@@ -318,9 +322,13 @@ body {
           align-items: center;
 
           > iframe {
-            width: 100%;
+            width: calc(100% - 1rem);
+            margin: -0.5rem;
             aspect-ratio: 10 / 2;
             filter: grayscale(1) invert(1);
+            border-radius: 0.5rem;
+            border: none;
+            box-sizing: border-box;
           }
 
           > div {
@@ -386,6 +394,8 @@ body {
 
                 > input {
                   padding: 0 0.5rem;
+                  width: 100%;
+                  box-sizing: border-box;
                 }
               }
               > textarea {
@@ -422,7 +432,9 @@ body {
     align-items: center;
     height: 2rem;
     margin: 0.5rem;
-    box-shadow: 3px 3px 8px var(--shadow-color);
+    box-shadow:
+      3px 3px 8px var(--shadow-color),
+      1px 1px 1px inset var(--inset-shadow);
     border-radius: 0.5rem;
   }
 }

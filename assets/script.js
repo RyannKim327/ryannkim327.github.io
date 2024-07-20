@@ -94,4 +94,8 @@ window.onload = () => {
   languages()
   references()
 
+  // TODO: To create something that I don't know how
+  const _self = $("#my-name")
+  const text = _self.getAttribute("text")
+  _self.textContent = text
 }
