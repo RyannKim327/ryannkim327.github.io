@@ -95,7 +95,36 @@ window.onload = () => {
   references()
 
   // TODO: To create something that I don't know how
-  const _self = $("#my-name")
-  const text = _self.getAttribute("text")
-  _self.textContent = text
+  print()
+}
+function print(){
+  const _ = $("#my-name")
+  const text = _.getAttribute("text")
+  const w = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz0123456789.,/?+=_-!@#$%^&*()[]{}~"
+  let x = 0
+  
+  // NOTE: If it works, don't touch it
+  function run(){
+    let y = 0
+    function run1(){
+      if(_.textContent.endsWith("_")){
+        _.textContent = _.textContent.substring(0, _.textContent.length - 1)
+      }
+      _.textContent += w[y]
+      if(text[x] != w[y]){
+        setTimeout(() => {
+          _.textContent = _.textContent.substring(0, _.textContent.length - 1) + "_"
+          y++
+          setTimeout(run1, 5)
+        })
+      }else{
+        x++
+        setTimeout(run, 5)
+      }
+    }
+    if(x < text.length){
+      run1()
+    }
+  }
+  run()
 }

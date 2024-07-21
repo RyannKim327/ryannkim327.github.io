@@ -203,6 +203,7 @@ body {
         > #home {
           > h1 {
             font-size: xx-large;
+            box-sizing: border-box;
           }
         }
 
