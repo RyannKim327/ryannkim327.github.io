@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 
-import Index from './layout/index'
+import Index from './components/index'
 
 const App = () => {
   return (
