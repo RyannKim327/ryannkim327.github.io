@@ -2,9 +2,9 @@
 const Header = () => {
   return (
     <div className="p-2 flex justify-between">
-      <h3>Title</h3>
+      <h3 className="text-base">{(document.title) ?? "I am RyannKim327"}</h3>
       <nav className="rounded-bl-lg border-white">
-        test
+        {(document.title) ?? "I am Ryann Kim Sesgundo"}
       </nav>
     </div>
   )
