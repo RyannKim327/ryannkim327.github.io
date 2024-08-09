@@ -1,17 +1,56 @@
-### My Portfolio
-#### MPOP Reverse II (Ryann Kim Sesgundo)
+### Ryann Kim Sesgundo's portfolio
+#### MPOP Reverse II [Ryann Kim Sesgundo]
+
+![](https://wakatime.com/badge/github/RyannKim327/ryannkim327.github.io.svg?style=for-the-badge)
 
 ---
 ### Introduction
-> This is just my personal portfolio, which I've started few months ago. The repository was all made with HTML, CSS and JavaScript. As I want to practice more about web designing, I've created this repository. For more, kindly visit facebook.com/MPOP.ph or check out my other account facebook.com/kyrios.afxisi. For the layout and design: [Kindly visit this figma link](https://www.figma.com/file/SkkloHl7FTAHUUrJdes4Mt/portfolio?type=design&node-id=0-1&mode=design&t=t5gSEk33pexBmb9s-0)
+> So from my nth version of portfolio which build with `HTML`, `CSS`, and `JavaScript`, I've decided to use `ReactJs` and `TailwindCSS` for the front-end.
+This is just to adopt the current and latest technologies, and to practice migrations for me to enhance my skills in programming and critical thinking.
 
 ---
-### Code Inspiration
-> As being a so-called programmer, I want to explore the different layout and UI in making not just Portfolio, but also in other types of design.
-As how I construct the code, and added different comments, I want to share what I gain since 2016 when I started the basics of HTML. By building with
-different stack, frameworks and libraries. The main idea of the current design of the portfolio came from [`Richard Hanrick`](https://codewithsadee.github.io/vcard-personal-portfolio/).
-As I was inspired with his portfolio, I tried to create almost same as his design, but still plugged with different so that I may able to add some originality
-thou I copied the concept the portfolio or what he called `vcard`, I still added him in the credits as the owner of the current design used.
+### Inspiration
+> This portfolio was originally idea from `Sir Richard Henrick`, which I don't claim as mine. This was just professional looking, as well as complete
+design practice for some web designs based on my taste and experience.
+
+---
+### Github deployment
+1. Install gh-pages using `npm install --save-dev gh-pages`
+2. Edit `homepage` from your `package.json` like this example
+```JSON
+"homepage": "https://<github_username>.github.io/"
+```
+3. Add these scripts in your `package.json` under script key
+```JSON
+"scripts": {
+  ...,
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+```
+4. Execute to your terminal `npm run build`
+5. Push to your github
+6. Deploy with Github Pages `npm run deploy`
+7. Go to your repository settings, go to `Pages`, and choose gh-pages into the `Branch` section
+
+
+---
+### Credits
+
+1. Sir Gem Rey Rañola
+2. Sir Leonard Mesiera
+3. Sir John Rovie Balingbing
+4. Code with Mosh
+5. Sir Menard Menemedez
+6. Sir Richard Henrick
+
+7. John Roy Lapida Calimlim
+8. Salvador
+9. Mart Anthony Salazar
+10. Sanz Dinopol
+
+11. BossRod [Roderick Alcantara]
+12. Kuya Dev
 
 ---
 ### License
