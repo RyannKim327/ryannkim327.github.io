@@ -7,7 +7,7 @@ const Index = () => {
   document.title = "I am Ryann Kim Sesgundo"
   return (
     <div
-      className="main-layout w-100">
+      className="main-layout w-screen h-screen">
       <Left />
       <Right />
       <Footer />

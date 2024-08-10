@@ -25,7 +25,7 @@ const Footer = () => {
   }, [toggle])
 
   return (
-    <div className="footer custom-shadow roboto-slab rounded w-auto text-center m-2 p-2">
+    <div className="footer custom-shadow roboto-slab rounded w-auto text-center h-fit m-2 p-2">
       <h3>{credits}</h3>
     </div>
   )
