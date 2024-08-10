@@ -1,7 +1,7 @@
 import SetTitle from "../utils/title";
 import { motion } from "framer-motion";
 import avd from "../assets/projects/avd-ext.png";
-import ai from "../assets/projects/aria-bot.png";
+import ai from "../assets/projects/ai-haibara.png";
 import aria from "../assets/projects/aria-bot.png";
 import baybayin from "../assets/projects/baybayin-keyboard.png";
 import websamples from "../assets/projects/web-samples.png";
