@@ -1,17 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.abba318f.css",
-    "main.js": "/static/js/main.38d789fa.js",
+    "main.css": "/static/css/main.dcbf8293.css",
+    "main.js": "/static/js/main.ae65c3d4.js",
     "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
+    "static/media/chatapp.png": "/static/media/chatapp.b4d7653d6ac692d3b867.png",
+    "static/media/aria-bot.png": "/static/media/aria-bot.769d60d4a93b35eef7fa.png",
     "static/media/avd-ext.png": "/static/media/avd-ext.77122428e24f213af495.png",
+    "static/media/web-samples.png": "/static/media/web-samples.6dae11c9d2a31da56752.png",
+    "static/media/baybayin-keyboard.png": "/static/media/baybayin-keyboard.a0e40dbb91fe6fa76218.png",
     "static/media/prof.jpg": "/static/media/prof.a6174d32c1cc7a432481.jpg",
     "index.html": "/index.html",
-    "main.abba318f.css.map": "/static/css/main.abba318f.css.map",
-    "main.38d789fa.js.map": "/static/js/main.38d789fa.js.map",
+    "main.dcbf8293.css.map": "/static/css/main.dcbf8293.css.map",
+    "main.ae65c3d4.js.map": "/static/js/main.ae65c3d4.js.map",
     "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.abba318f.css",
-    "static/js/main.38d789fa.js"
+    "static/css/main.dcbf8293.css",
+    "static/js/main.ae65c3d4.js"
   ]
 }
