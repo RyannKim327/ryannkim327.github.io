@@ -1,7 +1,7 @@
 import SetTitle from "../utils/title";
 
 const About = () => {
-  SetTitle("About me");
+  SetTitle("About me", "about");
   return (
     <div>
       <h1>About</h1>

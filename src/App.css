@@ -27,6 +27,11 @@
   box-shadow: 3px 3px 0.75rem rgba(0, 0, 0, 0.5);
 }
 
+.projects {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+}
+
 .roboto-slab {
   font-family: "Roboto-Slab", serif;
   font-weight: bold;
@@ -41,13 +46,21 @@
   font-optical-sizing: auto;
 }
 
-.underline::after {
+.underlined {
+  transition: color 0.5s;
+}
+
+.underlined::after {
   background-color: white;
   content: "";
   display: block;
   width: 0;
   height: 2px;
   transition: width 0.5s;
+  color: white;
+}
+
+.active {
   color: white;
 }
 

@@ -7,29 +7,37 @@ const Header = () => {
     <div className="p-2 flex justify-between select-none">
       <h3 className="text-2xl spartan pl-4" id="title"></h3>
       <nav className="flex rounded-bl-lg border-white roboto-slab">
-        <Link className={"px-2 text-gray-500 underline cursor-pointer"} to="/">
+        <Link
+          id="index"
+          className={"px-2 text-gray-500 underlined cursor-pointer"}
+          to="/"
+        >
           Home
         </Link>
         <Link
-          className={"px-2 text-gray-500 underline cursor-pointer"}
+          id="about"
+          className={"px-2 text-gray-500 underlined cursor-pointer"}
           to="/about"
         >
           About
         </Link>
         <Link
-          className="px-2 text-gray-500 underline cursor-pointer"
+          id="experiences"
+          className="px-2 text-gray-500 underlined cursor-pointer"
           to="/experience"
         >
           Experiences
         </Link>
         <Link
-          className="px-2 text-gray-500 underline cursor-pointer"
+          id="projects"
+          className="px-2 text-gray-500 underlined cursor-pointer"
           to="/projects"
         >
           Projects
         </Link>
         <Link
-          className="px-2 text-gray-500 underline cursor-pointer"
+          id="contacts"
+          className="px-2 text-gray-500 underlined cursor-pointer"
           to="/contacts"
         >
           Contacts
