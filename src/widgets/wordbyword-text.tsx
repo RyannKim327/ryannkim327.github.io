@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const single = (text: string, delay: number) => {
+const single = (text: string, delay: number, pos: string) => {
   return (
     <motion.h1
       initial={{
@@ -8,7 +8,7 @@ const single = (text: string, delay: number) => {
         marginRight: "0.5rem",
       }}
       animate={{
-        marginTop: 0,
+        marginTop: pos,
       }}
       transition={{
         delay: delay / 5,
@@ -22,9 +22,9 @@ const single = (text: string, delay: number) => {
 const WordByWordText = (props: any) => {
   const words = props.text.split(" ");
   return (
-    <span className="flex flex-row items-center">
+    <span className="flex flex-row flex-wrap items-center">
       {words.map((txt: string, i: number) => {
-        return single(txt, i);
+        return single(txt, i, props.position ?? "0");
       })}
     </span>
   );

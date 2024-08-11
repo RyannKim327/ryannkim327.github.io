@@ -22,7 +22,11 @@ const Contacts = () => {
       <iframe
         className="w-full box-border aspect-[16/3] rounded-md"
         src={location}
-      ></iframe>
+        title={locationName}
+        referrerPolicy=""
+        loading="lazy"
+        allowFullScreen={false}
+      />
     </motion.div>
   );
 };

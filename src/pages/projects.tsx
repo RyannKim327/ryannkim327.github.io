@@ -11,7 +11,7 @@ const Project = (props: any) => {
   return (
     <motion.div
       initial={{
-        marginTop: "150%",
+        marginTop: "200%",
         boxSizing: "border-box",
       }}
       animate={{

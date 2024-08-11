@@ -8,16 +8,15 @@ const Index = () => {
   return (
     <motion.div className="flex flex-col items-center">
       <h1 className="text-2xl roboto-slab">
-        <WordByWordText text="I am Ryann Kim Sesgundo" />
+        <WordByWordText text="I am Ryann Kim Sesgundo" position="-2rem" />
       </h1>
       <motion.div
         initial={{
           position: "absolute",
-          marginTop: "100%",
+          marginTop: "200%",
         }}
         animate={{
           marginTop: 0,
-          position: "static",
         }}
         transition={{
           delay: 1.15,
