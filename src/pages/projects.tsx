@@ -8,6 +8,9 @@ import websamples from "../assets/projects/web-samples.png";
 import chatapp from "../assets/projects/chatapp.png";
 
 const Project = (props: any) => {
+  function go(location_: string) {
+    console.log(location_);
+  }
   return (
     <motion.div
       initial={{
@@ -21,13 +24,14 @@ const Project = (props: any) => {
         delay: props.delay,
       }}
       className="grayscale hover:grayscale-0 h-40 aspect-video transition ease-in transition-75 delay-75 overflow-hidden"
+      // onClick={go(props.location)}
     >
       <img
         src={props.src}
         alt={props.alt}
         className="absolute aspect-video h-full"
       />
-      <h3 className="flex flex-col justify-end w-full h-full absolute bottom-0 opacity-0 hover:opacity-100 transition ease-in transition-25 rounded-sm">
+      <h3 className="flex flex-col justify-end w-full h-full absolute bottom-0 opacity-0 hover:opacity-100 select-none transition ease-in transition-25 rounded-sm">
         <span className="backdrop-blur-sm p-2 w-full box-border bg-black/30">
           {props.text}
         </span>
@@ -45,6 +49,7 @@ const Projects = () => {
         alt="Audio Video Downloader"
         text="Audio Video Downloader"
         delay={0}
+        location="https://github.com/RyannKim327/video-downloader-extension/releases/tag/Chrome-0.0.3"
       />
       <Project src={ai} alt="AI Haibara" text="AI Haibara" delay={0.25} />
       <Project src={aria} alt="Ar!a Bot" text="Ar!a Bot" delay={0.5} />
