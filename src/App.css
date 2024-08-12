@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=League+Spartan:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap");
 
 * {
   outline: none;
@@ -45,6 +44,13 @@
 
 .spartan {
   font-family: "League Spartan", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+.courier-prime {
+  font-family: "Courier-Prime", monospace;
   font-weight: bold;
   font-style: normal;
   font-optical-sizing: auto;

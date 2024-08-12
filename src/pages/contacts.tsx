@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 
 const input = (type: string, name: string, placeholder: string) => {
   return (
-    <div className="m-2">
+    <div className="m-2 w-full">
       <input
         type={type}
         name={name}
         placeholder={placeholder}
-        className="bg-transparent outline-none border-gray-700 border-2 border-solid rounded-md focus:border-white p-4"
+        className="bg-transparent w-full box-border outline-none border-gray-700 border-2 border-solid rounded-md focus:border-white p-4"
       />
     </div>
   );
@@ -42,15 +42,30 @@ const Contacts = () => {
           allowFullScreen={false}
         />
       </motion.div>
-      <div>
-        <form action="" method="POST">
-          <h1 className="text-3xl p-4 spartan">Contact Form</h1>
-          <div className="flex flex-initial">
+
+      <form action="" method="POST" className="w-full box-border">
+        <h1 className="text-xl pl-6 spartan pt-6">Contact Form</h1>
+        <div className="flex flex-col w-full border-box">
+          <div className="flex flex-row w-full">
             {input("email", "email", "Email")}
             {input("text", "name", "Full Name")}
           </div>
-        </form>
-      </div>
+          <div className="m-2">
+            <textarea
+              className="w-full box-border outline-none rounded-md bg-transparent p-4 border-2 border-gray-700 border-solid focus:border-white resize-none"
+              placeholder="Test"
+              name="content"
+            />
+          </div>
+          <div className="flex justify-end">
+            <input
+              type="submit"
+              className="px-4 py-2 border-gray-700 border-2 border-solid rounded-lg mr-2 text-lg"
+              value="Submit"
+            />
+          </div>
+        </div>
+      </form>
     </div>
   );
 };
