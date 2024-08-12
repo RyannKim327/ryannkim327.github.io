@@ -6,22 +6,24 @@ import WordByWordText from "../widgets/wordbyword-text";
 const Index = () => {
   SetTitle("I am Ryann Kim Sesgundo", "index");
   return (
-    <motion.div className="flex flex-col items-center">
+    <div className="flex flex-col items-center justify-center h-full box-border overflow-hidden">
       <h1 className="text-2xl roboto-slab">
-        <WordByWordText text="I am Ryann Kim Sesgundo" position="-2rem" />
+        <WordByWordText text="I am Ryann Kim Sesgundo" position="5rem" />
       </h1>
       <motion.div
         initial={{
           position: "absolute",
-          marginTop: "200%",
+          marginTop: "8rem",
+          opacity: 0,
         }}
         animate={{
-          marginTop: 0,
+          marginTop: "5rem",
+          opacity: 1,
         }}
         transition={{
           delay: 1.15,
         }}
-        className="flex flex-col items-center"
+        className="flex flex-col items-center box-border"
       >
         <h3 className="text-lg roboto-slab">An android and web developer</h3>
 
@@ -33,7 +35,7 @@ const Index = () => {
           Projects
         </Link>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

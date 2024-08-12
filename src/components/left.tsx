@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
-import Me from "./../assets/img/prof.jpg";
+import Me from "./../assets/img/profile.jpg";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import {
   faFacebook,
@@ -30,7 +30,7 @@ const Left = () => {
     <div className="left flex flex-col items-center m-3 p-3 rounded-[5px] custom-shadow rounded">
       <img
         src={Me}
-        className="aspect-square w-5/12 mt-10 rounded mb-6"
+        className="aspect-square w-5/12 mt-10 rounded-md mb-6"
         alt="Ryann Kim Sesgundo"
       />
       <h1 className="text-2xl font-bold spartan">Ryann Kim Sesgundo</h1>

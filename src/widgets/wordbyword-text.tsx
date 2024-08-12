@@ -4,11 +4,13 @@ const single = (text: string, delay: number, pos: string) => {
   return (
     <motion.h1
       initial={{
+        overflow: "hidden",
         marginTop: "200%",
         marginRight: "0.5rem",
       }}
       animate={{
-        marginTop: pos,
+        marginTop: 0,
+        marginBottom: pos,
       }}
       transition={{
         delay: delay / 5,
@@ -22,7 +24,7 @@ const single = (text: string, delay: number, pos: string) => {
 const WordByWordText = (props: any) => {
   const words = props.text.split(" ");
   return (
-    <span className="flex flex-row flex-wrap items-center">
+    <span className="flex flex-row flex-wrap items-center overflow-hidden">
       {words.map((txt: string, i: number) => {
         return single(txt, i, props.position ?? "0");
       })}
