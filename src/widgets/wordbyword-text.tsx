@@ -5,12 +5,14 @@ const single = (text: string, delay: number, pos: string) => {
     <motion.h1
       initial={{
         overflow: "hidden",
-        marginTop: "200%",
+        marginTop: "100%",
         marginRight: "0.5rem",
+        opacity: 0,
       }}
       animate={{
         marginTop: 0,
         marginBottom: pos,
+        opacity: 1,
       }}
       transition={{
         delay: delay / 5,

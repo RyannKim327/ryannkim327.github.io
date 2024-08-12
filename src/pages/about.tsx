@@ -9,10 +9,12 @@ const About = () => {
       initial={{
         boxSizing: "border-box",
         position: "absolute",
-        marginTop: "100%",
+        marginTop: "50%",
+        opacity: 0,
       }}
       animate={{
         marginTop: 0,
+        opacity: 1,
       }}
       exit={{ marginTop: "100%" }}
       className="p-4 overflow-hidden"

@@ -8,9 +8,15 @@ import websamples from "../assets/projects/web-samples.png";
 import chatapp from "../assets/projects/chatapp.png";
 
 const Project = (props: any) => {
-  function go(location_: string) {
-    console.log(location_);
+  function go(url: string) {
+    if (url) {
+      const w = window.open(url);
+      if (w) {
+        w.focus();
+      }
+    }
   }
+
   return (
     <motion.div
       initial={{
@@ -24,7 +30,9 @@ const Project = (props: any) => {
         delay: props.delay,
       }}
       className="grayscale hover:grayscale-0 h-40 aspect-video transition ease-in transition-75 delay-75 overflow-hidden"
-      // onClick={go(props.location)}
+      onClick={() => {
+        go(props.location);
+      }}
     >
       <img
         src={props.src}
@@ -51,20 +59,40 @@ const Projects = () => {
         delay={0}
         location="https://github.com/RyannKim327/video-downloader-extension/releases/tag/Chrome-0.0.3"
       />
-      <Project src={ai} alt="AI Haibara" text="AI Haibara" delay={0.25} />
-      <Project src={aria} alt="Ar!a Bot" text="Ar!a Bot" delay={0.5} />
+      <Project
+        src={ai}
+        alt="AI Haibara"
+        text="AI Haibara"
+        delay={0.25}
+        location="https://github.com/RyannKim327/Ai-Haibara/raw/main/app.apk"
+      />
+      <Project
+        src={aria}
+        alt="Ar!a Bot"
+        text="Ar!a Bot"
+        delay={0.5}
+        location="https://ryannkim327.is-a.dev/FacebookBot"
+      />
       <Project
         src={baybayin}
         alt="Baybayin Keyboard"
         text="Baybayin Keyboard"
         delay={0.75}
+        location="https://ryannkim327.is-a.dev/Baybayin-Keyboard"
       />
-      <Project src={chatapp} alt="Chat App" text="Chat App" delay={1} />
+      <Project
+        src={chatapp}
+        alt="Chat App"
+        text="Chat App"
+        delay={1}
+        location="https://chat-app-y7a7.onrender.com"
+      />
       <Project
         src={websamples}
         alt="Web Samples for Newbie"
         text="Web Challenges"
         delay={1.25}
+        location="https://ryannkim327.is-a.dev/Web-Challenges-for-Newbie"
       />
     </div>
   );

@@ -44,7 +44,7 @@ const Contacts = () => {
       </motion.div>
 
       <form action="" method="POST" className="w-full box-border">
-        <h1 className="text-xl pl-6 spartan pt-6">Contact Form</h1>
+        <h1 className="text-xl pl-6 spartan mt-4">Contact Form</h1>
         <div className="flex flex-col w-full border-box">
           <div className="flex flex-row w-full">
             {input("email", "email", "Email")}
