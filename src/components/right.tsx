@@ -11,7 +11,7 @@ const Right = () => {
   return (
     <div className="flex flex-col right m-3 rounded-[5px] overflow-hidden custom-shadow rounded">
       <Header />
-      <div className="flex box-border h-full overflow-hidden items-center justify-center">
+      <div className="flex box-border w-full h-full overflow-hidden items-center justify-center">
         <AnimatePresence>
           <Routes>
             <Route path="/" element={<Index />} />

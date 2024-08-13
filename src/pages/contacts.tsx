@@ -34,7 +34,7 @@ const Contacts = () => {
         className="w-full box-border"
       >
         <iframe
-          className="w-full box-border aspect-[16/3] rounded-md"
+          className="w-full box-border aspect-[16/3] rounded-md grayscale invert"
           src={location}
           title={locationName}
           referrerPolicy=""
