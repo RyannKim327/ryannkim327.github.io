@@ -5,6 +5,7 @@ const input = (type: string, name: string, placeholder: string) => {
   return (
     <div className="m-2 w-full">
       <input
+        required
         type={type}
         name={name}
         placeholder={placeholder}
@@ -43,7 +44,11 @@ const Contacts = () => {
         />
       </motion.div>
 
-      <form action="" method="POST" className="w-full box-border">
+      <form
+        action="https://formsubmit.co/weryses19@gmail.com"
+        method="POST"
+        className="w-full box-border"
+      >
         <h1 className="text-xl pl-6 spartan mt-4">Contact Form</h1>
         <div className="flex flex-col w-full border-box">
           <div className="flex flex-row w-full">
@@ -52,8 +57,9 @@ const Contacts = () => {
           </div>
           <div className="m-2">
             <textarea
+              required
               className="w-full box-border outline-none rounded-md bg-transparent p-4 border-2 border-gray-700 border-solid focus:border-white resize-none"
-              placeholder="Test"
+              placeholder="Your message"
               name="content"
             />
           </div>
