@@ -14,6 +14,13 @@ This is just to adopt the current and latest technologies, and to practice migra
 design practice for some web designs based on my taste and experience.
 
 ---
+### Project Initiation
+1. To initiate the react app, kindly install `npx` using `npm install npx -g`. These command may only used once, and once you want to create another new project it is not required.
+2. Execute the create react app using `npx create-react-app <project_name>` where the project name is your project you want example is `npx create-react-app my_app`.
+3. Once you installed those things, you may now start your project, just go to the project directory, and run `npm start` for you to see how to start
+4. To close the program, kindly use `CTRL+c` to terminate the process.
+
+---
 ### Github deployment
 1. Install gh-pages using `npm install --save-dev gh-pages`
 2. Edit `homepage` from your `package.json` like this example
@@ -41,6 +48,10 @@ design practice for some web designs based on my taste and experience.
 }
 
 ```
+
+---
+### Additionals
+> If ever you want to deploy your react app to your github, it was default to have two branches, the `main` or `master` and the `gh-pages`.
 
 ---
 ### Credits
