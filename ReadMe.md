@@ -39,7 +39,7 @@ design practice for some web designs based on my taste and experience.
 5. Push to your github
 6. Deploy with Github Pages `npm run deploy`
 7. Go to your repository settings, go to `Pages`, and choose gh-pages into the `Branch` section
-8. If you have your custom domain, kindly modify the value of `deploy` under `scripts` with this format `npx gh-pages -d build --cname <yourdomain>`, it looks like this.
+8. If you have your custom domain, kindly modify the value of `deploy` under `scripts` with this format `gh-pages -d build --cname <yourdomain>`, it looks like this.
 ```JSON
 "scripts": {
   ...,
