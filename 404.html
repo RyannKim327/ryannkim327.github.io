@@ -5,17 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>I am Ryann Kim Sesgundi</title>
     <script>
-      var pathSegment = 1
-      var l = window.location
+      var pathSegmentsToKeep = 1;
+
+      var l = window.location;
       l.replace(
-        l.protocol + "//" + l.hostname +
-        (l.port ? ":" + l.port : "")
-        l.pathname.split("/").slice(0, 1 + pathSegment).join("/") +
-        "/?/" +
-        l.pathname.slice(1).split("/").slice(pathSegment).join("/").replace(/&/g, "~and~") +
-        (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
-        l.hash
-      )
+        l.protocol +
+          "//" +
+          l.hostname +
+          (l.port ? ":" + l.port : "") +
+          l.pathname
+            .split("/")
+            .slice(0, 1 + pathSegmentsToKeep)
+            .join("/") +
+          "/?/" +
+          l.pathname
+            .slice(1)
+            .split("/")
+            .slice(pathSegmentsToKeep)
+            .join("/")
+            .replace(/&/g, "~and~") +
+          (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+          l.hash,
+      );
     </script>
   </head>
   <body></body>
