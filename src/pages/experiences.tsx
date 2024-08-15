@@ -49,7 +49,7 @@ const Experiences = () => {
       animate={{
         marginTop: 0,
       }}
-      className="w-4/6 box-border flex flex-col overflow-scroll"
+      className="w-4/6 box-border flex flex-col overflow-x-hidden overflow-y-scroll"
     >
       {divs(faStairs, "Where everything starts", 2016, [
         "First step to HTML",

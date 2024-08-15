@@ -1,6 +1,5 @@
 import SetTitle from "../utils/title";
 import { motion } from "framer-motion";
-import WordByWordText from "../widgets/wordbyword-text";
 
 const About = () => {
   SetTitle("About me", "about");
