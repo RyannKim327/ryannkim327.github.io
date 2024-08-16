@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Index from "../pages";
 import About from "../pages/about";
 import Contacts from "../pages/contacts";
@@ -13,13 +13,15 @@ const Right = () => {
       <Header />
       <div className="flex box-border w-full h-full overflow-hidden items-center justify-center">
         <AnimatePresence>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contacts" element={<Contacts />} />
-          </Routes>
+          <Router basename={process.env.PUBLIC_URL}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/experience" element={<Experience />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contacts" element={<Contacts />} />
+            </Routes>
+          </Router>
         </AnimatePresence>
       </div>
     </div>
