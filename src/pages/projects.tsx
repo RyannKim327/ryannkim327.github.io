@@ -29,7 +29,7 @@ const Project = (props: any) => {
       transition={{
         delay: props.delay,
       }}
-      className="grayscale hover:grayscale-0 h-40 aspect-video transition ease-in transition-75 delay-75 overflow-hidden"
+      className="grayscale hover:grayscale-0 w-full box-border aspect-video transition ease-in transition-75 delay-75 overflow-hidden p-6"
       onClick={() => {
         go(props.location);
       }}
@@ -37,7 +37,7 @@ const Project = (props: any) => {
       <img
         src={props.src}
         alt={props.alt}
-        className="absolute aspect-video h-full"
+        className="absolute w-full box-border aspect-video"
       />
       <h3 className="flex flex-col justify-end w-full h-full absolute bottom-0 opacity-0 hover:opacity-100 select-none transition ease-in transition-25 rounded-sm">
         <span className="backdrop-blur-sm p-2 w-full box-border bg-black/30">
@@ -51,7 +51,7 @@ const Project = (props: any) => {
 const Projects = () => {
   SetTitle("My Flex Projects", "projects");
   return (
-    <div className="projects p-6 overflow-hidden border-box h-full max-h-11/12">
+    <div className="projects grid grid-rows-3 p-6 overflow-hidden border-box w-full h-full">
       <Project
         src={avd}
         alt="Audio Video Downloader"
