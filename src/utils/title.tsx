@@ -12,16 +12,16 @@ const SetTitle = (title: string, id: string) => {
 
     if (underlines) {
       for (let i = 0; i < underlines.length; i++) {
-        underlines[i].classList.remove("text-black");
+        underlines[i].classList.remove("text-slate-900");
         underlines[i].classList.remove("dark:text-white");
         // underlines[i].classList.remove("dark:active-dark");
       }
     }
 
     if (_id instanceof HTMLElement) {
+      _id.classList.add("text-slate-900");
       _id.classList.add("dark:text-white");
-      _id.classList.add("text-black");
-      _id.classList.add("after:w-full");
+
       // _id.classList.add("dark:active-dark");
     }
 
