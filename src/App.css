@@ -77,3 +77,15 @@
 .active:after {
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .main-layout {
+    display: grid;
+    grid-template-areas:
+      "left"
+      "right"
+      "footer";
+    grid-template-rows: 1fr 7fr 1fr;
+    grid-template-columns: auto;
+  }
+}
