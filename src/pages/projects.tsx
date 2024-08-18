@@ -29,7 +29,7 @@ const Project = (props: any) => {
       transition={{
         delay: props.delay,
       }}
-      className="grayscale hover:grayscale-0 w-full box-border aspect-video transition ease-in transition-75 delay-75 overflow-hidden p-4"
+      className="grayscale-0 md:grayscale hover:grayscale-0 w-full box-border aspect-video transition ease-in transition-75 delay-75 overflow-hidden p-4 py-10 md:py-4"
       onClick={() => {
         go(props.location);
       }}
@@ -39,7 +39,7 @@ const Project = (props: any) => {
         alt={props.alt}
         className="absolute w-full box-border aspect-video"
       />
-      <h3 className="flex flex-col justify-end w-full h-full absolute bottom-0 opacity-0 hover:opacity-100 select-none transition ease-in transition-25 rounded-sm">
+      <h3 className="flex flex-col justify-end w-full h-full absolute bottom-0 md:opacity-0 md:hover:opacity-100 select-none transition ease-in transition-25 rounded-sm">
         <span className="backdrop-blur-sm p-2 w-full box-border bg-black/30">
           {props.text}
         </span>
@@ -51,7 +51,7 @@ const Project = (props: any) => {
 const Projects = () => {
   SetTitle("My Flex Projects", "projects");
   return (
-    <div className="projects grid grid-rows-3 p-6 overflow-x-hidden border-box w-full h-full">
+    <div className="grid grid-rows-3 md:grid-rows-2 grid-cols-2 md:grid-cols-3 gap-1 p-6 overflow-x-hidden border-box w-full h-full">
       <Project
         src={avd}
         alt="Audio Video Downloader"
