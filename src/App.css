@@ -50,6 +50,13 @@
   font-optical-sizing: auto;
 }
 
+.poppins {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
 .underlined {
   transition: color 0.5s;
 }
