@@ -14,6 +14,37 @@ import { motion } from "framer-motion";
 import SetTitle from "../utils/title";
 
 const divs = (icon: IconProp, title: string, year: number, exp: string[]) => {
+  const s = {
+    boxShadow:
+      "1px 1px 3px rgba(0, 0, 0, 0.5), 1px 1px 3px inset rgba(255, 255, 255, 0.2)",
+  };
+  return (
+    <fieldset style={s} className=" w-full box-border rounded-md text-balance">
+      <legend
+        style={s}
+        className="flex bg-[#31363f] items-center m-[25px] px-4 rounded-md"
+      >
+        <FontAwesomeIcon
+          icon={icon ?? ""}
+          className="pr-4 rounded-md aspect-square text-sm md:text-md shadow"
+        />
+        <div className="flex flex-col">
+          <h1>{title}</h1>
+          <h3 className="text-sm">{year}</h3>
+        </div>
+      </legend>
+      {exp.map((str, i) => {
+        return (
+          <p className="px-4 pb-2">
+            {i + 1}. {str}
+          </p>
+        );
+      })}
+    </fieldset>
+  );
+};
+
+const divs_ = (icon: IconProp, title: string, year: number, exp: string[]) => {
   const styles = {
     boxShadow:
       "3px 3px 5px rgba(0, 0, 0, 0.5), 3px 3px 5px inset rgba(255, 255, 255, 0.2)",
@@ -53,7 +84,7 @@ const Experiences = () => {
         marginTop: 0,
         position: "static",
       }}
-      className="flex flex-col overflow-x-hidden overflow-y-scroll h-full box-border my-4"
+      className="flex flex-col overflow-x-hidden overflow-y-scroll w-full h-full box-border my-4 p-4"
     >
       {divs(faStairs, "Where everything starts", 2016, [
         "First step to HTML",

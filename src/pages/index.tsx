@@ -25,7 +25,9 @@ const Index = () => {
         }}
         className="flex flex-col items-center box-border"
       >
-        <h3 className="text-lg roboto-slab">An android and web developer</h3>
+        <h3 className="text-sm md:text-lg roboto-slab">
+          An android and web developer
+        </h3>
 
         <p className="mt-10 text-sm">Want to see some of my projects?</p>
         <Link

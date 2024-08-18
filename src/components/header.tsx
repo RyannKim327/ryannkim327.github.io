@@ -5,7 +5,7 @@ const Header = () => {
   // TODO: To create a header inside of the right view
   return (
     <div className="p-2 flex justify-between items-center select-none">
-      <h3 className="text-xl roboto-slab pl-4" id="title"></h3>
+      <h3 className="text-sm md:text-xl roboto-slab pl-4" id="title"></h3>
       <nav className="flex rounded-bl-lg border-white spartan overflow-y-scroll">
         <Link
           id="index"

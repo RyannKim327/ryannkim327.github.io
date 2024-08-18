@@ -17,6 +17,7 @@ const single = (text: string, delay: number, pos: string) => {
       transition={{
         delay: delay / 5,
       }}
+      className="text-sm md:text-3xl text-red"
     >
       {`${text} `}
     </motion.h1>
