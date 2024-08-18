@@ -24,8 +24,8 @@
 }
 
 .custom-shadow {
-  border-top: 1px rgba(10, 10, 10, 0.5) solid;
-  border-left: 1px rgba(10, 10, 10, 0.5) solid;
+  /* border-top: 1px rgba(10, 10, 10, 0.5) solid; */
+  /* border-left: 1px rgba(10, 10, 10, 0.5) solid; */
   box-shadow: 3px 3px 0.75rem rgba(0, 0, 0, 0.5);
 }
 
@@ -62,17 +62,11 @@
 }
 
 .underlined::after {
-  background-color: white;
   content: "";
   display: block;
   width: 0;
   height: 2px;
   transition: width 0.5s;
-  color: white;
-}
-
-.active {
-  color: white;
 }
 
 .active:after {

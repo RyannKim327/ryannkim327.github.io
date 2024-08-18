@@ -9,7 +9,7 @@ import Header from "./header";
 
 const Right = () => {
   return (
-    <div className="flex flex-col right m-3 rounded-[5px] overflow-hidden custom-shadow rounded">
+    <div className="flex flex-col right m-3 rounded-[5px] overflow-hidden custom-shadow dark:border-l dark:border-t dark:border-l-solid dark:border-t-solid dark:border-l-slate-600 dark:border-t-slate-600 rounded">
       <Header />
       <div className="flex box-border w-full h-full overflow-hidden items-center justify-center">
         <AnimatePresence>

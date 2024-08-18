@@ -16,18 +16,15 @@ import SetTitle from "../utils/title";
 const divs = (icon: IconProp, title: string, year: number, exp: string[]) => {
   const s = {
     boxShadow:
-      "1px 1px 3px rgba(0, 0, 0, 0.5), 1px 1px 3px inset rgba(255, 255, 255, 0.2)",
+      "1px 1px 3px rgba(0, 0, 0, 0.5), 1px 1px 3px inset rgba(255, 255, 255, 0.1)",
   };
   return (
     <fieldset style={s} className=" w-full box-border rounded-md text-balance">
       <legend
         style={s}
-        className="flex bg-[#31363f] items-center m-[25px] px-4 rounded-md"
+        className="flex bg-[#f1faff] dark:bg-[#31363f] items-center m-[25px] px-4 rounded-md"
       >
-        <FontAwesomeIcon
-          icon={icon ?? ""}
-          className="pr-4 rounded-md aspect-square text-sm md:text-md shadow"
-        />
+        <FontAwesomeIcon icon={icon ?? ""} className="pr-4 aspect-square" />
         <div className="flex flex-col">
           <h1>{title}</h1>
           <h3 className="text-sm">{year}</h3>

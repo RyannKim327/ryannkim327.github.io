@@ -18,7 +18,7 @@ const About = () => {
       exit={{ marginTop: "100%" }}
       className="p-4 overflow-hidden"
     >
-      <fieldset className="border-white border-[1px] rounded-md p-2">
+      <fieldset className="border-slate-900 dark:border-white border-[1px] rounded-md p-2">
         <legend className="ml-6">Who am I?</legend>
         <blockquote>
           &emsp;I am Ryann Kim Sesgundo, a software developer with Android and

@@ -20,7 +20,7 @@ const goto = (url: string) => {
 const li = (icon: IconProp, info: string, url: string) => {
   const styles = {
     boxShadow:
-      "3px 3px 5px #333333, 3px 3px 5px inset rgba(255, 255, 255, 0.1)",
+      "1px 1px 3px #333333, 1px 1px 3px inset rgba(255, 255, 255, 0.1)",
   };
   return (
     <li
@@ -30,18 +30,20 @@ const li = (icon: IconProp, info: string, url: string) => {
       className={`${url === "" ? "hidden md:flex" : "flex"} items-center mx-2 my-2 justify-start font-bold text-gray-300 hover:text-white ${url !== "" ? "cursor-pointer" : ""}`}
     >
       <FontAwesomeIcon
-        className="md:text-2xl rounded-md aspect-square p-2 box-border"
+        className="text-slate-900 dark:text-white md:text-2xl rounded-md aspect-square p-2 box-border"
         style={styles}
         icon={icon ?? ""}
       />
-      <span className="mx-2 hidden md:block">{info ?? ""}</span>
+      <span className="mx-2 hidden md:block text-slate-900 dark:text-white">
+        {info ?? ""}
+      </span>
     </li>
   );
 };
 
 const Left = () => {
   return (
-    <div className="left flex md:flex-col sm:justify-between md:box-border md:items-center py-2 m-3 md:py-3 px-3 rounded-[5px] custom-shadow rounded">
+    <div className="left bg-transparent flex md:flex-col sm:justify-between md:box-border md:items-center py-2 m-3 md:py-3 px-3 rounded-[5px] custom-shadow dark:border-l dark:border-t dark:border-l-solid dark:border-t-solid dark:border-l-slate-600 dark:border-t-slate-600 rounded">
       <div className="flex md:flex-col items-center">
         <img
           src={Me}
@@ -52,7 +54,7 @@ const Left = () => {
           <h1 className="text-lg md:text-2xl font-bold spartan">
             Ryann Kim Sesgundo
           </h1>
-          <h3 className="flex courier-prime text-sm md:text-sm justify-center w-fit md:bg-[rgba(255,255,255,0.1)] px-2 rounded-md">
+          <h3 className="flex courier-prime text-sm md:text-sm justify-center w-fit md:bg-[rgba(0,0,0,0.2)] md:dark:bg-[rgba(255,255,255,0.1)] px-2 rounded-md">
             A newbie developer
           </h3>
         </div>

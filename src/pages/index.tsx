@@ -32,7 +32,7 @@ const Index = () => {
         <p className="mt-10 text-sm">Want to see some of my projects?</p>
         <Link
           to="/projects"
-          className="rounded-full border-[1px] border-solid border-white px-4 m-2 shadow-[0_0_0.75rem] shadow-black hover:bg-white transition transition-75 ease-in hover:text-black hover:shadow-[rgba(255,255,255,0.3)]"
+          className="rounded-full border-[1px] border-solid border-slate-600 dark:border-white px-4 m-2 shadow-[0_0_0.75rem] shadow-black dark:hover:bg-white hover:bg-slate-900 transition transition-75 ease-in dark:hover:text-black hover:text-white hover:shadow-[rgba(255,255,255,0.3)]"
         >
           Projects
         </Link>
