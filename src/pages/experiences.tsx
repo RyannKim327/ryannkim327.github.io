@@ -19,21 +19,21 @@ const divs = (icon: IconProp, title: string, year: number, exp: string[]) => {
       "3px 3px 5px rgba(0, 0, 0, 0.5), 3px 3px 5px inset rgba(255, 255, 255, 0.2)",
   };
   return (
-    <div className="flex flex-rows items-start w-full box-border m-2">
-      <div className="flex flex-rows items-center w-1/3">
+    <div className="flex flex-rows items-start w-full box-border m-2 text-balance">
+      <div className="flex flex-rows items-center w-1/3 mr-1">
         <FontAwesomeIcon
           style={styles}
-          className="text-3xl p-4 aspect-square rounded-md shadow"
+          className="text-sm md:text-3xl p-4 aspect-square rounded-md shadow"
           icon={icon ?? ""}
         />
         <div className="flex flex-col m-2">
-          <h1>{title}</h1>
-          <h3>{year}</h3>
+          <h1 className="text-sm">{title}</h1>
+          <h3 className="text-sm">{year}</h3>
         </div>
       </div>
       <div className="flex flex-col w-2/3">
         {exp.map((str) => {
-          return <p>{str}</p>;
+          return <p className="text-sm text-pretty">{str}</p>;
         })}
       </div>
     </div>

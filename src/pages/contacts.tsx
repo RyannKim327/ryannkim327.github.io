@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 
 const input = (type: string, name: string, placeholder: string) => {
   return (
-    <div className="m-2 w-full">
+    <div className="flex m-2 md:w-full box-border">
       <input
         required
         type={type}
         name={name}
         placeholder={placeholder}
-        className="bg-transparent w-full box-border outline-none border-gray-700 border-2 border-solid rounded-md focus:border-white p-4"
+        className="bg-transparent w-full box-border outline-none border-gray-700 border-2 border-solid rounded-md focus:border-white p-2 md:p-4"
       />
     </div>
   );
@@ -51,14 +51,14 @@ const Contacts = () => {
       >
         <h1 className="text-xl pl-6 spartan mt-4">Contact Form</h1>
         <div className="flex flex-col w-full border-box">
-          <div className="flex flex-row w-full">
+          <div className="flex flex-col md:flex-row w-full box-border">
             {input("email", "email", "Email")}
             {input("text", "name", "Full Name")}
           </div>
           <div className="m-2">
             <textarea
               required
-              className="w-full box-border outline-none rounded-md bg-transparent p-4 border-2 border-gray-700 border-solid focus:border-white resize-none"
+              className="w-full box-border outline-none rounded-md bg-transparent p-2 md:p-4 border-2 border-gray-700 border-solid focus:border-white resize-none"
               placeholder="Your message"
               name="content"
             />

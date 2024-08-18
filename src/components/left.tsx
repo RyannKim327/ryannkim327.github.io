@@ -30,7 +30,7 @@ const li = (icon: IconProp, info: string, url: string) => {
       className={`${url === "" ? "hidden md:flex" : "flex"} items-center mx-2 my-2 justify-start font-bold text-gray-300 hover:text-white ${url !== "" ? "cursor-pointer" : ""}`}
     >
       <FontAwesomeIcon
-        className="text-2xl rounded-md aspect-square p-2 box-border"
+        className="md:text-2xl rounded-md aspect-square p-2 box-border"
         style={styles}
         icon={icon ?? ""}
       />
@@ -50,7 +50,7 @@ const Left = () => {
         />
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-2xl font-bold spartan">Ryann Kim Sesgundo</h1>
-          <h3 className="flex courier-prime justify-center w-fit bg-[rgba(255,255,255,0.1)] px-2 rounded-md">
+          <h3 className="flex courier-prime justify-center w-fit md:bg-[rgba(255,255,255,0.1)] px-2 rounded-md">
             A newbie developer
           </h3>
         </div>
