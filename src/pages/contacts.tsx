@@ -9,7 +9,7 @@ const input = (type: string, name: string, placeholder: string) => {
         type={type}
         name={name}
         placeholder={placeholder}
-        className="bg-transparent w-full box-border outline-none dark:border-gray-700 border-slate-300 border-2 border-solid rounded-md focus:border-slate-900 dark:focus:border-white p-2 md:p-4"
+        className="bg-transparent w-full text-sm md:text-md box-border outline-none dark:border-gray-700 border-slate-300 border-2 border-solid rounded-md focus:border-slate-900 dark:focus:border-white p-2 md:p-4"
       />
     </div>
   );
@@ -32,7 +32,7 @@ const Contacts = () => {
         animate={{
           marginTop: 0,
         }}
-        className="w-full aspect-[16/3] box-border"
+        className="w-full h-1/3 md:aspect-[16/4] box-border"
       >
         <iframe
           className="w-full h-full box-border rounded-md dark:grayscale dark:invert"
@@ -47,10 +47,10 @@ const Contacts = () => {
       <form
         action="https://formsubmit.co/weryses19@gmail.com"
         method="POST"
-        className="w-full h-full box-border overflow-y-scroll py-4"
+        className="w-full h-full box-border overflow-y-scroll"
       >
-        <h1 className="text-xl pl-6 spartan mt-4">Contact Form</h1>
-        <div className="flex flex-col w-full h-full border-box">
+        <h1 className="text-md md:text-xl pl-6 spartan mt-4">Contact Form</h1>
+        <div className="flex flex-col w-full h-full box-border">
           <div className="flex flex-col md:flex-row w-full box-border">
             {input("email", "email", "Email")}
             {input("text", "name", "Full Name")}
@@ -58,7 +58,7 @@ const Contacts = () => {
           <div className="m-2">
             <textarea
               required
-              className="w-full box-border outline-none rounded-md bg-transparent p-2 md:p-4 border-2 border-slate-300 dark:border-gray-700 border-solid focus:border-slate-900 dark:focus:border-white resize-none"
+              className="w-full box-border outline-none text-sm md:text-md rounded-md bg-transparent p-2 md:p-4 border-2 border-slate-300 dark:border-gray-700 border-solid focus:border-slate-900 dark:focus:border-white resize-none"
               placeholder="Your message"
               name="content"
             />
@@ -66,7 +66,7 @@ const Contacts = () => {
           <div className="flex justify-end">
             <input
               type="submit"
-              className="px-4 py-2 border-slate-300 dark:border-gray-700 border-2 border-solid rounded-lg mr-2 text-lg"
+              className="px-4 py-2 border-slate-300 dark:border-gray-700 border-2 border-solid rounded-lg mr-2 text-sm md:text-lg"
               value="Submit"
             />
           </div>
