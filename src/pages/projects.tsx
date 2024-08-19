@@ -40,7 +40,7 @@ const Project = (props: any) => {
         className="absolute w-full box-border aspect-video"
       />
       <h3 className="flex flex-col justify-end w-full h-full absolute bottom-0 md:opacity-0 md:hover:opacity-100 select-none transition ease-in transition-25 rounded-sm">
-        <span className="backdrop-blur-sm md:p-2 w-full box-border text-[0.75rem] md:text-md bg-black/30">
+        <span className="backdrop-blur-sm px-2 md:p-2 w-full box-border text-[0.75rem] md:text-md bg-black/30 text-white">
           {props.text}
         </span>
       </h3>
