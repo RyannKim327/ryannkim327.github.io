@@ -27,16 +27,14 @@ const li = (icon: IconProp, info: string, url: string) => {
       onClick={() => {
         goto(url);
       }}
-      className={`${url === "" ? "hidden md:flex" : "flex"} items-center mx-2 my-2 justify-start font-bold text-gray-300 hover:text-white ${url !== "" ? "cursor-pointer" : ""}`}
+      className={`${url === "" ? "hidden md:flex" : "flex"} items-center mx-2 my-2 justify-start font-bold text-slate-500 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white ${url !== "" ? "cursor-pointer" : ""}`}
     >
       <FontAwesomeIcon
-        className="text-slate-900 dark:text-white md:text-2xl rounded-md aspect-square p-2 box-border"
+        className="md:text-2xl rounded-md aspect-square p-2 box-border"
         style={styles}
         icon={icon ?? ""}
       />
-      <span className="mx-2 hidden md:block text-slate-900 dark:text-white">
-        {info ?? ""}
-      </span>
+      <span className="mx-2 hidden md:block">{info ?? ""}</span>
     </li>
   );
 };

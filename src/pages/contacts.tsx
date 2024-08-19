@@ -9,7 +9,7 @@ const input = (type: string, name: string, placeholder: string) => {
         type={type}
         name={name}
         placeholder={placeholder}
-        className="bg-transparent w-full box-border outline-none border-gray-700 border-2 border-solid rounded-md focus:border-white p-2 md:p-4"
+        className="bg-transparent w-full box-border outline-none dark:border-gray-700 border-slate-300 border-2 border-solid rounded-md focus:border-slate-900 dark:focus:border-white p-2 md:p-4"
       />
     </div>
   );
@@ -23,7 +23,7 @@ const Contacts = () => {
   const location = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56562.28002960655!2d${longitude}!3d${latitude}!2m3!1f0!2f0!3f0!3m2!1i3000!2i1800!4f13.1!3m3!1m2!1s0x33bd4b578caf4ccd%3A0x2be1e905c862fe1!2s${encodeURIComponent(locationName)}!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sen!`;
 
   return (
-    <div className="w-full h-full box-border p-2">
+    <div className="w-full h-full box-border p-3">
       <motion.div
         initial={{
           boxSizing: "border-box",
@@ -32,10 +32,10 @@ const Contacts = () => {
         animate={{
           marginTop: 0,
         }}
-        className="w-full box-border"
+        className="w-full aspect-[16/3] box-border"
       >
         <iframe
-          className="w-full box-border aspect-[16/3] rounded-md grayscale invert"
+          className="w-full h-full box-border rounded-md dark:grayscale dark:invert"
           src={location}
           title={locationName}
           referrerPolicy=""
@@ -47,10 +47,10 @@ const Contacts = () => {
       <form
         action="https://formsubmit.co/weryses19@gmail.com"
         method="POST"
-        className="w-full box-border"
+        className="w-full h-full box-border overflow-y-scroll py-4"
       >
         <h1 className="text-xl pl-6 spartan mt-4">Contact Form</h1>
-        <div className="flex flex-col w-full border-box">
+        <div className="flex flex-col w-full h-full border-box">
           <div className="flex flex-col md:flex-row w-full box-border">
             {input("email", "email", "Email")}
             {input("text", "name", "Full Name")}
@@ -58,7 +58,7 @@ const Contacts = () => {
           <div className="m-2">
             <textarea
               required
-              className="w-full box-border outline-none rounded-md bg-transparent p-2 md:p-4 border-2 border-gray-700 border-solid focus:border-white resize-none"
+              className="w-full box-border outline-none rounded-md bg-transparent p-2 md:p-4 border-2 border-slate-300 dark:border-gray-700 border-solid focus:border-slate-900 dark:focus:border-white resize-none"
               placeholder="Your message"
               name="content"
             />
@@ -66,7 +66,7 @@ const Contacts = () => {
           <div className="flex justify-end">
             <input
               type="submit"
-              className="px-4 py-2 border-gray-700 border-2 border-solid rounded-lg mr-2 text-lg"
+              className="px-4 py-2 border-slate-300 dark:border-gray-700 border-2 border-solid rounded-lg mr-2 text-lg"
               value="Submit"
             />
           </div>
