@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="p-2 flex justify-between items-center select-none">
       <h3 className="text-sm md:text-xl roboto-slab pl-4" id="title"></h3>
-      <nav className="flex spartan overflow-y-scroll">
+      <nav className="flex spartan overflow-x-auto">
         <Link
           id="index"
           className={
