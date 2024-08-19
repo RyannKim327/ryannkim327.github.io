@@ -5,7 +5,7 @@ import Index from "./components/index";
 
 const App = () => {
   return (
-    <div className="bg-[#faf1ff] dark:bg-[#31363f] h-screen w-screen h-screen dark:text-white text-slate-900">
+    <div className="bg-[#fbfff4] dark:bg-[#31363f] h-screen w-screen h-screen dark:text-white text-slate-900">
       <Index />
     </div>
   );

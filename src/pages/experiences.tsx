@@ -22,7 +22,7 @@ const divs = (icon: IconProp, title: string, year: number, exp: string[]) => {
     <fieldset style={s} className=" w-full box-border rounded-md text-balance">
       <legend
         style={s}
-        className="flex bg-[#f1faff] dark:bg-[#31363f] items-center m-[25px] px-4 rounded-md"
+        className="flex bg-[#fbfff4] dark:bg-[#31363f] items-center m-[25px] px-4 rounded-md"
       >
         <FontAwesomeIcon icon={icon ?? ""} className="pr-4 aspect-square" />
         <div className="flex flex-col">
