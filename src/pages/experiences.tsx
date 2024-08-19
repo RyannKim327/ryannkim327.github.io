@@ -19,7 +19,10 @@ const divs = (icon: IconProp, title: string, year: number, exp: string[]) => {
       "1px 1px 3px rgba(0, 0, 0, 0.5), 1px 1px 3px inset rgba(255, 255, 255, 0.1)",
   };
   return (
-    <fieldset style={s} className=" w-full box-border rounded-md text-balance">
+    <fieldset
+      style={s}
+      className="my-2 w-full box-border rounded-md text-balance"
+    >
       <legend
         style={s}
         className="flex bg-[#fbfff4] dark:bg-[#31363f] items-center m-[25px] px-4 rounded-md"

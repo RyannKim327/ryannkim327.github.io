@@ -19,7 +19,9 @@ const About = () => {
       className="p-4 overflow-hidden"
     >
       <fieldset className="border-slate-900 dark:border-white border-[1px] rounded-md p-2">
-        <legend className="ml-6">Who am I?</legend>
+        <legend className="ml-6 border-slate-900 dark:border-white border-[1px] rounded-md px-2">
+          Who am I?
+        </legend>
         <blockquote>
           &emsp;I am Ryann Kim Sesgundo, a software developer with Android and
           Web Development. I focus in combining the differences of each
