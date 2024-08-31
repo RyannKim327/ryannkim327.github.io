@@ -6,7 +6,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Me from "./../assets/img/profile.jpg";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { faFacebook, faGithub } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faGithub,
+  faNpm,
+} from "@fortawesome/free-brands-svg-icons";
 
 const goto = (url: string) => {
   if (url) {
@@ -60,7 +64,7 @@ const Left = () => {
       <ul className="md:mt-10 flex md:block w-full box-border overflow-x-scroll md:overflow-hidden">
         {li(faEnvelope, "weryses19@gmail.com", "")}
         {li(faPhone, "0985 *** 7231", "")}
-        {li(faLocationDot, "Lucena City", "")}
+        {li(faNpm, "~ryannkim327", "https://www.npmjs.com/~ryannkim327")}
         {li(faFacebook, "@MPOP.ph", "https://facebook.com/MPOP.ph")}
         {li(faGithub, "@RyannKim327", "https://github.com/RyannKim327")}
       </ul>
