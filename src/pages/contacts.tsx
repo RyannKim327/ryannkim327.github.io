@@ -1,6 +1,12 @@
 import SetTitle from "../utils/title";
 import { motion } from "framer-motion";
 
+interface MAIL {
+  email: string;
+  name: string;
+  content: string;
+}
+
 const input = (type: string, name: string, placeholder: string) => {
   return (
     <div className="flex m-2 md:w-full box-border">
@@ -17,11 +23,16 @@ const input = (type: string, name: string, placeholder: string) => {
 
 const Contacts = () => {
   SetTitle("Reach me out", "contacts");
-  const longitude = 121.60355963623054;
-  const latitude = 13.928109212658477;
+  const longitude = 121.603803;
+  const latitude = 13.927961;
   const locationName = "United Landing Homeowners Association Phase 1";
-  const location = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56562.28002960655!2d${longitude}!3d${latitude}!2m3!1f0!2f0!3f0!3m2!1i3000!2i1800!4f13.1!3m3!1m2!1s0x33bd4b578caf4ccd%3A0x2be1e905c862fe1!2s${encodeURIComponent(locationName)}!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sen!`;
-
+  const _long = 0;
+  const _lat = 0;
+  const location_ = "0x33bd4b578caf4ccd%3A0x2be1e905c862fe1";
+  // const location = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56562.28002960655!2d${longitude}!3d${latitude}!2m3!1f0!2f0!3f0!3m2!1i3000!2i1800!4f13.1!3m3!1m2!1s${location_}!2s${encodeURIComponent(locationName)}!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sen!`;
+  // TODO: To automatically generate your embedded map, kindly visit: https://www.embed-map.com/ for more
+  const location =
+    "https://www.google.com/maps/embed/v1/place?q=Ibabang+Iyam&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8";
   return (
     <div className="w-full h-full box-border p-3">
       <motion.div
