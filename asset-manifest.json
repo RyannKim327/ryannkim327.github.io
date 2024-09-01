@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d86f6e0c.css",
-    "main.js": "/static/js/main.23fd620f.js",
+    "main.css": "/static/css/main.cb2249ab.css",
+    "main.js": "/static/js/main.9714976e.js",
     "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
     "static/media/ai-haibara.png": "/static/media/ai-haibara.a782902958e03d92f0b9.png",
     "static/media/chatapp.png": "/static/media/chatapp.b4d7653d6ac692d3b867.png",
@@ -11,12 +11,12 @@
     "static/media/profile.jpg": "/static/media/profile.b915a4ab931172a098a7.jpg",
     "static/media/baybayin-keyboard.png": "/static/media/baybayin-keyboard.a0e40dbb91fe6fa76218.png",
     "index.html": "/index.html",
-    "main.d86f6e0c.css.map": "/static/css/main.d86f6e0c.css.map",
-    "main.23fd620f.js.map": "/static/js/main.23fd620f.js.map",
+    "main.cb2249ab.css.map": "/static/css/main.cb2249ab.css.map",
+    "main.9714976e.js.map": "/static/js/main.9714976e.js.map",
     "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d86f6e0c.css",
-    "static/js/main.23fd620f.js"
+    "static/css/main.cb2249ab.css",
+    "static/js/main.9714976e.js"
   ]
 }
