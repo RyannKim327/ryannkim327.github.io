@@ -1,7 +1,8 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "ryannkim327.github.io",
+  "version": "0.0.2",
   "private": true,
+  "homepage": "https://ryannkim327.is-a.dev",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
@@ -52,6 +53,5 @@
   },
   "devDependencies": {
     "gh-pages": "^6.1.1"
-  },
-  "homepage": "https://ryannkim327.is-a.dev"
+  }
 }
