@@ -1,12 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{tsx, jsx, ts, js}"],
+  content: ["./index.html", "./src/**/*.{tsx,ts}"],
   theme: {
-    extend: {
-      boxShadow: {
-        sm: "3px 3px 5px #333333",
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };

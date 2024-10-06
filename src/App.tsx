@@ -1,13 +1,14 @@
-import React from "react";
-import "./App.css";
-import Index from "./components/index";
+import Hexagon from "./components/hexagon";
 
-const App = () => {
+function App() {
+
   return (
-    <div className="bg-[#fbfff4] dark:bg-[#31363f] h-dvh w-dvw dark:text-white text-slate-900 transition transition-100 ease-in">
-      <Index />
+    <div className="flex flex-col w-dvw h-dvh box-border">
+      <h1>Test</h1>
+      <Hexagon className="bg-black" src="ai-haibara.png">Ai Haibara</Hexagon>
+      <Hexagon src="aria-bot.png">Aria Bot</Hexagon>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
