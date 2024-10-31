@@ -1,14 +1,12 @@
-import Hexagon from "./components/hexagon";
+import Hero from "./pages/hero";
 
 function App() {
-
   return (
-    <div className="flex flex-col w-dvw h-dvh box-border">
-      <h1>Test</h1>
-      <Hexagon className="bg-black" src="ai-haibara.png">Ai Haibara</Hexagon>
-      <Hexagon src="aria-bot.png">Aria Bot</Hexagon>
+    <div className="w-dvw h-dvh">
+      <Hero className="flex flex-col items-center justify-center h-dvh w-dvw" />
+      <Hero className="flex flex-col items-center justify-center h-dvh w-dvw bg-red-100" />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
