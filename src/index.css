@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.link-animation::after {
+  background-color: #333333;
+  content: "";
+  display: block;
+  height: 5px;
+  width: 0;
+  transition: width 0.2s ease;
+}
+
+.link-animation-hover::after {
+  width: 100%;
+}
