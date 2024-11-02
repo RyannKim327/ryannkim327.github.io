@@ -3,6 +3,17 @@ import { motion } from "framer-motion";
 import { pages_interface } from "../utils/interfaces";
 
 export default function Hero(props: pages_interface) {
+  const heroButton = (id: string) => {
+    const _ = document.getElementById(id);
+    if (_) {
+      _.scrollIntoView(
+        {
+          behavior: "smooth",
+        },
+        true,
+      );
+    }
+  };
   return (
     <div
       id={props.id}
@@ -43,6 +54,9 @@ export default function Hero(props: pages_interface) {
             delay: 1,
           }}
           className="px-2 border-2 border-black border-solid rounded-full text-sm"
+          onClick={() => {
+            heroButton("projects");
+          }}
         >
           My Projects
         </motion.button>
@@ -61,6 +75,9 @@ export default function Hero(props: pages_interface) {
             delay: 1,
           }}
           className="px-2 border-2 border-black border-solid rounded-full text-sm"
+          onClick={() => {
+            heroButton("contact");
+          }}
         >
           Contact me
         </motion.button>

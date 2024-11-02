@@ -60,11 +60,11 @@ export default function Header(props: default_interface) {
             );
           }
         }}
-        className="flex flex-row h-full items-center"
+        className={`flex flex-row h-full items-center ${scrolled ? "cursor-pointer" : "cursor-default"}`}
       >
         <img className="aspect-square h-full rounded-full" src={prof} />
         <div
-          className={`${scrolled ? "opacity-1" : "opacity-0"}  transition ease delay-75`}
+          className={`${scrolled ? "opacity-1" : "opacity-0 cursor-default"}  transition ease delay-75`}
         >
           <h1 className={`pl-2 text-base`}>Ryann Kim M. Sesgundo</h1>
           <h3 className={`pl-4 text-xs`}>A Devdevan</h3>
