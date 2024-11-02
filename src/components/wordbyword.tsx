@@ -1,13 +1,9 @@
 import { motion } from "framer-motion";
+import { children_required } from "../utils/interfaces";
 
-interface properties {
-  children: string;
-  className: string | unknown | null;
-}
-
-export default function Word(props: properties) {
+export default function Word(props: children_required) {
   const words: string[] = props.children.split(/\s/);
-  const gap: number = 150;
+  const gap: number = 150
   return (
     <div className={`flex flex-row items-center ${props.className}`}>
       {words.map((word, i) => {
@@ -27,7 +23,7 @@ export default function Word(props: properties) {
             transition={{
               delay: i / 4,
             }}
-            className="text-xl"
+            className="text-sm md:text-md lg:text-3xl"
           >
             {word.replace(/_/gi, " ")}
           </motion.h1>
