@@ -58,7 +58,11 @@ export default function Contact(props: pages_interface) {
         allowFullScreen={false}
         className="h-1/3 w-full dark:grayscale dark:invert transition ease-in delay-100"
       />
-      <form className="flex flex-col w-full box-border gap-2">
+      <form
+        action="https://formsubmit.co/weryses19@gmail.com"
+        method="POST"
+        className="flex flex-col w-full box-border gap-2"
+      >
         <div className="flex flex-row gap-2 w-full box-border">
           <Input
             className={`w-full rounded dark:border-white`}
