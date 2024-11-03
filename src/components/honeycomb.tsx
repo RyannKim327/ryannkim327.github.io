@@ -6,7 +6,7 @@ interface _props {
 
 function HoneyComb(props: _props) {
   return (
-    <div className="flex">
+    <div className={`flex ${props.className}`}>
       <Hexagon className="relative top-20" src="ai-haibara.png">
         AI Haibara
       </Hexagon>

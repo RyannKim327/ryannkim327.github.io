@@ -6,12 +6,9 @@ function List(props: link_interface) {
   const link = (id: string) => {
     const _ = document.getElementById(id);
     if (_) {
-      _.scrollIntoView(
-        {
-          behavior: "smooth",
-        },
-        true,
-      );
+      _.scrollIntoView({
+        behavior: "smooth",
+      });
     }
   };
   return (
@@ -46,18 +43,15 @@ export default function Header(props: default_interface) {
 
   return (
     <header
-      className={`flex flex-row w-full fixed top-0 h-12 justify-between items-center p-2 ${scrolled ? "bg-black text-white dark:bg-[#3d3e51]" : ""} ${props.className} transition ease delay-75`}
+      className={`flex flex-row w-full fixed top-0 h-12 justify-between items-center p-2 select-none ${scrolled ? "bg-black text-white dark:bg-[#3d3e51]" : ""} ${props.className} transition ease delay-75`}
     >
       <div
         onClick={() => {
           const _ = document.getElementById("main");
           if (_) {
-            _.scrollIntoView(
-              {
-                behavior: "smooth",
-              },
-              true,
-            );
+            _.scrollIntoView({
+              behavior: "smooth",
+            });
           }
         }}
         className={`flex flex-row h-full items-center ${scrolled ? "cursor-pointer" : "cursor-default"}`}

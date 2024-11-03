@@ -6,7 +6,9 @@
     "start": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist --cname ryannkim327.is-a.dev"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.6.0",

@@ -6,12 +6,9 @@ export default function Hero(props: pages_interface) {
   const heroButton = (id: string) => {
     const _ = document.getElementById(id);
     if (_) {
-      _.scrollIntoView(
-        {
-          behavior: "smooth",
-        },
-        true,
-      );
+      _.scrollIntoView({
+        behavior: "smooth",
+      });
     }
   };
   return (

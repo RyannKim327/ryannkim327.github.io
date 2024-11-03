@@ -20,9 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "compillerOptions": {
-      "typeRoots": ["./node_modules/@types", "./types/"]
-    }
+  
   },
   "include": ["src"]
 }
