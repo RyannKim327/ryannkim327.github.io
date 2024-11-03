@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface default_interface {
   className: string | unknown;
 }
@@ -14,6 +16,6 @@ export interface children_required {
 
 export interface link_interface {
   link: string;
-  children: string;
+  children: string | ReactNode;
   className: string | unknown;
 }

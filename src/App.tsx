@@ -6,23 +6,23 @@ import Header from "./parts/header";
 
 function App() {
   return (
-    <div className=" w-dvw h-dvh">
+    <div className="dark:bg-[#212129] dark:text-white w-dvw h-dvh">
       <Header className={`z-10`} />
       <Hero
         id="main"
-        className="flex flex-col box-border items-center justify-center h-full w-full"
+        className="dark:bg-[#212129] dark:text-white flex flex-col box-border items-center justify-center h-full w-full"
       />
       <About
         id="about"
-        className="flex flex-col box-border items-center justify-center h-full w-full"
+        className="dark:bg-[#212129] dark:text-white flex flex-col box-border items-center justify-center h-full w-full"
       />
       <Projects
         id="projects"
-        className="flex flex-col box-border items-center justify-center h-full w-full"
+        className="dark:bg-[#212129] dark:text-white flex flex-col box-border items-center justify-center h-full w-full"
       />
       <Contact
         id="contact"
-        className="flex flex-col box-border items-center justify-center h-full w-full"
+        className="dark:bg-[#212129] dark:text-white flex flex-col box-border items-center justify-center h-full w-full"
       />
     </div>
   );

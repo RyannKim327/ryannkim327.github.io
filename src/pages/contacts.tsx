@@ -3,9 +3,11 @@ import { pages_interface } from "../utils/interfaces";
 import {
   faFacebook,
   faGithub,
+  faLinkedin,
   faNpm,
   IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
+import { ReactNode } from "react";
 
 interface input_interface {
   placeholder: string;
@@ -17,7 +19,7 @@ interface input_interface {
 interface linking_interface {
   icon: IconDefinition;
   url: string;
-  children: string | unknown;
+  children: string | ReactNode;
 }
 
 const Linking = (props: linking_interface) => {
@@ -54,18 +56,18 @@ export default function Contact(props: pages_interface) {
         title="Location"
         loading="lazy"
         allowFullScreen={false}
-        className="h-1/3 w-full"
+        className="h-1/3 w-full dark:grayscale dark:invert transition ease-in delay-100"
       />
       <form className="flex flex-col w-full box-border gap-2">
         <div className="flex flex-row gap-2 w-full box-border">
           <Input
-            className={`w-full rounded`}
+            className={`w-full rounded dark:border-white`}
             type="name"
             minLength={20}
             placeholder="Hello"
           />
           <Input
-            className={`w-full rounded`}
+            className={`w-full rounded dark:border-white`}
             type="email"
             minLength={10}
             placeholder="Email Address"
@@ -73,15 +75,16 @@ export default function Contact(props: pages_interface) {
         </div>
         <textarea
           style={{
-            border: "1px black solid",
+            borderWidth: "1px",
+            borderStyle: "solid",
           }}
           placeholder="Enter your message"
           minLength={20}
           required
-          className="resize-none p-2 outline-none rounded h-20"
+          className="resize-none p-2 outline-none rounded h-20 bg-transparent border-black dark:border-white"
         ></textarea>
-        <div className="flex justify-between">
-          <div className="flex box-border gap-5">
+        <div className="flex justify-between px-4">
+          <div className="flex box-border pl-4 gap-5">
             <Linking icon={faGithub} url="https://github.com/RyannKim327">
               RyannKim327
             </Linking>
@@ -91,10 +94,16 @@ export default function Contact(props: pages_interface) {
             <Linking icon={faNpm} url="https://npmjs.com/~ryannkim327">
               RyannKim327
             </Linking>
+            <Linking
+              icon={faLinkedin}
+              url="https://linkedin.com/in/ryannkim327"
+            >
+              RyannKim327
+            </Linking>
           </div>
           <input
-            style={{ border: "1px black solid" }}
-            className="rounded px-2"
+            style={{ borderWidth: "1px", borderStyle: "solid" }}
+            className="rounded px-2 border-black dark:border-white"
             type="submit"
             value="Send email"
           />

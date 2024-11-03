@@ -46,7 +46,7 @@ export default function Header(props: default_interface) {
 
   return (
     <header
-      className={`flex flex-row w-full fixed top-0 h-12 justify-between items-center p-2 ${scrolled ? "bg-black text-white" : ""} ${props.className} transition ease delay-75`}
+      className={`flex flex-row w-full fixed top-0 h-12 justify-between items-center p-2 ${scrolled ? "bg-black text-white dark:bg-[#3d3e51]" : ""} ${props.className} transition ease delay-75`}
     >
       <div
         onClick={() => {

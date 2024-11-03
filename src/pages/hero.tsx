@@ -53,7 +53,7 @@ export default function Hero(props: pages_interface) {
           transition={{
             delay: 1,
           }}
-          className="px-2 border-2 border-black border-solid rounded-full text-sm"
+          className="px-2 border-2 dark:border-white border-black border-solid rounded-full text-sm"
           onClick={() => {
             heroButton("projects");
           }}
@@ -74,7 +74,7 @@ export default function Hero(props: pages_interface) {
           transition={{
             delay: 1,
           }}
-          className="px-2 border-2 border-black border-solid rounded-full text-sm"
+          className="px-2 border-2 border-black dark:border-white border-solid rounded-full text-sm"
           onClick={() => {
             heroButton("contact");
           }}

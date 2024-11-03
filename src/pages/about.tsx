@@ -4,9 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHourglassStart } from "@fortawesome/free-solid-svg-icons/faHourglassStart";
 import {
   faCog,
-  faCogs,
   faDatabase,
-  faVirus,
   faViruses,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -29,19 +27,22 @@ const Information = (props: about_interface) => {
   return (
     <div className={`flex w-full box-border p-2 `}>
       <fieldset
-        style={{ border: "1px black solid" }}
-        className={`flex flex-col rounded w-full p-4`}
+        style={{ borderWidth: "1px", borderStyle: "solid" }}
+        className={`flex flex-col border-black dark:border-white rounded w-full p-4`}
       >
         <legend
-          style={{ border: "1px black solid" }}
-          className={`px-2 rounded ml-4 `}
+          style={{ borderWidth: "1px", borderStyle: "solid" }}
+          className={`px-2 rounded ml-4 border-black dark:border-white`}
         >
           <FontAwesomeIcon icon={props.icon} />
           <span className="pl-2 items-center">
             {props.title} <sub>{props.year}</sub>
           </span>
         </legend>
-        <blockquote style={{ borderLeft: "3px black solid" }} className="pl-4">
+        <blockquote
+          style={{ borderLeftWidth: "3px", borderLeftStyle: "solid" }}
+          className="border-l-black dark:border-l-white pl-4"
+        >
           {props.children.map((item, i) => {
             return (
               <p>
