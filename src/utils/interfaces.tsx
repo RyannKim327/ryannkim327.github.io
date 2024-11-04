@@ -1,3 +1,4 @@
+import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { ReactNode } from "react";
 
 export interface default_interface {
@@ -18,4 +19,5 @@ export interface link_interface {
   link: string;
   children: string | ReactNode;
   className?: string;
+  icon: IconDefinition;
 }

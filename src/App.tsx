@@ -18,7 +18,7 @@ function App() {
       />
       <Projects
         id="projects"
-        className="dark:bg-[#212129] dark:text-white flex flex-col box-border items-center justify-center h-full w-full"
+        className="dark:bg-[#212129] overflow-hidden dark:text-white flex flex-col box-border items-center justify-center h-full w-full"
       />
       <Contact
         id="contact"

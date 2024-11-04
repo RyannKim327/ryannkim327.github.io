@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import prof from "./../assets/prof.jpg";
 import { default_interface, link_interface } from "./../utils/interfaces.tsx";
+import {
+  faFolderOpen,
+  faIdCard,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function List(props: link_interface) {
   const link = (id: string) => {
@@ -18,7 +24,8 @@ function List(props: link_interface) {
       }}
       className="cursor-pointer p-2 link-animation"
     >
-      {props.children}
+      <FontAwesomeIcon className="lg:hidden" icon={props.icon} />
+      <span className="hidden lg:inline">{props.children}</span>
     </li>
   );
 }
@@ -61,13 +68,19 @@ export default function Header(props: default_interface) {
           className={`${scrolled ? "opacity-1" : "opacity-0 cursor-default"}  transition ease delay-75`}
         >
           <h1 className={`pl-2 text-base`}>Ryann Kim M. Sesgundo</h1>
-          <h3 className={`pl-4 text-xs`}>A Devdevan</h3>
+          <h3 className={`pl-4 text-xs`}>A software and Web Developer</h3>
         </div>
       </div>
       <nav className="flex flex-row list-none">
-        <List link="about">About</List>
-        <List link="projects">Projects</List>
-        <List link="contact">Contact</List>
+        <List link="about" icon={faUser}>
+          About
+        </List>
+        <List link="projects" icon={faFolderOpen}>
+          Projects
+        </List>
+        <List link="contact" icon={faIdCard}>
+          Contact
+        </List>
       </nav>
     </header>
   );

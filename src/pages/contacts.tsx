@@ -8,6 +8,7 @@ import {
   IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
 import { ReactNode } from "react";
+import { faVcard } from "@fortawesome/free-solid-svg-icons";
 
 interface input_interface {
   placeholder: string;
@@ -103,6 +104,9 @@ export default function Contact(props: pages_interface) {
               url="https://linkedin.com/in/ryannkim327"
             >
               RyannKim327
+            </Linking>
+            <Linking icon={faVcard} url="/RyannKim327-VCard">
+              Vcard
             </Linking>
           </div>
           <input

@@ -1,12 +1,19 @@
-import { faJava, IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import {
+  faJava,
+  faLinux,
+  IconDefinition,
+} from "@fortawesome/free-brands-svg-icons";
 import { pages_interface } from "../utils/interfaces";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHourglassStart } from "@fortawesome/free-solid-svg-icons/faHourglassStart";
 import {
   faCog,
+  faComments,
   faDatabase,
   faViruses,
 } from "@fortawesome/free-solid-svg-icons";
+import { faRobot } from "@fortawesome/free-solid-svg-icons/faRobot";
+import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 
 interface about_interface {
   title: string;
@@ -112,23 +119,82 @@ export default function About(props: pages_interface) {
         "Released of my First Forum Website",
       ],
     },
+    {
+      title: "Let's have a talk",
+      year: 2021,
+      icon: faComments,
+      content: [
+        "Joined in IT Groups and Communities",
+        "Enhancement of Communication Skills",
+        "Collaboration by mentoring with different students",
+        "Initiation of Development for Front-end Editor",
+        "Applied for an Internship Job",
+      ],
+    },
+    {
+      title: "Road to AI and Automation [I Shall Return]",
+      year: 2022,
+      icon: faRobot,
+      content: [
+        "Last released of Front-end Editor",
+        "Started to create a facebook bot",
+        "Grinding in Javascript and NodeJS",
+        "Created my first NPM Project with Lester Navarra",
+        "Learned the basics of Web Scraping",
+        "Learned how to use RestAPI",
+        "Connect Front-end Editor into its backend",
+        "Go back to college",
+        "Started my Goal to a day commit challenge",
+        "Learned how to read Documentation",
+      ],
+    },
+    {
+      title: "Escape from my Comfort Zone",
+      year: 2023,
+      icon: faLinux,
+      content: [
+        "Started to use Linux Distro in Virtual Machines, also in dual boot",
+        "Use Linux Distro [Debian based and Arch Linux based distro] as primary OS on my device",
+        "Started to study Django",
+        "Troubleshoot in Distro installation [POP! OS]",
+        "Started to learn ReactJS",
+        "Initiation Project AI Haibara [Android AI Application]",
+      ],
+    },
+    {
+      title: "Redevelopment",
+      year: 2024,
+      icon: faTools,
+      content: [
+        "Creation of VCard and Portfolio",
+        "Studying Typescript and Javascript with ReactJS",
+        "Studying the use of Vite x ReactJS",
+        "Installation of Arch based Distro and Desktop Environment",
+        "Working in a multi-collaborator school project",
+      ],
+    },
   ];
   return (
     <div id={props.id} className={`${props.className} overflow-hidden`}>
       <h1 className="text-base lg:text-2xl">About</h1>
-      <div className="overflow-scroll w-full h-3/4">
-        {about.map((item: abt, i: number) => {
-          return (
-            <Information
-              title={item.title}
-              year={item.year}
-              icon={item.icon}
-              even={i % 2 == 0}
-            >
-              {item.content}
-            </Information>
-          );
-        })}
+      <div className="flex flex-col lg:flex-row w-full h-3/4 overflow-scroll">
+        <div className="w-full lg:w-1/2 h-full">
+          <h1>Left side</h1>
+        </div>
+        <div className="overflow-scroll w-full lg:w-1/2 h-full">
+          {about.map((item: abt, i: number) => {
+            return (
+              <Information
+                title={item.title}
+                year={item.year}
+                icon={item.icon}
+                even={i % 2 == 0}
+              >
+                {item.content}
+              </Information>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
