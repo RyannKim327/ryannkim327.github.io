@@ -177,23 +177,31 @@ export default function About(props: pages_interface) {
   return (
     <div id={props.id} className={`${props.className} overflow-hidden`}>
       <h1 className="text-base lg:text-2xl">About</h1>
-      <div className="flex flex-col lg:flex-row w-full h-3/4 overflow-scroll">
-        <div className="w-full lg:w-1/2 h-full">
-          <h1>Left side</h1>
+      <div className="flex flex-col lg:flex-row w-full h-3/4 overflow-hidden">
+        <div className="flex flex-col items-center w-full lg:w-1/2 h-full">
+          <h3 className="py-2">Left side</h3>
+          <blockquote className="px-2">
+            &emsp;I am Ryann Kim Sesgundo, a student where trying to expand my
+            experiences and knowledge in field releated projects which mostly
+            web based and android based projects.
+          </blockquote>
         </div>
-        <div className="overflow-scroll w-full lg:w-1/2 h-full">
-          {about.map((item: abt, i: number) => {
-            return (
-              <Information
-                title={item.title}
-                year={item.year}
-                icon={item.icon}
-                even={i % 2 == 0}
-              >
-                {item.content}
-              </Information>
-            );
-          })}
+        <div className="flex flex-col items-center w-full lg:w-1/2 h-full">
+          <h3 className="py-2">Experiences</h3>
+          <div className="overflow-scroll w-full h-full">
+            {about.map((item: abt, i: number) => {
+              return (
+                <Information
+                  title={item.title}
+                  year={item.year}
+                  icon={item.icon}
+                  even={i % 2 == 0}
+                >
+                  {item.content}
+                </Information>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

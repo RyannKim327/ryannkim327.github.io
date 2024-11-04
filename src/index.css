@@ -60,3 +60,15 @@
     }
   }
 }
+
+::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb: white;
+}

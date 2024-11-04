@@ -6,7 +6,7 @@ import Header from "./parts/header";
 
 function App() {
   return (
-    <div className="dark:bg-[#212129] dark:text-white w-dvw h-dvh">
+    <div className="overflow-x-hidden dark:bg-[#212129] dark:text-white w-dvw h-dvh">
       <Header className={`z-10`} />
       <Hero
         id="main"
