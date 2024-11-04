@@ -34,23 +34,26 @@ export default function Header(props: default_interface) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const scrollEffect = () => {
-      if (window.scrollY > 250) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+    const base = document.getElementById("base")
+    if (base) {
+      const scrollEffect = () => {
+        if (base.scrollTop > 250) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
+      };
 
-    window.addEventListener("scroll", scrollEffect);
-    return () => {
-      window.removeEventListener("scroll", scrollEffect);
-    };
+      base.addEventListener("scroll", scrollEffect);
+      return () => {
+        base.removeEventListener("scroll", scrollEffect);
+      };
+    }
   }, []);
 
   return (
     <header
-      className={`flex flex-row w-full fixed top-0 h-12 justify-between items-center p-2 select-none ${scrolled ? "bg-black text-white dark:bg-[#3d3e51]" : ""} ${props.className} transition ease delay-75`}
+      className={`flex flex-row w-full h-12 justify-between items-center p-2 select-none ${scrolled ? "bg-black text-white dark:bg-[#3d3e51]" : ""} ${props.className} transition ease delay-75`}
     >
       <div
         onClick={() => {
