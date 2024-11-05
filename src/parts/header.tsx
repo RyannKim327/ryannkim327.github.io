@@ -34,7 +34,7 @@ export default function Header(props: default_interface) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const base = document.getElementById("base")
+    const base = document.getElementById("base");
     if (base) {
       const scrollEffect = () => {
         if (base.scrollTop > 250) {
@@ -53,7 +53,7 @@ export default function Header(props: default_interface) {
 
   return (
     <header
-      className={`flex flex-row w-full h-12 justify-between items-center p-2 select-none ${scrolled ? "bg-black text-white dark:bg-[#3d3e51]" : ""} ${props.className} transition ease delay-75`}
+      className={`flex flex-row w-full justify-between items-center p-2 select-none ${scrolled ? "bg-black text-white dark:bg-[#3d3e51] h-12" : "h-16"} ${props.className} transition ease-in delay-150`}
     >
       <div
         onClick={() => {
