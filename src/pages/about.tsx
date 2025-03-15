@@ -178,15 +178,21 @@ export default function About(props: pages_interface) {
     <div id={props.id} className={`${props.className} overflow-hidden`}>
       <h1 className="text-base lg:text-2xl">About</h1>
       <div className="flex flex-col lg:flex-row w-full h-3/4 overflow-hidden">
-        <div className="flex flex-col items-center w-full lg:w-1/2 h-full">
-          <h3 className="py-2">Left side</h3>
-          <blockquote className="px-2">
+        <div className="flex flex-col items-center w-full lg:w-1/3 h-full">
+          <h3 className="py-2"> </h3>
+          <blockquote className="text-justify px-4 pt-4">
             &emsp;I am Ryann Kim Sesgundo, a student where trying to expand my
             experiences and knowledge in field releated projects which mostly
-            web based and android based projects.
+            web based and android based projects. I started in tech industry
+            since 2016, where I tried to do some stuffs such as android
+            modification and basics of web development and some cyber security.
+            I started to develop and publish my own android application on 2018.
+            I've been once a mentor and offer some educational stuffs for
+            college students which most of them are already graduated and
+            working in some famous company.
           </blockquote>
         </div>
-        <div className="flex flex-col items-center w-full lg:w-1/2 h-full">
+        <div className="flex flex-col items-center w-full lg:w-2/3 h-full">
           <h3 className="py-2">Experiences</h3>
           <div className="overflow-scroll w-full h-full">
             {about.map((item: abt, i: number) => {

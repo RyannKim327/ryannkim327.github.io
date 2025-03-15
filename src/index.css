@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "tailwindcss";
+
 .link-animation::after {
   background-color: #333333;
   content: "";
@@ -17,13 +19,13 @@
 
 .custom-input {
   position: relative;
-  border: 1px black solid;
+  border: 1px solid;
   padding: 0.5rem;
   backdrop-filter: blur(40px);
   box-sizing: border-box;
   user-select: none;
 
-  > span {
+  >span {
     position: absolute;
     top: 0.5rem;
     left: 0.5rem;
@@ -37,7 +39,7 @@
     transform: translateY(0) scale(1);
   }
 
-  > input {
+  >input {
     width: 100%;
     height: 100%;
     border: none;
@@ -46,14 +48,14 @@
     background-color: transparent;
 
     &:focus {
-      ~ span {
+      ~span {
         backdrop-filter: blur(40px);
         transform: translateY(-90%) scale(0.75);
       }
     }
 
     &:not(:placeholder-shown) {
-      ~ span {
+      ~span {
         backdrop-filter: blur(40px);
         transform: translateY(-90%) scale(0.75);
       }

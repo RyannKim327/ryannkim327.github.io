@@ -59,6 +59,9 @@ export default function Contact(props: pages_interface) {
         allowFullScreen={false}
         className="h-1/3 w-full dark:grayscale dark:invert transition ease-in delay-100"
       />
+      <h1 className="text-left my-[1px] py-[1px] ml-4 w-full">
+        You can reach me out using this form and platforms.
+      </h1>
       <form
         action="https://formsubmit.co/weryses19@gmail.com"
         method="POST"
@@ -66,13 +69,13 @@ export default function Contact(props: pages_interface) {
       >
         <div className="flex flex-row gap-2 w-full box-border">
           <Input
-            className={`w-full rounded dark:border-white`}
+            className={`w-full rounded border-black dark:border-white`}
             type="name"
             minLength={20}
-            placeholder="Hello"
+            placeholder="Name/Company name"
           />
           <Input
-            className={`w-full rounded dark:border-white`}
+            className={`w-full rounded border-black dark:border-white`}
             type="email"
             minLength={10}
             placeholder="Email Address"
@@ -93,8 +96,8 @@ export default function Contact(props: pages_interface) {
             <Linking icon={faGithub} url="https://github.com/RyannKim327">
               RyannKim327
             </Linking>
-            <Linking icon={faFacebook} url="https://fb.me/MPOP.ph">
-              Hello World
+            <Linking icon={faFacebook} url="https://fb.me/MPOP.2016">
+              MPOP Reverse II
             </Linking>
             <Linking icon={faNpm} url="https://npmjs.com/~ryannkim327">
               RyannKim327

@@ -66,7 +66,7 @@ export default function Header(props: default_interface) {
         }}
         className={`flex flex-row h-full items-center ${scrolled ? "cursor-pointer" : "cursor-default"}`}
       >
-        <img className="aspect-square h-full rounded-full" src={prof} />
+        <img className="aspect-square h-full box-border rounded-full" src={prof} />
         <div
           className={`${scrolled ? "opacity-1" : "opacity-0 cursor-default"}  transition ease delay-75`}
         >
