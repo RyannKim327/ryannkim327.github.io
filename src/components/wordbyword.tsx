@@ -3,7 +3,7 @@ import { children_required } from "../utils/interfaces";
 
 export default function Word(props: children_required) {
   const words: string[] = props.children.split(/\s/);
-  const gap: number = 150
+  const gap: number = 150;
   return (
     <div className={`flex flex-row items-center ${props.className}`}>
       {words.map((word, i) => {
@@ -23,7 +23,6 @@ export default function Word(props: children_required) {
             transition={{
               delay: i / 4,
             }}
-            className="text-sm md:text-md lg:text-3xl"
           >
             {word.replace(/_/gi, " ")}
           </motion.h1>

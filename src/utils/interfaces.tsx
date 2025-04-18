@@ -13,6 +13,7 @@ export interface pages_interface {
 export interface children_required {
   children: string;
   className?: string;
+  classTxt?: string;
 }
 
 export interface link_interface {

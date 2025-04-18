@@ -16,7 +16,7 @@ export default function Hero(props: pages_interface) {
       id={props.id}
       className={` transition ease delay-150 ${props.className}`}
     >
-      <Word>Hello, I am Ryann_Kim_M._Sesgundo</Word>
+      <Word className="text-5xl mb-4">Ryann Kim M. Sesgundo</Word>
       <motion.h1
         initial={{
           opacity: 0,
@@ -31,7 +31,7 @@ export default function Hero(props: pages_interface) {
         transition={{
           delay: 4 / 5,
         }}
-        className="text-xs lg:text-lg"
+        className="text-md lg:text-2xl"
       >
         A student of Dalubhasaan ng Lungsod ng Lucena
       </motion.h1>
@@ -50,7 +50,7 @@ export default function Hero(props: pages_interface) {
           transition={{
             delay: 1,
           }}
-          className="px-2 border-2 dark:border-white border-black border-solid rounded-full text-sm"
+          className="px-2 border-2 dark:border-white border-black border-solid rounded-full text-md"
           onClick={() => {
             heroButton("projects");
           }}
@@ -71,7 +71,7 @@ export default function Hero(props: pages_interface) {
           transition={{
             delay: 1,
           }}
-          className="px-2 border-2 border-black dark:border-white border-solid rounded-full text-sm"
+          className="px-2 border-2 border-black dark:border-white border-solid rounded-full text-md"
           onClick={() => {
             heroButton("contact");
           }}

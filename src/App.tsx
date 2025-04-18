@@ -6,8 +6,8 @@ import Header from "./parts/header";
 
 function App() {
   return (
-    <div className="flex flex-col dark:bg-[#212129] dark:text-white w-dvw h-dvh">
-      <Header className={``} />
+    <div className="flex flex-col dark:bg-[#212129] dark:text-white w-dvw h-dvh lg:px-[10%]">
+      <Header className={`my-2`} />
       <div id="base" className="w-full h-full overflow-scroll">
         <Hero
           id="main"
