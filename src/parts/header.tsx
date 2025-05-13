@@ -4,6 +4,7 @@ import { default_interface, link_interface } from "./../utils/interfaces.tsx";
 import {
   faFolderOpen,
   faIdCard,
+  faPencil,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -85,6 +86,9 @@ export default function Header(props: default_interface) {
         </List>
         <List link="projects" icon={faFolderOpen}>
           Projects
+        </List>
+        <List link="other-works" icon={faPencil}>
+          Poetry
         </List>
         <List link="contact" icon={faIdCard}>
           Contact
