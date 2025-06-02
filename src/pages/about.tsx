@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faRobot } from "@fortawesome/free-solid-svg-icons/faRobot";
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
+import { useEffect, useRef } from "react";
 
 interface about_interface {
   title: string;
@@ -32,14 +33,14 @@ interface abt {
 
 const Information = (props: about_interface) => {
   return (
-    <div className={`flex w-full box-border p-2 `}>
+    <div className={`inline-block w-full h-full box-border p-2`}>
       <fieldset
         style={{ borderWidth: "1px", borderStyle: "solid" }}
-        className={`flex flex-col border-black dark:border-white rounded w-full p-4`}
+        className={`flex flex-col border-black dark:border-white rounded w-full h-full p-4`}
       >
         <legend
           style={{ borderWidth: "1px", borderStyle: "solid" }}
-          className={`px-2 rounded ml-4 border-black dark:border-white`}
+          className={`px-4 py-2 rounded ml-4 border-black dark:border-white`}
         >
           <FontAwesomeIcon icon={props.icon} />
           <span className="pl-2 items-center">
@@ -64,6 +65,22 @@ const Information = (props: about_interface) => {
 };
 
 export default function About(props: pages_interface) {
+  const scrollContainerRef = useRef(null);
+  useEffect(() => {
+    const current = scrollContainerRef.current;
+    if (current) {
+      const onWheel = (e) => {
+        if (current) {
+          e.preventDefaut();
+          current.scrollLeft += e.deltaY;
+        }
+      };
+      current.addEventListener("wheel", onWheel, { passive: false });
+      return () => {
+        current.removeEventListener("wheel", onWheel);
+      };
+    }
+  }, []);
   const about: abt[] = [
     {
       title: "Beginner's Path",
@@ -178,36 +195,22 @@ export default function About(props: pages_interface) {
     <div id={props.id} className={`${props.className} overflow-hidden`}>
       <h1 className="text-base lg:text-2xl">About</h1>
       <div className="flex flex-col lg:flex-row w-full h-3/4 overflow-hidden">
-        {/* <div className="flex flex-col items-center w-full lg:w-1/3 h-full"> */}
-        {/*   <h3 className="py-2"> </h3> */}
-        {/*   <blockquote className="text-justify px-4 pt-4"> */}
-        {/*     &emsp;I am Ryann Kim Sesgundo, a student where trying to expand my */}
-        {/*     experiences and knowledge in field releated projects which mostly */}
-        {/*     web based and android based projects. I started in tech industry */}
-        {/*     since 2016, where I tried to do some stuffs such as android */}
-        {/*     modification and basics of web development and some cyber security. */}
-        {/*     I started to develop and publish my own android application on 2018. */}
-        {/*     I've been once a mentor and offer some educational stuffs for */}
-        {/*     college students which most of them are already graduated and */}
-        {/*     working in some famous company. */}
-        {/*   </blockquote> */}
-        {/* </div> */}
-        <div className="flex flex-col items-center w-full h-full">
-          <h3 className="py-2">Experiences</h3>
-          <div className="overflow-scroll w-full h-full">
-            {about.map((item: abt, i: number) => {
-              return (
-                <Information
-                  title={item.title}
-                  year={item.year}
-                  icon={item.icon}
-                  even={i % 2 == 0}
-                >
-                  {item.content}
-                </Information>
-              );
-            })}
-          </div>
+        <div
+          ref={scrollContainerRef}
+          className="overflow-x-scroll overflow-y-hidden w-full h-full whitespace-nowrap box-border"
+        >
+          {about.map((item: abt, i: number) => {
+            return (
+              <Information
+                title={item.title}
+                year={item.year}
+                icon={item.icon}
+                even={i % 2 == 0}
+              >
+                {item.content}
+              </Information>
+            );
+          })}
         </div>
       </div>
     </div>

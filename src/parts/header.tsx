@@ -87,9 +87,9 @@ export default function Header(props: default_interface) {
         <List link="projects" icon={faFolderOpen}>
           Projects
         </List>
-        <List link="other-works" icon={faPencil}>
-          Poetry
-        </List>
+        {/* <List link="other-works" icon={faPencil}> */}
+        {/*   Poetry */}
+        {/* </List> */}
         <List link="contact" icon={faIdCard}>
           Contact
         </List>
