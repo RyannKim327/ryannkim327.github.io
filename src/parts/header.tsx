@@ -4,7 +4,6 @@ import { default_interface, link_interface } from "./../utils/interfaces.tsx";
 import {
   faFolderOpen,
   faIdCard,
-  faPencil,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

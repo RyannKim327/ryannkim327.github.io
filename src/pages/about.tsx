@@ -33,10 +33,10 @@ interface abt {
 
 const Information = (props: about_interface) => {
   return (
-    <div className={`inline-block w-full h-full box-border p-2`}>
+    <div className={`block w-full h-full box-border p-2`}>
       <fieldset
         style={{ borderWidth: "1px", borderStyle: "solid" }}
-        className={`flex flex-col border-black dark:border-white rounded w-full h-full p-4`}
+        className={`flex flex-col border-black dark:border-white rounded w-full h-full p-4 box-border`}
       >
         <legend
           style={{ borderWidth: "1px", borderStyle: "solid" }}
@@ -49,7 +49,7 @@ const Information = (props: about_interface) => {
         </legend>
         <blockquote
           style={{ borderLeftWidth: "3px", borderLeftStyle: "solid" }}
-          className="border-l-black dark:border-l-white pl-4"
+          className="border-l-black dark:border-l-white pl-4 w-full text-wrap box-border"
         >
           {props.children.map((item, i) => {
             return (
@@ -65,11 +65,11 @@ const Information = (props: about_interface) => {
 };
 
 export default function About(props: pages_interface) {
-  const scrollContainerRef = useRef(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const current = scrollContainerRef.current;
     if (current) {
-      const onWheel = (e) => {
+      const onWheel = (e: any) => {
         if (current) {
           e.preventDefaut();
           current.scrollLeft += e.deltaY;
@@ -192,12 +192,15 @@ export default function About(props: pages_interface) {
     },
   ];
   return (
-    <div id={props.id} className={`${props.className} overflow-hidden`}>
+    <div
+      id={props.id}
+      className={`${props.className} flex overflow-hidden w-full h-full`}
+    >
       <h1 className="text-base lg:text-2xl">About</h1>
-      <div className="flex flex-col lg:flex-row w-full h-3/4 overflow-hidden">
+      <div className="flex flex-col md:flex-row w-full max-h-3/4 overflow-hidden box-border">
         <div
           ref={scrollContainerRef}
-          className="overflow-x-scroll overflow-y-hidden w-full h-full whitespace-nowrap box-border"
+          className="overflow-x-scroll overflow-y-hidden flex h-full whitespace-nowrap box-border"
         >
           {about.map((item: abt, i: number) => {
             return (
