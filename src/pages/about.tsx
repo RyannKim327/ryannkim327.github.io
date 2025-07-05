@@ -33,7 +33,7 @@ interface abt {
 
 const Information = (props: about_interface) => {
   return (
-    <div className={`block w-full h-full box-border p-2`}>
+    <div className={`block w-full h-full box-border p-2 select-none`}>
       <fieldset
         style={{ borderWidth: "1px", borderStyle: "solid" }}
         className={`flex flex-col border-black dark:border-white rounded w-full h-full p-4 box-border`}

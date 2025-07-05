@@ -5,14 +5,14 @@ export default function Projects(props: pages_interface) {
   return (
     <div id={props.id} className={`${props.className} gap-10 w-full h-full`}>
       <h1 className="text-base lg:text-2xl">Projects</h1>
-      <div className="flex flex-wrap justify-center overflow-scroll gap-2 w-full h-full box-border">
+      <div className="flex flex-wrap justify-center overflow-y-scroll gap-2 w-full h-full box-border">
         {Images().map((item) => {
           return (
             <div
               style={{
                 backgroundImage: `url(${item.src})`,
               }}
-              className="flex flex-col justify-end items-center w-2/7 lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150"
+              className="flex flex-col justify-end items-center w-3/7 md:w-2/7 lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150"
             >
               {/* <img */}
               {/*   className="grayscale hover:grayscale-0 transition ease-all delay-150 w-full aspect-video" */}
