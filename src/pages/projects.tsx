@@ -43,21 +43,21 @@ export default function Projects(props: pages_interface) {
   return (
     <div id={props.id} className={`${props.className} gap-10 w-full h-full`}>
       <h1 className="text-base lg:text-2xl">Projects</h1>
-      <div className="flex w-full gap-1 justify-center">
+      <div className="flex w-full gap-2 box-border overflow-x-auto">
         {categories.map((category_) => {
           return (
             <span
               onClick={() => {
                 setCategory(category_.toLowerCase());
               }}
-              className={`${category_ === category ? "bg-slate-900" : "bg-slate-500"} select-none px-2 rounded-md cursor-pointer`}
+              className={`${category_ === category ? "bg-slate-900" : "bg-slate-500"} w-full text-center select-none px-2 rounded-md cursor-pointer`}
             >
               {category_[0].toUpperCase() + category_.substring(1)}
             </span>
           );
         })}
       </div>
-      <div className="flex flex-wrap justify-center gap-2 w-full h-full box-border overflow-y-auto">
+      <div className="flex flex-wrap justify-center gap-4 w-full h-full box-border overflow-y-auto">
         {projects.length <= 0 ? (
           <p>
             No Projects included with "
