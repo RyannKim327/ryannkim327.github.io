@@ -6,7 +6,7 @@ import Header from "./parts/header";
 
 function App() {
   return (
-    <div className="flex flex-col dark:bg-[#212129] dark:text-white w-dvw h-dvh lg:px-[10%]">
+    <div className="flex flex-col dark:bg-[#212129] dark:text-white w-dvw h-dvh md:px-[2%] lg:px-[10%]">
       <Header className={`my-2`} />
       <div
         id="base"
@@ -24,10 +24,6 @@ function App() {
           id="projects"
           className="snap-start dark:bg-[#212129] overflow-hidden dark:text-white flex flex-col box-border items-center justify-center h-full w-full"
         />
-        {/* <Poetry */}
-        {/*   id="other-works" */}
-        {/*   className="snap-start dark:bg-[#212129] dark:text-white flex flex-col box-border items-center justify-center h-full w-full" */}
-        {/* /> */}
         <Contact
           id="contact"
           className="snap-start dark:bg-[#212129] dark:text-white flex flex-col box-border items-center justify-center h-full w-full"

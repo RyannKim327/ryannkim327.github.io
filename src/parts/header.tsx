@@ -53,7 +53,7 @@ export default function Header(props: default_interface) {
 
   return (
     <header
-      className={`flex flex-row w-full sticky justify-between items-center p-2 select-none dark:text-white text-black ${scrolled ? "h-12 lg:h-16" : "h-16 lg:h-24 lg:text-lg"} ${props.className} transition ease-in delay-150`}
+      className={`flex flex-row w-full sticky justify-between items-center p-2 select-none dark:text-white text-black ${scrolled ? "h-12 lg:h-16" : "h-12 lg:h-16 lg:text-lg"} ${props.className} transition ease-in delay-150`}
     >
       <div
         onClick={() => {
@@ -79,6 +79,7 @@ export default function Header(props: default_interface) {
           <h3 className={`pl-4 text-xs`}>A software and Web Developer</h3>
         </div>
       </div>
+
       <nav className="flex flex-row list-none">
         <List link="about" icon={faUser}>
           About
@@ -86,9 +87,6 @@ export default function Header(props: default_interface) {
         <List link="projects" icon={faFolderOpen}>
           Projects
         </List>
-        {/* <List link="other-works" icon={faPencil}> */}
-        {/*   Poetry */}
-        {/* </List> */}
         <List link="contact" icon={faIdCard}>
           Contact
         </List>
