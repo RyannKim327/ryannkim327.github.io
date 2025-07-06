@@ -1,37 +1,99 @@
-import Images from "../assets/projects/images";
-import { pages_interface } from "../utils/interfaces";
+import { pages_interface, projects } from "../utils/interfaces";
+import API from "../utils/api";
+import { useEffect, useState } from "react";
 
 export default function Projects(props: pages_interface) {
+  const [categories, setCategories] = useState<string[]>([]);
+  const [listProjects, setListProjects] = useState<projects[]>([]);
+  const [projects, setProjects] = useState<projects[]>([]);
+  const [category, setCategory] = useState("all");
+
+  useEffect(() => {
+    (async () => {
+      const api = await API();
+      setCategories(["all", ...api.categories]);
+      const programs = api.projects.sort((a, b) =>
+        a.name.localeCompare(b.name),
+      );
+      setListProjects(programs);
+      if (category && category !== "all") {
+        setProjects(
+          programs.filter((program) =>
+            program.category.includes(category.toLowerCase()),
+          ),
+        );
+      } else {
+        setProjects(programs);
+      }
+    })();
+  }, []);
+
+  useEffect(() => {
+    if (category && category !== "all") {
+      setProjects(
+        listProjects.filter((project) =>
+          project.category.includes(category.toLowerCase()),
+        ),
+      );
+    } else {
+      setProjects(listProjects);
+    }
+  }, [category]);
+
   return (
     <div id={props.id} className={`${props.className} gap-10 w-full h-full`}>
       <h1 className="text-base lg:text-2xl">Projects</h1>
-      <div className="flex flex-wrap justify-center overflow-y-scroll gap-2 w-full h-full box-border">
-        {Images().map((item) => {
+      <div className="flex w-full gap-1 justify-center">
+        {categories.map((category_) => {
           return (
-            <div
-              style={{
-                backgroundImage: `url(${item.src})`,
+            <span
+              onClick={() => {
+                setCategory(category_.toLowerCase());
               }}
-              className="flex flex-col justify-end items-center w-3/7 md:w-2/7 lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150"
+              className={`${category_ === category ? "bg-slate-900" : "bg-slate-500"} select-none px-2 rounded-md cursor-pointer`}
             >
-              {/* <img */}
-              {/*   className="grayscale hover:grayscale-0 transition ease-all delay-150 w-full aspect-video" */}
-              {/*   alt={item.name} */}
-              {/*   src={item.src} */}
-              {/* /> */}
-              <span
+              {category_[0].toUpperCase() + category_.substring(1)}
+            </span>
+          );
+        })}
+      </div>
+      <div className="flex flex-wrap justify-center gap-2 w-full h-full box-border overflow-y-auto">
+        {projects.length <= 0 ? (
+          <p>
+            No Projects included with "
+            {category[0].toUpperCase() + category.substring(1).toLowerCase()}"
+            yet.
+          </p>
+        ) : (
+          projects.map((item) => {
+            return (
+              <div
                 onClick={() => {
                   const w = window.open(item.link);
                   if (w) w.focus();
                 }}
-                className="flex flex-col select-none cursor-pointer hover:underline justify-center items-center text-white bg-black/50 mt-[-30px] px-2 backdrop-blur box-border"
+                style={{
+                  backgroundImage: `url(${item.src ?? ""})`,
+                }}
+                className={`flex flex-col justify-end h-1/3 w-3/7 md:w-2/7 bg-slate-900 text-white p-2 lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
               >
-                <h1 className="text-base lg:text-3xl">{item.name}</h1>
-                <h3>{item.description}</h3>
-              </span>
-            </div>
-          );
-        })}
+                {/* <img */}
+                {/*   className="grayscale hover:grayscale-0 transition ease-all delay-150 w-full aspect-video" */}
+                {/*   alt={item.name} */}
+                {/*   src={item.src} */}
+                {/* /> */}
+                <span className="flex flex-col bg-slate-900/50 select-none cursor-pointer hover:underline justify-center items-center box-border">
+                  <h1 className="text-base md:text-xl text-center">
+                    {item.name}
+                  </h1>
+                  <h3 className="text-xs text-center">
+                    {item.description ?? "No description applied"}
+                  </h3>
+                </span>
+              </div>
+            );
+          })
+        )}
       </div>
     </div>
   );

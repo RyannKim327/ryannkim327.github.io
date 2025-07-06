@@ -22,3 +22,16 @@ export interface link_interface {
   className?: string;
   icon: IconDefinition;
 }
+
+export interface gist {
+  categories: string[];
+  projects: projects[];
+}
+
+export interface projects {
+  name: string;
+  description?: string;
+  link: string;
+  category: string[];
+  src?: string;
+}

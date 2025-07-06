@@ -18,7 +18,7 @@
     "@tailwindcss/vite": "^4.0.14",
     "@types/node": "^22.7.4",
     "autoprefixer": "^10.4.20",
-    "axios": "^1.9.0",
+    "axios": "^1.10.0",
     "framer-motion": "^11.11.10",
     "gh-pages": "^6.3.0",
     "postcss": "^8.4.47",
