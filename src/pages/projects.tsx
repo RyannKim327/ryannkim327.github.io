@@ -42,7 +42,7 @@ export default function Projects(props: pages_interface) {
 
   return (
     <div id={props.id} className={`${props.className} gap-10 w-full h-full`}>
-      <h1 className="text-base lg:text-2xl">Projects</h1>
+      <h1 className="text-base lg:text-2xl">{category[0].toUpperCase() + category.substring(1).toLowerCase()} Projects</h1>
       <div className="flex w-full gap-2 box-border overflow-x-auto">
         {categories.map((category_) => {
           return (
