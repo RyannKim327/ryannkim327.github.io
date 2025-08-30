@@ -71,12 +71,12 @@ export default function Header(props: default_interface) {
           src={prof}
         />
         <div
-          className={`${scrolled ? "opacity-1" : "opacity-1 cursor-default"} h-full transition ease delay-75`}
+          className={`flex flex-col justify-center gap-1 ${scrolled ? "" : "opacity-1 cursor-default"} h-full transition ease delay-75`}
         >
           <h1 className={`text-black dark:text-white pl-2 text-base`}>
             Ryann Kim M. Sesgundo
           </h1>
-          <h3 className={`pl-4 text-xs`}>A software and Web Developer</h3>
+          <h3 className={`pl-2 text-xs`}>A software and Web Developer</h3>
         </div>
       </div>
 
