@@ -12,6 +12,7 @@ import {
   faCog,
   faComments,
   faDatabase,
+  faLock,
   faViruses,
 } from "@fortawesome/free-solid-svg-icons";
 import { faRobot } from "@fortawesome/free-solid-svg-icons/faRobot";
@@ -128,6 +129,7 @@ const experience: abt = [
       "Troubleshoot in Distro installation [POP! OS]",
       "Started to learn ReactJS",
       "Initiation Project AI Haibara [Android AI Application]",
+      "Participated in Hack4Gov 2 2023",
     ],
   },
   {
@@ -140,6 +142,21 @@ const experience: abt = [
       "Studying the use of Vite x ReactJS",
       "Installation of Arch based Distro and Desktop Environment",
       "Working in a multi-collaborator school project",
+      "Participated in Hack4Gov 3 2024",
+    ],
+  },
+  {
+    title: "Diving into the Security",
+    year: 2025,
+    icon: faLock,
+    content: [
+      "IT Paradigm Cybersecurity Team Leader",
+      "Participated in OpenIT Hackathon (July 2025)",
+      "Participated in OpenIT Hackathon (November 2025)",
+      "Exploring the different system vulnerabilities",
+      "Participated in 2025 PSA Datafest",
+      "Having multi-collaborator project with other students",
+      "Head Developer of DLL TapIn",
     ],
   },
 ];
