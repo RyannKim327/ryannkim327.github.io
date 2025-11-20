@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../../utils/api";
 import { projects } from "../../utils/interfaces";
-import { div } from "framer-motion/client";
 
 export default function RightProjects(){
     const [categories, setCategories] = useState<string[]>([]);
@@ -53,7 +52,7 @@ export default function RightProjects(){
                                         onClick={() => {
                                             setCategory(category_.toLowerCase());
                                         }}
-                                        className={`${category_ === category ? "bg-slate-900" : "bg-slate-500"} w-full text-center select-none px-2 rounded-md cursor-pointer`}
+                                        className={`${category_ === category ? "bg-[#ea9a97]" : "bg-[#6e6a86]"} w-full text-center select-none px-2 rounded-md cursor-pointer`}
                                     >
                                         {category_[0].toUpperCase() + category_.substring(1)}
                                     </span>
@@ -80,7 +79,7 @@ export default function RightProjects(){
                                             }}
                                             className={`flex flex-row w-1/4 h-1/5 justify-between bg-slate-900 text-white lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
                                         >
-                                            <span className="flex flex-col bg-slate-900/50 w-full h-full select-none cursor-pointer hover:underline justify-center items-center box-border">
+                                            <span className="flex flex-col bg-[#6e6a86]/50 w-full h-full select-none cursor-pointer hover:underline justify-center items-center box-border">
                                                 <h1 className="text-base text-center">
                                                     <span>{item.name}</span>
                                                 </h1>

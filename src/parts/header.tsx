@@ -7,6 +7,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router";
 
 function List(props: link_interface) {
   const link = (id: string) => {
@@ -18,15 +19,16 @@ function List(props: link_interface) {
     }
   };
   return (
-    <li
-      onClick={() => {
-        link(props.link);
-      }}
-      className="cursor-pointer p-2 link-animation"
-    >
-      <FontAwesomeIcon className="lg:hidden" icon={props.icon} />
+    // <li
+    //   onClick={() => {
+    //     link(props.link);
+    //   }}
+    //   className="cursor-pointer p-2 link-animation"
+    // >
+    <Link to={props.link} >  <FontAwesomeIcon className="lg:hidden" icon={props.icon} />
       <span className="hidden lg:inline">{props.children}</span>
-    </li>
+    </Link>
+    // </li>
   );
 }
 
@@ -56,20 +58,22 @@ export default function Header(props: default_interface) {
       className={`flex flex-row w-full sticky justify-between items-center p-2 select-none dark:text-white text-black ${scrolled ? "h-12 lg:h-16" : "h-12 lg:h-16 lg:text-lg"} ${props.className} transition ease-in delay-150`}
     >
       <div
-        onClick={() => {
-          const _ = document.getElementById("main");
-          if (_) {
-            _.scrollIntoView({
-              behavior: "smooth",
-            });
-          }
-        }}
+        // onClick={() => {
+        //   const _ = document.getElementById("main");
+        //   if (_) {
+        //     _.scrollIntoView({
+        //       behavior: "smooth",
+        //     });
+        //   }
+        // }}
         className={`flex flex-row h-full items-center ${scrolled ? "cursor-pointer" : "cursor-default"}`}
       >
-        <img
-          className="aspect-square h-full box-border rounded-full"
-          src={prof}
-        />
+        <Link to="" className={`flex flex-row h-full items-center ${scrolled ? "cursor-pointer" : "cursor-default"}`}>
+          <img
+            className="aspect-square h-full box-border rounded-full"
+            src={prof}
+          />
+        </Link>
         <div
           className={`flex flex-col justify-center gap-1 ${scrolled ? "" : "opacity-1 cursor-default"} h-full transition ease delay-75`}
         >
@@ -80,7 +84,7 @@ export default function Header(props: default_interface) {
         </div>
       </div>
 
-      <nav className="flex flex-row list-none">
+      <nav className="flex flex-row list-none gap-2">
         <List link="about" icon={faUser}>
           About
         </List>
