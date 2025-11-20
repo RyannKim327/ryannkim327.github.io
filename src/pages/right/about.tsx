@@ -3,7 +3,6 @@ import {
   faLinux,
   IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
-import { pages_interface } from "../utils/interfaces";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHourglassStart } from "@fortawesome/free-solid-svg-icons/faHourglassStart";
 import {
@@ -14,18 +13,10 @@ import {
   faDatabase,
   faLock,
   faViruses,
+  faRobot,
+  faTools
 } from "@fortawesome/free-solid-svg-icons";
-import { faRobot } from "@fortawesome/free-solid-svg-icons/faRobot";
-import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
-import { useEffect, useRef, useState } from "react";
-
-interface about_interface {
-  title: string;
-  year: number;
-  children: string[];
-  icon: IconDefinition;
-  even: boolean;
-}
+import { useEffect, useState } from "react";
 
 interface abt {
   title: string;
@@ -34,7 +25,7 @@ interface abt {
   content: string[];
 }
 
-const experience: abt = [
+const experience: abt[] = [
   {
     title: "Beginner's Path",
     year: 2016,
@@ -154,7 +145,7 @@ const experience: abt = [
       "Participated in OpenIT Hackathon (July 2025)",
       "Participated in OpenIT Hackathon (November 2025)",
       "Exploring the different system vulnerabilities",
-      "Participated in 2025 PSA Datafest",
+      "Participated in 2025 PSA DataFest",
       "Having multi-collaborator project with other students",
       "Head Developer of DLL TapIn",
     ],
@@ -164,6 +155,13 @@ const experience: abt = [
 export default function RightAbout() {
   const [current, setCurrent] = useState(0);
   const [exp, setExp] = useState<abt>(experience[current]);
+
+  useEffect(() => {
+    const looper = setInterval(() => {
+      nav()
+    }, 5000)
+    return clearInterval(looper)
+  }, [])
 
   const nav = (n = true) => {
     let current_ = current;
@@ -184,10 +182,10 @@ export default function RightAbout() {
   };
 
   return (
-    <div className="flex flex-row w-full h-full p-2 py-6 items-center gap-2">
+    <div className="flex flex-row w-full h-full p-2 py-6 items-center gap-2 select-none">
       <FontAwesomeIcon onClick={() => nav(false)} icon={faArrowLeft} />
-      <fieldset className="border-1 border-[#c4a7e7] border-solid p-2 rounded w-full h-full ">
-        <legend className="flex gap-2 items-center border-1 border-[#c4a7e7] border-solid p-2 rounded ml-[25px]">
+      <fieldset className="border border-[#c4a7e7] border-solid p-2 rounded w-full h-full ">
+        <legend className="flex gap-2 items-center border border-[#c4a7e7] border-solid p-2 rounded ml-[25px]">
           <FontAwesomeIcon icon={exp.icon} />
           <span>{exp.title}</span>
           <span className="text-[10px]">{exp.year}</span>
