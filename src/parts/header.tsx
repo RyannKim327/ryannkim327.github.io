@@ -3,22 +3,25 @@ import prof from "./../assets/prof.jpg";
 import { default_interface, link_interface } from "./../utils/interfaces.tsx";
 import {
   faFolderOpen,
+  faHouse,
   faIdCard,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
 
+function onclick(id: string) {
+  const _ = document.getElementById(id);
+  if (_) {
+    _.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+}
+
 function List(props: link_interface) {
-  const link = (id: string) => {
-    const _ = document.getElementById(id);
-    if (_) {
-      _.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
   return (
+<<<<<<< HEAD
     // <li
     //   onClick={() => {
     //     link(props.link);
@@ -26,6 +29,15 @@ function List(props: link_interface) {
     //   className="cursor-pointer p-2 link-animation"
     // >
     <Link to={props.link} >  <FontAwesomeIcon className="lg:hidden" icon={props.icon} />
+=======
+    <li
+      onClick={() => {
+        onclick(props.link);
+      }}
+      className="cursor-pointer p-2 link-animation"
+    >
+      <FontAwesomeIcon className="lg:hidden" icon={props.icon} />
+>>>>>>> a2fd2b84c086778b589ffe0cfa196cb5d592062f
       <span className="hidden lg:inline">{props.children}</span>
     </Link>
     // </li>
@@ -57,6 +69,7 @@ export default function Header(props: default_interface) {
     <header
       className={`flex flex-row w-full sticky justify-between items-center p-2 select-none dark:text-white text-black ${scrolled ? "h-12 lg:h-16" : "h-12 lg:h-16 lg:text-lg"} ${props.className} transition ease-in delay-150`}
     >
+<<<<<<< HEAD
       <div
         // onClick={() => {
         //   const _ = document.getElementById("main");
@@ -85,16 +98,21 @@ export default function Header(props: default_interface) {
       </div>
 
       <nav className="flex flex-row list-none gap-2">
+=======
+      {scrolled ? <div>MPOP Reverse II</div> : null}
+      <nav className="flex flex-row list-none">
+        <List link="home" icon={faHouse}>
+          Home
+        </List>
+>>>>>>> a2fd2b84c086778b589ffe0cfa196cb5d592062f
         <List link="about" icon={faUser}>
           About
         </List>
         <List link="projects" icon={faFolderOpen}>
           Projects
         </List>
-        <List link="contact" icon={faIdCard}>
-          Contact
-        </List>
       </nav>
+      <span className="bg-lime-900 px-3 py-1 rounded-full">Contact</span>
     </header>
   );
 }

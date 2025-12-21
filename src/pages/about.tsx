@@ -33,37 +33,46 @@ interface abt {
 
 const Information = (props: about_interface) => {
   return (
-    <div className={`block w-full h-full box-border p-2 select-none`}>
-      <fieldset
-        style={{ borderWidth: "1px", borderStyle: "solid" }}
-        className={`flex flex-col border-black dark:border-white rounded w-full h-full p-4 box-border`}
+    <div className="flex w-full justify-center py-6">
+      {/* Left side */}
+      {props.even && (
+        <div className="flex justify-start -pl-6">
+          <div className="bg-slate-900 text-white p-4 rounded-lg w-100">
+            <h2 className="text-cyan-400 font-bold">{props.year}</h2>
+            <h3 className="text-lg font-semibold">{props.title}</h3>
+            <ul className="text-sm mt-2 list-disc list-inside">
+              {props.children.map((c, i) => (
+                <li key={i}>{c}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+
+      {/* Timeline icon */}
+      <div
+        className={`${props.even ? "-translate-x-1/2" : "translate-x-1/2"} -translate-y-1/2 bg-white border-2 border-slate-900 w-10 h-10 rounded-full flex items-center justify-center `}
       >
-        <legend
-          style={{ borderWidth: "1px", borderStyle: "solid" }}
-          className={`px-4 py-2 rounded ml-4 border-black dark:border-white`}
-        >
-          <FontAwesomeIcon icon={props.icon} />
-          <span className="pl-2 items-center">
-            {props.title} <sub>{props.year}</sub>
-          </span>
-        </legend>
-        <blockquote
-          style={{ borderLeftWidth: "3px", borderLeftStyle: "solid" }}
-          className="border-l-black dark:border-l-white pl-4 w-full text-wrap box-border"
-        >
-          {props.children.map((item, i) => {
-            return (
-              <p>
-                {i + 1}. {item}
-              </p>
-            );
-          })}
-        </blockquote>
-      </fieldset>
+        <FontAwesomeIcon icon={props.icon} className="text-slate-900" />
+      </div>
+
+      {/* Right side */}
+      {!props.even && (
+        <div className="flex justify-end -pr-6">
+          <div className="bg-slate-900 text-white p-4 rounded-lg w-100">
+            <h2 className="text-cyan-400 font-bold">{props.year}</h2>
+            <h3 className="text-lg font-semibold">{props.title}</h3>
+            <ul className="text-sm mt-2 list-disc list-inside">
+              {props.children.map((c, i) => (
+                <li key={i}>{c}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
-
 export default function About(props: pages_interface) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -194,14 +203,11 @@ export default function About(props: pages_interface) {
   return (
     <div
       id={props.id}
-      className={`${props.className} flex overflow-hidden w-full h-full`}
+      className={`${props.className} flex flex-col overflow-hidden w-full h-full`}
     >
       <h1 className="text-base lg:text-2xl">About</h1>
-      <div className="flex flex-col md:flex-row w-full max-h-3/4 overflow-hidden box-border">
-        <div
-          ref={scrollContainerRef}
-          className="overflow-x-scroll overflow-y-hidden flex h-full whitespace-nowrap box-border"
-        >
+      <div className="flex flex-col w-full max-h-3/4 box-border">
+        <div className="flex flex-col h-full w-full overflow-y-auto box-border">
           {about.map((item: abt, i: number) => {
             return (
               <Information
