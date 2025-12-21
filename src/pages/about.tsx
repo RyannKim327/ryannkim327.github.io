@@ -33,13 +33,15 @@ interface abt {
 
 const Information = (props: about_interface) => {
   return (
-    <div className="flex w-full justify-center py-6">
+    <div
+      className={`flex w-full ${props.even ? "justify-start" : "justify-end"} items-start py-6`}
+    >
       {/* Left side */}
       {props.even && (
-        <div className="flex justify-start -pl-6">
+        <div className="flex justify-end w-1/2 pr-6">
           <div className="bg-slate-900 text-white p-4 rounded-lg w-100">
-            <h2 className="text-cyan-400 font-bold">{props.year}</h2>
-            <h3 className="text-lg font-semibold">{props.title}</h3>
+            <h2 className="text-cyan-400 font-bold text-end">{props.year}</h2>
+            <h3 className="text-lg font-semibold text-end">{props.title}</h3>
             <ul className="text-sm mt-2 list-disc list-inside">
               {props.children.map((c, i) => (
                 <li key={i}>{c}</li>
@@ -51,14 +53,14 @@ const Information = (props: about_interface) => {
 
       {/* Timeline icon */}
       <div
-        className={`${props.even ? "-translate-x-1/2" : "translate-x-1/2"} -translate-y-1/2 bg-white border-2 border-slate-900 w-10 h-10 rounded-full flex items-center justify-center `}
+        className={`${props.even ? "-translate-x-1/2" : "translate-x-1/2"} translate-y-1/2 bg-white border-2 border-slate-900 w-10 h-10 rounded-full flex items-center justify-center `}
       >
         <FontAwesomeIcon icon={props.icon} className="text-slate-900" />
       </div>
 
       {/* Right side */}
       {!props.even && (
-        <div className="flex justify-end -pr-6">
+        <div className="flex justify-start w-1/2 pl-6">
           <div className="bg-slate-900 text-white p-4 rounded-lg w-100">
             <h2 className="text-cyan-400 font-bold">{props.year}</h2>
             <h3 className="text-lg font-semibold">{props.title}</h3>
@@ -205,7 +207,7 @@ export default function About(props: pages_interface) {
       id={props.id}
       className={`${props.className} flex flex-col overflow-hidden w-full h-full`}
     >
-      <h1 className="text-base lg:text-2xl">About</h1>
+      {/* <h1 className="text-base lg:text-2xl">About</h1> */}
       <div className="flex flex-col w-full max-h-3/4 box-border">
         <div className="flex flex-col h-full w-full overflow-y-auto box-border">
           {about.map((item: abt, i: number) => {
