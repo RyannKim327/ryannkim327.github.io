@@ -1,7 +1,7 @@
 import axios from "axios";
 import { json } from "./interfaces";
 
-const TEST_MODE = true;
+const TEST_MODE = false;
 
 const URL = TEST_MODE
   ? "http://localhost:8000"
