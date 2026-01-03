@@ -6,9 +6,9 @@ import Hero from "./pages/hero";
 function App() {
   return (
     <div className="flex flex-col p-4 bg-[#232136] text-[#e0def4] w-dvw h-dvh">
-      <div className="flex flex-col border border-solid border-[#c4a7e7] h-full w-full overflow-hidden">
+      <div className="flex flex-col border border-solid border-[#c4a7e7] h-full w-full overflow-hidden pt-6 px-6">
         <Header />
-        <div className="flex flex-col w-full h-full overflow-y-scroll">
+        <div className="w-full h-full overflow-y-scroll">
           <Hero id="hero" />
           <About id="about" />
         </div>

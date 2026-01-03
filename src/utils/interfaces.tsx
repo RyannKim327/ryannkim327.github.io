@@ -35,3 +35,5 @@ export interface projects {
   category: string[];
   src?: string;
 }
+
+export type json = Record<string, any>;

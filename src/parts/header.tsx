@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import prof from "./../assets/prof.jpg";
 import { default_interface, link_interface } from "./../utils/interfaces.tsx";
 import {
+  faContactCard,
   faFolderOpen,
   faHouse,
-  faIdCard,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router";
+
+import Logo from "./../assets/logo.jpg";
 
 function onclick(id: string) {
   const _ = document.getElementById(id);
@@ -56,9 +56,9 @@ export default function Header(props: default_interface) {
 
   return (
     <header
-      className={`flex flex-row w-full sticky justify-between items-center p-2 select-none dark:text-white text-black ${scrolled ? "h-12 lg:h-16" : "h-12 lg:h-16 lg:text-lg"} ${props.className} transition ease-in delay-150`}
+      className={`flex flex-row w-full sticky justify-between items-center p-2 select-none dark:text-white text-black ${scrolled ? "h-12 lg:h-16" : "h-16 lg:h-20 lg:text-lg"} ${props.className} transition ease-in delay-150`}
     >
-      {scrolled ? <div>MPOP Reverse II</div> : null}
+      <img src={Logo} className="h-[50px] rounded-full aspect-square" />
       <nav className="flex flex-row list-none">
         <List link="home" icon={faHouse}>
           Home
@@ -69,8 +69,10 @@ export default function Header(props: default_interface) {
         <List link="projects" icon={faFolderOpen}>
           Projects
         </List>
+        <List link="contact" icon={faContactCard}>
+          Contact
+        </List>
       </nav>
-      <span className="bg-lime-900 px-3 py-1 rounded-full">Contact</span>
     </header>
   );
 }
