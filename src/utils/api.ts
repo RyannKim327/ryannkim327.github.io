@@ -12,7 +12,7 @@ function urlChecker(endpoint: string) {
   if (!url.endsWith("/") && endpoint != "") {
     url += "/";
   }
-  return `${url}${endpoint}/`;
+  return `${url}${endpoint}`;
 }
 
 function response(data: json | json[], status: number): json {
