@@ -10,6 +10,13 @@ interface about_interface {
   even: boolean;
 }
 
+interface abt {
+  title: string;
+  year: number;
+  icon: string;
+  content?: string[];
+}
+
 const Information = (props: about_interface) => {
   return (
     <div
@@ -93,7 +100,7 @@ export default function About(props: pages_interface) {
       <div className="flex flex-col w-full h-full box-border">
         <div className="flex flex-col h-full w-full overflow-y-auto box-border">
           {about.length > 0 ? (
-            about.map((item: about_interface, i: number) => {
+            about.map((item: abt, i: number) => {
               return (
                 <Information
                   title={item.title}
@@ -101,7 +108,7 @@ export default function About(props: pages_interface) {
                   icon={item.icon}
                   even={i % 2 == 0}
                 >
-                  {item.content}
+                  {item.content ?? []}
                 </Information>
               );
             })

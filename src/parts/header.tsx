@@ -3,7 +3,6 @@ import { default_interface, link_interface } from "./../utils/interfaces.tsx";
 import {
   faContactCard,
   faFolderOpen,
-  faHouse,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

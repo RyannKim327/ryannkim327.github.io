@@ -1,4 +1,4 @@
-import { pages_interface, projects } from "../utils/interfaces";
+import { json, pages_interface, projects } from "../utils/interfaces";
 import { get } from "../utils/api";
 import { useEffect, useState } from "react";
 
@@ -12,13 +12,13 @@ export default function Projects(props: pages_interface) {
     (async () => {
       const api = await get("projects");
       setCategories(["all", ...api.categories]);
-      const programs = api.projects.sort((a, b) =>
+      const programs = api.projects.sort((a: json, b: json) =>
         a.name.localeCompare(b.name),
       );
       setListProjects(programs);
       if (category && category !== "all") {
         setProjects(
-          programs.filter((program) =>
+          programs.filter((program: json) =>
             program.category.includes(category.toLowerCase()),
           ),
         );

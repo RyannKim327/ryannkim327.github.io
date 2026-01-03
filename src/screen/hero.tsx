@@ -1,5 +1,3 @@
-// import Word from "../components/wordbyword";
-import { motion } from "framer-motion";
 import { pages_interface } from "../utils/interfaces";
 
 import Self from "./../assets/self.png";
