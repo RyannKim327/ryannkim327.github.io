@@ -10,13 +10,6 @@ interface about_interface {
   even: boolean;
 }
 
-interface abt {
-  title: string;
-  year: number;
-  icon: string;
-  content: string[];
-}
-
 const Information = (props: about_interface) => {
   return (
     <div
@@ -94,23 +87,30 @@ export default function About(props: pages_interface) {
   return (
     <div
       id={props.id}
-      className={`${props.className} flex flex-col w-full h-full`}
+      className={`${props.className} flex flex-col overflow-hidden w-full h-full`}
     >
       {/* <h1 className="text-base lg:text-2xl">About</h1> */}
       <div className="flex flex-col w-full h-full box-border">
-        <div className="flex flex-col h-full w-full box-border">
-          {about.map((item: abt, i: number) => {
-            return (
-              <Information
-                title={item.title}
-                year={item.year}
-                icon={item.icon}
-                even={i % 2 == 0}
-              >
-                {item.content}
-              </Information>
-            );
-          })}
+        <div className="flex flex-col h-full w-full overflow-y-auto box-border">
+          {about.length > 0 ? (
+            about.map((item: about_interface, i: number) => {
+              return (
+                <Information
+                  title={item.title}
+                  year={item.year}
+                  icon={item.icon}
+                  even={i % 2 == 0}
+                >
+                  {item.content}
+                </Information>
+              );
+            })
+          ) : (
+            <div className="flex flex-col h-full w-full items-center justify-center">
+              <p className="text-[2rem]">Please wait for a moment</p>
+              <p className="text-[1.25rem]">Backend is currently loading</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

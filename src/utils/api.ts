@@ -1,5 +1,5 @@
 import axios from "axios";
-import { gist, json } from "./interfaces";
+import { json } from "./interfaces";
 
 const TEST_MODE = true;
 
@@ -7,17 +7,9 @@ const URL = TEST_MODE
   ? "http://localhost:8000"
   : "https://api-mpop-backend.onrender.com";
 
-export default async function API(): Promise<gist> {
-  const { data } = await axios.get(
-    "https://api.github.com/gists/103b8884c900bae1e495afa2c495ff4c",
-  );
-  const response = JSON.parse(data.files["projects.json"].content);
-  return response;
-}
-
 function urlChecker(endpoint: string) {
   let url = URL;
-  if (!url.endsWith("/")) {
+  if (!url.endsWith("/") && endpoint != "") {
     url += "/";
   }
   return `${url}${endpoint}/`;

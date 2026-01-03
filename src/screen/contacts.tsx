@@ -50,8 +50,10 @@ const Input = (props: input_interface) => {
 
 export default function Contact(props: pages_interface) {
   return (
-    <div id={props.id} className={`${props.className} p-2 gap-10 `}>
-      <h1 className="text-base lg:text-2xl">Contact</h1>
+    <div
+      id={props.id}
+      className={`flex flex-col ${props.className} p-2 gap-10 h-full w-full`}
+    >
       <iframe
         src="https://www.google.com/maps/embed/v1/place?q=Ibabang+Iyam&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
         title="Location"
@@ -59,9 +61,6 @@ export default function Contact(props: pages_interface) {
         allowFullScreen={false}
         className="h-1/3 w-full dark:grayscale dark:invert transition ease-in delay-100"
       />
-      <h1 className="text-left my-[1px] py-[1px] ml-4 w-full">
-        You can reach me out using this form and platforms.
-      </h1>
       <form
         action="https://formsubmit.co/weryses19@gmail.com"
         method="POST"

@@ -28,7 +28,7 @@ function List(props: link_interface) {
       className="cursor-pointer p-2 link-animation"
     >
       <FontAwesomeIcon className="lg:hidden" icon={props.icon} />
-      <span className="hidden lg:inline">{props.children}</span>
+      {/* <span className="hidden lg:inline">{props.children}</span> */}
     </li>
   );
 }
@@ -58,11 +58,17 @@ export default function Header(props: default_interface) {
     <header
       className={`flex flex-row w-full sticky justify-between items-center p-2 select-none dark:text-white text-black ${scrolled ? "h-12 lg:h-16" : "h-16 lg:h-20 lg:text-lg"} ${props.className} transition ease-in delay-150`}
     >
-      <img src={Logo} className="h-[50px] rounded-full aspect-square" />
+      <img
+        onClick={() => {
+          onclick("home");
+        }}
+        src={Logo}
+        className="h-[50px] rounded-full aspect-square"
+      />
       <nav className="flex flex-row list-none">
-        <List link="home" icon={faHouse}>
-          Home
-        </List>
+        {/* <List link="home" icon={faHouse}> */}
+        {/*   {/* Home *} */}
+        {/* </List> */}
         <List link="about" icon={faUser}>
           About
         </List>
