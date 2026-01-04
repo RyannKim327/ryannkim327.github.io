@@ -52,7 +52,7 @@ export default function Contact(props: pages_interface) {
   return (
     <div
       id={props.id}
-      className={`flex flex-col ${props.className} p-2 gap-10 h-full w-full`}
+      className={`flex flex-col ${props.className} p-2 xl:py-4 gap-10 h-full w-full justify-between`}
     >
       <iframe
         src="https://www.google.com/maps/embed/v1/place?q=Ibabang+Iyam&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"

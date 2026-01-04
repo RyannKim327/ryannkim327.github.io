@@ -25,7 +25,7 @@ const Information = (props: about_interface) => {
       {/* Left side */}
       {props.even && (
         <div className="flex justify-end w-1/2 pr-6">
-          <div className="bg-slate-900 text-white p-4 rounded-lg w-100">
+          <div className="bg-[#e0e0e0] text-black dark:bg-slate-900 dark:text-white p-4 rounded-lg w-100">
             <h2 className="text-cyan-400 font-bold text-end">{props.year}</h2>
             <h3 className="text-lg font-semibold text-end">{props.title}</h3>
             <ul className="text-sm mt-2 list-disc list-inside">
@@ -47,7 +47,7 @@ const Information = (props: about_interface) => {
       {/* Right side */}
       {!props.even && (
         <div className="flex justify-start w-1/2 pl-6">
-          <div className="bg-slate-900 text-white p-4 rounded-lg w-100">
+          <div className="bg-[#e0e0e0] text-black dark:bg-slate-900 dark:text-white p-4 rounded-lg w-100">
             <h2 className="text-cyan-400 font-bold">{props.year}</h2>
             <h3 className="text-lg font-semibold">{props.title}</h3>
             <ul className="text-sm mt-2 list-disc list-inside">

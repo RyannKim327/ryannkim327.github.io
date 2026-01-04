@@ -24,10 +24,14 @@ function List(props: link_interface) {
       onClick={() => {
         onclick(props.link);
       }}
-      className="cursor-pointer p-2 link-animation"
+      className="cursor-pointer p-2 link-animation text-[1.25rem]"
     >
-      <FontAwesomeIcon className="lg:hidden" icon={props.icon} />
-      {/* <span className="hidden lg:inline">{props.children}</span> */}
+      <span className="xl:hidden">
+        <FontAwesomeIcon icon={props.icon} />
+      </span>
+      <span className="hidden xl:inline xl:text-[1.25em]">
+        {props.children}
+      </span>
     </li>
   );
 }

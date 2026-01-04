@@ -43,20 +43,20 @@ export default function Projects(props: pages_interface) {
   return (
     <div
       id={props.id}
-      className={`flex flex-col ${props.className} gap-1 w-full h-full`}
+      className={`flex flex-col ${props.className} gap-1 w-full h-full py-2`}
     >
       <h1 className="text-base lg:text-2xl">
         {category[0].toUpperCase() + category.substring(1).toLowerCase()}{" "}
         Projects
       </h1>
-      <div className="flex w-full gap-2 box-border overflow-x-auto">
+      <div className="flex w-full gap-2 box-border overflow-x-auto overflow-y-hidden p-2">
         {categories.map((category_) => {
           return (
             <span
               onClick={() => {
                 setCategory(category_.toLowerCase());
               }}
-              className={`${category_ === category ? "bg-transparent border border-solid border-slate-200" : "border border-solid border-transparent bg-slate-700"} w-full text-center select-none px-2 rounded-md cursor-pointer`}
+              className={`${category_ === category ? "bg-transparent border border-solid border-slate-900 dark:border-slate-200" : "border border-solid border-transparent bg-slate-300 dark:bg-slate-700"} w-full text-center select-none px-2 rounded-md cursor-pointer`}
             >
               {category_[0].toUpperCase() + category_.substring(1)}
             </span>

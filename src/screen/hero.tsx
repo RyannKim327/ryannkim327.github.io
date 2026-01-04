@@ -28,13 +28,13 @@ export default function Hero(props: pages_interface) {
         src={Self}
         className="hidden md:inline h-full md:mt-[-3rem] rounded-md"
       />
-      <div className="flex flex-col justify-center h-3/4 md:ml-[-2.5rem] gap-3">
+      <div className="flex flex-col justify-center items-center md:items-baseline h-3/4 md:ml-[-2.5rem] gap-3">
         <h1 className="text-[2.5rem]">Ryann Kim M. Sesgundo</h1>
-        <h3 className="text-[1.75rem]">A developer</h3>
+        <h3 className="text-[1.75rem]">A developer po ata ako</h3>
       </div>
       {notice.length > 0 ? (
         <div
-          className={`fixed z-10 bottom-5 ${change ? "bg-green-800" : "bg-red-700"} px-2 rounded-sm`}
+          className={`fixed z-10 bottom-5 ${change ? "bg-[#90EE90] dark:bg-[#106510]" : "bg-[#f87c7c] dark:bg-[#f83e3e]"} px-2 rounded-sm`}
         >
           {notice}
         </div>

@@ -7,8 +7,8 @@ import Contact from "./screen/contacts";
 
 function App() {
   return (
-    <div className="flex flex-col p-4 bg-[#232136] text-[#e0def4] w-dvw h-dvh">
-      <div className="flex flex-col border border-solid border-[#c4a7e7] h-full w-full overflow-hidden pt-6 px-6">
+    <div className="flex flex-col p-4 bg-[#f6f6f6] text-black dark:bg-[#232136] dark:text-[#e0def4] w-dvw h-dvh">
+      <div className="flex flex-col border border-solid border=[#907aa9] dark:border-[#c4a7e7] h-full w-full overflow-hidden pt-6 px-6">
         <Header />
 
         <div className="w-full h-full overflow-x-hidden overflow-y-scroll">

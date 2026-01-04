@@ -112,13 +112,17 @@ This portfolio embraces a **modern single-page design** that creates an engaging
 
 ## 📝 Changelog
 
-### Version 0.0.1 (Current)
+### Version 1.0.0 (Current) - Major Release
 
 #### Recent Updates (January 2026)
-- **2026-01-03**: API endpoint URL handling improvements
-- **2026-01-03**: Multiple bug fixes and optimizations
-- **2025-12-22**: Enhanced about section with better content
-- **2025-12-21**: UI improvements and refinements
+- **2026-01-04**: 🎉 **Major Release v1.0.0** - Version bump to stable release
+- **2026-01-04**: 📱 Enhanced responsive design for mobile devices
+- **2026-01-04**: 🧹 Code cleanup and optimization improvements
+- **2026-01-04**: 🖼️ Hero section responsive image handling
+- **2026-01-03**: 🔧 API endpoint URL handling improvements
+- **2026-01-03**: 🐛 Multiple bug fixes and optimizations
+- **2025-12-22**: ✨ Enhanced about section with better content
+- **2025-12-21**: 🎨 UI improvements and refinements
 
 #### Major Updates (2025)
 - **2025-11-20**: Added more professional experience content
