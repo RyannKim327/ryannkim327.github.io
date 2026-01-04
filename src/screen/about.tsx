@@ -42,7 +42,6 @@ const Information = (props: about_interface) => {
         className={`${props.even ? "-translate-x-1/2" : "translate-x-1/2"} translate-y-1/2 bg-white border-2 border-slate-900 w-10 h-10 rounded-full flex items-center justify-center `}
       >
         <i className={`text-slate-900 ${props.icon}`}></i>
-        {/* <FontAwesomeIcon icon={`fa-solid fa-gear`} className="text-slate-900" /> */}
       </div>
 
       {/* Right side */}

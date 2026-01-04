@@ -24,8 +24,11 @@ export default function Hero(props: pages_interface) {
       className="flex flex-row items-center justify-center h-full w-full overflow-hidden"
       id={props.id}
     >
-      <img src={Self} className="h-full mt-[-3rem] rounded-md" />
-      <div className="flex flex-col justify-center h-3/4 ml-[-2.5rem] gap-3">
+      <img
+        src={Self}
+        className="hidden md:inline h-full md:mt-[-3rem] rounded-md"
+      />
+      <div className="flex flex-col justify-center h-3/4 md:ml-[-2.5rem] gap-3">
         <h1 className="text-[2.5rem]">Ryann Kim M. Sesgundo</h1>
         <h3 className="text-[1.75rem]">A developer</h3>
       </div>
