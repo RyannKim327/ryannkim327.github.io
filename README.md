@@ -1,6 +1,6 @@
 # 🌟 RyannKim327 Portfolio - Modern Developer Showcase
 
-[![wakatime](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/54b6daa5-f05d-4980-9f00-39ddce934d3f.svg)](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/54b6daa5-f05d-4980-9f00-39ddce934d3f)
+[![wakatime](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c.svg)](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c)
 ![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=flat&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=flat&logo=typescript)
 ![Vite](https://img.shields.io/badge/Vite-7.2.2-646CFF?style=flat&logo=vite)
