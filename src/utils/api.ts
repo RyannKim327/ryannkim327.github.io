@@ -7,6 +7,10 @@ const URL = TEST_MODE
   ? "http://localhost:8000"
   : "https://api-mpop-backend.onrender.com";
 
+// NOTE: The https://api-mpop-backend.onrender.com is the backend
+// for this repository, you may visit my github for the link of the
+// backend.
+
 function urlChecker(endpoint: string) {
   let url = URL;
   if (!url.endsWith("/") && endpoint != "") {
