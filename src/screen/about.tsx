@@ -17,10 +17,31 @@ interface abt {
   content?: string[];
 }
 
-const Information = (props: about_interface) => {
+const InformationMed = (props: about_interface) => {
+  return (
+    <div className="flex flex-row lg:hidden w-full p-3 gap-2">
+      <div
+        className={`translate-y-1/2 bg-white border-2 border-slate-900 w-10 h-10 rounded-full flex items-center justify-center `}
+      >
+        <i className={`text-slate-900 ${props.icon}`}></i>
+      </div>
+      <div className="bg-[#e0e0e0] text-black dark:bg-slate-900 dark:text-white p-4 rounded-lg w-full">
+        <h2 className="text-cyan-400 font-bold">{props.year}</h2>
+        <h3 className="text-lg font-semibold">{props.title}</h3>
+        <ul className="text-sm mt-2 list-disc list-inside">
+          {props.children.map((c, i) => (
+            <li key={i}>{c}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const InformationLarge = (props: about_interface) => {
   return (
     <div
-      className={`flex w-full ${props.even ? "justify-start" : "justify-end"} items-start py-6`}
+      className={`hidden lg:flex w-full ${props.even ? "justify-start" : "justify-end"} items-start py-6`}
     >
       {/* Left side */}
       {props.even && (
@@ -101,14 +122,24 @@ export default function About(props: pages_interface) {
           {about.length > 0 ? (
             about.map((item: abt, i: number) => {
               return (
-                <Information
-                  title={item.title}
-                  year={item.year}
-                  icon={item.icon}
-                  even={i % 2 == 0}
-                >
-                  {item.content ?? []}
-                </Information>
+                <>
+                  <InformationMed
+                    title={item.title}
+                    year={item.year}
+                    icon={item.icon}
+                    even={i % 2 == 0}
+                  >
+                    {item.content ?? []}
+                  </InformationMed>
+                  <InformationLarge
+                    title={item.title}
+                    year={item.year}
+                    icon={item.icon}
+                    even={i % 2 == 0}
+                  >
+                    {item.content ?? []}
+                  </InformationLarge>
+                </>
               );
             })
           ) : (
