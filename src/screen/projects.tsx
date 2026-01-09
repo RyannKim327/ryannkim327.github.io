@@ -56,7 +56,7 @@ export default function Projects(props: pages_interface) {
               onClick={() => {
                 setCategory(category_.toLowerCase());
               }}
-              className={`${category_ === category ? "bg-transparent border border-solid border-slate-900 dark:border-slate-200" : "border border-solid border-transparent bg-slate-300 dark:bg-slate-700"} w-full text-center select-none px-2 rounded-md cursor-pointer`}
+              className={`${category_ === category ? "bg-transparent border border-solid border-black dark:border-[#f8f8ff]" : "border border-solid border-transparent bg-[#e1e2e3] dark:bg-[#1d1f21]"} w-full text-center select-none px-2 rounded-md cursor-pointer`}
             >
               {category_[0].toUpperCase() + category_.substring(1)}
             </span>
@@ -82,14 +82,14 @@ export default function Projects(props: pages_interface) {
                   style={{
                     backgroundImage: `url(${item.src ?? ""})`,
                   }}
-                  className={`flex flex-col justify-end h-1/3 w-3/7 md:w-2/7 bg-slate-900 text-white p-2 lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
+                  className={`flex flex-col justify-end h-1/3 w-3/7 md:w-2/7 bg-[#212121] text-white p-2 lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
                 >
                   {/* <img */}
                   {/*   className="grayscale hover:grayscale-0 transition ease-all delay-150 w-full aspect-video" */}
                   {/*   alt={item.name} */}
                   {/*   src={item.src} */}
                   {/* /> */}
-                  <span className="flex flex-col bg-slate-900/50 select-none cursor-pointer hover:underline justify-center items-center box-border">
+                  <span className="flex flex-col bg-[#212121]/50 select-none cursor-pointer hover:underline justify-center items-center box-border">
                     <h1 className="text-base md:text-xl text-center">
                       {item.name}
                     </h1>

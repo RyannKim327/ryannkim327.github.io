@@ -25,8 +25,10 @@ const InformationMed = (props: about_interface) => {
       >
         <i className={`text-slate-900 ${props.icon}`}></i>
       </div>
-      <div className="bg-[#e0e0e0] text-black dark:bg-slate-900 dark:text-white p-4 rounded-lg w-full">
-        <h2 className="text-cyan-400 font-bold">{props.year}</h2>
+      <div className="bg-[#e0e0e0] text-black dark:bg-[#242526] dark:text-white p-4 rounded-lg w-full">
+        <h2 className="text-black dark:text-[#fffafa] font-bold">
+          {props.year}
+        </h2>
         <h3 className="text-lg font-semibold">{props.title}</h3>
         <ul className="text-sm mt-2 list-disc list-inside">
           {props.children.map((c, i) => (
@@ -46,8 +48,10 @@ const InformationLarge = (props: about_interface) => {
       {/* Left side */}
       {props.even && (
         <div className="flex justify-end w-1/2 pr-6">
-          <div className="bg-[#e0e0e0] text-black dark:bg-slate-900 dark:text-white p-4 rounded-lg w-100">
-            <h2 className="text-cyan-400 font-bold text-end">{props.year}</h2>
+          <div className="bg-[#e0e0e0] text-black dark:bg-[#242526] dark:text-white p-4 rounded-lg w-100">
+            <h2 className="text-black dark:text-[#fffafa] font-bold text-end">
+              {props.year}
+            </h2>
             <h3 className="text-lg font-semibold text-end">{props.title}</h3>
             <ul className="text-sm mt-2 list-disc list-inside">
               {props.children.map((c, i) => (
@@ -60,16 +64,18 @@ const InformationLarge = (props: about_interface) => {
 
       {/* Timeline icon */}
       <div
-        className={`${props.even ? "-translate-x-1/2" : "translate-x-1/2"} translate-y-1/2 bg-white border-2 border-slate-900 w-10 h-10 rounded-full flex items-center justify-center `}
+        className={`${props.even ? "-translate-x-1/2" : "translate-x-1/2"} translate-y-1/2 bg-white border-2 border-[#242526] w-10 h-10 rounded-full flex items-center justify-center `}
       >
-        <i className={`text-slate-900 ${props.icon}`}></i>
+        <i className={`text-[#242526] ${props.icon}`}></i>
       </div>
 
       {/* Right side */}
       {!props.even && (
         <div className="flex justify-start w-1/2 pl-6">
-          <div className="bg-[#e0e0e0] text-black dark:bg-slate-900 dark:text-white p-4 rounded-lg w-100">
-            <h2 className="text-cyan-400 font-bold">{props.year}</h2>
+          <div className="bg-[#e0e0e0] text-black dark:bg-[#242526] dark:text-white p-4 rounded-lg w-100">
+            <h2 className="text-black dark:text-[#fffafa] font-bold">
+              {props.year}
+            </h2>
             <h3 className="text-lg font-semibold">{props.title}</h3>
             <ul className="text-sm mt-2 list-disc list-inside">
               {props.children.map((c, i) => (

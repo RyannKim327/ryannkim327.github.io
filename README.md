@@ -21,7 +21,7 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 - 🎯 **TypeScript** - Type-safe development for better code quality
 - 🎨 **Tailwind CSS** - Utility-first CSS framework for rapid styling
 - 📦 **Component-Based Architecture** - Modular and maintainable code structure
-- 🌙 **Dark Theme** - Elegant dark color scheme with purple accents
+- 🌙 **Dark/Light Theme** - Elegant theme switching with dark and light modes, featuring purple accents
 - 🔗 **Backend Integration** - Connected to Go-based backend API
 
 ## 🛠️ Tech Stack
@@ -106,7 +106,7 @@ This portfolio embraces a **modern single-page design** that creates an engaging
 
 - **Clean, minimalist interface** with focus on content
 - **Responsive breakpoints** that adapt to various screen sizes
-- **Purple-themed dark mode** for a modern, professional appearance
+- **Adaptive theming** with both light and dark modes featuring purple accents for a modern, professional appearance
 - **Smooth scrolling navigation** between sections
 - **Interactive elements** and animations for enhanced user engagement
 
@@ -115,6 +115,12 @@ This portfolio embraces a **modern single-page design** that creates an engaging
 ### Version 1.0.0 (Current) - Major Release
 
 #### Recent Updates (January 2026)
+- **2026-01-09**: 📱 **Mobile Optimization Update** - Added responsive phone view for about section and improved loading notifications
+- **2026-01-09**: 🔄 Enhanced loading indicator with visual status feedback and better UX
+- **2026-01-07**: 🔒 **Security Enhancement** - Removed .env file from repository and added to .gitignore
+- **2026-01-07**: 📄 Added custom 404 error page for better user experience
+- **2026-01-07**: 🗂️ Improved file organization and structure
+- **2026-01-04**: 🌞 **Light Mode Support** - Added comprehensive light/dark theme toggle functionality
 - **2026-01-04**: 🎉 **Major Release v1.0.0** - Version bump to stable release
 - **2026-01-04**: 📱 Enhanced responsive design for mobile devices
 - **2026-01-04**: 🧹 Code cleanup and optimization improvements
@@ -136,11 +142,16 @@ This portfolio embraces a **modern single-page design** that creates an engaging
 - ✅ Modern React 19 implementation
 - ✅ TypeScript integration for type safety
 - ✅ Responsive design with Tailwind CSS
+- ✅ Light/Dark theme switching functionality
+- ✅ Mobile-optimized about section layout
+- ✅ Enhanced loading indicators and notifications
 - ✅ Backend API integration
 - ✅ Smooth animations with Framer Motion
 - ✅ Professional portfolio sections
 - ✅ Contact form functionality
 - ✅ Project showcase gallery
+- ✅ Custom 404 error page
+- ✅ Security improvements (environment variables)
 - ✅ GitHub Pages deployment
 
 ## 🌐 Deployment

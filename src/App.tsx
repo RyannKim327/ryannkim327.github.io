@@ -23,15 +23,15 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col p-4 bg-[#f6f6f6] text-black dark:bg-[#232136] dark:text-[#e0def4] w-dvw h-dvh">
-      <div className="flex flex-col border border-solid border=[#907aa9] dark:border-[#c4a7e7] h-full w-full overflow-hidden pt-6 px-6">
+    <div className="flex flex-col p-4 bg-[#f6f6f6] text-black dark:bg-[#0c0c0c] dark:text-white w-dvw h-dvh">
+      <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] h-full w-full overflow-hidden pt-6 px-6">
         <Header />
 
-        <div className="w-full h-full overflow-x-hidden overflow-y-scroll">
-          <Hero id="home" />
-          <About id="about" />
-          <Projects id="projects" />
-          <Contact id="contact" />
+        <div className="w-full h-full overflow-x-hidden overflow-y-scroll snap-mandatory snap-y scroll-smooth">
+          <Hero id="home" className="snap-start" />
+          <About id="about" className="snap-start" />
+          <Projects id="projects" className="snap-start" />
+          <Contact id="contact" className="snap-start" />
           {notice.length > 0 ? (
             <div className="flex flex-row justify-end w-full fixed z-10 bottom-5 left-5 pr-10">
               <span
@@ -42,13 +42,6 @@ function App() {
               </span>
             </div>
           ) : null}
-          {/* {notice.length > 0 ? ( */}
-          {/*   <div */}
-          {/*     className={`fixed z-10 bottom-5 ${change ? "bg-[#90EE90] dark:bg-[#106510]" : "bg-[#f87c7c] dark:bg-[#f83e3e]"} px-2 rounded-sm`} */}
-          {/*   > */}
-          {/*     {notice} */}
-          {/*   </div> */}
-          {/* ) : null} */}
         </div>
       </div>
     </div>
