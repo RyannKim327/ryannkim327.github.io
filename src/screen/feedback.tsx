@@ -27,10 +27,12 @@ export default function Feedback(props: pages_interface) {
           {feedbacks.length > 0 ? (
             <div className="flex w-full gap-2 box-border overflow-x-auto overflow-y-hidden p-2">
               {feedbacks.map((feedback_: feedback) => {
-                <div>
-                  <h1>{feedback_.application}</h1>
-                  <h3>{feedback_.message}</h3>
-                </div>;
+                return (
+                  <div>
+                    <h1>{feedback_.application}</h1>
+                    <h3>{feedback_.message}</h3>
+                  </div>
+                );
               })}
             </div>
           ) : (
