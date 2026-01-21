@@ -36,4 +36,10 @@ export interface projects {
   src?: string;
 }
 
+export interface feedback {
+  application: string;
+  message: string;
+  userId?: string | number;
+}
+
 export type json = Record<string, any>;
