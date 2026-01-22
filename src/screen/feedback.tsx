@@ -14,7 +14,7 @@ export default function Feedback(props: pages_interface) {
       }
       setSearch(true);
     })();
-  });
+  }, []);
 
   return (
     <div
