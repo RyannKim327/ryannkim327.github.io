@@ -102,7 +102,7 @@ export default function Projects(props: pages_interface) {
             })
           )
         ) : (
-          <div className="flex flex-col h-full w-full items-center justify-center gap-3">
+          <div className="flex flex-col h-full w-full items-center text-center justify-center gap-3">
             <p className="text-[2rem]">Please wait for a moment</p>
             <p className="text-[1.25rem]">Backend is currently loading</p>
           </div>

@@ -25,11 +25,15 @@ export default function Feedback(props: pages_interface) {
       {search ? (
         <>
           {feedbacks.length > 0 ? (
-            <div className="flex w-full gap-2 box-border overflow-x-auto overflow-y-hidden p-2">
+            <div className="flex w-full h-full gap-2 box-border overflow-x-auto overflow-y-hidden p-2">
               {feedbacks.map((feedback_: feedback) => {
                 return (
-                  <div>
-                    <h1>{feedback_.application}</h1>
+                  <div
+                    className={`flex flex-col items-center h-1/3 w-full md:w-2/7 bg-[#212121] text-white p-2 box-border overflow-hidden rounded gap-2`}
+                  >
+                    <h1 className="text-xl font-bold">
+                      Project Name: {feedback_.application.substring(0, 15)}
+                    </h1>
                     <h3>{feedback_.message}</h3>
                   </div>
                 );
@@ -37,7 +41,7 @@ export default function Feedback(props: pages_interface) {
             </div>
           ) : (
             <div className="flex flex-col h-full w-full items-center justify-center gap-3">
-              <p className="text-[2rem]">No Feedback Yet</p>
+              <p className="text-[2rem] text-center">No Feedback Yet</p>
               <p className="max-w-1/3 lg:max-w-1/2 text-center text-[1.25rem]">
                 Currently, there is no feedback from any of my applications, of
                 you want to, please use my app first and give me some feedback.
@@ -46,7 +50,7 @@ export default function Feedback(props: pages_interface) {
           )}
         </>
       ) : (
-        <div className="flex flex-col h-full w-full items-center justify-center gap-3">
+        <div className="flex flex-col h-full w-full text-center items-center justify-center gap-3">
           <p className="text-[2rem]">Please wait for a moment</p>
           <p className="text-[1.25rem]">Backend is currently loading</p>
         </div>
