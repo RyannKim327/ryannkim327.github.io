@@ -22,13 +22,14 @@ export default function Feedback(props: pages_interface) {
       className={`flex flex-col ${props.className} gap-1 w-full h-full py-2`}
     >
       <h1 className="text-base lg:text-2xl">Feedback and testimonies</h1>
-      {search ? (
+      {search && feedbacks !== null ? (
         <>
           {feedbacks.length > 0 ? (
             <div className="flex w-full h-full gap-2 box-border overflow-x-auto overflow-y-hidden p-2">
-              {feedbacks.map((feedback_: feedback) => {
+              {feedbacks.map((feedback_: feedback, i: number) => {
                 return (
                   <div
+                    key={i}
                     className={`flex flex-col items-center h-1/3 w-full md:w-2/7 bg-[#212121] text-white p-2 box-border overflow-hidden rounded gap-2`}
                   >
                     <h1 className="text-xl font-bold">
