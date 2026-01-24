@@ -14,7 +14,7 @@ export default function Hero(props: pages_interface) {
       />
       <div className="flex flex-col justify-center items-center md:items-baseline h-full md:ml-[-2.5rem] gap-3">
         <h1 className="text-[2.5rem]">Ryann Kim M. Sesgundo</h1>
-        <h3 className="text-[1.75rem]">A developer po ata ako</h3>
+        <h3 className="text-[1.75rem]">A Full-Stack Software Developer</h3>
       </div>
     </div>
   );

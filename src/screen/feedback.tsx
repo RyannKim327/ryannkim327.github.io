@@ -3,15 +3,21 @@ import { feedback, pages_interface } from "../utils/interfaces";
 import { get } from "../utils/api";
 
 export default function Feedback(props: pages_interface) {
-  const [feedbacks, setFeedback] = useState<feedback[]>([]);
+  const [feedbacks, setFeedback] = useState<feedback[] | null>([]);
   const [search, setSearch] = useState(false);
 
   useEffect(() => {
     (async () => {
       const response = await get("feedback");
-      if (!response.error) {
+      if (response.error) {
+        setFeedback(null);
+      }
+      if (response.data === null) {
+        setFeedback(null);
+      } else {
         setFeedback(response.data);
       }
+
       setSearch(true);
     })();
   }, []);
@@ -25,17 +31,20 @@ export default function Feedback(props: pages_interface) {
       {search && feedbacks !== null ? (
         <>
           {feedbacks.length > 0 ? (
-            <div className="flex w-full h-full gap-2 box-border overflow-x-auto overflow-y-hidden p-2">
+            <div className="flex flex-col w-full h-full gap-2 box-border md:overflow-x-auto overflow-y-auto md:overflow-y-hidden p-2">
               {feedbacks.map((feedback_: feedback, i: number) => {
                 return (
                   <div
                     key={i}
-                    className={`flex flex-col items-center h-1/3 w-full md:w-2/7 bg-[#212121] text-white p-2 box-border overflow-hidden rounded gap-2`}
+                    className={`flex flex-col items-center md:h-1/3 w-full md:w-2/7 bg-[#212121] text-white p-2 box-border overflow-hidden rounded gap-2`}
                   >
                     <h1 className="text-xl font-bold">
-                      Project Name: {feedback_.application.substring(0, 15)}
+                      Project Name:{" "}
+                      {feedback_.application.substring(0, 15) ?? ""}
                     </h1>
-                    <h3>{feedback_.message}</h3>
+                    <div className="flex flex-col md:h-full w-full justify-center text-center">
+                      <h3>{feedback_.message}</h3>
+                    </div>
                   </div>
                 );
               })}
