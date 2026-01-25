@@ -31,7 +31,7 @@ export default function Feedback(props: pages_interface) {
       {search && feedbacks !== null ? (
         <>
           {feedbacks.length > 0 ? (
-            <div className="flex flex-col w-full h-full gap-2 box-border md:overflow-x-auto overflow-y-auto md:overflow-y-hidden p-2">
+            <div className="flex flex-col md:flex-row md:flex-wrap w-full h-full gap-2 box-border md:overflow-x-auto overflow-y-auto md:overflow-y-hidden p-2">
               {feedbacks.map((feedback_: feedback, i: number) => {
                 return (
                   <div
@@ -39,8 +39,7 @@ export default function Feedback(props: pages_interface) {
                     className={`flex flex-col items-center md:h-1/3 w-full md:w-2/7 bg-[#212121] text-white p-2 box-border overflow-hidden rounded gap-2`}
                   >
                     <h1 className="text-xl font-bold">
-                      Project Name:{" "}
-                      {feedback_.application.substring(0, 15) ?? ""}
+                      {feedback_.application.substring(0, 25) ?? ""}
                     </h1>
                     <div className="flex flex-col md:h-full w-full justify-center text-center">
                       <h3>{feedback_.message}</h3>
