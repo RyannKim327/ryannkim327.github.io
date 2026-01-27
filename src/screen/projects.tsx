@@ -82,7 +82,7 @@ export default function Projects(props: pages_interface) {
                   style={{
                     backgroundImage: `url(${item.src ?? ""})`,
                   }}
-                  className={`flex flex-col justify-end h-1/3 w-3/7 md:w-2/7 bg-[#212121] text-white p-2 lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
+                  className={`flex flex-col justify-end h-1/3 md:h-1/3 w-full md:w-2/7 bg-[#212121] text-white p-2 lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
                 >
                   {/* <img */}
                   {/*   className="grayscale hover:grayscale-0 transition ease-all delay-150 w-full aspect-video" */}
