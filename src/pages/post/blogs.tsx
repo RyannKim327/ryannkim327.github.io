@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import Input from "../../widgets/input";
 
 export default function PostBlog() {
@@ -15,6 +15,24 @@ export default function PostBlog() {
         <Input value={formData.title} name="title" onChange={setFormData}>
           Title
         </Input>
+        <Input value={formData.code} onChange={setFormData} name="code">
+          API Key
+        </Input>
+        <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full">
+          <span>Content</span>
+          <textarea
+            className="w-full border-none outline-none px-2"
+            name=""
+            id=""
+            value={formData.content}
+            onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
+              setFormData((prev) => ({
+                ...prev,
+                content: event.target.value,
+              }));
+            }}
+          ></textarea>
+        </div>
       </div>
     </div>
   );
