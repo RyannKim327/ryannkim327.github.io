@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { default_interface, link_interface } from "./../utils/interfaces.tsx";
 import {
+  faBlog,
   faContactCard,
   faFolderOpen,
   faUser,
@@ -77,6 +78,9 @@ export default function Header(props: default_interface) {
         </List>
         <List link="projects" icon={faFolderOpen}>
           Projects
+        </List>
+        <List link="blog" icon={faBlog}>
+          Blogs
         </List>
         <List link="contact" icon={faContactCard}>
           Contact
