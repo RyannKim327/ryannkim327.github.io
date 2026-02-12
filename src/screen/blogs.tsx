@@ -60,7 +60,10 @@ export default function Blogs(props: pages_interface) {
                 <blockquote
                   dangerouslySetInnerHTML={{
                     __html: renderMarkdown(
-                      blog.content.replace(/\n/gi, "<br>"),
+                      blog.content
+                        .replace(/</gi, "&lt;")
+                        .replace(/>/gi, "&gt;")
+                        .replace(/\n/gi, "<br>"),
                     ),
                   }}
                 ></blockquote>
