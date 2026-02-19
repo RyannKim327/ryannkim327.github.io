@@ -18,6 +18,7 @@
     "@fortawesome/react-fontawesome": "^3.1.1",
     "@tailwindcss/vite": "^4.1.18",
     "@types/node": "^25.0.10",
+    "@wcj/markdown-to-html": "^3.0.6",
     "axios": "^1.13.2",
     "framer-motion": "^12.28.1",
     "gh-pages": "^6.3.0",

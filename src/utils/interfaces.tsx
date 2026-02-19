@@ -36,6 +36,13 @@ export interface projects {
   src?: string;
 }
 
+export interface blogs {
+  title: string;
+  content: string;
+  tags: string[];
+  time: number | string;
+}
+
 export interface feedback {
   application: string;
   message: string;

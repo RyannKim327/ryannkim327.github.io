@@ -7,6 +7,7 @@ import Contact from "./screen/contacts";
 import { useEffect, useState } from "react";
 import { get } from "./utils/api";
 import Feedback from "./screen/feedback";
+import Blogs from "./screen/blogs";
 
 function App() {
   const [notice, setNotice] = useState("The server is waking up");
@@ -32,6 +33,7 @@ function App() {
           <Hero id="home" className="snap-start" />
           <About id="about" className="snap-start" />
           <Projects id="projects" className="snap-start" />
+          <Blogs id="blog" className="snap-start" />
           <Feedback id="feedback" className="snap-start" />
           <Contact id="contact" className="snap-start" />
           {notice.length > 0 ? (
