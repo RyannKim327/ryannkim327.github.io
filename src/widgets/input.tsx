@@ -1,30 +1,37 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
-interface InputProps {
+interface InputProps<T> {
   children: string;
   type?: string;
   value: string;
-  password?: boolean;
-  name: string;
-  onChange: Dispatch<SetStateAction<Record<string, any>>>;
+  name: keyof T;
+  onChange: Dispatch<SetStateAction<T>>;
 }
 
-export default function Input(props: InputProps) {
+export default function Input<T>({
+  children,
+  type = "text",
+  value,
+  name,
+  onChange,
+}: InputProps<T>) {
   return (
     <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full">
-      <label htmlFor={props.name} className="text-sm px-4">
-        {props.children}
+      <label htmlFor={String(name)} className="text-sm px-4">
+        {children}
       </label>
+
       <input
-        id={props.name}
+        id={String(name)}
+        value={value}
         className="w-full border-none outline-none px-2"
+        type={type}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
-          props.onChange((prev) => ({
+          onChange((prev) => ({
             ...prev,
-            [props.name]: event.target.value,
+            [name]: event.target.value,
           }));
         }}
-        type={props.type ?? "text"}
       />
     </div>
   );

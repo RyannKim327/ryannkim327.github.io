@@ -1,20 +1,37 @@
 import { pages_interface } from "../utils/interfaces";
 
-import Self from "./../assets/self.png";
+import Light from "./../assets/light.png";
+import Dark from "./../assets/dark.png";
 
 export default function Hero(props: pages_interface) {
   return (
     <div
-      className={`flex flex-row items-start justify-center h-full w-full overflow-hidden ${props.className}`}
+      className={`flex flex-row justify-center h-full w-full overflow-hidden ${props.className}`}
       id={props.id}
     >
-      <img
-        src={Self}
-        className="hidden md:inline h-full md:mt-[-3rem] rounded-md"
-      />
-      <div className="flex flex-col justify-center items-center md:items-baseline h-full md:ml-[-2.5rem] gap-3">
-        <h1 className="text-[2.5rem]">Ryann Kim M. Sesgundo</h1>
-        <h3 className="text-[1.75rem]">A Full-Stack Software Developer</h3>
+      <div className="flex flex-col justify-center items-center md:items-end w-full h-full gap-3 p-2">
+        <h1 className="text-[3em] text-center md:text-end w-3/6">
+          Ryann Kim M. Sesgundo
+        </h1>
+        <h3 className="text-[1.75em] text-center md:text-end">
+          A Full-Stack Software Developer
+        </h3>
+      </div>
+      <div className="md:flex md:flex-col hidden justify-center h-full gap-2 text-5xl p-2">
+        <p>傑</p>
+        <p>作</p>
+        <p>の</p>
+        <p>紙</p>
+      </div>
+      <div className="md:flex-col hidden md:flex w-full h-full items-start justify-center p-2">
+        <img
+          src={Dark}
+          className="rounded-md hidden dark:inline h-2/3 mt-[-5rem]"
+        />
+        <img
+          src={Light}
+          className="rounded-md dark:hidden h-2/3 mt-[-5rem]"
+        />
       </div>
     </div>
   );

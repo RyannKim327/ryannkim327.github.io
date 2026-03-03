@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { default_interface, link_interface } from "./../utils/interfaces.tsx";
+import { link_interface } from "./../utils/interfaces.tsx";
 import {
   faBlog,
   faContactCard,
@@ -25,7 +24,7 @@ function List(props: link_interface) {
       onClick={() => {
         onclick(props.link);
       }}
-      className="cursor-pointer p-2 link-animation text-[1.25rem]"
+      className="cursor-pointer p-2 link-animation text-[1.15rem]"
     >
       <span className="xl:hidden">
         <FontAwesomeIcon icon={props.icon} />
@@ -37,30 +36,28 @@ function List(props: link_interface) {
   );
 }
 
-export default function Header(props: default_interface) {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const base = document.getElementById("base");
-    if (base) {
-      const scrollEffect = () => {
-        if (base.scrollTop > 250) {
-          setScrolled(true);
-        } else {
-          setScrolled(false);
-        }
-      };
-
-      base.addEventListener("scroll", scrollEffect);
-      return () => {
-        base.removeEventListener("scroll", scrollEffect);
-      };
-    }
-  }, []);
+export default function Header() {
+  // useEffect(() => {
+  //   const base = document.getElementById("base");
+  //   if (base) {
+  //     const scrollEffect = () => {
+  //       if (base.scrollTop > 250) {
+  //         setScrolled(true);
+  //       } else {
+  //         setScrolled(false);
+  //       }
+  //     };
+  //
+  //     base.addEventListener("scroll", scrollEffect);
+  //     return () => {
+  //       base.removeEventListener("scroll", scrollEffect);
+  //     };
+  //   }
+  // }, []);
 
   return (
     <header
-      className={`flex flex-row w-full sticky justify-between items-center p-2 select-none dark:text-white text-black ${scrolled ? "h-12 lg:h-16" : "h-16 lg:h-20 lg:text-lg"} ${props.className} transition ease-in delay-150`}
+      className={`bg-[#f9fafb] dark:bg-slate-900 z-1 dark:text-white flex flex-row justify-between items-center px-2 shadow dark:shadow-white h-[75px]`}
     >
       <img
         onClick={() => {
@@ -69,7 +66,7 @@ export default function Header(props: default_interface) {
         src={Logo}
         className="h-[50px] rounded-full aspect-square"
       />
-      <nav className="flex flex-row list-none">
+      <nav className="flex flex-row list-none h-full items-center">
         {/* <List link="home" icon={faHouse}> */}
         {/*   {/* Home *} */}
         {/* </List> */}

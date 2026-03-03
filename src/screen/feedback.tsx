@@ -31,12 +31,12 @@ export default function Feedback(props: pages_interface) {
       {search && feedbacks !== null ? (
         <>
           {feedbacks.length > 0 ? (
-            <div className="flex flex-col md:flex-row md:flex-wrap w-full h-full gap-2 box-border md:overflow-x-auto overflow-y-auto md:overflow-y-hidden p-2">
+            <div className="flex flex-col md:flex-row md:flex-wrap w-full h-full gap-2 justify-center box-border md:overflow-x-auto overflow-y-auto md:overflow-y-hidden p-2">
               {feedbacks.map((feedback_: feedback, i: number) => {
                 return (
                   <div
                     key={i}
-                    className={`flex flex-col items-center md:h-1/3 w-full md:w-2/7 bg-[#212121] text-white p-2 box-border overflow-hidden rounded gap-2`}
+                    className={`flex flex-col items-center md:h-1/3 w-full md:w-2/7 dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid  text-white p-2 box-border overflow-hidden rounded gap-2`}
                   >
                     <h1 className="text-xl font-bold">
                       {feedback_.application.substring(0, 25) ?? ""}
