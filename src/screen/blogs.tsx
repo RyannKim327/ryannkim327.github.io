@@ -4,7 +4,7 @@ import { get } from "../utils/api";
 import markdown from "@wcj/markdown-to-html";
 
 export default function Blogs(props: pages_interface) {
-  const [blogs, setBlogs] = useState<null | blogs[]>([]);
+  const [_blogs, setBlogs] = useState<null | blogs[]>([]);
 
   useEffect(() => {
     (async () => {
@@ -31,22 +31,21 @@ export default function Blogs(props: pages_interface) {
   return (
     <div
       id={props.id}
-      className={`${props.className} flex flex-col overflow-hidden w-full h-full`}
+      className={`${props.className} flex flex-col overflow-hidden w-full h-full p-2`}
     >
-      <h1>Blogs</h1>
       <div
-        className={`${blogs.length <= 0 ? "flex flex-col h-full w-full justify-center items-center" : "grid grid-cols-2 gap-2"}`}
+        className={`${_blogs.length <= 0 ? "flex flex-col h-full w-full justify-center items-center" : "grid grid-cols-2 gap-2"}`}
       >
-        {blogs.length > 0 ? (
-          blogs.map((blog) => {
+        {_blogs.length > 0 ? (
+          _blogs.map((blog: blogs) => {
             return (
-              <div className="flex flex-col bg-[#e0e0e0] text-black dark:bg-[#242526] dark:text-white p-4 rounded-lg box-border w-full">
-                <h1 className="text-xl">{blog.title}</h1>
+              <div className="flex flex-col bg-[#e0e0e0] text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg box-border w-full h-1/3 overflow-hidden gap-1">
+                <h1 className="text-[1rem]">{blog.title}</h1>
                 <div className="flex w-full gap-2">
                   {blog.tags.length > 0 ? (
                     blog.tags.map((tag) => {
                       return (
-                        <span className="bg-slate-100 text-black rounded px-2">
+                        <span className="bg-slate-100 text-black rounded px-2 text-[0.75rem]">
                           {tag}
                         </span>
                       );
@@ -58,6 +57,7 @@ export default function Blogs(props: pages_interface) {
                   )}
                 </div>
                 <blockquote
+                  className="text-[0.75rem]"
                   dangerouslySetInnerHTML={{
                     __html: renderMarkdown(
                       blog.content

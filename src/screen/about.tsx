@@ -25,7 +25,7 @@ const InformationMed = (props: about_interface) => {
       >
         <i className={`text-slate-900 ${props.icon}`}></i>
       </div>
-      <div className="bg-[#e0e0e0] text-black dark:bg-[#242526] dark:text-white p-4 rounded-lg w-full">
+      <div className="bg-[#e0e0e0] text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-full">
         <h2 className="text-black dark:text-[#fffafa] font-bold">
           {props.year}
         </h2>
@@ -48,7 +48,7 @@ const InformationLarge = (props: about_interface) => {
       {/* Left side */}
       {props.even && (
         <div className="flex justify-end w-1/2 pr-6">
-          <div className="bg-[#e0e0e0] text-black dark:bg-[#242526] dark:text-white p-4 rounded-lg w-100">
+          <div className="bg-[#e0e0e0] text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-100">
             <h2 className="text-black dark:text-[#fffafa] font-bold text-end">
               {props.year}
             </h2>
@@ -72,7 +72,7 @@ const InformationLarge = (props: about_interface) => {
       {/* Right side */}
       {!props.even && (
         <div className="flex justify-start w-1/2 pl-6">
-          <div className="bg-[#e0e0e0] text-black dark:bg-[#242526] dark:text-white p-4 rounded-lg w-100">
+          <div className="bg-[#e0e0e0] text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-100">
             <h2 className="text-black dark:text-[#fffafa] font-bold">
               {props.year}
             </h2>
