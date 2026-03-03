@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { default_interface, link_interface } from "./../utils/interfaces.tsx";
+import { link_interface } from "./../utils/interfaces.tsx";
 import {
   faBlog,
   faContactCard,
@@ -37,26 +36,24 @@ function List(props: link_interface) {
   );
 }
 
-export default function Header(props: default_interface) {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const base = document.getElementById("base");
-    if (base) {
-      const scrollEffect = () => {
-        if (base.scrollTop > 250) {
-          setScrolled(true);
-        } else {
-          setScrolled(false);
-        }
-      };
-
-      base.addEventListener("scroll", scrollEffect);
-      return () => {
-        base.removeEventListener("scroll", scrollEffect);
-      };
-    }
-  }, []);
+export default function Header() {
+  // useEffect(() => {
+  //   const base = document.getElementById("base");
+  //   if (base) {
+  //     const scrollEffect = () => {
+  //       if (base.scrollTop > 250) {
+  //         setScrolled(true);
+  //       } else {
+  //         setScrolled(false);
+  //       }
+  //     };
+  //
+  //     base.addEventListener("scroll", scrollEffect);
+  //     return () => {
+  //       base.removeEventListener("scroll", scrollEffect);
+  //     };
+  //   }
+  // }, []);
 
   return (
     <header

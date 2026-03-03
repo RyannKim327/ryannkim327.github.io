@@ -10,17 +10,13 @@ import Feedback from "./screen/feedback";
 import Blogs from "./screen/blogs";
 
 function App() {
-  const [notice, setNotice] = useState("The server is waking up");
-  const [change, setChange] = useState(false);
+  // const [_, setNotice] = useState("The server is waking up");
+  const [_, setChange] = useState(false);
 
   useEffect(() => {
     (async () => {
-      const wakeup = await get("");
-      setNotice(wakeup.message);
+      await get("");
       setChange(true);
-      setTimeout(() => {
-        setNotice("");
-      }, 5000);
     })();
   }, []);
 

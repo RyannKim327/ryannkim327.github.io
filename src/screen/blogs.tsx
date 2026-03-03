@@ -34,9 +34,9 @@ export default function Blogs(props: pages_interface) {
       className={`${props.className} flex flex-col overflow-hidden w-full h-full p-2`}
     >
       <div
-        className={`${_blogs.length <= 0 ? "flex flex-col h-full w-full justify-center items-center" : "grid grid-cols-2 gap-2"}`}
+        className={`${_blogs && _blogs.length <= 0 ? "flex flex-col h-full w-full justify-center items-center" : "grid grid-cols-2 gap-2"}`}
       >
-        {_blogs.length > 0 ? (
+        {_blogs && _blogs.length > 0 ? (
           _blogs.map((blog: blogs) => {
             return (
               <div className="flex flex-col bg-[#e0e0e0] text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg box-border w-full h-1/3 overflow-hidden gap-1">
