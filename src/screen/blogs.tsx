@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { blogs, pages_interface } from "../utils/interfaces";
 import { get } from "../utils/api";
-import markdown from "@wcj/markdown-to-html";
+import ReactMarkdown from "react-markdown";
 
 export default function Blogs(props: pages_interface) {
   const [_blogs, setBlogs] = useState<null | blogs[]>([]);
@@ -19,15 +19,6 @@ export default function Blogs(props: pages_interface) {
     })();
   }, []);
 
-  const renderMarkdown = (content: string): string => {
-    try {
-      const html = markdown(content || "");
-      return typeof html === "string" ? html : "";
-    } catch {
-      return content || "";
-    }
-  };
-
   return (
     <div
       id={props.id}
@@ -39,7 +30,7 @@ export default function Blogs(props: pages_interface) {
         {_blogs && _blogs.length > 0 ? (
           _blogs.map((blog: blogs) => {
             return (
-              <div className="flex flex-col bg-[#e0e0e0] text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg box-border w-full h-1/3 overflow-hidden gap-1">
+              <div className="flex flex-col bg-[#e0e0e0] text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg box-border w-full overflow-hidden gap-1 h-1/3">
                 <h1 className="text-[1rem]">{blog.title}</h1>
                 <div className="flex w-full gap-2">
                   {blog.tags.length > 0 ? (
@@ -56,17 +47,7 @@ export default function Blogs(props: pages_interface) {
                     </span>
                   )}
                 </div>
-                <blockquote
-                  className="text-[0.75rem]"
-                  dangerouslySetInnerHTML={{
-                    __html: renderMarkdown(
-                      blog.content
-                        .replace(/</gi, "&lt;")
-                        .replace(/>/gi, "&gt;")
-                        .replace(/\n/gi, "<br>"),
-                    ),
-                  }}
-                ></blockquote>
+                <ReactMarkdown>{blog.content}</ReactMarkdown>
                 <div className="flex flex-col text-sm font-serif items-end">
                   Posted: {blog.time}
                 </div>
