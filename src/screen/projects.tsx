@@ -63,7 +63,7 @@ export default function Projects(props: pages_interface) {
           );
         })}
       </div>
-      <div className="flex flex-wrap justify-center gap-4 w-full h-full box-border overflow-y-auto pb-4">
+      <div className="flex flex-wrap justify-center gap-4 w-full h-full box-border overflow-y-auto px-2 pb-4">
         {listProjects.length > 0 ? (
           projects.length <= 0 ? (
             <p>
