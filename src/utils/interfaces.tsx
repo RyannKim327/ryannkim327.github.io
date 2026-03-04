@@ -37,6 +37,7 @@ export interface projects {
 }
 
 export interface blogs {
+  id: number;
   title: string;
   content: string;
   tags: string[];
