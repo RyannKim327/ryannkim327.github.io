@@ -5,7 +5,7 @@ import { blogs } from "../../utils/interfaces";
 import { useEffect, useState } from "react";
 import { get } from "../../utils/api";
 import ReactMarkdown from "react-markdown";
-import Header from "../../parts/header";
+// import Header from "../../parts/header";
 
 export default function GetBlog() {
   const { id } = useParams();
