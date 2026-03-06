@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { feedback, pages_interface } from "../utils/interfaces";
 import { get } from "../utils/api";
+import { parseDate } from "../utils/tools";
 
 export default function Feedback(props: pages_interface) {
   const [feedbacks, setFeedback] = useState<feedback[] | null>([]);
@@ -42,6 +43,11 @@ export default function Feedback(props: pages_interface) {
                     </h1>
                     <div className="flex flex-col md:h-full w-full justify-center text-center">
                       <h3>{feedback_.message}</h3>
+                    </div>
+                    <div className="text-end w-full">
+                      <span className="text-xs">
+                        {parseDate(feedback_.date)}
+                      </span>
                     </div>
                   </div>
                 );

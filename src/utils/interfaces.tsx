@@ -48,6 +48,7 @@ export interface feedback {
   application: string;
   message: string;
   userId?: string | number;
+  date: string;
 }
 
 export type json = Record<string, any>;
