@@ -102,37 +102,77 @@ portfolio/
 
 ## 🎨 Design Philosophy
 
-This portfolio embraces a **modern single-page design** that creates an engaging and professional user experience. The layout features:
+This portfolio is designed to feel **modern, focused, and fast**—a single-page experience that keeps attention on the work while still providing personality through motion and theming.
 
-- **Clean, minimalist interface** with focus on content
-- **Responsive breakpoints** that adapt to various screen sizes
-- **Adaptive theming** with both light and dark modes featuring purple accents for a modern, professional appearance
-- **Smooth scrolling navigation** between sections
-- **Interactive elements** and animations for enhanced user engagement
+### Core Principles
+
+- **Content-first layout**
+  - Prioritizes readability and scan-ability (clear section hierarchy, consistent spacing, and purposeful typography).
+  - Keeps copy and projects easy to discover without overwhelming the visitor.
+
+- **Single-page flow with clear navigation**
+  - Smooth scrolling between sections to maintain context and reduce friction.
+  - Navigation is designed to orient users quickly and minimize “where am I?” moments.
+
+- **Responsive by default**
+  - Breakpoints are chosen to support common device widths and ensure layouts degrade gracefully.
+  - Touch targets, spacing, and component stacking are tuned for mobile ergonomics.
+
+- **Theme as a product feature (Light/Dark, neutral palette)**
+  - The theme switch is treated as part of the experience, not an afterthought.
+  - The palette intentionally stays clean and neutral (light surfaces + dark slate backgrounds) to keep focus on content and imagery.
+  - Contrast and readability are prioritized across both modes.
+
+- **Motion with intention**
+  - Animations are used to guide attention (section entry, emphasis, micro-interactions), not distract.
+  - Transitions are kept subtle and consistent to reinforce polish.
+
+- **Performance-minded UI**
+  - Leverages a modern build toolchain (Vite) and component modularity to keep interactions snappy.
+  - Avoids unnecessary visual noise and heavy assets where possible.
+
+- **Accessibility-oriented decisions**
+  - Designs aim for strong contrast, readable font sizing, and predictable interaction patterns.
+  - UI structure is kept semantic-friendly to support assistive technologies.
+
+- **Maintainable, component-driven structure**
+  - Reusable UI sections/components keep styling consistent and updates straightforward.
+  - Utility-first styling (Tailwind) favors small, composable changes without CSS sprawl.
 
 ## 📝 Changelog
 
 > Notes
 > - This changelog is generated from the repo’s actual commit history (non-merge commits), grouped by version.
 > - Only **v3.0.0** is marked as **(Current)**.
+> - Versions are grouped by **Major** / **Minor** / **Patch** following semantic versioning (MAJOR.MINOR.PATCH).
 
-### Version 3.0.0 (Current) - Major Release
+### Major Versions
 
-#### March 2026
+#### Version 3.0.0 (Current)
+
+### March 2026
 - **2026-03-06**: Misc updates (`3b58a8a`)
 - **2026-03-05**: Blogs feature added (fetch + UI) (`fb6e9e1`, `cc37e1d`)
 - **2026-03-04**: UI/UX adjustments & refinements (`5adb165`, `0fcc9c2`)
 - **2026-03-03**: UI changes & app shell updates (`6253364`, `53ca14c`, `aa729f9`)
 
-### Version 2.1.0 - Minor Release
+### Minor Versions
 
-#### February 2026
+#### Version 2.1.0
+
+### February 2026
 - **2026-02-12**: Various fixes/changes (`9fc0d50`, `2418022`, `8e7d51a`, `d0015b6`)
 - **2026-02-04**: Blog posting work + updates (`e0827e7`, `f7459a4`)
 
-### Version 2.0.0 - Major Release
+### Patch Versions
 
-#### January 2026
+_No patch releases documented yet._
+
+### Major Versions (continued)
+
+#### Version 2.0.0
+
+### January 2026
 - **2026-01-27**: Simplification / cleanup (`a9f4049`)
 - **2026-01-25**: Feedback fixes (`9edfe4c`)
 - **2026-01-24**: Feedback updates (`ee2c2e1`)
@@ -142,16 +182,16 @@ This portfolio embraces a **modern single-page design** that creates an engaging
 - **2026-01-04**: Light mode + general updates (`00dfb18`, `ff85567`, `69ed8c5`)
 - **2026-01-03**: Multiple incremental fixes/updates (`2736bdc`, `59400a9`, `ed19656`, `fc6e8ea`, `e1b8af3`, `47aa04f`, `9d8892b`)
 
-### Version 1.0.0 - Major Release
+#### Version 1.0.0
 
-#### 2025 highlights
+### 2025 highlights
 - **2025-12-22**: About section update (`c01acf0`)
 - **2025-12-21**: UI refinements (`daee202`, `c7ea76b`, `a2fd2b8`)
 - **2025-11-20**: Experience updates + README + layout updates (`ce9a2c5`, `bcd361a`, `0ef7ded`, `c5494c7`, `56610d5`)
 - **2025-08-30**: Performance optimizations (`1f3f16b`)
 - **2025-07-06 → 2025-07-08**: Major restructure / updates (`2e64345`, `77cdd8a`, `d9a831a`)
 
-#### Key Features Added
+### Key Features Added
 - ✅ Modern React + TypeScript
 - ✅ Responsive design with Tailwind CSS
 - ✅ Light/Dark theme switching
