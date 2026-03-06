@@ -114,6 +114,14 @@ This portfolio embraces a **modern single-page design** that creates an engaging
 
 ### Version 1.0.0 (Current) - Major Release
 
+#### Recent Updates (March 2026)
+- **2026-03-05**: 📰 **Blogs** - Added/updated blog fetching + UI updates (`src/pages/get/blogs.tsx`, `src/screen/blogs.tsx`, `src/utils/interfaces.tsx`)
+- **2026-03-04**: 🧩 **UI/UX Adjustments** - Tweaks to About + Projects sections (`src/screen/about.tsx`, `src/screen/projects.tsx`)
+- **2026-03-04**: 📦 **Dependency & Screen Updates** - Updated packages and refined Blogs/Feedback screens (`package.json`, `src/screen/blogs.tsx`, `src/screen/feedback.tsx`)
+- **2026-03-03**: 🦸 **Hero Section Update** - Refined hero layout/content (`src/screen/hero.tsx`)
+- **2026-03-03**: 🧭 **Navigation & App Shell** - Updates across app layout/header/widgets + blogs integration (`src/App.tsx`, `src/parts/header.tsx`, `src/widgets/input.tsx`)
+- **2026-03-03**: 🎨 **UI Refresh** - Introduced new theme assets and broader UI changes (added `dark.png`/`light.png`, removed `self.png`, API updates)
+
 #### Recent Updates (January 2026)
 - **2026-01-09**: 📱 **Mobile Optimization Update** - Added responsive phone view for about section and improved loading notifications
 - **2026-01-09**: 🔄 Enhanced loading indicator with visual status feedback and better UX
