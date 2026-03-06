@@ -112,52 +112,54 @@ This portfolio embraces a **modern single-page design** that creates an engaging
 
 ## 📝 Changelog
 
-### Version 1.0.0 (Current) - Major Release
+> Notes
+> - This changelog is generated from the repo’s actual commit history (non-merge commits), grouped by version.
+> - Only **v3.0.0** is marked as **(Current)**.
 
-#### Recent Updates (March 2026)
-- **2026-03-05**: 📰 **Blogs** - Added/updated blog fetching + UI updates (`src/pages/get/blogs.tsx`, `src/screen/blogs.tsx`, `src/utils/interfaces.tsx`)
-- **2026-03-04**: 🧩 **UI/UX Adjustments** - Tweaks to About + Projects sections (`src/screen/about.tsx`, `src/screen/projects.tsx`)
-- **2026-03-04**: 📦 **Dependency & Screen Updates** - Updated packages and refined Blogs/Feedback screens (`package.json`, `src/screen/blogs.tsx`, `src/screen/feedback.tsx`)
-- **2026-03-03**: 🦸 **Hero Section Update** - Refined hero layout/content (`src/screen/hero.tsx`)
-- **2026-03-03**: 🧭 **Navigation & App Shell** - Updates across app layout/header/widgets + blogs integration (`src/App.tsx`, `src/parts/header.tsx`, `src/widgets/input.tsx`)
-- **2026-03-03**: 🎨 **UI Refresh** - Introduced new theme assets and broader UI changes (added `dark.png`/`light.png`, removed `self.png`, API updates)
+### Version 3.0.0 (Current) - Major Release
 
-#### Recent Updates (January 2026)
-- **2026-01-09**: 📱 **Mobile Optimization Update** - Added responsive phone view for about section and improved loading notifications
-- **2026-01-09**: 🔄 Enhanced loading indicator with visual status feedback and better UX
-- **2026-01-07**: 🔒 **Security Enhancement** - Removed .env file from repository and added to .gitignore
-- **2026-01-07**: 📄 Added custom 404 error page for better user experience
-- **2026-01-07**: 🗂️ Improved file organization and structure
-- **2026-01-04**: 🌞 **Light Mode Support** - Added comprehensive light/dark theme toggle functionality
-- **2026-01-04**: 🎉 **Major Release v1.0.0** - Version bump to stable release
-- **2026-01-04**: 📱 Enhanced responsive design for mobile devices
-- **2026-01-04**: 🧹 Code cleanup and optimization improvements
-- **2026-01-04**: 🖼️ Hero section responsive image handling
-- **2026-01-03**: 🔧 API endpoint URL handling improvements
-- **2026-01-03**: 🐛 Multiple bug fixes and optimizations
-- **2025-12-22**: ✨ Enhanced about section with better content
-- **2025-12-21**: 🎨 UI improvements and refinements
+#### March 2026
+- **2026-03-06**: Misc updates (`3b58a8a`)
+- **2026-03-05**: Blogs feature added (fetch + UI) (`fb6e9e1`, `cc37e1d`)
+- **2026-03-04**: UI/UX adjustments & refinements (`5adb165`, `0fcc9c2`)
+- **2026-03-03**: UI changes & app shell updates (`6253364`, `53ca14c`, `aa729f9`)
 
-#### Major Updates (2025)
-- **2025-11-20**: Added more professional experience content
-- **2025-11-20**: Updated README documentation
-- **2025-11-20**: Complete layout redesign for better user experience
-- **2025-08-30**: Performance optimizations
-- **2025-07-08**: Major codebase updates and improvements
-- **2025-07-06**: Complete project restructure and modernization
+### Version 2.1.0 - Minor Release
+
+#### February 2026
+- **2026-02-12**: Various fixes/changes (`9fc0d50`, `2418022`, `8e7d51a`, `d0015b6`)
+- **2026-02-04**: Blog posting work + updates (`e0827e7`, `f7459a4`)
+
+### Version 2.0.0 - Major Release
+
+#### January 2026
+- **2026-01-27**: Simplification / cleanup (`a9f4049`)
+- **2026-01-25**: Feedback fixes (`9edfe4c`)
+- **2026-01-24**: Feedback updates (`ee2c2e1`)
+- **2026-01-22**: Feedback designs, null fix, dependency/update work (`c593b1c`, `0095aa5`, `71863d4`, `e3ea6e0`, `9bd98de`, `383563e`, `c733889`)
+- **2026-01-09**: API hook update, color changes, mobile/about phone view + loading improvements (`5bdb6a6`, `66e6ff6`, `25e6b96`)
+- **2026-01-07**: Removed `.env`, added/moved custom 404 page (`16652c9`, `d0b7253`, `56df339`)
+- **2026-01-04**: Light mode + general updates (`00dfb18`, `ff85567`, `69ed8c5`)
+- **2026-01-03**: Multiple incremental fixes/updates (`2736bdc`, `59400a9`, `ed19656`, `fc6e8ea`, `e1b8af3`, `47aa04f`, `9d8892b`)
+
+### Version 1.0.0 - Major Release
+
+#### 2025 highlights
+- **2025-12-22**: About section update (`c01acf0`)
+- **2025-12-21**: UI refinements (`daee202`, `c7ea76b`, `a2fd2b8`)
+- **2025-11-20**: Experience updates + README + layout updates (`ce9a2c5`, `bcd361a`, `0ef7ded`, `c5494c7`, `56610d5`)
+- **2025-08-30**: Performance optimizations (`1f3f16b`)
+- **2025-07-06 → 2025-07-08**: Major restructure / updates (`2e64345`, `77cdd8a`, `d9a831a`)
 
 #### Key Features Added
-- ✅ Modern React 19 implementation
-- ✅ TypeScript integration for type safety
+- ✅ Modern React + TypeScript
 - ✅ Responsive design with Tailwind CSS
-- ✅ Light/Dark theme switching functionality
-- ✅ Mobile-optimized about section layout
-- ✅ Enhanced loading indicators and notifications
+- ✅ Light/Dark theme switching
+- ✅ Mobile-optimized sections
+- ✅ Enhanced loading indicators / notifications
 - ✅ Backend API integration
 - ✅ Smooth animations with Framer Motion
-- ✅ Professional portfolio sections
-- ✅ Contact form functionality
-- ✅ Project showcase gallery
+- ✅ Portfolio sections + contact form
 - ✅ Custom 404 error page
 - ✅ Security improvements (environment variables)
 - ✅ GitHub Pages deployment
