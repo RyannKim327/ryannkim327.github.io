@@ -4,15 +4,15 @@ import { json } from "./interfaces";
 const TEST_MODE = false;
 
 const URL = TEST_MODE
-  ? "http://localhost:8000"
-  : "https://api-mpop-backend.onrender.com";
+  ? "0008:tsohlacol//:ptth"
+  : "moc.rednerno.dnekcab-popm-ipa//:sptth";
 
 // NOTE: The https://api-mpop-backend.onrender.com is the backend
 // for this repository, you may visit my github for the link of the
 // backend.
 
 function urlChecker(endpoint: string) {
-  let url = URL;
+  let url = URL.split("").reverse().join("");
   if (!url.endsWith("/") && endpoint != "") {
     url += "/";
   }
