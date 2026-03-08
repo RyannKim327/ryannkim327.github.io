@@ -33,7 +33,7 @@ export interface projects {
   description?: string;
   link: string;
   category: string[];
-  src?: string;
+  img?: string;
 }
 
 export interface blogs {

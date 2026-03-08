@@ -56,3 +56,49 @@ export async function post(endpoint: string, params?: json | json[]) {
   });
   return response(data, status);
 }
+
+export async function adminPost(
+  endpoint: string,
+  adminCode: string,
+  params?: json | json[],
+) {
+  if (adminCode.trim() == "") {
+    return {
+      error: "No Code Inserted",
+    };
+  }
+  const { data, status } = await axios.post(urlChecker(endpoint), params, {
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "X-API-Key": `${adminCode}`,
+    },
+  });
+  return response(data, status);
+}
+
+export async function adminPostMultipart(
+  endpoint: string,
+  adminCode: string,
+  formData: FormData,
+) {
+  if (adminCode.trim() == "") {
+    return {
+      error: "No Code Inserted",
+    };
+  }
+  const { data, status } = await axios.post(urlChecker(endpoint), formData, {
+    headers: {
+      "X-API-Key": `${adminCode}`,
+    },
+  });
+  return response(data, status);
+}
+
+export function retrieval(endpoint: string, params?: json) {
+  if (params) {
+    const query = new URLSearchParams(params).toString();
+    return `${urlChecker(endpoint)}?${query}`;
+  }
+  return urlChecker("endpoint");
+}

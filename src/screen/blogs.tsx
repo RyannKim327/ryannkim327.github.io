@@ -10,7 +10,6 @@ export default function Blogs(props: pages_interface) {
   useEffect(() => {
     (async () => {
       const response = await get("blog");
-      console.log(response);
       if (response.error) {
         setBlogs(null);
         alert(response.error);

@@ -5,7 +5,6 @@ import { blogs } from "../../utils/interfaces";
 import { useEffect, useState } from "react";
 import { get } from "../../utils/api";
 import ReactMarkdown from "react-markdown";
-// import Header from "../../parts/header";
 
 export default function GetBlog() {
   const { id } = useParams();
@@ -30,7 +29,10 @@ export default function GetBlog() {
       {/* <Header /> */}
       <div className="flex flex-col p-4">
         <div className="flex w-full items-center gap-3">
-          <FontAwesomeIcon icon={faLongArrowLeft} />
+          <FontAwesomeIcon
+            onClick={() => history.back()}
+            icon={faLongArrowLeft}
+          />
           <h1 className="text-[1.5rem] underline">{blog?.title}</h1>
           <div className="flex gap-1">
             {blog?.tags.map((tag) => {
