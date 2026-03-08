@@ -3,7 +3,7 @@ import { ChangeEvent, Dispatch, SetStateAction } from "react";
 interface InputProps<T> {
   children: string;
   type?: string;
-  value: string;
+  value: Record<string, any>;
   name: keyof T;
   onChange: Dispatch<SetStateAction<T>>;
 }
@@ -23,7 +23,7 @@ export default function Input<T>({
 
       <input
         id={String(name)}
-        value={value}
+        value={value[String(name)]}
         className="w-full border-none outline-none px-2"
         type={type}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {

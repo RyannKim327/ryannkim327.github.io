@@ -1,5 +1,5 @@
 import { pages_interface, projects } from "../utils/interfaces";
-import { get } from "../utils/api";
+import { get, retrieval } from "../utils/api";
 import { useEffect, useState } from "react";
 
 export default function Projects(props: pages_interface) {
@@ -80,9 +80,9 @@ export default function Projects(props: pages_interface) {
                     if (w) w.focus();
                   }}
                   style={{
-                    backgroundImage: `url(${item.src ?? ""})`,
+                    backgroundImage: `url(${retrieval("images", { file: item.img })})`,
                   }}
-                  className={`flex flex-col justify-end h-1/3 md:h-1/3 w-full md:w-2/7 bg-[#212121] text-white p-2 dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
+                  className={`flex flex-col justify-end h-1/3 md:h-1/3 w-full md:w-2/7 text-white p-2 dark:border dark:border-slate-500 dark:border-solid lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
                 >
                   {/* <img */}
                   {/*   className="grayscale hover:grayscale-0 transition ease-all delay-150 w-full aspect-video" */}
