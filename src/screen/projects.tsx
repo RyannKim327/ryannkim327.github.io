@@ -82,14 +82,14 @@ export default function Projects(props: pages_interface) {
                   style={{
                     backgroundImage: `url(${retrieval("images", { file: item.img })})`,
                   }}
-                  className={`flex flex-col justify-end h-1/3 md:h-1/3 w-full md:w-2/7 text-white p-2 dark:border dark:border-slate-500 dark:border-solid lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
+                  className={`flex flex-col justify-end h-1/3 md:h-1/3 w-full md:w-2/7 text-white p-2 border border-slate-950 dark:border-slate-500 border-solid lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
                 >
                   {/* <img */}
                   {/*   className="grayscale hover:grayscale-0 transition ease-all delay-150 w-full aspect-video" */}
                   {/*   alt={item.name} */}
                   {/*   src={item.src} */}
                   {/* /> */}
-                  <span className="flex flex-col bg-[#212121]/50 select-none cursor-pointer hover:underline justify-center items-center box-border">
+                  <span className="flex flex-col bg-[#efefef]/50 text-black dark:text-white dark:bg-[#212121]/50 select-none cursor-pointer hover:underline justify-center items-center box-border">
                     <h1 className="text-base md:text-xl text-center">
                       {item.name}
                     </h1>
