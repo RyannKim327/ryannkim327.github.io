@@ -7,7 +7,7 @@ const URL = TEST_MODE
   ? "0008:tsohlacol//:ptth"
   : "moc.rednerno.dnekcab-popm-ipa//:sptth";
 
-// NOTE: The https://api-mpop-backend.onrender.com is the backend
+// NOTE: The backend is now changed, you may still look for it by looking on my github
 // for this repository, you may visit my github for the link of the
 // backend.
 
