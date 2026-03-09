@@ -9,6 +9,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Logo from "./../assets/logo.jpg";
 
+interface HeaderProps {
+  isLoaded: boolean;
+}
+
 function onclick(id: string) {
   const _ = document.getElementById(id);
   if (_) {
@@ -36,28 +40,10 @@ function List(props: link_interface) {
   );
 }
 
-export default function Header() {
-  // useEffect(() => {
-  //   const base = document.getElementById("base");
-  //   if (base) {
-  //     const scrollEffect = () => {
-  //       if (base.scrollTop > 250) {
-  //         setScrolled(true);
-  //       } else {
-  //         setScrolled(false);
-  //       }
-  //     };
-  //
-  //     base.addEventListener("scroll", scrollEffect);
-  //     return () => {
-  //       base.removeEventListener("scroll", scrollEffect);
-  //     };
-  //   }
-  // }, []);
-
+export default function Header(props: HeaderProps) {
   return (
     <header
-      className={`bg-[#f9fafb] dark:bg-slate-900 z-1 dark:text-white flex flex-row justify-between items-center px-2 shadow dark:shadow-white h-[75px]`}
+      className={`bg-[#f9fafb] dark:bg-slate-900 z-1 dark:text-white flex flex-row justify-between items-center px-5 shadow dark:shadow-white h-[75px]`}
     >
       <img
         onClick={() => {
@@ -70,15 +56,19 @@ export default function Header() {
         {/* <List link="home" icon={faHouse}> */}
         {/*   {/* Home *} */}
         {/* </List> */}
-        <List link="about" icon={faUser}>
-          About
-        </List>
-        <List link="projects" icon={faFolderOpen}>
-          Projects
-        </List>
-        <List link="blog" icon={faBlog}>
-          Blogs
-        </List>
+        {props.isLoaded ? (
+          <>
+            <List link="about" icon={faUser}>
+              About
+            </List>
+            <List link="projects" icon={faFolderOpen}>
+              Projects
+            </List>
+            <List link="blog" icon={faBlog}>
+              Blogs
+            </List>
+          </>
+        ) : null}
         <List link="contact" icon={faContactCard}>
           Contact
         </List>
