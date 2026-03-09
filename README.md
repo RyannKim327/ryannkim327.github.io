@@ -3,7 +3,7 @@
 **Project version:** `3.0.1`
 
 [![wakatime](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c.svg)](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c)
-[![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat&logo=react)
+![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=flat&logo=typescript)
 ![Vite](https://img.shields.io/badge/Vite-7.3.1-646CFF?style=flat&logo=vite)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.2.1-06B6D4?style=flat&logo=tailwindcss)
