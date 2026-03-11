@@ -9,11 +9,11 @@ export default function Hero(props: pages_interface) {
       className={`flex flex-row justify-center h-full w-full overflow-hidden ${props.className}`}
       id={props.id}
     >
-      <div className="flex flex-col justify-center items-center md:items-end w-full h-full gap-3 p-2">
-        <h1 className="text-[3em] text-center md:text-end w-3/6">
+      <div className="flex flex-col justify-center items-center md:items-end w-full h-full gap-3 md:gap-10 p-2">
+        <h1 className="text-[3em] w-3/6 md:text-[4.5em] md:w-5/6 text-center md:text-end">
           Ryann Kim M. Sesgundo
         </h1>
-        <h3 className="text-[1.75em] text-center md:text-end">
+        <h3 className="text-[1.75em] md:text-[2em] text-center md:text-end">
           A Full-Stack Software Developer
         </h3>
       </div>
