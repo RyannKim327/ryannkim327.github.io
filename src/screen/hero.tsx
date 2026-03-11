@@ -30,7 +30,7 @@ export default function Hero(props: pages_interface) {
           src={Dark}
           className="rounded-md hidden dark:inline h-3/4 mt-[-5rem]"
         />
-        <img src={Light} className="rounded-md dark:hidden h-2/3 mt-[-5rem]" />
+        <img src={Light} className="rounded-md dark:hidden h-3/4 mt-[-5rem]" />
       </div>
     </div>
   );
