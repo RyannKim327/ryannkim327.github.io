@@ -16,7 +16,7 @@ export default function Input<T>({
   onChange,
 }: InputProps<T>) {
   return (
-    <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full">
+    <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full p-1">
       <label htmlFor={String(name)} className="text-sm px-4">
         {children}
       </label>
