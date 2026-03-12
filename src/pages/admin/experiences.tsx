@@ -25,8 +25,8 @@ export default function Experiences() {
   return (
     <div className="flex flex-col gap-2 w-full h-full">
       <h1 className="text-center text-xl">Update Experiences</h1>
-      <div className="flex w-full p-5 gap-5">
-        <div className="flex flex-col gap-1 min-w-1/3 overflow-y-scroll overflow-x-hidden">
+      <div className="flex w-full p-5 gap-5 h-full">
+        <div className="flex flex-col gap-1 min-w-1/3 overflow-y-scroll overflow-x-hidden h-full">
           {exp.map((xp: abt, i: number) => {
             return (
               <span

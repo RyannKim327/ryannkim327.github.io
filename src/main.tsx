@@ -8,7 +8,7 @@ import GetBlog from "./pages/user/blogs.tsx";
 import UploadImage from "./pages/admin/upload.tsx";
 import Experiences from "./pages/admin/experiences.tsx";
 import Admin from "./pages/index.tsx";
-import Dashboard from "./pages/admin/index.tsx";
+import Projects from "./pages/admin/index.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -16,7 +16,7 @@ createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/admin/*" element={<Admin />}>
-          <Route path="" element={<Dashboard />} />
+          <Route path="" element={<Projects />} />
           <Route path="exp" element={<Experiences />} />
           <Route path="blog" element={<PostBlog />} />
           <Route path="upload" element={<UploadImage />} />
