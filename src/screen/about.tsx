@@ -1,21 +1,6 @@
-import { pages_interface } from "../utils/interfaces";
+import { about_interface, abt, pages_interface } from "../utils/interfaces";
 import { useEffect, useRef, useState } from "react";
 import { get } from "../utils/api";
-
-interface about_interface {
-  title: string;
-  year: number;
-  children: string[];
-  icon: string;
-  even: boolean;
-}
-
-interface abt {
-  title: string;
-  year: number;
-  icon: string;
-  content?: string[];
-}
 
 const InformationMed = (props: about_interface) => {
   return (

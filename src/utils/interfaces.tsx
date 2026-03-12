@@ -51,4 +51,19 @@ export interface feedback {
   date: string;
 }
 
+export interface about_interface {
+  title: string;
+  year: number;
+  children: string[];
+  icon: string;
+  even: boolean;
+}
+
+export interface abt {
+  title: string;
+  year: number;
+  icon: string;
+  content?: string[];
+}
+
 export type json = Record<string, any>;
