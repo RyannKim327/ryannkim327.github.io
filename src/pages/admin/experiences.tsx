@@ -1,7 +1,8 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { abt } from "../../utils/interfaces";
-import { get } from "../../utils/api";
+import { adminPost, get } from "../../utils/api";
 import Input from "../../widgets/input";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Experiences() {
   const [exp, setExp] = useState<abt[]>([]);
@@ -12,6 +13,8 @@ export default function Experiences() {
     icon: "",
     content: [],
   });
+  const [sending, setSending] = useState(false);
+  const [code, setCode] = useState({ code: "" });
 
   useEffect(() => {
     (async () => {
@@ -21,6 +24,24 @@ export default function Experiences() {
       }
     })();
   }, []);
+
+  const submitExp = async () => {
+    setSending(true);
+    const experiences: abt[] = exp;
+    experiences[index] = mexp;
+    const response = await adminPost(
+      "experiences/submit",
+      code.code,
+      experiences,
+    );
+    if (response.message) {
+      setIndex(-1);
+      toast("Data Updated successfully");
+    } else {
+      toast("Didn't update");
+    }
+    setSending(false);
+  };
 
   return (
     <div className="flex flex-col gap-2 w-full h-full">
@@ -51,6 +72,9 @@ export default function Experiences() {
           <Input value={mexp} name="year" onChange={setMexp}>
             Year
           </Input>
+          <Input value={code} onChange={setCode} name="code">
+            Code
+          </Input>
           <div className="flex flex-col border border-solid h-full border-[#0c0c0c] dark:border-[#f9f9f6] w-full gap-2">
             <span className="pl-4">Content</span>
             <textarea
@@ -66,11 +90,16 @@ export default function Experiences() {
               }}
             ></textarea>
           </div>
-          <button className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full p-3">
-            Submit
+          <button
+            disabled={sending}
+            onClick={submitExp}
+            className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full p-3"
+          >
+            {sending ? "Please Wait" : "Submit"}
           </button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }

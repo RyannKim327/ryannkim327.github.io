@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "../../widgets/input";
 import { adminPostMultipart } from "../../utils/api";
+import { ToastContainer } from "react-toastify";
 
 export default function UploadImage() {
   const [admin, setAdmin] = useState({
@@ -18,6 +19,7 @@ export default function UploadImage() {
     );
     const file = res.from.result.photo;
     setAdmin(file[file.length - 1].file_id);
+    toast("File Uploaded Successfully");
     setSending(false);
   };
 
@@ -56,6 +58,7 @@ export default function UploadImage() {
           </button>
         )}
       </div>
+      <ToastContainer />
     </div>
   );
 }
