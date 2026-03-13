@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "../../widgets/input";
 import { adminPostMultipart } from "../../utils/api";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 export default function UploadImage() {
   const [admin, setAdmin] = useState({
