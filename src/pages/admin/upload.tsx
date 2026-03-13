@@ -30,7 +30,7 @@ export default function UploadImage() {
         <Input value={admin} name="code" onChange={setAdmin}>
           Code
         </Input>
-        <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full gap-2">
+        <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full gap-2 rounded-sm">
           <label htmlFor="file" className="text-sm px-4">
             File To Upload
           </label>
@@ -52,7 +52,7 @@ export default function UploadImage() {
           <button
             onClick={uploadFile}
             type="submit"
-            className="p-2 border border-black dark:border-white border-solid w-full rounded"
+            className="p-2 border border-black dark:border-white border-solid w-full rounded-sm"
           >
             Upload image
           </button>

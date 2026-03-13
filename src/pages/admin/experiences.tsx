@@ -78,7 +78,7 @@ export default function Experiences() {
           <Input value={code} onChange={setCode} name="code">
             Code
           </Input>
-          <div className="flex flex-col border border-solid h-full border-[#0c0c0c] dark:border-[#f9f9f6] w-full gap-2">
+          <div className="flex flex-col border border-solid h-full border-[#0c0c0c] dark:border-[#f9f9f6] w-full gap-2 rounded-sm">
             <span className="pl-4">Content</span>
             <textarea
               className="w-full border-none outline-none px-2 h-full resize-none"
@@ -96,7 +96,7 @@ export default function Experiences() {
           <button
             disabled={sending}
             onClick={submitExp}
-            className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full p-3"
+            className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full p-3 rounded-sm"
           >
             {sending ? "Please Wait" : "Submit"}
           </button>

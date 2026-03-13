@@ -11,7 +11,7 @@ interface InputProps<T> {
 
 export default function Input<T>(props: InputProps<T>) {
   return (
-    <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full p-1 gap-2">
+    <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full p-1 gap-2 rounded-sm">
       <label htmlFor={String(props.name)} className="text-sm px-4">
         {props.children}
       </label>

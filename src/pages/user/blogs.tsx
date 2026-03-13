@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useParams } from "react-router";
 import { blogs } from "../../utils/interfaces";
 import { useEffect, useState } from "react";
-import { get } from "../../utils/api";
+import { get, retrieval } from "../../utils/api";
 import ReactMarkdown from "react-markdown";
 
 export default function GetBlog() {
@@ -48,36 +48,51 @@ export default function GetBlog() {
               </div>
               <span className="text-sm">Posted: {blog?.time}</span>
             </div>
-            <div className="p-2 py-5 overflow-y-auto h-full w-full">
-              <ReactMarkdown
-                components={{
-                  ul: ({ node, ...props }) => (
-                    <ul className="list-disc list-inside ml-5" {...props} />
-                  ),
-                  ol: ({ node, ...props }) => (
-                    <ol className="list-decimal list-inside ml-5" {...props} />
-                  ),
-                  pre: ({ node, ...props }) => (
-                    <pre
-                      className="bg-zinc-200 shadow shadow-zinc-500 dark:shadow-none dark:bg-slate-900 dark:text-zinc-100 p-4 rounded-lg overflow-x-auto my-4"
-                      {...props}
-                    />
-                  ),
-
-                  code: ({ node, className, children, ...props }) => {
-                    return (
-                      <code
-                        className={`font-mono text-sm bg-zinc-200 dark:bg-slate-900 ${className ?? ""}`}
+            <div className="flex flex-col p-2 py-5 overflow-y-auto h-full w-full">
+              <div className="">
+                <ReactMarkdown
+                  components={{
+                    ul: ({ node, ...props }) => (
+                      <ul className="list-disc list-inside ml-5" {...props} />
+                    ),
+                    ol: ({ node, ...props }) => (
+                      <ol
+                        className="list-decimal list-inside ml-5"
                         {...props}
-                      >
-                        {children}
-                      </code>
-                    );
-                  },
-                }}
-              >
-                {blog?.content}
-              </ReactMarkdown>
+                      />
+                    ),
+                    pre: ({ node, ...props }) => (
+                      <pre
+                        className="bg-zinc-200 shadow shadow-zinc-500 dark:shadow-none dark:bg-slate-900 dark:text-zinc-100 p-4 rounded-lg overflow-x-auto my-4"
+                        {...props}
+                      />
+                    ),
+
+                    code: ({ node, className, children, ...props }) => {
+                      return (
+                        <code
+                          className={`font-mono text-sm bg-zinc-200 dark:bg-slate-900 ${className ?? ""}`}
+                          {...props}
+                        >
+                          {children}
+                        </code>
+                      );
+                    },
+                  }}
+                >
+                  {blog?.content}
+                </ReactMarkdown>
+              </div>
+              {blog?.imgs ? (
+                <div className="flex flex-col h-1/5 mt-5">
+                  <span className="font-bold">Some Pictures included:</span>
+                  <div className="flex h-full">
+                    {blog?.imgs.map((img) => {
+                      return <img src={retrieval("images", { file: img })} />;
+                    })}
+                  </div>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

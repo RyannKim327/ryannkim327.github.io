@@ -8,6 +8,7 @@ export default function PostBlog() {
     title: "",
     content: "",
     tags_: "",
+    imgs: "",
   });
   const [code, setCode] = useState({
     code: "",
@@ -18,6 +19,7 @@ export default function PostBlog() {
       title: formData.title,
       content: formData.content,
       tags: formData.tags_.split(" "),
+      imgs: formData.imgs.trim().split(" "),
     };
 
     const response = await adminPost("blog/submit", code.code, form);
@@ -27,6 +29,7 @@ export default function PostBlog() {
         title: "",
         content: "",
         tags_: "",
+        imgs: "",
       });
       setCode({ code: "" });
     } else {
@@ -47,7 +50,10 @@ export default function PostBlog() {
         <Input value={formData} onChange={setFormData} name="tags_">
           Tags
         </Input>
-        <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full h-full">
+        <Input value={formData} onChange={setFormData} name="imgs">
+          Images
+        </Input>
+        <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full h-full rounded-sm">
           <span className="pl-4">Content</span>
           <textarea
             className="w-full border-none outline-none px-2 h-full"
@@ -64,7 +70,7 @@ export default function PostBlog() {
         </div>
         <button
           onClick={submitBlog}
-          className="border p-2 border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full"
+          className="border p-2 border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full rounded-sm"
         >
           Submit
         </button>
