@@ -64,18 +64,7 @@ export default function GetBlog() {
                     />
                   ),
 
-                  code: ({ node, inline, className, children, ...props }) => {
-                    if (inline) {
-                      return (
-                        <code
-                          className="bg-zinc-200 text-red-600 px-1 py-0.5 rounded text-sm"
-                          {...props}
-                        >
-                          {children}
-                        </code>
-                      );
-                    }
-
+                  code: ({ node, className, children, ...props }) => {
                     return (
                       <code
                         className={`font-mono text-sm ${className ?? ""}`}

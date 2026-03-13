@@ -1,6 +1,6 @@
 # RyannKim327 Portfolio
 
-**Project version:** `3.0.1`
+**Project version:** `3.0.2`
 
 [![wakatime](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c.svg)](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c)
 ![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat&logo=react)
@@ -24,6 +24,10 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 - 🎨 **Tailwind CSS** - Utility-first CSS framework for rapid styling
 - 📦 **Component-Based Architecture** - Modular and maintainable code structure
 - 🌙 **Dark/Light Theme** - Elegant theme switching with dark and light modes, featuring purple accents
+- 📝 **Blog System** - Fetch + view blog posts with Markdown rendering
+- 💅 **Enhanced Markdown Styling** - Proper list styling, code blocks, and inline code formatting
+- 🧰 **Admin Dashboard (WIP)** - Manage portfolio content (experiences/projects/blogs)
+- 🧩 **Experience Icons (Admin)** - Add an icon field when creating/editing experiences
 - 🔗 **Backend Integration** - Connected to Go-based backend API
 
 ## 🛠️ Tech Stack
@@ -154,7 +158,14 @@ This portfolio is designed to feel **modern, focused, and fast**—a single-page
 > - This changelog is derived from this repo’s **git history** (non-merge commits). It’s maintained manually and is not automatically tied to `package.json`.
 > - Versions follow semantic versioning (**MAJOR.MINOR.PATCH**).
 
-### v3.0.1 (Current) — 2026-03-10
+### v3.0.2 (Current) — 2026-03-12 → 2026-03-13
+
+- Improved blog Markdown rendering (lists + code blocks + inline code) (`4d620e5`)
+- Admin experiences: added `icon` input field (`4d620e5`)
+- Blogs fixes and posting/updates (`5922479`, `c987791`)
+- Admin/UX iterations: dashboard/rename, navlink migration, hero + experiences updates (`9897679`, `685e79a`, `2396a42`, `fc90903`)
+
+### v3.0.1 — 2026-03-10
 
 - Adjusted blog headers/hero/about and loading behavior (`a78eff8`)
 
