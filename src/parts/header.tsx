@@ -43,7 +43,7 @@ function List(props: link_interface) {
 export default function Header(props: HeaderProps) {
   return (
     <header
-      className={`bg-[#f9fafb] dark:bg-slate-900 z-1 dark:text-white flex flex-row justify-between items-center px-5 shadow dark:shadow-white h-[75px]`}
+      className={`bg-[#f9fafb] dark:bg-slate-900 z-1 dark:text-white flex flex-row justify-between items-center px-5 shadow shadow-zinc-500 dark:shadow-slate-500 h-[75px]`}
     >
       <img
         onClick={() => {

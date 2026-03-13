@@ -28,7 +28,7 @@ export default function Blogs(props: pages_interface) {
         className={
           !_blogs || _blogs.length === 0
             ? "flex flex-col h-full w-full justify-center items-center"
-            : "flex flex-row flex-wrap w-full h-full overflow-y-scroll gap-2 justify-evenly"
+            : "flex flex-row flex-wrap w-full h-full overflow-y-scroll gap-3 justify-evenly"
         }
       >
         {_blogs && _blogs.length > 0 ? (
@@ -38,13 +38,13 @@ export default function Blogs(props: pages_interface) {
                 to={`blog/${blog.id}`}
                 className="w-full md:w-2/7 aspect-video"
               >
-                <div className="flex flex-col bg-[#e0e0e0] text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-full h-full overflow-hidden gap-1">
+                <div className="flex flex-col bg-zinc-200 shadow-sm shadow-black text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-full h-full overflow-hidden gap-1">
                   <h1 className="text-[1rem]">{blog.title}</h1>
                   <div className="flex w-full gap-2">
                     {blog.tags.length > 0 ? (
                       blog.tags.map((tag) => {
                         return (
-                          <span className="bg-slate-100 text-black rounded px-2 text-[0.75rem]">
+                          <span className="bg-zinc-50 text-black rounded px-2 text-[0.75rem]">
                             {tag.replace(/_/gi, " ")}
                           </span>
                         );

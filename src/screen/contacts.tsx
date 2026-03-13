@@ -59,12 +59,12 @@ export default function Contact(props: pages_interface) {
         title="Location"
         loading="lazy"
         allowFullScreen={false}
-        className="h-1/3 w-full dark:grayscale dark:invert transition ease-in delay-100"
+        className="h-3/4 w-full dark:grayscale dark:invert transition ease-in delay-100"
       />
       <form
         action="https://formsubmit.co/weryses19@gmail.com"
         method="POST"
-        className="flex flex-col w-full box-border gap-2"
+        className="flex flex-col w-full h-full box-border gap-2"
       >
         <div className="flex flex-row gap-2 w-full box-border">
           <Input
@@ -88,7 +88,7 @@ export default function Contact(props: pages_interface) {
           placeholder="Enter your message"
           minLength={20}
           required
-          className="resize-none p-2 outline-none rounded h-20 bg-transparent border-black dark:border-white"
+          className="resize-none p-2 outline-none rounded h-full bg-transparent border-black dark:border-white "
         ></textarea>
         <div className="flex justify-between px-4">
           <div className="flex box-border pl-4 gap-5">

@@ -59,7 +59,7 @@ export default function GetBlog() {
                   ),
                   pre: ({ node, ...props }) => (
                     <pre
-                      className="bg-zinc-100 dark:bg-slate-900 dark:text-zinc-100 p-4 rounded-lg overflow-x-auto my-4"
+                      className="bg-zinc-200 shadow shadow-zinc-500 dark:shadow-none dark:bg-slate-900 dark:text-zinc-100 p-4 rounded-lg overflow-x-auto my-4"
                       {...props}
                     />
                   ),
@@ -67,7 +67,7 @@ export default function GetBlog() {
                   code: ({ node, className, children, ...props }) => {
                     return (
                       <code
-                        className={`font-mono text-sm ${className ?? ""}`}
+                        className={`font-mono text-sm bg-zinc-200 dark:bg-slate-900 ${className ?? ""}`}
                         {...props}
                       >
                         {children}
