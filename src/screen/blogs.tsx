@@ -22,16 +22,23 @@ export default function Blogs(props: pages_interface) {
   return (
     <div
       id={props.id}
-      className={`${props.className} flex flex-col w-full h-full p-2`}
+      className={`${props.className} flex flex-col w-full h-full p-2 overflow-hidden`}
     >
       <div
-        className={`${_blogs && _blogs.length <= 0 ? "flex flex-col h-full w-full justify-center items-center" : "grid grid-rows-2 grid-cols-3 gap-2 h-full w-full overflow-y-auto"}`}
+        className={
+          !_blogs || _blogs.length === 0
+            ? "flex flex-col h-full w-full justify-center items-center"
+            : "flex flex-row flex-wrap w-full h-full overflow-y-scroll gap-2 justify-evenly"
+        }
       >
         {_blogs && _blogs.length > 0 ? (
           _blogs.map((blog: blogs) => {
             return (
-              <Link to={`blog/${blog.id}`}>
-                <div className="flex flex-col bg-[#e0e0e0] text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg box-border w-full overflow-hidden gap-1 h-full">
+              <Link
+                to={`blog/${blog.id}`}
+                className="w-full md:w-2/7 aspect-video"
+              >
+                <div className="flex flex-col bg-[#e0e0e0] text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-full h-full overflow-hidden gap-1">
                   <h1 className="text-[1rem]">{blog.title}</h1>
                   <div className="flex w-full gap-2">
                     {blog.tags.length > 0 ? (
