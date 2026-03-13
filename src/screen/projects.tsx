@@ -1,6 +1,7 @@
 import { pages_interface, projects } from "../utils/interfaces";
 import { get, retrieval } from "../utils/api";
 import { useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 export default function Projects(props: pages_interface) {
   const [categories, setCategories] = useState<string[]>([]);
@@ -11,6 +12,9 @@ export default function Projects(props: pages_interface) {
   useEffect(() => {
     (async () => {
       const api = await get("projects");
+      if (api.error) {
+        return toast(api.error);
+      }
       setCategories(["all", ...api.categories]);
       const programs = api.projects.sort((a: projects, b: projects) =>
         a.name.localeCompare(b.name),
@@ -108,6 +112,7 @@ export default function Projects(props: pages_interface) {
           </div>
         )}
       </div>
+      <ToastContainer />
     </div>
   );
 }

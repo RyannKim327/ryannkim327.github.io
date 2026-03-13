@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { get } from "./utils/api";
 import Feedback from "./screen/feedback";
 import Blogs from "./screen/blogs";
+import { admin } from "./utils/tools";
 
 function App() {
   const [loaded, setChange] = useState(false);
@@ -22,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col dark:bg-slate-950 dark:text-white bg-[#f9fafb] h-dvh w-dvw">
+    <div className="flex flex-col dark:bg-slate-950 dark:text-white bg-[#f9fafb] h-dvh w-dvw select-none">
       <Header isLoaded={loaded} />
       <div className="h-full w-full snap-mandatory snap-y scroll-smooth overflow-y-scroll overflow-x-hidden">
         <Hero id="home" className="snap-start" />

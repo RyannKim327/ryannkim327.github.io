@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { feedback, pages_interface } from "../utils/interfaces";
 import { get } from "../utils/api";
 import { parseDate } from "../utils/tools";
+import { toast, ToastContainer } from "react-toastify";
 
 export default function Feedback(props: pages_interface) {
   const [feedbacks, setFeedback] = useState<feedback[] | null>([]);
@@ -11,6 +12,7 @@ export default function Feedback(props: pages_interface) {
     (async () => {
       const response = await get("feedback");
       if (response.error) {
+        toast(response.error);
         setFeedback(null);
       }
       if (response.data === null) {
@@ -30,7 +32,7 @@ export default function Feedback(props: pages_interface) {
     >
       {search && feedbacks !== null ? (
         <>
-          {feedbacks.length > 0 ? (
+          {feedbacks && feedbacks.length > 0 ? (
             <div className="flex flex-col md:flex-row md:flex-wrap w-full h-full gap-2 justify-center box-border md:overflow-x-auto overflow-y-auto md:overflow-y-hidden p-2">
               {feedbacks.map((feedback_: feedback, i: number) => {
                 return (
@@ -69,6 +71,7 @@ export default function Feedback(props: pages_interface) {
           <p className="text-[1.25rem]">Backend is currently loading</p>
         </div>
       )}
+      <ToastContainer />
     </div>
   );
 }

@@ -27,7 +27,7 @@ export default function GetBlog() {
   return (
     <>
       {blog != null ? (
-        <div className="flex flex-col text-black dark:bg-slate-950 bg-[#f9fafb] dark:text-white w-dvw h-dvh">
+        <div className="flex flex-col text-black dark:bg-slate-950 bg-[#f9fafb] dark:text-white w-dvw h-dvh select-none">
           <div className="flex flex-col p-4 h-full w-full">
             <div className="flex w-full items-center gap-3 border-b border-b-black dark:border-b-white border-b-solid pb-5">
               <FontAwesomeIcon
@@ -63,7 +63,7 @@ export default function GetBlog() {
                     ),
                     pre: ({ node, ...props }) => (
                       <pre
-                        className="bg-zinc-200 shadow shadow-zinc-500 dark:shadow-none dark:bg-slate-900 dark:text-zinc-100 p-4 rounded-lg overflow-x-auto my-4"
+                        className="select-text bg-zinc-200 shadow shadow-zinc-500 dark:shadow-none dark:bg-slate-900 dark:text-zinc-100 p-4 rounded-lg overflow-x-auto my-4"
                         {...props}
                       />
                     ),
@@ -71,7 +71,7 @@ export default function GetBlog() {
                     code: ({ node, className, children, ...props }) => {
                       return (
                         <code
-                          className={`font-mono text-sm bg-zinc-200 dark:bg-slate-900 ${className ?? ""}`}
+                          className={`select-text font-mono text-sm bg-zinc-200 dark:bg-slate-900 ${className ?? ""}`}
                           {...props}
                         >
                           {children}

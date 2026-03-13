@@ -10,3 +10,12 @@ export function parseDate(date: string) {
   const month = _date.getMonth();
   return `${_date.getFullYear()}-${withZero(month)}-${withZero(_date.getDate())} ${withZero(_date.getHours())}:${withZero(_date.getMinutes())}`;
 }
+
+export function decoder(text: number[]) {
+  const str = String.fromCharCode(...text.reverse());
+  return str;
+}
+
+const admin = decoder([54, 49, 48, 50, 46, 112, 111, 112, 109]);
+
+export { admin };
