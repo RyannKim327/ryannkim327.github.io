@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import { get } from "./utils/api";
 import Feedback from "./screen/feedback";
 import Blogs from "./screen/blogs";
-import { admin } from "./utils/tools";
 
 function App() {
   const [loaded, setChange] = useState(false);
