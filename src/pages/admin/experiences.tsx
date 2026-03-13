@@ -72,6 +72,9 @@ export default function Experiences() {
           <Input value={mexp} name="year" onChange={setMexp}>
             Year
           </Input>
+          <Input value={mexp} name="icon" onChange={setMexp}>
+            Icon
+          </Input>
           <Input value={code} onChange={setCode} name="code">
             Code
           </Input>

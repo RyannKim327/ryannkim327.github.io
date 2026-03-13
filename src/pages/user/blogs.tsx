@@ -49,7 +49,46 @@ export default function GetBlog() {
               <span className="text-sm">Posted: {blog?.time}</span>
             </div>
             <div className="p-2 py-5 overflow-y-auto h-full w-full">
-              <ReactMarkdown>{blog?.content}</ReactMarkdown>
+              <ReactMarkdown
+                components={{
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc list-inside ml-5" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal list-inside ml-5" {...props} />
+                  ),
+                  pre: ({ node, ...props }) => (
+                    <pre
+                      className="bg-zinc-100 dark:bg-slate-900 dark:text-zinc-100 p-4 rounded-lg overflow-x-auto my-4"
+                      {...props}
+                    />
+                  ),
+
+                  code: ({ node, inline, className, children, ...props }) => {
+                    if (inline) {
+                      return (
+                        <code
+                          className="bg-zinc-200 text-red-600 px-1 py-0.5 rounded text-sm"
+                          {...props}
+                        >
+                          {children}
+                        </code>
+                      );
+                    }
+
+                    return (
+                      <code
+                        className={`font-mono text-sm ${className ?? ""}`}
+                        {...props}
+                      >
+                        {children}
+                      </code>
+                    );
+                  },
+                }}
+              >
+                {blog?.content}
+              </ReactMarkdown>
             </div>
           </div>
         </div>
