@@ -1,6 +1,6 @@
 # RyannKim327 Portfolio
 
-**Project version:** `3.0.2`
+**Project version:** `3.0.3`
 
 [![wakatime](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c.svg)](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c)
 ![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat&logo=react)
@@ -25,8 +25,11 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 - 📦 **Component-Based Architecture** - Modular and maintainable code structure
 - 🌙 **Dark/Light Theme** - Elegant theme switching with dark and light modes, featuring purple accents
 - 📝 **Blog System** - Fetch + view blog posts with Markdown rendering
+- 🖼️ **Blog Post Images** - Support for optional image galleries attached to blog posts
 - 💅 **Enhanced Markdown Styling** - Proper list styling, code blocks, and inline code formatting
 - 🧰 **Admin Dashboard (WIP)** - Manage portfolio content (experiences/projects/blogs)
+- 📱 **Admin Responsive UI** - Improved mobile/tablet usability in admin pages
+- 🔘 **Refined Form UI** - Consistent rounded inputs/buttons for a cleaner admin experience
 - 🧩 **Experience Icons (Admin)** - Add an icon field when creating/editing experiences
 - 🔗 **Backend Integration** - Connected to Go-based backend API
 
@@ -158,7 +161,14 @@ This portfolio is designed to feel **modern, focused, and fast**—a single-page
 > - This changelog is derived from this repo’s **git history** (non-merge commits). It’s maintained manually and is not automatically tied to `package.json`.
 > - Versions follow semantic versioning (**MAJOR.MINOR.PATCH**).
 
-### v3.0.2 (Current) — 2026-03-12 → 2026-03-13
+### v3.0.3 (Current) — 2026-03-13
+
+- Blog posts: added optional `imgs` field + UI to render image gallery (`2e2ebba`, `4f55f87`)
+- Admin blogs: added images input and submit payload support (`2e2ebba`)
+- Admin pages: responsive tweaks + consistent rounded corners on forms/buttons (`4f55f87`, `2e2ebba`)
+- Blog UI polish: rounded containers and minor markdown layout tweaks (`2e2ebba`)
+
+### v3.0.2 — 2026-03-12 → 2026-03-13
 
 - Improved blog Markdown rendering (lists + code blocks + inline code) (`4d620e5`)
 - Admin experiences: added `icon` input field (`4d620e5`)
