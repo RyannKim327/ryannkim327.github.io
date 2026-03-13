@@ -10,6 +10,7 @@ export default function Projects(props: pages_interface) {
   const [category, setCategory] = useState("all");
 
   useEffect(() => {
+    console.log("Calling");
     (async () => {
       const api = await get("projects");
       if (api.error) {

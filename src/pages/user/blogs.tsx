@@ -12,14 +12,15 @@ export default function GetBlog() {
 
   useEffect(() => {
     (async () => {
-      const response = await get("blog");
+      const response = await get("blog", {
+        id: id,
+      });
       if (response.error) {
         setBlog(null);
         alert(response.error);
         return;
       }
-      let data = response.data;
-      data = data.find((d: blogs) => d.id == (id ?? 0));
+      const data = response.data;
       setBlog(data);
     })();
   }, [id]);

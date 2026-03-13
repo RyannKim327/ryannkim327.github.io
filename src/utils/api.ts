@@ -2,25 +2,23 @@ import axios from "axios";
 import { json } from "./interfaces";
 import { decoder } from "./tools";
 
-const TEST_MODE = false;
-
-const URL = TEST_MODE
-  ? [
-      48, 48, 48, 56, 58, 116, 115, 111, 104, 108, 97, 99, 111, 108, 47, 47, 58,
-      112, 116, 116, 104,
-    ]
-  : [
-      109, 111, 99, 46, 114, 101, 100, 110, 101, 114, 110, 111, 46, 100, 110,
-      101, 107, 99, 97, 98, 45, 112, 111, 112, 109, 45, 105, 112, 97, 47, 47,
-      58, 115, 112, 116, 116, 104,
-    ];
-
 // NOTE: The backend is now changed, you may still look for it by looking on my github
 // for this repository, you may visit my github for the link of the
 // backend.
 
+const URL = decoder([
+  104, 116, 116, 112, 115, 58, 47, 47, 97, 112, 105, 45, 109, 112, 111, 112, 45,
+  98, 97, 99, 107, 101, 110, 100, 46, 111, 110, 114, 101, 110, 100, 101, 114,
+  46, 99, 111, 109,
+]);
+
+// const URL = decoder([
+//   104, 116, 116, 112, 58, 47, 47, 108, 111, 99, 97, 108, 104, 111, 115, 116, 58,
+//   56, 48, 48, 48,
+// ]);
+
 function urlChecker(endpoint: string) {
-  let url = decoder(URL);
+  let url = URL;
   if (!url.endsWith("/") && endpoint != "") {
     url += "/";
   }
@@ -47,6 +45,7 @@ function response(data: json | json[], status: number): json {
 }
 
 export async function get(endpoint: string, params?: json | json[]) {
+  console.log(urlChecker(endpoint));
   const { data, status } = await axios.get(urlChecker(endpoint), {
     params: params,
     withCredentials: true,

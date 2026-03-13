@@ -12,10 +12,10 @@ export function parseDate(date: string) {
 }
 
 export function decoder(text: number[]) {
-  const str = String.fromCharCode(...text.reverse());
+  const str = String.fromCharCode(...text);
   return str;
 }
 
-const admin = decoder([54, 49, 48, 50, 46, 112, 111, 112, 109]);
+const admin = decoder([97, 100, 109, 105, 110]);
 
 export { admin };
