@@ -41,7 +41,7 @@ export default function GetBlog() {
                 {blog?.tags.map((tag) => {
                   return (
                     <span className="bg-slate-200 text-black rounded px-2 text-[0.75rem]">
-                      {tag}
+                      {tag.replace(/_/gi, " ")}
                     </span>
                   );
                 })}
