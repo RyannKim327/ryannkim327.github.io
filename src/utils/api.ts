@@ -106,5 +106,5 @@ export function retrieval(endpoint: string, params?: json) {
     const query = new URLSearchParams(params).toString();
     return `${urlChecker(endpoint)}?${query}`;
   }
-  return urlChecker("endpoint");
+  return urlChecker(endpoint);
 }
