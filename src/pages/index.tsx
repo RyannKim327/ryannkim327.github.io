@@ -29,6 +29,7 @@ export default function Admin() {
         <div className="flex md:flex-col gap-1">
           <Links to="">Home</Links>
           <Links to="/blog">Blog</Links>
+          <Links to="/certificate">Certificate Upload</Links>
           <Links to="/exp">Experiences</Links>
           <Links to="/upload">Upload Image</Links>
         </div>

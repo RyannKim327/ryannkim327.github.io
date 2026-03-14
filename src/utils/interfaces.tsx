@@ -67,4 +67,10 @@ export interface experience {
   content?: string[];
 }
 
+export interface certificates {
+  url: string;
+  source: string;
+  category: string;
+}
+
 export type json = Record<string, any>;

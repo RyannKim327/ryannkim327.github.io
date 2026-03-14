@@ -10,6 +10,7 @@ import Experiences from "./pages/admin/experiences.tsx";
 import Admin from "./pages/index.tsx";
 import Projects from "./pages/admin/index.tsx";
 import { admin } from "./utils/tools";
+import Certificates from "./pages/admin/certifications.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="" element={<Projects />} />
           <Route path="exp" element={<Experiences />} />
           <Route path="blog" element={<PostBlog />} />
+          <Route path="certificate" element={<Certificates />} />
           <Route path="upload" element={<UploadImage />} />
         </Route>
         <Route path="/blog/:id" element={<GetBlog />} />
