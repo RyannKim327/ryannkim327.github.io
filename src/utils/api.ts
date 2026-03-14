@@ -45,7 +45,6 @@ function response(data: json | json[], status: number): json {
 }
 
 export async function get(endpoint: string, params?: json | json[]) {
-  console.log(urlChecker(endpoint));
   const { data, status } = await axios.get(urlChecker(endpoint), {
     params: params,
     withCredentials: true,
