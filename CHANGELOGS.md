@@ -5,7 +5,15 @@
 > - This changelog is derived from this repo’s **git history** (non-merge commits). It’s maintained manually and is not automatically tied to `package.json`.
 > - Versions follow semantic versioning (**MAJOR.MINOR.PATCH**).
 
-### v3.0.3 (Current) — 2026-03-13
+### v3.0.4 (Current) — 2026-03-15
+
+- UI/responsiveness tweaks:
+  - Blogs: removed nested scroll container to avoid double scrolling (`b1fb962`)
+  - Certifications: improved mobile layout and scrolling + hover overlay behavior (`b1fb962`)
+  - Feedback: improved text width for better readability on smaller screens (`b1fb962`)
+  - Hero: adjusted heading width for better alignment on mobile (`b1fb962`)
+
+### v3.0.3 — 2026-03-13
 
 - Blog posts: added optional `imgs` field + UI to render image gallery (`2e2ebba`, `4f55f87`)
 - Admin blogs: added images input and submit payload support (`2e2ebba`)
