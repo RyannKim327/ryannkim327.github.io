@@ -58,7 +58,7 @@ export default function Feedback(props: pages_interface) {
           ) : (
             <div className="flex flex-col h-full w-full items-center justify-center gap-3">
               <p className="text-[2rem] text-center">No Feedback Yet</p>
-              <p className="max-w-1/3 lg:max-w-1/2 text-center text-[1.25rem]">
+              <p className="w-2/3 md:max-w-1/3 lg:max-w-1/2 text-center text-[1.25rem]">
                 Currently, there is no feedback from any of my applications, of
                 you want to, please use my app first and give me some feedback.
               </p>

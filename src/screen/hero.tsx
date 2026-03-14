@@ -10,7 +10,7 @@ export default function Hero(props: pages_interface) {
       id={props.id}
     >
       <div className="flex flex-col justify-center items-center md:items-end w-full h-full gap-3 md:gap-10 p-2">
-        <h1 className="text-[3em] w-3/6 md:text-[4.5em] md:w-5/6 text-center md:text-end">
+        <h1 className="text-[3em] w-5/6 md:text-[4.5em] md:w-5/6 text-center md:text-end">
           Ryann Kim M. Sesgundo
         </h1>
         <h3 className="text-[1.75em] md:text-[2em] text-center md:text-end">

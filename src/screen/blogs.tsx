@@ -28,7 +28,7 @@ export default function Blogs(props: pages_interface) {
         className={
           !_blogs || _blogs.length === 0
             ? "flex flex-col h-full w-full justify-center items-center"
-            : "flex flex-row flex-wrap w-full h-full overflow-y-scroll gap-3 justify-evenly"
+            : "flex flex-row flex-wrap w-full gap-3 justify-evenly"
         }
       >
         {_blogs && _blogs.length > 0 ? (
