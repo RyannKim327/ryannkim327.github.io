@@ -1,8 +1,13 @@
-import { about_interface, abt, pages_interface } from "../utils/interfaces";
-import { useEffect, useRef, useState } from "react";
+import {
+  experience,
+  exp_interface,
+  pages_interface,
+} from "../utils/interfaces";
+import React, { useEffect, useRef, useState } from "react";
 import { get } from "../utils/api";
+import { toast, ToastContainer } from "react-toastify";
 
-const InformationMed = (props: about_interface) => {
+const InformationMed = (props: exp_interface) => {
   return (
     <div className="flex flex-row lg:hidden w-full p-3 gap-2">
       <div
@@ -25,7 +30,7 @@ const InformationMed = (props: about_interface) => {
   );
 };
 
-const InformationLarge = (props: about_interface) => {
+const InformationLarge = (props: exp_interface) => {
   return (
     <div
       className={`hidden lg:flex w-full ${props.even ? "justify-start" : "justify-end"} items-start py-6`}
@@ -73,14 +78,14 @@ const InformationLarge = (props: about_interface) => {
     </div>
   );
 };
-export default function About(props: pages_interface) {
+export default function Experiences(props: pages_interface) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [about, setAbout] = useState<about_interface[]>([]);
+  const [exp, setExp] = useState<exp_interface[]>([]);
 
   useEffect(() => {
     const current = scrollContainerRef.current;
     if (current) {
-      const onWheel = (e: any) => {
+      const onWheel = (e: React.EffectCallback) => {
         if (current) {
           e.preventDefaut();
           current.scrollLeft += e.deltaY;
@@ -95,9 +100,9 @@ export default function About(props: pages_interface) {
     (async () => {
       const experiences = await get("experiences");
       if (experiences.message) {
-        setAbout(experiences.data);
+        setExp(experiences.data);
       } else {
-        alert(experiences.error);
+        toast(experiences.error);
       }
     })();
   }, []);
@@ -110,8 +115,8 @@ export default function About(props: pages_interface) {
       {/* <h1 className="text-base lg:text-2xl">About</h1> */}
       <div className="flex flex-col w-full h-full box-border">
         <div className="flex flex-col h-full w-full overflow-y-auto box-border">
-          {about.length > 0 ? (
-            about.map((item: abt, i: number) => {
+          {exp.length > 0 ? (
+            exp.map((item: experience, i: number) => {
               return (
                 <>
                   <InformationMed
@@ -141,6 +146,7 @@ export default function About(props: pages_interface) {
           )}
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }

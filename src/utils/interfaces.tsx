@@ -52,7 +52,7 @@ export interface feedback {
   date: string;
 }
 
-export interface about_interface {
+export interface exp_interface {
   title: string;
   year: number;
   children: string[];
@@ -60,7 +60,7 @@ export interface about_interface {
   even: boolean;
 }
 
-export interface abt {
+export interface experience {
   title: string;
   year: number;
   icon: string;

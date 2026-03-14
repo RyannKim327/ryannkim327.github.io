@@ -1,5 +1,6 @@
 import { link_interface } from "./../utils/interfaces.tsx";
 import {
+  faAward,
   faBlog,
   faContactCard,
   faFolderOpen,
@@ -58,8 +59,11 @@ export default function Header(props: HeaderProps) {
         {/* </List> */}
         {props.isLoaded ? (
           <>
-            <List link="about" icon={faUser}>
-              About
+            <List link="exp" icon={faUser}>
+              Experiences
+            </List>
+            <List link="certs" icon={faAward}>
+              Certifications
             </List>
             <List link="projects" icon={faFolderOpen}>
               Projects

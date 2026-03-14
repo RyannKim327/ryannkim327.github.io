@@ -1,6 +1,5 @@
 import Header from "./parts/header";
 
-import About from "./screen/about";
 import Hero from "./screen/hero";
 import Projects from "./screen/projects";
 import Contact from "./screen/contacts";
@@ -8,6 +7,8 @@ import { useEffect, useState } from "react";
 import { get } from "./utils/api";
 import Feedback from "./screen/feedback";
 import Blogs from "./screen/blogs";
+import Experiences from "./screen/experience";
+import Certificates from "./screen/certifications";
 
 function App() {
   const [loaded, setChange] = useState(false);
@@ -28,7 +29,8 @@ function App() {
         <Hero id="home" className="snap-start" />
         {loaded ? (
           <>
-            <About id="about" className="snap-start" />
+            <Experiences id="exp" className="snap-start" />
+            <Certificates id="certs" className="snap-start" />
             <Projects id="projects" className="snap-start" />
             <Blogs id="blog" className="snap-start" />
             <Feedback id="feedback" className="snap-start" />

@@ -1,13 +1,13 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { abt } from "../../utils/interfaces";
+import { experience } from "../../utils/interfaces";
 import { adminPost, get } from "../../utils/api";
 import Input from "../../widgets/input";
 import { ToastContainer, toast } from "react-toastify";
 
 export default function Experiences() {
-  const [exp, setExp] = useState<abt[]>([]);
+  const [exp, setExp] = useState<experience[]>([]);
   const [index, setIndex] = useState(-1);
-  const [mexp, setMexp] = useState<abt>({
+  const [mexp, setMexp] = useState<experience>({
     title: "",
     year: 0,
     icon: "",
@@ -27,7 +27,7 @@ export default function Experiences() {
 
   const submitExp = async () => {
     setSending(true);
-    const experiences: abt[] = exp;
+    const experiences: experience[] = exp;
     experiences[index] = mexp;
     const response = await adminPost(
       "experiences/submit",
@@ -48,7 +48,7 @@ export default function Experiences() {
       <h1 className="text-center text-xl">Update Experiences</h1>
       <div className="flex flex-col md:flex-row w-full p-5 gap-5 h-full">
         <div className="flex flex-col gap-1 min-w-1/3 overflow-y-scroll overflow-x-hidden h-full">
-          {exp.map((xp: abt, i: number) => {
+          {exp.map((xp: experience, i: number) => {
             return (
               <span
                 onClick={() => {
