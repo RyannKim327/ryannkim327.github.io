@@ -3,7 +3,7 @@ import {
   exp_interface,
   pages_interface,
 } from "../utils/interfaces";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { get } from "../utils/api";
 import { toast, ToastContainer } from "react-toastify";
 
@@ -78,25 +78,11 @@ const InformationLarge = (props: exp_interface) => {
     </div>
   );
 };
+
 export default function Experiences(props: pages_interface) {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [exp, setExp] = useState<exp_interface[]>([]);
 
   useEffect(() => {
-    const current = scrollContainerRef.current;
-    if (current) {
-      const onWheel = (e: React.EffectCallback) => {
-        if (current) {
-          e.preventDefaut();
-          current.scrollLeft += e.deltaY;
-        }
-      };
-      current.addEventListener("wheel", onWheel, { passive: false });
-      return () => {
-        current.removeEventListener("wheel", onWheel);
-      };
-    }
-
     (async () => {
       const experiences = await get("experiences");
       if (experiences.message) {

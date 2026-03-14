@@ -37,7 +37,7 @@ export default function Certificates(props: pages_interface) {
             <div className="flex flex-col relative w-[calc(33.333%-0.5rem)] aspect-video group rounded overflow-hidden">
               <img
                 className="absolute w-full h-full"
-                src={cert.url}
+                src={isUrl(cert.url)}
                 alt={cert.source}
               />
               <div className="flex flex-col absolute z-1 opacity-0 group-hover:opacity-100 transition-opacity justify-end h-full w-full">

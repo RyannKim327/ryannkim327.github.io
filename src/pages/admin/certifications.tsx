@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 import Input from "../../widgets/input";
 import { adminPost } from "../../utils/api";
 import { toast, ToastContainer } from "react-toastify";
