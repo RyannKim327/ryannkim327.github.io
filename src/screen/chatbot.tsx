@@ -8,11 +8,7 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { post } from "../utils/api";
 import Markdown from "react-markdown";
-
-interface aichats {
-  role: "user" | "system" | "assistant";
-  content: string;
-}
+import { aichats } from "../utils/interfaces";
 
 export default function Chatbot() {
   const profile = {
@@ -63,7 +59,7 @@ export default function Chatbot() {
     setChats((prev) => [...prev, chat]);
     setMessages((prev) => [...prev, chat]);
     setChat({ role: "user", content: "" });
-    const ai = await post("ai/chat", { messages });
+    const ai = (await post("ai/chat", { messages })) as aichats;
 
     if (!ai.error) {
       setChats((prev) => [...prev, ai]);

@@ -73,4 +73,10 @@ export interface certificates {
   category: string;
 }
 
+export interface aichats {
+  role: "user" | "system" | "assistant";
+  content: string;
+  error?: string;
+}
+
 export type json = Record<string, any>;
