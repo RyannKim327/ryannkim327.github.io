@@ -94,8 +94,9 @@ Rules:
     setMessages((prev) => [...prev, chat]);
     setSending(true);
     const msgs = [...messages, chat];
-    const ai = (await post("ai/chat", { messages: msgs })) as aichats;
     setChat({ role: "user", content: "" });
+
+    const ai = (await post("ai/chat", { messages: msgs })) as aichats;
     if (!ai.error) {
       setChats((prev) => [...prev, ai]);
       setMessages((prev) => [...prev, ai]);
