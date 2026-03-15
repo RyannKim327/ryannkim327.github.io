@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { blogs } from "../../utils/interfaces";
 import { useEffect, useState } from "react";
 import { get, retrieval } from "../../utils/api";
-import ReactMarkdown from "react-markdown";
+import Markdown from "react-markdown";
 
 export default function GetBlog() {
   const { id } = useParams();
@@ -38,7 +38,7 @@ export default function GetBlog() {
               <h1 className="text-[1.5rem] underline">{blog?.title}</h1>
             </div>
             <div className="flex gap-3 items-center justify-between px-5 py-3">
-              <div className="flex gap-1">
+              <div className="flex flex-wrap gap-1">
                 {blog?.tags.map((tag) => {
                   return (
                     <span className="bg-slate-200 text-black rounded px-2 text-[0.75rem]">
@@ -50,26 +50,26 @@ export default function GetBlog() {
               <span className="text-sm">Posted: {blog?.time}</span>
             </div>
             <div className="flex flex-col p-2 py-5 overflow-y-auto h-full w-full">
-              <div className="">
-                <ReactMarkdown
+              <div>
+                <Markdown
                   components={{
-                    ul: ({ node, ...props }) => (
+                    ul: ({ ...props }) => (
                       <ul className="list-disc list-inside ml-5" {...props} />
                     ),
-                    ol: ({ node, ...props }) => (
+                    ol: ({ ...props }) => (
                       <ol
                         className="list-decimal list-inside ml-5"
                         {...props}
                       />
                     ),
-                    pre: ({ node, ...props }) => (
+                    pre: ({ ...props }) => (
                       <pre
                         className="select-text bg-zinc-200 shadow shadow-zinc-500 dark:shadow-none dark:bg-slate-900 dark:text-zinc-100 p-4 rounded-lg overflow-x-auto my-4"
                         {...props}
                       />
                     ),
 
-                    code: ({ node, className, children, ...props }) => {
+                    code: ({ className, children, ...props }) => {
                       return (
                         <code
                           className={`select-text font-mono text-sm bg-zinc-200 dark:bg-slate-900 ${className ?? ""}`}
@@ -82,7 +82,7 @@ export default function GetBlog() {
                   }}
                 >
                   {blog?.content}
-                </ReactMarkdown>
+                </Markdown>
               </div>
               {blog?.imgs ? (
                 <div className="flex flex-col h-1/5 mt-5">

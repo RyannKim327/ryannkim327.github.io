@@ -9,6 +9,7 @@ import Feedback from "./screen/feedback";
 import Blogs from "./screen/blogs";
 import Experiences from "./screen/experience";
 import Certificates from "./screen/certifications";
+import Chatbot from "./screen/chatbot";
 
 function App() {
   const [loaded, setChange] = useState(false);
@@ -34,6 +35,7 @@ function App() {
             <Projects id="projects" className="snap-start" />
             <Blogs id="blog" className="snap-start" />
             <Feedback id="feedback" className="snap-start" />
+            <Chatbot />
           </>
         ) : (
           <div className="flex flex-col h-full w-full items-center text-center justify-center gap-3 snap-start">
