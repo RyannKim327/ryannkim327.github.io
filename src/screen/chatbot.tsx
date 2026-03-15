@@ -88,7 +88,7 @@ Rules:
     }
     const chatContainer = document.getElementById("chat");
     if (chatContainer) {
-      chatContainer.scrollTo(0, chatContainer.scrollHeight);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
     }
     setChats((prev) => [...prev, chat]);
     setMessages((prev) => [...prev, chat]);
@@ -97,14 +97,23 @@ Rules:
     setChat({ role: "user", content: "" });
 
     const ai = (await post("ai/chat", { messages: msgs })) as aichats;
-    if (!ai.error) {
-      setChats((prev) => [...prev, ai]);
+    if (ai.content) {
+      setChats((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: ai.content.replace(
+            /---\n\n\*\*Support Pollinations([\w\W]+)/gi,
+            "",
+          ),
+        },
+      ]);
       setMessages((prev) => [...prev, ai]);
     } else {
       toast(ai.error);
     }
     if (chatContainer) {
-      chatContainer.scrollTo(0, chatContainer.scrollHeight);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
     }
     setSending(false);
   };
@@ -112,7 +121,7 @@ Rules:
   return (
     <div className="fixed z-10 bottom-5 right-5">
       {show ? (
-        <div className="flex flex-col w-75 h-150 md:w-100 md:h-110 bg-slate-100/50 dark:bg-slate-700/50 border border-slate-950 border-solid overflow-hidden rounded gap-2">
+        <div className="flex flex-col w-75 h-150 md:w-100 md:h-110 bg-slate-100 dark:bg-slate-700 md:backdrop-blur-md md:bg-slate-100/50 md:dark:bg-slate-700/50 border border-slate-950 border-solid overflow-hidden rounded gap-2">
           <div className="flex justify-between bg-slate-300 text-black dark:bg-slate-950 dark:text-white p-2">
             <span>k.guin</span>
             <span
@@ -136,7 +145,12 @@ Rules:
                   <span
                     className={`max-w-2/3 ${chat.role == "user" ? "bg-slate-500 dark:bg-zinc-500 text-white" : "bg-gray-700 dark:bg-zinc-700 text-white"} rounded-lg py-1 px-2`}
                   >
-                    <Markdown>{chat.content}</Markdown>
+                    <Markdown>
+                      {chat.content.replace(
+                        /---\n\n\*\*Support Pollinations([\w\W]+)/gi,
+                        "",
+                      )}
+                    </Markdown>
                   </span>
                 </div>
               );
