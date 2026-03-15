@@ -31,6 +31,7 @@ export default function Admin() {
           <Links to="/blog">Blog</Links>
           <Links to="/certificate">Certificate Upload</Links>
           <Links to="/exp">Experiences</Links>
+          <Links to="/poem">Post Poem</Links>
           <Links to="/upload">Upload Image</Links>
         </div>
         <Link to="/" className="text-zinc-700 dark:text-gray-500">
