@@ -35,7 +35,6 @@ function App() {
             <Projects id="projects" className="snap-start" />
             <Blogs id="blog" className="snap-start" />
             <Feedback id="feedback" className="snap-start" />
-            <Chatbot />
           </>
         ) : (
           <div className="flex flex-col h-full w-full items-center text-center justify-center gap-3 snap-start">
@@ -43,6 +42,8 @@ function App() {
             <p className="text-[1.25rem]">Backend is currently loading</p>
           </div>
         )}
+        <Chatbot />
+
         <Contact id="contact" className="snap-start" />
       </div>
     </div>
