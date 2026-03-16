@@ -19,7 +19,11 @@ export default function Chatbot() {
       const experiences = await get("experiences");
       if (experiences.message) {
         const prof = {
-          name: "Ryann Kim M. Sesgundo",
+          name: {
+            firstname: "Ryann Kim",
+            middlename: "Malabanan",
+            lastname: "Sesgundo",
+          },
           nicknames: ["Kim", "Ryann", "Kimmy"],
           alias: [
             "RyannKim327",
