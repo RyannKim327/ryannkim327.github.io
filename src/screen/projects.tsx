@@ -15,8 +15,8 @@ export default function Projects(props: pages_interface) {
       if (api.error) {
         return toast(api.error);
       }
-      setCategories(["all", ...api.categories]);
-      const programs = api.projects.sort((a: projects, b: projects) =>
+      setCategories(["all", ...api.data.categories]);
+      const programs = api.data.projects.sort((a: projects, b: projects) =>
         a.name.localeCompare(b.name),
       );
       setListProjects(programs);
