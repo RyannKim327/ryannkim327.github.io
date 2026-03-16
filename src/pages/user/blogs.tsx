@@ -5,6 +5,7 @@ import { blogs } from "../../utils/interfaces";
 import { useEffect, useState } from "react";
 import { get, retrieval } from "../../utils/api";
 import Markdown from "react-markdown";
+import { toast, ToastContainer } from "react-toastify";
 
 export default function GetBlog() {
   const { id } = useParams();
@@ -17,7 +18,7 @@ export default function GetBlog() {
       });
       if (response.error) {
         setBlog(null);
-        alert(response.error);
+        toast(`There's a problem with the server, please reload the webpage`);
         return;
       }
       const data = response.data;
@@ -116,6 +117,7 @@ export default function GetBlog() {
           </div>
         </div>
       )}
+      <ToastContainer />
     </>
   );
 }
