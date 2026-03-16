@@ -8,7 +8,7 @@ export default function Projects() {
   useEffect(() => {
     (async () => {
       const data = await get("projects");
-      const programs = data.projects.sort((a: projects, b: projects) =>
+      const programs = data.data.projects.sort((a: projects, b: projects) =>
         a.name.localeCompare(b.name),
       );
       setProjects(programs);
@@ -27,7 +27,7 @@ export default function Projects() {
                 if (w) w.focus();
               }}
               style={{
-                backgroundImage: `url(${retrieval("images", { file: proj.img })})`,
+                backgroundImage: `url(${proj.img ? retrieval("images", { file: proj.img }) : ""})`,
               }}
               className={`flex flex-col justify-end h-1/3 md:h-1/3 w-full md:w-2/7 text-white p-2 border border-slate-950 dark:border-slate-500 border-solid lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
             >

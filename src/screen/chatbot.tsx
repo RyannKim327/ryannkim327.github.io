@@ -39,30 +39,28 @@ export default function Chatbot() {
           facebook: "https://fb.me/MPOP.2016",
           npmjs: "https://npmjs.com/~ryannkim327",
           experiences: experiences.data,
+          currentTime: Date.now(),
         };
         setProfile(prof);
         setMessages([
           {
-            role: "user",
+            role: "system",
             content:
               `You are a chatbot named K.Guin (short for Krysanne Guinmods). You are a personal chatbot about the developer.  
 Use only the information here: ${JSON.stringify(prof, null, 2)}.  
+The information can also shape your personality, tone, and perspective.
 
 Rules:  
 1. Always make the developer the main subject of your sentences.  
 2. Do not repeat your introduction. Introduce yourself briefly only once in greetings.  
-3. If the user asks something not about the developer, say: "Sorry, I don't know the answer about that."  
-4. Keep greetings short and simple.  
+3. Prioritize answering using the information provided. If a question is unrelated, gently redirect the conversation back to the developer or something connected to the information.  
+4. If the user repeatedly asks questions that are unrelated to the developer or the provided information, politely decline to answer and guide the conversation back to topics about the developer. However, if the user clearly just wants to casually talk as a friend, you may respond in a friendly way while still keeping the developer as the main context when possible.  
 5. Be casual, friendly, and add light humor. Treat the user like a friend, but be considerate of feelings.  
 6. Speak in the user's language when possible.  
 7. Compliment the user when they say something great.  
 8. You may call the developer by their nickname.  
 9. Keep replies short and simple when possible. Avoid using "—" too much.  
 10. Whenever you mention the developer's social media or links, format them as clickable Markdown links.`.trim(),
-          },
-          {
-            role: "system",
-            content: "Indeed",
           },
         ]);
       } else {
@@ -94,13 +92,29 @@ Rules:
     if (chatContainer) {
       chatContainer.scrollTop = chatContainer.scrollHeight;
     }
-    setChats((prev) => [...prev, chat]);
-    setMessages((prev) => [...prev, chat]);
+    if (!sending) {
+      setChats((prev) => [...prev, chat]);
+      setMessages((prev) => [...prev, chat]);
+    }
     setSending(true);
     const msgs = [...messages, chat];
     setChat({ role: "user", content: "" });
-
     const ai = (await post("ai/chat", { messages: msgs })) as aichats;
+    if (ai.error) {
+      setChats((prev) => [
+        ...prev,
+        {
+          role: "system",
+          content: "Request resending",
+        },
+      ]);
+      setTimeout(() => {
+        setChats((prev) => prev.slice(0, -1));
+        setChats((prev) => prev.slice(0, -1));
+        sendChat();
+      }, 2500);
+      return;
+    }
     if (ai.content) {
       setChats((prev) => [
         ...prev,
@@ -127,7 +141,12 @@ Rules:
       {show ? (
         <div className="flex flex-col w-75 h-150 md:w-100 md:h-110 bg-slate-100 dark:bg-slate-700 md:backdrop-blur-md md:bg-slate-100/50 md:dark:bg-slate-700/50 border border-slate-950 border-solid overflow-hidden rounded gap-2">
           <div className="flex justify-between bg-slate-300 text-black dark:bg-slate-950 dark:text-white p-2">
-            <span>k.guin</span>
+            <div className="flex flex-col">
+              <span className="font-serif font-bold italic">k.guin</span>
+              <span className="text-[0.75rem] font-serif font-bold">
+                AI Chatbot
+              </span>
+            </div>
             <span
               onClick={() => {
                 setShow(false);
@@ -170,13 +189,14 @@ Rules:
                   sendChat();
                 }
               }}
+              autoFocus={!sending}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 setChat({
                   role: "user",
                   content: e.target.value,
                 });
               }}
-              className="w-full outline-none"
+              className="w-full text-wrap outline-none"
             />
             <span
               onClick={sendChat}

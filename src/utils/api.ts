@@ -6,16 +6,16 @@ import { decoder } from "./tools";
 // for this repository, you may visit my github for the link of the
 // backend.
 
-const URL = decoder([
-  104, 116, 116, 112, 115, 58, 47, 47, 109, 112, 111, 112, 114, 101, 118, 101,
-  114, 115, 101, 105, 105, 46, 108, 101, 97, 112, 99, 101, 108, 108, 46, 97,
-  112, 112,
-]);
-
 // const URL = decoder([
-//   104, 116, 116, 112, 58, 47, 47, 108, 111, 99, 97, 108, 104, 111, 115, 116, 58,
-//   56, 48, 48, 48,
+//   104, 116, 116, 112, 115, 58, 47, 47, 109, 112, 111, 112, 114, 101, 118, 101,
+//   114, 115, 101, 105, 105, 46, 108, 101, 97, 112, 99, 101, 108, 108, 46, 97,
+//   112, 112,
 // ]);
+
+const URL = decoder([
+  104, 116, 116, 112, 58, 47, 47, 108, 111, 99, 97, 108, 104, 111, 115, 116, 58,
+  56, 48, 48, 48,
+]);
 
 function urlChecker(endpoint: string) {
   let url = URL;
@@ -26,41 +26,57 @@ function urlChecker(endpoint: string) {
 }
 
 function response(data: json | json[], status: number): json {
-  if (status >= 200 && status < 300) {
-    if (Array.isArray(data)) {
-      return {
-        message: "Data fetched",
-        data: data,
-      };
-    } else if (typeof data === "object") {
-      return {
-        message: "Data fetched",
-        ...data,
-      };
+  try {
+    if (status >= 200 && status < 300) {
+      if (Array.isArray(data)) {
+        return {
+          message: "Data fetched",
+          data: data,
+        };
+      } else if (typeof data === "object") {
+        return {
+          message: "Data fetched",
+          ...data,
+        };
+      }
     }
+    throw new Error("Something went wrong");
+  } catch (e) {
+    return {
+      error: e,
+    };
   }
-  return {
-    error: "Something went wrong",
-  };
 }
 
 export async function get(endpoint: string, params?: json | json[]) {
-  const { data, status } = await axios.get(urlChecker(endpoint), {
-    params: params,
-    withCredentials: true,
-  });
-  return response(data, status);
+  let code = 0;
+  try {
+    const { data, status } = await axios.get(urlChecker(endpoint), {
+      params: params,
+      withCredentials: true,
+    });
+    code = status;
+    return response(data, status);
+  } catch (e) {
+    return response({}, code);
+  }
 }
 
 export async function post(endpoint: string, params?: json | json[]) {
-  const { data, status } = await axios.post(urlChecker(endpoint), params, {
-    withCredentials: true,
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-  });
-  return response(data, status);
+  let code = 0;
+  try {
+    const { data, status } = await axios.post(urlChecker(endpoint), params, {
+      withCredentials: true,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+    code = status;
+    return response(data, status);
+  } catch (e) {
+    return response({}, code);
+  }
 }
 
 export async function adminPost(
@@ -73,14 +89,20 @@ export async function adminPost(
       error: "No Code Inserted",
     };
   }
-  const { data, status } = await axios.post(urlChecker(endpoint), params, {
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      "X-API-Key": `${adminCode}`,
-    },
-  });
-  return response(data, status);
+  let code = 0;
+  try {
+    const { data, status } = await axios.post(urlChecker(endpoint), params, {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "X-API-Key": `${adminCode}`,
+      },
+    });
+    code = status;
+    return response(data, status);
+  } catch (e) {
+    return response({}, code);
+  }
 }
 
 export async function adminPostMultipart(
@@ -93,12 +115,18 @@ export async function adminPostMultipart(
       error: "No Code Inserted",
     };
   }
-  const { data, status } = await axios.post(urlChecker(endpoint), formData, {
-    headers: {
-      "X-API-Key": `${adminCode}`,
-    },
-  });
-  return response(data, status);
+  let code = 0;
+  try {
+    const { data, status } = await axios.post(urlChecker(endpoint), formData, {
+      headers: {
+        "X-API-Key": `${adminCode}`,
+      },
+    });
+    code = status;
+    return response(data, status);
+  } catch (e) {
+    response({}, code);
+  }
 }
 
 export function retrieval(endpoint: string, params?: json) {

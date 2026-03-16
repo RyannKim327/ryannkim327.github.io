@@ -110,7 +110,7 @@ export default function GetBlog() {
           </div>
           <div className="flex flex-col items-center justify-center h-full w-full">
             <span className="text-2xl">
-              The ID Doesn't exists to my storage
+              Please wait for a moment, the page is still loading
             </span>
             <span className="text-lg">Ryann Kim Sesgundo</span>
           </div>

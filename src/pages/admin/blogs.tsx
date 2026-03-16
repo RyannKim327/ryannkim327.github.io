@@ -14,10 +14,10 @@ export default function PostBlog() {
     code: "",
   });
 
-  const [sending, setSending] = useState(false)
+  const [sending, setSending] = useState(false);
 
   const submitBlog = async () => {
-    setSending(true)
+    setSending(true);
     const form = {
       title: formData.title,
       content: formData.content,
@@ -38,7 +38,7 @@ export default function PostBlog() {
     } else {
       toast(response.error);
     }
-    setSending(false)
+    setSending(false);
   };
 
   return (
@@ -72,7 +72,7 @@ export default function PostBlog() {
             }}
           ></textarea>
         </div>
-        {sending ? (
+        {!sending ? (
           <button
             onClick={submitBlog}
             className="border p-2 border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full rounded-sm"
