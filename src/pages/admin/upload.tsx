@@ -17,7 +17,7 @@ export default function UploadImage() {
       admin.code,
       formData,
     );
-    const file = res.from.result.photo;
+    const file = res?.from.result.photo;
     setAdmin(file[file.length - 1].file_id);
     toast("File Uploaded Successfully");
     setSending(false);
