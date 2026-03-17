@@ -1,4 +1,5 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
+import local from "../utils/local_controller";
 
 interface InputProps<T> {
   children: string;
@@ -7,6 +8,7 @@ interface InputProps<T> {
   name: keyof T;
   onChange: Dispatch<SetStateAction<T>>;
   break?: string;
+  remember?: boolean;
 }
 
 export default function Input<T>(props: InputProps<T>) {
@@ -29,6 +31,9 @@ export default function Input<T>(props: InputProps<T>) {
                 ? event.target.value.split(props.break)
                 : event.target.value,
           }));
+          if (props.remember) {
+            local(props.name.toString(), event.target.value ?? "");
+          }
         }}
       />
     </div>

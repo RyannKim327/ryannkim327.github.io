@@ -1,6 +1,8 @@
 import { ReactNode, useEffect, useState } from "react";
 import session from "../utils/session_controller";
 import Input from "../widgets/input";
+import { decoder } from "../utils/tools";
+import { toast, ToastContainer } from "react-toastify";
 
 interface adminControllerProps {
   children: ReactNode;
@@ -12,17 +14,25 @@ export default function AdminController(props: adminControllerProps) {
   const [code, setCode] = useState({
     code: "",
   });
+  const serialKey = decoder([98, 108, 97, 99, 107, 104, 101, 97, 114, 116]);
 
   useEffect(() => {
-    setAdminKey(session("admin") ?? "hello");
+    setAdminKey(session("user"));
   }, []);
 
-  if (adminKey) {
+  if (adminKey === serialKey) {
     return props.children;
   }
 
   const submitCode = () => {
     setSending(true);
+    if (code.code === serialKey) {
+      const usr = session("user", code.code);
+      setAdminKey(usr);
+    } else {
+      toast("Invalid Code");
+    }
+    setSending(false);
   };
 
   return (
@@ -44,6 +54,7 @@ export default function AdminController(props: adminControllerProps) {
           </button>
         ) : null}
       </div>
+      <ToastContainer />
     </div>
   );
 }
