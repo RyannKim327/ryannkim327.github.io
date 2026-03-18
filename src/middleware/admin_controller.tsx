@@ -9,15 +9,16 @@ interface adminControllerProps {
 }
 
 export default function AdminController(props: adminControllerProps) {
-  const [adminKey, setAdminKey] = useState("hello");
+  const [adminKey, setAdminKey] = useState("");
   const [sending, setSending] = useState(false);
   const [code, setCode] = useState({
     code: "",
   });
+  const [trial, setTrial] = useState(0);
   const serialKey = decoder([98, 108, 97, 99, 107, 104, 101, 97, 114, 116]);
 
   useEffect(() => {
-    setAdminKey(session("user"));
+    setAdminKey(session("user") ?? "");
   }, []);
 
   if (adminKey === serialKey) {
@@ -26,18 +27,19 @@ export default function AdminController(props: adminControllerProps) {
 
   const submitCode = () => {
     setSending(true);
-    if (code.code === serialKey) {
+    if (code.code === serialKey && trial >= 0) {
       const usr = session("user", code.code);
-      setAdminKey(usr);
+      setAdminKey(usr ?? "");
     } else {
-      toast("Invalid Code");
+      setTrial((t) => (t -= 1));
+      toast("Try Again");
     }
     setSending(false);
   };
 
   return (
     <div className="flex flex-col md:flex-row justify-center items-center p-4 bg-[#f6f6f6] text-black dark:bg-[#0c0c0c] dark:text-white w-dvw h-dvh gap-2 select-none">
-      <div className="flex flex-col items-center bg-zinc-300 text-black dark:bg-slate-800 dark:text-white p-5 rounded">
+      <div className="flex flex-col items-center bg-zinc-300 text-black dark:bg-slate-800 dark:text-white p-5 rounded gap-2">
         <div className="flex flex-col items-center">
           <span className="text-xl">Login</span>
           <span className="text-sm">Please enter your account passkey</span>

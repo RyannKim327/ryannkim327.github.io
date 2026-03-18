@@ -26,6 +26,13 @@ export default function Poetry() {
       content: compose.content.replace(/\n\n/gi, "\n").split("\n"),
     };
     const data = await adminPost("poetry/submit", compose.code, comp);
+    setCompose({
+      title: "",
+      content: "",
+      code: "",
+    });
+    local("title", "");
+    local("content", "");
     if (data.error) {
       toast(data.error);
     } else {
