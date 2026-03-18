@@ -5,7 +5,35 @@
 > - This changelog is derived from this repo’s **git history** (non-merge commits). It’s maintained manually and is not automatically tied to `package.json`.
 > - Versions follow semantic versioning (**MAJOR.MINOR.PATCH**).
 
-### v3.0.4 (Current) — 2026-03-15
+### v3.2.2 - 2026-03-19
+
+- Added `onEnter` function for input
+
+### v3.2.0 - 2026-03-18
+
+- Administration Control
+  - Added Passkey for admin verification
+  - Added Poetry Posting
+
+- Upload Media
+  - Updated upload section with multimedia based upload
+
+
+- UI/responsiveness tweaks:
+  - Changed Mobile View navigation
+  - Added Transition Animation
+
+### v3.1.1 - 2026-03-18
+
+- Security
+  - Added Enryption for online public repository access
+  - Admin control and setups
+
+### v3.1.0 - 2026-03-15
+
+- Added `AI chatbot` for user experiences
+
+### v3.0.4 — 2026-03-15
 
 - UI/responsiveness tweaks:
   - Blogs: removed nested scroll container to avoid double scrolling (`b1fb962`)

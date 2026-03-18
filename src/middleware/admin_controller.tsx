@@ -44,7 +44,13 @@ export default function AdminController(props: adminControllerProps) {
           <span className="text-xl">Login</span>
           <span className="text-sm">Please enter your account passkey</span>
         </div>
-        <Input type="password" value={code} onChange={setCode} name="code">
+        <Input
+          onEnter={submitCode}
+          type="password"
+          value={code}
+          onChange={setCode}
+          name="code"
+        >
           Passkey
         </Input>
         {!sending ? (

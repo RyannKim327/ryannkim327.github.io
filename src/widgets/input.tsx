@@ -9,6 +9,7 @@ interface InputProps<T> {
   onChange: Dispatch<SetStateAction<T>>;
   break?: string;
   remember?: boolean;
+  onEnter?: () => void;
 }
 
 export default function Input<T>(props: InputProps<T>) {
@@ -33,6 +34,11 @@ export default function Input<T>(props: InputProps<T>) {
           }));
           if (props.remember) {
             local(props.name.toString(), event.target.value ?? "");
+          }
+        }}
+        onKeyUp={(e: KeyboardEvent<HTMLInputElement>) => {
+          if (e.keyCode === 13 && props.onEnter) {
+            props.onEnter();
           }
         }}
       />
