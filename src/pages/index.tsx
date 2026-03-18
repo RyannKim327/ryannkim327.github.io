@@ -62,7 +62,7 @@ export default function Admin() {
             Portfolio
           </Link>
         </div>
-        <div className="flex flex-col h-full w-full md:flex-1 bg-zinc-300 text-black dark:bg-slate-800 dark:text-white p-5 rounded">
+        <div className="flex flex-col h-full w-full md:flex-1 bg-zinc-300 text-black dark:bg-slate-800 dark:text-white p-5 rounded overflow-y-scroll">
           <Outlet />
         </div>
       </div>

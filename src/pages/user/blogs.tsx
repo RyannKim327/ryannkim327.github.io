@@ -90,7 +90,7 @@ export default function GetBlog() {
                   <span className="font-bold">Some Pictures included:</span>
                   <div className="flex h-full">
                     {blog?.imgs.map((img) => {
-                      return <img src={retrieval("images", { file: img })} />;
+                      return <img src={retrieval("retrieve", { file: img })} />;
                     })}
                   </div>
                 </div>

@@ -27,7 +27,7 @@ export default function Projects() {
                 if (w) w.focus();
               }}
               style={{
-                backgroundImage: `url(${proj.img ? retrieval("images", { file: proj.img }) : ""})`,
+                backgroundImage: `url(${proj.img ? retrieval("retrieve", { file: proj.img }) : ""})`,
               }}
               className={`flex flex-col justify-end h-1/3 md:h-1/3 w-full md:w-2/7 text-white p-2 border border-slate-950 dark:border-slate-500 border-solid lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
             >

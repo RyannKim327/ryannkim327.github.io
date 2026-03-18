@@ -12,13 +12,27 @@ export default function UploadImage() {
 
   const uploadFile = async () => {
     setSending(true);
-    const res = await adminPostMultipart(
-      "upload-image/submit",
-      admin.code,
-      formData,
-    );
-    const file = res?.from.result.photo;
-    setAdmin(file[file.length - 1].file_id);
+    const res = await adminPostMultipart("upload/submit", admin.code, formData);
+    if (res?.from.description) {
+      toast(res.from.description);
+      setSending(false);
+      return;
+    }
+    const file = res?.from.result;
+    if (file.video) {
+      setAdmin({
+        code: file.video.file_id,
+      });
+    } else if (file.document) {
+      setAdmin({
+        code: file.document.file_id,
+      });
+    } else {
+      const f = file.photo
+      setAdmin({
+        code: f[f.length - 1].file_id,
+      });
+    }
     toast("File Uploaded Successfully");
     setSending(false);
   };
@@ -41,7 +55,7 @@ export default function UploadImage() {
             onChange={async (e: React.ChangeEvent<HTMLInputElement>) => {
               const file = e.target.files?.[0];
               if (file) {
-                formData.append("image", file);
+                formData.append("media", file);
               }
             }}
           />
