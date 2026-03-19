@@ -8,6 +8,7 @@ import Markdown from "react-markdown";
 import { toast, ToastContainer } from "react-toastify";
 import session from "../../utils/session_controller";
 import { decoder } from "../../utils/tools";
+import SyntaxHighlight from "../../components/syntax_highlight";
 
 export default function GetBlog() {
   const adminKey = session("user") ?? "";
@@ -70,23 +71,8 @@ export default function GetBlog() {
                         {...props}
                       />
                     ),
-                    pre: ({ ...props }) => (
-                      <pre
-                        className="select-text bg-zinc-200 shadow shadow-zinc-500 dark:shadow-none dark:bg-slate-900 dark:text-zinc-100 p-4 rounded-lg overflow-x-auto my-4"
-                        {...props}
-                      />
-                    ),
 
-                    code: ({ className, children, ...props }) => {
-                      return (
-                        <code
-                          className={`select-text font-mono text-sm bg-zinc-200 dark:bg-slate-900 ${className ?? ""}`}
-                          {...props}
-                        >
-                          {children}
-                        </code>
-                      );
-                    },
+                    code: SyntaxHighlight,
                   }}
                 >
                   {blog?.content}
