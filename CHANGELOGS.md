@@ -8,6 +8,7 @@
 ### v3.2.2 - 2026-03-19
 
 - Added `onEnter` function for input
+- Used `Markdown Editor` for posting blog
 
 ### v3.2.0 - 2026-03-18
 
@@ -17,7 +18,6 @@
 
 - Upload Media
   - Updated upload section with multimedia based upload
-
 
 - UI/responsiveness tweaks:
   - Changed Mobile View navigation

@@ -1,7 +1,8 @@
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 import Input from "../../widgets/input";
 import { adminPost } from "../../utils/api";
 import { toast, ToastContainer } from "react-toastify";
+import MDEditor from "@uiw/react-md-editor";
 
 export default function PostBlog() {
   const [formData, setFormData] = useState({
@@ -57,20 +58,17 @@ export default function PostBlog() {
         <Input value={formData} onChange={setFormData} name="imgs">
           Images
         </Input>
-        <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full h-full rounded-sm">
-          <span className="pl-4">Content</span>
-          <textarea
-            className="w-full border-none outline-none px-2 h-full"
-            name=""
-            id=""
+        <div className="flex flex-col w-full h-full rounded-sm">
+          <MDEditor
+            className="w-full h-full resize-none"
             value={formData.content}
-            onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
+            onChange={(text) => {
               setFormData((prev) => ({
                 ...prev,
-                content: event.target.value,
+                content: text || "",
               }));
             }}
-          ></textarea>
+          />
         </div>
         {!sending ? (
           <button

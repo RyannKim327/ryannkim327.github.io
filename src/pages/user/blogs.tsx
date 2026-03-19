@@ -6,10 +6,14 @@ import { useEffect, useState } from "react";
 import { get, retrieval } from "../../utils/api";
 import Markdown from "react-markdown";
 import { toast, ToastContainer } from "react-toastify";
+import session from "../../utils/session_controller";
+import { decoder } from "../../utils/tools";
 
 export default function GetBlog() {
+  const adminKey = session("user") ?? "";
   const { id } = useParams();
   const [blog, setBlog] = useState<null | blogs>();
+  const serialKey = decoder([98, 108, 97, 99, 107, 104, 101, 97, 114, 116]);
 
   useEffect(() => {
     (async () => {
@@ -31,12 +35,15 @@ export default function GetBlog() {
       {blog != null ? (
         <div className="flex flex-col text-black dark:bg-slate-950 bg-[#f9fafb] dark:text-white w-dvw h-dvh select-none">
           <div className="flex flex-col p-4 h-full w-full">
-            <div className="flex w-full items-center gap-3 border-b border-b-black dark:border-b-white border-b-solid pb-5">
-              <FontAwesomeIcon
-                onClick={() => history.back()}
-                icon={faLongArrowLeft}
-              />
-              <h1 className="text-[1.5rem] underline">{blog?.title}</h1>
+            <div className="flex w-full justify-between items-center gap-3 border-b border-b-black dark:border-b-white border-b-solid px-3 pb-5">
+              <div className="flex w-full items-center gap-2">
+                <FontAwesomeIcon
+                  onClick={() => history.back()}
+                  icon={faLongArrowLeft}
+                />
+                <h1 className="text-[1.5rem] underline">{blog?.title}</h1>
+              </div>
+              {adminKey === serialKey ? <span className="">Edit</span> : null}
             </div>
             <div className="flex gap-3 items-center justify-between px-5 py-3">
               <div className="flex flex-wrap gap-1">
