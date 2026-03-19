@@ -5,11 +5,14 @@
 > - This changelog is derived from this repo’s **git history** (non-merge commits). It’s maintained manually and is not automatically tied to `package.json`.
 > - Versions follow semantic versioning (**MAJOR.MINOR.PATCH**).
 
+### v0.3.2 - 2026-03-19
+
+- Used `Markdown Editor` for posting blog
+- Added `Code Highligher` for blogs
+
 ### v3.2.2 - 2026-03-19
 
 - Added `onEnter` function for input
-- Used `Markdown Editor` for posting blog
-- Added `Code Highligher` for blogs
 
 ### v3.2.0 - 2026-03-18
 
