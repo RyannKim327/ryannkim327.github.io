@@ -9,6 +9,7 @@
 
 - Added `onEnter` function for input
 - Used `Markdown Editor` for posting blog
+- Added `Code Highligher` for blogs
 
 ### v3.2.0 - 2026-03-18
 
