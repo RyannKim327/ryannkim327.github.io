@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { experience } from "../../utils/interfaces";
-import { adminPost, get } from "../../utils/api";
+import { adminPut, get } from "../../utils/api";
 import Input from "../../widgets/input";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -29,11 +29,7 @@ export default function Experiences() {
     setSending(true);
     const experiences: experience[] = exp;
     experiences[index] = mexp;
-    const response = await adminPost(
-      "experiences/submit",
-      code.code,
-      experiences,
-    );
+    const response = await adminPut("experiences", code.code, experiences);
     if (response.message) {
       setIndex(-1);
       toast("Data Updated successfully");

@@ -6,16 +6,16 @@ import { decoder } from "./tools";
 // for this repository, you may visit my github for the link of the
 // backend.
 
-const URL = decoder([
-  104, 116, 116, 112, 115, 58, 47, 47, 109, 112, 111, 112, 114, 101, 118, 101,
-  114, 115, 101, 105, 105, 46, 108, 101, 97, 112, 99, 101, 108, 108, 46, 97,
-  112, 112,
-]);
-
 // const URL = decoder([
-//   104, 116, 116, 112, 58, 47, 47, 108, 111, 99, 97, 108, 104, 111, 115, 116, 58,
-//   56, 48, 48, 48,
+//   104, 116, 116, 112, 115, 58, 47, 47, 109, 112, 111, 112, 114, 101, 118, 101,
+//   114, 115, 101, 105, 105, 46, 108, 101, 97, 112, 99, 101, 108, 108, 46, 97,
+//   112, 112,
 // ]);
+
+const URL = decoder([
+  104, 116, 116, 112, 58, 47, 47, 108, 111, 99, 97, 108, 104, 111, 115, 116, 58,
+  56, 48, 48, 48,
+]);
 
 function urlChecker(endpoint: string) {
   let url = URL;
@@ -54,6 +54,32 @@ export async function get(endpoint: string, params?: json | json[]) {
     const { data, status } = await axios.get(urlChecker(endpoint), {
       params: params,
       withCredentials: true,
+    });
+    code = status;
+    return response(data, status);
+  } catch (e) {
+    return response({}, code);
+  }
+}
+
+export async function adminPut(
+  endpoint: string,
+  adminCode: string,
+  params?: json | json[],
+) {
+  if (adminCode.trim() == "") {
+    return {
+      error: "No Code Inserted",
+    };
+  }
+  let code = 0;
+  try {
+    const { data, status } = await axios.put(urlChecker(endpoint), params, {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "X-API-Key": `${adminCode}`,
+      },
     });
     code = status;
     return response(data, status);
