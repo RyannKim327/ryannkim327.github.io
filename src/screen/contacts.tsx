@@ -13,13 +13,6 @@ import { toast, ToastContainer } from "react-toastify";
 import Input from "../widgets/input";
 import { post } from "../utils/api";
 
-interface input_interface {
-  placeholder: string;
-  type: string;
-  minLength: number;
-  className: string | unknown;
-}
-
 interface linking_interface {
   icon: IconDefinition;
   url: string;
@@ -158,12 +151,14 @@ export default function Contact(props: pages_interface) {
               Vcard
             </Linking>
           </div>
-          <input
-            style={{ borderWidth: "1px", borderStyle: "solid" }}
-            className="rounded px-2 border-black dark:border-white"
-            type="submit"
-            value="Send email"
-          />
+          {sending ? null : (
+            <input
+              style={{ borderWidth: "1px", borderStyle: "solid" }}
+              className="rounded px-2 border-black dark:border-white"
+              type="submit"
+              value="Send email"
+            />
+          )}
         </div>
       </form>
       <ToastContainer />

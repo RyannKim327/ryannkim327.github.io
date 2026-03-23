@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { contact } from "../../utils/interfaces";
-import { adminGet, get } from "../../utils/api";
+import { adminGet } from "../../utils/api";
 import Input from "../../widgets/input";
 import { toast } from "react-toastify";
 
