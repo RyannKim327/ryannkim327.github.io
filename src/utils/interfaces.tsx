@@ -79,4 +79,10 @@ export interface aichats {
   error?: string;
 }
 
+export interface contact {
+  name: string;
+  email: string;
+  content: string;
+}
+
 export type json = Record<string, any>;

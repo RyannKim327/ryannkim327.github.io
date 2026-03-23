@@ -10,6 +10,8 @@ interface InputProps<T> {
   break?: string;
   remember?: boolean;
   onEnter?: () => void;
+  minLength?: number;
+  placeholder?: string;
 }
 
 export default function Input<T>(props: InputProps<T>) {
@@ -20,6 +22,8 @@ export default function Input<T>(props: InputProps<T>) {
       </label>
 
       <input
+        placeholder={props.placeholder ?? ""}
+        minLength={props.minLength ?? 0}
         id={String(props.name)}
         value={props.value[String(props.name)]}
         className="w-full border-none outline-none px-2"

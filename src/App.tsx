@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col dark:bg-slate-950 dark:text-white bg-[#f9fafb] h-dvh w-dvw select-none">
+    <div className="flex flex-col dark:bg-slate-950 dark:text-white bg-[#f9fafb] h-dvh w-dvw select-none overflow-hidden">
       <Header isLoaded={loaded} />
       <div className="h-full w-full snap-mandatory snap-y scroll-smooth overflow-y-scroll overflow-x-hidden">
         <Hero id="home" className="snap-start" />

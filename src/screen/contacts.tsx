@@ -7,8 +7,11 @@ import {
   faNpm,
   IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
-import { ReactNode } from "react";
+import { ChangeEvent, FormEvent, ReactNode, useState } from "react";
 import { faVcard } from "@fortawesome/free-solid-svg-icons";
+import { toast, ToastContainer } from "react-toastify";
+import Input from "../widgets/input";
+import { post } from "../utils/api";
 
 interface input_interface {
   placeholder: string;
@@ -34,21 +37,47 @@ const Linking = (props: linking_interface) => {
   );
 };
 
-const Input = (props: input_interface) => {
-  return (
-    <label className={`${props.className} custom-input`}>
-      <input
-        type={props.type}
-        placeholder=" "
-        minLength={props.minLength}
-        required
-      />
-      <span>{props.placeholder}</span>
-    </label>
-  );
-};
-
 export default function Contact(props: pages_interface) {
+  const [sending, setSending] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "",
+    name: "",
+    content: "",
+  });
+
+  const sendContact = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSending(true);
+    const fields = [];
+    const email = formData.email.trim();
+    const name = formData.name.trim();
+    const content = formData.content.trim();
+
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      fields.push("email");
+    }
+    if (name.length <= 10) {
+      fields.push("name");
+    }
+    if (content.length <= 10) {
+      fields.push("content");
+    }
+    if (fields.length > 0) {
+      toast(`Please fillup the following fields: ${fields.join(", ")}`);
+    } else {
+      const send = await post("contact/submit", {
+        name,
+        email,
+        content,
+      });
+      if (send.error) {
+        toast(send.error);
+      } else {
+        toast("Message Sent to the Developer");
+      }
+    }
+  };
+
   return (
     <div
       id={props.id}
@@ -62,23 +91,34 @@ export default function Contact(props: pages_interface) {
         className="h-3/4 w-full dark:grayscale dark:invert transition ease-in delay-100"
       />
       <form
-        action="https://formsubmit.co/weryses19@gmail.com"
-        method="POST"
+        onSubmit={sendContact}
+        // action="https://formsubmit.co/weryses19@gmail.com"
+        // method="POST"
         className="flex flex-col w-full h-full box-border gap-2"
       >
         <div className="flex flex-row gap-2 w-full box-border">
           <Input
-            className={`w-full rounded border-black dark:border-white`}
-            type="name"
-            minLength={20}
+            // className={`w-full rounded border-black dark:border-white`}
+            type="text"
+            value={formData}
+            onChange={setFormData}
+            name="name"
+            minLength={10}
             placeholder="Name/Company name"
-          />
+          >
+            Name
+          </Input>
           <Input
-            className={`w-full rounded border-black dark:border-white`}
+            // className={`w-full rounded border-black dark:border-white`}
+            value={formData}
+            onChange={setFormData}
+            name="email"
             type="email"
             minLength={10}
             placeholder="Email Address"
-          />
+          >
+            Email
+          </Input>
         </div>
         <textarea
           style={{
@@ -87,6 +127,13 @@ export default function Contact(props: pages_interface) {
           }}
           placeholder="Enter your message"
           minLength={20}
+          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
+            setFormData((prev) => ({
+              ...prev,
+              content: e.target.value,
+            }));
+          }}
+          value={formData.content}
           required
           className="resize-none p-2 outline-none rounded h-full bg-transparent border-black dark:border-white "
         ></textarea>
@@ -119,6 +166,7 @@ export default function Contact(props: pages_interface) {
           />
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { json } from "./interfaces";
 import { decoder } from "./tools";
+import * as cookie from "tough-cookie";
 
 // NOTE: The backend is now changed, you may still look for it by looking on my github
 // for this repository, you may visit my github for the link of the
@@ -62,6 +63,27 @@ export async function get(endpoint: string, params?: json | json[]) {
   }
 }
 
+export async function adminGet(
+  endpoint: string,
+  adminCode: string,
+  params?: json | json[],
+) {
+  let code = 0;
+  try {
+    const { data, status } = await axios.get(urlChecker(endpoint), {
+      params: params,
+      withCredentials: true,
+      headers: {
+        "X-API-Key": `${adminCode}`,
+      },
+    });
+    code = status;
+    return response(data, status);
+  } catch (e) {
+    return response({}, code);
+  }
+}
+
 export async function adminPut(
   endpoint: string,
   adminCode: string,
@@ -89,9 +111,15 @@ export async function adminPut(
 }
 
 export async function post(endpoint: string, params?: json | json[]) {
+  const w = await import("axios-cookiejar-support");
+  const jar = new cookie.CookieJar();
+  const client = w.wrapper(axios.create({ jar, withCredentials: true }));
+
+  await client.get(urlChecker("set-cookie"));
+
   let code = 0;
   try {
-    const { data, status } = await axios.post(urlChecker(endpoint), params, {
+    const { data, status } = await client.post(urlChecker(endpoint), params, {
       withCredentials: true,
       headers: {
         Accept: "application/json",

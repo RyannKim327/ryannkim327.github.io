@@ -53,6 +53,7 @@ export default function Admin() {
               <Links to="">Home</Links>
               <Links to="/blog">Blog</Links>
               <Links to="/certificate">Certificate Upload</Links>
+              <Links to="/contact">Contact</Links>
               <Links to="/exp">Experiences</Links>
               <Links to="/poem">Post Poem</Links>
               <Links to="/upload">Upload Image</Links>

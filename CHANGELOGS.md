@@ -5,10 +5,10 @@
 > - This changelog is derived from this repo’s **git history** (non-merge commits). It’s maintained manually and is not automatically tied to `package.json`.
 > - Versions follow semantic versioning (**MAJOR.MINOR.PATCH**).
 
-### v3.4.0 - 2026-03-23
+### v3.4.0 - 2026-03-(23-24)
 
 - Added `Edit blogs`
-- Initiated `Contacts to Admin based`
+- Added `Contacts to Admin based`
 
 ### v3.3.2 - 2026-03-19
 
