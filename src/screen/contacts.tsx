@@ -66,6 +66,11 @@ export default function Contact(props: pages_interface) {
       if (send.error) {
         toast(send.error);
       } else {
+        setFormData({
+          email: "",
+          name: "",
+          content: "",
+        });
         toast("Message Sent to the Developer");
       }
     }
