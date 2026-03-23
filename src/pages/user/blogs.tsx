@@ -1,6 +1,6 @@
 import { faLongArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { blogs } from "../../utils/interfaces";
 import { useEffect, useState } from "react";
 import { get, retrieval } from "../../utils/api";
@@ -22,7 +22,6 @@ export default function GetBlog() {
         id: id,
       });
       if (response.error) {
-        setBlog(null);
         toast(`There's a problem with the server, please reload the webpage`);
         return;
       }
@@ -44,7 +43,11 @@ export default function GetBlog() {
                 <FontAwesomeIcon icon={faLongArrowLeft} />
                 <h1 className="text-[1.5rem] underline">{blog?.title}</h1>
               </div>
-              {adminKey === serialKey ? <span className="">Edit</span> : null}
+              {adminKey === serialKey ? (
+                <Link to={`/admin/blog/${id}/edit`} className="">
+                  Edit
+                </Link>
+              ) : null}
             </div>
             <div className="flex gap-3 items-center justify-between px-5 py-3">
               <div className="flex flex-wrap gap-1">

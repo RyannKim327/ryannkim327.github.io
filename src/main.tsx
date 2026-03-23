@@ -12,6 +12,7 @@ import Projects from "./pages/admin/index.tsx";
 import { admin } from "./utils/tools";
 import Certificates from "./pages/admin/certifications.tsx";
 import Poetry from "./pages/admin/poem.tsx";
+import EditBlog from "./pages/admin/edit-blogs.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -25,6 +26,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="certificate" element={<Certificates />} />
           <Route path="poem" element={<Poetry />} />
           <Route path="upload" element={<UploadImage />} />
+          <Route path="blog/:id/edit" element={<EditBlog />} />
         </Route>
         <Route path="/blog/:id" element={<GetBlog />} />
       </Routes>

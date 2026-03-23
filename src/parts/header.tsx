@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import Logo from "./../assets/logo.jpg";
+import Logo from "./../assets/logo.png";
 
 interface HeaderProps {
   isLoaded: boolean;
