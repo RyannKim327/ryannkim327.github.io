@@ -8,8 +8,8 @@ export default function PostBlog() {
   const [formData, setFormData] = useState({
     title: "",
     content: "",
-    tags_: "",
-    imgs: "",
+    tags: "",
+    media: "",
   });
   const [code, setCode] = useState({
     code: "",
@@ -22,8 +22,8 @@ export default function PostBlog() {
     const form = {
       title: formData.title,
       content: formData.content,
-      tags: formData.tags_.split(" "),
-      imgs: formData.imgs.trim().split(" "),
+      tags: formData.tags.split(" "),
+      media: formData.media.trim().split(" "),
     };
 
     const response = await adminPost("blog/submit", code.code, form);
@@ -32,8 +32,8 @@ export default function PostBlog() {
       setFormData({
         title: "",
         content: "",
-        tags_: "",
-        imgs: "",
+        tags: "",
+        media: "",
       });
       setCode({ code: "" });
     } else {
@@ -52,11 +52,11 @@ export default function PostBlog() {
         <Input value={code} onChange={setCode} name="code">
           Code
         </Input>
-        <Input value={formData} onChange={setFormData} name="tags_">
+        <Input value={formData} onChange={setFormData} name="tags">
           Tags
         </Input>
-        <Input value={formData} onChange={setFormData} name="imgs">
-          Images
+        <Input value={formData} onChange={setFormData} name="media">
+          Media Files (ID)
         </Input>
         <div className="flex flex-col w-full h-full rounded-sm">
           <MDEditor

@@ -8,15 +8,17 @@ export default function Blogs(props: pages_interface) {
   const [_blogs, setBlogs] = useState<null | blogs[]>([]);
 
   useEffect(() => {
-    (async () => {
+    const loadData = async () => {
       const response = await get("blog");
       if (response.error) {
         setBlogs(null);
-        alert(response.error);
+        alert("Reloading...");
+        loadData();
         return;
       }
       setBlogs(response.data);
-    })();
+    };
+    loadData();
   }, []);
 
   return (

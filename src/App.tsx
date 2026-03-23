@@ -35,15 +35,9 @@ function App() {
             <Projects id="projects" className="snap-start" />
             <Blogs id="blog" className="snap-start" />
             <Feedback id="feedback" className="snap-start" />
+            <Chatbot />
           </>
-        ) : (
-          <div className="flex flex-col h-full w-full items-center text-center justify-center gap-3 snap-start">
-            <p className="text-[2rem]">Some pages are disabled.</p>
-            <p className="text-[1.25rem]">Backend is currently loading</p>
-          </div>
-        )}
-        <Chatbot />
-
+        ) : null}
         <Contact id="contact" className="snap-start" />
       </div>
     </div>

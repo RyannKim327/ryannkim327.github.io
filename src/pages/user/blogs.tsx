@@ -37,11 +37,11 @@ export default function GetBlog() {
         <div className="flex flex-col text-black dark:bg-slate-950 bg-[#f9fafb] dark:text-white w-dvw h-dvh select-none">
           <div className="flex flex-col p-4 h-full w-full">
             <div className="flex w-full justify-between items-center gap-3 border-b border-b-black dark:border-b-white border-b-solid px-3 pb-5">
-              <div className="flex w-full items-center gap-2">
-                <FontAwesomeIcon
-                  onClick={() => history.back()}
-                  icon={faLongArrowLeft}
-                />
+              <div
+                onClick={() => history.back()}
+                className="flex w-full items-center gap-2 cursor-pointer"
+              >
+                <FontAwesomeIcon icon={faLongArrowLeft} />
                 <h1 className="text-[1.5rem] underline">{blog?.title}</h1>
               </div>
               {adminKey === serialKey ? <span className="">Edit</span> : null}
