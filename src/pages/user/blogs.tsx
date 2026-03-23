@@ -97,11 +97,11 @@ export default function GetBlog() {
       ) : (
         <div className="flex flex-col text-black dark:bg-slate-950 bg-[#f9fafb] dark:text-white w-dvw h-dvh">
           <div className="p-5">
-            <div className="flex w-full items-center gap-3 border-b border-b-black dark:border-b-white border-b-solid pb-5">
-              <FontAwesomeIcon
-                onClick={() => history.back()}
-                icon={faLongArrowLeft}
-              />
+            <div
+              onClick={() => history.back()}
+              className="flex w-full items-center gap-3 border-b border-b-black dark:border-b-white border-b-solid pb-5"
+            >
+              <FontAwesomeIcon icon={faLongArrowLeft} />
               <h1 className="text-[1.5rem]">NOTICE</h1>
             </div>
           </div>
