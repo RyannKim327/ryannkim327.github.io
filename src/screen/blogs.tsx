@@ -71,6 +71,16 @@ export default function Blogs(props: pages_interface) {
             <blockquote>Please Wait</blockquote>
           </div>
         )}
+        <Link
+          to={`blog`}
+          className="w-full md:w-2/7 aspect-video"
+        >
+          <div className="flex flex-col bg-zinc-200 items-center justify-center text-center shadow-sm shadow-black text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-full h-full overflow-hidden gap-1">
+            <h1 className="text-[1.5rem]">See More</h1>
+            <span>For more blogs posted, kindly click this card.</span>
+          </div>
+        </Link>
+
       </div>
     </div>
   );

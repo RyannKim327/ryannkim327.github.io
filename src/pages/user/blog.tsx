@@ -1,6 +1,6 @@
 import { faLongArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import { blogs } from "../../utils/interfaces";
 import { useEffect, useState } from "react";
 import { get, retrieval } from "../../utils/api";
@@ -15,6 +15,7 @@ export default function GetBlog() {
   const { id } = useParams();
   const [blog, setBlog] = useState<null | blogs>();
   const serialKey = decoder([98, 108, 97, 99, 107, 104, 101, 97, 114, 116]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     (async () => {
@@ -37,7 +38,7 @@ export default function GetBlog() {
           <div className="flex flex-col p-4 h-full w-full">
             <div className="flex w-full justify-between items-center gap-3 border-b border-b-black dark:border-b-white border-b-solid px-3 pb-5">
               <div
-                onClick={() => history.back()}
+                onClick={() => navigate("/")}
                 className="flex w-full items-center gap-2 cursor-pointer"
               >
                 <FontAwesomeIcon icon={faLongArrowLeft} />
