@@ -39,7 +39,7 @@ export default function PostCerti() {
         <Input value={formData} name="source" onChange={setFormData}>
           Source
         </Input>
-        <Input value={code} onChange={setCode} name="code">
+        <Input type="password" value={code} onChange={setCode} name="code">
           Code
         </Input>
         <Input value={formData} onChange={setFormData} name="url">

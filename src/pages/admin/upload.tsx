@@ -28,7 +28,7 @@ export default function UploadImage() {
         code: file.document.file_id,
       });
     } else {
-      const f = file.photo
+      const f = file.photo;
       setAdmin({
         code: f[f.length - 1].file_id,
       });
@@ -41,7 +41,7 @@ export default function UploadImage() {
     <div className="flex flex-col items-start justify-center gap-2 rounded min-w-1/3">
       <h1 className="text-xl">Upload Image</h1>
       <div className="flex flex-col items-center h-full w-full gap-2">
-        <Input value={admin} name="code" onChange={setAdmin}>
+        <Input type="password" value={admin} name="code" onChange={setAdmin}>
           Code
         </Input>
         <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full gap-2 rounded-sm">

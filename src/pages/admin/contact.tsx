@@ -24,7 +24,7 @@ export default function Contact() {
       <h1 className="text-center text-xl">People who contacted you</h1>
       {!feed ? (
         <div className="flex flex-col items-center w-full h-full gap-2">
-          <Input value={code} onChange={setCode} name="code">
+          <Input value={code} onChange={setCode} name="code" type="password">
             Code
           </Input>
           <button onClick={fetchContact}>Submit</button>
@@ -33,7 +33,7 @@ export default function Contact() {
         <div className="flex flex-col items-center w-full h-full gap-2">
           {list.map((c) => {
             return (
-              <div className="flex flex-col aspect-video bg-zinc-200 w-1/3 shadow-sm shadow-black text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg overflow-hidden gap-1">
+              <div className="flex flex-col aspect-video bg-zinc-200 w-full md:w-1/3 shadow-sm shadow-black text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg overflow-hidden gap-1">
                 <span className="text-sm">
                   {c.name} - {c.email}
                 </span>

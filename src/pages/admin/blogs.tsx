@@ -49,7 +49,7 @@ export default function PostBlog() {
         <Input value={formData} name="title" onChange={setFormData}>
           Title
         </Input>
-        <Input value={code} onChange={setCode} name="code">
+        <Input type="password" value={code} onChange={setCode} name="code">
           Code
         </Input>
         <Input value={formData} onChange={setFormData} name="tags">

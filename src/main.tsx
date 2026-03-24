@@ -20,6 +20,7 @@ createRoot(document.getElementById("root")!).render(
     <HashRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/blog/:id" element={<GetBlog />} />
         <Route path={`/${admin}/*`} element={<Admin />}>
           <Route path="" element={<Projects />} />
           <Route path="exp" element={<Experiences />} />
@@ -30,7 +31,6 @@ createRoot(document.getElementById("root")!).render(
           <Route path="upload" element={<UploadImage />} />
           <Route path="blog/:id/edit" element={<EditBlog />} />
         </Route>
-        <Route path="/blog/:id" element={<GetBlog />} />
       </Routes>
     </HashRouter>
   </StrictMode>,

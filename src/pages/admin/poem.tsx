@@ -53,7 +53,12 @@ export default function Poetry() {
         >
           Title
         </Input>
-        <Input name="code" value={compose} onChange={setCompose}>
+        <Input
+          type="password"
+          name="code"
+          value={compose}
+          onChange={setCompose}
+        >
           Code
         </Input>
         <div className="flex flex-col border border-solid border-[#0c0c0c] dark:border-[#f9f9f6] w-full h-full rounded-sm">

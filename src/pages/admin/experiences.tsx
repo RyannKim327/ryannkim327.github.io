@@ -71,7 +71,7 @@ export default function Experiences() {
           <Input value={mexp} name="icon" onChange={setMexp}>
             Icon
           </Input>
-          <Input value={code} onChange={setCode} name="code">
+          <Input type="password" value={code} onChange={setCode} name="code">
             Code
           </Input>
           <div className="flex flex-col border border-solid h-full border-[#0c0c0c] dark:border-[#f9f9f6] w-full gap-2 rounded-sm">
