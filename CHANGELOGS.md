@@ -5,50 +5,45 @@
 > - This changelog is derived from this repo’s **git history** (non-merge commits). It’s maintained manually and is not automatically tied to `package.json`.
 > - Versions follow semantic versioning (**MAJOR.MINOR.PATCH**).
 
-### v3.4.0 - 2026-03-(23-24)
+### v3.5.0 - 2026-03-28
 
-- Added `Edit blogs`
-- Added `Contacts to Admin based`
+- **Features & Enhancements**
+  - Added `Paginator` for improved navigation in blogs and lists.
+  - Implemented `See More` functionality for blog posts.
+  - Added `Edit blogs` capability for administrative management.
+  - Migrated `Contacts` to an Admin-based cloud system.
+- **Improvements & Fixes**
+  - Refined `Syntax Highlighting` for better code readability.
+  - Fixed interaction issues between pagination and click events.
+  - Updated experience updates to use `PUT` method.
 
-### v3.3.2 - 2026-03-19
+### v3.3.0 - 2026-03-19
 
-- Used `Markdown Editor` for posting blog
-- Added `Code Highligher` for blogs
-
-### v3.2.2 - 2026-03-19
-
-- Added `onEnter` function for input
+- **Blog Enhancements**
+  - Integrated `Markdown Editor` for seamless blog posting.
+  - Added `Code Highlighter` for technical content.
+- **UI Tweaks**
+  - Added `onEnter` function for improved input handling.
 
 ### v3.2.0 - 2026-03-18
 
-- Administration Control
-  - Added Passkey for admin verification
-  - Added Poetry Posting
-
-- Upload Media
-  - Updated upload section with multimedia based upload
-
-- UI/responsiveness tweaks:
-  - Changed Mobile View navigation
-  - Added Transition Animation
-
-### v3.1.1 - 2026-03-18
-
-- Security
-  - Added Enryption for online public repository access
-  - Admin control and setups
+- **Administration & Security**
+  - Added `Passkey` for secure admin verification.
+  - Implemented `Poetry Posting` feature.
+  - Added `Encryption` for online public repository access.
+- **Multimedia & UI**
+  - Updated upload section with multimedia support.
+  - Redesigned Mobile View navigation.
+  - Added fluid transition animations.
 
 ### v3.1.0 - 2026-03-15
 
-- Added `AI chatbot` for user experiences
-
-### v3.0.4 — 2026-03-15
-
-- UI/responsiveness tweaks:
-  - Blogs: removed nested scroll container to avoid double scrolling (`b1fb962`)
-  - Certifications: improved mobile layout and scrolling + hover overlay behavior (`b1fb962`)
-  - Feedback: improved text width for better readability on smaller screens (`b1fb962`)
-  - Hero: adjusted heading width for better alignment on mobile (`b1fb962`)
+- **User Experience**
+  - Added `AI chatbot` for interactive user engagement.
+- **Responsiveness Fixes**
+  - Removed nested scroll containers in Blogs.
+  - Improved mobile layout and hover behavior for Certifications.
+  - Optimized text width for Feedback and Hero sections.
 
 ### v3.0.3 — 2026-03-13
 

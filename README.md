@@ -1,6 +1,6 @@
 # RyannKim327 Portfolio
 
-**Project version:** `3.4.0`
+**Project version:** `3.5.0`
 
 [![wakatime](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c.svg)](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c)
 ![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat&logo=react)
@@ -146,48 +146,39 @@ portfolio/
 
 ## 🎨 Design Philosophy
 
-This portfolio is designed to feel **modern, focused, and fast**—a single-page experience that keeps attention on the work while still providing personality through motion and theming.
+This portfolio is built on the principle of **"Functional Elegance"**—balancing a high-performance technical stack with a sophisticated, user-centric interface.
 
 ### Core Principles
 
-- **Content-first layout**
-  - Prioritizes readability and scan-ability (clear section hierarchy, consistent spacing, and purposeful typography).
-  - Keeps copy and projects easy to discover without overwhelming the visitor.
+- **Aesthetic Precision**
+  - A carefully crafted dark-mode-first interface with purple accents, emphasizing focus and readability.
+  - Purposeful use of whitespace and typography to create a clean, professional atmosphere.
 
-- **Single-page flow with clear navigation**
-  - Smooth scrolling between sections to maintain context and reduce friction.
-  - Navigation is designed to orient users quickly and minimize “where am I?” moments.
+- **Full-Stack Synergy**
+  - Seamless integration between the React frontend and Go backend, ensuring real-time content management.
+  - A robust administrative dashboard that allows for dynamic updates without code changes.
 
-- **Responsive by default**
-  - Breakpoints are chosen to support common device widths and ensure layouts degrade gracefully.
-  - Touch targets, spacing, and component stacking are tuned for mobile ergonomics.
+- **Fluid Motion**
+  - Subtle, meaningful animations powered by Framer Motion that guide the user's attention and enhance the "feel" of the site.
+  - Micro-interactions that provide immediate feedback and a sense of responsiveness.
 
-- **Theme as a product feature (Light/Dark, neutral palette)**
-  - The theme switch is treated as part of the experience, not an afterthought.
-  - The palette intentionally stays clean and neutral (light surfaces + dark slate backgrounds) to keep focus on content and imagery.
-  - Contrast and readability are prioritized across both modes.
+- **Adaptive Resilience**
+  - A mobile-first architecture that ensures a premium experience across all device form factors.
+  - Layouts that degrade gracefully and maintain usability on everything from smartphones to ultrawide monitors.
 
-- **Motion with intention**
-  - Animations are used to guide attention (section entry, emphasis, micro-interactions), not distract.
-  - Transitions are kept subtle and consistent to reinforce polish.
+- **Interactive Utility**
+  - Bridging the gap between a static portfolio and a dynamic application with features like an AI chatbot and Markdown-powered blogs.
+  - Integrated Paginator and "See More" features for efficient content discovery.
 
-- **Performance-minded UI**
-  - Leverages a modern build toolchain (Vite) and component modularity to keep interactions snappy.
-  - Avoids unnecessary visual noise and heavy assets where possible.
-
-- **Accessibility-oriented decisions**
-  - Designs aim for strong contrast, readable font sizing, and predictable interaction patterns.
-  - UI structure is kept semantic-friendly to support assistive technologies.
-
-- **Maintainable, component-driven structure**
-  - Reusable UI sections/components keep styling consistent and updates straightforward.
-  - Utility-first styling (Tailwind) favors small, composable changes without CSS sprawl.
+- **Security & Performance**
+  - Built with Vite for near-instant load times and optimized bundle sizes.
+  - Implementation of secure admin verification and encrypted repository access.
 
 ## 📝 Changelog
 
 The full changelog has been moved to [CHANGELOGS.md](CHANGELOGS.md).
 
-**Latest:** v3.0.3 (Current) — 2026-03-13
+**Latest:** v3.5.0 (Current) — 2026-03-28
 
 ## 🌐 Deployment
 
