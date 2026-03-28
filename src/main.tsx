@@ -15,6 +15,7 @@ import Poetry from "./pages/admin/poem.tsx";
 import EditBlog from "./pages/admin/edit-blogs.tsx";
 import Contact from "./pages/admin/contact.tsx";
 import Blogs from "./pages/user/blogs.tsx";
+import Certis from "./pages/user/certificates.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -23,6 +24,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/" element={<App />} />
         <Route path="/blog/:id" element={<GetBlog />} />
         <Route path="/blog" element={<Blogs />} />
+        <Route path="/certificates" element={<Certis />} />
         <Route path={`/${admin}/*`} element={<Admin />}>
           <Route path="" element={<Projects />} />
           <Route path="exp" element={<Experiences />} />

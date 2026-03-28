@@ -67,7 +67,7 @@ export default function Projects(props: pages_interface) {
           );
         })}
       </div>
-      <div className="flex flex-wrap justify-center gap-4 w-full h-full box-border overflow-y-auto px-2 pb-4">
+      <div className="flex flex-wrap justify-center gap-2 w-full h-full box-border overflow-y-auto px-2 pb-4">
         {listProjects.length > 0 ? (
           projects.length <= 0 ? (
             <p>
@@ -86,7 +86,7 @@ export default function Projects(props: pages_interface) {
                   style={{
                     backgroundImage: `url(${item.img ? retrieval("retrieve", { file: item.img }) : ""})`,
                   }}
-                  className={`flex flex-col justify-end h-1/3 md:h-1/3 w-full md:w-2/7 text-white p-2 border border-slate-950 dark:border-slate-500 border-solid lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
+                  className={`flex flex-col justify-end w-full md:w-[calc(33.333%-0.5rem)] aspect-video text-white p-2 border border-slate-950 dark:border-slate-500 border-solid lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
                 >
                   <span className="flex flex-col bg-[#efefef]/50 text-black dark:text-white dark:bg-[#212121]/50 select-none cursor-pointer hover:underline justify-center items-center box-border">
                     <h1 className="text-base md:text-xl text-center">

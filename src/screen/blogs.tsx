@@ -24,7 +24,7 @@ export default function Blogs(props: pages_interface) {
   return (
     <div
       id={props.id}
-      className={`${props.className} flex flex-col w-full h-full p-2 overflow-hidden`}
+      className={`${props.className} flex flex-col w-full h-full p-2 overflow-hidden overflow-y-auto`}
     >
       <div
         className={
@@ -38,7 +38,7 @@ export default function Blogs(props: pages_interface) {
             return (
               <Link
                 to={`blog/${blog.id}`}
-                className="w-full md:w-2/7 aspect-video"
+                className="w-full md:w-[calc(33.333%-0.5rem)] aspect-video"
               >
                 <div className="flex flex-col bg-zinc-200 shadow-sm shadow-black text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-full h-full overflow-hidden gap-1">
                   <h1 className="text-[1rem]">{blog.title}</h1>
@@ -73,14 +73,13 @@ export default function Blogs(props: pages_interface) {
         )}
         <Link
           to={`blog`}
-          className="w-full md:w-2/7 aspect-video"
+          className="w-full md:w-[calc(33.333%-0.5rem)] aspect-video"
         >
           <div className="flex flex-col bg-zinc-200 items-center justify-center text-center shadow-sm shadow-black text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-full h-full overflow-hidden gap-1">
             <h1 className="text-[1.5rem]">See More</h1>
             <span>For more blogs posted, kindly click this card.</span>
           </div>
         </Link>
-
       </div>
     </div>
   );
