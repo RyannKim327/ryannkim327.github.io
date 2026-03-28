@@ -41,7 +41,7 @@ export interface blogs {
   title: string;
   content: string;
   tags: string[];
-  imgs?: string[];
+  media?: string[];
   time: number | string;
 }
 

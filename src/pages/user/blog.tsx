@@ -15,7 +15,7 @@ export default function GetBlog() {
   const { id } = useParams();
   const [blog, setBlog] = useState<null | blogs>();
   const serialKey = decoder([98, 108, 97, 99, 107, 104, 101, 97, 114, 116]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
@@ -82,12 +82,18 @@ export default function GetBlog() {
                   {blog?.content}
                 </Markdown>
               </div>
-              {blog?.imgs ? (
+              {blog?.media ? (
                 <div className="flex flex-col h-1/5 mt-5">
                   <span className="font-bold">Some Pictures included:</span>
                   <div className="flex h-full">
-                    {blog?.imgs.map((img) => {
-                      return <img src={retrieval("retrieve", { file: img })} />;
+                    {blog?.media.map((media) => {
+                      return (
+                        <video
+                          className="aspect-video h-100"
+                          controls={true}
+                          src={retrieval("retrieve", { file: media })}
+                        ></video>
+                      );
                     })}
                   </div>
                 </div>
