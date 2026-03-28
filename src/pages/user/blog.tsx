@@ -38,7 +38,9 @@ export default function GetBlog() {
           <div className="flex flex-col p-4 h-full w-full">
             <div className="flex w-full justify-between items-center gap-3 border-b border-b-black dark:border-b-white border-b-solid px-3 pb-5">
               <div
-                onClick={() => navigate("/")}
+                onClick={() => {
+                  navigate("/blog");
+                }}
                 className="flex w-full items-center gap-2 cursor-pointer"
               >
                 <FontAwesomeIcon icon={faLongArrowLeft} />
