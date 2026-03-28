@@ -55,7 +55,7 @@ export default function Blogs() {
         </div>
         <span className="text-sm">Page: {page}</span>
       </div>
-      <div className="grid grid-cols-3 gap-2 overflow-y-auto p-2">
+      <div className="flex flex-col md:grid md:grid-cols-3 gap-2 overflow-y-auto p-2">
         {blogList.map((blog) => {
           return (
             <Link to={`${blog.id}`} className="w-full aspect-video">
