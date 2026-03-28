@@ -82,18 +82,23 @@ export default function GetBlog() {
                   {blog?.content}
                 </Markdown>
               </div>
-              {blog?.media ? (
+              {blog?.media && blog.media[0] != "" ? (
                 <div className="flex flex-col h-1/5 mt-5">
-                  <span className="font-bold">Some Pictures included:</span>
+                  <span className="font-bold">Some Media included:</span>
                   <div className="flex h-full">
                     {blog?.media.map((media) => {
-                      return (
-                        <video
-                          className="aspect-video h-100"
-                          controls={true}
-                          src={retrieval("retrieve", { file: media })}
-                        ></video>
-                      );
+                      const file = retrieval("retrieve", { file: media });
+                      if (media.startsWith("BQACA")) {
+                        return (
+                          <video
+                            className="aspect-video h-100"
+                            controls={true}
+                            src={file}
+                          ></video>
+                        );
+                      } else {
+                        return <img className="h-100" src={file} />;
+                      }
                     })}
                   </div>
                 </div>
