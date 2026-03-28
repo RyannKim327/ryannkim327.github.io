@@ -5,6 +5,16 @@
 > - This changelog is derived from this repo’s **git history** (non-merge commits). It’s maintained manually and is not automatically tied to `package.json`.
 > - Versions follow semantic versioning (**MAJOR.MINOR.PATCH**).
 
+### v3.5.1 - 2026-03-28
+
+- **Features & Enhancements**
+  - Added dedicated `Certifications` list page for better organization.
+  - Implemented `See More` functionality for certifications.
+- **Improvements & Fixes**
+  - Optimized layout for blogs, projects, and certifications using dynamic grid widths.
+  - Refined media retrieval logic for certification images.
+  - Cleaned up unused dependencies (`framer-motion`, `swiper`, `zod`) to reduce bundle size.
+
 ### v3.5.0 - 2026-03-28
 
 - **Features & Enhancements**

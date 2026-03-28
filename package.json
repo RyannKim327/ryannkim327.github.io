@@ -1,7 +1,7 @@
 {
   "name": "ryannkim327.is-a.dev",
   "private": true,
-  "version": "3.5.0",
+  "version": "3.5.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -21,7 +21,6 @@
     "@uiw/react-md-editor": "^4.0.11",
     "axios": "^1.13.6",
     "axios-cookiejar-support": "^6.0.5",
-    "framer-motion": "^12.34.5",
     "gh-pages": "^6.3.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
@@ -29,9 +28,7 @@
     "react-router": "^7.13.1",
     "react-syntax-highlighter": "^16.1.1",
     "react-toastify": "^11.0.5",
-    "swiper": "^12.1.2",
-    "tough-cookie": "^6.0.1",
-    "zod": "^4.3.6"
+    "tough-cookie": "^6.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",

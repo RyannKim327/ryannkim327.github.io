@@ -1,6 +1,6 @@
 # RyannKim327 Portfolio
 
-**Project version:** `3.5.0`
+**Project version:** `3.5.1`
 
 [![wakatime](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c.svg)](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c)
 ![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat&logo=react)
@@ -48,13 +48,13 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 - 🎨 **Modern Single-Page Design** - Clean, professional layout with smooth scrolling
 - 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
 - ⚡ **Lightning Fast** - Built with Vite for optimal performance
-- 🎭 **Smooth Animations** - Powered by Framer Motion for engaging user experience
 - 🎯 **TypeScript** - Type-safe development for better code quality
 - 🎨 **Tailwind CSS** - Utility-first CSS framework for rapid styling
 - 📦 **Component-Based Architecture** - Modular and maintainable code structure
 - 🌙 **Dark/Light Theme** - Elegant theme switching with dark and light modes, featuring purple accents
 - 📝 **Blog System** - Fetch + view blog posts with Markdown rendering
 - 🖼️ **Blog Post Images** - Support for optional image galleries attached to blog posts
+- 📜 **Dedicated Certifications** - Paginated list of certifications for better showcase
 - 💅 **Enhanced Markdown Styling** - Proper list styling, code blocks, and inline code formatting
 - 🧰 **Admin Dashboard (WIP)** - Manage portfolio content (experiences/projects/blogs)
 - 📱 **Admin Responsive UI** - Improved mobile/tablet usability in admin pages
@@ -78,11 +78,10 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 
 ### Libraries & Tools
 
-- **Framer Motion 12.23.26** - Animation library
 - **FontAwesome** - Icon library
 - **Axios 1.13.2** - HTTP client for API communication
-- **Zod 4.3.4** - Schema validation
-- **Swiper 12.0.3** - Touch slider component
+- **React Toastify** - Notification library
+- **React Markdown** - Markdown rendering
 - **ESLint** - Code linting
 - **gh-pages** - GitHub Pages deployment
 
@@ -159,7 +158,7 @@ This portfolio is built on the principle of **"Functional Elegance"**—balancin
   - A robust administrative dashboard that allows for dynamic updates without code changes.
 
 - **Fluid Motion**
-  - Subtle, meaningful animations powered by Framer Motion that guide the user's attention and enhance the "feel" of the site.
+  - Meaningful transitions that guide the user's attention and enhance the "feel" of the site.
   - Micro-interactions that provide immediate feedback and a sense of responsiveness.
 
 - **Adaptive Resilience**
@@ -168,7 +167,7 @@ This portfolio is built on the principle of **"Functional Elegance"**—balancin
 
 - **Interactive Utility**
   - Bridging the gap between a static portfolio and a dynamic application with features like an AI chatbot and Markdown-powered blogs.
-  - Integrated Paginator and "See More" features for efficient content discovery.
+  - Integrated Paginator and dedicated "See More" views for efficient content discovery.
 
 - **Security & Performance**
   - Built with Vite for near-instant load times and optimized bundle sizes.
@@ -178,7 +177,7 @@ This portfolio is built on the principle of **"Functional Elegance"**—balancin
 
 The full changelog has been moved to [CHANGELOGS.md](CHANGELOGS.md).
 
-**Latest:** v3.5.0 (Current) — 2026-03-28
+**Latest:** v3.5.1 (Current) — 2026-03-28
 
 ## 🌐 Deployment
 
@@ -260,7 +259,6 @@ For more details, see the [LICENSE](LICENSE) file or visit [Creative Commons](ht
 - **Vite** team for the amazing build tool
 - **React** team for the powerful library
 - **Tailwind CSS** for the utility-first approach
-- **Framer Motion** for smooth animations
 - **FontAwesome** for beautiful icons
 - **Go** community for the robust backend language
 
