@@ -21,6 +21,7 @@
     "@uiw/react-md-editor": "^4.0.11",
     "axios": "^1.13.6",
     "axios-cookiejar-support": "^6.0.5",
+    "devtools-detector": "^2.0.25",
     "gh-pages": "^6.3.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",

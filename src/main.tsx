@@ -16,26 +16,29 @@ import EditBlog from "./pages/admin/edit-blogs.tsx";
 import Contact from "./pages/admin/contact.tsx";
 import Blogs from "./pages/user/blogs.tsx";
 import Certis from "./pages/user/certificates.tsx";
+import Coat from "./middleware/coat-control.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/blog/:id" element={<GetBlog />} />
-        <Route path="/blog" element={<Blogs />} />
-        <Route path="/certificates" element={<Certis />} />
-        <Route path={`/${admin}/*`} element={<Admin />}>
-          <Route path="" element={<Projects />} />
-          <Route path="exp" element={<Experiences />} />
-          <Route path="blog" element={<PostBlog />} />
-          <Route path="certificate" element={<Certificates />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="poem" element={<Poetry />} />
-          <Route path="upload" element={<UploadImage />} />
-          <Route path="blog/:id/edit" element={<EditBlog />} />
-        </Route>
-      </Routes>
-    </HashRouter>
+    <Coat>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/blog/:id" element={<GetBlog />} />
+          <Route path="/blog" element={<Blogs />} />
+          <Route path="/certificates" element={<Certis />} />
+          <Route path={`/${admin}/*`} element={<Admin />}>
+            <Route path="" element={<Projects />} />
+            <Route path="exp" element={<Experiences />} />
+            <Route path="blog" element={<PostBlog />} />
+            <Route path="certificate" element={<Certificates />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="poem" element={<Poetry />} />
+            <Route path="upload" element={<UploadImage />} />
+            <Route path="blog/:id/edit" element={<EditBlog />} />
+          </Route>
+        </Routes>
+      </HashRouter>
+    </Coat>
   </StrictMode>,
 );
