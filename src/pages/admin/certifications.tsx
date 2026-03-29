@@ -34,7 +34,7 @@ export default function PostCerti() {
 
   return (
     <div className="flex flex-col gap-2 w-full items-start h-full">
-      <h1 className="text-center text-xl">Posting a blog content</h1>
+      <h1 className="text-center text-xl">Posting of certificate</h1>
       <div className="flex flex-col items-center w-full h-full gap-2">
         <Input value={formData} name="source" onChange={setFormData}>
           Source

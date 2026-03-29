@@ -17,6 +17,7 @@ import Contact from "./pages/admin/contact.tsx";
 import Blogs from "./pages/user/blogs.tsx";
 import Certis from "./pages/user/certificates.tsx";
 import Coat from "./middleware/coat-control.tsx";
+import PersonalInfo from "./pages/admin/personal-info.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -36,6 +37,7 @@ createRoot(document.getElementById("root")!).render(
             <Route path="poem" element={<Poetry />} />
             <Route path="upload" element={<UploadImage />} />
             <Route path="blog/:id/edit" element={<EditBlog />} />
+            <Route path="personal-info" element={<PersonalInfo />} />
           </Route>
         </Routes>
       </HashRouter>
