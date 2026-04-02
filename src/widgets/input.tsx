@@ -5,7 +5,7 @@ interface InputProps<T> {
   children: string;
   type?: string;
   value: Record<string, any>;
-  name: keyof T;
+  name: keyof T | string;
   onChange: Dispatch<SetStateAction<T>>;
   break?: string;
   remember?: boolean;

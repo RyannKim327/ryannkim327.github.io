@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { get } from "../utils/api";
 
 export default function Hero(props: pages_interface) {
-  const [user, setUser] = useState({
+  const [_, setUser] = useState({
     about: "",
   });
 

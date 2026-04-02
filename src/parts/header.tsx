@@ -1,6 +1,5 @@
 import { link_interface } from "./../utils/interfaces.tsx";
 import {
-  faAward,
   faBlog,
   faContactCard,
   faFolderOpen,

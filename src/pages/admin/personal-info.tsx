@@ -61,9 +61,9 @@ export default function PersonalInfo() {
   return (
     <div className="flex flex-col md:flex-row gap-2 w-full h-full overflow-y-auto">
       <div className="flex flex-col w-full md:w-[calc(40%-0.5rem)] gap-2">
-        {Object.keys(user).map((key) => {
+        {Object.keys(user).map((key: string) => {
           return (
-            <Input value={user} onChange={setUser} name={key}>
+            <Input value={user} onChange={setUser} name={key.toString()}>
               {key.toUpperCase().replace(/_/g, " ")}
             </Input>
           );

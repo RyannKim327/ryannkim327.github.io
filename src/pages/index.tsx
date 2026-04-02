@@ -1,6 +1,5 @@
 import { Outlet } from "react-router";
 import AdminController from "../middleware/admin_controller";
-import { useState } from "react";
 import AdminSidebar from "../parts/admin-sidebar";
 
 export default function Admin() {

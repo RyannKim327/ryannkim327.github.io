@@ -5,6 +5,12 @@
 > - This changelog is derived from this repo’s **git history** (non-merge commits). It’s maintained manually and is not automatically tied to `package.json`.
 > - Versions follow semantic versioning (**MAJOR.MINOR.PATCH**).
 
+### v3.6.1 - 2026-04-02
+
+- **Improvements & Fixes**
+  - Refined type safety for `Input` and `PersonalInfo` components.
+  - Cleaned up unused imports and variables in `Admin`, `Header`, `Blogs`, and `Hero` sections for better code quality.
+
 ### v3.6.0 - 2026-04-02
 
 - **Features & Enhancements**

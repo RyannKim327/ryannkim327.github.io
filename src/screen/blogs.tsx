@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { blogs, pages_interface } from "../utils/interfaces";
 import { get } from "../utils/api";
-import ReactMarkdown from "react-markdown";
 import { Link } from "react-router";
 
 export default function Blogs(props: pages_interface) {
