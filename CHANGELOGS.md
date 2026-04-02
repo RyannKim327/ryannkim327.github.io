@@ -5,6 +5,14 @@
 > - This changelog is derived from this repo’s **git history** (non-merge commits). It’s maintained manually and is not automatically tied to `package.json`.
 > - Versions follow semantic versioning (**MAJOR.MINOR.PATCH**).
 
+### v3.6.0 - 2026-04-02
+
+- **Features & Enhancements**
+  - Added `Poem` preview functionality for poetic content.
+  - Initiated `Resume` Layout and converted it into a reusable component for consistent presentation.
+- **Improvements & Fixes**
+  - Refined component architecture for better reusability across the portfolio.
+
 ### v3.5.1 - 2026-03-28
 
 - **Features & Enhancements**

@@ -47,7 +47,7 @@ export default function Projects(props: pages_interface) {
   return (
     <div
       id={props.id}
-      className={`flex flex-col ${props.className} gap-1 w-full h-full py-2`}
+      className={`flex flex-col ${props.className} gap-1 w-full h-full p-3 md:p-10`}
     >
       <h1 className="text-base lg:text-2xl">
         {category[0].toUpperCase() + category.substring(1).toLowerCase()}{" "}
@@ -60,14 +60,14 @@ export default function Projects(props: pages_interface) {
               onClick={() => {
                 setCategory(category_.toLowerCase());
               }}
-              className={`${category_ === category ? "bg-transparent border border-solid border-black dark:border-[#f8f8ff]" : "border border-solid border-transparent bg-[#e1e2e3] dark:bg-[#1d1f21]"} w-full text-center select-none px-2 rounded-md cursor-pointer`}
+              className={`flex items-center justify-center ${category_ === category ? "bg-transparent border border-solid border-black dark:border-[#f8f8ff]" : "border border-solid border-transparent bg-[#e1e2e3] dark:bg-[#1d1f21]"} w-full text-center select-none px-2 py-1 rounded-md cursor-pointer`}
             >
               {category_[0].toUpperCase() + category_.substring(1)}
             </span>
           );
         })}
       </div>
-      <div className="flex flex-wrap justify-center gap-2 w-full h-full box-border overflow-y-auto px-2 pb-4">
+      <div className="flex flex-wrap justify-center gap-2 w-full h-full box-border overflow-y-auto">
         {listProjects.length > 0 ? (
           projects.length <= 0 ? (
             <p>
@@ -86,7 +86,7 @@ export default function Projects(props: pages_interface) {
                   style={{
                     backgroundImage: `url(${item.img ? retrieval("retrieve", { file: item.img }) : ""})`,
                   }}
-                  className={`flex flex-col justify-end w-full md:w-[calc(33.333%-0.5rem)] aspect-video text-white p-2 border border-slate-950 dark:border-slate-500 border-solid lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
+                  className={`flex flex-col justify-end w-full md:w-[calc(25%-0.5rem)] aspect-video text-white border border-slate-950 dark:border-slate-500 border-solid lg:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
                 >
                   <span className="flex flex-col bg-[#efefef]/50 text-black dark:text-white dark:bg-[#212121]/50 select-none cursor-pointer hover:underline justify-center items-center box-border">
                     <h1 className="text-base md:text-xl text-center">

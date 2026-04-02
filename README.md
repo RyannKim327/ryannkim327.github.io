@@ -1,6 +1,6 @@
 # RyannKim327 Portfolio
 
-**Project version:** `3.5.1`
+**Project version:** `3.6.0`
 
 [![wakatime](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c.svg)](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c)
 ![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat&logo=react)
@@ -52,9 +52,11 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 - 🎨 **Tailwind CSS** - Utility-first CSS framework for rapid styling
 - 📦 **Component-Based Architecture** - Modular and maintainable code structure
 - 🌙 **Dark/Light Theme** - Elegant theme switching with dark and light modes, featuring purple accents
+- 📄 **Reusable Resume Component** - Integrated resume layout for professional presentation
 - 📝 **Blog System** - Fetch + view blog posts with Markdown rendering
 - 🖼️ **Blog Post Images** - Support for optional image galleries attached to blog posts
 - 📜 **Dedicated Certifications** - Paginated list of certifications for better showcase
+- 📜 **Poem Preview** - Added functionality to preview poetic content
 - 💅 **Enhanced Markdown Styling** - Proper list styling, code blocks, and inline code formatting
 - 🧰 **Admin Dashboard (WIP)** - Manage portfolio content (experiences/projects/blogs)
 - 📱 **Admin Responsive UI** - Improved mobile/tablet usability in admin pages
@@ -177,7 +179,7 @@ This portfolio is built on the principle of **"Functional Elegance"**—balancin
 
 The full changelog has been moved to [CHANGELOGS.md](CHANGELOGS.md).
 
-**Latest:** v3.5.1 (Current) — 2026-03-28
+**Latest:** v3.6.0 (Current) — 2026-04-02
 
 ## 🌐 Deployment
 

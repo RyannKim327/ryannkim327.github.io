@@ -64,7 +64,7 @@ export default function Resume(props: resumeProps) {
   );
 
   return (
-    <div className="flex flex-col bg-white text-black aspect-[210/297]">
+    <div className="flex flex-col bg-white text-black aspect-[210/297] overflow-y-auto md:overflow-hidden">
       <div className="flex flex-row items-center justify-between py-1 px-4">
         <div className="flex items-center gap-2">
           <div className="w-15 aspect-square overflow-hidden rounded-full border border-solid border-black">

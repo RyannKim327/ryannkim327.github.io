@@ -59,8 +59,8 @@ export default function PersonalInfo() {
   });
 
   return (
-    <div className="flex flex-col md:flex-row gap-2 w-full h-full">
-      <div className="flex flex-col w-[calc(40%-0.5rem)] gap-2 overflow-y-auto">
+    <div className="flex flex-col md:flex-row gap-2 w-full h-full overflow-y-auto">
+      <div className="flex flex-col w-full md:w-[calc(40%-0.5rem)] gap-2">
         {Object.keys(user).map((key) => {
           return (
             <Input value={user} onChange={setUser} name={key}>
@@ -69,7 +69,7 @@ export default function PersonalInfo() {
           );
         })}
       </div>
-      <div className="w-[calc(60%-0.5rem)] overflow-y-auto">
+      <div className="w-fullmd:w-[calc(60%-0.5rem)]">
         <Resume user={user} data={experiences} />
       </div>
     </div>

@@ -30,12 +30,12 @@ export default function Certificates(props: pages_interface) {
   return (
     <div
       id={props.id}
-      className={`${props.className} flex flex-col overflow-hidden overflow-y-scroll w-full h-full`}
+      className={`${props.className} flex flex-col overflow-x-hidden w-full`}
     >
       <div className="flex flex-col md:flex-row md:flex-wrap w-full p-2 gap-2">
         {certs.map((cert: certificates) => {
           return (
-            <div className="flex flex-col relative w-full md:w-[calc(33.333%-0.5rem)] aspect-video group rounded overflow-hidden">
+            <div className="flex flex-col relative w-full md:w-[calc(50%-0.5rem)] aspect-video group rounded overflow-hidden">
               <img
                 className="absolute w-full h-full"
                 src={isUrl(cert.url)}
@@ -52,7 +52,7 @@ export default function Certificates(props: pages_interface) {
         })}
         <Link
           to={`certificates`}
-          className="w-full md:w-[calc(33.333%-0.5rem)] aspect-video"
+          className="w-full md:w-[calc(50%-0.5rem)] aspect-video"
         >
           <div className="flex flex-col bg-zinc-200 items-center justify-center text-center shadow-sm shadow-black text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-full h-full overflow-hidden gap-1">
             <h1 className="text-[1.5rem]">See More</h1>

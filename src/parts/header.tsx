@@ -59,11 +59,8 @@ export default function Header(props: HeaderProps) {
         {/* </List> */}
         {props.isLoaded ? (
           <>
-            <List link="exp" icon={faUser}>
-              Experiences
-            </List>
-            <List link="certs" icon={faAward}>
-              Certifications
+            <List link="about" icon={faUser}>
+              About
             </List>
             <List link="projects" icon={faFolderOpen}>
               Projects

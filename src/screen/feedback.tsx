@@ -28,7 +28,7 @@ export default function Feedback(props: pages_interface) {
   return (
     <div
       id={props.id}
-      className={`flex flex-col ${props.className} gap-1 w-full h-full py-2`}
+      className={`flex flex-col ${props.className} gap-1 w-full h-full p-3 md:p-10`}
     >
       {search && feedbacks !== null ? (
         <>

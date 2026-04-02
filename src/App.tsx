@@ -13,11 +13,15 @@ function App() {
   return (
     <div className="flex flex-col dark:bg-slate-950 dark:text-white bg-[#f9fafb] h-dvh w-dvw select-none overflow-hidden">
       <Header isLoaded={true} />
-      <div className="h-full w-full snap-mandatory snap-y scroll-smooth overflow-y-scroll overflow-x-hidden">
+      <div className="h-full w-full snap-mandatory snap-y overflow-y-auto overflow-x-hidden">
         <Hero id="home" className="snap-start" />
-
-        <Experiences id="exp" className="snap-start" />
-        <Certificates id="certs" className="snap-start" />
+        <div
+          id="about"
+          className="flex flex-col md:flex-row md:h-full w-full overflow-y-scroll md:overflow-hidden snap-start p-3 md:p-10 gap-5"
+        >
+          <Experiences id="exp" />
+          <Certificates id="certs" />
+        </div>
         <Projects id="projects" className="snap-start" />
         <Blogs id="blog" className="snap-start" />
         <Feedback id="feedback" className="snap-start" />

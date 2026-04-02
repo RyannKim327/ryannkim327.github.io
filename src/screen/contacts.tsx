@@ -79,14 +79,14 @@ export default function Contact(props: pages_interface) {
   return (
     <div
       id={props.id}
-      className={`flex flex-col ${props.className} p-2 xl:py-4 gap-10 h-full w-full justify-between`}
+      className={`flex flex-col ${props.className} p-3 md:p-10 gap-10 h-full w-full justify-between`}
     >
       <iframe
         src="https://www.google.com/maps/embed/v1/place?q=Ibabang+Iyam&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
         title="Location"
         loading="lazy"
         allowFullScreen={false}
-        className="h-3/4 w-full dark:grayscale dark:invert transition ease-in delay-100"
+        className="h-[calc(66.666%-0.5rem)] w-full dark:grayscale dark:invert transition ease-in delay-100"
       />
       <form
         onSubmit={sendContact}
