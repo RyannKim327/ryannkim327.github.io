@@ -33,5 +33,5 @@ export default function Coat({ children }: CoatProps) {
 		);
 	}
 
-	return <>{children}</>;
+	return <div className="flex flex-col dark:bg-slate-950 dark:text-white bg-[#f9fafb] h-dvh w-dvw select-none overflow-hidden">{children}</div>;
 }
