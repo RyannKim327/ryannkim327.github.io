@@ -11,7 +11,7 @@ import Chatbot from "./screen/chatbot";
 
 function App() {
   return (
-    <div className="flex flex-col dark:bg-slate-950 dark:text-white bg-[#f9fafb] h-full w-full select-none overflow-hidden">
+    <div className="flex flex-col dark:bg-slate-950 dark:text-white bg-[#f9fafb] h-dvh w-dvw select-none overflow-hidden">
       <Header isLoaded={true} />
       <div className="h-full w-full snap-mandatory snap-y overflow-y-auto overflow-x-hidden">
         <Hero id="home" className="snap-start" />

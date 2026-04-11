@@ -1,6 +1,12 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css");
 @import "tailwindcss";
 
+#root{
+  height: 100dvh;
+  width: 100dvw;
+  overflow: hidden;
+}
+
 .link-animation::after {
   background-color: #333333;
   content: "";
