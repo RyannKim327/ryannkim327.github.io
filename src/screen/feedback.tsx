@@ -62,6 +62,7 @@ export default function Feedback(props: pages_interface) {
                 Currently, there is no feedback from any of my applications, of
                 you want to, please use my app first and give me some feedback.
               </p>
+              <span className="border border-solid border-slate-950 dark:border-slate-500 p-2 px-4 rounded-full hover:bg-slate-950 hover:text-white hover:dark:bg-slate-200 hover:dark:text-black">Give me a feedback through this page</span>
             </div>
           )}
         </>
