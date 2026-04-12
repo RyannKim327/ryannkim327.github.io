@@ -18,6 +18,7 @@ import Blogs from "./pages/user/blogs.tsx";
 import Certis from "./pages/user/certificates.tsx";
 import Coat from "./middleware/coat-control.tsx";
 import PersonalInfo from "./pages/admin/personal-info.tsx";
+import FeedbackPage from "./pages/user/feedback.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -28,6 +29,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/blog/:id" element={<GetBlog />} />
           <Route path="/blog" element={<Blogs />} />
           <Route path="/certificates" element={<Certis />} />
+          <Route path="/feedback" element={<FeedbackPage />} />
           <Route path={`/${admin}/*`} element={<Admin />}>
             <Route path="" element={<Projects />} />
             <Route path="exp" element={<Experiences />} />

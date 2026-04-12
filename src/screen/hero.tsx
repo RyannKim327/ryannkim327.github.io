@@ -30,13 +30,12 @@ export default function Hero(props: pages_interface) {
           A Full-Stack Software Developer
         </h3>
       </div>
-      <div className="md:flex md:flex-col hidden justify-center h-full gap-3 text-[1.75rem] p-2">
-        <p>傑</p>
-        <p>作</p>
-        <p>一</p>
-        <p>枚</p>
-        <p>の</p>
-        <p>紙</p>
+      <div className="md:flex md:flex-col hidden justify-center h-full gap-3 text-[2rem] p-2">
+        <p>ᜇ</p>
+        <p>ᜌ</p>
+        <p>ᜈ᜔</p>
+        <p>ᜃᜒ</p>
+        <p>ᜋ᜔</p>
       </div>
       <div className="md:flex-col hidden md:flex w-full h-full items-start justify-start p-2">
         <img
