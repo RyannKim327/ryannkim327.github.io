@@ -34,7 +34,7 @@ export default function GetBlog() {
   return (
     <>
       {blog != null ? (
-        <div className="flex flex-col text-black dark:bg-slate-950 bg-[#f9fafb] dark:text-white w-dvw h-dvh select-none">
+        <div className="flex flex-col h-full w-full select-none">
           <div className="flex flex-col p-4 h-full w-full">
             <div className="flex w-full justify-between items-center gap-3 border-b border-b-black dark:border-b-white border-b-solid px-3 pb-5">
               <div

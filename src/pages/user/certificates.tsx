@@ -51,7 +51,7 @@ export default function Certis() {
   }, [page]);
 
   return (
-    <div className="flex flex-col text-black dark:bg-slate-950 bg-[#f9fafb] dark:text-white w-dvw h-dvh select-none">
+    <div className="flex flex-col w-full h-full select-none">
       <div className="flex flex-col justify-center w-full gap-3 border-b border-b-black dark:border-b-white border-b-solid px-3 py-2">
         <div className="flex">
           <div
@@ -67,7 +67,7 @@ export default function Certis() {
       <div className="flex flex-wrap gap-2 overflow-y-auto p-2 pb-15">
         {certList.map((cert) => {
           return (
-            <div className="flex flex-col relative w-full md:w-[calc(33.333%-0.5rem)] aspect-video group rounded overflow-hidden">
+            <div className="flex flex-col relative w-full md:w-[calc(33.333%-0.5rem)] aspect-video group rounded overflow-hidden border border-black border-solid">
               <img
                 className="absolute w-full h-full"
                 src={isUrl(cert.url)}
@@ -84,7 +84,7 @@ export default function Certis() {
         })}
       </div>
       <div className="flex left-0 right-0 bottom-0 fixed items-center z-10 justify-center p-2">
-        <div className="flex justify-center bg-slate-300 dark:bg-slate-950/50 px-10 py-1 gap-3 rounded">
+        <div className="flex justify-center bg-slate-300/50 backdrop-blur-sm px-10 py-1 gap-3 rounded">
           <p
             className={`flex p-1 rounded aspect-square h-8 items-center justify-center cursor-pointer`}
             onClick={() => {
@@ -101,7 +101,7 @@ export default function Certis() {
             Array.from({ length: pages }).map((_, index) => {
               return (
                 <p
-                  className={`flex ${index === page - 1 ? "bg-slate-950 dark:bg-slate-400 text-white dark:text-black" : ""} p-1 rounded aspect-square h-8 items-center justify-center cursor-pointer`}
+                  className={`flex ${index === page - 1 ? "bg-slate-950/50 text-white " : ""} p-1 rounded aspect-square h-8 items-center justify-center cursor-pointer`}
                   onClick={() => {
                     setPage(index + 1);
                   }}

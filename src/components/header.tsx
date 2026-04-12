@@ -43,7 +43,7 @@ function List(props: link_interface) {
 export default function Header(props: HeaderProps) {
   return (
     <header
-      className={`bg-[#f9fafb] dark:bg-slate-900 z-1 dark:text-white flex flex-row justify-between items-center px-5 shadow shadow-zinc-500 dark:shadow-slate-500 h-[75px]`}
+      className={`z-1 flex flex-row justify-between items-center px-5 shadow shadow-slate-500 h-[75px]`}
     >
       <img
         onClick={() => {
@@ -52,10 +52,7 @@ export default function Header(props: HeaderProps) {
         src={Logo}
         className="h-[50px] rounded-full aspect-square"
       />
-      <nav className="flex flex-row list-none h-full items-center">
-        {/* <List link="home" icon={faHouse}> */}
-        {/*   {/* Home *} */}
-        {/* </List> */}
+      <nav className="flex flex-row list-none">
         {props.isLoaded ? (
           <>
             <List link="about" icon={faUser}>

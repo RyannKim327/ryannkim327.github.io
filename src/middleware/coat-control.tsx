@@ -39,5 +39,5 @@ export default function Coat({ children }: CoatProps) {
 		);
 	}
 
-	return <div className="dark:bg-slate-950 dark:text-white bg-[#f9fafb] h-dvh w-dvw md:w-screen md:h-screen select-none overflow-hidden">{children}</div>;
+	return <div className="h-dvh w-dv select-none overflow-hidden">{children}</div>;
 }

@@ -42,7 +42,7 @@ export default function Blogs() {
   }, [page]);
 
   return (
-    <div className="flex flex-col text-black dark:bg-slate-950 bg-[#f9fafb] dark:text-white w-dvw h-dvh select-none">
+    <div className="flex flex-col w-full h-full select-none">
       <div className="flex flex-col justify-center w-full gap-3 border-b border-b-black dark:border-b-white border-b-solid px-3 py-2">
         <div className="flex">
           <div
