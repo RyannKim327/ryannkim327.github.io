@@ -11,18 +11,18 @@ const InformationMed = (props: exp_interface) => {
   return (
     <div className="flex flex-row w-full p-3 gap-2 justify-end">
       <div
-        className={`translate-y-1/2 bg-white border-2 border-slate-900 w-10 h-10 rounded-full flex items-center justify-center `}
+        className={`translate-y-1/2 bg-taupe-300 border-taupe-600 border-2 w-10 h-10 rounded-full flex items-center justify-center `}
       >
-        <i className={`text-slate-900 ${props.icon}`}></i>
+        <i className={`text-taupe-600 ${props.icon}`}></i>
       </div>
-      <div className="bg-slate-300 border-slate-900 text-black dark:bg-slate-900 border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-[calc(90%-0.5rem)]">
-        <h2 className="text-black dark:text-[#fffafa] font-bold text-[0.8rem]">
+      <div className="bg-taupe-300 border-taupe-600 border border-solid p-4 rounded-lg w-[calc(90%-0.5rem)]">
+        <h2 className="text-taupe-600 font-bold text-[0.8rem]">
           {props.year}
         </h2>
-        <h3 className="text-[1rem] font-semibold">{props.title}</h3>
+        <h3 className="text-taupe-900 text-[1rem] font-semibold">{props.title}</h3>
         <ul className="text-sm mt-2 list-disc list-inside">
           {props.children.map((c, i) => (
-            <li key={i} className="text-[0.75rem]">
+            <li key={i} className="text-taupe-900 text-[0.75rem]">
               {c}
             </li>
           ))}

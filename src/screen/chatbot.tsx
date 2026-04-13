@@ -147,8 +147,8 @@ Rules:
   return (
     <div className="fixed z-10 bottom-5 right-5">
       {show ? (
-        <div className="flex flex-col w-75 h-150 md:w-100 md:h-110 bg-slate-100 dark:bg-slate-700 md:backdrop-blur-md md:bg-slate-100/50 md:dark:bg-slate-700/50 border border-slate-950 border-solid overflow-hidden rounded gap-2">
-          <div className="flex justify-between bg-slate-300 text-black dark:bg-slate-950 dark:text-white p-2">
+        <div className="flex flex-col w-75 h-150 md:w-100 md:h-110 bg-taupe-300/50 md:backdrop-blur-md border border-solid overflow-hidden rounded gap-2">
+          <div className="flex justify-between bg-taupe-600 text-taupe-200 p-2">
             <div className="flex flex-col">
               <span className="font-serif font-bold italic">k.guin</span>
               <span className="text-[0.75rem] font-serif font-bold">
@@ -187,7 +187,7 @@ Rules:
               );
             })}
           </div>
-          <div className="flex bg-slate-200 text-black dark:bg-slate-950 dark:text-white items-center px-2 py-1 rounded">
+          <div className="flex bg-taupe-300 items-center px-2 py-1 rounded">
             <input
               placeholder="Enter your message here"
               disabled={sending}
@@ -223,7 +223,7 @@ Rules:
           onClick={() => {
             setShow(true);
           }}
-          className={`flex justify-center items-center bg-slate-700/50 border border-solid border-slate-950 h-10 w-10 rounded-full cursor-pointer`}
+          className={`flex justify-center items-center bg-taupe-300 border-taupe-900 text-taupe-900 border border-solid h-10 w-10 rounded-full cursor-pointer`}
         >
           <FontAwesomeIcon icon={faRobot} />
         </div>
