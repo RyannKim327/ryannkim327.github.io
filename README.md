@@ -1,6 +1,6 @@
 # RyannKim327 Portfolio
 
-**Project version:** `3.6.1`
+**Project version:** `3.7.0`
 
 [![wakatime](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c.svg)](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c)
 ![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat&logo=react)
