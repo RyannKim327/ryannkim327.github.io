@@ -60,7 +60,7 @@ export default function Projects(props: pages_interface) {
               onClick={() => {
                 setCategory(category_.toLowerCase());
               }}
-              className={`flex items-center justify-center ${category_ === category ? "bg-transparent border border-solid border-taupe-900" : "border border-solid border-transparent bg-taupe-300"} w-full text-center select-none px-2 py-1 rounded-md cursor-pointer`}
+              className={`flex items-center justify-center ${category_ === category ? "bg-transparent border border-solid border-slate-900 dark:border-slate-100" : "border border-solid border-transparent bg-slate-300 dark:bg-slate-900"} w-full text-center select-none px-2 py-1 rounded-md cursor-pointer`}
             >
               {category_[0].toUpperCase() + category_.substring(1)}
             </span>
@@ -86,9 +86,9 @@ export default function Projects(props: pages_interface) {
                   style={{
                     backgroundImage: `url(${item.img ? retrieval("retrieve", { file: item.img }) : ""})`,
                   }}
-                  className={`flex flex-col justify-end w-full md:w-[calc(25%-0.5rem)] aspect-video bg-taupe-600 text-taupe-100 border border-taupe-600 border-solid md:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
+                  className={`flex flex-col justify-end w-full md:w-[calc(25%-0.5rem)] aspect-video bg-slate-100 dark:bg-slate-900 text-slate-950 dark:bg-slate-100 border-slate-900 dark:bg-slate-900 dark:text-slate-100 dark:border-slate-100 border border-solid md:grayscale hover:grayscale-0 bg-center bg-cover bg-no-repeat box-border overflow-hidden rounded transition ease-all delay-150`}
                 >
-                  <span className="flex flex-col bg-taupe-100/50 text-taupe-900 select-none cursor-pointer hover:underlinei justify-center items-center box-border">
+                  <span className="flex flex-col bg-slate-100/50 dark:bg-slate-950/50 select-none cursor-pointer hover:underlinei justify-center items-center box-border">
                     <h1 className="text-base md:text-xl text-center">
                       {item.name}
                     </h1>

@@ -44,7 +44,7 @@ export default function Hero(props: pages_interface) {
         />
         <img
           src={Light}
-          className="rounded-md dark:hidden h-[calc(50%-0.5rem] mt-[calc(25%-1rem)]"
+          className="rounded-md inline dark:hidden h-[calc(50%-0.5rem)] mt-[calc(25%-1rem)]"
         />
       </div>
     </div>

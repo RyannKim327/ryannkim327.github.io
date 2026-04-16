@@ -68,7 +68,7 @@ Rules:
 8. You may call the developer by their nickname.
 9. Respond in a natural, conversational way like a real person. Keep answers clear and easy to read without being overly long. Small reactions, friendly tone, and personality are welcome when appropriate.
 10. Whenever you mention the developer's social media or links, format them as clickable Markdown links.
-11. Avoid using tables. If you need to present multiple pieces of information, prefer simple lists or short paragraphs so the response is easier to read and understand.`.trim(),
+11. Avoid using tables, instead use lists and sub lists. If you need to present multiple pieces of information, prefer simple lists or short paragraphs so the response is easier to read and understand.`.trim(),
           },
         ]);
       } else {
@@ -147,8 +147,8 @@ Rules:
   return (
     <div className="fixed z-10 bottom-5 right-5">
       {show ? (
-        <div className="flex flex-col w-75 h-150 md:w-100 md:h-110 bg-taupe-300/50 md:backdrop-blur-md border border-solid overflow-hidden rounded gap-2">
-          <div className="flex justify-between bg-taupe-600 text-taupe-200 p-2">
+        <div className="flex flex-col w-75 h-150 md:w-100 md:h-110 bg-slate-300/50 dark:bg-slate-900/50 md:backdrop-blur-md border border-solid overflow-hidden rounded gap-2">
+          <div className="flex justify-between bg-slate-600 text-slate-200 dark:bg-slate-950 p-2">
             <div className="flex flex-col">
               <span className="font-serif font-bold italic">k.guin</span>
               <span className="text-[0.75rem] font-serif font-bold">
@@ -174,7 +174,7 @@ Rules:
                   className={`flex ${chat.role == "user" ? "justify-end" : "justify-start"}`}
                 >
                   <span
-                    className={`max-w-2/3 ${chat.role == "user" ? "bg-slate-500 dark:bg-zinc-500 text-white" : "bg-gray-700 dark:bg-zinc-700 text-white"} rounded-lg py-1 px-2`}
+                    className={`max-w-2/3 ${chat.role == "user" ? "bg-slate-100 dark:bg-slate-950 text-slate-950 dark:text-slate-100" : "border-slate-950 dark:border-slate-100 bg-slate-50/50 dark:bg-slate-950/50 text-slate-950 dark:text-slate-100 border border-solid"} rounded-lg py-1 px-2`}
                   >
                     <Markdown>
                       {chat.content.replace(
@@ -187,7 +187,7 @@ Rules:
               );
             })}
           </div>
-          <div className="flex bg-taupe-300 items-center px-2 py-1 rounded">
+          <div className="flex bg-slate-300 text-slate-900 dark:bg-slate-950 dark:text-slate-100 items-center px-2 py-1 rounded">
             <input
               placeholder="Enter your message here"
               disabled={sending}
@@ -223,7 +223,7 @@ Rules:
           onClick={() => {
             setShow(true);
           }}
-          className={`flex justify-center items-center bg-taupe-300 border-taupe-900 text-taupe-900 border border-solid h-10 w-10 rounded-full cursor-pointer`}
+          className={`flex justify-center items-center bg-slate-300 border-slate-900 text-slate-900 border border-solid h-10 w-10 rounded-full cursor-pointer`}
         >
           <FontAwesomeIcon icon={faRobot} />
         </div>
