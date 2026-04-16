@@ -1,7 +1,7 @@
 {
   "name": "ryannkim327.is-a.dev",
   "private": true,
-  "version": "3.6.1",
+  "version": "3.7.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,16 +17,16 @@
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "@fortawesome/react-fontawesome": "^3.3.0",
     "@tailwindcss/vite": "^4.2.2",
-    "@types/node": "^25.5.2",
+    "@types/node": "^25.6.0",
     "@uiw/react-md-editor": "^4.1.0",
-    "axios": "^1.14.0",
+    "axios": "^1.15.0",
     "axios-cookiejar-support": "^6.0.5",
     "devtools-detector": "^2.0.25",
     "gh-pages": "^6.3.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
     "react-markdown": "^10.1.0",
-    "react-router": "^7.14.0",
+    "react-router": "^7.14.1",
     "react-syntax-highlighter": "^16.1.1",
     "react-to-pdf": "^3.2.2",
     "react-toastify": "^11.0.5",
@@ -38,13 +38,13 @@
     "@types/react-dom": "^19.2.3",
     "@types/react-syntax-highlighter": "^15.5.13",
     "@vitejs/plugin-react-swc": "^4.3.0",
-    "eslint": "^10.1.0",
+    "eslint": "^10.2.0",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.4.0",
+    "globals": "^17.5.0",
     "tailwindcss": "^4.2.2",
     "typescript": "~6.0.2",
-    "typescript-eslint": "^8.58.0",
-    "vite": "^8.0.3"
+    "typescript-eslint": "^8.58.2",
+    "vite": "^8.0.8"
   }
 }

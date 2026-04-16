@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { blogs, pages_interface } from "../utils/interfaces";
 import { get } from "../utils/api";
 import { Link } from "react-router";
+import Card from "../components/card";
 
 export default function Blogs(props: pages_interface) {
   const [_blogs, setBlogs] = useState<null | blogs[]>([]);
@@ -29,7 +30,7 @@ export default function Blogs(props: pages_interface) {
         className={
           !_blogs || _blogs.length === 0
             ? "flex flex-col h-full w-full justify-center items-center overflow-y-scroll"
-            : "flex flex-row flex-wrap w-full gap-2 justify-evenly overflow-y-auto"
+            : "flex flex-row flex-wrap w-full gap-1 justify-evenly overflow-y-auto"
         }
       >
         {_blogs && _blogs.length > 0 ? (
@@ -39,7 +40,7 @@ export default function Blogs(props: pages_interface) {
                 to={`blog/${blog.id}`}
                 className="w-full md:w-[calc(25%-0.5rem)] aspect-video"
               >
-                <div className="flex flex-col bg-zinc-200 shadow-sm shadow-black text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-full h-full overflow-hidden gap-1">
+                <Card className="h-full p-2">
                   <h1 className="text-[1rem] text-nowrap text-ellipsis">
                     {blog.title}
                   </h1>
@@ -56,7 +57,7 @@ export default function Blogs(props: pages_interface) {
                         return null;
                       })
                     ) : (
-                      <span className="bg-slate-100 text-black rounded px-2">
+                      <span className="bg-taupe-300 text-taupe-900 rounded px-2">
                         No Tag Attached
                       </span>
                     )}
@@ -65,7 +66,7 @@ export default function Blogs(props: pages_interface) {
                   <div className="flex flex-col text-sm font-serif items-end">
                     Posted: {blog.time}
                   </div>
-                </div>
+                </Card>
               </Link>
             );
           })
@@ -79,12 +80,12 @@ export default function Blogs(props: pages_interface) {
           to={`blog`}
           className="w-full md:w-[calc(25%-0.5rem)] aspect-video"
         >
-          <div className="flex flex-col bg-zinc-200 items-center justify-center text-center shadow-sm shadow-black text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-full h-full overflow-hidden gap-1">
+          <Card className="items-center justify-center text-center h-full p-2">
             <h1 className="text-[1.5rem]">See More</h1>
             <span>For more blogs posted, kindly click this card.</span>
-          </div>
+          </Card>
         </Link>
       </div>
-    </div>
+    </div >
   );
 }

@@ -5,6 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { Link, useNavigate } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import Card from "../../components/card";
 
 export default function Blogs() {
   const [blogList, setBlogs] = useState<blogs[]>([]);
@@ -59,10 +60,10 @@ export default function Blogs() {
         {blogList.map((blog) => {
           return (
             <Link to={`${blog.id}`} className="w-full aspect-video">
-              <div className="flex flex-col bg-zinc-200 shadow-sm shadow-black text-black dark:bg-slate-900 dark:border dark:border-slate-500 dark:border-solid dark:text-white p-4 rounded-lg w-full h-full overflow-hidden gap-1">
+              <Card className="p-4 w-full h-full overflow-hidden gap-1">
                 <span>{blog.title}</span>
                 <span className="overflow-hidden">{blog.content}</span>
-              </div>
+              </Card>
             </Link>
           );
         })}

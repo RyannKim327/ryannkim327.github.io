@@ -5,6 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import Card from "../../components/card";
 
 const isUrl = (url: string) => {
   if (url.startsWith("http")) {
@@ -67,7 +68,7 @@ export default function Certis() {
       <div className="flex flex-wrap gap-2 overflow-y-auto p-2 pb-15">
         {certList.map((cert) => {
           return (
-            <div className="flex flex-col relative w-full md:w-[calc(33.333%-0.5rem)] aspect-video group rounded overflow-hidden border border-black border-solid">
+            <Card className="relative w-full md:w-[calc(33.333%-0.5rem)] aspect-video group rounded">
               <img
                 className="absolute w-full h-full"
                 src={isUrl(cert.url)}
@@ -79,7 +80,7 @@ export default function Certis() {
                   <span>[{cert.category}]</span>
                 </span>
               </div>
-            </div>
+            </Card>
           );
         })}
       </div>

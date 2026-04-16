@@ -5,6 +5,19 @@
 > - This changelog is derived from this repo’s **git history** (non-merge commits). It’s maintained manually and is not automatically tied to `package.json`.
 > - Versions follow semantic versioning (**MAJOR.MINOR.PATCH**).
 
+### v3.7.0 - 2026-04-16
+
+- **Features & Enhancements**
+  - Added `Feedback` form screen for user engagement.
+  - Introduced a reusable `Card` component for consistent UI across Blogs, Certifications, and Experiences.
+  - Implemented `Poem` preview functionality.
+- **Improvements & Fixes**
+  - Refined UI with updated `slate` and `taupe` color schemes.
+  - Optimized responsiveness in `Hero`, `Blogs`, and `Certifications` sections.
+  - Updated dependencies including `React 19.2.5`, `Vite 8.0.8`, and `Tailwind CSS 4.2.2`.
+  - Improved `Coat-Control` middleware and devtools detection logic.
+  - Fixed API endpoint handling for production and local environments.
+
 ### v3.6.1 - 2026-04-02
 
 - **Improvements & Fixes**
