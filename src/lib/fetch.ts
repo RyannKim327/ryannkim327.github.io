@@ -1,0 +1,52 @@
+import axios, { AxiosResponse } from "axios"
+import { CookieJar } from "tough-cookie";
+
+type parameter = Record<string, any>
+
+const w = await import("axios-cookiejar-support");
+const jar = new CookieJar();
+const api = axios.create({
+	baseURL: 'http://localhost:8000',
+	jar,
+	withCredentials: true
+});
+
+function response(data: AxiosResponse, status: number): parameter {
+	try {
+		if (status >= 200 && status < 300) {
+			if (Array.isArray(data)) {
+				return {
+					message: "Data fetched",
+					data: data,
+				};
+			} else if (typeof data === "object") {
+				return {
+					message: "Data fetched",
+					...data,
+				};
+			}
+		}
+		throw new Error("Something went wrong");
+	} catch (e) {
+		return {
+			error: e,
+		};
+	}
+}
+
+export async function get(endpoint: string, params?: parameter | parameter[]) {
+	const { data, status } = await api.get(endpoint, {
+		params: params,
+		withCredentials: true
+	})
+	return response(data, status)
+}
+
+export async function post(endpoint: string, body: parameter | parameter[]) {
+	const client = w.wrapper(api);
+
+	await client.get("set-cookie");
+
+	const { data, status } = await api.post(endpoint, body)
+	return response(data, status)
+}
