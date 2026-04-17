@@ -2,7 +2,7 @@
 	import Logo from "@/assets/logo.png";
 	import Icon from "@/components/icon.svelte";
 
-	let current = "";
+	export let scroll: number = 0;
 </script>
 
 <div class="flex items-center justify-center py-4 fixed top-[0.25rem] w-full">
@@ -12,16 +12,21 @@
 		<img src={Logo} alt="logo" class="aspect-square w-12" />
 		<ul class="flex items-center gap-2">
 			<li class="cursor-pointer">
-				<Icon icon="fa-user" name="About" selected={true} />
+				<Icon icon="fa-user" name="About" selected={scroll === 1} />
 			</li>
 			<li class="cursor-pointer">
-				<Icon icon="fa-folder-open" name="Projects" />
+				<Icon icon="fa-folder-open" name="Projects" selected={scroll === 2} />
 			</li>
 			<li class="cursor-pointer">
-				<Icon icon="fa-rss" type="fa-solid" name="Blogs" />
+				<Icon
+					icon="fa-rss"
+					type="fa-solid"
+					name="Blogs"
+					selected={scroll === 3}
+				/>
 			</li>
 			<li class="cursor-pointer">
-				<Icon icon="fa-address-card" name="Contact" />
+				<Icon icon="fa-address-card" name="Contact" selected={scroll === 4} />
 			</li>
 		</ul>
 	</nav>

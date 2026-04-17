@@ -10,11 +10,14 @@
 	}
 </script>
 
-<svelte onscroll={handleScroll} />
+<svelte onscroll={handleScroll}></svelte>
 
 <div class="px-5 w-full h-full">
-	<Header />
-	<span class="fixed bottom-1">{y}</span>
+	<Header
+		scroll={Math.round(
+			y / (document.getElementById("main")?.offsetHeight ?? 1),
+		)}
+	/>
 	<div id="main" onscroll={handleScroll} class="h-full w-full overflow-scroll">
 		<Hero />
 		<About />
