@@ -14,7 +14,10 @@
 	});
 </script>
 
-<div id="about" class="flex flex-row w-full h-full gap-5 overflow-hidden">
+<div
+	id="about"
+	class="flex flex-row p-2 pt-[10%] w-full h-full gap-5 overflow-hidden"
+>
 	<div class="w-[calc(50%-0.5rem)] overflow-y-auto">
 		<!-- TODO: Left Side -->
 		{#each exps as exp}
@@ -29,9 +32,12 @@
 	>
 		<!-- TODO: For Right Side -->
 		{#each certi as cert}
-			<div class="flex flex-wrap aspect-video w-[calc(50%-1rem)]">
+			<div class="flex flex-wrap aspect-video w-[calc(50%-1rem)] rounded">
 				<img class="h-full w-full" src={cert.url} alt={cert.source} />
 			</div>
 		{/each}
+		<div class="flex flex-wrap aspect-video w-[calc(50%-1rem)] rounded">
+			<span>Click to see more</span>
+		</div>
 	</div>
 </div>

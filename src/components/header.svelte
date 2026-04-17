@@ -16,7 +16,7 @@
 
 <div class="flex items-center justify-center py-4 fixed top-[0.25rem] w-full">
 	<nav
-		class="flex flex-row items-center gap-2 p-2 bg-[#252525] rounded-full px-4"
+		class="flex flex-row items-center gap-3 p-2 bg-[#252525] rounded-full px-8"
 	>
 		<img
 			onclick={() => {

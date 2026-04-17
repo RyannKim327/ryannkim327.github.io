@@ -2,6 +2,7 @@
 	import Header from "@/components/header.svelte";
 	import About from "./about.svelte";
 	import Hero from "./hero.svelte";
+	import Projects from "./projects.svelte";
 
 	let y = 0;
 
@@ -21,5 +22,6 @@
 	<div id="main" onscroll={handleScroll} class="h-full w-full overflow-scroll">
 		<Hero />
 		<About />
+		<Projects />
 	</div>
 </div>
