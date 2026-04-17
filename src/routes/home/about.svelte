@@ -14,7 +14,7 @@
 	});
 </script>
 
-<div class="flex flex-row w-full h-full gap-5 overflow-hidden">
+<div id="about" class="flex flex-row w-full h-full gap-5 overflow-hidden">
 	<div class="w-[calc(50%-0.5rem)] overflow-y-auto">
 		<!-- TODO: Left Side -->
 		{#each exps as exp}

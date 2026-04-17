@@ -2,7 +2,7 @@
 	import Dark from "@/assets/dark.png"
 </script>
 
-<div class="flex items-center h-full w-full">
+<div id="hero" class="flex items-center h-full w-full">
 	<div class="flex flex-col justify-center items-center md:items-end w-full h-full gap-2 md:gap-5 p-2">
 		<h1 class="text-[2em] w-5/6 md:text-[3em] md:w-5/6 text-center md:text-end md:mt-[calc(25%-1rem)]">
       Ryann Kim M. Sesgundo
