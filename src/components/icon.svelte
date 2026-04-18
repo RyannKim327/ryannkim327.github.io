@@ -6,7 +6,7 @@
 </script>
 
 <span
-	class={`flex gap-1 items-center justify-center ${selected ? "bg-[#555555] px-2 rounded-full text-red-500" : ""} transition-all delay-25 duration-150 ease-in-out`}
+	class={`flex gap-1 items-center justify-center ${selected ? "bg-[#121212]/75 dark:bg-[#555555] px-2 rounded-full text-red-300 dark:text-red-500" : ""} transition-all delay-25 duration-150 ease-in-out`}
 >
 	<span class="p-[2px] aspect-square rounded h-full">
 		<i class={`aspect-square ${type} ${icon} `}></i>

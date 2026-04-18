@@ -3,6 +3,6 @@
 
 </script>
 
-<div class={`flex flex-col dark:bg-[#212121] p-2 rounded ${class_}`}>
+<div class={`flex flex-col bg-[#f0f8ff] dark:bg-[#212121] shadow-sm shadow-black dark:shadow-white p-2 rounded ${class_}`}>
 	<slot />	
 </div>

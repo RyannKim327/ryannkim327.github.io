@@ -12,6 +12,27 @@
 		const height = document.getElementById("main")?.scrollTop ?? 0;
 		y = height;
 	}
+	addEventListener("keydown", (ev: KeyboardEvent) => {
+		const key = ev.keyCode;
+		const keys = {
+			65: "about",
+			66: "blogs",
+			67: "contact",
+			72: "hero",
+			80: "projects",
+		};
+		if (
+			document.activeElement?.tagName.toLowerCase() !== "input" &&
+			document.activeElement?.tagName.toLowerCase() !== "textarea"
+		) {
+			const p = document.getElementById(keys[key] ?? "");
+			if (p) {
+				p.scrollIntoView({
+					behavior: "smooth",
+				});
+			}
+		}
+	});
 </script>
 
 <svelte onscroll={handleScroll}></svelte>
@@ -22,7 +43,11 @@
 			y / (document.getElementById("main")?.offsetHeight ?? 1),
 		)}
 	/>
-	<div id="main" onscroll={handleScroll} class="h-full w-full overflow-scroll">
+	<div
+		id="main"
+		onscroll={handleScroll}
+		class="h-full w-full overflow-scroll snap-y snap-mandatory"
+	>
 		<Hero />
 		<About />
 		<Projects />

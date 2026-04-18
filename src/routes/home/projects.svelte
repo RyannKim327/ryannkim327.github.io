@@ -28,7 +28,7 @@
 
 <div
 	id="projects"
-	class="flex flex-col p-2 pt-[10%] h-full w-full overflow-y-auto"
+	class="flex flex-col p-2 pt-[10%] h-full w-full overflow-y-auto snap-start"
 >
 	<div class="flex gap-2 items-center justify-center py-2">
 		{#each categories as category}
@@ -36,7 +36,7 @@
 				onclick={() => {
 					filter(category);
 				}}
-				class={`cursor-pointer ${active === category.toLowerCase() ? "" : "bg-[#313131]"} px-2 rounded list-none text-[0.80em]`}
+				class={`select-none cursor-pointer ${active === category.toLowerCase() ? "border border-black dark:border-white border-solid" : "bg-[#f0f8ff] dark:bg-[#313131]"} px-2 rounded list-none text-[0.80em]`}
 			>
 				{#if category.length <= 3 && category !== "all"}
 					{category.toUpperCase()}

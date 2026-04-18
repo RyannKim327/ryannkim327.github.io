@@ -13,7 +13,7 @@
 
 <div
 	id="blogs"
-	class="flex flex-wrap p-2 pt-[10%] w-full h-full gap-2 overflow-hidden overflow-y-auto"
+	class="flex flex-wrap p-2 pt-[10%] w-full h-full gap-2 overflow-hidden overflow-y-auto snap-start"
 >
 	{#each blogs as blog}
 		<Card class_="aspect-video w-[calc(33.333%-0.5rem)] justify-between">
