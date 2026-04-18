@@ -4,6 +4,7 @@
 	import Hero from "./hero.svelte";
 	import Projects from "./projects.svelte";
 	import Blogs from "./blogs.svelte";
+	import Contact from "./contact.svelte";
 
 	let y = 0;
 
@@ -25,5 +26,6 @@
 		<About />
 		<Projects />
 		<Blogs />
+		<Contact />
 	</div>
 </div>
