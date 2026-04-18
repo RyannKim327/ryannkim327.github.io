@@ -3,8 +3,23 @@
 </script>
 
 <div id="contact"
-	class="flex flex-wrap p-2 pt-[10%] w-full h-full gap-2 overflow-hidden overflow-y-auto snap-start"
+	class="flex flex-col p-2 pt-[7%] w-full h-full gap-2 overflow-hidden overflow-y-auto snap-start justify-between"
 >
-	<span>Contact</span>
-	<input type="text"/>
+	<iframe
+    src="https://www.google.com/maps/embed/v1/place?q=Ibabang+Iyam&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+    title="Location"
+    loading="lazy"
+    allowFullScreen={false}
+    class="h-[calc(50%-0.5rem)] w-full dark:grayscale dark:invert transition ease-in delay-100"
+  />
+  <div class="flex flex-col flex-1 gap-2">
+		<div class="flex w-full gap-2">
+			<input class="flex-1 px-2 py-1 outline-none rounded bg-[#f0f8ff] text-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff]" type="text" placeholder="Enter name">
+			<input class="flex-1 px-2 py-1 outline-none rounded bg-[#f0f8ff] text-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff]" type="email" placeholder="Enter email">
+		</div>
+		<textarea class="h-30 bg-[#f0f8ff] text-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff] p-2" placeholder="Enter your message" name="" id=""></textarea>
+		<div class="flex w-full justify-end">
+			<input class="bg-[#f0f8ff] text-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff] resize-none px-2 rounded" type="submit" value="Send Message">
+		</div>
+  </div>
 </div>
