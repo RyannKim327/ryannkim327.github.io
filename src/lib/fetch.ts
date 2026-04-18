@@ -12,7 +12,7 @@ const api = axios.create({
 	withCredentials: true
 });
 
-function response(data: AxiosResponse, status: number): parameter {
+function response(data: parameter | AxiosResponse, status: number): parameter {
 	try {
 		if (status >= 200 && status < 300) {
 			if (Array.isArray(data)) {
@@ -36,20 +36,27 @@ function response(data: AxiosResponse, status: number): parameter {
 }
 
 export async function get(endpoint: string, params?: parameter | parameter[]) {
-	const { data, status } = await api.get(endpoint, {
-		params: params,
-		withCredentials: true
-	})
-	return response(data, status)
+	try {
+		const { data, status } = await api.get(endpoint, {
+			params: params,
+			withCredentials: true
+		})
+		return response(data, status)
+	} catch (e) {
+		return response({ "error": "Error" }, 500)
+	}
 }
 
 export async function post(endpoint: string, body: parameter | parameter[]) {
-	const client = w.wrapper(api);
+	try {
+		const client = w.wrapper(api);
+		await client.get("set-cookie");
 
-	await client.get("set-cookie");
-
-	const { data, status } = await api.post(endpoint, body)
-	return response(data, status)
+		const { data, status } = await client.post(endpoint, body)
+		return response(data, status)
+	} catch (e) {
+		return response({}, 500)
+	}
 }
 
 
