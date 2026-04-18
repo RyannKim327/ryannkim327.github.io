@@ -5,6 +5,23 @@
 > - This changelog is derived from this repo’s **git history** (non-merge commits). It’s maintained manually and is not automatically tied to `package.json`.
 > - Versions follow semantic versioning (**MAJOR.MINOR.PATCH**).
 
+### v4.0.0 - 2026-04-18
+
+- **Framework Migration**
+  - **Migrated from Vite ReactJS to Vite Svelte.**
+  - Re-implemented all core features in Svelte 5.
+  - Simplified state management and component architecture using Svelte primitives.
+- **Features & Enhancements**
+  - Added new Svelte-based routing system with `svelte-spa-router`.
+  - Re-implemented `Hero`, `About`, `Projects`, `Blogs`, and `Contact` sections as Svelte components.
+  - Maintained full Tailwind CSS 4.2 integration for styling.
+  - Ported Admin dashboard to Svelte.
+- **Improvements & Fixes**
+  - Updated build pipeline to use Vite 8.0 with Svelte plugin.
+  - Refined component architecture for better modularity in Svelte.
+  - Optimized bundle size by leveraging Svelte's compile-time features.
+  - Updated dependencies to the latest versions including `Svelte 5.55` and `Vite 8.0.8`.
+
 ### v3.7.0 - 2026-04-16
 
 - **Features & Enhancements**
@@ -128,9 +145,9 @@
 
 ### Highlights
 
-- Modern React + TypeScript
-- Responsive design with Tailwind CSS
-- Light/Dark theme switching
+- Modern **Svelte 5** + TypeScript
+- Responsive design with **Tailwind CSS 4.2**
+- Lightweight and fast with **Vite 8**
+- Dark/Light theme switching
 - Backend API integration
-- Smooth animations with Framer Motion
 - GitHub Pages deployment
