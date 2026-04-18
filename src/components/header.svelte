@@ -3,7 +3,6 @@
 	import Icon from "@/components/icon.svelte";
 
 	export let scroll: number = 0;
-
 	function scrollme(id: string) {
 		const p = document.getElementById(id);
 		if (p) {
@@ -26,7 +25,7 @@
 			}}
 			src={Logo}
 			alt="logo"
-			class="aspect-square w-12"
+			class="aspect-square w-5"
 		/>
 		<ul class="flex items-center gap-2">
 			<li

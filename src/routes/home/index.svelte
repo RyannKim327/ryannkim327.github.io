@@ -9,7 +9,8 @@
 	let y = 0;
 
 	function handleScroll() {
-		y = document.getElementById("main")?.scrollTop ?? 0;
+		const height = document.getElementById("main")?.scrollTop ?? 0;
+		y = height;
 	}
 </script>
 
