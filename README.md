@@ -1,47 +1,296 @@
-# Svelte + TS + Vite
+# RyannKim327 Portfolio
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+**Project version:** `3.7.0`
 
-## Recommended IDE Setup
+[![wakatime](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c.svg)](https://wakatime.com/badge/user/8ef6ba9a-e605-4488-8da5-581413894876/project/3ec01f89-d6f0-404a-b8f2-b1edf4f6542c)
+![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=flat&logo=typescript)
+![Vite](https://img.shields.io/badge/Vite-7.3.1-646CFF?style=flat&logo=vite)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.2.1-06B6D4?style=flat&logo=tailwindcss)
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+> **A modern, responsive portfolio website showcasing the work and skills of Ryann Kim Sesgundo, an aspiring full-stack developer.**
 
-## Need an official Svelte framework?
+## Table of Contents
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+- [🚀 Live Demo](#-live-demo)
+- [✨ Features](#-features)
+- [🛠️ Tech Stack](#tech-stack)
+  - [Frontend](#frontend)
+  - [Backend](#backend)
+  - [Libraries & Tools](#libraries--tools)
+- [📁 Project Structure](#-project-structure)
+- [🚀 Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Available Scripts](#available-scripts)
+- [🎨 Design Philosophy](#-design-philosophy)
+  - [Core Principles](#core-principles)
+- [📝 Changelog](#-changelog)
+- [🌐 Deployment](#-deployment)
+- [🔗 Backend Integration](#-backend-integration)
+- [📝 About the Developer](#-about-the-developer)
+  - [Connect](#connect)
+- [🤝 Contributing](#-contributing)
+  - [How to Contribute](#how-to-contribute)
+- [📄 License](#-license)
+- [🙏 Acknowledgments](#-acknowledgments)
+- [🔧 Technical Details](#-technical-details)
+  - [Performance Optimizations](#performance-optimizations)
+  - [Browser Support](#browser-support)
+  - [Development Tools](#development-tools)
 
-## Technical considerations
+## 🚀 Live Demo
 
-**Why use this over SvelteKit?**
+Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev)
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+## ✨ Features
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+- 🎨 **Modern Single-Page Design** - Clean, professional layout with smooth scrolling
+- 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
+- ⚡ **Lightning Fast** - Built with Vite for optimal performance
+- 🎯 **TypeScript** - Type-safe development for better code quality
+- 🎨 **Tailwind CSS** - Utility-first CSS framework for rapid styling
+- 📦 **Component-Based Architecture** - Modular and maintainable code structure
+- 🌙 **Dark/Light Theme** - Elegant theme switching with dark and light modes, featuring purple accents
+- 📄 **Reusable Resume Component** - Integrated resume layout for professional presentation
+- 📝 **Blog System** - Fetch + view blog posts with Markdown rendering
+- 🖼️ **Blog Post Images** - Support for optional image galleries attached to blog posts
+- 📜 **Dedicated Certifications** - Paginated list of certifications for better showcase
+- 📜 **Poem Preview** - Added functionality to preview poetic content
+- 💅 **Enhanced Markdown Styling** - Proper list styling, code blocks, and inline code formatting
+- 🧰 **Admin Dashboard (WIP)** - Manage portfolio content (experiences/projects/blogs)
+- 📱 **Admin Responsive UI** - Improved mobile/tablet usability in admin pages
+- 🔘 **Refined Form UI** - Consistent rounded inputs/buttons for a cleaner admin experience
+- 🧩 **Experience Icons (Admin)** - Add an icon field when creating/editing experiences
+- 🔗 **Backend Integration** - Connected to Go-based backend API
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+## 🛠️ Tech Stack
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+### Frontend
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+- **React 19.2.4** - Modern React with latest features
+- **TypeScript 5.9.3** - Static type checking
+- **Vite 7.3.1** - Next-generation frontend tooling
+- **Tailwind CSS 4.2.1** - Utility-first CSS framework
 
-**Why include `.vscode/extensions.json`?**
+### Backend
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+- **Go** - Backend API server
+- **Repository**: [portfolio-backend](https://github.com/RyannKim327/portfolio-backend)
 
-**Why enable `allowJs` in the TS template?**
+### Libraries & Tools
 
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
+- **FontAwesome** - Icon library
+- **Axios 1.13.2** - HTTP client for API communication
+- **React Toastify** - Notification library
+- **React Markdown** - Markdown rendering
+- **ESLint** - Code linting
+- **gh-pages** - GitHub Pages deployment
 
-**Why is HMR not preserving my local component state?**
+## 📁 Project Structure
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
 ```
+portfolio/
+├── public/                 # Static assets
+├── src/
+│   ├── assets/            # Images, fonts, etc.
+│   ├── parts/             # Layout components (header, etc.)
+│   ├── screen/            # Page sections (hero, about, projects, contact)
+│   ├── utils/             # Utility functions and API helpers
+│   ├── App.tsx            # Main application component
+│   ├── main.tsx           # Application entry point
+│   └── index.css          # Global styles
+├── types/                 # TypeScript type definitions
+└── package.json           # Project dependencies
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** (v18 or higher)
+- **npm** or **yarn**
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/ryannkim327/ryannkim327.github.io.git
+   cd ryannkim327.github.io
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:5173` to view the portfolio
+
+### Available Scripts
+
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `npm run dev`     | Start development server |
+| `npm run build`   | Build for production     |
+| `npm run preview` | Preview production build |
+| `npm run lint`    | Run ESLint               |
+| `npm run deploy`  | Deploy to GitHub Pages   |
+
+## 🎨 Design Philosophy
+
+This portfolio is built on the principle of **"Functional Elegance"**—balancing a high-performance technical stack with a sophisticated, user-centric interface.
+
+### Core Principles
+
+- **Aesthetic Precision**
+  - A carefully crafted dark-mode-first interface with purple accents, emphasizing focus and readability.
+  - Purposeful use of whitespace and typography to create a clean, professional atmosphere.
+
+- **Full-Stack Synergy**
+  - Seamless integration between the React frontend and Go backend, ensuring real-time content management.
+  - A robust administrative dashboard that allows for dynamic updates without code changes.
+
+- **Fluid Motion**
+  - Meaningful transitions that guide the user's attention and enhance the "feel" of the site.
+  - Micro-interactions that provide immediate feedback and a sense of responsiveness.
+
+- **Adaptive Resilience**
+  - A mobile-first architecture that ensures a premium experience across all device form factors.
+  - Layouts that degrade gracefully and maintain usability on everything from smartphones to ultrawide monitors.
+
+- **Interactive Utility**
+  - Bridging the gap between a static portfolio and a dynamic application with features like an AI chatbot and Markdown-powered blogs.
+  - Integrated Paginator and dedicated "See More" views for efficient content discovery.
+
+- **Security & Performance**
+  - Built with Vite for near-instant load times and optimized bundle sizes.
+  - Implementation of secure admin verification and encrypted repository access.
+
+## 📝 Changelog
+
+The full changelog has been moved to [CHANGELOGS.md](CHANGELOGS.md).
+
+**Latest:** v3.6.0 (Current) — 2026-04-02
+
+## 🌐 Deployment
+
+The portfolio is automatically deployed to GitHub Pages using the custom domain `ryannkim327.is-a.dev`.
+
+To deploy your own version:
+
+1. **Build the project**
+
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy to GitHub Pages**
+   ```bash
+   npm run deploy
+   ```
+
+## 🔗 Backend Integration
+
+This portfolio connects to a Go-based backend API for dynamic content and contact form functionality.
+
+**Backend Repository**: [https://github.com/RyannKim327/portfolio-backend](https://github.com/RyannKim327/portfolio-backend)
+
+The backend provides:
+
+- Contact form submission handling
+- Dynamic content management
+- API endpoints for portfolio data
+
+## 📝 About the Developer
+
+**Ryann Kim Sesgundo** is an aspiring full-stack developer focused on enhancing abilities and capabilities to create different applications using modern stacks and technologies.
+
+### Connect
+
+- **Portfolio**: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev)
+- **GitHub**: [@ryannkim327](https://github.com/ryannkim327)
+- **Backend Repository**: [portfolio-backend](https://github.com/RyannKim327/portfolio-backend)
+- **LinkedIn**: [RyannKim327](https://linkedin.com/in/RyannKim327)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/ryannkim327/ryannkim327.github.io/issues).
+
+### How to Contribute
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License**.
+
+**You are free to:**
+
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
+
+**Under the following terms:**
+
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made
+- **NonCommercial** — You may not use the material for commercial purposes
+
+**This means:**
+
+- ✅ You can use this code for learning and personal projects
+- ✅ You can modify and share the code with proper attribution
+- ❌ You cannot sell this code or use it for commercial purposes
+- ❌ You cannot remove the original author's attribution
+
+For more details, see the [LICENSE](LICENSE) file or visit [Creative Commons](https://creativecommons.org/licenses/by-nc/4.0/).
+
+## 🙏 Acknowledgments
+
+- **Vite** team for the amazing build tool
+- **React** team for the powerful library
+- **Tailwind CSS** for the utility-first approach
+- **FontAwesome** for beautiful icons
+- **Go** community for the robust backend language
+
+## 🔧 Technical Details
+
+### Performance Optimizations
+
+- Code splitting with React lazy loading
+- Optimized bundle size with Vite
+- Efficient CSS with Tailwind's purge functionality
+- Image optimization and lazy loading
+
+### Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+### Development Tools
+
+- ESLint for code quality
+- TypeScript for type safety
+- Vite for fast development
+- GitHub Actions for CI/CD
+
+---
+
+<div align=\"center\">
+  <p>Made with ❤️ by <strong>Ryann Kim Sesgundo</strong></p>
+  <p>⭐ Star this repo if you found it helpful!</p>
+  <p><em>This project is open source but not for commercial use</em></p>
+</div>
