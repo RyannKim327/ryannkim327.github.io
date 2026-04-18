@@ -25,7 +25,7 @@
 			}}
 			src={Logo}
 			alt="logo"
-			class="aspect-square w-5"
+			class={`aspect-square w-5`}
 		/>
 		<ul class="flex items-center gap-2">
 			<li

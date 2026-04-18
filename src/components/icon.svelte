@@ -6,15 +6,15 @@
 </script>
 
 <span
-	class={`flex gap-1 items-center ${selected ? "text-red-500" : ""} transition-all delay-25 duration-150 ease-in-out`}
+	class={`flex gap-1 items-center justify-center ${selected ? "bg-[#555555] px-2 rounded-full text-red-500" : ""} transition-all delay-25 duration-150 ease-in-out`}
 >
-	<span class="p-1 aspect-square rounded">
-		<i class={`${type} ${icon}`}></i>
+	<span class="p-[2px] aspect-square rounded h-full">
+		<i class={`aspect-square ${type} ${icon} `}></i>
 	</span>
 	<span
 		class={`${
 			selected ? "max-w-xs" : "max-w-0"
-		} transition-all duration-75 overflow-hidden inline-block`}
+		} items-center h-full transition-all duration-75 overflow-hidden inline-block text-[0.75rem]`}
 	>
 		{name}
 	</span>
