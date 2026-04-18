@@ -3,10 +3,11 @@ import { CookieJar } from "tough-cookie";
 
 type parameter = Record<string, any>
 
+const URL = "http://localhost:8000"
 const w = await import("axios-cookiejar-support");
 const jar = new CookieJar();
 const api = axios.create({
-	baseURL: 'http://localhost:8000',
+	baseURL: URL,
 	jar,
 	withCredentials: true
 });
@@ -49,4 +50,18 @@ export async function post(endpoint: string, body: parameter | parameter[]) {
 
 	const { data, status } = await api.post(endpoint, body)
 	return response(data, status)
+}
+
+
+export function retrieval(endpoint: string, params?: Record<string, any>) {
+	let url = URL;
+	if (!url.endsWith("/") && endpoint != "") {
+		url += "/";
+	}
+
+	if (params) {
+		const query = new URLSearchParams(params).toString();
+		endpoint += `?${query}`;
+	}
+	return `${url}${endpoint}`;
 }

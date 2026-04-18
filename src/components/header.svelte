@@ -14,7 +14,9 @@
 	}
 </script>
 
-<div class="flex items-center justify-center py-4 fixed top-[0.25rem] w-full">
+<div
+	class="flex items-center justify-center py-4 fixed top-[0.25rem] w-full z-10 select-none"
+>
 	<nav
 		class="flex flex-row items-center gap-3 p-2 bg-[#252525] rounded-full px-8"
 	>
