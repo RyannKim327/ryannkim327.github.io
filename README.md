@@ -118,9 +118,43 @@ portfolio-svelte/
 - `npm run check` - Run Svelte and TypeScript checks
 - `npm run deploy` - Build and deploy to GitHub Pages
 
+## 🎨 Design Philosophy
+
+- **Modern Aesthetic**: Clean lines, ample whitespace, and a focus on content clarity.
+- **Purple Accents**: A consistent color palette featuring purple highlights to provide a distinct and professional look.
+- **Dark/Light Mode**: User-selectable themes to ensure comfortable viewing in any environment.
+- **Responsive Design**: Fluid layouts that adapt seamlessly from mobile devices to large desktop monitors.
+
 ## 📝 Changelog
 
 Detailed version history can be found in [CHANGELOGS.md](./CHANGELOGS.md).
+
+## 🌐 Deployment
+
+The project is configured for easy deployment:
+- **Hosting**: GitHub Pages
+- **Domain**: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev)
+- **CI/CD**: Uses `gh-pages` package for automated deployment from the `main` branch.
+
+## 🔗 Backend Integration
+
+This frontend interacts with a custom-built backend:
+- **API**: Go-based REST API
+- **Functionality**: Dynamic fetching of blog posts, project details, and professional experiences.
+- **Source**: [portfolio-backend](https://github.com/RyannKim327/portfolio-backend)
+
+## 📝 About the Developer
+
+**Ryann Kim M. Sesgundo** is an aspiring full-stack developer passionate about building modern web applications. With a focus on performance and user experience, Ryann Kim continuously explores new technologies like Svelte, Go, and TypeScript to create impactful digital solutions.
+
+## 🤝 Contributing
+
+Contributions are welcome!
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## 📄 License
 
@@ -132,3 +166,10 @@ Distributed under the MIT License. See [LICENSE.md](./LICENSE.md) for more infor
 - **Svelte** for the intuitive and powerful framework
 - **Tailwind CSS** for making styling a breeze
 - **Go** for the robust backend API
+
+## 🔧 Technical Details
+
+- **Svelte 5**: Leverages the latest "Runes" for fine-grained reactivity.
+- **Tailwind CSS 4**: Utilizes the newest features of Tailwind for streamlined styling.
+- **Vite 8**: Ensures a lightning-fast development experience and optimized production bundles.
+- **SPA Architecture**: Uses `svelte-spa-router` for a smooth, single-page application experience.
