@@ -59,11 +59,24 @@
 			</li>
 			<li
 				onclick={() => {
+					scrollme("feedback");
+				}}
+				class="cursor-pointer"
+			>
+				<Icon
+					icon="fa-comment"
+					type="fa-regular"
+					name="Feedback"
+					selected={scroll === 4}
+				/>
+			</li>
+			<li
+				onclick={() => {
 					scrollme("contact");
 				}}
 				class="cursor-pointer"
 			>
-				<Icon icon="fa-address-card" name="Contact" selected={scroll === 4} />
+				<Icon icon="fa-address-card" name="Contact" selected={scroll === 5} />
 			</li>
 		</ul>
 	</nav>
