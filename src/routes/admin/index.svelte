@@ -1,3 +1,3 @@
 <div>
-	<span>Admin Side</span>
+	<slot />
 </div>
