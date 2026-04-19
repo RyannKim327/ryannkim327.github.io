@@ -10,15 +10,16 @@
 	onMount(async () => {
 		const api = await get("projects");
 
-		const programs = api.data.projects.sort((a: projects, b: projects) =>
-			a.name.localeCompare(b.name),
+		const programs = api.data.projects.sort(
+			(a: Record<string, any>, b: Record<string, any>) =>
+				a.name.localeCompare(b.name),
 		);
 		categories = ["all", ...api.data.categories];
 		totalProjects = programs;
 		filter("all");
 	});
 
-	function filter(category) {
+	function filter(category: string) {
 		active = category.toLowerCase();
 		projects = totalProjects.filter((proj: Record<string, any>) =>
 			active === "all" ? true : proj.category.includes(active.toLowerCase()),
@@ -28,9 +29,11 @@
 
 <div
 	id="projects"
-	class="flex flex-col p-2 pt-[10%] h-full w-full overflow-y-auto snap-start"
+	class="flex flex-col p-2 pt-[25%] md:pt-[10%] h-full w-full overflow-y-auto snap-start"
 >
-	<div class="flex gap-2 items-center justify-center py-2">
+	<div
+		class="flex gap-2 items-center md:justify-center my-5 py-3 overflow-x-auto"
+	>
 		{#each categories as category}
 			<li
 				onclick={() => {
@@ -49,7 +52,7 @@
 	<div class="flex flex-wrap w-full gap-2">
 		{#each projects as project}
 			<div
-				class="relative aspect-video w-[calc(33.333%-0.5rem)] rounded overflow-hidden"
+				class="relative aspect-video w-full md:w-[calc(33.333%-0.5rem)] rounded overflow-hidden"
 			>
 				<img
 					class="absolute w-full h-full"

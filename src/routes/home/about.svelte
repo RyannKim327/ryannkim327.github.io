@@ -16,9 +16,11 @@
 
 <div
 	id="about"
-	class="flex flex-row p-2 pt-[10%] w-full h-full gap-5 overflow-hidden snap-start"
+	class="block md:flex md:flex-row p-2 pt-[25%] md:pt-[10%] w-full h-full gap-5 overflow-y-auto md:overflow-hidden snap-start"
 >
-	<div class="flex flex-col w-[calc(50%-0.5rem)] overflow-y-auto gap-2">
+	<div
+		class="flex flex-col w-full md:w-[calc(50%-0.5rem)] overflow-y-auto gap-2"
+	>
 		{#each exps as exp}
 			<div class="flex flex-row gap-2 items-start">
 				<span
@@ -38,15 +40,17 @@
 		{/each}
 	</div>
 	<div
-		class="flex flex-row flex-wrap gap-2 w-[calc(50%-0.5rem)] overflow-y-auto"
+		class="flex flex-row flex-wrap gap-2 w-full md:w-[calc(50%-0.5rem)] overflow-y-auto"
 	>
 		{#each certi as cert}
-			<div class="flex flex-wrap aspect-video w-[calc(50%-1rem)] rounded">
+			<div
+				class="flex flex-wrap aspect-video w-full md:w-[calc(50%-1rem)] rounded"
+			>
 				<img class="h-full w-full" src={cert.url} alt={cert.source} />
 			</div>
 		{/each}
 		<div
-			class="flex flex-wrap items-center justify-center aspect-video w-[calc(50%-1rem)] rounded"
+			class="flex flex-wrap items-center justify-center aspect-video w-full md:w-[calc(50%-1rem)] rounded"
 		>
 			<span>Click to see more</span>
 		</div>

@@ -5,14 +5,14 @@
 
 <div id="hero" class="flex items-center h-full w-full snap-start">
   <div
-    class="flex flex-col justify-center items-center md:items-end w-full h-full gap-2 md:gap-5 p-2"
+    class="flex flex-col justify-center items-center md:items-end w-full h-full gap-3 md:gap-5 p-2"
   >
     <h1
-      class="text-[2em] w-5/6 md:text-[calc(3rem)] md:w-5/6 text-center md:text-end md:mt-[calc(25%-1rem)]"
+      class="text-[2.5em] w-5/6 md:text-[calc(3rem)] md:w-5/6 text-center md:text-end md:mt-[calc(25%-1rem)]"
     >
       Ryann Kim M. Sesgundo
     </h1>
-    <h3 class="text-[0.75em] md:text-[1.75em] text-center md:text-end">
+    <h3 class="text-[1.25em] md:text-[1.75em] text-center md:text-end">
       A Full-Stack Software Developer
     </h3>
   </div>
