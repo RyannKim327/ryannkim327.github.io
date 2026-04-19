@@ -17,7 +17,7 @@
 	class="flex items-center justify-center py-4 fixed top-[0.25rem] w-full z-10 select-none"
 >
 	<nav
-		class="flex flex-row items-center gap-3 p-2 bg-[#252525] rounded-full px-8"
+		class="flex flex-row items-center gap-3 p-2 bg-[#f0f8ff] shadow-sm shadow-[#121212] dark:bg-[#252525] rounded-full px-8"
 	>
 		<img
 			onclick={() => {
@@ -25,7 +25,7 @@
 			}}
 			src={Logo}
 			alt="logo"
-			class="aspect-square w-5"
+			class={`aspect-square w-5 drop-shadow-black drop-shadow-xs`}
 		/>
 		<ul class="flex items-center gap-2">
 			<li
