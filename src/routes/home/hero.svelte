@@ -5,7 +5,7 @@
 
 <div
   id="hero"
-  class="flex items-center h-full w-full snap-start md:mt-[calc(25%-1rem)]"
+  class="flex items-center h-full w-full snap-start pt-[25%] md:pt-[10%]"
 >
   <div
     class="flex flex-col justify-center items-center md:items-end w-full h-full gap-3 md:gap-5 p-2"

@@ -26,7 +26,7 @@
 			/>
 		</div>
 		<textarea
-			class="h-30 bg-[#f0f8ff] text-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff] p-2"
+			class="h-30 bg-[#f0f8ff] text-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff] p-2 resize-none outline-none"
 			placeholder="Enter your message"
 			name=""
 			id=""

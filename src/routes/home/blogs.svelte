@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Card from "@/components/card.svelte";
+	import Loader from "@/components/loader.svelte";
 	import { get } from "@/lib/fetch.ts";
 	import { onMount } from "svelte";
 
@@ -33,6 +34,10 @@
 			<span class="italic text-[0.75rem]">Click here to see more blogs</span>
 		</Card>
 	{:else}
-		<span>No Blogs</span>
+		{#each Array(6) as _, i (i)}
+			<Loader
+				class_="aspect-video w-full md:w-[calc(33.333%-0.5rem)] items-center justify-center"
+			></Loader>
+		{/each}
 	{/if}
 </div>
