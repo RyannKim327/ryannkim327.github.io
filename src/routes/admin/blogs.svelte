@@ -1,0 +1,3 @@
+<div>
+Blog posting
+</div>
