@@ -1,6 +1,5 @@
 <script lang="ts">
 	export let class_: string = ""
-	export let styl: string = ""
 </script>
 
 <div class={`p-2 bg-[#212121] rounded shine ${class_}`}>

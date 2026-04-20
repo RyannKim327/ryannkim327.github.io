@@ -1,3 +1,1 @@
-<div>
-	<slot />
-</div>
+<div>Info</div>
