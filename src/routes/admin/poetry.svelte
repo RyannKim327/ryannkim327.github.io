@@ -1,7 +1,3 @@
-<script lang="ts">
-
-</script>
-
 <div>
-Poem
+	<span>Poems</span>
 </div>

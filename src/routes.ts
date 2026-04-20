@@ -7,5 +7,6 @@ export default {
 	"/": Home,
 	"/blogs": Blogs,
 	"/admin": Admin,
-	"/admin/poetry": Poetry
+	"/admin/:page": Admin,
+	"*": Home
 }
