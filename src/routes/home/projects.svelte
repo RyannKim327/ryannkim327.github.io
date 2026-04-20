@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { get, retrieval } from "@/lib/fetch.ts";
+	import Loader from "@/components/loader.svelte";
+	import Card from "@/components/card.svelte";
 
 	let categories: string[] = [];
 	let projects: Record<string, any>[] = [];
@@ -50,19 +52,26 @@
 		{/each}
 	</div>
 	<div class="flex flex-wrap w-full gap-2">
-		{#each projects as project}
-			<div
-				class="relative aspect-video w-full md:w-[calc(33.333%-0.5rem)] rounded overflow-hidden"
-			>
-				<img
-					class="absolute w-full h-full"
-					src={retrieval("retrieve", { file: project.img ?? "" })}
-					alt=""
-				/>
-				<span class="absolute z-1 bottom-0 left-0 right-0 bg-[#212121] p-2"
-					>{project.name}</span
+		{#if projects.length > 0}
+			{#each projects as project}
+				<Card
+					class_="relative aspect-video w-full md:w-[calc(33.333%-0.5rem)] rounded overflow-hidden !p-0"
 				>
-			</div>
-		{/each}
+					<img
+						class="absolute w-full h-full"
+						src={retrieval("retrieve", { file: project.img ?? "" })}
+						alt=""
+					/>
+					<span class="absolute z-1 bottom-0 left-0 right-0 bg-[#212121] p-2"
+						>{project.name}</span
+					>
+				</Card>
+			{/each}
+		{:else}
+			{#each Array(6) as _, i (i)}
+				<Loader class_="aspect-video w-full md:w-[calc(33.333%-0.5rem)]"
+				></Loader>
+			{/each}
+		{/if}
 	</div>
 </div>

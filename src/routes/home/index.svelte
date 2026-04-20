@@ -5,6 +5,7 @@
 	import Projects from "./projects.svelte";
 	import Blogs from "./blogs.svelte";
 	import Contact from "./contact.svelte";
+	import Feedback from "./feedback.svelte";
 
 	let y = 0;
 
@@ -52,6 +53,7 @@
 		<About />
 		<Projects />
 		<Blogs />
+		<Feedback />
 		<Contact />
 	</div>
 </div>

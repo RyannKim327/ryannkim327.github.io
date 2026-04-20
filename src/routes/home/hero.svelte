@@ -3,12 +3,15 @@
   import Light from "@/assets/light.png";
 </script>
 
-<div id="hero" class="flex items-center h-full w-full snap-start">
+<div
+  id="hero"
+  class="flex items-center h-full w-full snap-start pt-[25%] md:pt-[10%]"
+>
   <div
     class="flex flex-col justify-center items-center md:items-end w-full h-full gap-3 md:gap-5 p-2"
   >
     <h1
-      class="text-[2.5em] w-5/6 md:text-[calc(3rem)] md:w-5/6 text-center md:text-end md:mt-[calc(25%-1rem)]"
+      class="text-[2.5em] w-5/6 md:text-[calc(3rem)] md:w-5/6 text-center md:text-end"
     >
       Ryann Kim M. Sesgundo
     </h1>
@@ -17,15 +20,24 @@
     </h3>
   </div>
   <div
+    class="md:flex md:flex-col hidden justify-center h-full gap-5 text-[2rem] p-2"
+  >
+    <p>ᜇ</p>
+    <p>ᜌ</p>
+    <p>ᜈ᜔</p>
+    <p>ᜃᜒ</p>
+    <p>ᜋ᜔</p>
+  </div>
+  <div
     class="md:flex-col hidden md:flex w-full h-full items-start justify-start p-2"
   >
     <img
-      class={`rounded-md hidden dark:inline h-[calc(75%-0.5rem)] mt-[calc(20%-1rem)]`}
+      class={`rounded-md hidden dark:inline h-[calc(50%-0.5rem)] mt-[calc(25%+1rem)]`}
       src={Dark}
       alt=""
     />
     <img
-      class={`rounded-md inline dark:hidden h-[calc(75%-0.5rem)] mt-[calc(20%-1rem)]`}
+      class={`rounded-md inline dark:hidden h-[calc(75%-0.5rem)] mt-[calc(25%+1rem)]`}
       src={Light}
       alt=""
     />

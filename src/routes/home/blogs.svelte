@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Card from "@/components/card.svelte";
+	import Loader from "@/components/loader.svelte";
 	import { get } from "@/lib/fetch.ts";
 	import { onMount } from "svelte";
 
@@ -15,20 +16,28 @@
 	id="blogs"
 	class="flex flex-wrap p-2 pt-[25%] md:pt-[10%] w-full h-full gap-2 overflow-hidden overflow-y-auto snap-start"
 >
-	{#each blogs as blog}
-		<Card
-			class_="aspect-video w-full md:w-[calc(33.333%-0.5rem)] justify-between"
-		>
-			<span class="font-bold text-[1.25rem]">{blog.title}</span>
-			<span class="italic text-[0.75rem]"
-				>{blog.content.substring(0, 250)} ...</span
+	{#if blogs.length > 0}
+		{#each blogs as blog}
+			<Card
+				class_="aspect-video w-full md:w-[calc(33.333%-0.5rem)] justify-between"
 			>
+				<span class="font-bold text-[1.25rem]">{blog.title}</span>
+				<span class="italic text-[0.75rem]"
+					>{blog.content.substring(0, 250)} ...</span
+				>
+			</Card>
+		{/each}
+		<Card
+			class_="aspect-video w-full md:w-[calc(33.333%-0.5rem)] items-center justify-center"
+		>
+			<span class="font-bold text-[1.25rem]">See More</span>
+			<span class="italic text-[0.75rem]">Click here to see more blogs</span>
 		</Card>
-	{/each}
-	<Card
-		class_="aspect-video w-full md:w-[calc(33.333%-0.5rem)] items-center justify-center"
-	>
-		<span class="font-bold text-[1.25rem]">See More</span>
-		<span class="italic text-[0.75rem]">Click here to see more blogs</span>
-	</Card>
+	{:else}
+		{#each Array(6) as _, i (i)}
+			<Loader
+				class_="aspect-video w-full md:w-[calc(33.333%-0.5rem)] items-center justify-center"
+			></Loader>
+		{/each}
+	{/if}
 </div>
