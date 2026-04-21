@@ -25,13 +25,15 @@
 				bind:value={code}
 			/>
 		</div>
-		<Textarea
-			class_="flex-1"
-			bind:value={content}
-			name="content"
-			placeholder="Content"
-		/>
-		<div class="flex w-full">
+		<div class="flex w-full flex-1">
+			<Textarea
+				class_="flex-1"
+				bind:value={content}
+				name="content"
+				placeholder="Content"
+			/>
+		</div>
+		<div class="flex w-full justify-end">
 			<input
 				class="border border-solid border-white p-1"
 				type="submit"
