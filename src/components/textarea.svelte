@@ -1,9 +1,9 @@
 <script lang="ts">
 	export let placeholder: string;
 	export let name: string;
-	export let value: string = "";
+	export let value: string;
 	export let class_: string = "";
-	export let h: string = "h-25";
+	export let h: string = "h-full";
 </script>
 
 <div
@@ -17,10 +17,10 @@
 	</label>
 
 	<textarea
-		class={`w-full outline-none ${h} resize-none`}
+		class={`w-full outline-none flex-1 ${h} resize-none`}
 		id={name}
-		onchange={(v: EventTarget) => {
-			value = v.target.value;
+		oninput={(v: Event) => {
+			value = (v.target as HTMLTextAreaElement).value;
 		}}
 		placeholder=" "
 		bind:value

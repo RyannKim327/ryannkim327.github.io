@@ -13,7 +13,7 @@
 	};
 </script>
 
-<div>
+<div class="w-full h-full">
 	<AdminHeaders page={params?.page ?? "info"} />
 	<svelte:component this={pages[params?.page ?? "info"] ?? Info} />
 </div>

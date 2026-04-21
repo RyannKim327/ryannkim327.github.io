@@ -3,7 +3,7 @@
 	export let name: string;
 	export let type: string = "text";
 	export let class_: string = "";
-	export let value: string = "";
+	export let value: string;
 </script>
 
 <div
@@ -20,11 +20,11 @@
 		class="w-full outline-none"
 		id={name}
 		{type}
-		onchange={(v: EventTarget) => {
-			value = v.target.value;
+		oninput={(v: Event) => {
+			value = (v.target as HTMLInputElement).value;
 		}}
 		placeholder=" "
-		bind:value
+		{value}
 	/>
 </div>
 
