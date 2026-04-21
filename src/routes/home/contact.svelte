@@ -19,7 +19,8 @@
 			<Input name="name" value="" placeholder="Full name or Company name" />
 			<Input name="email" value="" placeholder="Email" />
 		</div>
-		<Textarea name="content" value="" placeholder="Content"></Textarea>
+		<Textarea class_="h-25" name="content" value="" placeholder="Content"
+		></Textarea>
 		<div class="flex w-full justify-end">
 			<input
 				class="bg-[#f0f8ff] text-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff] resize-none px-2 rounded"

@@ -2,9 +2,13 @@
 	export let placeholder: string;
 	export let name: string;
 	export let value: string = "";
+	export let class_: string = "";
+	export let h: string = "h-25";
 </script>
 
-<div class="relative w-full border border-white custom-input m-2 p-2 rounded">
+<div
+	class={`${class_} relative w-full border border-white custom-input m-2 p-2 rounded`}
+>
 	<label
 		class="dark:bg-[#111b1c] absolute transition-all duration-200 px-2 select-none"
 		for={name}
@@ -13,7 +17,7 @@
 	</label>
 
 	<textarea
-		class="w-full outline-none"
+		class={`w-full outline-none ${h} resize-none`}
 		id={name}
 		onchange={(v: EventTarget) => {
 			value = v.target.value;

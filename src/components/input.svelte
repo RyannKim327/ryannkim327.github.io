@@ -2,10 +2,13 @@
 	export let placeholder: string;
 	export let name: string;
 	export let type: string = "text";
+	export let class_: string = "";
 	export let value: string = "";
 </script>
 
-<div class="relative w-full border border-white custom-input m-2 p-2 rounded">
+<div
+	class={`${class_} relative w-full border border-white custom-input m-2 p-2 rounded`}
+>
 	<label
 		class="dark:bg-[#111b1c] absolute transition-all duration-200 px-2 select-none"
 		for={name}
