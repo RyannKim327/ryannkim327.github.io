@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Input from "@/components/input.svelte";
+	import Textarea from "@/components/textarea.svelte";
 </script>
 
 <div
@@ -14,23 +16,11 @@
 	></iframe>
 	<div class="flex flex-col flex-1 gap-2">
 		<div class="flex w-full gap-2">
-			<input
-				class="flex-1 px-2 py-1 outline-none rounded bg-[#f0f8ff] text-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff]"
-				type="text"
-				placeholder="Enter name"
-			/>
-			<input
-				class="flex-1 px-2 py-1 outline-none rounded bg-[#f0f8ff] text-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff]"
-				type="email"
-				placeholder="Enter email"
-			/>
+			<Input name="name" value="" placeholder="Full name or Company name" />
+			<Input name="email" value="" placeholder="Email" />
 		</div>
-		<textarea
-			class="h-30 bg-[#f0f8ff] text-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff] p-2 resize-none outline-none"
-			placeholder="Enter your message"
-			name=""
-			id=""
-		></textarea>
+		<Textarea class_="h-25" name="content" value="" placeholder="Content"
+		></Textarea>
 		<div class="flex w-full justify-end">
 			<input
 				class="bg-[#f0f8ff] text-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff] resize-none px-2 rounded"
