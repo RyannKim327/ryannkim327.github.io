@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { get, post } from "@/lib/fetch";
-	import { marked } from "marked";
-	import DOMPurify from "dompurify";
 	import { onMount } from "svelte";
-	import Markdown from "./markdown.svelte";
+	import Markdown from "@/components/markdown.svelte";
 
 	let devProfile = {};
-	let show = $state(true);
+	let show = $state(false);
 	let sending = $state(false);
 	let message = $state("");
+	let loaded = $state(false);
 	let chats = $state([
 		{
 			role: "assistant",
@@ -64,6 +63,7 @@ Rules:
 10. Whenever you mention the developer's social media or links, format them as clickable Markdown links.
 11. Avoid using tables, instead use lists and sub lists. If you need to present multiple pieces of information, prefer simple lists or short paragraphs so the response is easier to read and understand.`.trim(),
 		};
+		loaded = true;
 	});
 
 	async function send() {
@@ -147,7 +147,7 @@ Rules:
 				</span>
 			</div>
 		</div>
-	{:else}
+	{:else if loaded}
 		<span
 			onclick={() => {
 				show = true;
