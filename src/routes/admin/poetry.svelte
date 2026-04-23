@@ -1,10 +1,33 @@
 <script lang="ts">
 	import Input from "@/components/input.svelte";
 	import Textarea from "@/components/textarea.svelte";
+	import { adminPost } from "@/lib/fetch";
+	import { storage } from "@/lib/storage";
+	import toast from "svelte-french-toast";
 
-	let title = $state("");
+	let init = false;
+	let title: string = $state(storage("title") ?? "") as string;
 	let code = $state("");
-	let content = $state("");
+	let content: string = $state(storage("content") ?? "") as string;
+
+	$effect(() => {
+		if (!init) {
+			storage("title", title);
+			storage("content", content);
+		}
+	});
+
+	async function submit() {
+		const data = await adminPost("poetry/submit", code, {
+			title,
+			content,
+		});
+		if (data.error) {
+			toast.error(data.error, {
+				position: "bottom-right",
+			});
+		}
+	}
 </script>
 
 <div class="flex w-full pt-25 h-full overflow-hidden gap-3">
@@ -38,6 +61,7 @@
 			<input
 				class="border border-solid border-white p-1"
 				type="submit"
+				onclick={submit}
 				value="Post Poem"
 			/>
 		</div>

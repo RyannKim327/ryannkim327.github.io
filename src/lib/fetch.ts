@@ -47,6 +47,27 @@ export async function get(endpoint: string, params?: parameter | parameter[]) {
 	}
 }
 
+export async function adminGet(
+	endpoint: string,
+	adminCode: string,
+	params?: parameter | parameter[],
+) {
+	let code = 0;
+	try {
+		const { data, status } = await api.get(endpoint, {
+			params: params,
+			withCredentials: true,
+			headers: {
+				"X-API-Key": `${adminCode}`,
+			},
+		});
+		code = status;
+		return response(data, status);
+	} catch (e) {
+		return response({}, code);
+	}
+}
+
 export async function post(endpoint: string, body: parameter | parameter[]) {
 	try {
 		const client = w.wrapper(api);
@@ -56,6 +77,83 @@ export async function post(endpoint: string, body: parameter | parameter[]) {
 		return response(data, status)
 	} catch (e) {
 		return response({}, 500)
+	}
+}
+
+
+export async function adminPost(
+	endpoint: string,
+	adminCode: string,
+	params?: parameter | parameter[],
+) {
+	if (adminCode.trim() == "") {
+		return {
+			error: "No Code Inserted",
+		};
+	}
+	let code = 0;
+	try {
+		const { data, status } = await api.post(endpoint, params, {
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/json",
+				"X-API-Key": `${adminCode}`,
+			},
+		});
+		code = status;
+		return response(data, status);
+	} catch (e) {
+		return response({}, code);
+	}
+}
+
+export async function adminPostMultipart(
+	endpoint: string,
+	adminCode: string,
+	formData: FormData,
+) {
+	if (adminCode.trim() == "") {
+		return {
+			error: "No Code Inserted",
+		};
+	}
+	let code = 0;
+	try {
+		const { data, status } = await api.post(endpoint, formData, {
+			headers: {
+				"X-API-Key": `${adminCode}`,
+			},
+		});
+		code = status;
+		return response(data, status);
+	} catch (e) {
+		response({}, code);
+	}
+}
+
+export async function adminPut(
+	endpoint: string,
+	adminCode: string,
+	params?: parameter | parameter[],
+) {
+	if (adminCode.trim() == "") {
+		return {
+			error: "No Code Inserted",
+		};
+	}
+	let code = 0;
+	try {
+		const { data, status } = await api.put(endpoint, params, {
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/json",
+				"X-API-Key": `${adminCode}`,
+			},
+		});
+		code = status;
+		return response(data, status);
+	} catch (e) {
+		return response({}, code);
 	}
 }
 
