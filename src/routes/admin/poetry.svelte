@@ -21,6 +21,7 @@
 			<Input
 				class_="flex-1 w-full"
 				name="code"
+				type="password"
 				placeholder="Admin Code"
 				bind:value={code}
 			/>
@@ -33,7 +34,7 @@
 				placeholder="Content"
 			/>
 		</div>
-		<div class="flex w-full justify-end">
+		<div class="flex w-full justify-end p-2">
 			<input
 				class="border border-solid border-white p-1"
 				type="submit"
@@ -42,7 +43,7 @@
 		</div>
 	</div>
 	<div class="hidden md:flex flex-col h-full w-[calc(33.333%-0.5rem)] px-1">
-		<span>{title}</span>
+		<span>{title === "" ? "Title" : title}</span>
 		<hr />
 		<div class="flex flex-col overflow-y-auto h-full">
 			{#each content.split("\n") as c}

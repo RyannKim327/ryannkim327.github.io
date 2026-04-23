@@ -1,5 +1,5 @@
 <script lang="ts">
-	let a = ""
+	let a = "";
 </script>
 
 <div>

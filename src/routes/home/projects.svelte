@@ -3,6 +3,7 @@
 	import { get, retrieval } from "@/lib/fetch.ts";
 	import Loader from "@/components/loader.svelte";
 	import Card from "@/components/card.svelte";
+	import toast from "svelte-french-toast";
 
 	let categories: string[] = [];
 	let projects: Record<string, any>[] = [];
@@ -12,13 +13,19 @@
 	onMount(async () => {
 		const api = await get("projects");
 
-		const programs = api.data.projects.sort(
-			(a: Record<string, any>, b: Record<string, any>) =>
-				a.name.localeCompare(b.name),
-		);
-		categories = ["all", ...api.data.categories];
-		totalProjects = programs;
-		filter("all");
+		if (api.error) {
+			toast.error(api.error, {
+				position: "bottom-right",
+			});
+		} else {
+			const programs = api.data.projects.sort(
+				(a: Record<string, any>, b: Record<string, any>) =>
+					a.name.localeCompare(b.name),
+			);
+			categories = ["all", ...api.data.categories];
+			totalProjects = programs;
+			filter("all");
+		}
 	});
 
 	function filter(category: string) {
@@ -55,16 +62,18 @@
 		{#if projects.length > 0}
 			{#each projects as project}
 				<Card
-					class_="relative aspect-video w-full md:w-[calc(33.333%-0.5rem)] rounded overflow-hidden !p-0"
+					class_="relative aspect-video w-full md:w-[calc(33.333%-0.5rem)] rounded overflow-hidden !p-0 group"
 				>
 					<img
-						class="absolute w-full h-full"
+						class="absolute w-full h-full md:grayscale group-hover:grayscale-0"
 						src={retrieval("retrieve", { file: project.img ?? "" })}
 						alt=""
 					/>
-					<span class="absolute z-1 bottom-0 left-0 right-0 bg-[#212121] p-2"
-						>{project.name}</span
+					<span
+						class="absolute z-1 bottom-0 left-0 right-0 bg-[#212121]/50 p-2 md:opacity-0 group-hover:opacity-100 transition-opacity delay-75"
 					>
+						{project.name}
+					</span>
 				</Card>
 			{/each}
 		{:else}

@@ -3,12 +3,19 @@
 	import Loader from "@/components/loader.svelte";
 	import { get } from "@/lib/fetch.ts";
 	import { onMount } from "svelte";
+	import toast from "svelte-french-toast";
 
 	let blogs: Record<string, any>[] = [];
 
 	onMount(async () => {
 		const data = await get("blog");
-		blogs = data.data;
+		if (data.error) {
+			toast.error(data.error, {
+				position: "bottom-right",
+			});
+		} else {
+			blogs = data.data;
+		}
 	});
 </script>
 
