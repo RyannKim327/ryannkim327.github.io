@@ -3,16 +3,28 @@
 	import { get } from "@/lib/fetch.ts";
 	import Loader from "@/components/loader.svelte";
 	import Card from "@/components/card.svelte";
+	import toast from "svelte-french-toast";
 
 	let certi: Record<string, any> = [];
 	let exps: Record<string, any>[] = [];
 
 	onMount(async () => {
 		const data = await get("certs");
-		certi = data.data;
-
+		if (certi.error) {
+			toast.success(certi.error, {
+				position: "bottom-right",
+			});
+		} else {
+			certi = data.data;
+		}
 		const expr = await get("experiences");
-		exps = expr.data.reverse();
+		if (expr.error) {
+			toast.error(expr.error, {
+				position: "bottom-right",
+			});
+		} else {
+			exps = expr.data.reverse();
+		}
 	});
 </script>
 

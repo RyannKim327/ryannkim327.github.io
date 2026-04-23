@@ -7,6 +7,7 @@
 
 ## Table of Contents
 
+- [v4.0.1 - 2026-04-23](#v401---2026-04-23)
 - [v4.0.0 - 2026-04-18](#v400---2026-04-18)
 - [v3.7.0 - 2026-04-16](#v370---2026-04-16)
 - [v3.6.1 - 2026-04-02](#v361---2026-04-02)
@@ -23,7 +24,21 @@
 - [v2.1.0 — 2026-02-04](#v210--2026-02-04)
 - [v2.0.0 — 2026-01-03](#v200--2026-01-03)
 - [v1.0.0 — 2024-11-03](#v100--2024-11-03)
-- [Highlights](#highlights)
+...
+### v4.0.1 - 2026-04-23
+
+- **Markdown Integration**
+  - Integrated `marked` for robust Markdown parsing.
+  - Added `dompurify` for secure Markdown rendering.
+  - Implemented `Markdown` component for consistent content presentation across the app.
+  - Enabled real-time Markdown preview in Admin Blog posting.
+- **Enhanced Notifications**
+  - Integrated `svelte-french-toast` for beautiful, non-intrusive UI notifications.
+  - Added toast feedback for API interactions in `About`, `Blogs`, `Feedback`, and `Projects`.
+- **UI/UX Improvements**
+  - Added `Ai` (AI Assistant) component to the home page.
+  - Refined `Projects` section with hover effects and improved layout.
+  - Added `Toaster` for global notification management.
 
 ### v4.0.0 - 2026-04-18
 
@@ -36,11 +51,18 @@
   - Re-implemented `Hero`, `About`, `Projects`, `Blogs`, and `Contact` sections as Svelte components.
   - Maintained full Tailwind CSS 4.2 integration for styling.
   - Ported Admin dashboard to Svelte.
+  - **New:** Added `Feedback` form and list functionality.
+  - **New:** Implemented `Resume` layout and component.
+  - **New:** Integrated `Loaders` for better async state handling.
+  - **New:** Added custom `Input` and `Textarea` components.
+  - **New:** Implemented `Poetry` layout with preview functionality.
 - **Improvements & Fixes**
   - Updated build pipeline to use Vite 8.0 with Svelte plugin.
   - Refined component architecture for better modularity in Svelte.
   - Optimized bundle size by leveraging Svelte's compile-time features.
   - Updated dependencies to the latest versions including `Svelte 5.55` and `Vite 8.0.8`.
+  - Fixed various layout issues in Admin routes and components.
+
 
 ### v3.7.0 - 2026-04-16
 

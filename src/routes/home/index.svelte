@@ -6,6 +6,8 @@
 	import Blogs from "./blogs.svelte";
 	import Contact from "./contact.svelte";
 	import Feedback from "./feedback.svelte";
+	import { Toaster } from "svelte-french-toast";
+	import Ai from "@/components/ai.svelte";
 
 	let y = 0;
 
@@ -55,5 +57,7 @@
 		<Blogs />
 		<Feedback />
 		<Contact />
+		<Toaster />
+		<Ai />
 	</div>
 </div>
