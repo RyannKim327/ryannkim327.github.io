@@ -29,7 +29,7 @@
     <p>ᜋ᜔</p>
   </div>
   <div
-    class="md:flex-col hidden md:flex w-full h-full items-start justify-start p-2"
+    class="md:flex-col hidden md:flex w-full h-full items-start justify-start p-2 -mt-20"
   >
     <img
       class={`rounded-md hidden dark:inline h-[calc(50%-0.5rem)] mt-[calc(25%+1rem)]`}
