@@ -15,11 +15,12 @@
 		blogs: Blogs,
 	};
 
-	let admin = "";
-	let verified = false;
+	let admin = session("token") ?? "";
+	let verified = admin === "sample";
 
 	function setAdmin() {
-		session("token", atob());
+		session("token", admin);
+		verified = admin === "sample";
 	}
 </script>
 

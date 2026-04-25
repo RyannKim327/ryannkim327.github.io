@@ -1,8 +1,8 @@
 <script>
-	export let content = ""
-	
-	import DOMPurify from "dompurify"
-	import {marked} from "marked"
+	export let content = "";
+
+	import DOMPurify from "dompurify";
+	import { marked } from "marked";
 </script>
 
 <div class="markdown-preview h-full w-full overflow-none overflow-x-auto">

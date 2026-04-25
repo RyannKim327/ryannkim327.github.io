@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { marked } from "marked";
-	import DOMPurify from "dompurify";
 	import Input from "@/components/input.svelte";
 	import Textarea from "@/components/textarea.svelte";
 	import Markdown from "@/components/markdown.svelte";
@@ -51,9 +49,16 @@
 				placeholder="Content"
 				bind:value={content}
 			/>
-			<div class="flex-1 w-full h-full p-2 preview overflow-y-auto">
+			<div class="flex-1 w-full h-full p-2 overflow-y-auto">
 				<Markdown {content} />
 			</div>
+		</div>
+		<div class="flex w-full items-center justify-end p-2">
+			<input
+				type="submit"
+				value="Post Blog"
+				class="border border-[#f0f8ff] border-solid p-1 px-2 rounded"
+			/>
 		</div>
 	</div>
 </div>

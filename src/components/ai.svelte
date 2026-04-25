@@ -123,12 +123,19 @@ Rules:
 					{/if}
 				{/each}
 			</div>
-			<hr />
-			<div class="flex input w-full items-center justify-center p-1">
+			<div
+				class="flex input w-full items-center justify-center p-1 border border-white border-solid rounded"
+			>
 				<input
 					type="text"
+					disabled={sending}
 					oninput={(v: Event) => {
 						message = (v.target as HTMLInputElement).value;
+					}}
+					onkeydown={(e: KeyboardEvent) => {
+						if (e.keyCode === 13) {
+							send();
+						}
 					}}
 					value={message}
 					class="outline-none w-full flex-1"
