@@ -22,11 +22,11 @@
   <div
     class="md:flex md:flex-col hidden justify-center h-full gap-5 text-[2rem] p-2"
   >
-    <p>ᜇ</p>
-    <p>ᜌ</p>
-    <p>ᜈ᜔</p>
-    <p>ᜃᜒ</p>
-    <p>ᜋ᜔</p>
+    <p class="baybayin-font">ᜇ</p>
+    <p class="baybayin-font">ᜌ</p>
+    <p class="baybayin-font">ᜈ᜔</p>
+    <p class="baybayin-font">ᜃᜒ</p>
+    <p class="baybayin-font">ᜋ᜔</p>
   </div>
   <div
     class="md:flex-col hidden md:flex w-full h-full items-start justify-start p-2 -mt-20"

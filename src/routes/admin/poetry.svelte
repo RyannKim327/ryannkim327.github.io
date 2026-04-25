@@ -20,10 +20,19 @@
 	async function submit() {
 		const data = await adminPost("poetry/submit", code, {
 			title,
-			content,
+			content: content.trim().split("\n"),
 		});
 		if (data.error) {
 			toast.error(data.error, {
+				position: "bottom-right",
+			});
+		} else {
+			storage("title", "");
+			storage("content", "");
+			title = "";
+			content = "";
+			code = "";
+			toast.success("Poem Posted successfully", {
 				position: "bottom-right",
 			});
 		}

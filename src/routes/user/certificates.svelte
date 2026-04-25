@@ -1,51 +1,51 @@
 <script lang="ts">
-	import Card from "@/components/card.svelte";
-	import HomeButton from "@/components/home-button.svelte";
-	import { get } from "@/lib/fetch.ts";
-	import { onMount } from "svelte";
-	import { push } from "svelte-spa-router";
+	import Card from "@/components/card.svelte"
+	import HomeButton from "@/components/home-button.svelte"
+	import { get } from "@/lib/fetch.ts"
+	import { onMount } from  "svelte"
+	import { Toaster, toast } from "svelte-french-toast"
 
-	let blogs: Record<string, any>[] = [];
-	let pages: number = 1;
-	let page: number = 1;
-
+	let certs = []
+	let pages = 1
+	let page = 1
+	
 	onMount(async () => {
-		const data = await get("blog", {
-			page: page,
-			limit: 9,
-		});
-		pages = data.pages;
-		blogs = data.data;
-	});
+		const api = await get("certs", {
+			limit: 6,
+			page: page
+		})
+		if(api.error){
+			toast.error(api.error, {
+				position: "bottom-right"
+			})
+		}else{
+			certs = api.data
+			pages = api.pages
+		}
+	})
 
 	async function changepage(p: number) {
 		page = p;
-		const data = await get("blog", {
+		const data = await get("certs", {
 			page: page,
-			limit: 9,
+			limit: 6,
 		});
 		pages = data.pages;
-		blogs = data.data;
+		certs = data.data;
 	}
+
 </script>
 
 <div
-	id="blogs"
-	class="flex flex-col w-full h-full gap-2 overflow-hidden overflow-y-auto snap-start"
+	class="flex flex-wrap p-2 w-full h-full gap-2 overflow-hidden overflow-y-auto snap-start pt-[5%]"
 >
-	<HomeButton title="Blogs Lists" />
-	<div class="flex flex-wrap p-5 gap-5 py-[5%] w-full h-full">
-		{#each blogs as blog}
+	<HomeButton title="Certificates" description="Lists of Ryann Kim's certifications" past="/" />
+	<div class="flex flex-wrap gap-5 py-[2%] p-5">
+		{#each certs as cert}
 			<Card
-				class_="aspect-video w-full md:w-[calc(33.333%-1rem)] justify-between cursor-pointer"
-				onclick={() => {
-					push(`/blog/${blog.id}`);
-				}}
-			>
-				<span class="font-bold text-[1.25rem]">{blog.title}</span>
-				<span class="italic text-[0.75rem]"
-					>{blog.content.substring(0, 250)} ...</span
+				class_="flex flex-wrap aspect-video w-full md:w-[calc(33.333%-1rem)] rounded !p-0"
 				>
+				<img class="h-full w-full" src={cert.url} alt={cert.source} />
 			</Card>
 		{/each}
 	</div>
@@ -77,4 +77,5 @@
 			>
 		</div>
 	</div>
+	<Toaster />
 </div>

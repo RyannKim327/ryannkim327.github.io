@@ -1,7 +1,7 @@
 {
   "name": "ryannkim327",
   "private": true,
-  "version": "4.0.1",
+  "version": "4.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --cname ryannkim327.is-a.dev"
+    "deploy": "gh-pages -b deploy -d dist --cname ryannkim327.is-a.dev"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^7.0.0",

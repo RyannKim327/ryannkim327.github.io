@@ -7,6 +7,7 @@
 
 ## Table of Contents
 
+- [v4.0.2 - 2026-04-25](#v402---2026-04-25)
 - [v4.0.1 - 2026-04-23](#v401---2026-04-23)
 - [v4.0.0 - 2026-04-18](#v400---2026-04-18)
 - [v3.7.0 - 2026-04-16](#v370---2026-04-16)
@@ -25,6 +26,18 @@
 - [v2.0.0 — 2026-01-03](#v200--2026-01-03)
 - [v1.0.0 — 2024-11-03](#v100--2024-11-03)
 ...
+### v4.0.2 - 2026-04-25
+
+- **Security & Administration**
+  - Implemented an `Admin Code` verification gate for the Admin dashboard.
+  - Added specialized fetch utilities (`adminGet`, `adminPost`, etc.) that include the admin key in headers.
+  - Added `storage` and `session` helpers for persistent and session-based data management.
+- **Bug Fixes**
+  - Fixed an issue where the `AI` component would fail to load if certain profile data was missing or before it was ready.
+  - Adjusted the `Hero` section profile image alignment for better centering.
+- **Refinement**
+  - Cleaned up unused imports and improved component pathing in the Admin section.
+
 ### v4.0.1 - 2026-04-23
 
 - **Markdown Integration**

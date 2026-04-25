@@ -20,6 +20,7 @@
 		class="w-full outline-none"
 		id={name}
 		{type}
+		autocomplete="off"
 		oninput={(v: Event) => {
 			value = (v.target as HTMLInputElement).value;
 		}}
