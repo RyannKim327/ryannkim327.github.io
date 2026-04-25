@@ -31,22 +31,24 @@
 
 <div
 	id="blogs"
-	class="flex flex-wrap p-2 w-full h-full gap-2 overflow-hidden overflow-y-auto snap-start py-[5%]"
+	class="flex flex-col w-full h-full gap-2 overflow-hidden overflow-y-auto snap-start"
 >
 	<HomeButton title="Blogs Lists" />
-	{#each blogs as blog}
-		<Card
-			class_="aspect-video w-full md:w-[calc(33.333%-0.5rem)] justify-between cursor-pointer"
-			onclick={() => {
-				push(`/blog/${blog.id}`);
-			}}
-		>
-			<span class="font-bold text-[1.25rem]">{blog.title}</span>
-			<span class="italic text-[0.75rem]"
-				>{blog.content.substring(0, 250)} ...</span
+	<div class="flex flex-wrap p-5 gap-5 py-[5%] w-full h-full">
+		{#each blogs as blog}
+			<Card
+				class_="aspect-video w-full md:w-[calc(33.333%-1rem)] justify-between cursor-pointer"
+				onclick={() => {
+					push(`/blog/${blog.id}`);
+				}}
 			>
-		</Card>
-	{/each}
+				<span class="font-bold text-[1.25rem]">{blog.title}</span>
+				<span class="italic text-[0.75rem]"
+					>{blog.content.substring(0, 250)} ...</span
+				>
+			</Card>
+		{/each}
+	</div>
 	<div class="flex fixed z-10 bottom-0 left-0 right-0 justify-center p-4">
 		<div
 			class="flex gap-2 bg-[#f0f8ff]/75 dark:bg-[#121212]/75 shadow shadow-[#252525] backdrop-blur-xs rounded-full p-2 px-5"
