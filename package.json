@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --cname ryannkim327.is-a.dev"
+    "deploy": "gh-pages -b deploy -d dist --cname ryannkim327.is-a.dev"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^7.0.0",

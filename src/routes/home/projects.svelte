@@ -58,28 +58,44 @@
 			</li>
 		{/each}
 	</div>
-	<div class="flex flex-wrap w-full gap-2">
+	<div class="flex flex-wrap w-full gap-5 p-5">
 		{#if projects.length > 0}
 			{#each projects as project}
-				<Card
-					class_="relative aspect-video w-full md:w-[calc(33.333%-0.5rem)] rounded overflow-hidden !p-0 group"
-				>
-					<img
-						class="absolute w-full h-full md:grayscale group-hover:grayscale-0"
-						src={retrieval("retrieve", { file: project.img ?? "" })}
-						alt=""
-					/>
-					<span
-						class="absolute z-1 bottom-0 left-0 right-0 bg-[#212121]/50 p-2 md:opacity-0 group-hover:opacity-100 transition-opacity delay-75"
+				{#if active.toLowerCase() === "all" && project.img}
+					<Card
+						class_="relative aspect-video w-full md:w-[calc(33.333%-1rem)] rounded overflow-hidden !p-0 group"
 					>
-						{project.name}
-					</span>
-				</Card>
+						<img
+							class="absolute w-full h-full md:grayscale group-hover:grayscale-0"
+							src={retrieval("retrieve", { file: project.img ?? "" })}
+							alt=""
+						/>
+						<span
+							class="absolute z-1 bottom-0 left-0 right-0 bg-[#212121]/50 p-2 md:opacity-0 group-hover:opacity-100 transition-opacity delay-75"
+						>
+							{project.name}
+						</span>
+					</Card>
+				{:else if active.toLowerCase() !== "all"}
+					<Card
+						class_="relative aspect-video w-full md:w-[calc(33.333%-1rem)] rounded overflow-hidden !p-0 group"
+					>
+						<img
+							class="absolute w-full h-full md:grayscale group-hover:grayscale-0"
+							src={retrieval("retrieve", { file: project.img ?? "" })}
+							alt=""
+						/>
+						<span
+							class="absolute z-1 bottom-0 left-0 right-0 bg-[#212121]/50 p-2 md:opacity-0 group-hover:opacity-100 transition-opacity delay-75"
+						>
+							{project.name}
+						</span>
+					</Card>
+				{/if}
 			{/each}
 		{:else}
 			{#each Array(6) as _, i (i)}
-				<Loader class_="aspect-video w-full md:w-[calc(33.333%-0.5rem)]"
-				></Loader>
+				<Loader class_="aspect-video w-full md:w-[calc(33.333%-1rem)]"></Loader>
 			{/each}
 		{/if}
 	</div>

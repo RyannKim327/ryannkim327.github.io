@@ -30,7 +30,7 @@
 
 <div
 	id="about"
-	class="block md:flex md:flex-row p-2 pt-[25%] md:pt-[10%] w-full h-full gap-5 overflow-y-auto md:overflow-hidden snap-start"
+	class="block md:flex md:flex-row p-5 pt-[25%] md:pt-[10%] w-full h-full gap-5 overflow-y-auto md:overflow-hidden snap-start"
 >
 	<div
 		class="flex flex-col w-full md:w-[calc(50%-0.5rem)] overflow-y-auto gap-2"
