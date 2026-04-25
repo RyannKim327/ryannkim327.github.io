@@ -3,12 +3,16 @@
 	import Textarea from "@/components/textarea.svelte";
 	import Markdown from "@/components/markdown.svelte";
 
-	let title = $state("");
-	let code = $state("");
-	let content = $state("");
+	let title = "";
+	let code = "";
+	let content = "";
 
-	let tags = $state("");
-	let media = $state("");
+	let tags = "";
+	let media = "";
+
+	async function submitBlog() {
+		// TODO: Soon to edit
+	}
 </script>
 
 <div class="flex w-full pt-25 h-full overflow-hidden gap-3">
@@ -55,6 +59,9 @@
 		</div>
 		<div class="flex w-full items-center justify-end p-2">
 			<input
+				onclick={() => {
+					submitBlog();
+				}}
 				type="submit"
 				value="Post Blog"
 				class="border border-[#f0f8ff] border-solid p-1 px-2 rounded"
