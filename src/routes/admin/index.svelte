@@ -9,6 +9,7 @@
 
 	export let params: { page?: string };
 
+	const secret_code = "santol@mangga.com";
 	const pages: Record<string, any> = {
 		info: Info,
 		poetry: Poetry,
@@ -16,11 +17,11 @@
 	};
 
 	let admin = session("token") ?? "";
-	let verified = admin === "sample";
+	let verified = admin === secret_code;
 
 	function setAdmin() {
 		session("token", admin);
-		verified = admin === "sample";
+		verified = admin === secret_code;
 	}
 </script>
 
