@@ -1,28 +1,28 @@
 <script lang="ts">
-	import Card from "@/components/card.svelte"
-	import HomeButton from "@/components/home-button.svelte"
-	import { get } from "@/lib/fetch.ts"
-	import { onMount } from  "svelte"
-	import { Toaster, toast } from "svelte-french-toast"
+	import Card from "@/components/card.svelte";
+	import HomeButton from "@/components/home-button.svelte";
+	import { get } from "@/lib/fetch.ts";
+	import { onMount } from "svelte";
+	import { Toaster, toast } from "svelte-french-toast";
 
-	let certs = []
-	let pages = 1
-	let page = 1
-	
+	let certs = [];
+	let pages = 1;
+	let page = 1;
+
 	onMount(async () => {
 		const api = await get("certs", {
 			limit: 6,
-			page: page
-		})
-		if(api.error){
+			page: page,
+		});
+		if (api.error) {
 			toast.error(api.error, {
-				position: "bottom-right"
-			})
-		}else{
-			certs = api.data
-			pages = api.pages
+				position: "bottom-right",
+			});
+		} else {
+			certs = api.data;
+			pages = api.pages;
 		}
-	})
+	});
 
 	async function changepage(p: number) {
 		page = p;
@@ -33,18 +33,21 @@
 		pages = data.pages;
 		certs = data.data;
 	}
-
 </script>
 
 <div
 	class="flex flex-wrap p-2 w-full h-full gap-2 overflow-hidden overflow-y-auto snap-start pt-[5%]"
 >
-	<HomeButton title="Certificates" description="Lists of Ryann Kim's certifications" past="/" />
+	<HomeButton
+		title="Certificates"
+		description="Lists of Ryann Kim's certifications"
+		past="/"
+	/>
 	<div class="flex flex-wrap gap-5 py-[2%] p-5">
 		{#each certs as cert}
 			<Card
 				class_="flex flex-wrap aspect-video w-full md:w-[calc(33.333%-1rem)] rounded !p-0"
-				>
+			>
 				<img class="h-full w-full" src={cert.url} alt={cert.source} />
 			</Card>
 		{/each}
@@ -64,7 +67,7 @@
 					onclick={() => {
 						changepage(p + 1);
 					}}
-					class={`${p + 1 === page ? "dark:bg-[#555555]" : ""} flex items-center justify-center text-center rounded-full aspect-square w-7 h-7 cursor-pointer select-none`}
+					class={`${p + 1 === page ? "bg-[#cacdcc] dark:bg-[#555555]" : ""} flex items-center justify-center text-center rounded-full aspect-square w-7 h-7 cursor-pointer select-none`}
 				>
 					{p + 1}
 				</span>
