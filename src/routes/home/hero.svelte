@@ -37,7 +37,7 @@
       alt=""
     />
     <img
-      class={`rounded-md inline dark:hidden h-[calc(75%-0.5rem)] mt-[calc(25%+1rem)]`}
+      class={`rounded-md inline dark:hidden h-[calc(50%-0.5rem)] mt-[calc(25%+1rem)]`}
       src={Light}
       alt=""
     />

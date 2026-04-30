@@ -87,7 +87,7 @@ Rules:
 <div class="fixed bottom-0 right-0 p-10 pointer-events-none">
 	{#if show}
 		<div
-			class="flex flex-col pointer-events-auto h-125 w-100 bg-[#121212]/50 p-2 rounded border border-solid"
+			class="flex flex-col pointer-events-auto h-125 w-100 bg-[#cacecf] dark:bg-[#121212]/50 p-2 rounded border border-solid"
 		>
 			<div class="flex justify-between">
 				<div class="flex flex-col">
@@ -124,7 +124,7 @@ Rules:
 				{/each}
 			</div>
 			<div
-				class="flex input w-full items-center justify-center p-1 border border-white border-solid rounded"
+				class="flex input w-full items-center justify-center p-1 border border-[#121212] dark:border-[#f0f8ff] border-solid rounded"
 			>
 				<input
 					type="text"
@@ -159,7 +159,7 @@ Rules:
 			onclick={() => {
 				show = true;
 			}}
-			class="bg-[#121212] border-[#f0f8ff] p-3 rounded-full border border-solid pointer-events-auto"
+			class="bg-[#cacbcc] dark:bg-[#121212] border-[#212121] dark:border-[#f0f8ff] p-3 rounded-full border border-solid pointer-events-auto"
 		>
 			<i class="fa-solid fa-robot"></i>
 		</span>

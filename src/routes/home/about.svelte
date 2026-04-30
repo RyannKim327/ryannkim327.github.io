@@ -4,6 +4,7 @@
 	import Loader from "@/components/loader.svelte";
 	import Card from "@/components/card.svelte";
 	import toast from "svelte-french-toast";
+	import { push } from "svelte-spa-router";
 
 	let certi: Record<string, any> = [];
 	let exps: Record<string, any>[] = [];
@@ -88,6 +89,9 @@
 			{/each}
 			<Card
 				class_="flex flex-wrap items-center justify-center aspect-video w-full md:w-[calc(50%-1rem)] rounded"
+				onclick={() => {
+					push("/certificates");
+				}}
 			>
 				<span>Click to see more</span>
 			</Card>

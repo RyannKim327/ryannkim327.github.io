@@ -64,7 +64,7 @@
 					onclick={() => {
 						changepage(p + 1);
 					}}
-					class={`${p + 1 === page ? "dark:bg-[#555555]" : ""} flex items-center justify-center text-center rounded-full aspect-square w-7 h-7 cursor-pointer select-none`}
+					class={`${p + 1 === page ? "bg-[#cacdcc] dark:bg-[#555555]" : ""} flex items-center justify-center text-center rounded-full aspect-square w-7 h-7 cursor-pointer select-none`}
 				>
 					{p + 1}
 				</span>
