@@ -49,7 +49,7 @@
 	<div
 		id="main"
 		onscroll={handleScroll}
-		class="h-full w-full overflow-scroll snap-y snap-mandatory"
+		class="h-full w-full overflow-hidden overflow-y-scroll snap-y snap-mandatory"
 	>
 		<Hero />
 		<About />
