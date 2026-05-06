@@ -15,6 +15,11 @@
 			icon: "fa-rss",
 			name: "Blogs",
 		},
+		{
+			type: "fa-solid",
+			icon: "fa-upload",
+			name: "Upload",
+		},
 	];
 </script>
 

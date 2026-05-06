@@ -6,6 +6,7 @@
 	import Poetry from "@/routes/admin/poetry.svelte";
 	import Blogs from "@/routes/admin/blogs.svelte";
 	import { session } from "@/lib/storage";
+	import Upload from "./upload.svelte";
 
 	export let params: { page?: string };
 
@@ -14,6 +15,7 @@
 		info: Info,
 		poetry: Poetry,
 		blogs: Blogs,
+		upload: Upload,
 	};
 
 	let admin = session("token") ?? "";

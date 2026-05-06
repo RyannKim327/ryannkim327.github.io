@@ -3,7 +3,9 @@
 	export let name: string;
 	export let type: string = "text";
 	export let class_: string = "";
-	export let value: string;
+
+	export let value: string = "";
+	export let file: FileList | null = null;
 </script>
 
 <div
@@ -16,17 +18,25 @@
 		{placeholder}
 	</label>
 
-	<input
-		class="w-full outline-none"
-		id={name}
-		{type}
-		autocomplete="off"
-		oninput={(v: Event) => {
-			value = (v.target as HTMLInputElement).value;
-		}}
-		placeholder=" "
-		{value}
-	/>
+	{#if type === "file"}
+		<input
+			class="w-full outline-none"
+			id={name}
+			type="file"
+			onchange={(e) => {
+				file = (e.target as HTMLInputElement).files;
+			}}
+		/>
+	{:else}
+		<input
+			class="w-full outline-none"
+			id={name}
+			{type}
+			autocomplete="off"
+			placeholder=" "
+			bind:value
+		/>
+	{/if}
 </div>
 
 <style>
