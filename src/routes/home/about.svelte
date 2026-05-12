@@ -1,32 +1,10 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import { get } from "@/lib/fetch.ts";
 	import Loader from "@/components/loader.svelte";
 	import Card from "@/components/card.svelte";
-	import toast from "svelte-french-toast";
 	import { push } from "svelte-spa-router";
 
-	let certi: Record<string, any> = [];
-	let exps: Record<string, any>[] = [];
-
-	onMount(async () => {
-		const data = await get("certs");
-		if (certi.error) {
-			toast.success(certi.error, {
-				position: "bottom-right",
-			});
-		} else {
-			certi = data.data;
-		}
-		const expr = await get("experiences");
-		if (expr.error) {
-			toast.error(expr.error, {
-				position: "bottom-right",
-			});
-		} else {
-			exps = expr.data.reverse();
-		}
-	});
+	export let certi: Record<string, any> = [];
+	export let exps: Record<string, any>[] = [];
 </script>
 
 <div

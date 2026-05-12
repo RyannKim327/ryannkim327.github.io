@@ -1,32 +1,12 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import { get, retrieval } from "@/lib/fetch.ts";
+	import { retrieval } from "@/lib/fetch.ts";
 	import Loader from "@/components/loader.svelte";
 	import Card from "@/components/card.svelte";
-	import toast from "svelte-french-toast";
 
-	let categories: string[] = [];
-	let projects: Record<string, any>[] = [];
-	let totalProjects: Record<string, any>[] = [];
+	export let categories: string[] = ["all"];
+	export let totalProjects: Record<string, any>[] = [];
+	export let projects: Record<string, any>[] = [];
 	let active = "all";
-
-	onMount(async () => {
-		const api = await get("projects");
-
-		if (api.error) {
-			toast.error(api.error, {
-				position: "bottom-right",
-			});
-		} else {
-			const programs = api.data.projects.sort(
-				(a: Record<string, any>, b: Record<string, any>) =>
-					a.name.localeCompare(b.name),
-			);
-			categories = ["all", ...api.data.categories];
-			totalProjects = programs;
-			filter("all");
-		}
-	});
 
 	function filter(category: string) {
 		active = category.toLowerCase();

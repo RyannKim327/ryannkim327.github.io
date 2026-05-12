@@ -1,25 +1,10 @@
 <script lang="ts">
 	import Card from "@/components/card.svelte";
 	import Loader from "@/components/loader.svelte";
-	import { get } from "@/lib/fetch.ts";
-	import { onMount } from "svelte";
-	import toast from "svelte-french-toast";
+
 	import { push } from "svelte-spa-router";
 
-	let blogs: Record<string, any>[] = [];
-
-	onMount(async () => {
-		const data = await get("blog", {
-			limit: 5,
-		});
-		if (data.error) {
-			toast.error(data.error, {
-				position: "bottom-right",
-			});
-		} else {
-			blogs = data.data;
-		}
-	});
+	export let blogs: Record<string, any>[] = [];
 </script>
 
 <div

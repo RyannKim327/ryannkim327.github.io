@@ -6,15 +6,25 @@
 	import Blogs from "./blogs.svelte";
 	import Contact from "./contact.svelte";
 	import Feedback from "./feedback.svelte";
-	import { Toaster } from "svelte-french-toast";
+	import toast, { Toaster } from "svelte-french-toast";
 	import Ai from "@/components/ai.svelte";
+	import { onMount } from "svelte";
+	import { get } from "@/lib/fetch";
 
 	let y = 0;
+
+	let blogs: Record<string, any>[],
+		categories: string[],
+		certificates: Record<string, any>[],
+		experiences: Record<string, any>[],
+		feedback: Record<string, any>[],
+		projects: Record<string, any>[];
 
 	function handleScroll() {
 		const height = document.getElementById("main")?.scrollTop ?? 0;
 		y = height;
 	}
+
 	addEventListener("keydown", (ev: KeyboardEvent) => {
 		const key = ev.keyCode;
 		const keys = {
@@ -36,6 +46,35 @@
 			}
 		}
 	});
+
+	onMount(async () => {
+		try {
+			const [b, c, e, f, p] = await Promise.all([
+				get("blog"),
+				get("certs"),
+				get("experiences"),
+				get("feedback"),
+				get("projects"),
+			]);
+
+			const programs = p.data.projects.sort(
+				(a: Record<string, any>, b: Record<string, any>) =>
+					a.name.localeCompare(b.name),
+			);
+
+			blogs = b.data;
+			categories = ["all", ...p.data.categories];
+			certificates = c.data;
+			experiences = e.data;
+			feedback = f.data;
+
+			projects = programs;
+		} catch (err) {
+			toast.error(err.toString(), {
+				position: "bottom-right",
+			});
+		}
+	});
 </script>
 
 <svelte onscroll={handleScroll}></svelte>
@@ -52,12 +91,13 @@
 		class="h-full w-full overflow-hidden overflow-y-scroll snap-y snap-mandatory"
 	>
 		<Hero />
-		<About />
-		<Projects />
-		<Blogs />
+		<About exps={experiences} certi={certificates} />
+		<Projects {projects} totalProjects={projects} {categories} />
+		<Blogs {blogs} />
 		<Feedback />
 		<Contact />
 		<Toaster />
-		<Ai />
+		<Ai {projects} expr={experiences} />
 	</div>
+	<Toaster />
 </div>

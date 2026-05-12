@@ -1,23 +1,8 @@
 <script lang="ts">
 	import Card from "@/components/card.svelte";
 	import Loader from "@/components/loader.svelte";
-	import { get } from "@/lib/fetch.ts";
-	import { onMount } from "svelte";
-	import toast from "svelte-french-toast";
-	let loaded = false;
-	let feedbacks: Record<string, any>[] = [];
 
-	onMount(async () => {
-		const api = await get("feedback");
-		if (api.error) {
-			toast.error(api.error, {
-				position: "bottom-right",
-			});
-		} else {
-			feedbacks = api.data;
-		}
-		loaded = true;
-	});
+	export let feedbacks: Record<string, any>[] = [];
 </script>
 
 <div
@@ -33,7 +18,7 @@
 				<span class="italic text-[0.75rem]">{feedback.content}</span>
 			</Card>
 		{/each}
-	{:else if loaded}
+	{:else if feedbacks.length === 0}
 		<span>No Feedback yet</span>
 	{:else}
 		{#each Array(6) as _, i (i)}
