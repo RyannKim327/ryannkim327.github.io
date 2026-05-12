@@ -1,26 +1,26 @@
 <script lang="ts">
-	export let params: {id: string}
+	let { params }: { params: { id: string } } = $props();
 
 	import Markdown from "@/components/markdown.svelte";
-	import HomeButton from "@/components/home-button.svelte"
-	import { get } from "@/lib/fetch.ts"
+	import HomeButton from "@/components/home-button.svelte";
+	import { get } from "@/lib/fetch.ts";
 	import { Toaster, toast } from "svelte-french-toast";
-	import { onMount } from "svelte"
+	import { onMount } from "svelte";
 
-	let blog = {}
+	let blog = $state<any>({});
 
 	onMount(async () => {
 		const api = await get("blog", {
-			id: params.id
-		})
-		if(api.error){
+			id: params.id,
+		});
+		if (api.error) {
 			toast.error(api.error, {
-				position: "bottom-right"
-			})
-		}else{
-			blog = api.data
+				position: "bottom-right",
+			});
+		} else {
+			blog = api.data;
 		}
-	})
+	});
 </script>
 
 <div
@@ -28,7 +28,7 @@
 >
 	<HomeButton title={blog.title} description={blog.content} past="/blogs" />
 	<div class="w-full h-full overflow-hidden px-5">
-		<Markdown content={blog.content}/>
+		<Markdown content={blog.content} />
 	</div>
 	<Toaster />
 </div>

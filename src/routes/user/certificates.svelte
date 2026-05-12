@@ -5,9 +5,9 @@
 	import { onMount } from "svelte";
 	import { Toaster, toast } from "svelte-french-toast";
 
-	let certs = [];
-	let pages = 1;
-	let page = 1;
+	let certs = $state<any[]>([]);
+	let pages = $state<number>(1);
+	let page = $state<number>(1);
 
 	onMount(async () => {
 		const api = await get("certs", {
@@ -46,7 +46,7 @@
 	<div class="flex flex-wrap gap-5 py-[2%] p-5">
 		{#each certs as cert}
 			<Card
-				class_="flex flex-wrap aspect-video w-full md:w-[calc(33.333%-1rem)] rounded !p-0"
+				class="flex flex-wrap aspect-video w-full md:w-[calc(33.333%-1rem)] rounded !p-0"
 			>
 				<img class="h-full w-full" src={cert.url} alt={cert.source} />
 			</Card>
@@ -56,26 +56,40 @@
 		<div
 			class="flex gap-2 bg-[#f0f8ff]/75 dark:bg-[#121212]/75 shadow shadow-[#252525] backdrop-blur-xs rounded-full p-2 px-5"
 		>
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<span
 				class="cursor-pointer select-none flex items-center justify-center"
 				onclick={() => {
 					changepage(page > 1 ? page - 1 : 1);
+				}}
+				onkeydown={(e) => {
+					if (e.key === "Enter" || e.key === " ")
+						changepage(page > 1 ? page - 1 : 1);
 				}}>Prev</span
 			>
 			{#each Array(pages) as _, p}
+				<!-- svelte-ignore a11y_no_static_element_interactions -->
 				<span
 					onclick={() => {
 						changepage(p + 1);
+					}}
+					onkeydown={(e) => {
+						if (e.key === "Enter" || e.key === " ") changepage(p + 1);
 					}}
 					class={`${p + 1 === page ? "bg-[#cacdcc] dark:bg-[#555555]" : ""} flex items-center justify-center text-center rounded-full aspect-square w-7 h-7 cursor-pointer select-none`}
 				>
 					{p + 1}
 				</span>
 			{/each}
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<span
 				class="cursor-pointer select-none flex items-center justify-center"
 				onclick={() => {
 					changepage(page < pages ? page + 1 : pages);
+				}}
+				onkeydown={(e) => {
+					if (e.key === "Enter" || e.key === " ")
+						changepage(page < pages ? page + 1 : pages);
 				}}>Next</span
 			>
 		</div>

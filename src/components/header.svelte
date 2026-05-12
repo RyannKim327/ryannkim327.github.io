@@ -2,7 +2,8 @@
 	import Logo from "@/assets/logo.png";
 	import Icon from "@/components/icon.svelte";
 
-	export let scroll: number = 0;
+	let { scroll = 0 }: { scroll?: number } = $props();
+
 	function scrollme(id: string) {
 		const p = document.getElementById(id);
 		if (p) {

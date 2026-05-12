@@ -3,69 +3,122 @@
 	import Textarea from "@/components/textarea.svelte";
 	import Markdown from "@/components/markdown.svelte";
 
-	let title = "";
-	let code = "";
-	let content = "";
+	let title = $state("");
+	let code = $state("");
+	let content = $state("");
 
-	let tags = "";
-	let media = "";
+	let tags = $state("");
+	let media = $state("");
 
 	async function submitBlog() {
 		// TODO: Soon to edit
 	}
 </script>
 
-<div class="flex w-full pt-25 h-full overflow-hidden gap-3">
-	<div class="flex flex-col w-full h-full items-center justify-start">
-		<div class="flex w-full gap-2 justify-center">
-			<Input
-				class_="flex-1 w-full"
-				name="title"
-				placeholder="Title"
-				bind:value={title}
-			/>
-			<Input
-				class_="flex-1 w-full"
-				name="code"
-				type="password"
-				placeholder="Admin Code"
-				bind:value={code}
-			/>
+<div class="h-full w-full p-4 md:p-8">
+	<div
+		class="mx-auto flex h-[calc(100vh-4rem)] max-w-7xl flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl"
+	>
+		<div class="border-b border-white/10 px-6 py-5">
+			<h1 class="text-2xl md:text-3xl font-bold text-white">
+				Create Blog Post
+			</h1>
+			<p class="mt-1 text-sm text-white/50">
+				Write markdown content with live preview
+			</p>
 		</div>
-		<div class="flex w-full gap-2 justify-center">
-			<Input
-				class_="flex-1 w-full"
-				name="tags"
-				placeholder="Tags"
-				bind:value={tags}
-			/>
-			<Input
-				class_="flex-1 w-full"
-				name="media"
-				placeholder="Media Files"
-				bind:value={media}
-			/>
-		</div>
-		<div class="flex w-full gap-2 justify-center flex-1 h-full">
-			<Textarea
-				class_="flex-1 w-full"
-				name="content"
-				placeholder="Content"
-				bind:value={content}
-			/>
-			<div class="flex-1 w-full h-full p-2 overflow-y-auto">
-				<Markdown {content} />
+
+		<div class="flex flex-1 flex-col gap-5 overflow-hidden p-5">
+			<div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+				<Input
+					className="bg-white/[0.02] border-white/10 rounded-2xl text-white transition focus-within:border-white/40 focus-within:bg-white/[0.04]"
+					name="title"
+					placeholder="Title"
+					bind:value={title}
+				/>
+
+				<Input
+					className="bg-white/[0.02] border-white/10 rounded-2xl text-white transition focus-within:border-white/40 focus-within:bg-white/[0.04]"
+					name="code"
+					type="password"
+					placeholder="Admin Code"
+					bind:value={code}
+				/>
 			</div>
-		</div>
-		<div class="flex w-full items-center justify-end p-2">
-			<input
-				onclick={() => {
-					submitBlog();
-				}}
-				type="submit"
-				value="Post Blog"
-				class="border border-[#f0f8ff] border-solid p-1 px-2 rounded"
-			/>
+
+			<div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+				<Input
+					className="bg-white/[0.02] border-white/10 rounded-2xl text-white transition focus-within:border-white/40 focus-within:bg-white/[0.04]"
+					name="tags"
+					placeholder="Tags"
+					bind:value={tags}
+				/>
+
+				<Input
+					className="bg-white/[0.02] border-white/10 rounded-2xl text-white transition focus-within:border-white/40 focus-within:bg-white/[0.04]"
+					name="media"
+					placeholder="Media Files"
+					bind:value={media}
+				/>
+			</div>
+
+			<div class="grid flex-1 grid-cols-1 gap-4 overflow-hidden lg:grid-cols-2">
+				<div
+					class="flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]"
+				>
+					<div
+						class="flex items-center justify-between border-b border-white/10 px-5 py-4"
+					>
+						<h2 class="text-sm font-medium tracking-wide text-white/70">
+							Markdown Editor
+						</h2>
+
+						<div
+							class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/60"
+						>
+							LIVE
+						</div>
+					</div>
+
+					<Textarea
+						class="h-full w-full flex-1 resize-none border-0 bg-transparent p-5 text-sm leading-7 text-white outline-none placeholder:text-white/20"
+						name="content"
+						placeholder=""
+						bind:value={content}
+					/>
+				</div>
+
+				<div
+					class="flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]"
+				>
+					<div
+						class="border-b border-white/10 px-5 py-4 text-sm font-medium tracking-wide text-white/70"
+					>
+						Preview
+					</div>
+
+					<div class="prose prose-invert max-w-none flex-1 overflow-y-auto p-6">
+						<Markdown {content} />
+					</div>
+				</div>
+			</div>
+
+			<div class="flex items-center justify-end gap-3 pt-1">
+				<button
+					class="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-white/70 transition hover:bg-white/[0.06]"
+				>
+					Save Draft
+				</button>
+
+				<button
+					on:click={() => {
+						submitBlog();
+					}}
+					class="rounded-2xl bg-white px-6 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-white/90 active:scale-[0.98]"
+				>
+					Post Blog
+				</button>
+			</div>
 		</div>
 	</div>
 </div>

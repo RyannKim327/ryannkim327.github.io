@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class="h-dvh w-dvw bg-[#fafbff] text-[#111b1c] dark:bg-[#111b1c] dark:text-[#fafbff]"
+	class="h-dvh w-dvw bg-[#fafbff] text-[#111b1c] dark:bg-zinc-950 dark:text-[#fafbff]"
 >
 	<Router {routes} useHash={true} />
 </div>

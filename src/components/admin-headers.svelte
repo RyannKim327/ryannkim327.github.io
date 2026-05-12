@@ -2,7 +2,8 @@
 	import { push } from "svelte-spa-router";
 	import Logo from "@/assets/logo.png";
 	import Icon from "@/components/icon.svelte";
-	export let page: string = "";
+
+	let { page = "" }: { page?: string } = $props();
 
 	const pages = [
 		{
@@ -19,6 +20,11 @@
 			type: "fa-solid",
 			icon: "fa-upload",
 			name: "Upload",
+		},
+		{
+			type: "fa-solid",
+			icon: "fa-project",
+			name: "Project",
 		},
 	];
 </script>

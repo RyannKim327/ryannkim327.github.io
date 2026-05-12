@@ -7,8 +7,9 @@
 	import Blogs from "@/routes/admin/blogs.svelte";
 	import { session } from "@/lib/storage";
 	import Upload from "./upload.svelte";
+	import Project from "./project.svelte";
 
-	export let params: { page?: string };
+	let { params } = $props<{ params: { page?: string } }>();
 
 	const secret_code = "santol@mangga.com";
 	const pages: Record<string, any> = {
@@ -16,10 +17,11 @@
 		poetry: Poetry,
 		blogs: Blogs,
 		upload: Upload,
+		project: Project,
 	};
 
-	let admin = session("token") ?? "";
-	let verified = admin === secret_code;
+	let admin = $state(session("token") ?? "");
+	let verified = $state(admin === secret_code);
 
 	function setAdmin() {
 		session("token", admin);

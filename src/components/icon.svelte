@@ -1,8 +1,15 @@
 <script lang="ts">
-	export let icon: string;
-	export let type: string = "fa-regular";
-	export let name: string;
-	export let selected: boolean = false;
+	let {
+		icon,
+		type = "fa-regular",
+		name,
+		selected = false,
+	}: {
+		icon: string;
+		type?: string;
+		name: string;
+		selected?: boolean;
+	} = $props();
 </script>
 
 <span

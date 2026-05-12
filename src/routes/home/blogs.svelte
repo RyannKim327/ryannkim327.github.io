@@ -4,7 +4,7 @@
 
 	import { push } from "svelte-spa-router";
 
-	export let blogs: Record<string, any>[] = [];
+	let { blogs = [] }: { blogs?: Record<string, any>[] } = $props();
 </script>
 
 <div
@@ -14,7 +14,7 @@
 	{#if blogs.length > 0}
 		{#each blogs as blog}
 			<Card
-				class_="aspect-video w-full md:w-[calc(33.333%-1rem)] justify-between"
+				class="aspect-video w-full md:w-[calc(33.333%-1rem)] justify-between"
 				onclick={() => {
 					push(`/blog/${blog.id}`);
 				}}
@@ -26,7 +26,7 @@
 			</Card>
 		{/each}
 		<Card
-			class_="aspect-video w-full md:w-[calc(33.333%-1rem)] items-center justify-center"
+			class="aspect-video w-full md:w-[calc(33.333%-1rem)] items-center justify-center"
 			onclick={() => {
 				push("/blogs");
 			}}
@@ -37,7 +37,7 @@
 	{:else}
 		{#each Array(6) as _, i (i)}
 			<Loader
-				class_="aspect-video w-full md:w-[calc(33.333%-1rem)] items-center justify-center"
+				class="aspect-video w-full md:w-[calc(33.333%-1rem)] items-center justify-center"
 			></Loader>
 		{/each}
 	{/if}

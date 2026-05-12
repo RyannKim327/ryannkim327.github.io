@@ -11,40 +11,45 @@
 	import { onMount } from "svelte";
 	import { get } from "@/lib/fetch";
 
-	let y = 0;
+	let y = $state(0);
 
-	let blogs: Record<string, any>[],
-		categories: string[],
-		certificates: Record<string, any>[],
-		experiences: Record<string, any>[],
-		feedback: Record<string, any>[],
-		projects: Record<string, any>[];
+	let blogs = $state<Record<string, any>[]>([]);
+	let categories = $state<string[]>([]);
+	let certificates = $state<Record<string, any>[]>([]);
+	let experiences = $state<Record<string, any>[]>([]);
+	let feedback = $state<Record<string, any>[]>([]);
+	let projects = $state<Record<string, any>[]>([]);
 
 	function handleScroll() {
 		const height = document.getElementById("main")?.scrollTop ?? 0;
 		y = height;
 	}
 
-	addEventListener("keydown", (ev: KeyboardEvent) => {
-		const key = ev.keyCode;
-		const keys = {
-			65: "about",
-			66: "blogs",
-			67: "contact",
-			72: "hero",
-			80: "projects",
-		};
-		if (
-			document.activeElement?.tagName.toLowerCase() !== "input" &&
-			document.activeElement?.tagName.toLowerCase() !== "textarea"
-		) {
-			const p = document.getElementById(keys[key] ?? "");
-			if (p) {
-				p.scrollIntoView({
-					behavior: "smooth",
-				});
+	$effect(() => {
+		const handleKeydown = (ev: KeyboardEvent) => {
+			const key = ev.keyCode;
+			const keys: Record<number, string> = {
+				65: "about",
+				66: "blogs",
+				67: "contact",
+				72: "hero",
+				80: "projects",
+			};
+			if (
+				document.activeElement?.tagName.toLowerCase() !== "input" &&
+				document.activeElement?.tagName.toLowerCase() !== "textarea"
+			) {
+				const p = document.getElementById(keys[key] ?? "");
+				if (p) {
+					p.scrollIntoView({
+						behavior: "smooth",
+					});
+				}
 			}
-		}
+		};
+
+		window.addEventListener("keydown", handleKeydown);
+		return () => window.removeEventListener("keydown", handleKeydown);
 	});
 
 	onMount(async () => {
@@ -69,7 +74,7 @@
 			feedback = f.data;
 
 			projects = programs;
-		} catch (err) {
+		} catch (err: any) {
 			toast.error(err.toString(), {
 				position: "bottom-right",
 			});
@@ -77,7 +82,7 @@
 	});
 </script>
 
-<svelte onscroll={handleScroll}></svelte>
+<svelte:window onscroll={handleScroll} />
 
 <div class="px-5 w-full h-full">
 	<Header
@@ -94,10 +99,10 @@
 		<About exps={experiences} certi={certificates} />
 		<Projects {projects} totalProjects={projects} {categories} />
 		<Blogs {blogs} />
-		<Feedback />
+		<Feedback feedbacks={feedback} />
 		<Contact />
 		<Toaster />
-		<Ai {projects} expr={experiences} />
+		<Ai {projects} expr={experiences} {blogs} />
 	</div>
 	<Toaster />
 </div>

@@ -3,10 +3,17 @@
 	import Loader from "@/components/loader.svelte";
 	import Card from "@/components/card.svelte";
 
-	export let categories: string[] = ["all"];
-	export let totalProjects: Record<string, any>[] = [];
-	export let projects: Record<string, any>[] = [];
-	let active = "all";
+	let {
+		categories = ["all"],
+		totalProjects = [],
+		projects = $bindable([]),
+	}: {
+		categories?: string[];
+		totalProjects?: Record<string, any>[];
+		projects?: Record<string, any>[];
+	} = $props();
+
+	let active = $state("all");
 
 	function filter(category: string) {
 		active = category.toLowerCase();
@@ -24,9 +31,13 @@
 		class="flex gap-2 items-center md:justify-center my-5 py-3 overflow-x-auto"
 	>
 		{#each categories as category}
+			<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 			<li
 				onclick={() => {
 					filter(category);
+				}}
+				onkeydown={(e) => {
+					if (e.key === "Enter" || e.key === " ") filter(category);
 				}}
 				class={`select-none cursor-pointer ${active === category.toLowerCase() ? "border border-black dark:border-white border-solid" : "bg-[#f0f8ff] dark:bg-[#313131]"} px-2 rounded list-none text-[0.80em]`}
 			>
@@ -43,7 +54,7 @@
 			{#each projects as project}
 				{#if active.toLowerCase() === "all" && project.img}
 					<Card
-						class_="relative aspect-video w-full md:w-[calc(33.333%-1rem)] rounded overflow-hidden !p-0 group"
+						class="relative aspect-video w-full md:w-[calc(33.333%-1rem)] rounded overflow-hidden !p-0 group"
 					>
 						<img
 							class="absolute w-full h-full md:grayscale group-hover:grayscale-0"
@@ -58,7 +69,7 @@
 					</Card>
 				{:else if active.toLowerCase() !== "all"}
 					<Card
-						class_="relative aspect-video w-full md:w-[calc(33.333%-1rem)] rounded overflow-hidden !p-0 group"
+						class="relative aspect-video w-full md:w-[calc(33.333%-1rem)] rounded overflow-hidden !p-0 group"
 					>
 						<img
 							class="absolute w-full h-full md:grayscale group-hover:grayscale-0"
@@ -75,7 +86,7 @@
 			{/each}
 		{:else}
 			{#each Array(6) as _, i (i)}
-				<Loader class_="aspect-video w-full md:w-[calc(33.333%-1rem)]"></Loader>
+				<Loader class="aspect-video w-full md:w-[calc(33.333%-1rem)]"></Loader>
 			{/each}
 		{/if}
 	</div>

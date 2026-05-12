@@ -1,8 +1,15 @@
 <script lang="ts">
 	import { push } from "svelte-spa-router"
-	export let title: string = "Home"
-	export let description: string = ""
-	export let past: string = "/"
+
+	let {
+		title = "Home",
+		description = "",
+		past = "/",
+	}: {
+		title?: string;
+		description?: string;
+		past?: string;
+	} = $props();
 </script>
 
 <svelte:head>
