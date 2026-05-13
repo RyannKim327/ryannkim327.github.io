@@ -19,6 +19,7 @@
 	let experiences = $state<Record<string, any>[]>([]);
 	let feedback = $state<Record<string, any>[]>([]);
 	let projects = $state<Record<string, any>[]>([]);
+	let resume = $state<Record<string, any>>({});
 
 	function handleScroll() {
 		const height = document.getElementById("main")?.scrollTop ?? 0;
@@ -54,9 +55,10 @@
 
 	onMount(async () => {
 		try {
-			const [b, c, e, f, p] = await Promise.all([
+			const [b, c, d, e, f, p] = await Promise.all([
 				get("blog"),
 				get("certs"),
+				get("dev"),
 				get("experiences"),
 				get("feedback"),
 				get("projects"),
@@ -72,8 +74,8 @@
 			certificates = c.data;
 			experiences = e.data;
 			feedback = f.data;
-
 			projects = programs;
+			resume = d.data;
 		} catch (err: any) {
 			toast.error(err.toString(), {
 				position: "bottom-right",
@@ -102,7 +104,7 @@
 		<Feedback feedbacks={feedback} />
 		<Contact />
 		<Toaster />
-		<Ai {projects} expr={experiences} {blogs} />
+		<Ai {resume} {projects} expr={experiences} {blogs} />
 	</div>
 	<Toaster />
 </div>

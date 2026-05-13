@@ -4,6 +4,7 @@
 	import { onMount } from "svelte";
 	let name = "";
 	let role = "";
+	let info = {};
 	export let email;
 	export let phone;
 	export let location;
@@ -12,6 +13,7 @@
 		const { data: a } = await get("dev");
 		name = `${a.first_name} ${a.middle_name[0]}. ${a.last_name}`;
 		role = a.position;
+		info = a;
 	});
 </script>
 
@@ -47,8 +49,7 @@
 				Summary
 			</h2>
 			<p class="text-xs text-black/80">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placeholder
-				summary text describing the candidate.
+				{info.about}
 			</p>
 		</section>
 
@@ -58,21 +59,15 @@
 			</h2>
 
 			<div class="flex flex-col gap-2 text-xs">
-				<div>
-					<p class="font-semibold">Job Title - Company Name</p>
-					<p class="text-black/70">2023 - Present</p>
-					<p class="text-black/80">
-						Placeholder description of responsibilities and achievements.
-					</p>
-				</div>
-
-				<div>
-					<p class="font-semibold">Previous Role - Company</p>
-					<p class="text-black/70">2021 - 2023</p>
-					<p class="text-black/80">
-						Placeholder description of previous work experience.
-					</p>
-				</div>
+				{#each info.job as job}
+					<div>
+						<p class="font-semibold">{job.title} - {job.company}</p>
+						<p class="text-black/70">{job.year}</p>
+						<p class="text-black/80">
+							{job.description}
+						</p>
+					</div>
+				{/each}
 			</div>
 		</section>
 
@@ -97,11 +92,13 @@
 				Skills
 			</h2>
 
-			<div class="flex flex-wrap gap-2 text-xs">
-				<span class="px-2 py-1 border border-black/20 rounded">JavaScript</span>
-				<span class="px-2 py-1 border border-black/20 rounded">Svelte</span>
-				<span class="px-2 py-1 border border-black/20 rounded">Node.js</span>
-				<span class="px-2 py-1 border border-black/20 rounded">UI Design</span>
+			<div class="flex flex-col gap-2 text-xs">
+				{#each info.skills as skill}
+					<div>
+						<p class="font-semibold">{skill.header}</p>
+						<p class="text-black/70">{skill.content.join(", ")}</p>
+					</div>
+				{/each}
 			</div>
 		</section>
 	</div>

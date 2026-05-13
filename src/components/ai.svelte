@@ -2,7 +2,7 @@
 	import { post } from "@/lib/fetch";
 	import Markdown from "@/components/markdown.svelte";
 
-	let { expr = [], projects = [], blogs = [] } = $props();
+	let { expr = [], projects = [], blogs = [], resume = {} } = $props();
 
 	let devProfile = $derived({
 		name: {
@@ -29,6 +29,7 @@
 			"Talkative",
 			"Cheerful",
 		],
+		other: resume,
 	});
 
 	let base = $derived({

@@ -23,7 +23,7 @@
 		},
 		{
 			type: "fa-solid",
-			icon: "fa-project",
+			icon: "fa-folder-open",
 			name: "Project",
 		},
 	];

@@ -51,7 +51,7 @@
 
 <div class="min-h-screen w-full flex items-center justify-center p-6">
 	<div
-		class="w-full max-w-2xl rounded-3xl border border-zinc-800 bg-zinc-900/70 backdrop-blur-xl shadow-2xl p-8"
+		class="w-full max-w-2xl rounded border border-zinc-800 backdrop-blur-xl shadow-2xl p-8"
 	>
 		<div class="mb-8 text-center">
 			<h1 class="text-3xl font-bold text-white">Upload File</h1>
@@ -83,7 +83,7 @@
 			</div>
 
 			<div
-				class="flex flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-zinc-700 bg-zinc-800/50 p-8 transition hover:border-blue-500 hover:bg-zinc-800"
+				class="flex flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-zinc-700 bg-zinc-800/50 p-8 transition hover:border-white hover:bg-zinc-800"
 			>
 				<div class="text-center">
 					<h2 class="text-lg font-semibold text-white">Choose a file</h2>
@@ -114,8 +114,8 @@
 
 			<!-- Submit -->
 			<button
-				on:click={uploadFile}
-				class="w-full rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-500 active:scale-[0.98]"
+				onclick={uploadFile}
+				class="rounded-2xl bg-white px-6 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-white/90 active:scale-[0.98]"
 			>
 				Upload File
 			</button>

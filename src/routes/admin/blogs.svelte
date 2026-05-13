@@ -15,9 +15,9 @@
 	}
 </script>
 
-<div class="h-full w-full p-4 md:p-8">
+<div class="h-full w-full pt-5">
 	<div
-		class="mx-auto flex h-[calc(100vh-4rem)] max-w-7xl flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl"
+		class="mx-auto flex h-[calc(100%-1rem)] max-w-7xl flex-col overflow-hidden rounded border border-white/10"
 	>
 		<div class="border-b border-white/10 px-6 py-5">
 			<h1 class="text-2xl md:text-3xl font-bold text-white">
@@ -111,7 +111,7 @@
 				</button>
 
 				<button
-					on:click={() => {
+					onclick={() => {
 						submitBlog();
 					}}
 					class="rounded-2xl bg-white px-6 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-white/90 active:scale-[0.98]"

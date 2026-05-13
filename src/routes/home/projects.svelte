@@ -28,7 +28,7 @@
 	class="flex flex-col p-2 pt-[25%] md:pt-[10%] h-full w-full overflow-y-auto snap-start"
 >
 	<div
-		class="flex gap-2 items-center md:justify-center my-5 py-3 overflow-x-auto"
+		class="flex gap-2 items-center md:justify-center my-5 py-3 overflow-hidden overflow-x-auto"
 	>
 		{#each categories as category}
 			<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
@@ -62,7 +62,7 @@
 							alt=""
 						/>
 						<span
-							class="absolute z-1 bottom-0 left-0 right-0 bg-[#212121]/50 p-2 md:opacity-0 group-hover:opacity-100 transition-opacity delay-75"
+							class="absolute z-1 bottom-0 left-0 right-0 bg-[#212121]/50 text-white p-2 md:opacity-0 group-hover:opacity-100 transition-opacity delay-75"
 						>
 							{project.name}
 						</span>
@@ -77,7 +77,7 @@
 							alt=""
 						/>
 						<span
-							class="absolute z-1 bottom-0 left-0 right-0 bg-[#212121]/50 p-2 md:opacity-0 group-hover:opacity-100 transition-opacity delay-75"
+							class="absolute z-1 bottom-0 left-0 right-0 bg-[#212121]/50 text-white p-2 md:opacity-0 dark:group-hover:opacity-100 group-hover:opacity-100 transition-opacity delay-75"
 						>
 							{project.name}
 						</span>

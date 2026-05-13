@@ -73,7 +73,7 @@
 			<div class="flex justify-end">
 				<button
 					onclick={submit}
-					class="border border-black dark:border-white px-5 py-2 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
+					class="rounded-2xl bg-white px-6 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-white/90 active:scale-[0.98]"
 				>
 					Publish Poem
 				</button>

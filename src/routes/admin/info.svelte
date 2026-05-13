@@ -7,7 +7,7 @@
 	let content = $state("");
 </script>
 
-<div class="min-h-screen w-full bg-zinc-950 p-6">
+<div class="min-h-screen w-full p-6">
 	<div
 		class="mx-auto flex w-full max-w-7xl gap-4 h-[90vh] overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/70 backdrop-blur-xl p-4"
 	>
@@ -35,7 +35,9 @@
 		</div>
 
 		<!-- RIGHT: Resume Component -->
-		<div class="hidden md:flex w-1/2 justify-center items-start">
+		<div
+			class="hidden md:flex w-1/2 justify-center items-start overflow-y-auto"
+		>
 			<Resume />
 		</div>
 	</div>
