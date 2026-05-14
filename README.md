@@ -1,13 +1,13 @@
 # RyannKim327 Portfolio
 
-**Project version:** `4.0.2`
+**Project version:** `4.1.0`
 
 [![wakatime](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8.svg)](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8)
-![Svelte](https://img.shields.io/badge/Svelte-5.55.4-FF3E00?style=flat&logo=svelte)
+![Svelte](https://img.shields.io/badge/Svelte-5.55.5-FF3E00?style=flat&logo=svelte)
 ![TypeScript](https://img.shields.io/badge/TypeScript-6.0.3-3178C6?style=flat&logo=typescript)
-![Vite](https://img.shields.io/badge/Vite-8.0.8-646CFF?style=flat&logo=vite)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.2.2-06B6D4?style=flat&logo=tailwindcss)
-![Marked](https://img.shields.io/badge/Marked-18.0.2-000000?style=flat&logo=markdown)
+![Vite](https://img.shields.io/badge/Vite-8.0.12-646CFF?style=flat&logo=vite)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.3.0-06B6D4?style=flat&logo=tailwindcss)
+![Marked](https://img.shields.io/badge/Marked-18.0.3-000000?style=flat&logo=markdown)
 
 > **A modern, responsive portfolio website showcasing the work and skills of Ryann Kim Sesgundo, an aspiring full-stack developer.**
 
@@ -40,27 +40,28 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 
 ## ✨ Features
 
-- 🎨 **Modern Svelte 5 Design** - Clean, professional layout leveraging Svelte's reactive model
+- 🎨 **Modern Svelte 5 Design** - Clean, professional layout leveraging Svelte 5's fine-grained reactivity (Runes)
 - 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
 - ⚡ **Lightning Fast** - Built with Vite 8 for optimal development and production performance
 - 🎯 **TypeScript** - Type-safe development for better code quality and maintenance
-- 🎨 **Tailwind CSS 4.2** - Utility-first CSS framework for rapid and consistent styling
+- 🎨 **Tailwind CSS 4.3** - Utility-first CSS framework for rapid and consistent styling
 - 📦 **Component-Based Architecture** - Modular and maintainable code structure in Svelte
 - 🌙 **Dark/Light Theme** - Elegant theme switching with dark and light modes, featuring purple accents
 - 📝 **Markdown Support** - Integrated `marked` and `dompurify` for secure Markdown rendering in Blogs and Poetry
 - 🔔 **Toast Notifications** - Real-time feedback using `svelte-french-toast`
-- 🤖 **AI Assistant** - Integrated AI component for interactive user assistance
-- 🧰 **Admin Dashboard** - Manage portfolio content with real-time Markdown preview
-- 🔗 **Backend Integration** - Connected to Go-based backend API
+- 🤖 **AI Assistant** - Integrated AI component for interactive user engagement and assistance
+- 🧰 **Admin Dashboard** - Comprehensive dashboard to manage blogs, poetry, and professional info
+- 📤 **File Uploads** - Integrated file upload functionality for media management within the Admin dashboard
+- 🔗 **Backend Integration** - Connected to a custom Go-based backend API
 
 ## 🛠️ Tech Stack
 
 ### Frontend
 
-- **Svelte 5.55.4** - Reactive and compiler-optimized frontend framework
+- **Svelte 5.55.5** - Reactive and compiler-optimized frontend framework using Runes
 - **TypeScript 6.0.3** - Static type checking for robust applications
-- **Vite 8.0.8** - Next-generation frontend tooling for fast builds
-- **Tailwind CSS 4.2.2** - Utility-first CSS framework for modern design
+- **Vite 8.0.12** - Next-generation frontend tooling for fast builds
+- **Tailwind CSS 4.3.0** - Utility-first CSS framework for modern design
 
 ### Backend
 
@@ -69,12 +70,13 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 
 ### Libraries & Tools
 
-- **marked** - Fast Markdown parser and compiler
-- **dompurify** - XSS sanitizer for HTML and Markdown
-- **svelte-french-toast** - Lightweight toast notifications for Svelte
-- **svelte-spa-router** - Simple hash-based routing for Svelte apps
-- **Axios 1.15.0** - Promise-based HTTP client for API communication
-- **gh-pages** - Easy deployment to GitHub Pages
+- **marked (18.0.3)** - Fast Markdown parser and compiler
+- **dompurify (3.4.3)** - XSS sanitizer for HTML and Markdown
+- **svelte-french-toast (1.2.0)** - Lightweight toast notifications for Svelte
+- **svelte-spa-router (5.1.0)** - Simple hash-based routing for Svelte apps
+- **Axios (1.16.1)** - Promise-based HTTP client for API communication
+- **gh-pages (6.3.0)** - Easy deployment to GitHub Pages
+- **svelte-awesome** - Font Awesome icons for Svelte
 
 ## 📁 Project Structure
 
@@ -103,7 +105,7 @@ graph TD
     Routes --> R_Home[home/]
     Routes --> R_User[user/]
 
-    R_Admin --> A_Views[blogs, poetry, info]
+    R_Admin --> A_Views[blogs, poetry, info, upload]
     R_Home --> H_Sections[hero, about, projects, contact, blogs, feedback]
 
     Config --> C_Pkg[package.json]
@@ -113,21 +115,15 @@ graph TD
 
 ```
 portfolio-svelte/
-├── public/                 # Static assets (icons, 404, etc.)
+├── public/                 # Static assets (icons, 404, fonts, etc.)
 ├── src/
 │   ├── assets/            # Project-specific images and logos
-│   ├── components/        # Reusable Svelte components
-│   │   ├── markdown.svelte # Markdown renderer
-│   │   ├── ai.svelte       # AI assistant component
-│   │   └── ...            # Other UI components
-│   ├── lib/               # Shared logic and fetch utilities
-│   ├── routes/            # Main views and sections
-│   │   ├── admin/         # Administrative dashboard
-│   │   ├── home/          # Home sections
-│   │   └── user/          # User-specific views
+│   ├── components/        # Reusable Svelte components (AI, Markdown, UI)
+│   ├── lib/               # Shared logic, storage, and fetch utilities
+│   ├── routes/            # Main views (Admin, Home sections, User views)
 │   ├── App.svelte         # Root Svelte component
 │   ├── main.ts            # Entry point
-│   └── routes.ts          # SPA routing
+│   └── routes.ts          # SPA routing configuration
 └── package.json           # Dependencies and scripts
 ```
 
@@ -136,7 +132,7 @@ portfolio-svelte/
 ### Prerequisites
 
 - **Node.js** (latest LTS recommended)
-- **npm** or **pnpm**
+- **npm**
 
 ### Installation
 
@@ -158,13 +154,13 @@ portfolio-svelte/
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run check` - Run Svelte and TypeScript checks
-- `npm run deploy` - Build and deploy to GitHub Pages
+- `npm run deploy` - Manual build and deploy to GitHub Pages
 
 ## 🎨 Design Philosophy
 
 - **Modern Aesthetic**: Clean lines, ample whitespace, and a focus on content clarity.
 - **Purple Accents**: A consistent color palette featuring purple highlights to provide a distinct and professional look.
-- **Dark/Light Mode**: User-selectable themes to ensure comfortable viewing in any environment.
+- **Dark/Light Mode**: User-selectable themes to ensure comfortable viewing in any environment, with refined styling for both modes.
 - **Responsive Design**: Fluid layouts that adapt seamlessly from mobile devices to large desktop monitors.
 
 ## 📝 Changelog
@@ -173,16 +169,16 @@ Detailed version history can be found in [CHANGELOGS.md](./CHANGELOGS.md).
 
 ## 🌐 Deployment
 
-The project is configured for easy deployment:
+The project is configured for automated deployment:
 - **Hosting**: GitHub Pages
 - **Domain**: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev)
-- **CI/CD**: Uses `gh-pages` package for automated deployment from the `main` branch.
+- **CI/CD**: GitHub Actions workflow (`gh-pages.yml`) automates the build and deployment process on every push to the `main` branch.
 
 ## 🔗 Backend Integration
 
 This frontend interacts with a custom-built backend:
 - **API**: Go-based REST API
-- **Functionality**: Dynamic fetching of blog posts, project details, and professional experiences.
+- **Functionality**: Dynamic fetching of blog posts, project details, feedback, and professional experiences.
 - **Source**: [portfolio-backend](https://github.com/RyannKim327/portfolio-backend)
 
 ## 📝 About the Developer
@@ -204,14 +200,16 @@ Distributed under the MIT License. See [LICENSE.md](./LICENSE.md) for more infor
 
 ## 🙏 Acknowledgments
 
-- **Vite** for the amazing build tool
+- **Vite** for the lightning-fast build tool
 - **Svelte** for the intuitive and powerful framework
-- **Tailwind CSS** for making styling a breeze
+- **Tailwind CSS** for making styling efficient and consistent
 - **Go** for the robust backend API
 
 ## 🔧 Technical Details
 
-- **Svelte 5**: Leverages the latest "Runes" for fine-grained reactivity.
-- **Tailwind CSS 4**: Utilizes the newest features of Tailwind for streamlined styling.
+- **Svelte 5 Runes**: Leverages the latest "Runes" system (`$state`, `$derived`, `$effect`) for fine-grained reactivity and better performance.
+- **Tailwind CSS 4**: Utilizes the latest version of Tailwind for streamlined styling and improved build times.
 - **Vite 8**: Ensures a lightning-fast development experience and optimized production bundles.
-- **SPA Architecture**: Uses `svelte-spa-router` for a smooth, single-page application experience.
+- **SPA Architecture**: Uses `svelte-spa-router` for a smooth, single-page application experience without page reloads.
+- **Admin Security**: Implements an `Admin Code` verification gate and specialized fetch utilities for secure content management.
+- **CI/CD**: Integrated GitHub Actions for automated deployment, ensuring the live site is always up-to-date with the latest changes.

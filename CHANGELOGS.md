@@ -7,6 +7,7 @@
 
 ## Table of Contents
 
+- [v4.1.0 - 2026-05-14](#v410---2026-05-14)
 - [v4.0.2 - 2026-04-25](#v402---2026-04-25)
 - [v4.0.1 - 2026-04-23](#v401---2026-04-23)
 - [v4.0.0 - 2026-04-18](#v400---2026-04-18)
@@ -26,6 +27,23 @@
 - [v2.0.0 — 2026-01-03](#v200--2026-01-03)
 - [v1.0.0 — 2024-11-03](#v100--2024-11-03)
 ...
+
+### v4.1.0 - 2026-05-14
+
+- **Features & Enhancements**
+  - Integrated **AI Assistant** component for interactive user engagement.
+  - Implemented **File Upload** functionality in the Admin dashboard.
+  - Added **GitHub Actions workflows** for automated deployment to GitHub Pages.
+  - Initialized **Post Blog** functions for enhanced content management.
+- **UI/UX Improvements**
+  - Refined **Light Mode** styling for pagination and image components.
+  - Optimized scrollbar width for a cleaner, more focused layout.
+  - Various design refinements and layout adjustments across the app.
+- **Maintenance & Fixes**
+  - Updated core dependencies: **Vite 8.0.12**, **Svelte 5.55.5**, and **Tailwind 4.3.0**.
+  - Fixed and optimized CI/CD workflow configurations.
+  - Improved data fetching logic for better performance.
+
 ### v4.0.2 - 2026-04-25
 
 - **Security & Administration**
