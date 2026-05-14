@@ -34,8 +34,9 @@ jobs:
       
       - name: Installing Dependencies
         run: |
-          npm install
-          npm install gh-pages
+          npm install --legacy-peer-deps
+          npm install gh-pages --legacy-peer-deps
+          npm audit fix --legacy-peer-deps
 
       - name: Deploying to GH Pages
         run: |
