@@ -7,10 +7,12 @@
 		categories = ["all"],
 		totalProjects = [],
 		projects = $bindable([]),
+		parseData = false,
 	}: {
 		categories?: string[];
 		totalProjects?: Record<string, any>[];
 		projects?: Record<string, any>[];
+		parseData?: boolean;
 	} = $props();
 
 	let active = $state("all");

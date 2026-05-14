@@ -7,9 +7,11 @@
 	let {
 		certi = [],
 		exps = [],
+		parseData = false,
 	}: {
 		certi?: Record<string, any>[];
 		exps?: Record<string, any>[];
+		parseData?: boolean;
 	} = $props();
 </script>
 
@@ -24,7 +26,7 @@
 		<div
 			class="flex flex-col w-full md:w-[calc(50%-0.5rem)] overflow-y-auto gap-2"
 		>
-			{#if exps.length > 0}
+			{#if exps.length > 0 && parseData}
 				{#each exps as exp}
 					<div class="flex flex-row gap-2 items-start">
 						<span
@@ -67,7 +69,7 @@
 		<div
 			class="flex flex-row flex-wrap gap-2 w-full md:w-[calc(50%-0.5rem)] overflow-y-auto"
 		>
-			{#if certi.length > 0}
+			{#if certi.length > 0 && parseData}
 				{#each certi as cert}
 					<Card
 						class="flex flex-wrap aspect-video w-full md:w-[calc(50%-1rem)] rounded !p-0"

@@ -20,6 +20,8 @@
 	let feedback = $state<Record<string, any>[]>([]);
 	let projects = $state<Record<string, any>[]>([]);
 	let resume = $state<Record<string, any>>({});
+	let parseData = $state(false);
+	let loaded = $state(false);
 
 	function handleScroll() {
 		const height = document.getElementById("main")?.scrollTop ?? 0;
@@ -76,10 +78,13 @@
 			feedback = f.data;
 			projects = programs;
 			resume = d.data;
+			loaded = true;
+			parseData = true;
 		} catch (err: any) {
 			toast.error(err.toString(), {
 				position: "bottom-right",
 			});
+			parseData = true;
 		}
 	});
 </script>
@@ -98,13 +103,13 @@
 		class="h-full w-full overflow-hidden overflow-y-scroll snap-y snap-mandatory"
 	>
 		<Hero />
-		<About exps={experiences} certi={certificates} />
-		<Projects {projects} totalProjects={projects} {categories} />
-		<Blogs {blogs} />
-		<Feedback feedbacks={feedback} />
+		<About exps={experiences} certi={certificates} {parseData} />
+		<Projects {projects} totalProjects={projects} {categories} {parseData} />
+		<Blogs {blogs} {parseData} />
+		<Feedback feedbacks={feedback} {parseData} />
 		<Contact />
 		<Toaster />
-		<Ai {resume} {projects} expr={experiences} {blogs} />
+		<Ai {resume} {projects} expr={experiences} {blogs} parseData={loaded} />
 	</div>
 	<Toaster />
 </div>

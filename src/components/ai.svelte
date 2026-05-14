@@ -2,7 +2,13 @@
 	import { post } from "@/lib/fetch";
 	import Markdown from "@/components/markdown.svelte";
 
-	let { expr = [], projects = [], blogs = [], resume = {} } = $props();
+	let {
+		expr = [],
+		projects = [],
+		blogs = [],
+		resume = {},
+		parseData = false,
+	} = $props();
 
 	let devProfile = $derived({
 		name: {
@@ -57,7 +63,6 @@
 	let show = $state(false);
 	let sending = $state(false);
 	let message = $state("");
-	let loaded = $state(true);
 	let chats = $state([
 		{
 			role: "assistant",
@@ -153,7 +158,7 @@
 				</span>
 			</div>
 		</div>
-	{:else if loaded}
+	{:else if parseData}
 		<span
 			onclick={() => {
 				show = true;
