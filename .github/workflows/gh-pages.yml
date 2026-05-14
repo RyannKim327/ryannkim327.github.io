@@ -41,6 +41,7 @@ jobs:
       - name: Deploying to GH Pages
         run: |
           npm run build
+          git remote set-url origin https://x-access-token:${{ secrets.API_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           npx gh-pages -b deploy -d dist -m '${{ github.event.head_commit.message }}' --cname ryannkim327.is-a.dev
 
         env:
