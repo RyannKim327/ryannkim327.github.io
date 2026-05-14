@@ -6,39 +6,90 @@
 	import Blogs from "./blogs.svelte";
 	import Contact from "./contact.svelte";
 	import Feedback from "./feedback.svelte";
-	import { Toaster } from "svelte-french-toast";
+	import toast, { Toaster } from "svelte-french-toast";
 	import Ai from "@/components/ai.svelte";
+	import { onMount } from "svelte";
+	import { get } from "@/lib/fetch";
 
-	let y = 0;
+	let y = $state(0);
+
+	let blogs = $state<Record<string, any>[]>([]);
+	let categories = $state<string[]>([]);
+	let certificates = $state<Record<string, any>[]>([]);
+	let experiences = $state<Record<string, any>[]>([]);
+	let feedback = $state<Record<string, any>[]>([]);
+	let projects = $state<Record<string, any>[]>([]);
+	let resume = $state<Record<string, any>>({});
+	let parseData = $state(false);
+	let loaded = $state(false);
 
 	function handleScroll() {
 		const height = document.getElementById("main")?.scrollTop ?? 0;
 		y = height;
 	}
-	addEventListener("keydown", (ev: KeyboardEvent) => {
-		const key = ev.keyCode;
-		const keys = {
-			65: "about",
-			66: "blogs",
-			67: "contact",
-			72: "hero",
-			80: "projects",
-		};
-		if (
-			document.activeElement?.tagName.toLowerCase() !== "input" &&
-			document.activeElement?.tagName.toLowerCase() !== "textarea"
-		) {
-			const p = document.getElementById(keys[key] ?? "");
-			if (p) {
-				p.scrollIntoView({
-					behavior: "smooth",
-				});
+
+	$effect(() => {
+		const handleKeydown = (ev: KeyboardEvent) => {
+			const key = ev.keyCode;
+			const keys: Record<number, string> = {
+				65: "about",
+				66: "blogs",
+				67: "contact",
+				72: "hero",
+				80: "projects",
+			};
+			if (
+				document.activeElement?.tagName.toLowerCase() !== "input" &&
+				document.activeElement?.tagName.toLowerCase() !== "textarea"
+			) {
+				const p = document.getElementById(keys[key] ?? "");
+				if (p) {
+					p.scrollIntoView({
+						behavior: "smooth",
+					});
+				}
 			}
+		};
+
+		window.addEventListener("keydown", handleKeydown);
+		return () => window.removeEventListener("keydown", handleKeydown);
+	});
+
+	onMount(async () => {
+		try {
+			const [b, c, d, e, f, p] = await Promise.all([
+				get("blog"),
+				get("certs"),
+				get("dev"),
+				get("experiences"),
+				get("feedback"),
+				get("projects"),
+			]);
+
+			const programs = p.data.projects.sort(
+				(a: Record<string, any>, b: Record<string, any>) =>
+					a.name.localeCompare(b.name),
+			);
+
+			blogs = b.data;
+			categories = ["all", ...p.data.categories];
+			certificates = c.data;
+			experiences = e.data;
+			feedback = f.data;
+			projects = programs;
+			resume = d.data;
+			loaded = true;
+			parseData = true;
+		} catch (err: any) {
+			toast.error(err.toString(), {
+				position: "bottom-right",
+			});
+			parseData = true;
 		}
 	});
 </script>
 
-<svelte onscroll={handleScroll}></svelte>
+<svelte:window onscroll={handleScroll} />
 
 <div class="px-5 w-full h-full">
 	<Header
@@ -52,12 +103,13 @@
 		class="h-full w-full overflow-hidden overflow-y-scroll snap-y snap-mandatory"
 	>
 		<Hero />
-		<About />
-		<Projects />
-		<Blogs />
-		<Feedback />
+		<About exps={experiences} certi={certificates} {parseData} />
+		<Projects {projects} totalProjects={projects} {categories} {parseData} />
+		<Blogs {blogs} {parseData} />
+		<Feedback feedbacks={feedback} {parseData} />
 		<Contact />
 		<Toaster />
-		<Ai />
+		<Ai {resume} {projects} expr={experiences} {blogs} parseData={loaded} />
 	</div>
+	<Toaster />
 </div>

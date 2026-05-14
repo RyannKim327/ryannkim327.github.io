@@ -1,0 +1,42 @@
+name: Web Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on:
+      ubuntu-latest
+    steps:
+      - uses: action/checkout@v3
+      - uses: action/setup-node@v3
+      - name: Config of Git
+        run: |
+          git config user.name "${{ secrets.NAME }}"
+          git config user.email "${{ secrets.EMAIL }}"
+
+      - name: Fetch and Pull
+        run: |
+          npm fetch origin main
+          npm pull origin main
+      
+      - name: Installing Dependencies
+        run: |
+          npm install
+          npm install gh-pages
+
+      - name: Deploying to GH Pages
+        run: |
+          npm run build
+          npx gh-pages -b deploy -d dist -m '${{ github.event.head_commit.message }}' --cname ryannkim327.is-a.dev
+
+      - name: Deploy
+        env:
+          API_GITHUB_TOKEN: ${{ secrets.API_GITHUB_TOKEN }}

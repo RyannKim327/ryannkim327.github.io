@@ -1,8 +1,8 @@
-<script>
-	export let content = "";
-
+<script lang="ts">
 	import DOMPurify from "dompurify";
 	import { marked } from "marked";
+
+	let { content = "" }: { content?: string } = $props();
 </script>
 
 <div class="markdown-preview h-full w-full overflow-none overflow-x-auto">

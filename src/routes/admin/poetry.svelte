@@ -1,11 +1,10 @@
 <script lang="ts">
-	import Input from "@/components/input.svelte";
-	import Textarea from "@/components/textarea.svelte";
 	import { adminPost } from "@/lib/fetch";
 	import { storage } from "@/lib/storage";
 	import toast from "svelte-french-toast";
 
 	let init = false;
+
 	let title: string = $state(storage("title") ?? "") as string;
 	let code = $state("");
 	let content: string = $state(storage("content") ?? "") as string;
@@ -22,6 +21,7 @@
 			title,
 			content: content.trim().split("\n"),
 		});
+
 		if (data.error) {
 			toast.error(data.error, {
 				position: "bottom-right",
@@ -29,61 +29,76 @@
 		} else {
 			storage("title", "");
 			storage("content", "");
+
 			title = "";
 			content = "";
 			code = "";
-			toast.success("Poem Posted successfully", {
+
+			toast.success("Poem posted successfully", {
 				position: "bottom-right",
 			});
 		}
 	}
 </script>
 
-<div class="flex w-full pt-25 h-full overflow-hidden gap-3">
-	<div
-		class="flex flex-col w-full h-full md:w-[calc(66.666%-0.5rem)] items-center justify-start"
-	>
-		<div class="flex w-full gap-2 justify-center">
-			<Input
-				class_="flex-1 w-full"
-				name="title"
-				placeholder="Title"
-				bind:value={title}
-			/>
-			<Input
-				class_="flex-1 w-full"
-				name="code"
-				type="password"
-				placeholder="Admin Code"
-				bind:value={code}
-			/>
-		</div>
-		<div class="flex w-full flex-1">
-			<Textarea
-				class_="flex-1"
+<div class="h-full w-full flex items-center justify-center p-6 overflow-hidden">
+	<div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
+		<!-- EDITOR -->
+		<div
+			class="space-y-5 border border-neutral-300 dark:border-neutral-800 p-6"
+		>
+			<h1 class="text-xl font-semibold tracking-wide">Create Poem</h1>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+				<input
+					bind:value={title}
+					placeholder="Title"
+					class="w-full border border-neutral-300 dark:border-neutral-800 bg-transparent px-3 py-2 outline-none focus:border-black dark:focus:border-white"
+				/>
+
+				<input
+					type="password"
+					bind:value={code}
+					placeholder="Admin Code"
+					class="w-full border border-neutral-300 dark:border-neutral-800 bg-transparent px-3 py-2 outline-none focus:border-black dark:focus:border-white"
+				/>
+			</div>
+
+			<textarea
 				bind:value={content}
-				name="content"
-				placeholder="Content"
-			/>
+				placeholder="Write your poem..."
+				class="w-full min-h-[300px] border border-neutral-300 dark:border-neutral-800 bg-transparent p-4 outline-none resize-none focus:border-black dark:focus:border-white"
+			></textarea>
+
+			<div class="flex justify-end">
+				<button
+					onclick={submit}
+					class="rounded-2xl bg-white px-6 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-white/90 active:scale-[0.98]"
+				>
+					Publish Poem
+				</button>
+			</div>
 		</div>
-		<div class="flex w-full justify-end p-2">
-			<input
-				class="border border-solid border-white p-1"
-				type="submit"
-				onclick={submit}
-				value="Post Poem"
-			/>
-		</div>
-	</div>
-	<div class="hidden md:flex flex-col h-full w-[calc(33.333%-0.5rem)] px-1">
-		<span>{title === "" ? "Title" : title}</span>
-		<hr />
-		<div class="flex flex-col overflow-y-auto h-full">
-			{#each content.split("\n") as c}
-				<span>
-					{c}
-				</span>
-			{/each}
+
+		<!-- PREVIEW -->
+		<div
+			class="border border-neutral-300 dark:border-neutral-800 p-6 overflow-hidden"
+		>
+			<h2 class="text-sm uppercase tracking-wide text-neutral-500 mb-4">
+				Preview
+			</h2>
+
+			<h1 class="text-2xl font-semibold mb-6">
+				{title || "Untitled Poem"}
+			</h1>
+
+			<div
+				class="space-y-2 text-neutral-700 dark:text-neutral-300 leading-7 overflow-y-scroll h-[300px]"
+			>
+				{#each content.split("\n") as line}
+					<p>{line === "" ? "\u00A0" : line}</p>
+				{/each}
+			</div>
 		</div>
 	</div>
 </div>

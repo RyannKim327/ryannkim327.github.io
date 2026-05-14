@@ -1,54 +1,47 @@
 <script lang="ts">
-	import { get, post } from "@/lib/fetch";
-	import { onMount } from "svelte";
+	import { post } from "@/lib/fetch";
 	import Markdown from "@/components/markdown.svelte";
 
-	let devProfile = {};
-	let show = $state(false);
-	let sending = $state(false);
-	let message = $state("");
-	let loaded = $state(false);
-	let chats = $state([
-		{
-			role: "assistant",
-			content: "Hello, I am k.guin, Ryann Kim's personal AI Assistant",
+	let {
+		expr = [],
+		projects = [],
+		blogs = [],
+		resume = {},
+		parseData = false,
+	} = $props();
+
+	let devProfile = $derived({
+		name: {
+			firstname: "Ryann Kim",
+			middlename: "Malabanan",
+			lastname: "Sesgundo",
 		},
-	]);
+		nicknames: ["Kim", "Ryann", "Kimmy"],
+		experiences: [...expr].reverse(),
+		projects: projects,
+		blogs: blogs,
+		alias: ["RyannKim327", "RySes", "RySes Malabanan", "Krysanne Guinmods"],
+		birthyear: 2001,
+		sex: "male",
+		pronounce: "He",
+		github: "https://github.com/RyannKim327",
+		linkedin: "https://linkedin.com/in/RyannKim327",
+		facebook: "https://fb.me/MPOP.2016",
+		npmjs: "https://npmjs.com/~ryannkim327",
+		personality: [
+			"Boastful but low-key",
+			"Simple",
+			"Ambivert but more preferred to be alone",
+			"Talkative",
+			"Cheerful",
+		],
+		other: resume,
+	});
 
-	let base = {};
-	onMount(async () => {
-		const expr = await get("experiences");
-		const projects = await get("projects");
-
-		devProfile = {
-			name: {
-				firstname: "Ryann Kim",
-				middlename: "Malabanan",
-				lastname: "Sesgundo",
-			},
-			nicknames: ["Kim", "Ryann", "Kimmy"],
-			experiences: expr.data.reverse(),
-			projects: projects.data.projects,
-			alias: ["RyannKim327", "RySes", "RySes Malabanan", "Krysanne Guinmods"],
-			birthyear: 2001,
-			sex: "male",
-			pronounce: "He",
-			github: "https://github.com/RyannKim327",
-			linkedin: "https://linkedin.com/in/RyannKim327",
-			facebook: "https://fb.me/MPOP.2016",
-			npmjs: "https://npmjs.com/~ryannkim327",
-			personality: [
-				"Boastful but low-key",
-				"Simple",
-				"Ambivert but more preferred to be alone",
-				"Talkative",
-				"Cheerful",
-			],
-		};
-		base = {
-			role: "system",
-			content:
-				`You are a chatbot named K.Guin (short for Krysanne Guinmods). You are a personal chatbot about the developer.
+	let base = $derived({
+		role: "system",
+		content:
+			`You are a chatbot named K.Guin (short for Krysanne Guinmods). You are a personal chatbot about the developer.
 				Use only the information here: ${JSON.stringify(devProfile, null, 2)}.
 				The information can also shape your personality, tone, and perspective.
 
@@ -65,9 +58,17 @@
 				9. Respond in a natural, conversational way like a real person. Keep answers clear and easy to read without being overly long. Small reactions, friendly tone, and personality are welcome when appropriate.
 				10. Whenever you mention the developer's social media or links, format them as clickable Markdown links.
 				11. Avoid using tables, instead use lists and sub lists. If you need to present multiple pieces of information, prefer simple lists or short paragraphs so the response is easier to read and understand.`.trim(),
-		};
-		loaded = true;
 	});
+
+	let show = $state(false);
+	let sending = $state(false);
+	let message = $state("");
+	let chats = $state([
+		{
+			role: "assistant",
+			content: "Hello, I am k.guin, Ryann Kim's personal AI Assistant",
+		},
+	]);
 
 	async function send() {
 		sending = true;
@@ -112,14 +113,14 @@
 					{#if chat.role === "user"}
 						<div class="flex w-full justify-end">
 							<span
-								class="max-w-[calc(66.666%-0.5rem)] border border-solid bg-[#f0f8ff] text-[#121212] border-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff] dark:border-[#f0f8ff] px-2 py-1 rounded"
+								class="max-w-[calc(75%-0.5rem)] border border-solid bg-[#f0f8ff] text-[#121212] border-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff] dark:border-[#f0f8ff] px-2 py-1 rounded"
 							>
 								{chat.content}
 							</span>
 						</div>
 					{:else}
 						<div class="flex w-full justify-start">
-							<span class="max-w-[calc(66.666%-0.5rem)] rounded">
+							<span class="max-w-[calc(75%-0.5rem)] rounded">
 								<Markdown content={chat.content} />
 							</span>
 						</div>
@@ -157,7 +158,7 @@
 				</span>
 			</div>
 		</div>
-	{:else if loaded}
+	{:else if parseData}
 		<span
 			onclick={() => {
 				show = true;

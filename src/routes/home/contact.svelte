@@ -1,6 +1,10 @@
 <script lang="ts">
 	import Input from "@/components/input.svelte";
 	import Textarea from "@/components/textarea.svelte";
+
+	let name = $state("");
+	let email = $state("");
+	let content = $state("");
 </script>
 
 <div
@@ -16,11 +20,15 @@
 	></iframe>
 	<div class="flex flex-col flex-1 gap-2">
 		<div class="flex w-full gap-2">
-			<Input name="name" value="" placeholder="Full name or Company name" />
-			<Input name="email" value="" placeholder="Email" />
+			<Input
+				name="name"
+				bind:value={name}
+				placeholder="Full name or Company name"
+			/>
+			<Input name="email" bind:value={email} placeholder="Email" />
 		</div>
 		<div class="flex h-25">
-			<Textarea class_="h-full" name="content" value="" placeholder="Content"
+			<Textarea class="h-full" name="content" bind:value={content} placeholder="Content"
 			></Textarea>
 		</div>
 		<div class="flex w-full justify-end">

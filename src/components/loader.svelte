@@ -1,9 +1,17 @@
 <script lang="ts">
-	export let class_: string = ""
+	import type { Snippet } from "svelte";
+
+	let {
+		class: className = "",
+		children,
+	}: {
+		class?: string;
+		children?: Snippet;
+	} = $props();
 </script>
 
-<div class={`p-2 bg-[#212121] rounded shine ${class_}`}>
-<slot />
+<div class={`p-2 bg-[#212121] rounded shine ${className}`}>
+	{@render children?.()}
 </div>
 
 <style>

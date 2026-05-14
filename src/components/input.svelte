@@ -1,18 +1,26 @@
 <script lang="ts">
-	export let placeholder: string;
-	export let name: string;
-	export let type: string = "text";
-	export let class_: string = "";
-
-	export let value: string = "";
-	export let file: FileList | null = null;
+	let {
+		placeholder,
+		name,
+		type = "text",
+		class: className = "",
+		value = $bindable(""),
+		file = $bindable(null),
+	}: {
+		placeholder: string;
+		name: string;
+		type?: string;
+		class?: string;
+		value?: string;
+		file?: FileList | null;
+	} = $props();
 </script>
 
 <div
-	class={`${class_} relative w-full border border-white custom-input m-2 p-2 rounded`}
+	class={`${className} relative w-full border border-white custom-input m-2 p-2 rounded`}
 >
 	<label
-		class="dark:bg-[#111b1c] absolute transition-all duration-200 px-2 select-none"
+		class="absolute transition-all duration-200 px-2 select-none"
 		for={name}
 	>
 		{placeholder}

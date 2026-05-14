@@ -1,16 +1,24 @@
 <script lang="ts">
-	export let placeholder: string;
-	export let name: string;
-	export let value: string;
-	export let class_: string = "";
-	export let h: string = "h-full";
+	let {
+		placeholder,
+		name,
+		value = $bindable(),
+		class: className = "",
+		h = "h-full",
+	}: {
+		placeholder: string;
+		name: string;
+		value: string;
+		class?: string;
+		h?: string;
+	} = $props();
 </script>
 
 <div
-	class={`${class_} relative w-full border border-white custom-input m-2 p-2 rounded`}
+	class={`${className} relative w-full border border-white custom-input m-2 p-2 rounded`}
 >
 	<label
-		class="dark:bg-[#111b1c] absolute transition-all duration-200 px-2 select-none"
+		class=" absolute transition-all duration-200 px-2 select-none"
 		for={name}
 	>
 		{placeholder}

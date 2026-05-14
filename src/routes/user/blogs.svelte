@@ -5,9 +5,9 @@
 	import { onMount } from "svelte";
 	import { push } from "svelte-spa-router";
 
-	let blogs: Record<string, any>[] = [];
-	let pages: number = 1;
-	let page: number = 1;
+	let blogs = $state<Record<string, any>[]>([]);
+	let pages = $state<number>(1);
+	let page = $state<number>(1);
 
 	onMount(async () => {
 		const data = await get("blog", {
@@ -37,7 +37,7 @@
 	<div class="flex flex-wrap p-5 gap-5 py-[5%] w-full h-full">
 		{#each blogs as blog}
 			<Card
-				class_="aspect-video w-full md:w-[calc(33.333%-1rem)] justify-between cursor-pointer"
+				class="aspect-video w-full md:w-[calc(33.333%-1rem)] justify-between cursor-pointer"
 				onclick={() => {
 					push(`/blog/${blog.id}`);
 				}}
@@ -53,26 +53,40 @@
 		<div
 			class="flex gap-2 bg-[#f0f8ff]/75 dark:bg-[#121212]/75 shadow shadow-[#252525] backdrop-blur-xs rounded-full p-2 px-5"
 		>
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<span
 				class="cursor-pointer select-none flex items-center justify-center"
 				onclick={() => {
 					changepage(page > 1 ? page - 1 : 1);
+				}}
+				onkeydown={(e) => {
+					if (e.key === "Enter" || e.key === " ")
+						changepage(page > 1 ? page - 1 : 1);
 				}}>Prev</span
 			>
 			{#each Array(pages) as _, p}
+				<!-- svelte-ignore a11y_no_static_element_interactions -->
 				<span
 					onclick={() => {
 						changepage(p + 1);
+					}}
+					onkeydown={(e) => {
+						if (e.key === "Enter" || e.key === " ") changepage(p + 1);
 					}}
 					class={`${p + 1 === page ? "bg-[#cacdcc] dark:bg-[#555555]" : ""} flex items-center justify-center text-center rounded-full aspect-square w-7 h-7 cursor-pointer select-none`}
 				>
 					{p + 1}
 				</span>
 			{/each}
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<span
 				class="cursor-pointer select-none flex items-center justify-center"
 				onclick={() => {
 					changepage(page < pages ? page + 1 : pages);
+				}}
+				onkeydown={(e) => {
+					if (e.key === "Enter" || e.key === " ")
+						changepage(page < pages ? page + 1 : pages);
 				}}>Next</span
 			>
 		</div>

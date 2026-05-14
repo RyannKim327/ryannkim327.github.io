@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let params = {id: number}
+	let { params } = $props<{ params: { id: string } }>();
 
 	import Input from "@/components/input.svelte";
 	import Textarea from "@/components/textarea.svelte";
@@ -10,13 +10,13 @@
 	import { Toaster, toast } from "svelte-french-toast"
 	import { onMount } from "svelte"
 
-	let title = "";
-	let code = "";
-	let content = ""
+	let title = $state("");
+	let code = $state("");
+	let content = $state("")
 
-	let tags = "";
-	let media = "";
-	let time = ""
+	let tags = $state("");
+	let media = $state("");
+	let time = $state("")
 	
 	onMount(async () => {
 		const api = await get("blog", {
@@ -45,13 +45,13 @@
 	<div class="flex flex-col w-full h-full items-center justify-start pt-[5%] overflow-y-scroll">
 		<div class="flex w-full gap-2 justify-center">
 			<Input
-				class_="flex-1 w-full"
+				class="flex-1 w-full"
 				name="title"
 				placeholder="Title"
 				bind:value={title}
 			/>
 			<Input
-				class_="flex-1 w-full"
+				class="flex-1 w-full"
 				name="code"
 				type="password"
 				placeholder="Admin Code"
@@ -60,13 +60,13 @@
 		</div>
 		<div class="flex w-full gap-2 justify-center">
 			<Input
-				class_="flex-1 w-full"
+				class="flex-1 w-full"
 				name="tags"
 				placeholder="Tags"
 				bind:value={tags}
 			/>
 			<Input
-				class_="flex-1 w-full"
+				class="flex-1 w-full"
 				name="media"
 				placeholder="Media Files"
 				bind:value={media}
@@ -74,7 +74,7 @@
 		</div>
 		<div class="flex w-full gap-2 justify-center flex-1 h-full">
 			<Textarea
-				class_="flex-1 w-full"
+				class="flex-1 w-full"
 				name="content"
 				placeholder="Content"
 				bind:value={content}
