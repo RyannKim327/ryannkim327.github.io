@@ -29,8 +29,8 @@ jobs:
 
       - name: Fetch and Pull
         run: |
-          npm fetch origin main
-          npm pull origin main
+          git fetch origin main
+          git pull origin main
       
       - name: Installing Dependencies
         run: |
