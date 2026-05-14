@@ -37,6 +37,5 @@ jobs:
           npm run build
           npx gh-pages -b deploy -d dist -m '${{ github.event.head_commit.message }}' --cname ryannkim327.is-a.dev
 
-      - name: Deploy
         env:
           API_GITHUB_TOKEN: ${{ secrets.API_GITHUB_TOKEN }}
