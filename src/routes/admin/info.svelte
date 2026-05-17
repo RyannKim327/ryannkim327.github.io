@@ -28,7 +28,6 @@
 
 			<button
 				class="self-end rounded-xl bg-blue-600 px-6 py-2 text-white hover:bg-blue-500"
-				on:click={downloadResume}
 			>
 				Download Resume
 			</button>
