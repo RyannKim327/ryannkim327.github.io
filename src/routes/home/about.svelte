@@ -2,7 +2,6 @@
 	import Loader from "@/components/loader.svelte";
 	import Card from "@/components/card.svelte";
 	import { push } from "svelte-spa-router";
-	import Wakatime from "./wakatime.svelte";
 
 	let {
 		certi = [],
@@ -19,7 +18,6 @@
 	id="about"
 	class="flex flex-col p-5 pt-[25%] md:pt-[10%] w-full h-full gap-5 overflow-y-auto md:overflow-hidden snap-start"
 >
-	<Wakatime />
 	<div
 		class="flex flex-col md:flex-row w-full h-full gap-5 overflow-y-auto overflow-x-hidden"
 	>

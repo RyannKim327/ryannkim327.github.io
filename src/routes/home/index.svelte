@@ -10,6 +10,7 @@
 	import Ai from "@/components/ai.svelte";
 	import { onMount } from "svelte";
 	import { get } from "@/lib/fetch";
+	import axios from "axios";
 
 	let y = $state(0);
 
@@ -18,6 +19,7 @@
 	let certificates = $state<Record<string, any>[]>([]);
 	let experiences = $state<Record<string, any>[]>([]);
 	let feedback = $state<Record<string, any>[]>([]);
+	let github = $state<Record<string, any>[]>([]);
 	let projects = $state<Record<string, any>[]>([]);
 	let resume = $state<Record<string, any>>({});
 	let parseData = $state(false);
@@ -57,12 +59,15 @@
 
 	onMount(async () => {
 		try {
-			const [b, c, d, e, f, p] = await Promise.all([
+			const [b, c, d, e, f, g, p] = await Promise.all([
 				get("blog"),
 				get("certs"),
 				get("dev"),
 				get("experiences"),
 				get("feedback"),
+				axios.get(
+					"https://api.github.com/users/RyannKim327/repos?sort=updated",
+				),
 				get("projects"),
 			]);
 
@@ -74,8 +79,9 @@
 			blogs = b.data;
 			categories = ["all", ...p.data.categories];
 			certificates = c.data;
-			experiences = e.data;
+			experiences = e.data.reverse();
 			feedback = f.data;
+			github = g.data;
 			projects = programs;
 			resume = d.data;
 			loaded = true;
@@ -91,7 +97,7 @@
 
 <svelte:window onscroll={handleScroll} />
 
-<div class="px-5 w-full h-full">
+<div class="w-full h-full">
 	<Header
 		scroll={Math.round(
 			y / (document.getElementById("main")?.offsetHeight ?? 1),
@@ -100,7 +106,7 @@
 	<div
 		id="main"
 		onscroll={handleScroll}
-		class="h-full w-full overflow-hidden overflow-y-scroll snap-y snap-mandatory"
+		class="h-full w-full overflow-hidden overflow-y-scroll snap-y snap-mandatory px-5"
 	>
 		<Hero />
 		<About exps={experiences} certi={certificates} {parseData} />
@@ -109,7 +115,13 @@
 		<Feedback feedbacks={feedback} {parseData} />
 		<Contact />
 		<Toaster />
-		<Ai {resume} {projects} expr={experiences} {blogs} parseData={loaded} />
+		<Ai
+			{resume}
+			projects={github}
+			expr={experiences}
+			{blogs}
+			parseData={loaded}
+		/>
 	</div>
 	<Toaster />
 </div>

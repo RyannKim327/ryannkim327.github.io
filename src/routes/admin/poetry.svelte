@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { adminPost } from "@/lib/fetch";
 	import { storage } from "@/lib/storage";
-	import toast from "svelte-french-toast";
+	import toast, { Toaster } from "svelte-french-toast";
 
 	let init = false;
 
@@ -73,7 +73,7 @@
 			<div class="flex justify-end">
 				<button
 					onclick={submit}
-					class="rounded-2xl bg-white px-6 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-white/90 active:scale-[0.98]"
+					class="border border-black dark:border-white px-5 py-2 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
 				>
 					Publish Poem
 				</button>
@@ -101,4 +101,5 @@
 			</div>
 		</div>
 	</div>
+	<Toaster />
 </div>

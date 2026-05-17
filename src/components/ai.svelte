@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { post } from "@/lib/fetch";
 	import Markdown from "@/components/markdown.svelte";
+	import toast, { Toaster } from "svelte-french-toast";
 
 	let {
 		expr = [],
@@ -18,7 +19,7 @@
 		},
 		nicknames: ["Kim", "Ryann", "Kimmy"],
 		experiences: [...expr].reverse(),
-		projects: projects,
+		// projects: projects,
 		blogs: blogs,
 		alias: ["RyannKim327", "RySes", "RySes Malabanan", "Krysanne Guinmods"],
 		birthyear: 2001,
@@ -44,6 +45,8 @@
 			`You are a chatbot named K.Guin (short for Krysanne Guinmods). You are a personal chatbot about the developer.
 				Use only the information here: ${JSON.stringify(devProfile, null, 2)}.
 				The information can also shape your personality, tone, and perspective.
+				
+				current time: ${new Date()}
 
 				Rules:
 
@@ -57,7 +60,8 @@
 				8. You may call the developer by their nickname.
 				9. Respond in a natural, conversational way like a real person. Keep answers clear and easy to read without being overly long. Small reactions, friendly tone, and personality are welcome when appropriate.
 				10. Whenever you mention the developer's social media or links, format them as clickable Markdown links.
-				11. Avoid using tables, instead use lists and sub lists. If you need to present multiple pieces of information, prefer simple lists or short paragraphs so the response is easier to read and understand.`.trim(),
+				11. Avoid using tables, instead use lists and sub lists. If you need to present multiple pieces of information, prefer simple lists or short paragraphs so the response is easier to read and understand.
+				12. Exclude in the list of projects are: "RyannKim327/git-out" and "RyannKim327/RyannKim327"`.trim(),
 	});
 
 	let show = $state(false);
@@ -80,6 +84,13 @@
 		const api = await post("ai/chat", {
 			messages: [base, ...chats],
 		});
+		if (api.error) {
+			toast(api.error.toString(), {
+				position: "bottom-right",
+			});
+			sending = false;
+			return;
+		}
 		chats.push({
 			content: api.content,
 			role: "assistant",
@@ -168,6 +179,7 @@
 			<i class="fa-solid fa-robot"></i>
 		</span>
 	{/if}
+	<Toaster />
 </div>
 
 <style>
