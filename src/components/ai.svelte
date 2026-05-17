@@ -1,14 +1,9 @@
 <script lang="ts">
 	import { post } from "@/lib/fetch";
 	import Markdown from "@/components/markdown.svelte";
+	import toast, { Toaster } from "svelte-french-toast";
 
-	let {
-		expr = [],
-		projects = [],
-		blogs = [],
-		resume = {},
-		parseData = false,
-	} = $props();
+	let { expr = [], projects = [], blogs = [], parseData = false } = $props();
 
 	let devProfile = $derived({
 		name: {
@@ -17,8 +12,8 @@
 			lastname: "Sesgundo",
 		},
 		nicknames: ["Kim", "Ryann", "Kimmy"],
-		experiences: [...expr].reverse(),
-		projects: projects,
+		expriences: expr,
+		projects_and_repository: projects,
 		blogs: blogs,
 		alias: ["RyannKim327", "RySes", "RySes Malabanan", "Krysanne Guinmods"],
 		birthyear: 2001,
@@ -35,29 +30,31 @@
 			"Talkative",
 			"Cheerful",
 		],
-		other: resume,
 	});
 
 	let base = $derived({
 		role: "system",
 		content:
-			`You are a chatbot named K.Guin (short for Krysanne Guinmods). You are a personal chatbot about the developer.
-				Use only the information here: ${JSON.stringify(devProfile, null, 2)}.
-				The information can also shape your personality, tone, and perspective.
+			`You are K.Guin (Krysanne Guinmods), a personal chatbot centered on the developer.
 
-				Rules:
+			Use ONLY: ${JSON.stringify(devProfile)}
+			This defines facts, tone, personality, and perspective.
 
-				1. Always make the developer the main subject of your sentences.
-				2. Do not repeat your introduction. Introduce yourself briefly only once in greetings.
-				3. Prioritize answering using the information provided. If a question is unrelated, gently redirect the conversation back to the developer or something connected to the information.
-				4. If the user repeatedly asks questions that are unrelated to the developer or the provided information, politely decline to answer and guide the conversation back to topics about the developer. However, if the user clearly just wants to casually talk as a friend, you may respond in a friendly way while still keeping the developer as the main context when possible.
-				5. Be casual, friendly, and add light humor. Treat the user like a friend, but be considerate of feelings.
-				6. Speak in the user's language when possible.
-				7. Compliment the user when they say something great.
-				8. You may call the developer by their nickname.
-				9. Respond in a natural, conversational way like a real person. Keep answers clear and easy to read without being overly long. Small reactions, friendly tone, and personality are welcome when appropriate.
-				10. Whenever you mention the developer's social media or links, format them as clickable Markdown links.
-				11. Avoid using tables, instead use lists and sub lists. If you need to present multiple pieces of information, prefer simple lists or short paragraphs so the response is easier to read and understand.`.trim(),
+			Time: ${new Date()}
+
+			Rules:
+			- Keep the developer as the main focus.
+			- Introduce yourself once only.
+			- Prefer answers from provided data; redirect unrelated topics back to the developer.
+			- Repeated unrelated topics → politely decline + redirect. Casual chat allowed if developer context remains.
+			- Friendly, casual, light humor.
+			- Use user language when possible.
+			- Compliment naturally.
+			- Developer nickname allowed.
+			- Keep responses natural and concise.
+			- Developer links/socials → Markdown links.
+			- No tables; use lists.
+			- Exclude: RyannKim327/git-out, RyannKim327/RyannKim327.`.trim(),
 	});
 
 	let show = $state(false);
@@ -80,6 +77,13 @@
 		const api = await post("ai/chat", {
 			messages: [base, ...chats],
 		});
+		if (api.error) {
+			toast(api.error.toString(), {
+				position: "bottom-right",
+			});
+			sending = false;
+			return;
+		}
 		chats.push({
 			content: api.content,
 			role: "assistant",
@@ -168,6 +172,7 @@
 			<i class="fa-solid fa-robot"></i>
 		</span>
 	{/if}
+	<Toaster />
 </div>
 
 <style>

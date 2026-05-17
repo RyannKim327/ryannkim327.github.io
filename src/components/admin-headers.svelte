@@ -18,6 +18,11 @@
 		},
 		{
 			type: "fa-solid",
+			icon: "fa-user",
+			name: "Experience",
+		},
+		{
+			type: "fa-solid",
 			icon: "fa-upload",
 			name: "Upload",
 		},

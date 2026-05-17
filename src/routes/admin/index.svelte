@@ -8,12 +8,14 @@
 	import { session } from "@/lib/storage";
 	import Upload from "./upload.svelte";
 	import Project from "./project.svelte";
+	import Experiences from "./experiences.svelte";
 
 	let { params } = $props<{ params: { page?: string } }>();
 
 	const secret_code = "santol@mangga.com";
 	const pages: Record<string, any> = {
 		info: Info,
+		experience: Experiences,
 		poetry: Poetry,
 		blogs: Blogs,
 		upload: Upload,
