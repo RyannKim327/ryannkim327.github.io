@@ -81,7 +81,7 @@
 			certificates = c.data;
 			experiences = e.data.reverse();
 			feedback = f.data;
-			github = g.data;
+			github = g.data.slice(12);
 			projects = programs;
 			resume = d.data;
 			loaded = true;
