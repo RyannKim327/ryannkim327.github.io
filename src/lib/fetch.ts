@@ -12,7 +12,7 @@ const api = axios.create({
 	withCredentials: true
 });
 
-function response(data: parameter | AxiosResponse, status: number, error?: string): parameter {
+function response(data: parameter | AxiosResponse, status: number): parameter {
 	try {
 		if (status >= 200 && status < 300) {
 			if (Array.isArray(data)) {
@@ -27,7 +27,7 @@ function response(data: parameter | AxiosResponse, status: number, error?: strin
 				};
 			}
 		}
-		throw new Error(error ?? "Something went wrong");
+		throw new Error(data?.error ?? "Something went wrong");
 	} catch (e) {
 		return {
 			error: e,
