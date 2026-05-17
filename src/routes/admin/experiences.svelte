@@ -47,6 +47,8 @@
 				toast(expResponse.error, {
 					position: "bottom-right",
 				});
+				sending = false;
+				experiences.reverse();
 				return;
 			}
 			toast("Updated", {
