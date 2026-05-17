@@ -7,6 +7,7 @@
 
 ## Table of Contents
 
+- [v4.2.0 - 2026-05-17](#v420---2026-05-17)
 - [v4.1.0 - 2026-05-14](#v410---2026-05-14)
 - [v4.0.2 - 2026-04-25](#v402---2026-04-25)
 - [v4.0.1 - 2026-04-23](#v401---2026-04-23)
@@ -27,6 +28,15 @@
 - [v2.0.0 — 2026-01-03](#v200--2026-01-03)
 - [v1.0.0 — 2024-11-03](#v100--2024-11-03)
 ...
+
+### v4.2.0 - 2026-05-17
+
+- **Features & Enhancements**
+  - Integrated **GitHub API** for dynamic project fetching, allowing projects to be synced directly from GitHub.
+- **Maintenance & Fixes**
+  - Fixed issues with **Experiences** and **Poetry** sections for improved stability.
+  - General adjustments and optimizations across the application.
+  - Updated deployment configurations.
 
 ### v4.1.0 - 2026-05-14
 
