@@ -1,6 +1,6 @@
 # RyannKim327 Portfolio
 
-**Project version:** `4.1.0`
+**Project version:** `4.2.0`
 
 [![wakatime](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8.svg)](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8)
 ![Svelte](https://img.shields.io/badge/Svelte-5.55.5-FF3E00?style=flat&logo=svelte)
@@ -52,6 +52,7 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 - 🤖 **AI Assistant** - Integrated AI component for interactive user engagement and assistance
 - 🧰 **Admin Dashboard** - Comprehensive dashboard to manage blogs, poetry, and professional info
 - 📤 **File Uploads** - Integrated file upload functionality for media management within the Admin dashboard
+- 🐙 **GitHub Integration** - Automated project fetching and syncing using the GitHub API
 - 🔗 **Backend Integration** - Connected to a custom Go-based backend API
 
 ## 🛠️ Tech Stack
