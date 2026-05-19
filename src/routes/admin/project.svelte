@@ -30,7 +30,7 @@
 	}
 </script>
 
-<div class="min-h-screen px-6 py-12">
+<div class="flex items-center justify-center h-full w-full px-6 py-12">
 	<div class="max-w-4xl mx-auto">
 		<form
 			on:submit|preventDefault={submitProject}
@@ -45,9 +45,8 @@
 			</div>
 
 			<div class="grid md:grid-cols-2 gap-5">
-				<!-- Title -->
 				<div class="space-y-2">
-					<label class="text-sm text-neutral-500"> Project Title </label>
+					<label class="text-sm text-neutral-500"> Project Name </label>
 
 					<input
 						bind:value={title}

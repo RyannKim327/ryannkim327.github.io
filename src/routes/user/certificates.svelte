@@ -46,9 +46,9 @@
 	<div class="flex flex-wrap gap-5 py-[2%] p-5">
 		{#each certs as cert}
 			<Card
-				class="flex flex-wrap aspect-video w-full md:w-[calc(33.333%-1rem)] rounded !p-0"
+				class="flex flex-wrap w-full md:w-[calc(33.333%-1rem)] h-fit rounded !p-0 overflow-none"
 			>
-				<img class="h-full w-full" src={cert.url} alt={cert.source} />
+				<img class="w-full aspect-video" src={cert.url} alt={cert.source} />
 			</Card>
 		{/each}
 	</div>
@@ -56,7 +56,6 @@
 		<div
 			class="flex gap-2 bg-[#f0f8ff]/75 dark:bg-[#121212]/75 shadow shadow-[#252525] backdrop-blur-xs rounded-full p-2 px-5"
 		>
-			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<span
 				class="cursor-pointer select-none flex items-center justify-center"
 				onclick={() => {
@@ -81,7 +80,6 @@
 					{p + 1}
 				</span>
 			{/each}
-			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<span
 				class="cursor-pointer select-none flex items-center justify-center"
 				onclick={() => {

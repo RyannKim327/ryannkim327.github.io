@@ -16,7 +16,7 @@
 	class={`flex gap-1 items-center justify-center ${selected ? "bg-[#babebd]/75 dark:bg-[#555555] px-2 rounded-full text-zinc-800 dark:text-zinc-200" : "text-zinc-500"} transition-all delay-25 duration-150 ease-in-out`}
 >
 	<span class="p-[2px] aspect-square rounded">
-		<i class={`aspect-square ${type} ${icon} `}></i>
+		<i class={`aspect-square ${selected ? "fa-solid" : type} ${icon} `}></i>
 	</span>
 	<span
 		class={`${

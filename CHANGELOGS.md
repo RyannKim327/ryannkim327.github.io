@@ -29,6 +29,18 @@
 - [v1.0.0 — 2024-11-03](#v100--2024-11-03)
 ...
 
+### v4.2.1 - 2026-05-19
+
+- **UI/UX Refinements**
+  - Enhanced **Dark Mode** support across multiple components (Input, Textarea, Experiences, Upload) for better visibility and consistency.
+  - Improved **Icon** rendering in the navigation, ensuring correct styling for selected states.
+  - Refined layouts and spacing in **Admin** routes (Experiences, Projects, Upload) for a more polished dashboard experience.
+  - Adjusted **Hero** section padding and **Contact** form button styling for improved aesthetics.
+  - Fixed **Certificates** image aspect ratio and layout issues to ensure proper display.
+- **Maintenance & Fixes**
+  - Updated the API URL to the production endpoint in `fetch.ts`.
+  - Addressed accessibility warnings and minor code cleanup in the `Certificates` component.
+
 ### v4.2.0 - 2026-05-17
 
 - **Features & Enhancements**

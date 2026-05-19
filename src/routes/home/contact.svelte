@@ -54,9 +54,9 @@
 				placeholder="Content"
 			></Textarea>
 		</div>
-		<div class="flex w-full justify-end">
+		<div class="flex w-full justify-end mt-5">
 			<input
-				class="bg-[#f0f8ff] text-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff] resize-none px-2 rounded"
+				class="dark:bg-[#f0f8ff] dark:text-[#121212] bg-[#121212] text-[#f0f8ff] resize-none px-2 rounded"
 				type="submit"
 				value="Send Message"
 				onclick={sendContact}

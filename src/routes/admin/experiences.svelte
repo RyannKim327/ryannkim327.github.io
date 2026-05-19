@@ -105,10 +105,10 @@
 	});
 </script>
 
-<div class="h-full bg-zinc-950 text-white p-6 pt-20">
+<div class="h-full text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50 p-6 pt-20">
 	<div class="flex w-full h-full gap-6">
 		<div
-			class="h-full w-[calc(50%-1rem)] rounded-2xl border border-zinc-800 bg-zinc-900 p-5 overflow-hidden"
+			class="h-full w-[calc(50%-1rem)] rounded-2xl border border-zinc-800 dark:bg-zinc-900 p-5 overflow-hidden"
 		>
 			<h2 class="mb-5 text-2xl font-bold">
 				{editing && editIndex !== null ? "Update Experience" : "Add Experience"}
@@ -116,41 +116,41 @@
 
 			<div class="flex-1 max-h-[calc(90%-0.5rem)] space-y-4 overflow-y-auto">
 				<div>
-					<label class="mb-2 block text-sm text-zinc-400"> Title </label>
+					<label class="mb-2 block text-sm text-zinc-500"> Title </label>
 
 					<input
 						bind:value={form.title}
 						type="text"
 						placeholder="Beginner's Path"
-						class="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-4 py-3 outline-none transition focus:border-cyan-500"
+						class="w-full rounded-xl border border-zinc-700 dark:bg-zinc-800 px-4 py-3 outline-none transition focus:border-zinc-500"
 					/>
 				</div>
 
 				<div class="flex flex-row w-full gap-5">
 					<div class="flex-1">
-						<label class="mb-2 block text-sm text-zinc-400"> Year </label>
+						<label class="mb-2 block text-sm text-zinc-500"> Year </label>
 
 						<input
 							bind:value={form.year}
 							type="number"
 							disabled={true}
-							class="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-4 py-3 outline-none transition focus:border-cyan-500"
+							class="w-full rounded-xl border border-zinc-700 dark:bg-zinc-800 px-4 py-3 outline-none transition focus:border-zinc-500"
 						/>
 					</div>
 
 					<div class="flex-1">
-						<label class="mb-2 block text-sm text-zinc-400"> Admin Code </label>
+						<label class="mb-2 block text-sm text-zinc-500"> Admin Code </label>
 
 						<input
 							bind:value={code}
 							type="password"
-							class="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-4 py-3 outline-none transition focus:border-cyan-500"
+							class="w-full rounded-xl border border-zinc-700 dark:bg-zinc-800 px-4 py-3 outline-none transition focus:border-zinc-500"
 						/>
 					</div>
 				</div>
 
 				<div>
-					<label class="mb-2 block text-sm text-zinc-400">
+					<label class="mb-2 block text-sm text-zinc-500">
 						Font Awesome Icon
 					</label>
 
@@ -158,18 +158,18 @@
 						bind:value={form.icon}
 						type="text"
 						placeholder="fa-solid fa-hourglass"
-						class="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-4 py-3 outline-none transition focus:border-cyan-500"
+						class="w-full rounded-xl border border-zinc-700 dark:bg-zinc-800 px-4 py-3 outline-none transition focus:border-zinc-500"
 					/>
 				</div>
 
 				<div>
 					<div class="mb-3 flex items-center justify-between">
-						<label class="text-sm text-zinc-400"> Content </label>
+						<label class="text-sm text-zinc-500"> Content </label>
 
 						<button
 							onclick={addContentField}
 							type="button"
-							class="rounded-lg bg-cyan-500 px-3 py-1 text-sm font-medium text-black"
+							class="rounded-lg bg-zinc-200 dark:bg-zinc-800 px-3 py-1 text-sm font-medium text-zinc-950 dark:text-zinc-50"
 						>
 							Add
 						</button>
@@ -182,7 +182,7 @@
 									bind:value={form.content[index]}
 									type="text"
 									placeholder="Experience detail..."
-									class="flex-1 rounded-xl border border-zinc-700 bg-zinc-800 px-4 py-3 outline-none transition focus:border-cyan-500"
+									class="flex-1 rounded-xl border border-zinc-700 dark:bg-zinc-800 px-4 py-3 outline-none transition focus:border-zinc-500"
 								/>
 
 								<button
@@ -201,7 +201,7 @@
 					<button
 						disabled={sending}
 						onclick={saveExperience}
-						class="flex-1 rounded-xl bg-cyan-500 py-3 font-semibold text-black transition hover:bg-cyan-400"
+						class="flex-1 rounded-xl bg-zinc-500 py-3 font-semibold text-zinc-800 dark:text-zinc-200 transition hover:bg-zinc-400"
 					>
 						{editing && editIndex !== null ? "Update" : "Save"}
 					</button>
@@ -221,12 +221,12 @@
 		<div class="flex flex-col w-[calc(50%-1rem)] h-full overflow-y-auto gap-5">
 			{#each experiences as exp, index}
 				<div
-					class="rounded-2xl border border-zinc-800 bg-zinc-900 p-5 transition hover:border-cyan-500 w-full transition-all delay-75 ease-in-out"
+					class="rounded-2xl border border-zinc-800 dark:bg-zinc-900 p-5 transition hover:border-zinc-500 w-full transition-all delay-75 ease-in-out"
 				>
 					<div class="mb-4 flex items-start justify-between">
 						<div class="flex items-center gap-4">
 							<div
-								class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 text-2xl text-cyan-400"
+								class="flex h-14 w-14 items-center justify-center rounded-2xl bg-zinc-200 dark:bg-zinc-700 text-2xl text-zinc-400"
 							>
 								<i class={exp.icon}></i>
 							</div>
@@ -236,7 +236,7 @@
 									{exp.title}
 								</h3>
 
-								<p class="text-sm text-zinc-400">
+								<p class="text-sm text-zinc-500">
 									{exp.year}
 								</p>
 							</div>
@@ -246,7 +246,7 @@
 							<button
 								disabled={sending}
 								onclick={() => editExperience(index)}
-								class="rounded-lg bg-yellow-500/10 px-4 py-2 text-sm text-yellow-400 transition hover:bg-yellow-500/20"
+								class="rounded-lg bg-yellow-500/75 dark:bg-yellow-500/50 px-4 py-2 text-sm text-yellow-900 dark:text-yellow-200 transition hover:bg-yellow-500/20"
 							>
 								Edit
 							</button>
@@ -255,8 +255,10 @@
 
 					<ul class="space-y-2">
 						{#each exp.content as item}
-							<li class="flex items-start gap-3 text-zinc-300">
-								<div class="mt-2 h-2 w-2 rounded-full bg-cyan-400"></div>
+							<li
+								class="flex items-start gap-3 text-zinc-700 dark:text-zinc-300"
+							>
+								<div class="mt-2 h-2 w-2 rounded-full bg-zinc-500"></div>
 								<span>{item}</span>
 							</li>
 						{/each}
