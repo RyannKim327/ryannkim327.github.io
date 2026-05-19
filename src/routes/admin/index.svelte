@@ -9,6 +9,7 @@
 	import Upload from "./upload.svelte";
 	import Project from "./project.svelte";
 	import Experiences from "./experiences.svelte";
+	import Contact from "./contact.svelte";
 
 	let { params } = $props<{ params: { page?: string } }>();
 
@@ -20,6 +21,7 @@
 		blogs: Blogs,
 		upload: Upload,
 		project: Project,
+		contacts: Contact,
 	};
 
 	let admin = $state(session("token") ?? "");
