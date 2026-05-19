@@ -41,7 +41,7 @@
 				onkeydown={(e) => {
 					if (e.key === "Enter" || e.key === " ") filter(category);
 				}}
-				class={`select-none cursor-pointer ${active === category.toLowerCase() ? "border border-black dark:border-white border-solid" : "bg-[#f0f8ff] dark:bg-[#313131]"} px-2 rounded list-none text-[0.80em]`}
+				class={`select-none cursor-pointer ${active === category.toLowerCase() ? "border border-black dark:border-white border-solid" : "bg-zinc-300 dark:bg-[#313131]"} px-2 rounded list-none text-[0.80em]`}
 			>
 				{#if category.length <= 3 && category !== "all"}
 					{category.toUpperCase()}

@@ -15,15 +15,17 @@
 	}
 </script>
 
-<div class="h-full w-full pt-5">
+<div class="flex items-center justify-center h-full w-full pt-5">
 	<div
-		class="mx-auto flex h-[calc(100%-1rem)] max-w-7xl flex-col overflow-hidden rounded border border-white/10"
+		class="flex h-[calc(80%-1rem)] w-[calc(75%-1rem)] max-w-7xl flex-col overflow-hidden rounded border border-zinc-500"
 	>
 		<div class="border-b border-white/10 px-6 py-5">
-			<h1 class="text-2xl md:text-3xl font-bold text-white">
+			<h1
+				class="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-zinc-50"
+			>
 				Create Blog Post
 			</h1>
-			<p class="mt-1 text-sm text-white/50">
+			<p class="mt-1 text-sm text-zinc-500">
 				Write markdown content with live preview
 			</p>
 		</div>
@@ -31,14 +33,14 @@
 		<div class="flex flex-1 flex-col gap-5 overflow-hidden p-5">
 			<div class="grid grid-cols-1 gap-3 md:grid-cols-2">
 				<Input
-					className="bg-white/[0.02] border-white/10 rounded-2xl text-white transition focus-within:border-white/40 focus-within:bg-white/[0.04]"
+					class="border-zinc-500 text-zinc-950 dark:text-zinc-50 transition focus-within:borde-zinc-700 focus-within:bg-white/[0.04]"
 					name="title"
 					placeholder="Title"
 					bind:value={title}
 				/>
 
 				<Input
-					className="bg-white/[0.02] border-white/10 rounded-2xl text-white transition focus-within:border-white/40 focus-within:bg-white/[0.04]"
+					class="border-zinc-500 text-zinc-950 dark:text-zinc-50 transition focus-within:borde-zinc-700 focus-within:bg-white/[0.04]"
 					name="code"
 					type="password"
 					placeholder="Admin Code"
@@ -48,14 +50,14 @@
 
 			<div class="grid grid-cols-1 gap-3 md:grid-cols-2">
 				<Input
-					className="bg-white/[0.02] border-white/10 rounded-2xl text-white transition focus-within:border-white/40 focus-within:bg-white/[0.04]"
+					class="border-zinc-500 text-zinc-950 dark:text-zinc-50 transition focus-within:borde-zinc-700 focus-within:bg-white/[0.04]"
 					name="tags"
 					placeholder="Tags"
 					bind:value={tags}
 				/>
 
 				<Input
-					className="bg-white/[0.02] border-white/10 rounded-2xl text-white transition focus-within:border-white/40 focus-within:bg-white/[0.04]"
+					class="border-zinc-500 text-zinc-950 dark:text-zinc-50 transition focus-within:borde-zinc-700 focus-within:bg-white/[0.04]"
 					name="media"
 					placeholder="Media Files"
 					bind:value={media}
@@ -64,24 +66,26 @@
 
 			<div class="grid flex-1 grid-cols-1 gap-4 overflow-hidden lg:grid-cols-2">
 				<div
-					class="flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]"
+					class="flex h-full flex-col overflow-hidden rounded-3xl border border-zinc-500 bg-zinc-200 dark:bg-zinc-900"
 				>
 					<div
-						class="flex items-center justify-between border-b border-white/10 px-5 py-4"
+						class="flex items-center justify-between border-b border-zinc-500 px-5 py-4"
 					>
-						<h2 class="text-sm font-medium tracking-wide text-white/70">
+						<h2
+							class="text-sm font-medium tracking-wide text-zinc-950 dark:text-zinc-50"
+						>
 							Markdown Editor
 						</h2>
 
 						<div
-							class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/60"
+							class="rounded-full bg-zinc-500 px-3 py-1 text-xs text-zinc-950 dark:text-zinc-50"
 						>
 							LIVE
 						</div>
 					</div>
 
 					<Textarea
-						class="h-full w-full flex-1 resize-none border-0 bg-transparent p-5 text-sm leading-7 text-white outline-none placeholder:text-white/20"
+						class="h-full border-0 resize-none bg-transparent p-5 text-sm text-zinc-950 dark:text-zinc-50 outline-none placeholder:text-white/20"
 						name="content"
 						placeholder=""
 						bind:value={content}
@@ -89,10 +93,10 @@
 				</div>
 
 				<div
-					class="flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]"
+					class="flex h-full flex-col overflow-hidden rounded-3xl border border-zinc-500 bg-zinc-200 dark:bg-zinc-900"
 				>
 					<div
-						class="border-b border-white/10 px-5 py-4 text-sm font-medium tracking-wide text-white/70"
+						class="border-b border-zinc-500 px-5 py-4 text-sm font-medium tracking-wide text-zinc-950 dark:text-zinc-50"
 					>
 						Preview
 					</div>
@@ -105,7 +109,7 @@
 
 			<div class="flex items-center justify-end gap-3 pt-1">
 				<button
-					class="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-white/70 transition hover:bg-white/[0.06]"
+					class="rounded-2xl border border-zinc-500 bg-transparent px-5 py-2.5 text-sm font-medium text-zinc-500 transition hover:bg-white/[0.06]"
 				>
 					Save Draft
 				</button>
@@ -114,7 +118,7 @@
 					onclick={() => {
 						submitBlog();
 					}}
-					class="rounded-2xl bg-white px-6 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-white/90 active:scale-[0.98]"
+					class="rounded-2xl bg-zinc-700 dark:bg-zinc-300 px-6 py-2.5 text-sm font-semibold text-zinc-50 dark:text-zinc-950 transition hover:scale-[1.02] hover:bg-white/90 active:scale-[0.98]"
 				>
 					Post Blog
 				</button>

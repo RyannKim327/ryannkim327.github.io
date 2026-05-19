@@ -18,6 +18,11 @@
 		},
 		{
 			type: "fa-solid",
+			icon: "fa-address-card",
+			name: "Contacts",
+		},
+		{
+			type: "fa-solid",
 			icon: "fa-user",
 			name: "Experience",
 		},

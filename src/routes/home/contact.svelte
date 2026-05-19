@@ -1,10 +1,29 @@
 <script lang="ts">
 	import Input from "@/components/input.svelte";
 	import Textarea from "@/components/textarea.svelte";
+	import { post } from "@/lib/fetch";
+	import toast from "svelte-french-toast";
 
 	let name = $state("");
 	let email = $state("");
 	let content = $state("");
+
+	async function sendContact() {
+		const api = await post("contact/submit", {
+			name,
+			email,
+			content,
+		});
+		if (api.error) {
+			toast(api.error, {
+				position: "bottom-right",
+			});
+		} else {
+			toast("Sent to the developer", {
+				position: "bottom-right",
+			});
+		}
+	}
 </script>
 
 <div
@@ -28,14 +47,19 @@
 			<Input name="email" bind:value={email} placeholder="Email" />
 		</div>
 		<div class="flex h-25">
-			<Textarea class="h-full" name="content" bind:value={content} placeholder="Content"
+			<Textarea
+				class="h-full"
+				name="content"
+				bind:value={content}
+				placeholder="Content"
 			></Textarea>
 		</div>
-		<div class="flex w-full justify-end">
+		<div class="flex w-full justify-end mt-5">
 			<input
-				class="bg-[#f0f8ff] text-[#121212] dark:bg-[#121212] dark:text-[#f0f8ff] resize-none px-2 rounded"
+				class="dark:bg-[#f0f8ff] dark:text-[#121212] bg-[#121212] text-[#f0f8ff] resize-none px-2 rounded"
 				type="submit"
 				value="Send Message"
+				onclick={sendContact}
 			/>
 		</div>
 	</div>

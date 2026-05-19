@@ -18,7 +18,7 @@
 </script>
 
 <div
-	class="w-full max-w-[600px] aspect-[210/297] bg-white text-black shadow-2xl overflow-hidden rounded-xl flex flex-col"
+	class="w-full max-w-[600px] aspect-[210/297] bg-white text-black border-zinc-500 border overflow-hidden rounded-xl flex flex-col"
 >
 	<div
 		class="flex items-center justify-between px-6 py-4 border-b border-black/10"

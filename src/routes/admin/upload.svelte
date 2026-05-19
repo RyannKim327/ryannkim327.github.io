@@ -54,16 +54,18 @@
 		class="w-full max-w-2xl rounded border border-zinc-800 backdrop-blur-xl shadow-2xl p-8"
 	>
 		<div class="mb-8 text-center">
-			<h1 class="text-3xl font-bold text-white">Upload File</h1>
-			<p class="text-zinc-400 mt-2">Securely upload and manage your files</p>
+			<h1 class="text-3xl font-bold dark:text-zinc-200">Upload File</h1>
+			<p class="text-zinc-500 mt-2">Securely upload and manage your files</p>
 		</div>
 
 		<div class="flex flex-col gap-6">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 				<div class="flex flex-col gap-2">
-					<label class="text-sm font-medium text-zinc-300"> File Code </label>
+					<label class="text-sm font-medium dark:text-zinc-300">
+						File Code
+					</label>
 					<Input
-						class="w-full rounded-xl border border-zinc-700 bg-zinc-800 text-white placeholder:text-zinc-500 focus:ring-2 focus:ring-blue-500"
+						class="w-full rounded-xl border border-zinc-700 bg-zinc-200 dark:bg-zinc-800 dark:text-white placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-500"
 						name="file_code"
 						placeholder=""
 						bind:value={file_code}
@@ -71,9 +73,11 @@
 				</div>
 
 				<div class="flex flex-col gap-2">
-					<label class="text-sm font-medium text-zinc-300"> Admin Code </label>
+					<label class="text-sm font-medium dark:text-zinc-300">
+						Admin Code
+					</label>
 					<Input
-						class="w-full rounded-xl border border-zinc-700 bg-zinc-800 text-white placeholder:text-zinc-500 focus:ring-2 focus:ring-blue-500"
+						class="w-full rounded-xl border border-zinc-700 bg-zinc-200 dark:bg-zinc-800 dark:text-white placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-500"
 						name="code"
 						type="password"
 						placeholder=""
@@ -83,17 +87,17 @@
 			</div>
 
 			<div
-				class="flex flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-zinc-700 bg-zinc-800/50 p-8 transition hover:border-white hover:bg-zinc-800"
+				class="flex flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-zinc-700 bg-zinc-300 dark:bg-zinc-800/50 p-8 transition hover:border-white dark:hover:bg-zinc-800"
 			>
 				<div class="text-center">
-					<h2 class="text-lg font-semibold text-white">Choose a file</h2>
-					<p class="text-sm text-zinc-400">
+					<h2 class="text-lg font-semibold dark:text-zinc-50">Choose a file</h2>
+					<p class="text-sm dark:text-zinc-400">
 						Drag and drop or browse from your device
 					</p>
 				</div>
 
 				<Input
-					class="w-full cursor-pointer rounded-xl border border-zinc-700 bg-zinc-900 text-zinc-300 file:mr-4 file:rounded-lg file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:text-white hover:file:bg-blue-500"
+					class="w-full cursor-pointer rounded-xl border border-zinc-700 bg-zinc-100 dark:bg-zinc-900 text-zinc-300 file:mr-4 file:rounded-lg file:border-0 file:bg-zinc-600 file:px-4 file:py-2 file:text-white hover:file:bg-zonc-500"
 					name="file"
 					placeholder=""
 					type="file"
@@ -115,7 +119,7 @@
 			<!-- Submit -->
 			<button
 				onclick={uploadFile}
-				class="rounded-2xl bg-white px-6 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-white/90 active:scale-[0.98]"
+				class="rounded-2xl bg-zinc-900 dark:bg-zinc-50 px-6 py-2.5 text-sm font-semibold text-zinc-50 dark:text-zinc-950 transition hover:scale-[1.02] hover:bg-zinc-950/50 dark:hover:bg-zinc-50/90 active:scale-[0.98]"
 			>
 				Upload File
 			</button>

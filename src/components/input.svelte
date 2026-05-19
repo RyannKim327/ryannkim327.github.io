@@ -17,7 +17,7 @@
 </script>
 
 <div
-	class={`${className} relative w-full border border-white custom-input m-2 p-2 rounded`}
+	class={`${className} relative w-full border border-zinc-900 dark:border-zinc-100 custom-input m-2 p-2 rounded`}
 >
 	<label
 		class="absolute transition-all duration-200 px-2 select-none"

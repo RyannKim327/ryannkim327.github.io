@@ -43,31 +43,28 @@
 
 <div class="h-full w-full flex items-center justify-center p-6 overflow-hidden">
 	<div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
-		<!-- EDITOR -->
-		<div
-			class="space-y-5 border border-neutral-300 dark:border-neutral-800 p-6"
-		>
+		<div class="space-y-5 border border-zinc-500 dark:border-neutral-800 p-6">
 			<h1 class="text-xl font-semibold tracking-wide">Create Poem</h1>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 				<input
 					bind:value={title}
 					placeholder="Title"
-					class="w-full border border-neutral-300 dark:border-neutral-800 bg-transparent px-3 py-2 outline-none focus:border-black dark:focus:border-white"
+					class="w-full border border-zinc-500 dark:border-neutral-800 bg-transparent px-3 py-2 outline-none focus:border-black dark:focus:border-white"
 				/>
 
 				<input
 					type="password"
 					bind:value={code}
 					placeholder="Admin Code"
-					class="w-full border border-neutral-300 dark:border-neutral-800 bg-transparent px-3 py-2 outline-none focus:border-black dark:focus:border-white"
+					class="w-full border border-zinc-500 dark:border-neutral-800 bg-transparent px-3 py-2 outline-none focus:border-black dark:focus:border-white"
 				/>
 			</div>
 
 			<textarea
 				bind:value={content}
 				placeholder="Write your poem..."
-				class="w-full min-h-[300px] border border-neutral-300 dark:border-neutral-800 bg-transparent p-4 outline-none resize-none focus:border-black dark:focus:border-white"
+				class="w-full min-h-[300px] border border-zinc-500 dark:border-neutral-800 bg-transparent p-4 outline-none resize-none focus:border-black dark:focus:border-white"
 			></textarea>
 
 			<div class="flex justify-end">
@@ -82,7 +79,7 @@
 
 		<!-- PREVIEW -->
 		<div
-			class="border border-neutral-300 dark:border-neutral-800 p-6 overflow-hidden"
+			class="border border-zinc-500 dark:border-neutral-800 p-6 overflow-hidden"
 		>
 			<h2 class="text-sm uppercase tracking-wide text-neutral-500 mb-4">
 				Preview
