@@ -35,7 +35,8 @@
 						<div
 							class="flex flex-col p-2 border border-black dark:border-white border-solid rounded w-full"
 						>
-							<span>{exp.year}</span>
+							<span class="text-[1.25rem]">{exp.title}</span>
+							<span class="text-[.75rem]">{exp.year}</span>
 							{#each exp.content as content}
 								<li class="ml-5">{content}</li>
 							{/each}
