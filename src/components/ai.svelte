@@ -3,7 +3,13 @@
 	import Markdown from "@/components/markdown.svelte";
 	import toast, { Toaster } from "svelte-french-toast";
 
-	let { expr = [], projects = [], blogs = [], parseData = false } = $props();
+	let {
+		expr = [],
+		projects = [],
+		blogs = [],
+		wakatime = {},
+		parseData = false,
+	} = $props();
 
 	let devProfile = $derived({
 		name: {
@@ -12,9 +18,8 @@
 			lastname: "Sesgundo",
 		},
 		nicknames: ["Kim", "Ryann", "Kimmy"],
+		weekly_activity: wakatime,
 		expriences: expr,
-		projects_and_repository: projects,
-		blogs: blogs,
 		alias: ["RyannKim327", "RySes", "RySes Malabanan", "Krysanne Guinmods"],
 		birthyear: 2001,
 		sex: "male",
@@ -54,6 +59,7 @@
 			- Keep responses natural and concise.
 			- Developer links/socials → Markdown links.
 			- No tables; use lists.
+			- Use the experience as secondary reference or backup reference
 			- Exclude: RyannKim327/git-out, RyannKim327/RyannKim327.`.trim(),
 	});
 
