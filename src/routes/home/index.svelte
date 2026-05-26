@@ -22,6 +22,8 @@
 	let github = $state<Record<string, any>[]>([]);
 	let projects = $state<Record<string, any>[]>([]);
 	let resume = $state<Record<string, any>>({});
+	let wakatime = $state<Record<string, any>>({});
+
 	let parseData = $state(false);
 	let loaded = $state(false);
 
@@ -59,7 +61,7 @@
 
 	onMount(async () => {
 		try {
-			const [b, c, d, e, f, g, p] = await Promise.all([
+			const [b, c, d, e, f, g, p, w] = await Promise.all([
 				get("blog"),
 				get("certs"),
 				get("dev"),
@@ -69,6 +71,7 @@
 					"https://api.github.com/users/RyannKim327/repos?sort=updated",
 				),
 				get("projects"),
+				get("wakatime"),
 			]);
 
 			const programs = p.data.projects.sort(
@@ -84,6 +87,7 @@
 			github = g.data.slice(12);
 			projects = programs;
 			resume = d.data;
+			wakatime = w.data;
 			loaded = true;
 			parseData = true;
 		} catch (err: any) {
@@ -116,6 +120,7 @@
 		<Contact />
 		<Toaster />
 		<Ai
+			{wakatime}
 			{resume}
 			projects={github}
 			expr={experiences}
