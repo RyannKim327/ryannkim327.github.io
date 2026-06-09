@@ -7,6 +7,7 @@
 
 ## Table of Contents
 
+- [v4.3.1 - 2026-06-10](#v431---2026-06-10)
 - [v4.3.0 - 2026-06-09](#v430---2026-06-09)
 - [v4.2.1 - 2026-05-19](#v421---2026-05-19)
 - [v4.2.0 - 2026-05-17](#v420---2026-05-17)
@@ -30,6 +31,14 @@
 - [v2.0.0 — 2026-01-03](#v200--2026-01-03)
 - [v1.0.0 — 2024-11-03](#v100--2024-11-03)
 ...
+
+### v4.3.1 - 2026-06-10
+
+- **Tech & Aesthetics Improvements**
+  - **Animated Background:** Introduced a global `AnimatedBackground` component featuring a static tech grid and independently drifting blurred radials for an immersive "tech" atmosphere.
+  - **Dynamic Transitions:** Implemented Svelte `fly` and `fade` transitions for Hero section content (name, subtitle, and images) for a polished entrance effect.
+  - **Interactive Hover Effects:** Enhanced the `Card` component with smooth vertical lift and shadow glow effects on hover, providing better visual feedback across projects and certificates.
+  - **Theme Optimization:** Refined animation visibility and colors for both Light and Dark modes to ensure consistent aesthetics across themes.
 
 ### v4.3.0 - 2026-06-09
 

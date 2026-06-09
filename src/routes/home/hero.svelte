@@ -1,45 +1,66 @@
 <script lang="ts">
   import Dark from "@/assets/dark.png";
   import Light from "@/assets/light.png";
+  import { fly, fade } from "svelte/transition";
+  import { onMount } from "svelte";
+
+  let visible = $state(false);
+  onMount(() => {
+    visible = true;
+  });
 </script>
 
 <div
   id="hero"
-  class="flex items-center justify-center h-full w-full snap-start pt-[25%] md:pt-[5%]"
+  class="relative flex items-center justify-center h-full w-full snap-start pt-[25%] md:pt-[5%] overflow-hidden"
 >
   <div
-    class="flex flex-col justify-center items-center md:items-end w-full md:w-[calc(45%-0.5rem)] h-full gap-3 md:gap-5 p-2"
+    class="flex flex-col justify-center items-center md:items-end w-full md:w-[calc(45%-0.5rem)] h-full gap-3 md:gap-5 p-2 z-1"
   >
-    <h1
-      class="text-[2.5em] w-5/6 md:text-[calc(3rem)] md:w-4/6 text-center md:text-end"
-    >
-      Ryann Kim M. Sesgundo
-    </h1>
-    <h3 class="text-[1.25em] md:text-[1.75em] text-center md:text-end">
-      A Full-Stack Software Developer
-    </h3>
+    {#if visible}
+      <h1
+        in:fly={{ y: -20, duration: 800, delay: 200 }}
+        class="text-[2.5em] w-5/6 md:text-[calc(3rem)] md:w-4/6 text-center md:text-end font-bold"
+      >
+        Ryann Kim M. Sesgundo
+      </h1>
+      <h3
+        in:fly={{ y: 20, duration: 800, delay: 400 }}
+        class="text-[1.25em] md:text-[1.75em] text-center md:text-end opacity-80"
+      >
+        A Full-Stack Software Developer
+      </h3>
+    {/if}
   </div>
+
   <div
-    class="md:flex md:flex-col hidden justify-center h-full gap-10 text-[2rem] p-2"
+    class="md:flex md:flex-col hidden justify-center h-full gap-10 text-[2rem] p-2 z-1"
   >
-    <p class="baybayin-font">ᜇ</p>
-    <p class="baybayin-font">ᜌ</p>
-    <p class="baybayin-font">ᜈ᜔</p>
-    <p class="baybayin-font">ᜃᜒ</p>
-    <p class="baybayin-font">ᜋ᜔</p>
+    {#if visible}
+      <p in:fade={{ delay: 600 }} class="baybayin-font">ᜇ</p>
+      <p in:fade={{ delay: 700 }} class="baybayin-font">ᜌ</p>
+      <p in:fade={{ delay: 800 }} class="baybayin-font">ᜈ᜔</p>
+      <p in:fade={{ delay: 900 }} class="baybayin-font">ᜃᜒ</p>
+      <p in:fade={{ delay: 1000 }} class="baybayin-font">ᜋ᜔</p>
+    {/if}
   </div>
+
   <div
-    class="md:flex-col hidden md:flex w-full md:w-[calc(45%-0.5rem)] h-full items-start justify-start p-2 -mt-20"
+    class="md:flex-col hidden md:flex w-full md:w-[calc(45%-0.5rem)] h-full items-start justify-start p-2 -mt-20 z-1"
   >
-    <img
-      class={`rounded-md hidden dark:inline h-[calc(50%-0.5rem)] mt-[calc(25%+1rem)]`}
-      src={Dark}
-      alt=""
-    />
-    <img
-      class={`rounded-md inline dark:hidden h-[calc(50%-0.5rem)] mt-[calc(25%+1rem)]`}
-      src={Light}
-      alt=""
-    />
+    {#if visible}
+      <div in:fly={{ x: 20, duration: 800, delay: 600 }}>
+        <img
+          class={`rounded-md hidden dark:inline h-[calc(60%-0.5rem)] mt-[calc(25%+1rem)] shadow-2xl`}
+          src={Dark}
+          alt=""
+        />
+        <img
+          class={`rounded-md inline dark:hidden h-[calc(60%-0.5rem)] mt-[calc(25%+1rem)] shadow-2xl`}
+          src={Light}
+          alt=""
+        />
+      </div>
+    {/if}
   </div>
 </div>
