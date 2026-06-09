@@ -1,6 +1,6 @@
 # RyannKim327 Portfolio
 
-**Project version:** `4.3.0`
+**Project version:** `4.3.1`
 
 [![wakatime](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8.svg)](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8)
 ![Svelte](https://img.shields.io/badge/Svelte-5.56.3-FF3E00?style=flat&logo=svelte)
@@ -41,6 +41,7 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 ## ✨ Features
 
 - 🎨 **Modern Svelte 5 Design** - Clean, professional layout leveraging Svelte 5's fine-grained reactivity (Runes)
+- ✨ **Tech & Aesthetics** - Immersive animated background with tech grids and drifting radials, combined with smooth Svelte transitions
 - 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
 - ⚡ **Lightning Fast** - Built with Vite 8 for optimal development and production performance
 - 🎯 **TypeScript** - Type-safe development for better code quality and maintenance
@@ -162,8 +163,10 @@ portfolio-svelte/
 ## 🎨 Design Philosophy
 
 - **Modern Aesthetic**: Clean lines, ample whitespace, and a focus on content clarity.
+- **Tech-Driven Aesthetics**: Immersive, subtle animations like drifting radials and tech grids that evoke a "high-tech" feel without sacrificing performance or usability.
 - **Purple Accents**: A consistent color palette featuring purple highlights to provide a distinct and professional look.
-- **Dark/Light Mode**: User-selectable themes to ensure comfortable viewing in any environment, with refined styling for both modes.
+- **Interactive Feedback**: Soft transitions and hover effects that provide immediate visual confirmation and a "fluid" user experience.
+- **Dark/Light Mode**: User-selectable themes to ensure comfortable viewing in any environment, with refined styling and animation visibility for both modes.
 - **Responsive Design**: Fluid layouts that adapt seamlessly from mobile devices to large desktop monitors.
 
 ## 📝 Changelog

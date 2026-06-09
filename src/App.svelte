@@ -1,12 +1,14 @@
 <script lang="ts">
 	import Router from "svelte-spa-router";
 	import routes from "./routes";
+	import AnimatedBackground from "./components/animated-background.svelte";
 </script>
 
 <div
-	class="h-dvh w-dvw bg-[#fafbff] text-[#111b1c] dark:bg-zinc-950 dark:text-[#fafbff]"
+	class="relative h-dvh w-dvw bg-[#fafbff] text-[#111b1c] dark:bg-zinc-950 dark:text-[#fafbff]"
 >
-	<div class="h-full w-full scrollbar-thin">
+	<AnimatedBackground />
+	<div class="absolute h-full w-full scrollbar-thin">
 		<Router {routes} useHash={true} />
 	</div>
 </div>

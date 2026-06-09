@@ -11,6 +11,7 @@
 	import { onMount } from "svelte";
 	import { get } from "@/lib/fetch";
 	import axios from "axios";
+	import AnimatedBackground from "@/components/animated-background.svelte";
 
 	let y = $state(0);
 
@@ -101,7 +102,7 @@
 
 <svelte:window onscroll={handleScroll} />
 
-<div class="w-full h-full">
+<div class="w-full h-full relative">
 	<Header
 		scroll={Math.round(
 			y / (document.getElementById("main")?.offsetHeight ?? 1),
