@@ -7,6 +7,8 @@
 
 ## Table of Contents
 
+- [v4.3.0 - 2026-06-09](#v430---2026-06-09)
+- [v4.2.1 - 2026-05-19](#v421---2026-05-19)
 - [v4.2.0 - 2026-05-17](#v420---2026-05-17)
 - [v4.1.0 - 2026-05-14](#v410---2026-05-14)
 - [v4.0.2 - 2026-04-25](#v402---2026-04-25)
@@ -28,6 +30,23 @@
 - [v2.0.0 — 2026-01-03](#v200--2026-01-03)
 - [v1.0.0 — 2024-11-03](#v100--2024-11-03)
 ...
+
+### v4.3.0 - 2026-06-09
+
+- **Features & Enhancements**
+  - **Wakatime Integration:** Integrated Wakatime data for real-time coding activity display in the AI component and Home page.
+  - **New Footer:** Added a professional footer component featuring the developer's name and "MPOP Reverse II" branding.
+  - **Mobile UI Improvements:**
+    - Redesigned "About" section for mobile users with tabbed navigation for Experiences and Certificates.
+    - Added social platform icons (Facebook, GitHub, LinkedIn, NPM) to the Contact section.
+    - Enhanced the AI chat interface with a backdrop blur effect and improved mobile responsiveness.
+- **Maintenance & Technical Updates**
+  - **API Migration:** Updated the backend API endpoint to `api-mpop-backend.onrender.com`.
+  - **UI Refinements:**
+    - Added custom scrollbar styles for better UX.
+    - Improved layout consistency and spacing in Projects and About sections.
+    - Updated developer social links.
+  - **Dependency Updates:** Updated core dependencies including Svelte 5.56, Vite 8.0.16, Axios 1.17, and others for improved performance and security.
 
 ### v4.2.1 - 2026-05-19
 
