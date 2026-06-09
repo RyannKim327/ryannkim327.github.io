@@ -30,7 +30,7 @@
 	class="flex flex-col p-2 pt-[25%] md:pt-[10%] h-full w-full overflow-y-auto snap-start"
 >
 	<div
-		class="flex gap-2 items-center md:justify-center my-5 py-3 overflow-hidden overflow-x-auto"
+		class="flex gap-2 items-center md:justify-center py-10 md:p-3 overflow-hidden overflow-x-auto scrollbar-none"
 	>
 		{#each categories as category}
 			<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->

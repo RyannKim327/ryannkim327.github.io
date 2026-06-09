@@ -23,7 +23,7 @@
 				}}
 			>
 				<span class="font-bold text-[1.25rem]">{blog.title}</span>
-				<span class="italic text-[0.75rem]"
+				<span class="italic text-[0.75rem] overflow-hidden"
 					>{blog.content.substring(0, 250)} ...</span
 				>
 			</Card>
