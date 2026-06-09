@@ -3,6 +3,8 @@
 	import Textarea from "@/components/textarea.svelte";
 	import { post } from "@/lib/fetch";
 	import toast from "svelte-french-toast";
+	import Footer from "./footer.svelte";
+	import Icon from "@/components/icon.svelte";
 
 	let name = $state("");
 	let email = $state("");
@@ -54,7 +56,33 @@
 				placeholder="Content"
 			></Textarea>
 		</div>
-		<div class="flex w-full justify-end mt-5">
+		<div class="flex w-full justify-between mt-5 p-2">
+			<div class="flex items-center gap-1">
+				<i
+					onclick={() => {
+						location.href = "https://fb.me/masterpieceofpaper";
+					}}
+					class="fa-brands fa-square-facebook text-[2rem]"
+				></i>
+				<i
+					onclick={() => {
+						location.href = "https://github.com/RyannKim327";
+					}}
+					class="fa-brands fa-square-github text-[2rem]"
+				></i>
+				<i
+					onclick={() => {
+						location.href = "https://linkedin.com/in/ryannkim327";
+					}}
+					class="fa-brands fa-square-linkedin text-[2rem]"
+				></i>
+				<i
+					onclick={() => {
+						location.href = "https://npmjs.com/~ryannkim327";
+					}}
+					class="fa-brands fa-npm"
+				></i>
+			</div>
 			<input
 				class="dark:bg-[#f0f8ff] dark:text-[#121212] bg-[#121212] text-[#f0f8ff] resize-none px-2 rounded"
 				type="submit"
@@ -63,4 +91,5 @@
 			/>
 		</div>
 	</div>
+	<Footer />
 </div>

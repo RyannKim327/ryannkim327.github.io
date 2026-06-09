@@ -6,7 +6,7 @@
 <div
 	class="h-dvh w-dvw bg-[#fafbff] text-[#111b1c] dark:bg-zinc-950 dark:text-[#fafbff]"
 >
-	<div class="h-full w-full">
+	<div class="h-full w-full scrollbar-thin">
 		<Router {routes} useHash={true} />
 	</div>
 </div>

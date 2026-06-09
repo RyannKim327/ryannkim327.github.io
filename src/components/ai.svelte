@@ -26,7 +26,7 @@
 		pronounce: "He",
 		github: "https://github.com/RyannKim327",
 		linkedin: "https://linkedin.com/in/RyannKim327",
-		facebook: "https://fb.me/MPOP.2016",
+		facebook: "https://fb.me/masterpieceofpaper",
 		npmjs: "https://npmjs.com/~ryannkim327",
 		personality: [
 			"Boastful but low-key",
@@ -90,6 +90,7 @@
 			sending = false;
 			return;
 		}
+
 		chats.push({
 			content: api.content,
 			role: "assistant",
@@ -101,7 +102,7 @@
 <div class="fixed bottom-0 right-0 p-10 pointer-events-none">
 	{#if show}
 		<div
-			class="flex flex-col pointer-events-auto h-125 w-100 bg-[#cacecf] dark:bg-[#121212]/50 p-2 rounded border border-solid"
+			class="flex flex-col pointer-events-auto h-125 w-[calc(100-0.5rem%)] md:w-100 bg-[#cacecf] dark:bg-[#121212]/50 backdrop-blur-md p-2 rounded border border-solid"
 		>
 			<div class="flex justify-between">
 				<div class="flex flex-col">
