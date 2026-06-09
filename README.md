@@ -1,13 +1,13 @@
 # RyannKim327 Portfolio
 
-**Project version:** `4.2.1`
+**Project version:** `4.3.0`
 
 [![wakatime](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8.svg)](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8)
-![Svelte](https://img.shields.io/badge/Svelte-5.55.5-FF3E00?style=flat&logo=svelte)
+![Svelte](https://img.shields.io/badge/Svelte-5.56.3-FF3E00?style=flat&logo=svelte)
 ![TypeScript](https://img.shields.io/badge/TypeScript-6.0.3-3178C6?style=flat&logo=typescript)
-![Vite](https://img.shields.io/badge/Vite-8.0.12-646CFF?style=flat&logo=vite)
+![Vite](https://img.shields.io/badge/Vite-8.0.16-646CFF?style=flat&logo=vite)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.3.0-06B6D4?style=flat&logo=tailwindcss)
-![Marked](https://img.shields.io/badge/Marked-18.0.3-000000?style=flat&logo=markdown)
+![Marked](https://img.shields.io/badge/Marked-18.0.5-000000?style=flat&logo=markdown)
 
 > **A modern, responsive portfolio website showcasing the work and skills of Ryann Kim Sesgundo, an aspiring full-stack developer.**
 
@@ -47,7 +47,9 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 - 🎨 **Tailwind CSS 4.3** - Utility-first CSS framework for rapid and consistent styling
 - 📦 **Component-Based Architecture** - Modular and maintainable code structure in Svelte
 - 🌙 **Dark/Light Theme** - Elegant theme switching with dark and light modes, featuring purple accents
+- 📊 **Wakatime Integration** - Real-time coding activity and statistics integrated via API
 - 📝 **Markdown Support** - Integrated `marked` and `dompurify` for secure Markdown rendering in Blogs and Poetry
+- 👣 **Professional Footer** - Modern footer component with dynamic year and branding
 - 🔔 **Toast Notifications** - Real-time feedback using `svelte-french-toast`
 - 🤖 **AI Assistant** - Integrated AI component for interactive user engagement and assistance
 - 🧰 **Admin Dashboard** - Comprehensive dashboard to manage blogs, poetry, and professional info
