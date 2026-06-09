@@ -14,19 +14,19 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "@tsconfig/svelte": "^5.0.8",
-    "@types/node": "^25.9.1",
-    "svelte": "^5.55.9",
-    "svelte-check": "^4.4.8",
+    "@types/node": "^25.9.2",
+    "svelte": "^5.56.3",
+    "svelte-check": "^4.6.0",
     "typescript": "~6.0.3",
-    "vite": "^8.0.14"
+    "vite": "^8.0.16"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
-    "axios": "^1.16.1",
+    "axios": "^1.17.0",
     "axios-cookiejar-support": "^7.0.0",
-    "dompurify": "^3.4.6",
+    "dompurify": "^3.4.8",
     "gh-pages": "^6.3.0",
-    "marked": "^18.0.4",
+    "marked": "^18.0.5",
     "svelte-awesome": "^3.3.5",
     "svelte-french-toast": "^1.2.0",
     "svelte-spa-router": "^5.1.0",
