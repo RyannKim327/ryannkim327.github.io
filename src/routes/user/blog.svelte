@@ -24,7 +24,7 @@
 </script>
 
 <div
-	class="flex flex-wrap p-2 w-full h-full gap-2 overflow-hidden overflow-y-auto snap-start pt-[5%]"
+	class="flex flex-wrap p-2 w-full h-full gap-2 overflow-hidden overflow-y-auto pt-[5%]"
 >
 	<HomeButton title={blog.title} description={blog.content} past="/blogs" />
 	<div class="w-full h-full overflow-hidden px-5">

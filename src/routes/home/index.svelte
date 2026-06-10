@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Header from "@/components/header.svelte";
 	import About from "./about.svelte";
+	import Achievements from "./achievements.svelte";
 	import Hero from "./hero.svelte";
 	import Projects from "./projects.svelte";
 	import Blogs from "./blogs.svelte";
@@ -19,6 +20,7 @@
 	let categories = $state<string[]>([]);
 	let certificates = $state<Record<string, any>[]>([]);
 	let experiences = $state<Record<string, any>[]>([]);
+	let achievements = $state<Record<string, any>[]>([]);
 	let feedback = $state<Record<string, any>[]>([]);
 	let github = $state<Record<string, any>[]>([]);
 	let projects = $state<Record<string, any>[]>([]);
@@ -40,6 +42,7 @@
 				65: "about",
 				66: "blogs",
 				67: "contact",
+				71: "achievements",
 				72: "hero",
 				80: "projects",
 			};
@@ -126,6 +129,7 @@
 			projects={github}
 			expr={experiences}
 			{blogs}
+			{achievements}
 			parseData={loaded}
 		/>
 	</div>
