@@ -50,7 +50,7 @@
 								<i class={`${exp.icon}`}></i>
 							</span>
 							<div
-								class="flex flex-col p-2 border border-black dark:border-white border-solid rounded w-full"
+								class="flex flex-col p-2 border border-black dark:border-white border-solid rounded w-full bg-[#fafbff]/30 dark:bg-[#131313]/30 backdrop-blur-md"
 							>
 								<span class="text-[1.25rem]">{exp.title}</span>
 								<span class="text-[.75rem]">{exp.year}</span>
@@ -69,7 +69,7 @@
 								<span class="aspect-square text-[0.75rem]">i</span>
 							</span>
 							<div
-								class="flex flex-col p-2 border border-black dark:border-white border-solid rounded w-full"
+								class="flex flex-col p-2 border border-black dark:border-white border-solid rounded w-full bg-[#fafbff]/30 dark:bg-[#131313]/30 backdrop-blur-md"
 							>
 								<span>Loading ...</span>
 								<div class="flex flex-col gap-1">
@@ -123,7 +123,7 @@
 							<i class={`${exp.icon}`}></i>
 						</span>
 						<div
-							class="flex flex-col p-2 border border-black dark:border-white border-solid rounded w-full"
+							class="flex flex-col p-2 border border-black dark:border-white border-solid rounded w-full bg-[#fafbff]/30 dark:bg-[#131313]/30 backdrop-blur-md"
 						>
 							<span class="text-[1.25rem]">{exp.title}</span>
 							<span class="text-[.75rem]">{exp.year}</span>
@@ -142,7 +142,7 @@
 							<span class="aspect-square text-[0.75rem]">i</span>
 						</span>
 						<div
-							class="flex flex-col p-2 border border-black dark:border-white border-solid rounded w-full"
+							class="flex flex-col p-2 border border-black dark:border-white border-solid rounded w-full bg-[#fafbff]/30 dark:bg-[#131313]/30 backdrop-blur-md"
 						>
 							<span>Loading ...</span>
 							<div class="flex flex-col gap-1">

@@ -42,59 +42,79 @@
 </script>
 
 <div class="h-full w-full flex items-center justify-center p-6 overflow-hidden">
-	<div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
-		<div class="space-y-5 border border-zinc-500 dark:border-neutral-800 p-6">
-			<h1 class="text-xl font-semibold tracking-wide">Create Poem</h1>
-
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-				<input
-					bind:value={title}
-					placeholder="Title"
-					class="w-full border border-zinc-500 dark:border-neutral-800 bg-transparent px-3 py-2 outline-none focus:border-black dark:focus:border-white"
-				/>
-
-				<input
-					type="password"
-					bind:value={code}
-					placeholder="Admin Code"
-					class="w-full border border-zinc-500 dark:border-neutral-800 bg-transparent px-3 py-2 outline-none focus:border-black dark:focus:border-white"
-				/>
+	<div
+		class="w-full max-w-5xl h-full rounded-2xl border border-zinc-800 bg-zinc-50 dark:bg-zinc-900/70 backdrop-blur-xl shadow-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-y-auto"
+	>
+		<div class="flex flex-col gap-6">
+			<div>
+				<h1 class="text-3xl font-bold dark:text-zinc-200">Create Poem</h1>
+				<p class="text-zinc-500 mt-2">Express your thoughts in verses</p>
 			</div>
 
-			<textarea
-				bind:value={content}
-				placeholder="Write your poem..."
-				class="w-full min-h-[300px] border border-zinc-500 dark:border-neutral-800 bg-transparent p-4 outline-none resize-none focus:border-black dark:focus:border-white"
-			></textarea>
+			<div class="grid grid-cols-1 gap-4">
+				<div class="flex flex-col gap-2">
+					<label class="text-sm font-medium dark:text-zinc-300"> Title </label>
+					<input
+						bind:value={title}
+						placeholder="The Silent Echo"
+						class="w-full rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-200 dark:bg-zinc-800 dark:text-white px-4 py-3 outline-none focus:ring-2 focus:ring-zinc-500"
+					/>
+				</div>
 
-			<div class="flex justify-end">
-				<button
-					onclick={submit}
-					class="border border-black dark:border-white px-5 py-2 text-sm hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
-				>
-					Publish Poem
-				</button>
+				<div class="flex flex-col gap-2">
+					<label class="text-sm font-medium dark:text-zinc-300">
+						Admin Code
+					</label>
+					<input
+						type="password"
+						bind:value={code}
+						placeholder=""
+						class="w-full rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-200 dark:bg-zinc-800 dark:text-white px-4 py-3 outline-none focus:ring-2 focus:ring-zinc-500"
+					/>
+				</div>
 			</div>
+
+			<div class="flex flex-col gap-2">
+				<label class="text-sm font-medium dark:text-zinc-300"> Content </label>
+				<textarea
+					bind:value={content}
+					placeholder="Write your poem..."
+					class="w-full min-h-[300px] rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-200 dark:bg-zinc-800 dark:text-white p-4 outline-none resize-none focus:ring-2 focus:ring-zinc-500"
+				></textarea>
+			</div>
+
+			<button
+				onclick={submit}
+				class="w-full rounded-2xl bg-zinc-900 dark:bg-zinc-50 px-6 py-3 text-sm font-semibold text-zinc-50 dark:text-zinc-950 transition hover:scale-[1.02] hover:bg-zinc-950/50 dark:hover:bg-zinc-50/90 active:scale-[0.98]"
+			>
+				Publish Poem
+			</button>
 		</div>
 
 		<!-- PREVIEW -->
 		<div
-			class="border border-zinc-500 dark:border-neutral-800 p-6 overflow-hidden"
+			class="flex flex-col h-full rounded-2xl border border-dashed border-zinc-700 bg-zinc-300 dark:bg-zinc-800/50 p-8 overflow-hidden"
 		>
-			<h2 class="text-sm uppercase tracking-wide text-neutral-500 mb-4">
+			<h2
+				class="text-sm uppercase tracking-widest text-zinc-500 mb-6 font-bold"
+			>
 				Preview
 			</h2>
 
-			<h1 class="text-2xl font-semibold mb-6">
-				{title || "Untitled Poem"}
-			</h1>
+			<div class="flex-1 overflow-y-auto pr-2 custom-scrollbar">
+				<h1
+					class="text-3xl font-serif font-bold mb-6 dark:text-zinc-100 italic"
+				>
+					{title || "Untitled Poem"}
+				</h1>
 
-			<div
-				class="space-y-2 text-neutral-700 dark:text-neutral-300 leading-7 overflow-y-scroll h-[300px]"
-			>
-				{#each content.split("\n") as line}
-					<p>{line === "" ? "\u00A0" : line}</p>
-				{/each}
+				<div
+					class="space-y-4 text-zinc-800 dark:text-zinc-300 leading-relaxed text-lg italic"
+				>
+					{#each content.split("\n") as line}
+						<p>{line === "" ? "\u00A0" : line}</p>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</div>

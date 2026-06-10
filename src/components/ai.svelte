@@ -99,7 +99,7 @@
 	}
 </script>
 
-<div class="fixed bottom-0 right-0 p-10 pointer-events-none">
+<div class="fixed bottom-0 right-0 p-10 pointer-events-none z-10">
 	{#if show}
 		<div
 			class="flex flex-col pointer-events-auto h-125 w-[calc(100-0.5rem%)] md:w-100 bg-[#cacecf] dark:bg-[#121212]/50 backdrop-blur-md p-2 rounded border border-solid"
