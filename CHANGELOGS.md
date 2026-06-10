@@ -7,6 +7,7 @@
 
 ## Table of Contents
 
+- [v4.3.2 - 2026-06-10](#v432---2026-06-10)
 - [v4.3.1 - 2026-06-10](#v431---2026-06-10)
 - [v4.3.0 - 2026-06-09](#v430---2026-06-09)
 - [v4.2.1 - 2026-05-19](#v421---2026-05-19)
@@ -31,6 +32,14 @@
 - [v2.0.0 — 2026-01-03](#v200--2026-01-03)
 - [v1.0.0 — 2024-11-03](#v100--2024-11-03)
 ...
+
+### v4.3.2 - 2026-06-10
+
+- **Admin UI Unification**
+  - **Standardized Dashboard Design:** Unified all admin routes (`Poetry`, `Blogs`, `Projects`, `Experiences`, `Resume`) with the modern, blurred-card aesthetic established in the Upload section.
+  - **Enhanced Layouts:** Implemented centered flex containers and shadow-heavy containers across the entire admin dashboard for better focus and visual consistency.
+  - **Refined Form Elements:** Standardized all inputs, textareas, and buttons with consistent rounding, focus states, and interaction transitions.
+  - **Modernized Login:** Redesigned the Admin Access screen with a secure, high-tech card layout and improved visual feedback.
 
 ### v4.3.1 - 2026-06-10
 

@@ -1,6 +1,6 @@
 # RyannKim327 Portfolio
 
-**Project version:** `4.3.1`
+**Project version:** `4.3.2`
 
 [![wakatime](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8.svg)](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8)
 ![Svelte](https://img.shields.io/badge/Svelte-5.56.3-FF3E00?style=flat&logo=svelte)
@@ -41,7 +41,7 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 ## ✨ Features
 
 - 🎨 **Modern Svelte 5 Design** - Clean, professional layout leveraging Svelte 5's fine-grained reactivity (Runes)
-- ✨ **Tech & Aesthetics** - Immersive animated background with tech grids and drifting radials, combined with smooth Svelte transitions
+- ✨ **Tech & Aesthetics** - Immersive animated background and a standardized, blurred-card UI across the entire site
 - 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
 - ⚡ **Lightning Fast** - Built with Vite 8 for optimal development and production performance
 - 🎯 **TypeScript** - Type-safe development for better code quality and maintenance
@@ -53,7 +53,7 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 - 👣 **Professional Footer** - Modern footer component with dynamic year and branding
 - 🔔 **Toast Notifications** - Real-time feedback using `svelte-french-toast`
 - 🤖 **AI Assistant** - Integrated AI component for interactive user engagement and assistance
-- 🧰 **Admin Dashboard** - Comprehensive dashboard to manage blogs, poetry, and professional info
+- 🧰 **Admin Dashboard** - Comprehensive dashboard to manage blogs, poetry, and professional info with a unified modern aesthetic
 - 📤 **File Uploads** - Integrated file upload functionality for media management within the Admin dashboard
 - 🐙 **GitHub Integration** - Automated project fetching and syncing using the GitHub API
 - 🔗 **Backend Integration** - Connected to a custom Go-based backend API

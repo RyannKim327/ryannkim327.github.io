@@ -7,35 +7,60 @@
 	let content = $state("");
 </script>
 
-<div class="min-h-screen w-full p-6">
+<div class="min-h-screen w-full flex items-center justify-center p-6 pt-20">
 	<div
-		class="mx-auto flex w-full max-w-7xl gap-4 h-[90vh] overflow-hidden rounded-3xl border border-zinc-500 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/70 backdrop-blur-xl p-4"
+		class="w-full max-w-7xl rounded-2xl border border-zinc-800 bg-zinc-50 dark:bg-zinc-900/70 backdrop-blur-xl shadow-2xl p-8 flex flex-col md:flex-row h-[85vh] gap-8 overflow-hidden"
 	>
-		<div class="flex flex-col w-full md:w-1/2 gap-4">
-			<Input
-				class="w-full rounded-xl border border-zinc-500 bg-zinc-200 text-black dark:border-zinc-700 dark:bg-zinc-800 p-3 dark:text-white outline-none"
-				type="text"
-				placeholder=""
-				bind:value={input}
-			/>
+		<div class="flex flex-col w-full md:w-1/2 gap-6 overflow-hidden">
+			<div>
+				<h1 class="text-3xl font-bold dark:text-zinc-200">Manage Resume</h1>
+				<p class="text-zinc-500 mt-2">Update your professional profile and resume content</p>
+			</div>
 
-			<Textarea
-				class="flex-1 w-full resize-none rounded-xl border border-zinc-500 bg-zinc-200 text-black dark:border-zinc-700 dark:bg-zinc-800 p-4 dark:text-white outline-none"
-				placeholder=""
-				bind:value={content}
-			/>
+			<div class="flex flex-col gap-4 flex-1 overflow-hidden">
+				<div class="flex flex-col gap-2">
+					<label class="text-sm font-medium dark:text-zinc-300"> Profile Summary </label>
+					<Input
+						class="w-full rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-200 dark:bg-zinc-800 dark:text-white px-4 py-3 outline-none focus:ring-2 focus:ring-zinc-500"
+						type="text"
+						placeholder="Aspiring Full-Stack Developer..."
+						bind:value={input}
+					/>
+				</div>
 
-			<button
-				class="self-end rounded-xl bg-zinc-800 text-white dark:bg-zinc-600 px-6 py-2 dark:text-white dark:hover:bg-zinc-900"
-			>
-				Download Resume
-			</button>
+				<div class="flex flex-col gap-2 flex-1 overflow-hidden">
+					<label class="text-sm font-medium dark:text-zinc-300"> Resume Content (Markdown) </label>
+					<Textarea
+						class="flex-1 w-full resize-none rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-200 dark:bg-zinc-800 dark:text-white p-5 outline-none focus:ring-2 focus:ring-zinc-500 custom-scrollbar"
+						placeholder="## Experience..."
+						bind:value={content}
+					/>
+				</div>
+			</div>
+
+			<div class="flex gap-3 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+				<button
+					class="flex-1 rounded-2xl bg-zinc-900 dark:bg-zinc-50 py-3 text-sm font-semibold text-zinc-50 dark:text-zinc-950 transition hover:scale-[1.02] hover:bg-zinc-950/50 dark:hover:bg-zinc-50/90 active:scale-[0.98]"
+				>
+					Save Changes
+				</button>
+				<button
+					class="px-6 rounded-2xl border border-zinc-300 dark:border-zinc-700 text-zinc-500 font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
+				>
+					Download PDF
+				</button>
+			</div>
 		</div>
 
 		<div
-			class="hidden md:flex w-1/2 justify-center items-start overflow-y-auto"
+			class="hidden md:flex flex-1 flex-col rounded-2xl border border-dashed border-zinc-700 bg-zinc-300 dark:bg-zinc-800/50 p-8 overflow-hidden"
 		>
-			<Resume />
+			<h2 class="text-xs uppercase tracking-widest font-bold text-zinc-500 mb-6">
+				Live Preview
+			</h2>
+			<div class="flex-1 overflow-y-auto custom-scrollbar pr-2">
+				<Resume />
+			</div>
 		</div>
 	</div>
 </div>
