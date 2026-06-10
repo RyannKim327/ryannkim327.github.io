@@ -17,7 +17,7 @@
 	{#if blogs.length > 0 && parseData}
 		{#each blogs as blog}
 			<Card
-				class="aspect-video w-full md:w-[calc(33.333%-1rem)] justify-between"
+				class="aspect-video w-full md:w-[calc(25.0%-1rem)] justify-between"
 				onclick={() => {
 					push(`/blog/${blog.id}`);
 				}}
@@ -29,7 +29,7 @@
 			</Card>
 		{/each}
 		<Card
-			class="aspect-video w-full md:w-[calc(33.333%-1rem)] items-center justify-center"
+			class="aspect-video w-full md:w-[calc(25.0%-1rem)] items-center justify-center"
 			onclick={() => {
 				push("/blogs");
 			}}
@@ -44,7 +44,7 @@
 	{:else}
 		{#each Array(6) as _, i (i)}
 			<Loader
-				class="aspect-video w-full md:w-[calc(33.333%-1rem)] items-center justify-center"
+				class="aspect-video w-full md:w-[calc(25%-1rem)] items-center justify-center"
 			></Loader>
 		{/each}
 	{/if}

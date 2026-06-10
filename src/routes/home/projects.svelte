@@ -27,7 +27,7 @@
 
 <div
 	id="projects"
-	class="flex flex-col p-2 pt-[25%] md:pt-[10%] h-full w-full overflow-y-auto snap-start"
+	class="flex flex-col p-2 pt-[25%] md:pt-[10%] h-full w-full overflow-y-auto snap-start select-none"
 >
 	<div
 		class="flex gap-2 items-center md:justify-center py-10 md:p-3 overflow-hidden overflow-x-auto scrollbar-none"
@@ -56,6 +56,9 @@
 			{#each projects as project}
 				{#if active.toLowerCase() === "all" && project.img}
 					<Card
+						onclick={() => {
+							window.open(project.link, "_blank");
+						}}
 						class="relative aspect-video w-full md:w-[calc(33.333%-1rem)] rounded overflow-hidden !p-0 group"
 					>
 						<img
@@ -71,6 +74,9 @@
 					</Card>
 				{:else if active.toLowerCase() !== "all"}
 					<Card
+						onclick={() => {
+							window.open(project.link, "_blank");
+						}}
 						class="relative aspect-video w-full md:w-[calc(33.333%-1rem)] rounded overflow-hidden !p-0 group"
 					>
 						<img

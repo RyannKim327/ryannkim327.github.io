@@ -63,7 +63,7 @@
 	onMount(async () => {
 		try {
 			const [b, c, d, e, f, g, p, w] = await Promise.all([
-				get("blog"),
+				get("blog?limit=7"),
 				get("certs"),
 				get("dev"),
 				get("experiences"),
