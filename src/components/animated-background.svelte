@@ -41,9 +41,9 @@
 <div
 	class="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none h-full w-full"
 >
-	<div
+	<!--div
 		class="absolute inset-0 bg-[linear-gradient(to_right,#80808044_1px,transparent_1px),linear-gradient(to_bottom,#80808044_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_60%,transparent_100%)] opacity-70 dark:opacity-100"
-	></div>
+	></div-->
 
 	<!-- Moving Circles (Radials) -->
 	{#each blocks as block (block.id)}

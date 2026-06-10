@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Dark from "@/assets/dark.png";
-  import Light from "@/assets/light.png";
+  import Dark from "@/assets/dark2.png";
+  import Light from "@/assets/light2.png";
   import { fly, fade } from "svelte/transition";
   import { onMount } from "svelte";
 
@@ -19,13 +19,13 @@
   >
     {#if visible}
       <h1
-        in:fly={{ y: -20, duration: 800, delay: 200 }}
+        in:fly={{ x: 50, duration: 600, delay: 500 }}
         class="text-[2.5em] w-5/6 md:text-[calc(3rem)] md:w-4/6 text-center md:text-end font-bold"
       >
         Ryann Kim M. Sesgundo
       </h1>
       <h3
-        in:fly={{ y: 20, duration: 800, delay: 400 }}
+        in:fly={{ x: 50, duration: 600, delay: 500 }}
         class="text-[1.25em] md:text-[1.75em] text-center md:text-end opacity-80"
       >
         A Full-Stack Software Developer
@@ -46,17 +46,20 @@
   </div>
 
   <div
-    class="md:flex-col hidden md:flex w-full md:w-[calc(45%-0.5rem)] h-full items-start justify-start p-2 -mt-20 z-1"
+    class="md:flex-col hidden md:flex w-full md:w-[calc(45%-0.5rem)] h-full items-start justify-center p-2 z-1"
   >
     {#if visible}
-      <div in:fly={{ x: 20, duration: 800, delay: 600 }}>
+      <div
+        in:fly={{ x: -50, duration: 600, delay: 500 }}
+        class="flex items-center h-full w-full"
+      >
         <img
-          class={`rounded-md hidden dark:inline h-[calc(60%-0.5rem)] mt-[calc(25%+1rem)] shadow-2xl`}
+          class={`rounded-md hidden dark:inline h-[calc(25rem)] drop-shadow-2xl`}
           src={Dark}
           alt=""
         />
         <img
-          class={`rounded-md inline dark:hidden h-[calc(60%-0.5rem)] mt-[calc(25%+1rem)] shadow-2xl`}
+          class={`rounded-md inline dark:hidden h-[calc(25rem)] drop-shadow-2xl`}
           src={Light}
           alt=""
         />
