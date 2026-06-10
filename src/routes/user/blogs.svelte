@@ -31,7 +31,7 @@
 
 <div
 	id="blogs"
-	class="flex flex-col w-full h-full gap-2 overflow-hidden overflow-y-auto snap-start"
+	class="flex flex-col w-full h-full gap-2 overflow-hidden overflow-y-auto"
 >
 	<HomeButton title="Blogs Lists" />
 	<div class="flex flex-wrap p-5 gap-5 py-[5%] w-full h-full">

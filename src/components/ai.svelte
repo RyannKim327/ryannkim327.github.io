@@ -7,6 +7,7 @@
 		expr = [],
 		projects = [],
 		blogs = [],
+		achievements = [],
 		wakatime = {},
 		parseData = false,
 	} = $props();
@@ -20,6 +21,7 @@
 		nicknames: ["Kim", "Ryann", "Kimmy"],
 		weekly_activity: wakatime,
 		expriences: expr,
+		achievements: achievements,
 		alias: ["RyannKim327", "RySes", "RySes Malabanan", "Krysanne Guinmods"],
 		birthyear: 2001,
 		sex: "male",

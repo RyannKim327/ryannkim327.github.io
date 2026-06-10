@@ -49,7 +49,7 @@
 	}
 </script>
 
-<div class="min-h-screen w-full flex items-center justify-center p-6">
+<div class="h-full w-full flex items-center justify-center p-6">
 	<div
 		class="w-full max-w-2xl rounded border border-zinc-800 backdrop-blur-xl shadow-2xl p-8"
 	>

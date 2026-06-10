@@ -7,7 +7,7 @@
 	let content = $state("");
 </script>
 
-<div class="min-h-screen w-full flex items-center justify-center p-6 pt-20">
+<div class="h-full w-full flex items-center justify-center p-6 pt-20">
 	<div
 		class="w-full max-w-7xl rounded-2xl border border-zinc-800 bg-zinc-50 dark:bg-zinc-900/70 backdrop-blur-xl shadow-2xl p-8 flex flex-col md:flex-row h-[85vh] gap-8 overflow-hidden"
 	>
