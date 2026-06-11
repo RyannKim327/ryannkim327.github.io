@@ -12,7 +12,7 @@
 
 <div
   id="hero"
-  class="relative flex items-center justify-center h-full w-full snap-start pt-[25%] md:pt-[5%] overflow-hidden"
+  class="relative flex items-center justify-center h-full w-full pt-[25%] md:pt-[5%] overflow-hidden snap-start"
 >
   <div
     class="flex flex-col justify-center items-center md:items-end w-full md:w-[calc(45%-0.5rem)] h-full gap-3 md:gap-5 p-2 z-1"

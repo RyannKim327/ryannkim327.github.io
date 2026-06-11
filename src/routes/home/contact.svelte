@@ -30,7 +30,7 @@
 
 <div
 	id="contact"
-	class="flex flex-col p-2 pt-[25%] md:pt-[7%] w-full h-full gap-2 overflow-hidden overflow-y-auto snap-start justify-between"
+	class="flex flex-col p-2 pt-[25%] md:pt-[7%] w-full h-full gap-2 overflow-hidden overflow-y-auto justify-between snap-start"
 >
 	<iframe
 		src="https://www.google.com/maps/embed/v1/place?q=Ibabang+Iyam&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
