@@ -8,7 +8,7 @@
 	class="relative h-dvh w-dvw bg-[#fafbff] text-[#111b1c] dark:bg-zinc-950 dark:text-[#fafbff]"
 >
 	<AnimatedBackground />
-	<div class="absolute h-full w-full scrollbar-thin">
+	<div class="absolute h-full w-full scrollbar-none">
 		<Router {routes} useHash={true} />
 	</div>
 </div>

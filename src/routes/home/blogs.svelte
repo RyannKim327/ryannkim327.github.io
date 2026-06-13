@@ -12,7 +12,7 @@
 
 <div
 	id="blogs"
-	class="flex flex-wrap p-5 pt-[25%] md:pt-[10%] w-full h-full gap-5 overflow-hidden overflow-y-auto snap-start"
+	class="flex flex-wrap p-5 pt-[25%] md:pt-[calc(5%+0.5rem)] w-full h-full gap-5 overflow-hidden overflow-y-auto snap-start"
 >
 	{#if blogs.length > 0 && parseData}
 		{#each blogs as blog}
