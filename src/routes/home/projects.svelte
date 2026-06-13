@@ -47,7 +47,7 @@
 
 <div
 	id="projects"
-	class="flex flex-col p-2 pt-[25%] md:pt-[10%] h-full w-full overflow-y-auto select-none snap-start"
+	class="flex flex-col p-2 pt-[25%] md:pt-[calc(5%+0.5rem)] h-full w-full overflow-y-auto select-none snap-start scrollbar-none"
 >
 	<div
 		class="flex gap-2 items-center md:justify-center py-10 md:p-3 overflow-hidden overflow-x-auto scrollbar-none"
@@ -72,7 +72,9 @@
 			</li>
 		{/each}
 	</div>
-	<div class="flex flex-wrap w-full gap-5 p-5">
+	<div
+		class="flex flex-wrap w-full gap-5 p-5 md:h-full md:items-center scrollbar-none"
+	>
 		{#if projects.length > 0}
 			{#each projects as project}
 				<Card

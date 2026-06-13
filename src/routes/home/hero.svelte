@@ -19,13 +19,13 @@
   >
     {#if visible}
       <h1
-        in:fly={{ x: 50, duration: 600, delay: 500 }}
+        in:fly={{ x: 50, duration: 500, delay: 800 }}
         class="text-[2.5em] w-5/6 md:text-[calc(3rem)] md:w-4/6 text-center md:text-end font-bold"
       >
         Ryann Kim M. Sesgundo
       </h1>
       <h3
-        in:fly={{ x: 50, duration: 600, delay: 500 }}
+        in:fly={{ x: 50, duration: 500, delay: 800 }}
         class="text-[1.25em] md:text-[1.75em] text-center md:text-end opacity-80"
       >
         A Full-Stack Software Developer
@@ -34,14 +34,14 @@
   </div>
 
   <div
-    class="md:flex md:flex-col hidden justify-center h-full gap-10 text-[2rem] p-2 z-1"
+    class="md:flex md:flex-col hidden justify-center h-full gap-10 text-[2rem] p-2 z-5"
   >
     {#if visible}
-      <p in:fade={{ delay: 600 }} class="baybayin-font">ᜇ</p>
-      <p in:fade={{ delay: 700 }} class="baybayin-font">ᜌ</p>
-      <p in:fade={{ delay: 800 }} class="baybayin-font">ᜈ᜔</p>
-      <p in:fade={{ delay: 900 }} class="baybayin-font">ᜃᜒ</p>
-      <p in:fade={{ delay: 1000 }} class="baybayin-font">ᜋ᜔</p>
+      <p in:fade={{ delay: 300 }} class="baybayin-font">ᜇ</p>
+      <p in:fade={{ delay: 400 }} class="baybayin-font">ᜌ</p>
+      <p in:fade={{ delay: 500 }} class="baybayin-font">ᜈ᜔</p>
+      <p in:fade={{ delay: 600 }} class="baybayin-font">ᜃᜒ</p>
+      <p in:fade={{ delay: 700 }} class="baybayin-font">ᜋ᜔</p>
     {/if}
   </div>
 
@@ -50,7 +50,7 @@
   >
     {#if visible}
       <div
-        in:fly={{ x: -50, duration: 600, delay: 500 }}
+        in:fly={{ x: -50, duration: 500, delay: 800 }}
         class="flex items-center h-full w-full"
       >
         <img
