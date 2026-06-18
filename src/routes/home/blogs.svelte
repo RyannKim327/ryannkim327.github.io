@@ -1,51 +1,51 @@
 <script lang="ts">
-	import Card from "@/components/card.svelte";
-	import Loader from "@/components/loader.svelte";
+  import Card from "@/components/card.svelte";
+  import Loader from "@/components/loader.svelte";
 
-	import { push } from "svelte-spa-router";
+  import { push } from "svelte-spa-router";
 
-	let {
-		blogs = [],
-		parseData = false,
-	}: { blogs?: Record<string, any>[]; parseData?: boolean } = $props();
+  let {
+    blogs = [],
+    parseData = false,
+  }: { blogs?: Record<string, any>[]; parseData?: boolean } = $props();
 </script>
 
 <div
-	id="blogs"
-	class="flex flex-wrap p-5 pt-[25%] md:pt-[calc(5%+0.5rem)] w-full h-full gap-5 overflow-hidden overflow-y-auto snap-start"
+  id="blogs"
+  class="flex flex-wrap p-5 pt-[25%] md:pt-[calc(5%+0.5rem)] w-full h-full items-start gap-5 overflow-hidden overflow-y-auto snap-start"
 >
-	{#if blogs.length > 0 && parseData}
-		{#each blogs as blog}
-			<Card
-				class="aspect-video w-full md:w-[calc(25.0%-1rem)] justify-between"
-				onclick={() => {
-					push(`/blog/${blog.id}`);
-				}}
-			>
-				<span class="font-bold text-[1.25rem]">{blog.title}</span>
-				<span class="italic text-[0.75rem] overflow-hidden"
-					>{blog.content.substring(0, 250)} ...</span
-				>
-			</Card>
-		{/each}
-		<Card
-			class="aspect-video w-full md:w-[calc(25.0%-1rem)] items-center justify-center"
-			onclick={() => {
-				push("/blogs");
-			}}
-		>
-			<span class="font-bold text-[1.25rem]">See More</span>
-			<span class="italic text-[0.75rem]">Click here to see more blogs</span>
-		</Card>
-	{:else if parseData}
-		<div>
-			<span>No Blogs Posted</span>
-		</div>
-	{:else}
-		{#each Array(6) as _, i (i)}
-			<Loader
-				class="aspect-video w-full md:w-[calc(25%-1rem)] items-center justify-center"
-			></Loader>
-		{/each}
-	{/if}
+  {#if blogs.length > 0 && parseData}
+    {#each blogs as blog}
+      <Card
+        class="aspect-video w-full md:w-[calc(25.0%-1rem)] justify-between"
+        onclick={() => {
+          push(`/blog/${blog.id}`);
+        }}
+      >
+        <span class="font-bold text-[1.25rem]">{blog.title}</span>
+        <span class="italic text-[0.75rem] overflow-hidden"
+          >{blog.content.substring(0, blog.title.length > 25 ? 50 : 100)} ...</span
+        >
+      </Card>
+    {/each}
+    <Card
+      class="aspect-video w-full md:w-[calc(25.0%-1rem)] items-center justify-center"
+      onclick={() => {
+        push("/blogs");
+      }}
+    >
+      <span class="font-bold text-[1.25rem]">See More</span>
+      <span class="italic text-[0.75rem]">Click here to see more blogs</span>
+    </Card>
+  {:else if parseData}
+    <div>
+      <span>No Blogs Posted</span>
+    </div>
+  {:else}
+    {#each Array(6) as _, i (i)}
+      <Loader
+        class="aspect-video w-full md:w-[calc(25%-1rem)] items-center justify-center"
+      ></Loader>
+    {/each}
+  {/if}
 </div>
