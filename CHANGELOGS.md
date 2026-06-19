@@ -7,6 +7,7 @@
 
 ## Table of Contents
 
+- [v4.3.3 - 2026-06-19](#v433---2026-06-19)
 - [v4.3.2 - 2026-06-10](#v432---2026-06-10)
 - [v4.3.1 - 2026-06-10](#v431---2026-06-10)
 - [v4.3.0 - 2026-06-09](#v430---2026-06-09)
@@ -32,6 +33,18 @@
 - [v2.0.0 — 2026-01-03](#v200--2026-01-03)
 - [v1.0.0 — 2024-11-03](#v100--2024-11-03)
 ...
+
+### v4.3.3 - 2026-06-19
+
+- **UI/UX Enhancements**
+  - **About Section Improvements:** Enhanced visual design of the Experiences and Certificates sections with improved hover effects, shadows, transitions, and layout refinements for better user engagement and aesthetics.
+  - **Blogs Section Updates:** Increased blog items per page from 9 to 12 and changed grid layout from 3-column to 4-column display for better content presentation.
+  - **Certificates Section Updates:** Increased certificate items per page from 6 to 8 and changed grid layout from 3-column to 4-column display for better content presentation.
+  - **Responsive Design Refinements:** Improved spacing, padding, and layout consistency across mobile and desktop views.
+
+- **Development Workflow**
+  - **Local Development Configuration:** Updated API configuration to point to localhost:8000 for local development and testing purposes.
+  - **Code Formatting:** Standardized code formatting and indentation across components for better readability and maintainability.
 
 ### v4.3.2 - 2026-06-10
 
