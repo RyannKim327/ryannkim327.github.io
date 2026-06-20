@@ -10,6 +10,7 @@
   import Project from "./project.svelte";
   import Experiences from "./experiences.svelte";
   import Contact from "./contact.svelte";
+  import { post } from "@/lib/fetch";
 
   let { params } = $props<{ params: { page?: string } }>();
 
@@ -25,12 +26,43 @@
   };
 
   let admin = $state(session("token") ?? "");
-  let verified = $state(admin === secret_code);
+  let expiration = $state(session("expiration") ?? 0);
 
-  function setAdmin() {
-    session("token", admin);
-    verified = admin === secret_code;
+  let verified = $state(false);
+
+  const checker = () => {
+    const time = new Date().getTime();
+    verified =
+      admin !== undefined &&
+      admin !== null &&
+      parseInt(time) < parseInt(expiration ?? "0");
+
+    if (time >= parseInt(expiration)) {
+      session("admin", "");
+      session("expiration", "");
+    }
+  };
+
+  async function setAdmin() {
+    const req = await post("/admin", { key: admin });
+    const data = JSON.parse(atob(req.code));
+
+    session("admin", data.code);
+    session("expiration", data.time);
+    checker();
   }
+  checker();
+
+  $effect(() => {
+    const interval = setInterval(
+      () => {
+        checker();
+      },
+      1000 + 60 + 30,
+    );
+
+    return () => clearInterval(interval);
+  });
 </script>
 
 <div class="h-full w-full flex items-center justify-center p-6">
