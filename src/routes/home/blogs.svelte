@@ -42,7 +42,7 @@
       <span>No Blogs Posted</span>
     </div>
   {:else}
-    {#each Array(6) as _, i (i)}
+    {#each Array(8) as _, i (i)}
       <Loader
         class="aspect-video w-full md:w-[calc(25%-1rem)] items-center justify-center"
       ></Loader>
