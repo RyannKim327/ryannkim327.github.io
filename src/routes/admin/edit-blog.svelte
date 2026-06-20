@@ -12,7 +12,7 @@
   import { onMount } from "svelte";
 
   let title = $state("");
-  let code = $state(session("token")?.toString() ?? "");
+  let code = $state(session("admin")?.toString() ?? "");
   let content = $state("");
 
   let tags = $state("");
@@ -89,44 +89,30 @@
           <Input
             class="w-full rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-200 dark:bg-zinc-800 dark:text-white placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-500"
             name="title"
-            placeholder="Title"
+            placeholder=""
             bind:value={title}
           />
         </div>
-
-        <div class="flex flex-col gap-2">
-          <label class="text-sm font-medium dark:text-zinc-300">
-            Admin Code
-          </label>
-          <Input
-            class="w-full rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-200 dark:bg-zinc-800 dark:text-white placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-500"
-            name="code"
-            type="password"
-            placeholder="Admin Code"
-            bind:value={code}
-          />
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="flex flex-col gap-2">
           <label class="text-sm font-medium dark:text-zinc-300"> Tags </label>
           <Input
             class="w-full rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-200 dark:bg-zinc-800 dark:text-white placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-500"
             name="tags"
-            placeholder="Tags"
+            placeholder=""
             bind:value={tags}
           />
         </div>
+      </div>
 
-        <div class="flex flex-col gap-2">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex flex-col gap-2 col-span-2">
           <label class="text-sm font-medium dark:text-zinc-300">
             Media Files
           </label>
           <Input
             class="w-full rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-200 dark:bg-zinc-800 dark:text-white placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-500"
             name="media"
-            placeholder="Media Files"
+            placeholder=""
             bind:value={media}
           />
         </div>
@@ -156,7 +142,7 @@
           <Textarea
             class="h-full border-0 resize-none bg-transparent p-5 text-sm dark:text-zinc-200 outline-none placeholder:text-zinc-500"
             name="content"
-            placeholder="Content"
+            placeholder=""
             bind:value={content}
           />
         </div>

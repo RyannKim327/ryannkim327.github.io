@@ -1,12 +1,12 @@
 <script lang="ts">
   import { adminPost } from "@/lib/fetch";
-  import { storage } from "@/lib/storage";
+  import { session, storage } from "@/lib/storage";
   import toast, { Toaster } from "svelte-french-toast";
 
   let init = false;
 
   let title: string = $state(storage("title") ?? "") as string;
-  let code = $state("");
+  let code = $state(session("admin")?.toString() ?? "");
   let content: string = $state(storage("content") ?? "") as string;
 
   $effect(() => {
@@ -57,23 +57,11 @@
       </div>
 
       <div class="grid grid-cols-1 gap-4">
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-2 col-span-2">
           <label class="text-sm font-medium dark:text-zinc-300"> Title </label>
           <input
             bind:value={title}
             placeholder="The Silent Echo"
-            class="w-full rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-200 dark:bg-zinc-800 dark:text-white px-4 py-3 outline-none focus:ring-2 focus:ring-zinc-500"
-          />
-        </div>
-
-        <div class="flex flex-col gap-2">
-          <label class="text-sm font-medium dark:text-zinc-300">
-            Admin Code
-          </label>
-          <input
-            type="password"
-            bind:value={code}
-            placeholder=""
             class="w-full rounded-xl border border-zinc-300 dark:border-zinc-700 bg-zinc-200 dark:bg-zinc-800 dark:text-white px-4 py-3 outline-none focus:ring-2 focus:ring-zinc-500"
           />
         </div>
