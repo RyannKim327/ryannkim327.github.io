@@ -8,10 +8,25 @@
   import { Toaster, toast } from "svelte-french-toast";
   import { onMount } from "svelte";
 
-  const secret_code = "santol@mangga.com";
-  let verified = $state(session("token") === secret_code);
+  let admin = $state(session("token") ?? "");
+  let expiration = $state(session("expiration") ?? 0);
+
+  let verified = $state(false);
 
   let blog = $state<any>({});
+
+  const checker = () => {
+    const time = new Date().getTime();
+    verified =
+      admin !== undefined &&
+      admin !== null &&
+      parseInt(time) < parseInt(expiration ?? "0");
+
+    if (time >= parseInt(expiration)) {
+      session("admin", "");
+      session("expiration", "");
+    }
+  };
 
   onMount(async () => {
     const api = await get("blog", {
@@ -24,6 +39,7 @@
     } else {
       blog = api.data;
     }
+    checker();
   });
 </script>
 
