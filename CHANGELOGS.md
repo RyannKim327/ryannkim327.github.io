@@ -7,6 +7,7 @@
 
 ## Table of Contents
 
+- [v4.3.4 - 2026-06-21](#v434---2026-06-21)
 - [v4.3.3 - 2026-06-19](#v433---2026-06-19)
 - [v4.3.2 - 2026-06-10](#v432---2026-06-10)
 - [v4.3.1 - 2026-06-10](#v431---2026-06-10)
@@ -33,6 +34,15 @@
 - [v2.0.0 — 2026-01-03](#v200--2026-01-03)
 - [v1.0.0 — 2024-11-03](#v100--2024-11-03)
 ...
+
+### v4.3.4 - 2026-06-21
+
+- **Features & Enhancements**
+  - **Horizontal Scroll Implementation:** Transitioned from vertical to horizontal scrolling layout for improved user experience on wide screens, implementing snap-center behavior and smooth scroll handling via wheel events.
+  - **Header Bug Fix:** Fixed header scroll position calculation to properly track horizontal scroll progress and display correct section highlighting.
+  - **Admin Login Improvements:** 
+    - Removed unnecessary delay in admin verification after login for immediate access.
+    - Added toast notifications for admin login success and error states to provide better user feedback.
 
 ### v4.3.3 - 2026-06-19
 
