@@ -61,9 +61,7 @@
     session("admin", data.code);
     session("expiration", data.time);
 
-    setTimeout(() => {
-      verified = true;
-    }, 500);
+    verified = true;
   }
 
   checker();
