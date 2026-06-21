@@ -1,6 +1,7 @@
 <script lang="ts">
   import Card from "@/components/card.svelte";
   import HomeButton from "@/components/home-button.svelte";
+  import Loader from "@/components/loader.svelte";
   import { get } from "@/lib/fetch.ts";
   import { onMount } from "svelte";
   import { Toaster, toast } from "svelte-french-toast";
@@ -9,9 +10,12 @@
   let pages = $state<number>(1);
   let page = $state<number>(1);
 
+  let loading = $state(true);
+  const limit = 8;
+
   onMount(async () => {
     const api = await get("certs", {
-      limit: 8,
+      limit: limit,
       page: page,
     });
     if (api.error) {
@@ -21,17 +25,20 @@
     } else {
       certs = api.data;
       pages = api.pages;
+      loading = false;
     }
   });
 
   async function changepage(p: number) {
+    loading = true;
     page = p;
     const data = await get("certs", {
       page: page,
-      limit: 8,
+      limit: limit,
     });
     pages = data.pages;
     certs = data.data;
+    loading = false;
   }
 </script>
 
@@ -44,13 +51,21 @@
     past="/"
   />
   <div class="flex flex-wrap gap-5 py-[2%] p-5 items-start">
-    {#each certs as cert}
-      <Card
-        class="flex flex-wrap w-full md:w-[calc(25%-1rem)] h-fit rounded !p-0 overflow-none"
-      >
-        <img class="w-full aspect-video" src={cert.url} alt={cert.source} />
-      </Card>
-    {/each}
+    {#if loading}
+      {#each Array(limit) as _, i (i)}
+        <Loader
+          class="aspect-video w-full md:w-[calc(25%-1rem)] items-center justify-center"
+        ></Loader>
+      {/each}
+    {:else}
+      {#each certs as cert}
+        <Card
+          class="flex flex-wrap w-full md:w-[calc(25%-1rem)] h-fit rounded !p-0 overflow-none"
+        >
+          <img class="w-full aspect-video" src={cert.url} alt={cert.source} />
+        </Card>
+      {/each}
+    {/if}
   </div>
   <div class="flex fixed z-10 bottom-0 left-0 right-0 justify-center p-4">
     <div

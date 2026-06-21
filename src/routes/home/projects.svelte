@@ -47,7 +47,7 @@
 
 <div
   id="projects"
-  class="flex flex-col p-2 pt-[25%] md:pt-[calc(5%+0.5rem)] h-full w-full overflow-y-auto select-none snap-start scrollbar-none"
+  class="flex flex-col shrink-0 p-2 pt-[25%] md:pt-[calc(5%+0.5rem)] h-full w-full overflow-y-auto select-none snap-center scrollbar-none"
 >
   <div
     class="flex gap-2 items-center md:justify-center py-10 md:p-3 overflow-hidden overflow-x-auto scrollbar-none"

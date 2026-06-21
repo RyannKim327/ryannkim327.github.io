@@ -1,6 +1,7 @@
 <script lang="ts">
   import Card from "@/components/card.svelte";
   import HomeButton from "@/components/home-button.svelte";
+  import Loader from "@/components/loader.svelte";
   import { get } from "@/lib/fetch.ts";
   import { onMount } from "svelte";
   import { push } from "svelte-spa-router";
@@ -9,23 +10,31 @@
   let pages = $state<number>(1);
   let page = $state<number>(1);
 
+  let loading = $state(true);
+  const limit = 12;
+
   onMount(async () => {
     const data = await get("blog", {
       page: page,
-      limit: 12,
+      limit: limit,
     });
+
     pages = data.pages;
     blogs = data.data;
+    loading = false;
   });
 
   async function changepage(p: number) {
+    loading = true;
     page = p;
     const data = await get("blog", {
       page: page,
-      limit: 12,
+      limit: limit,
     });
+
     pages = data.pages;
     blogs = data.data;
+    loading = false;
   }
 </script>
 
@@ -35,60 +44,68 @@
 >
   <HomeButton title="Blogs Lists" />
   <div class="flex flex-wrap p-5 gap-5 py-[5%] w-full h-full items-start">
-    {#each blogs as blog}
-      <Card
-        class="aspect-video w-full gap-2 md:w-[calc(25.0%-1rem)] justify-between cursor-pointer overflow-hidden"
-        onclick={() => {
-          push(`/blog/${blog.id}`);
-        }}
-      >
-        <span class="font-bold text-[1.25rem]">{blog.title}</span>
-        <span class="italic text-[0.75rem]"
-          >{blog.content.substring(0, 250)} ...</span
+    {#if loading}
+      {#each Array(limit) as _, i (i)}
+        <Loader
+          class="aspect-video w-full md:w-[calc(25%-1rem)] items-center justify-center"
+        ></Loader>
+      {/each}
+    {:else}
+      {#each blogs as blog}
+        <Card
+          class="aspect-video w-full gap-2 md:w-[calc(25.0%-1rem)] justify-between cursor-pointer overflow-hidden"
+          onclick={() => {
+            push(`/blog/${blog.id}`);
+          }}
         >
-      </Card>
-    {/each}
-  </div>
-  <div class="flex fixed z-10 bottom-0 left-0 right-0 justify-center p-4">
-    <div
-      class="flex gap-2 bg-[#f0f8ff]/75 dark:bg-[#121212]/75 shadow shadow-[#252525] backdrop-blur-xs rounded-full p-2 px-5"
-    >
-      <!-- svelte-ignore a11y_no_static_element_interactions -->
-      <span
-        class="cursor-pointer select-none flex items-center justify-center"
-        onclick={() => {
-          changepage(page > 1 ? page - 1 : 1);
-        }}
-        onkeydown={(e) => {
-          if (e.key === "Enter" || e.key === " ")
-            changepage(page > 1 ? page - 1 : 1);
-        }}>Prev</span
+          <span class="font-bold text-[1.25rem]">{blog.title}</span>
+          <span class="italic text-[0.75rem]"
+            >{blog.content.substring(0, 250)} ...</span
+          >
+        </Card>
+      {/each}
+    {/if}
+    <div class="flex fixed z-10 bottom-0 left-0 right-0 justify-center p-4">
+      <div
+        class="flex gap-2 bg-[#f0f8ff]/75 dark:bg-[#121212]/75 shadow shadow-[#252525] backdrop-blur-xs rounded-full p-2 px-5"
       >
-      {#each Array(pages) as _, p}
         <!-- svelte-ignore a11y_no_static_element_interactions -->
         <span
+          class="cursor-pointer select-none flex items-center justify-center"
           onclick={() => {
-            changepage(p + 1);
+            changepage(page > 1 ? page - 1 : 1);
           }}
           onkeydown={(e) => {
-            if (e.key === "Enter" || e.key === " ") changepage(p + 1);
-          }}
-          class={`${p + 1 === page ? "bg-[#cacdcc] dark:bg-[#555555]" : ""} flex items-center justify-center text-center rounded-full aspect-square w-7 h-7 cursor-pointer select-none`}
+            if (e.key === "Enter" || e.key === " ")
+              changepage(page > 1 ? page - 1 : 1);
+          }}>Prev</span
         >
-          {p + 1}
-        </span>
-      {/each}
-      <!-- svelte-ignore a11y_no_static_element_interactions -->
-      <span
-        class="cursor-pointer select-none flex items-center justify-center"
-        onclick={() => {
-          changepage(page < pages ? page + 1 : pages);
-        }}
-        onkeydown={(e) => {
-          if (e.key === "Enter" || e.key === " ")
+        {#each Array(pages) as _, p}
+          <!-- svelte-ignore a11y_no_static_element_interactions -->
+          <span
+            onclick={() => {
+              changepage(p + 1);
+            }}
+            onkeydown={(e) => {
+              if (e.key === "Enter" || e.key === " ") changepage(p + 1);
+            }}
+            class={`${p + 1 === page ? "bg-[#cacdcc] dark:bg-[#555555]" : ""} flex items-center justify-center text-center rounded-full aspect-square w-7 h-7 cursor-pointer select-none`}
+          >
+            {p + 1}
+          </span>
+        {/each}
+        <!-- svelte-ignore a11y_no_static_element_interactions -->
+        <span
+          class="cursor-pointer select-none flex items-center justify-center"
+          onclick={() => {
             changepage(page < pages ? page + 1 : pages);
-        }}>Next</span
-      >
+          }}
+          onkeydown={(e) => {
+            if (e.key === "Enter" || e.key === " ")
+              changepage(page < pages ? page + 1 : pages);
+          }}>Next</span
+        >
+      </div>
     </div>
   </div>
 </div>
