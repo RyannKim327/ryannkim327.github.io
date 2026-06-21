@@ -1,6 +1,6 @@
 <script lang="ts">
   import AdminHeaders from "@/components/admin-headers.svelte";
-  import { Toaster } from "svelte-french-toast";
+  import toast, { Toaster } from "svelte-french-toast";
   import Input from "@/components/input.svelte";
   import Info from "@/routes/admin/info.svelte";
   import Poetry from "@/routes/admin/poetry.svelte";
@@ -14,7 +14,6 @@
 
   let { params } = $props<{ params: { page?: string } }>();
 
-  const secret_code = "santol@mangga.com";
   const pages: Record<string, any> = {
     info: Info,
     experience: Experiences,
@@ -45,12 +44,28 @@
 
   async function setAdmin() {
     const req = await post("/admin", { key: admin });
+
+    if (req.error) {
+      toast(req.error.message ?? "Unauthenticated access", {
+        position: "bottom-right",
+      });
+      return;
+    }
+
+    toast("Login success", {
+      position: "bottom-right",
+    });
+
     const data = JSON.parse(atob(req.code));
 
     session("admin", data.code);
     session("expiration", data.time);
-    checker();
+
+    setTimeout(() => {
+      verified = true;
+    }, 500);
   }
+
   checker();
 
   $effect(() => {
@@ -72,7 +87,6 @@
       <div class="pt-4 w-full h-full overflow-hidden">
         <svelte:component this={pages[params?.page ?? "info"] ?? Info} />
       </div>
-      <Toaster />
     </div>
   {:else}
     <div
@@ -126,4 +140,5 @@
       </div>
     </div>
   {/if}
+  <Toaster />
 </div>
