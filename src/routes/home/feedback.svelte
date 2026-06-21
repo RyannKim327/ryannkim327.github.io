@@ -10,7 +10,7 @@
 
 <div
   id="feedback"
-  class="flex flex-col gap-2 p-2 pt-[25%] md:pt-[calc(5%+0.5rem)] h-full w-full items-center justify-center overflow-y-auto snap-start"
+  class="flex flex-col shrink-0 gap-2 p-2 pt-[25%] md:pt-[calc(5%+0.5rem)] h-full w-full items-center justify-center overflow-y-auto snap-center"
 >
   <div
     class="flex flex-wrap gap-2 p-2 items-start justify-center overflow-y-auto w-full h-full"

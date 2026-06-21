@@ -18,7 +18,7 @@
 
 <div
   id="about"
-  class="flex flex-col p-5 pt-[25%] md:pt-[calc(5%+0.5rem)] w-full h-full gap-5 md:overflow-y-auto overflow-hidden snap-start"
+  class="flex flex-col shrink-0 p-5 pt-[25%] md:pt-[calc(5%+0.5rem)] w-full h-full gap-5 md:overflow-y-auto overflow-hidden snap-center"
 >
   <div class="flex md:hidden flex-col w-full overflow-hidden gap-5">
     <div class="flex gap-5 w-full justify-center">
@@ -265,4 +265,3 @@
     </div>
   </div>
 </div>
-
