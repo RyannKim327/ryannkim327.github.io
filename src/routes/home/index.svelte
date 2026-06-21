@@ -33,8 +33,12 @@
   let slider;
 
   function handleScroll() {
-    const width = document.getElementById("main")?.scrollLeft ?? 0;
-    y = width / 2;
+    const main = document.getElementById("main");
+    if (main) {
+      const w = main.scrollWidth / 6;
+      y = Math.round(main.scrollLeft / w);
+      console.log(`Scroll ${y}`);
+    }
   }
 
   function handleWheel(event) {
@@ -117,11 +121,7 @@
 <svelte:window onscroll={handleScroll} />
 
 <div class="w-full h-full relative">
-  <Header
-    scroll={Math.round(
-      y / (document.getElementById("main")?.offsetHeight ?? 1),
-    )}
-  />
+  <Header scroll={y} />
   <div
     bind:this={slider}
     id="main"
