@@ -113,7 +113,6 @@
   <Header scroll={y} />
   <div
     id="main"
-    onwheel={handleWheel}
     onscroll={handleScroll}
     class="flex justify-start h-full w-full overflow-hidden overflow-x-scroll snap-x snap-mandatory px-5 scrollbar-none"
   >
