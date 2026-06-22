@@ -16,8 +16,10 @@
   } = $props();
 
   let active = $state("all");
+  let loader = $state(true);
 
   function filter(category: string) {
+    loader = true;
     active = category.toLowerCase();
     if (active === "all") {
       const withImg = totalProjects.filter((p: Record<string, any>) => p.img);
@@ -36,12 +38,15 @@
           a.name.localeCompare(b.name),
         );
     }
+    loader = false;
   }
 
   $effect(() => {
+    loader = true;
     if (parseData && active === "all" && totalProjects.length > 0) {
       filter("all");
     }
+    loader = false;
   });
 </script>
 
@@ -75,7 +80,7 @@
   <div
     class="flex flex-wrap w-full gap-5 p-5 md:h-full md:items-center scrollbar-none"
   >
-    {#if projects.length > 0}
+    {#if projects.length > 0 && !loader}
       {#each projects as project}
         <Card
           onclick={() => {
