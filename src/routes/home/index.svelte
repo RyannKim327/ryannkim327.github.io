@@ -30,8 +30,6 @@
   let parseData = $state(false);
   let loaded = $state(false);
 
-  let slider;
-
   function handleScroll() {
     const main = document.getElementById("main");
     if (main) {
@@ -39,15 +37,6 @@
       y = Math.round(main.scrollLeft / w);
       console.log(`Scroll ${y}`);
     }
-  }
-
-  function handleWheel(event) {
-    event.preventDefault();
-
-    slider.scrollBy({
-      left: event.deltaY,
-      behavior: "smooth",
-    });
   }
 
   $effect(() => {
@@ -123,7 +112,6 @@
 <div class="w-full h-full relative">
   <Header scroll={y} />
   <div
-    bind:this={slider}
     id="main"
     onwheel={handleWheel}
     onscroll={handleScroll}
