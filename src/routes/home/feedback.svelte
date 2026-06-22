@@ -36,7 +36,7 @@
     {:else}
       {#each Array(8) as _, i (i)}
         <Loader
-          class="aspect-video w-full md:w-[calc(33.333%-0.5rem)] justify-between"
+          class="aspect-video w-full md:w-[calc(25%-0.5rem)] justify-between"
         ></Loader>
       {/each}
     {/if}
