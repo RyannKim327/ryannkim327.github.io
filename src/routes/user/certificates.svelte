@@ -61,7 +61,7 @@
       {#each certs as cert}
         <Card
           onclick={() => {
-            window.open(cert.link, "_blank");
+            cert.link ? window.open(cert.link, "_blank") : null;
           }}
           class="flex flex-wrap w-full md:w-[calc(25%-1rem)] h-fit rounded !p-0 overflow-none"
         >
