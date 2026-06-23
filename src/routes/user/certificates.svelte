@@ -2,7 +2,7 @@
   import Card from "@/components/card.svelte";
   import HomeButton from "@/components/home-button.svelte";
   import Loader from "@/components/loader.svelte";
-  import { get } from "@/lib/fetch.ts";
+  import { get, retrieval } from "@/lib/fetch.ts";
   import { onMount } from "svelte";
   import { Toaster, toast } from "svelte-french-toast";
 
@@ -60,9 +60,18 @@
     {:else}
       {#each certs as cert}
         <Card
+          onclick={() => {
+            window.open(cert.link, "_blank");
+          }}
           class="flex flex-wrap w-full md:w-[calc(25%-1rem)] h-fit rounded !p-0 overflow-none"
         >
-          <img class="w-full aspect-video" src={cert.url} alt={cert.source} />
+          <img
+            class="h-full w-full"
+            src={cert.url.startsWith("http")
+              ? cert.url
+              : retrieval("retrieve", { file: cert.url ?? "" })}
+            alt={cert.source}
+          />
         </Card>
       {/each}
     {/if}

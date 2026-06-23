@@ -2,6 +2,7 @@
   import Loader from "@/components/loader.svelte";
   import Card from "@/components/card.svelte";
   import { push } from "svelte-spa-router";
+  import { retrieval } from "@/lib/fetch";
 
   let {
     certi = [],
@@ -126,7 +127,13 @@
           <Card
             class="flex flex-wrap aspect-video w-full md:w-[calc(50%-1rem)] rounded !p-0"
           >
-            <img class="h-full w-full" src={cert.url} alt={cert.source} />
+            <img
+              class="h-full w-full"
+              src={cert.url.startsWith("http")
+                ? cert.url
+                : retrieval("retrieve", { file: cert.url ?? "" })}
+              alt={cert.source}
+            />
           </Card>
         {/each}
         <Card
@@ -240,9 +247,18 @@
       {#if certi.length > 0 && parseData}
         {#each certi as cert}
           <Card
+            onclick={() => {
+              window.open(cert.link, "_blank");
+            }}
             class="flex flex-wrap aspect-video w-full md:w-[calc(50%-1rem)] rounded !p-0"
           >
-            <img class="h-full w-full" src={cert.url} alt={cert.source} />
+            <img
+              class="h-full w-full"
+              src={cert.url.startsWith("http")
+                ? cert.url
+                : retrieval("retrieve", { file: cert.url ?? "" })}
+              alt={cert.source}
+            />
           </Card>
         {/each}
         <Card
