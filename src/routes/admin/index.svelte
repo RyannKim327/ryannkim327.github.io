@@ -11,6 +11,7 @@
   import Experiences from "./experiences.svelte";
   import Contact from "./contact.svelte";
   import { post } from "@/lib/fetch";
+  import Certificates from "./certificates.svelte";
 
   let { params } = $props<{ params: { page?: string } }>();
 
@@ -22,6 +23,7 @@
     upload: Upload,
     project: Project,
     contacts: Contact,
+    certificates: Certificates,
   };
 
   let admin = $state(session("token") ?? "");
