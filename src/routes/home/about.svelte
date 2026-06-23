@@ -125,6 +125,9 @@
       {:else if certi.length > 0 && parseData}
         {#each certi as cert}
           <Card
+            onclick={() => {
+              cert.link ? window.open(cert.link, "_blank") : null;
+            }}
             class="flex flex-wrap aspect-video w-full md:w-[calc(50%-1rem)] rounded !p-0"
           >
             <img
@@ -248,7 +251,7 @@
         {#each certi as cert}
           <Card
             onclick={() => {
-              window.open(cert.link, "_blank");
+              cert.link ? window.open(cert.link, "_blank") : null;
             }}
             class="flex flex-wrap aspect-video w-full md:w-[calc(50%-1rem)] rounded !p-0"
           >
