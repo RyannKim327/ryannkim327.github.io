@@ -1,6 +1,6 @@
 # RyannKim327 Portfolio
 
-**Project version:** `4.3.4`
+**Project version:** `4.4.0`
 
 [![wakatime](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8.svg)](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8)
 ![Svelte](https://img.shields.io/badge/Svelte-5.56.3-FF3E00?style=flat&logo=svelte)
@@ -53,7 +53,7 @@ Visit the live portfolio at: [ryannkim327.is-a.dev](https://ryannkim327.is-a.dev
 - 👣 **Professional Footer** - Modern footer component with dynamic year and branding
 - 🔔 **Toast Notifications** - Real-time feedback using `svelte-french-toast`
 - 🤖 **AI Assistant** - Integrated AI component for interactive user engagement and assistance
-- 🧰 **Admin Dashboard** - Comprehensive dashboard to manage blogs, poetry, and professional info with a unified modern aesthetic
+- 🧰 **Admin Dashboard** - Comprehensive dashboard to manage blogs, poetry, certificates, and professional info with a unified modern aesthetic
 - 📤 **File Uploads** - Integrated file upload functionality for media management within the Admin dashboard
 - 🐙 **GitHub Integration** - Automated project fetching and syncing using the GitHub API
 - 🔗 **Backend Integration** - Connected to a custom Go-based backend API
@@ -109,7 +109,7 @@ graph TD
     Routes --> R_Home[home/]
     Routes --> R_User[user/]
 
-    R_Admin --> A_Views[blogs, poetry, info, upload]
+    R_Admin --> A_Views[blogs, poetry, certificates, contacts, experience, project, upload]
     R_Home --> H_Sections[hero, about, projects, contact, blogs, feedback]
 
     Config --> C_Pkg[package.json]
