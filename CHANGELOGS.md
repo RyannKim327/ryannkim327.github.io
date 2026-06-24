@@ -7,6 +7,7 @@
 
 ## Table of Contents
 
+- [v4.4.0 - 2026-06-24](#v440---2026-06-24)
 - [v4.3.4 - 2026-06-21](#v434---2026-06-21)
 - [v4.3.3 - 2026-06-19](#v433---2026-06-19)
 - [v4.3.2 - 2026-06-10](#v432---2026-06-10)
@@ -34,6 +35,14 @@
 - [v2.0.0 — 2026-01-03](#v200--2026-01-03)
 - [v1.0.0 — 2024-11-03](#v100--2024-11-03)
 ...
+
+### v4.4.0 - 2026-06-24
+
+- **Features & Enhancements**
+  - **Admin Certificate Management:** Introduced a brand-new Admin subpage (`src/routes/admin/certificates.svelte`) with a clean, blurred-card design, enabling admins to easily upload and submit professional milestones with details (source, category, image URL, and verification link).
+  - **Dynamic Image Sourcing:** Implemented dynamic file retrieval fallback. If a certificate image URL does not start with `"http"`, the portfolio automatically resolves it via the backend retrieval API (`retrieval("retrieve", { file: cert.url })`), allowing for seamless display of locally uploaded certificates.
+  - **Interactive Credential Links:** Enhanced certificate cards in the `About` and `Certificates` sections to be fully interactive. Clicking a card securely redirects the user to the official credential or verification link in a new tab if one is provided.
+  - **Admin Header & Navigation updates:** Registered the certificates management page in the Admin navigation flow (`src/components/admin-headers.svelte` and `src/routes/admin/index.svelte`), using a dedicated award icon for quick access.
 
 ### v4.3.4 - 2026-06-21
 
