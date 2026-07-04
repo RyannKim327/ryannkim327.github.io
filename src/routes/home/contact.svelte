@@ -33,7 +33,7 @@
   class="flex flex-col shrink-0 p-2 pt-[25%] md:pt-[calc(5%+0.5rem)] w-full h-full gap-2 overflow-hidden overflow-y-auto justify-between snap-center"
 >
   <iframe
-    src="https://www.google.com/maps/embed/v1/place?q=Ibabang+Iyam&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+    src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=magdalena laguna&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
     title="Location"
     loading="lazy"
     allowFullScreen={false}
