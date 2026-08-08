@@ -21,7 +21,7 @@
       return;
     }
 
-    const res = await adminPost("blog", code, {
+    const res = await adminPost("blog/submit", code, {
       title,
       content,
       tags,
