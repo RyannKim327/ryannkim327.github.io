@@ -60,7 +60,7 @@
       <div class="flex items-center gap-1">
         <i
           onclick={() => {
-            location.href = "https://fb.me/masterpieceofpaper";
+            location.href = "https://fb.me/themasterpieceofpaper";
           }}
           class="fa-brands fa-square-facebook text-[2rem]"
         ></i>

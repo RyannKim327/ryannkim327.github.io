@@ -31,15 +31,15 @@
       tx: (Math.random() - 0.5) * 200,
       ty: (Math.random() - 0.5) * 200,
       size: Math.random() * 150 + 100,
-      delay: Math.random() * 20,
-      duration: Math.random() * 30 + 40,
+      delay: Math.random() * 2,
+      duration: Math.random() * 10 + 20,
       color: colors[Math.floor(Math.random() * colors.length)],
     }));
   });
 </script>
 
 <div
-  class="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none h-full w-full"
+  class="w-full h-full absolute inset-0 z-0 overflow-hidden pointer-events-none select-none"
 >
   {#each blocks as block (block.id)}
     <div
