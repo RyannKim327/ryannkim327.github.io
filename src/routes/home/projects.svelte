@@ -2,6 +2,7 @@
   import { retrieval } from "@/lib/fetch.ts";
   import Loader from "@/components/loader.svelte";
   import Card from "@/components/card.svelte";
+  import ProjectsModal from "@/components/projects-modal.svelte";
 
   let {
     categories = ["all"],
@@ -17,6 +18,8 @@
 
   let active = $state("all");
   let loader = $state(true);
+
+  let viewProject = $state(null);
 
   function filter(category: string) {
     loader = true;
@@ -54,6 +57,16 @@
   id="projects"
   class="flex flex-col shrink-0 p-2 pt-[25%] md:pt-[calc(5%+0.5rem)] h-full w-full overflow-y-auto select-none snap-center scrollbar-none"
 >
+  {#if viewProject}
+    <div
+      class="flex items-center justify-center fixed top-0 bottom-0 right-0 left-0 bg-black/50 backdrop-blur-sm z-100"
+      onclick={() => {
+        viewProject = null;
+      }}
+    >
+      <ProjectsModal project={viewProject} />
+    </div>
+  {/if}
   <div
     class="flex gap-2 items-center md:justify-center py-10 md:p-3 overflow-hidden overflow-x-auto scrollbar-none"
   >
@@ -84,7 +97,7 @@
       {#each projects as project}
         <Card
           onclick={() => {
-            window.open(project.link, "_blank");
+            viewProject = project;
           }}
           class="relative aspect-video w-full md:w-[calc(25%-1rem)] rounded overflow-hidden !p-0 group"
         >
@@ -94,7 +107,7 @@
             alt=""
           />
           <span
-            class="absolute z-1 bottom-0 left-0 right-0 bg-[#212121]/50 text-white p-2 md:opacity-0 dark:group-hover:opacity-100 group-hover:opacity-100 transition-opacity delay-75"
+            class="absolute z-1 bottom-0 left-0 right-0 bg-[#f0f8ff]/50 dark:bg-[#212121]/50 text-black dark:text-white p-2 md:opacity-0 dark:group-hover:opacity-100 group-hover:opacity-100 transition-opacity delay-75"
           >
             {project.name}
           </span>
