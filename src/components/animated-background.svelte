@@ -43,7 +43,7 @@
 >
   {#each blocks as block (block.id)}
     <div
-      class="absolute {block.color} rounded-full blur-3xl opacity-60 dark:opacity-60"
+      class="absolute {block.color} rounded-full blur-3xl opacity-50 dark:opacity-50"
       style="
 				left: {block.x}%;
 				top: {block.y}%;
@@ -56,10 +56,6 @@
 				"
     ></div>
   {/each}
-
-  <div
-    class="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.05)_50%)] bg-[size:100%_4px] opacity-20 dark:opacity-40"
-  ></div>
 </div>
 
 <style>

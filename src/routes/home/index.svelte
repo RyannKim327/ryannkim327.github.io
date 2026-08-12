@@ -126,7 +126,7 @@
     <Ai
       {wakatime}
       {resume}
-      projects={github}
+      {projects}
       expr={experiences}
       {blogs}
       {achievements}
