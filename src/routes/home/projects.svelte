@@ -102,7 +102,7 @@
           class="relative aspect-video w-full md:w-[calc(25%-1rem)] rounded overflow-hidden !p-0 group"
         >
           <img
-            class="absolute w-full h-full md:grayscale group-hover:grayscale-0"
+            class="absolute inset-0 w-full h-full object-cover md:grayscale group-hover:grayscale-0"
             src={retrieval("retrieve", { file: project.img ?? "" })}
             alt=""
           />
