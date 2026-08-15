@@ -42,7 +42,7 @@ jobs:
         run: |
           npm run build
           git remote set-url origin https://x-access-token:${{ secrets.API_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          npx gh-pages -b deploy -d dist -m '${{ github.event.head_commit.message }}' --cname ryannkim327.is-a.dev
+          npx gh-pages -b redefine -d dist -m '${{ github.event.head_commit.message }}' --cname ryannkim327.is-a.dev
 
         env:
           API_GITHUB_TOKEN: ${{ secrets.API_GITHUB_TOKEN }}

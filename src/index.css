@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-fbl: var(--fbl);
+  --color-ftr: var(--ftr);
+}
+
+@import "assets/styles/light.css";
+@import "assets/styles/dark.css";
+
+/* TODO: Font */
+@font-face {
+  font-family: "silkscreen";
+  src: url("/assets/silkscreen/slkscr.ttf");
+}
+
+.silk {
+  font-family: "silkscreen";
+}
+
+/* TODO: Custom Design */
+._3d {
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow:
+    4px 0 0 var(--color-fbl), /* Left */
+    -4px 0 0 var(--color-ftr), /* Right */
+    0 -4px 0 var(--color-fbl), /* Top */
+    0 4px 0 var(--color-ftr); /* Bottom */
+  color: var(--color-bg);
+}
+
+.card {
+  box-shadow:
+    2px 0 0 var(--color-fbl), /* Left */
+    -2px 0 0 var(--color-ftr), /* Right */
+    0 -2px 0 var(--color-fbl), /* Top */
+    0 2px 0 var(--color-ftr); /* Bottom */
+}
+
+.path {
+  fill: var(--color-fg);
+}
+
+.scroll:hover .scrollbox {
+  animation: scroll-down 3s infinite;
+}
+
+/* TODO: Keyframes */
+@keyframes scroll-down {
+  0%, 100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+
+  35% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+}
+
+/* TODO: Scrollbar */
+::-webkit-scrollbar {
+  width: 0.25rem;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background-color: var(--color-fg);
+}
