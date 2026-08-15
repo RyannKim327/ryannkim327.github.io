@@ -9,6 +9,7 @@ import { get } from "./utils/api";
 import axios from "axios";
 import Blogs from "./components/index/blogs";
 import Footer from "./components/index/footer";
+import type { blogInterface, certsInterface, experiencesInterface, projectInterface } from "@/interface";
 
 const gather = Promise.all([
   get("blog?limit=6"),
@@ -23,12 +24,12 @@ const gather = Promise.all([
 export default function App() {
   const [state, setState] = useState(false)
   const access = use(gather)
-  const blogs = access[0].data
-  const certificates = access[1].data
+  const blogs = access[0].data as blogInterface[]
+  const certificates = access[1].data as certsInterface[]
   const developer = access[2].data
-  const experiences = access[3].data
+  const experiences = access[3].data as experiencesInterface[]
   const github = access[4].data
-  const projects = access[5].data
+  const projects = access[5].data as projectInterface
   const wakatime = access[6].data
 
   useEffect(() => {

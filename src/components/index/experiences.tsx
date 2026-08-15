@@ -1,14 +1,16 @@
-import type { IndexProps } from "@/interface"
+import type { experiencesInterface, IndexProps } from "@/interface"
 import Title from "../widgets/title"
 
-export default function Experiences({ data }: IndexProps) {
+export default function Experiences({ data }: {
+  data: experiencesInterface[]
+}) {
 
   return (
     <div className="bg-bg flex flex-col items-center w-full min-h-full">
       <Title id="experiences">Experiences</Title>
       <div className="flex flex-col w-full gap-2 py-5">
         {
-          data.reverse().map((d, i: number) => {
+          data.reverse().map((d: experiencesInterface, i: number) => {
             return (
               <div
                 key={`${i + 1}.${d.title}`}
@@ -16,7 +18,7 @@ export default function Experiences({ data }: IndexProps) {
                 <span className="flex flex-row items-center sticky left-0 right-0 top-18 p-5 bg-bg">{d.title} - {d.year}</span>
                 <ul className="mx-5 ml-15 p-4 card">
                   {
-                    d.content.map((c, j: number) => {
+                    d.content.map((c: string, j: number) => {
                       return (
                         <li
                           key={`${i + 1}. ${c}`}
