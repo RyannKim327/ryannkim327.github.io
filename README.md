@@ -1,5 +1,6 @@
 # RyannKim327 Portfolio
 
+
 [![wakatime](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8.svg)](https://wakatime.com/badge/user/61954829-dd88-47de-8b67-7d673663ea1c/project/da79e6a7-f448-49fd-8ce7-d643023e18b8)
 ![React](https://img.shields.io/badge/React-19.2.8-61DAFB?style=flat&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-6.0.2-3178C6?style=flat&logo=typescript)
@@ -14,24 +15,24 @@
 
 ## Table of Contents
 
-- [🚀 Live Demo](#🚀-live-demo)
+- [🚀 Live Demo](#-live-demo)
 - [✨ Features](#-Features)
-- [🛠️ Tech Stack](#🛠️-tech-stack)
+- [🛠️ Tech Stack](#-tech-stack)
   - [Frontend](#frontend)
   - [Backend](#backend)
   - [Tooling & Libraries](#tooling-libraries)
-- [📁 Project Structure](#📁-project-structure)
-- [🚀 Getting Started](#🚀-getting-started)
+- [📁 Project Structure](#-project-structure)
+- [🚀 Getting Started](#-getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Available Scripts](#available-scripts)
-- [🎨 Design & Aesthetics](#🎨-design-aesthetics)
-- [🔗 Backend Integration](#🔗-backend-integration)
-- [📝 About the Developer](#📝-about-the-developer)
-- [🤝 Contributing](#🤝-contributing)
-- [📄 License](#📄-license)
-- [🙏 Acknowledgments](#🙏-acknowledgments)
-- [🔧 Technical Details](#🔧-technical-details)
+- [🎨 Design & Aesthetics](#-design-aesthetics)
+- [🔗 Backend Integration](#-backend-integration)
+- [📝 About the Developer](#-about-the-developer)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [🙏 Acknowledgments](#-acknowledgments)
+- [🔧 Technical Details](#-technical-details)
 
 ---
 
