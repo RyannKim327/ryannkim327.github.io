@@ -19,17 +19,17 @@ export default function Projects({ data }: IndexProps) {
 
   return (
     <div className="bg-bg flex flex-col items-center w-full min-h-full">
-      <Title id="projects">Projects</Title>
+      <Title id="projects">Random Projects</Title>
       <div className="flex flex-wrap justify-center lg:justify-start w-full gap-2 p-3 py-5">
         {
           lists.length > 0 ?
             lists.map((p, i: number) => {
               return (
                 <div
-                  className="relative w-[calc(75%-0.5rem)] lg:w-[calc(33.333%-0.5rem)] aspect-video group overflow-hidden"
+                  className="relative w-[calc(90%-0.5rem)] lg:w-[calc(33.333%-0.5rem)] aspect-video group overflow-hidden"
                   key={`${i + 1}. ${p.name}`}>
                   <img
-                    className="absolute object-cover inset-0 h-full w-full dark:grayscale-100 group-hover:grayscale-0 transition delay-75"
+                    className="absolute object-cover inset-0 h-full w-full lg:dark:grayscale-100 group-hover:grayscale-0 transition delay-75"
                     src={p.img ?
                       retrieval("retrieve", { file: p.img ?? "" }) : ""} />
                   <span

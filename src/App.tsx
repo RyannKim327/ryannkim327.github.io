@@ -7,9 +7,11 @@ import Projects from "./components/index/projects";
 import { use, useEffect, useState } from "react";
 import { get } from "./utils/api";
 import axios from "axios";
+import Blogs from "./components/index/blogs";
+import Footer from "./components/index/footer";
 
 const gather = Promise.all([
-  get("blog?limit=7"),
+  get("blog?limit=6"),
   get("certs?limit=6"),
   get("dev"),
   get("experiences"),
@@ -52,8 +54,10 @@ export default function App() {
             <Experiences data={experiences} />
             <Certificates data={certificates} />
             <Projects data={projects} />
+            <Blogs data={blogs} />
           </>
           : null}
+        <Footer />
       </div>
     </div>
   )

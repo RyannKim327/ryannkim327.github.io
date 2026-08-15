@@ -6,13 +6,13 @@ export default function Certificates({ data }: IndexProps) {
 
   return (
     <div className="bg-bg flex flex-col items-center w-full min-h-full">
-      <Title id="certificates">Certificates</Title>
+      <Title id="certificates">Some Certificates</Title>
       <div className="flex flex-wrap justify-center lg:justify-start w-full gap-2 p-3 py-5">
         {
           data.map((c, i: number) => {
             return (
               <div
-                className="relative w-[calc(75%-0.5rem)] lg:w-[calc(33.333%-0.5rem)] aspect-video group"
+                className="relative w-[calc(90%-0.5rem)] lg:w-[calc(33.333%-0.5rem)] aspect-video group"
                 key={`${i + 1}. ${c.source}`}>
                 <img
                   className="absolute object-cover inset-0 h-full w-full"
