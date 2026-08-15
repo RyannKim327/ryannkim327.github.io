@@ -1,21 +1,7 @@
 {
   "files": [],
-  "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
-    "strict": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "target": "esnext",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "allowImportingTsExtensions": true
-  },
-  "include": [
-    "src/**/*"
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
   ]
 }

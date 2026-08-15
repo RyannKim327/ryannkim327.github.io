@@ -1,0 +1,8 @@
+@media (prefers-color-scheme: light){
+  :root {
+    --bg: #ffffff;
+    --fg: #000000;
+    --fbl: #333333;
+    --ftr: #00000090;
+  }
+}

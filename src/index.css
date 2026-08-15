@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-fbl: var(--fbl);
+  --color-ftr: var(--ftr);
+}
+
+@import "assets/styles/light.css";
+@import "assets/styles/dark.css";
+
+._3d {
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow:
+    2px 0 0 var(--color-fbl), /* Left */
+    -2px 0 0 var(--color-ftr), /* Right */
+    0 -2px 0 var(--color-fbl), /* Top */
+    0 2px 0 var(--color-ftr); /* Bottom */
+  color: var(--color-bg);
+}
+
+.card {
+  box-shadow:
+    2px 0 0 var(--color-fbl), /* Left */
+    -2px 0 0 var(--color-ftr), /* Right */
+    0 -2px 0 var(--color-fbl), /* Top */
+    0 2px 0 var(--color-ftr); /* Bottom */
+}
