@@ -31,7 +31,6 @@ export default function App() {
   const projects = access[5].data
   const wakatime = access[6].data
 
-
   useEffect(() => {
     (async () => {
       const r = await get("")

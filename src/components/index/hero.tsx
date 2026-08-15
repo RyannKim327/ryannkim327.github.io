@@ -1,9 +1,18 @@
-import Img from "@/assets/hero.png";
+function toId(id: string) {
+  const _ = document.getElementById(id);
+  if (_) {
+    _.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+}
 
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center justify-end w-full h-full">
-      <div className="flex flex-col scroll items-center justify-center w-full h-[25%] bg-bg">
+    <div id="hero" className="flex flex-col items-center justify-end w-full h-full">
+      <div
+        onClick={() => { toId("about") }}
+        className="flex flex-col cursor-pointer scroll items-center justify-center w-full h-[25%] bg-linear-to-b from-bg/25 to-bg">
         <div className="flex h-1/2 justify-center w-full scrollbox">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
