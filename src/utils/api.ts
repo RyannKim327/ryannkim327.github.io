@@ -5,7 +5,7 @@ import { CookieJar } from "tough-cookie";
 const w = await import("axios-cookiejar-support")
 const jar = new CookieJar()
 
-const URL = "http://localhost:8000" // "https://api-mpop-backend.onrender.com";
+const URL = "https://api-mpop-backend.onrender.com";
 const base = axios.create({
   baseURL: URL,
   jar,
