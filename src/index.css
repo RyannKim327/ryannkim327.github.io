@@ -10,6 +10,15 @@
 @import "assets/styles/light.css";
 @import "assets/styles/dark.css";
 
+@font-face {
+  font-family: "silkscreen";
+  src: url("/assets/silkscreen/slkscr.ttf");
+}
+
+.silk {
+  font-family: "silkscreen";
+}
+
 ._3d {
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
@@ -27,4 +36,14 @@
     -2px 0 0 var(--color-ftr), /* Right */
     0 -2px 0 var(--color-fbl), /* Top */
     0 2px 0 var(--color-ftr); /* Bottom */
+}
+
+::-webkit-scrollbar {
+  width: 0.25rem;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background-color: var(--color-fg);
 }
