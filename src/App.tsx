@@ -11,12 +11,21 @@ import Blogs from "./components/index/blogs";
 import Footer from "./components/index/footer";
 import type { blogInterface, certsInterface, experiencesInterface, projectInterface } from "@/interface";
 
+function toId(id: string) {
+  const _ = document.getElementById(id);
+  if (_) {
+    _.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+}
+
 const gather = Promise.all([
   get("blog?limit=6"),
   get("certs?limit=6"),
   get("dev"),
   get("experiences"),
-  axios.get("https://api.github.com/users/RyannKim327/repos?sort=updated"),
+  axios.get(""), //https://api.github.com/users/RyannKim327/repos?sort=updated"),
   get("projects"),
   get("wakatime")
 ])
@@ -58,6 +67,13 @@ export default function App() {
           </>
           : null}
         <Footer />
+      </div>
+      <div
+        onClick={() => {
+          toId("hero")
+        }}
+        className="cursor-pointer fixed z-100 w-10 text-center aspect-square right-10 card bottom-10 p-2 text-lg font-bolder bg-bg/50">
+        <div className="-rotate-90">➜</div>
       </div>
     </div>
   )
