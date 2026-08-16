@@ -24,12 +24,12 @@ export default function About() {
           </blockquote>
           <div className="flex gap-2 w-full">
             <button
-              className="card p-3 w-full"
+              className="card p-3 w-full silk"
               onClick={() => {
                 toId("footer")
               }}>Contact Me</button>
             <button
-              className="card p-3 w-full"
+              className="card p-3 w-full silk"
               onClick={() => {
                 toId("projects")
               }}>See my Projects</button>
