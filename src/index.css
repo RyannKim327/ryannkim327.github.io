@@ -5,6 +5,7 @@
   --color-fg: var(--fg);
   --color-fbl: var(--fbl);
   --color-ftr: var(--ftr);
+  --color-input: var(--input-bg);
 }
 
 @import "assets/styles/light.css";

@@ -1,11 +1,11 @@
-import type { IndexProps } from "@/interface";
+import type { IndexProps, projectInterface, projectsInterface } from "@/interface";
 import Title from "../widgets/title";
 import { useEffect, useState } from "react";
 import { retrieval } from "@/utils/api";
 
-export default function Projects({ data }: IndexProps) {
+export default function Projects({ data }: { data: projectInterface }) {
 
-  const [lists, setLists] = useState(data.projects)
+  const [lists, setLists] = useState<projectsInterface[]>(data.projects)
 
   useEffect(() => {
     const withImg = lists.filter((p: Record<string, any>) => p.img);
@@ -20,10 +20,10 @@ export default function Projects({ data }: IndexProps) {
   return (
     <div className="bg-bg flex flex-col items-center w-full min-h-full">
       <Title id="projects">Random Projects</Title>
-      <div className="flex flex-wrap justify-center lg:justify-start w-full gap-2 p-3 py-5">
+      <div className="flex flex-wrap justify-center w-full gap-2 p-3 py-5">
         {
           lists.length > 0 ?
-            lists.map((p, i: number) => {
+            lists.map((p: projectsInterface, i: number) => {
               return (
                 <div
                   className="relative w-[calc(90%-0.5rem)] lg:w-[calc(33.333%-0.5rem)] aspect-video group overflow-hidden"

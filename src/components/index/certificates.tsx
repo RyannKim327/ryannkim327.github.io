@@ -1,15 +1,15 @@
 import Title from "@/components/widgets/title";
-import type { IndexProps } from "@/interface";
+import type { certsInterface, IndexProps } from "@/interface";
 import { retrieval } from "@/utils/api";
 
-export default function Certificates({ data }: IndexProps) {
+export default function Certificates({ data }: { data: certsInterface[] }) {
 
   return (
     <div className="bg-bg flex flex-col items-center w-full min-h-full">
       <Title id="certificates">Some Certificates</Title>
-      <div className="flex flex-wrap justify-center lg:justify-start w-full gap-2 p-3 py-5">
+      <div className="flex flex-wrap justify-center w-full gap-2 p-3 py-5">
         {
-          data.map((c, i: number) => {
+          data.map((c: certsInterface, i: number) => {
             return (
               <div
                 className="relative w-[calc(90%-0.5rem)] lg:w-[calc(33.333%-0.5rem)] aspect-video group"

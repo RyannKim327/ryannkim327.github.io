@@ -16,7 +16,7 @@ export default function About() {
       <Title id="about">About me</Title>
       <div className="flex flex-col-reverse lg:flex-row w-full h-full justify-center lg:justify-evenly px-5 items-center py-2">
         <div className="flex flex-col absolute bottom-0 pb-30 bg-linear-to-b from-bg/50 to-bg lg:pb-0 lg:static lg:gap-20 w-[calc(90%-0.5rem)] lg:w-[calc(40%-0.5rem)]">
-          <blockquote className="text-justify text-2xl p-5">
+          <blockquote className="text-justify lg:text-2xl p-5">
             <span className="animate-pulse text-green-600 font-extrabold">&gt; </span>
             I am Ryann Kim M. Sesgundo, a graduate of Bachelor of Science in Information Technology.
             I am more on focus on web development and Scripting for automations and to use the
@@ -24,12 +24,12 @@ export default function About() {
           </blockquote>
           <div className="flex gap-2 w-full">
             <button
-              className="card p-3 w-full"
+              className="card p-3 w-full silk"
               onClick={() => {
                 toId("footer")
               }}>Contact Me</button>
             <button
-              className="card p-3 w-full"
+              className="card p-3 w-full silk"
               onClick={() => {
                 toId("projects")
               }}>See my Projects</button>

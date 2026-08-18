@@ -9,13 +9,23 @@ import { get } from "./utils/api";
 import axios from "axios";
 import Blogs from "./components/index/blogs";
 import Footer from "./components/index/footer";
+import type { blogInterface, certsInterface, experiencesInterface, projectInterface } from "@/interface";
+
+function toId(id: string) {
+  const _ = document.getElementById(id);
+  if (_) {
+    _.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+}
 
 const gather = Promise.all([
   get("blog?limit=6"),
   get("certs?limit=6"),
   get("dev"),
   get("experiences"),
-  axios.get("https://api.github.com/users/RyannKim327/repos?sort=updated"),
+  axios.get(""), //https://api.github.com/users/RyannKim327/repos?sort=updated"),
   get("projects"),
   get("wakatime")
 ])
@@ -23,12 +33,12 @@ const gather = Promise.all([
 export default function App() {
   const [state, setState] = useState(false)
   const access = use(gather)
-  const blogs = access[0].data
-  const certificates = access[1].data
+  const blogs = access[0].data as blogInterface[]
+  const certificates = access[1].data as certsInterface[]
   const developer = access[2].data
-  const experiences = access[3].data
+  const experiences = access[3].data as experiencesInterface[]
   const github = access[4].data
-  const projects = access[5].data
+  const projects = access[5].data as projectInterface
   const wakatime = access[6].data
 
   useEffect(() => {
@@ -57,6 +67,13 @@ export default function App() {
           </>
           : null}
         <Footer />
+      </div>
+      <div
+        onClick={() => {
+          toId("hero")
+        }}
+        className="cursor-pointer fixed z-100 w-10 text-center aspect-square right-10 card bottom-10 p-2 text-lg font-bolder bg-bg/50">
+        <div className="-rotate-90">➜</div>
       </div>
     </div>
   )
