@@ -1,13 +1,17 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
-import { HashRouter } from 'react-router'
+import App from './app.tsx'
+import { HashRouter, Route, Routes } from 'react-router'
+import Admin from './admin.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HashRouter>
-      <App />
+      <Routes>
+        <Route path="" element={<App />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
     </HashRouter>
   </StrictMode>,
 )
