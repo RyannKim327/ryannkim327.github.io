@@ -1,5 +1,3 @@
-import Logo from "@/components/widgets/logo";
-
 function toId(id: string) {
   const _ = document.getElementById(id);
   if (_) {

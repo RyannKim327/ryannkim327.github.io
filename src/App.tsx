@@ -35,11 +35,8 @@ export default function App() {
   const access = use(gather)
   const blogs = access[0].data as blogInterface[]
   const certificates = access[1].data as certsInterface[]
-  const developer = access[2].data
   const experiences = access[3].data as experiencesInterface[]
-  const github = access[4].data
   const projects = access[5].data as projectInterface
-  const wakatime = access[6].data
 
   useEffect(() => {
     (async () => {

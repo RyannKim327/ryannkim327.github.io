@@ -1,4 +1,4 @@
-import type { experiencesInterface, IndexProps } from "@/interface"
+import type { experiencesInterface } from "@/interface"
 import Title from "../widgets/title"
 
 export default function Experiences({ data }: {
@@ -18,7 +18,7 @@ export default function Experiences({ data }: {
                 <span className="flex flex-row items-center sticky left-0 right-0 top-15 lg:top-18 p-5 bg-bg">{d.title} - {d.year}</span>
                 <ul className="mx-15 p-4 card">
                   {
-                    d.content.map((c: string, j: number) => {
+                    d.content.map((c: string) => {
                       return (
                         <li
                           key={`${i + 1}. ${c}`}

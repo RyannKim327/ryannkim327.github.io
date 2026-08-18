@@ -1,4 +1,4 @@
-import type { IndexProps, projectInterface, projectsInterface } from "@/interface";
+import type { projectInterface, projectsInterface } from "@/interface";
 import Title from "../widgets/title";
 import { useEffect, useState } from "react";
 import { retrieval } from "@/utils/api";
