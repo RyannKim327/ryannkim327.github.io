@@ -15,8 +15,8 @@ export default function Experiences({ data }: {
               <div
                 key={`${i + 1}.${d.title}`}
                 className="flex flex-col gap-2">
-                <span className="flex flex-row items-center sticky left-0 right-0 top-18 p-5 bg-bg">{d.title} - {d.year}</span>
-                <ul className="mx-5 ml-15 p-4 card">
+                <span className="flex flex-row items-center sticky left-0 right-0 top-15 lg:top-18 p-5 bg-bg">{d.title} - {d.year}</span>
+                <ul className="mx-15 p-4 card">
                   {
                     d.content.map((c: string, j: number) => {
                       return (

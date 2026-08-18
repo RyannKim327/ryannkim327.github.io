@@ -7,7 +7,7 @@ export default function Certificates({ data }: { data: certsInterface[] }) {
   return (
     <div className="bg-bg flex flex-col items-center w-full min-h-full">
       <Title id="certificates">Some Certificates</Title>
-      <div className="flex flex-wrap justify-center lg:justify-start w-full gap-2 p-3 py-5">
+      <div className="flex flex-wrap justify-center w-full gap-2 p-3 py-5">
         {
           data.map((c: certsInterface, i: number) => {
             return (

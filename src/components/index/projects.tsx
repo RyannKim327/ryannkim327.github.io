@@ -20,7 +20,7 @@ export default function Projects({ data }: { data: projectInterface }) {
   return (
     <div className="bg-bg flex flex-col items-center w-full min-h-full">
       <Title id="projects">Random Projects</Title>
-      <div className="flex flex-wrap justify-center lg:justify-start w-full gap-2 p-3 py-5">
+      <div className="flex flex-wrap justify-center w-full gap-2 p-3 py-5">
         {
           lists.length > 0 ?
             lists.map((p: projectsInterface, i: number) => {

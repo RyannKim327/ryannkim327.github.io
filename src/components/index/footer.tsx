@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div id="footer" className="flex flex-col justify-center bg-bg w-full h-[50%] px-5 gap-3 border-t border-t-solid border-t-fg">
+    <div id="footer" className="flex flex-col justify-between py-5 gap-5 bg-bg w-full h-[50%] px-5 border-t border-t-solid border-t-fg">
       <div className="flex flex-col-reverse lg:flex-row gap-5 lg:gap-0 justify-center items-center lg:items-start w-full">
         <div className="flex flex-col gap-2 items-center lg:items-start w-[calc(100%-1rem)] lg:w-[calc(50%-0.5rem)]">
           <span>Socials</span>
