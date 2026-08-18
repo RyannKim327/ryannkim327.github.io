@@ -1,4 +1,4 @@
-import type { blogInterface, IndexProps } from "@/interface";
+import type { blogInterface } from "@/interface";
 import Title from "@/components/widgets/title";
 
 export default function Blogs({ data }: {

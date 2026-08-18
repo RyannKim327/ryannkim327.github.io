@@ -1,5 +1,5 @@
 import Title from "@/components/widgets/title";
-import type { certsInterface, IndexProps } from "@/interface";
+import type { certsInterface } from "@/interface";
 import { retrieval } from "@/utils/api";
 
 export default function Certificates({ data }: { data: certsInterface[] }) {
@@ -21,7 +21,8 @@ export default function Certificates({ data }: { data: certsInterface[] }) {
                     : retrieval("retrieve", { file: c.url ?? "" })} />
                 <span
                   onClick={() => {
-                    c.link ? window.open(c.link, "_blank") : c.url
+                    const target = c.link || (c.url.startsWith("http") ? c.url : retrieval("retrieve", { file: c.url }));
+                    if (target) window.open(target, "_blank");
                   }}
                   className="absolute select-none cursor-pointer opacity-0 group-hover:opacity-100 bottom-0 p-3 z-10 w-full bg-bg/75 transition-all delay-75">
                   {c.source} [{c.category}]

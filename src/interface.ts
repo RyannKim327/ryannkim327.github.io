@@ -1,9 +1,12 @@
+export type json = Record<string, unknown>
+
 export interface api {
   message?: string
   error?: string,
   page?: number,
   count?: number,
-  data?: dataInterface
+  data?: dataInterface,
+  [key: string]: unknown
 }
 
 export type dataInterface = blogInterface[] | certsInterface[] | experiencesInterface[] | projectInterface
