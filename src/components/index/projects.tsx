@@ -3,6 +3,7 @@ import Title from "../widgets/title";
 import { useEffect, useState } from "react";
 import { retrieval } from "@/utils/api";
 import Modal from "@/components/widgets/modal";
+import { Link } from "react-router";
 
 export default function Projects({ data }: { data: projectInterface }) {
 
@@ -50,7 +51,7 @@ export default function Projects({ data }: { data: projectInterface }) {
               )
             }) : null
         }
-        <button className="w-full p-3 silk card">See more</button>
+        <Link to="/projects" className="text-center w-full p-3 silk card">See more</Link>
       </div>
       <Modal
         visible={visible}

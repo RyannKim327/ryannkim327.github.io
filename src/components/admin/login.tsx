@@ -1,6 +1,7 @@
 import { post } from "@/utils/api"
 import { session } from "@/utils/storage"
 import React, { useEffect, useState } from "react"
+import { toast, ToastContainer } from "react-toastify"
 
 export default function AdminLogin({
   setVerified
@@ -11,6 +12,7 @@ export default function AdminLogin({
   const [password, setPassword] = useState("")
   const [admin, setAdmin] = useState<string | null>(session("admin") as string)
   const [expiration, setExpiration] = useState<number>(session("expiration") as number)
+  const [sending, setSending] = useState(false)
 
   const checker = () => {
     const time = new Date().getTime();
@@ -25,14 +27,17 @@ export default function AdminLogin({
     }
   };
 
-
-
   async function checkUser() {
+    setSending(true)
     const access = await post("admin", {
       key: password
     })
+    setSending(false)
+
     if (access.error) {
-      // TODO: Error
+      toast.error(access.error ?? "Invalid Password", {
+        position: "bottom-right"
+      })
       return
     }
 
@@ -50,11 +55,11 @@ export default function AdminLogin({
       checker()
     }, 1000 * 60 * 30)
     return () => clearInterval(interval)
-  })
+  }, [])
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full">
-      <form className="flex flex-col gap-2 w-1/3 rounded items-center bg-card p-2" onSubmit={checkUser}>
+      <form className="flex flex-col gap-3 w-1/3 rounded items-center bg-card p-2" onSubmit={checkUser}>
         <span className="text-[1.5rem] silk">Administrator Login</span>
         <input
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,11 +70,14 @@ export default function AdminLogin({
           placeholder="Enter password"
           className="bg-input p-2 rounded-md w-full" />
 
-        <input
-          type="submit"
-          className="card w-full"
-          value="Login" />
+        {sending ? null :
+          <input
+            type="submit"
+            className="card w-full"
+            value="Login" />
+        }
       </form>
+      <ToastContainer />
     </div>
   )
 }

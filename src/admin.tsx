@@ -21,13 +21,13 @@ export default function Admin() {
   ]
 
   return (
-    <div className='flex flex-col w-dvw h-dvh bg-bg text-fg'>
+    <div className='flex flex-col w-full h-full'>
       {
         verified ?
           <div className="flex flex-col w-full h-full">
-            <div className="flex flex-col sticky top-0 bg-bg p-2 w-full">
+            <div className="flex flex-col sticky top-0 bg-bg p-4 py-2 w-full">
               <span className="silk text-lg">Master Piece of Paper</span>
-              <span>Main Page</span>
+              <span className="px-2 text-[0.75rem]">Administrative Panel</span>
             </div>
             <div className="flex h-full w-full gap-2">
               <div className="flex flex-col w-[calc(25%-0.5rem)] bg-card h-full p-2">
