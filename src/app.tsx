@@ -50,7 +50,7 @@ export default function App() {
 
 
   return (
-    <div className='w-dvw h-dvh bg-bg text-fg overflow-x-hidden'>
+    <div className='w-full h-full overflow-x-hidden'>
       <Name />
       <div className="absolute z-10 w-full h-full overflow-x-hidden overflow-y-auto">
         <Hero />
