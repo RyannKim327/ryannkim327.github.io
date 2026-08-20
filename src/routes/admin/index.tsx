@@ -1,5 +1,5 @@
 import type { contactInterface } from "@/interface"
-import { adminGet, get } from "@/utils/api"
+import { adminGet } from "@/utils/api"
 import { session } from "@/utils/storage"
 import { use } from "react"
 
@@ -15,7 +15,7 @@ export default function AdminDashboard() {
           contacts.data.map((contact: contactInterface, i: number) => {
             return (
               <div key={i}>
-                <span>Test</span>
+                <span>{contact.name}</span>
               </div>
             )
           })
