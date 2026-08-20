@@ -8,6 +8,7 @@
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.3.3-06B6D4?style=flat&logo=tailwindcss)
 ![Oxlint](https://img.shields.io/badge/Oxlint-1.75.0-F97316?style=flat&logo=oxlint)
 ![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-ED592F?style=flat&logo=creativecommons&logoColor=white)
+[![Web Deployment](https://github.com/RyannKim327/ryannkim327.github.io/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/RyannKim327/ryannkim327.github.io/actions/workflows/gh-pages.yml)
 
 > **A redefined, retro-modern personal portfolio showcasing the work, skills, and projects of Ryann Kim M. Sesgundo, built with React 19, Tailwind CSS 4, and Vite.**
 
