@@ -2,10 +2,14 @@ import type { projectInterface, projectsInterface } from "@/interface";
 import Title from "../widgets/title";
 import { useEffect, useState } from "react";
 import { retrieval } from "@/utils/api";
+import Modal from "@/components/widgets/modal";
+import { Link } from "react-router";
 
 export default function Projects({ data }: { data: projectInterface }) {
 
   const [lists, setLists] = useState<projectsInterface[]>(data.projects)
+  const [visible, setVisible] = useState(false)
+  const [project, setProject] = useState<projectsInterface | null>(null)
 
   useEffect(() => {
     const withImg = lists.filter((p: Record<string, any>) => p.img);
@@ -26,6 +30,10 @@ export default function Projects({ data }: { data: projectInterface }) {
             lists.map((p: projectsInterface, i: number) => {
               return (
                 <div
+                  onClick={() => {
+                    setVisible(true)
+                    setProject(p)
+                  }}
                   className="relative w-[calc(90%-0.5rem)] lg:w-[calc(33.333%-0.5rem)] aspect-video group overflow-hidden"
                   key={`${i + 1}. ${p.name}`}>
                   <img
@@ -43,8 +51,34 @@ export default function Projects({ data }: { data: projectInterface }) {
               )
             }) : null
         }
-        <button className="w-full p-3 silk card">See more</button>
+        <Link to="/projects" className="text-center w-full p-3 silk card">See more</Link>
       </div>
-    </div>
+      <Modal
+        visible={visible}
+        className="flex flex-col relative rounded-md w-2/3 aspect-video overflow-hidden"
+        setVisible={setVisible}>
+
+        {project ?
+          <>
+            {
+              project.img ?
+                <img
+                  className="inset-0 w-full h-full object-cover"
+                  src={project.img ? retrieval("/retrieve", { file: project.img }) : ""}
+                  alt={project.name} />
+                :
+                <div className="flex items-center justify-center aspect-video w-full">
+                  <p>Screenshot Soon</p>
+                </div>
+            }
+            <div className="flex flex-col absolute bottom-0 right-0 left-0 z-1 bg-input/50 backdrop-blur-md p-2">
+              <span>{project.name}</span>
+              <span>{project.description}</span>
+            </div>
+          </>
+          : null
+        }
+      </Modal>
+    </div >
   )
 }

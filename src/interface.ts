@@ -9,7 +9,7 @@ export interface api {
   [key: string]: unknown
 }
 
-export type dataInterface = blogInterface[] | certsInterface[] | experiencesInterface[] | projectInterface
+export type dataInterface = blogInterface[] | certsInterface[] | contactInterface[] | experiencesInterface[] | projectInterface
 
 export interface blogInterface {
   id: number,
@@ -24,6 +24,12 @@ export interface certsInterface {
   link: string,
   url: string,
   source: string
+}
+
+export interface contactInterface {
+  name: string,
+  email: string,
+  content: string
 }
 
 export interface experiencesInterface {
