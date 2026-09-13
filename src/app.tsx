@@ -4,7 +4,7 @@ import Experiences from "@/components/index/experiences"
 import Name from "@/components/widgets/name"
 import Certificates from "./components/index/certificates";
 import Projects from "./components/index/projects";
-import { use, useEffect, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import { get } from "./utils/api";
 import axios from "axios";
 import Blogs from "./components/index/blogs";
@@ -38,6 +38,8 @@ export default function App() {
   const experiences = access[3].data as experiencesInterface[]
   const projects = access[5].data as projectInterface
 
+  const main = useRef(null)
+
   useEffect(() => {
     (async () => {
       const r = await get("")
@@ -47,12 +49,10 @@ export default function App() {
     })()
   }, [])
 
-
-
   return (
     <div className='w-full h-full overflow-x-hidden'>
-      <Name />
-      <div className="absolute z-10 w-full h-full overflow-x-hidden overflow-y-auto">
+      <Name main={main} />
+      <div ref={main} className="absolute z-10 w-full h-full overflow-x-hidden overflow-y-auto">
         <Hero />
         <About />
         {state ?
