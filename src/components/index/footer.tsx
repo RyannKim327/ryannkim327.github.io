@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
     <div id="footer" className="flex flex-col justify-between py-5 gap-5 bg-bg w-full h-[50%] px-5 border-t border-t-solid border-t-fg">
-      <div className="flex flex-col-reverse lg:flex-row gap-5 lg:gap-0 justify-center items-center lg:items-start w-full">
-        <div className="flex flex-col gap-2 items-center lg:items-start w-[calc(100%-1rem)] lg:w-[calc(50%-0.5rem)]">
+      <div className="grid grid-cols-3 gap-5 lg:gap-0 justify-center items-center lg:items-start w-full">
+        <div className="flex flex-col col-span-3 md:col-span-1 gap-2 items-center lg:items-start w-[calc(100%-1rem)] lg:w-[calc(50%-0.5rem)]">
           <span>Socials</span>
-          <div className="flex lg:flex-col gap-2">
+          <div className="flex md:flex-col gap-2">
             <span
               className="cursor-pointer"
               onClick={() => {
@@ -22,7 +22,7 @@ export default function Footer() {
               }}>Wakatime</span>
           </div>
         </div>
-        <div className="flex flex-col gap-2 w-[calc(100%-1rem)] lg:w-[calc(50%-0.5rem)]">
+        <div className="flex flex-col col-span-3 md:col-span-2 gap-2">
           <span>Direct Contact Here</span>
           <div className="flex flex-wrap gap-2">
             <input className="flex-1 w-full bg-input p-2 rounded" type="text" placeholder="Name" />
