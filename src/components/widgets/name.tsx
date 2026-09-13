@@ -1,18 +1,19 @@
 import { useEffect, useState, type RefObject } from "react"
 
-interface NameInterface {
-  main: RefObject<HTMLElement>
+interface nameInterface {
+  main: RefObject<HTMLDivElement | null>
 }
 
-export default function Name({ main }: NameInterface) {
+export default function Name({ main }: nameInterface) {
+
   const [scroll, setScroll] = useState(0)
 
   useEffect(() => {
+    if (!main) return
     const current = main.current
     if (!current) return
 
     const handleScroll = () => {
-      console.log(current.scrollTop)
       setScroll(current.scrollTop * 0.5);
     };
 
