@@ -10,11 +10,9 @@ export default function AdminLogin({
 }) {
 
   const [password, setPassword] = useState("")
-  const [admin, setAdmin] = useState<string | null>(session("admin") as string)
-  const [expiration, setExpiration] = useState<number>(session("expiration") as number)
   const [sending, setSending] = useState(false)
 
-  const checker = () => {
+  const checker = (admin: string | null, expiration: number) => {
     const time = new Date().getTime();
     setVerified(
       admin !== undefined &&
@@ -44,15 +42,19 @@ export default function AdminLogin({
     const data = JSON.parse(atob(access.code as string))
     session("admin", data.code)
     session("expiration", data.time)
-    setAdmin(data.code)
-    setExpiration(data.time)
-    checker()
+    const admin = data.code
+    const time = data.time
+    checker(admin, time)
   }
 
   useEffect(() => {
-    checker()
+    const admin = session("admin") as string
+    const time = session("expiration") as number
+    checker(admin, time)
     const interval = setInterval(() => {
-      checker()
+      const admin_ = session("admin") as string
+      const time_ = session("expiration") as number
+      checker(admin_, time_)
     }, 1000 * 60 * 30)
     return () => clearInterval(interval)
   }, [])
