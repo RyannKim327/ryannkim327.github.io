@@ -1,6 +1,6 @@
 import type { projectInterface, projectsInterface } from "@/interface"
 import { get, retrieval } from "@/utils/api"
-import { use } from "react"
+import { use, useState } from "react"
 
 const getProject = get("projects")
 
@@ -8,22 +8,39 @@ export default function UserProject() {
   const project = use(getProject).data as projectInterface
   const projects = project.projects.sort((a: projectsInterface, b: projectsInterface) => a.name.localeCompare(b.name)) as projectsInterface[]
   const categories = ["all", ...project.categories] as string[]
+  const [search, setSearch] = useState("all")
+  const [filtered, setFiltered] = useState(projects)
+
+  function filterProjects(category: string) {
+    setSearch(category)
+    if (category === "all") {
+      setFiltered(projects)
+      return
+    }
+    setFiltered(projects.filter(p => p.category.includes(category)))
+  }
 
   return (
     <div className="flex flex-col w-full h-full overflow-y-auto">
       <div
-        className="flex gap-2 justify-center p-3 sticky z-20 bg-bg top-0 left-0 right-0">
+        className={`flex gap-2 justify-center p-3 sticky z-20 bg-bg top-0 left-0 right-0`}>
         {
           categories.map((c: string, i: number) => {
             return (
-              <span key={`${i}. ${c}`}>{c.toUpperCase()}</span>
+              <span
+                className={`cursor-pointer ${c === search ? "underline" : ""}`}
+                onClick={() => {
+                  filterProjects(c.toLowerCase())
+                }}
+                key={`${i}. ${c}`}
+              >{c.toUpperCase()}</span>
             )
           })
         }
       </div>
       <div className="flex flex-wrap w-full gap-2 p-3 py-[2rem]">
         {
-          projects.map((p: projectsInterface, i: number) => {
+          filtered.map((p: projectsInterface, i: number) => {
             return (
               <span
                 className="relative w-[calc(90%-0.5rem)] lg:w-[calc(33.333%-0.5rem)] aspect-video group overflow-hidden"
