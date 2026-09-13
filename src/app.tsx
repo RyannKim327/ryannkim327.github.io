@@ -38,7 +38,7 @@ export default function App() {
   const experiences = access[3].data as experiencesInterface[]
   const projects = access[5].data as projectInterface
 
-  const main = useRef(null)
+  const main = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     (async () => {
@@ -52,7 +52,9 @@ export default function App() {
   return (
     <div className='w-full h-full overflow-x-hidden'>
       <Name main={main} />
-      <div ref={main} className="absolute z-10 w-full h-full overflow-x-hidden overflow-y-auto">
+      <div
+        ref={main}
+        className="absolute z-10 w-full h-full overflow-x-hidden overflow-y-auto">
         <Hero />
         <About />
         {state ?
