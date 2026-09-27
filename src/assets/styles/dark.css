@@ -1,7 +1,7 @@
 @media (prefers-color-scheme: dark){
   :root {
-    --bg: #000000;
-    --fg: #ffffff;
+    --bg: #121212;
+    --fg: #ececec;
     --fbl: #eeeeeeaa;
     --ftr: #aaaaaa90;
     --input-bg: #313131;

@@ -19,7 +19,7 @@ export default function Modal(
       onClick={() => {
         setVisible(false)
       }}
-      className={visible ? `flex justify-center items-center p-5 fixed bg-bg/75 backdrop-blur-md left-0 right-0 top-0 bottom-0 z-200` : "hidden"}>
+      className={visible ? `flex justify-center items-center p-5 fixed bg-bg/50 backdrop-blur-md left-0 right-0 top-0 bottom-0 z-200` : "hidden"}>
       <div
         onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => { e.stopPropagation() }}
         className={`${className ?? ""} flex flex-col rounded bg-card`}>

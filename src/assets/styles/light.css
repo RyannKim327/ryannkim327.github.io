@@ -1,10 +1,10 @@
 @media (prefers-color-scheme: light){
   :root {
-    --bg: #ffffff;
-    --fg: #000000;
-    --fbl: #333333;
-    --ftr: #00000090;
-    --input-bg: #dedede;
-    --card: #dedede;
+    --bg: #ececec;
+    --fg: #121212;
+    --fbl: #333333aa;
+    --ftr: #12121290;
+    --input-bg: #d0d0d0;
+    --card: #d0d0d0;
   }
 }
