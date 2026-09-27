@@ -9,7 +9,7 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b redefine -d dist --cname ryannkim327"
+    "deploy": "gh-pages -b redefine -d dist --cname ryannkim327.is-a.dev"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
