@@ -7,6 +7,7 @@ export interface api {
   count?: number,
   data?: dataInterface,
   [key: string]: unknown
+  content?: string
 }
 
 export type dataInterface = blogInterface[] | certsInterface[] | contactInterface[] | experiencesInterface[] | projectInterface
