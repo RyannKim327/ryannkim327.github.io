@@ -1,6 +1,6 @@
 import Modal from "@/components/widgets/modal"
 import type { experiencesInterface } from "@/interface"
-import { get } from "@/utils/api"
+import { get } from "@/lib/api"
 import { use, useState } from "react"
 
 const getExperience = get("experiences")

@@ -1,6 +1,6 @@
 import type { contactInterface } from "@/interface"
-import { adminGet } from "@/utils/api"
-import { session } from "@/utils/storage"
+import { adminGet } from "@/lib/api"
+import { session } from "@/lib/storage"
 import { use } from "react"
 
 const getContacts = adminGet("contact", session("admin") as string)

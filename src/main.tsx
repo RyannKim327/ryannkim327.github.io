@@ -7,6 +7,7 @@ import Admin from './admin.tsx'
 import AdminDashboard from '@/routes/admin/index.tsx'
 import AdminExperiences from '@/routes/admin/experiences.tsx'
 import UserProject from './routes/users/projects.tsx'
+import UserCertifications from './routes/users/certificates.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="experiences" element={<AdminExperiences />} />
           </Route>
           <Route path="/projects" element={<UserProject />} />
+          <Route path="/certificates" element={<UserCertifications />} />
         </Routes>
       </HashRouter>
     </div>

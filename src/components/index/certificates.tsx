@@ -1,8 +1,9 @@
 import Title from "@/components/widgets/title";
 import type { certsInterface } from "@/interface";
-import { retrieval } from "@/utils/api";
+import { retrieval } from "@/lib/api";
 import { useState } from "react";
 import Modal from "@/components/widgets/modal";
+import { Link } from "react-router";
 
 export default function Certificates({ data }: { data: certsInterface[] }) {
   const [visible, setVisible] = useState(false)
@@ -39,7 +40,9 @@ export default function Certificates({ data }: { data: certsInterface[] }) {
             )
           })
         }
-        <button className="w-full p-3 silk card">See more</button>
+        <Link
+          to="/certificates"
+          className="text-center w-full p-3 silk card">See more</Link>
       </div>
 
       <Modal
@@ -49,7 +52,7 @@ export default function Certificates({ data }: { data: certsInterface[] }) {
         {certificate ?
           <>
             <img
-              className="inset-0 w-full h-full object-cover"
+              className="inset-0 w-full h-full object-fill"
               src={certificate.url.startsWith("http") ? certificate.url : retrieval("/retrieve", { file: certificate.url })}
               alt={certificate.source} />
 

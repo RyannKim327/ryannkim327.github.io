@@ -1,5 +1,5 @@
-import { post } from "@/utils/api"
-import { session } from "@/utils/storage"
+import { post } from "@/lib/api"
+import { session } from "@/lib/storage"
 import React, { useEffect, useState } from "react"
 import { toast, ToastContainer } from "react-toastify"
 
