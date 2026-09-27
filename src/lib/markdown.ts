@@ -5,15 +5,20 @@ export function escapeHtml(s: string) {
 function renderInlineCore(s: string): string {
   let out = s;
   // bold ** **
-  out = out.replace(/\*\*([^*]+?)\*\*/g, "<strong>$1</strong>");
+  out = out.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+
   // highlight == ==
   out = out.replace(/==([^=]+?)==/g, '<mark class="rounded bg-secondary-container px-1">$1</mark>');
+
   // strikethrough ~~ ~~
   out = out.replace(/~~([^~]+?)~~/g, "<s>$1</s>");
+
   // underline __ __  (before single _)
   out = out.replace(/__([^_]+?)__/g, "<u>$1</u>");
+
   // italic * *  (avoid already bold)
   out = out.replace(/(?<!\*)\*([^*\n]+?)\*(?!\*)/g, "<em>$1</em>");
+
   // italic _ _  — only when not inside word (so link_ko stays intact even if not protected)
   out = out.replace(/(?<![\w])_([^_\n]+?)_(?![\w])/g, "<em>$1</em>");
   return out;
@@ -28,6 +33,7 @@ export function renderInline(text: string): string {
     placeholders.push(html);
     return token;
   };
+
   const restore = (s: string) => {
     let r = s;
     placeholders.forEach((html, i) => {
@@ -70,12 +76,35 @@ export function markdownToHtml(md: string): string {
     const trimmed = block.trim();
     if (!trimmed) continue;
 
+    // unordered list
+    if (/([\n]?)[\-\*]\s+/gi.test(trimmed)) {
+      const items = trimmed
+        .split("\n")
+        .filter((l) => /^[-*]\s+/.test(l.trim()))
+        .map((l) => `<li>${renderInline(l.replace(/([\n]?)[\-\*]\s+/, ""))}</li>`)
+        .join("");
+      html.push(`<ul class="mt-2 list-disc space-y-1 pl-6 text-sm">${items}</ul>`);
+      continue;
+    }
+
+    // ordered list
+    if (/^\d+\.\s+/.test(trimmed)) {
+      const items = trimmed
+        .split("\n")
+        .filter((l) => /^\d+\.\s+/.test(l.trim()))
+        .map((l) => `<li>${renderInline(l.replace(/^\d+\.\s+/, ""))}</li>`)
+        .join("");
+      html.push(`<ol class="mt-2 list-decimal space-y-1 pl-6 text-sm">${items}</ol>`);
+      continue;
+    }
+
     // fenced code
     if (trimmed.startsWith("```")) {
       const inner = trimmed.replace(/^```[a-z]*\n?/, "").replace(/\n?```$/, "");
       html.push(`<pre class="overflow-auto rounded-xl bg-surface-container p-3 text-xs font-mono">${escapeHtml(inner)}</pre>`);
       continue;
     }
+
     // heading
     if (/^###\s+/.test(trimmed)) {
       const t = trimmed.replace(/^###\s+/, "");
@@ -92,6 +121,7 @@ export function markdownToHtml(md: string): string {
       html.push(`<h1 class="mt-3 text-xl font-bold">${renderInline(t)}</h1>`);
       continue;
     }
+
     // blockquote
     if (/^>\s+/.test(trimmed)) {
       const lines = trimmed
@@ -103,26 +133,7 @@ export function markdownToHtml(md: string): string {
       );
       continue;
     }
-    // unordered list
-    if (/^[-*]\s+/.test(trimmed)) {
-      const items = trimmed
-        .split("\n")
-        .filter((l) => /^[-*]\s+/.test(l.trim()))
-        .map((l) => `<li>${renderInline(l.replace(/^[-*]\s+/, ""))}</li>`)
-        .join("");
-      html.push(`<ul class="mt-2 list-disc space-y-1 pl-6 text-sm">${items}</ul>`);
-      continue;
-    }
-    // ordered list
-    if (/^\d+\.\s+/.test(trimmed)) {
-      const items = trimmed
-        .split("\n")
-        .filter((l) => /^\d+\.\s+/.test(l.trim()))
-        .map((l) => `<li>${renderInline(l.replace(/^\d+\.\s+/, ""))}</li>`)
-        .join("");
-      html.push(`<ol class="mt-2 list-decimal space-y-1 pl-6 text-sm">${items}</ol>`);
-      continue;
-    }
+
     // paragraph - split single newlines into <br>
     const inline = renderInline(trimmed).replace(/\n/g, "<br/>");
     html.push(`<p class="mt-2 text-sm leading-relaxed">${inline}</p>`);

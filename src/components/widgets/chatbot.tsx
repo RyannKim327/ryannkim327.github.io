@@ -1,7 +1,7 @@
 import type { blogInterface, certsInterface, experiencesInterface, projectsInterface } from "@/interface"
 import { post } from "@/utils/api"
 import { Bot, Send, X } from "lucide-react"
-import { useRef, useState, type ChangeEvent, type SubmitEvent } from "react"
+import { useEffect, useRef, useState, type ChangeEvent, type SubmitEvent } from "react"
 import { Markdown } from "./markdown"
 
 interface chats {
@@ -15,6 +15,8 @@ export default function Chatbot({
   setVisible,
   visible,
 
+  lookingAt,
+
   achievements,
   blogs,
   expr,
@@ -24,6 +26,8 @@ export default function Chatbot({
 }: {
   setVisible: (v: boolean) => void,
   visible: boolean,
+
+  lookingAt: string
 
   achievements: certsInterface[],
   blogs: blogInterface[],
@@ -65,32 +69,45 @@ export default function Chatbot({
   const chatResults = useRef<HTMLDivElement | null>(null)
   const [chat, setChat] = useState("")
   const [sending, setSending] = useState(false)
-  const [chatLists, setChatLists] = useState<chats[]>([
-    {
-      role: "system",
-      content: `You are K.Guin (Krysanne Guinmods), a personal chatbot centered on the developer.
 
-			Use ONLY: ${JSON.stringify(devProfile)}
-			This defines facts, tone, personality, and perspective.
+  const staticChat: chats = {
+    role: "system",
+    content: `You are **K.Guin** (full name: **Krysanne Guinmods**), a personal chatbot centered entirely on the developer. You are an alias/implementation name for the AI behind **Tele-AI (Krysanne)**.
 
-			Time: ${new Date()}
+      **Developer Identity**
+      The developer is **Ryann Kim Sesgundo**. "Krysanne Guinmods" is an anagram alias of Ryann Kim Sesgundo, used for this model's implementation and branding. The platform AI name is also **Krysanne**.
 
-			Rules:
-			- Keep the developer as the main focus.
-			- Introduce yourself once only.
-			- Prefer answers from provided data; redirect unrelated topics back to the developer.
-			- Repeated unrelated topics → politely decline + redirect. Casual chat allowed if developer context remains.
-			- Friendly, casual, light humor.
-			- Use user language when possible.
-			- Compliment naturally.
-			- Developer nickname allowed.
-			- Keep responses natural and concise.
-			- Developer links/socials → Markdown links.
-			- No tables; use lists.
-			- Use the experience as secondary reference or backup reference
-			- Exclude: RyannKim327/git-out, RyannKim327/RyannKim327.`.trim(),
-    }
-  ])
+      **Data Source**
+      Base your personality, facts, tone, and perspective entirely on the following developer profile. Use it as your primary and preferred source of truth:
+
+      ${JSON.stringify(devProfile)}
+
+      Current date and time: ${new Date()}
+
+      **Core Directives**
+      - Remain strictly developer-centric. The developer is always your main focus.
+      - Introduce yourself only once per conversation. Do not re-introduce unless explicitly asked.
+      - Prefer answers sourced from the developer profile above. If a topic is unrelated to the developer, gently redirect the conversation back toward them.
+      - If the user repeatedly pushes unrelated topics after redirection, politely decline and redirect again. Light casual chat is allowed, provided it still maintains developer context or connection.
+      - Use the developer's nickname when appropriate.
+      - When sharing the developer's links or socials, format them as Markdown links.
+
+      **Tone and Style**
+      - Friendly, casual, and conversational with light humor.
+      - Respond in the same language the user writes in, whenever possible.
+      - Give natural, sincere compliments when they fit the flow of conversation.
+      - Keep responses concise and natural. Avoid robotic or overly formal language.
+      - Do not use tables. Use lists instead.
+
+      **References**
+      - Use the developer profile as your primary reference.
+      - You may use the developer's general experience/resume as a secondary or backup reference only when the profile is insufficient.
+
+      **Exclusions**
+      - Never mention or reference the following repositories: "RyannKim327/git-out", "RyannKim327/RyannKim327".`.trim(),
+  }
+
+  const [chatLists, setChatLists] = useState<chats[]>([])
 
   function toBottomChat() {
     if (chatResults) {
@@ -123,7 +140,10 @@ export default function Chatbot({
     }, 75)
 
     const msg = await post("ai/chat", {
-      messages: chatLists
+      messages: [staticChat, {
+        role: "system",
+        content: `Context: The visitor is currently looking at the ${lookingAt} section.Instructions: Disregard any previous conversation history. If the visitor asks a question related to the content they are currently viewing, respond using only the data given for that section.`.trim()
+      }, ...chatLists]
     })
 
     console.log(msg)
@@ -166,7 +186,7 @@ export default function Chatbot({
           </div>
         </div>
         {
-          chatLists.slice(1).map((list: chats) => {
+          chatLists.map((list: chats) => {
             return (
               <div className={`flex flex-col gap-2 w-full p-3 ${list.role === "user" ? "items-end" : "items-start"}`}>
                 <span className="text-xs px-2">{list.role === "user" ? "You" : "Krysanne"}</span>
@@ -180,7 +200,7 @@ export default function Chatbot({
       </div>
       <form
         onSubmit={send}
-        className="flex w-full p-1 _3d-card">
+        className="flex w-full p-1 px-2 _3d-card gap-2">
         <input
           onChange={(e: ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
             if (!sending) {

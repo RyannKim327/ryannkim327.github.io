@@ -4,7 +4,7 @@ import Experiences from "@/components/index/experiences"
 import Name from "@/components/widgets/name"
 import Certificates from "./components/index/certificates";
 import Projects from "./components/index/projects";
-import { use, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import { get } from "./utils/api";
 import axios from "axios";
 import Blogs from "./components/index/blogs";
@@ -32,6 +32,16 @@ const gather = Promise.all([
   get("wakatime")
 ])
 
+const ids = [
+  "hero",
+  "about",
+  "experiences",
+  "projects",
+  "certificates",
+  "blogs",
+  "footer"
+]
+
 export default function App() {
   const access = use(gather)
   const blogs = access[0].data as blogInterface[]
@@ -40,9 +50,35 @@ export default function App() {
   const projects = access[5].data as projectInterface
   const wakatime = access[6].data as Record<string, any>
 
+  const [looking, setLooking] = useState("hero")
   const [visible, setVisible] = useState(false)
 
   const main = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (!main) return
+    const current = main.current
+    if (!current) return
+    const handleScroll = () => {
+      ids.map(id => {
+        const c = document.getElementById(id)
+        if (c) {
+          const position = c.getBoundingClientRect().top
+          if (position >= 0 && position < 250) {
+            console.log(id)
+            setLooking(id)
+          }
+        };
+      })
+    };
+
+    current.addEventListener("scroll", handleScroll)
+
+    return () => {
+      current.removeEventListener("scroll", handleScroll);
+    };
+  }, [])
+
   return (
     <div className='w-full h-full overflow-x-hidden'>
       <Name main={main} />
@@ -95,6 +131,8 @@ export default function App() {
           wakatime={wakatime}
           achievements={certificates}
           projects={projects.projects}
+
+          lookingAt={looking}
 
           setVisible={setVisible}
           visible={visible} />
