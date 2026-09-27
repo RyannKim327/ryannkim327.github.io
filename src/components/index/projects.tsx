@@ -41,9 +41,9 @@ export default function Projects({ data }: { data: projectInterface }) {
                     src={p.img ?
                       retrieval("retrieve", { file: p.img ?? "" }) : ""} />
                   <span
-                    // onClick={() => {
-                    //   p.link ? window.open(c.link, "_blank") : c.url
-                    // }}
+                    onClick={() => {
+                      p.link ? window.open(p.link, "_blank") : null
+                    }}
                     className="absolute select-none cursor-pointer opacity-0 group-hover:opacity-100 bottom-0 p-3 z-10 w-full bg-bg/75 transition-all delay-75">
                     {p.name}
                   </span>
@@ -71,7 +71,11 @@ export default function Projects({ data }: { data: projectInterface }) {
                   <p>Screenshot Soon</p>
                 </div>
             }
-            <div className="flex flex-col absolute bottom-0 right-0 left-0 z-1 bg-input/50 backdrop-blur-md p-2">
+            <div
+              onClick={() => {
+                project.link ? window.open(project.link, "_blank") : null
+              }}
+              className="flex flex-col absolute bottom-0 right-0 left-0 z-1 bg-input/50 backdrop-blur-md p-2 cursor-pointer">
               <span>{project.name}</span>
               <span>{project.description}</span>
             </div>

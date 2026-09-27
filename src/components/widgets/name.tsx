@@ -27,7 +27,8 @@ export default function Name({ main }: nameInterface) {
   return (
     <div className={`fixed flex flex-col justify-center items-center w-full h-[95%] select-none`}
       style={{
-        top: scroll * -1
+        top: scroll * -1,
+        opacity: 25 / scroll
       }}>
       <span
         className="
@@ -48,7 +49,7 @@ export default function Name({ main }: nameInterface) {
       <span
         className="relative silk text-[2rem] lg:text-[6rem] font-mono"
         style={{
-          top: scroll * -0.75
+          top: scroll * -0.5
         }}>Sesgundo</span>
     </div>
 

@@ -61,7 +61,7 @@ export default function Certificates({ data }: { data: certsInterface[] }) {
                     : null
                 }
               }}
-              className="flex flex-col absolute bottom-0 right-0 left-0 z-1 bg-input/75 backdrop-blur-md p-2">
+              className="flex flex-col absolute bottom-0 right-0 left-0 z-1 bg-input/75 backdrop-blur-md p-2 cursor-pointer">
               <span>{certificate.source}</span>
               <span>{certificate.category}</span>
             </div>

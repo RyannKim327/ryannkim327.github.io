@@ -34,6 +34,26 @@
   color: var(--color-bg);
 }
 
+._3d-card {
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow:
+    4px 0 0 var(--color-fbl), /* Left */
+    -4px 0 0 var(--color-ftr), /* Right */
+    0 -4px 0 var(--color-fbl), /* Top */
+    0 4px 0 var(--color-ftr); /* Bottom */
+}
+
+._3d-chat{
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow:
+    2px 0 0 var(--color-fbl), /* Left */
+    -2px 0 0 var(--color-ftr), /* Right */
+    0 -2px 0 var(--color-fbl), /* Top */
+    0 2px 0 var(--color-ftr); /* Bottom */
+}
+
 .card {
   box-shadow:
     2px 0 0 var(--color-fbl), /* Left */
