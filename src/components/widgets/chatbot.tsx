@@ -1,7 +1,7 @@
 import type { blogInterface, certsInterface, experiencesInterface, projectsInterface } from "@/interface"
-import { post } from "@/utils/api"
+import { post } from "@/lib/api"
 import { Bot, Send, X } from "lucide-react"
-import { useEffect, useRef, useState, type ChangeEvent, type SubmitEvent } from "react"
+import { useRef, useState, type ChangeEvent, type SubmitEvent } from "react"
 import { Markdown } from "./markdown"
 
 interface chats {

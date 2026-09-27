@@ -1,6 +1,6 @@
 import Modal from "@/components/widgets/modal"
 import type { projectInterface, projectsInterface } from "@/interface"
-import { get, retrieval } from "@/utils/api"
+import { get, retrieval } from "@/lib/api"
 import { ArrowLeft } from "lucide-react"
 import { use, useState } from "react"
 import { useNavigate } from "react-router"
@@ -96,7 +96,7 @@ export default function UserProject() {
             {
               selectedProject.img ?
                 <img
-                  className="inset-0 w-full h-full object-cover"
+                  className="inset-0 w-full h-full object-fill"
                   src={selectedProject.img ? retrieval("/retrieve", { file: selectedProject.img }) : ""}
                   alt={selectedProject.name} />
                 :

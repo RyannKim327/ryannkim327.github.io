@@ -5,7 +5,7 @@ import Name from "@/components/widgets/name"
 import Certificates from "./components/index/certificates";
 import Projects from "./components/index/projects";
 import { use, useEffect, useRef, useState } from "react";
-import { get } from "./utils/api";
+import { get } from "./lib/api";
 import axios from "axios";
 import Blogs from "./components/index/blogs";
 import Footer from "./components/index/footer";

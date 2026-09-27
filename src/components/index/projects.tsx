@@ -1,7 +1,7 @@
 import type { projectInterface, projectsInterface } from "@/interface";
 import Title from "../widgets/title";
 import { useEffect, useState } from "react";
-import { retrieval } from "@/utils/api";
+import { retrieval } from "@/lib/api";
 import Modal from "@/components/widgets/modal";
 import { Link } from "react-router";
 
@@ -63,7 +63,7 @@ export default function Projects({ data }: { data: projectInterface }) {
             {
               project.img ?
                 <img
-                  className="inset-0 w-full h-full object-cover"
+                  className="inset-0 w-full h-full object-fill"
                   src={project.img ? retrieval("/retrieve", { file: project.img }) : ""}
                   alt={project.name} />
                 :
