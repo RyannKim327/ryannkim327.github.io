@@ -1,4 +1,4 @@
-import type { blogInterface, certsInterface, experiencesInterface, projectInterface, projectsInterface } from "@/interface"
+import type { blogInterface, certsInterface, experiencesInterface, projectsInterface } from "@/interface"
 import { post } from "@/utils/api"
 import { Bot, Send, X } from "lucide-react"
 import { useRef, useState, type ChangeEvent, type SubmitEvent } from "react"
@@ -135,7 +135,7 @@ export default function Chatbot({
     setChatLists(prev => ([
       ...prev, {
         role: "assistant",
-        content: msg.content
+        content: msg.content ?? ""
       }
     ]))
 
