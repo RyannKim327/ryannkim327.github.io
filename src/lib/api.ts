@@ -4,7 +4,7 @@ import { wrapper } from "axios-cookiejar-support";
 import { CookieJar } from "tough-cookie";
 
 const jar = new CookieJar();
-const URL = "https://portfolio-backend-4abt.onrender.com";
+const URL = "https://portfolio-backend-pi-nine.vercel.app";
 
 const base = wrapper(
   axios.create({
