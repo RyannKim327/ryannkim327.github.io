@@ -44,11 +44,6 @@ export default function Chatbot({
       lastname: "Sesgundo",
     },
     nicknames: ["Kim", "Ryann", "Kimmy"],
-    weekly_activity: wakatime,
-    projects: projects,
-    blogs,
-    expriences: expr,
-    achievements: achievements,
     alias: ["RyannKim327", "RySes", "RySes Malabanan", "Krysanne Guinmods"],
     birthyear: 2001,
     sex: "male",
@@ -140,10 +135,27 @@ export default function Chatbot({
     }, 75)
 
     const msg = await post("ai/chat", {
-      messages: [staticChat, {
-        role: "system",
-        content: `Context: The visitor is currently looking at the ${lookingAt} section.Instructions: Disregard any previous conversation history. If the visitor asks a question related to the content they are currently viewing, respond using only the data given for that section.`.trim()
-      }, ...chatLists]
+      messages: [staticChat,
+        {
+          role: "system",
+          content: `Context: Ryann Kim's weekly coding activity ${JSON.stringify(wakatime)}`
+        }, {
+          role: "system",
+          content: `Context: Ryann Kim's projects ${JSON.stringify(projects)}`
+        }, {
+          role: "system",
+          content: `Context: Ryann Kim's Blogs ${JSON.stringify(blogs)}`
+        }, {
+          role: "system",
+          content: `Context: Ryann Kim's activities and experiences ever since he was started ${JSON.stringify(expr)}`
+        }, {
+          role: "system",
+          content: `Context: Ryann Kim's Certifications ${JSON.stringify(achievements)}`
+        },
+        {
+          role: "system",
+          content: `Context: The visitor is currently looking at the ${lookingAt} section.Instructions: Disregard any previous conversation history. If the visitor asks a question related to the content they are currently viewing, respond using only the data given for that section.`.trim()
+        }, ...chatLists]
     })
 
     console.log(msg)
@@ -196,6 +208,16 @@ export default function Chatbot({
               </div>
             )
           })
+        }
+        {
+          sending ?
+            <div className={`flex flex-col gap-2 w-full p-3 items-start`}>
+              <span className="text-xs px-2">Krysanne</span>
+              <div className="_3d-chat p-2 max-w-[calc(75%-0.5rem)]">
+                Typing ...
+              </div>
+            </div>
+            : null
         }
       </div>
       <form
