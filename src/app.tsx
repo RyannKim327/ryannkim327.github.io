@@ -12,7 +12,6 @@ import Footer from "./components/index/footer";
 import type { blogInterface, certsInterface, experiencesInterface, projectInterface } from "@/interface";
 import { ArrowUp, Bot, X } from "lucide-react";
 import Chatbot from "./components/widgets/chatbot";
-import Boxes from "./components/widgets/boxes";
 
 function toId(id: string) {
   const _ = document.getElementById(id);
