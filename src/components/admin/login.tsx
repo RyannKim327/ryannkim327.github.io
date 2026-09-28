@@ -19,7 +19,7 @@ export default function AdminLogin({
       admin !== null &&
       time < expiration
     )
-    if (time >= expiration) {
+    if (time > expiration) {
       session("admin", "");
       session("expiration", "");
     }
