@@ -2,6 +2,7 @@ import type { api, json } from "@/interface";
 import axios from "axios";
 import { wrapper } from "axios-cookiejar-support";
 import { CookieJar } from "tough-cookie";
+import { session } from "./storage";
 
 const jar = new CookieJar();
 const URL = "https://portfolio-backend-pi-nine.vercel.app";
@@ -96,10 +97,14 @@ export async function post(
 ): Promise<api> {
   let code = 0;
   try {
-    try {
-      await base.get("set-cookie");
-    } catch {
-      // Ignore if set-cookie is not implemented or already set
+    if (!session("token")) {
+      try {
+        const { data } = await base.get("set-cookie");
+        console.log(data.token)
+        session("token", data.token)
+      } catch {
+        // Ignore if set-cookie is not implemented or already set
+      }
     }
 
     const { data, status } = await base.post(endpoint, body, {
