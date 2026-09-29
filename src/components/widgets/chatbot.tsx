@@ -116,30 +116,35 @@ export default function Chatbot({
     }
   }
 
-  async function send(e: SubmitEvent<HTMLFormElement>) {
+  async function send(e: SubmitEvent<HTMLFormElement>, append: boolean = true) {
     e.preventDefault()
     if (sending || chat.trim() === "") return
 
+    console.log(chatLists)
     setSending(true)
 
-    setChatLists(prev => ([
-      ...prev, {
-        role: "user",
-        content: chat
-      }
-    ]))
-    setChat("")
+    if (append) {
+      setChatLists(prev => ([
+        ...prev, {
+          role: "user",
+          content: chat
+        }
+      ]))
+      setChat("")
 
-    setTimeout(() => {
-      toBottomChat()
-    }, 75)
+      setTimeout(() => {
+        toBottomChat()
+      }, 75)
+    }
+    console.log(chatLists)
 
     const msg = await post("ai/chat", {
       messages: [staticChat,
         {
           role: "system",
           content: `Context: Ryann Kim's weekly coding activity ${JSON.stringify(wakatime)}`
-        }, {
+        },
+        {
           role: "system",
           content: `Context: Ryann Kim's projects ${JSON.stringify(projects)}`
         }, {
@@ -158,20 +163,20 @@ export default function Chatbot({
         }, ...chatLists]
     })
 
-    console.log(msg)
-
     if (msg.error) {
-      await send(e)
+      setTimeout(async () => {
+        await send(e, false)
+      }, 5000)
+    } else {
+      setChatLists(prev => ([
+        ...prev, {
+          role: "assistant",
+          content: msg.content ?? ""
+        }
+      ]
+      ))
+      setSending(false)
     }
-
-    setChatLists(prev => ([
-      ...prev, {
-        role: "assistant",
-        content: msg.content ?? ""
-      }
-    ]))
-
-    setSending(false)
     setTimeout(() => {
       toBottomChat()
     }, 75)

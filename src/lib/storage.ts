@@ -33,3 +33,13 @@ export function session(key: string, value?: string | number | boolean): string 
     }
   }
 }
+
+// export default function cookie(key: string) {
+//   const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
+//     const [name, value] = cookie.split('=');
+//     acc[name] = value;
+//     return acc;
+//   }, {});
+//
+//   return cookies[key] ? decodeURIComponent(cookies[key]) : null;
+// }
