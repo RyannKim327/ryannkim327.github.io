@@ -70,7 +70,32 @@
   animation: scroll-down 3s infinite;
 }
 
+.bouncing-loader > div {
+  width: 12px;
+  height: 12px;
+  margin: 3px 6px;
+  border-radius: 50%;
+  background-color: var(--color-fg);
+  opacity: 1;
+  animation: bouncing-loader 0.6s infinite alternate;
+}
+
 /* TODO: Keyframes */
+@keyframes bouncing-loader {
+  to {
+    opacity: 0.1;
+    transform: translateY(-16px);
+  }
+}
+
+.bouncing-loader > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.bouncing-loader > div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
 @keyframes scroll-down {
   0%, 100% {
     transform: translateY(0rem);

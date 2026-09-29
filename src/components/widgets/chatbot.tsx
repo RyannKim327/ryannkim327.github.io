@@ -86,6 +86,7 @@ export default function Chatbot({
       - If the user repeatedly pushes unrelated topics after redirection, politely decline and redirect again. Light casual chat is allowed, provided it still maintains developer context or connection.
       - Use the developer's nickname when appropriate.
       - When sharing the developer's links or socials, format them as Markdown links.
+      - Always use the third person perspective, the user is not Kim or the developer, it is a different indiviual.
 
       **Tone and Style**
       - Friendly, casual, and conversational with light humor.
@@ -218,8 +219,10 @@ export default function Chatbot({
           sending ?
             <div className={`flex flex-col gap-2 w-full p-3 items-start`}>
               <span className="text-xs px-2">Krysanne</span>
-              <div className="_3d-chat p-2 max-w-[calc(75%-0.5rem)]">
-                Typing ...
+              <div className="flex bouncing-loader justify-center _3d-chat p-2 max-w-[calc(75%-0.5rem)] overflow-hidden">
+                <div></div>
+                <div></div>
+                <div></div>
               </div>
             </div>
             : null

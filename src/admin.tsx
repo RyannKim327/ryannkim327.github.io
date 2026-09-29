@@ -21,7 +21,7 @@ export default function Admin() {
   ]
 
   return (
-    <div className='flex flex-col w-full h-full'>
+    <div className='flex flex-col w-dvw h-dvh bg-bg text-fg'>
       {
         verified ?
           <div className="flex flex-col w-full h-full">
