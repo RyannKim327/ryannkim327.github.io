@@ -3,6 +3,7 @@ import Title from "@/components/widgets/title";
 import { Markdown, MarkdownExcerpt } from "../widgets/markdown";
 import { useState } from "react";
 import Modal from "../widgets/modal";
+import { Link } from "react-router";
 
 export default function Blogs({ data }: {
   data: blogInterface[]
@@ -37,7 +38,7 @@ export default function Blogs({ data }: {
             )
           })
         }
-        <button className="w-full p-3 silk card">See more</button>
+        <Link to="/blogs" className="text-center w-full p-3 silk card">See more</Link>
       </div>
       {
         blog ?
