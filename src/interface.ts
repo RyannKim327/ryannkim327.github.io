@@ -3,14 +3,14 @@ export type json = Record<string, unknown>
 export interface api {
   message?: string
   error?: string,
-  page?: number,
+  pages?: number,
   count?: number,
   data?: dataInterface,
   [key: string]: unknown
   content?: string
 }
 
-export type dataInterface = blogInterface[] | certsInterface[] | contactInterface[] | experiencesInterface[] | projectInterface
+export type dataInterface = blogInterface | blogInterface[] | certsInterface[] | contactInterface[] | experiencesInterface[] | projectInterface
 
 export interface blogInterface {
   id: number,

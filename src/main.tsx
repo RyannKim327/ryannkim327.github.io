@@ -9,6 +9,7 @@ import AdminExperiences from '@/routes/admin/experiences.tsx'
 import UserProject from './routes/users/projects.tsx'
 import UserCertifications from './routes/users/certificates.tsx'
 import EditBlog from './routes/admin/edit-blog.tsx'
+import Blogs from './routes/users/blogs.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="experiences" element={<AdminExperiences />} />
             <Route path="edit-blog/:id" element={<EditBlog />} />
           </Route>
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="/projects" element={<UserProject />} />
           <Route path="/certificates" element={<UserCertifications />} />
         </Routes>
