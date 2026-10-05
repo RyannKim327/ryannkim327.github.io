@@ -16,7 +16,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "axios": "^1.19.0",
     "axios-cookiejar-support": "^7.0.0",
-    "gh-pages": "^6.1.1",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^1.48.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
