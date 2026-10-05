@@ -199,7 +199,7 @@ export default function Chatbot({
         className="flex flex-col flex-1 w-full overflow-y-auto scroll-none">
         <div className={`flex flex-col gap-2 w-full p-3 items-start`}>
           <span className="text-xs px-2">Krysanne</span>
-          <div className="_3d-chat p-2 max-w-[calc(75%-0.5rem)]">
+          <div className="p-2">
             Hello, I am Krysanne the personal artificial assistant of Ryann Kim Sesgundo
           </div>
         </div>
@@ -209,7 +209,7 @@ export default function Chatbot({
               <div className={`flex flex-col gap-2 w-full p-3 ${list.role === "user" ? "items-end" : "items-start"}`}>
                 <span className="text-xs px-2">{list.role === "user" ? "You" : "Krysanne"}</span>
                 <Markdown
-                  className="_3d-chat p-2 max-w-[calc(75%-0.5rem)]"
+                  className={`p-2 ${list.role === "user" ? "_3d-chat max-w-[calc(75%-0.5rem)" : ""}]`}
                   content={list.content} />
               </div>
             )
@@ -219,7 +219,7 @@ export default function Chatbot({
           sending ?
             <div className={`flex flex-col gap-2 w-full p-3 items-start`}>
               <span className="text-xs px-2">Krysanne</span>
-              <div className="flex bouncing-loader justify-center _3d-chat p-2 max-w-[calc(75%-0.5rem)] overflow-hidden">
+              <div className="flex bouncing-loader py-2 justify-center overflow-hidden">
                 <div></div>
                 <div></div>
                 <div></div>
