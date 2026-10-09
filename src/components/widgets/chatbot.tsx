@@ -121,7 +121,6 @@ export default function Chatbot({
     e.preventDefault()
     if (sending || chat.trim() === "") return
 
-    console.log(chatLists)
     setSending(true)
 
     if (append) {
@@ -137,7 +136,6 @@ export default function Chatbot({
         toBottomChat()
       }, 75)
     }
-    console.log(chatLists)
 
     const msg = await post("ai/chat", {
       messages: [staticChat,
