@@ -10,7 +10,7 @@ import axios from "axios";
 import Blogs from "./components/index/blogs";
 import Footer from "./components/index/footer";
 import type { blogInterface, certsInterface, experiencesInterface, projectInterface } from "@/interface";
-import { ArrowDown, ArrowUp, Bot, X } from "lucide-react";
+import { ArrowDown, ArrowUp } from "lucide-react";
 import Chatbot from "./components/widgets/chatbot";
 import { RobotHead, type RobotHeadState } from "robot-heads";
 
