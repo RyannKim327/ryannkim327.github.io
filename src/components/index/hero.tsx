@@ -9,7 +9,7 @@ function toId(id: string) {
 
 export default function Hero() {
   return (
-    <div id="hero" className="flex flex-col items-center justify-end w-full h-full">
+    <div id="hero" className="relative flex flex-col items-center justify-end w-full h-full">
       <div
         onClick={() => { toId("about") }}
         className="flex flex-col cursor-pointer scroll items-center justify-center w-full h-[25%] bg-linear-to-b from-bg/25 to-bg">
