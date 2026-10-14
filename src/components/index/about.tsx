@@ -1,4 +1,4 @@
-import Me from "@/assets/dark.png"
+// import Me from "@/assets/dark.png"
 import Title from "../widgets/title"
 import { Mascot } from "page-mascot";
 
