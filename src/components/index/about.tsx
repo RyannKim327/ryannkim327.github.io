@@ -1,5 +1,6 @@
 import Me from "@/assets/dark.png"
 import Title from "../widgets/title"
+import { Mascot } from "page-mascot";
 
 function toId(id: string) {
   const _ = document.getElementById(id);
@@ -15,7 +16,7 @@ export default function About() {
     <div className="bg-bg flex flex-col relative items-center w-full h-full">
       <Title id="about">About me</Title>
       <div className="flex flex-col-reverse lg:flex-row w-full h-full justify-center lg:justify-evenly px-5 items-center py-2">
-        <div className="flex flex-col absolute bottom-0 pb-30 bg-linear-to-b from-bg/50 to-bg lg:pb-0 lg:static lg:gap-20 w-[calc(90%-0.5rem)] lg:w-[calc(40%-0.5rem)]">
+        <div className="flex flex-col absolute bottom-0 pb-30 z-10 bg-linear-to-b from-bg/50 to-bg lg:pb-0 lg:static lg:gap-20 w-[calc(90%-0.5rem)] lg:w-[calc(40%-0.5rem)]">
           <blockquote className="text-justify lg:text-2xl p-5">
             <span className="animate-pulse text-green-600 font-extrabold">&gt; </span>
             I am Ryann Kim M. Sesgundo, a graduate of Bachelor of Science in Information Technology.
@@ -35,7 +36,15 @@ export default function About() {
               }}>See my Projects</button>
           </div>
         </div>
-        <img className="w-[calc(90%-0.5rem)] inset-0 object-scale-down lg:w-[calc(25%-0.5rem)]" src={Me} />
+        <div className="flex items-center justify-center w-[calc(90%-0.5rem)] inset-0 object-scale-down lg:w-[calc(25%-0.5rem)]">
+          <Mascot
+            directions="/mascots/directions.png"
+            reactions="/mascots/expression.png"
+            size={360}
+            label="Ryann's mascot"
+          />
+        </div>
+        {/* <img className="w-[calc(90%-0.5rem)] inset-0 object-scale-down lg:w-[calc(25%-0.5rem)]" src={Me} /> */}
       </div>
     </div >
   )

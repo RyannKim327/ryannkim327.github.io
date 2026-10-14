@@ -3,6 +3,7 @@ import { post } from "@/lib/api"
 import { Bot, Send, X } from "lucide-react"
 import { useRef, useState, type ChangeEvent, type SubmitEvent } from "react"
 import { Markdown } from "./markdown"
+import type { RobotHeadState } from "robot-heads"
 
 interface chats {
   content: string,
@@ -15,6 +16,8 @@ export default function Chatbot({
   setVisible,
   visible,
 
+  setAIStatus,
+
   lookingAt,
 
   achievements,
@@ -26,6 +29,8 @@ export default function Chatbot({
 }: {
   setVisible: (v: boolean) => void,
   visible: boolean,
+
+  setAIStatus: (str: RobotHeadState) => void,
 
   lookingAt: string
 
@@ -64,6 +69,7 @@ export default function Chatbot({
   const chatResults = useRef<HTMLDivElement | null>(null)
   const [chat, setChat] = useState("")
   const [sending, setSending] = useState(false)
+  const [isFocused, setFocus] = useState(false)
 
   const staticChat: chats = {
     role: "system",
@@ -121,6 +127,7 @@ export default function Chatbot({
     e.preventDefault()
     if (sending || chat.trim() === "") return
 
+    setAIStatus("thinking")
     setSending(true)
 
     if (append) {
@@ -175,6 +182,7 @@ export default function Chatbot({
       ]
       ))
       setSending(false)
+      setAIStatus(isFocused ? "listening" : "happy")
     }
     setTimeout(() => {
       toBottomChat()
@@ -230,6 +238,14 @@ export default function Chatbot({
         onSubmit={send}
         className="flex w-full p-1 px-2 _3d-card gap-2">
         <input
+          onBlur={() => {
+            setAIStatus("sleeping")
+            setFocus(false)
+          }}
+          onFocusCapture={() => {
+            setAIStatus("listening")
+            setFocus(true)
+          }}
           onChange={(e: ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
             if (!sending) {
               setChat(e.target.value)

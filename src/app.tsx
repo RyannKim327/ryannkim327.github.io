@@ -10,8 +10,9 @@ import axios from "axios";
 import Blogs from "./components/index/blogs";
 import Footer from "./components/index/footer";
 import type { blogInterface, certsInterface, experiencesInterface, projectInterface } from "@/interface";
-import { ArrowUp, Bot, X } from "lucide-react";
+import { ArrowDown, ArrowUp, Bot, X } from "lucide-react";
 import Chatbot from "./components/widgets/chatbot";
+import { RobotHead, type RobotHeadState } from "robot-heads";
 
 function toId(id: string) {
   const _ = document.getElementById(id);
@@ -49,9 +50,10 @@ export default function App() {
   const experiences = access[3].data as experiencesInterface[]
   const projects = access[5].data as projectInterface
   const wakatime = access[6].data as Record<string, any>
-
+  const [aiStatus, setAIStatus] = useState<RobotHeadState>("happy")
   const [looking, setLooking] = useState("hero")
   const [visible, setVisible] = useState(false)
+  const [idN, setIdN] = useState(0)
 
   const main = useRef<HTMLDivElement | null>(null)
 
@@ -79,6 +81,17 @@ export default function App() {
     };
   }, [])
 
+  useEffect(() => {
+    const ids = ["hero", "about", "experiences", "certificates", "projects", "blogs", "footer"]
+    if (idN >= ids.length) {
+      setIdN(0)
+    }
+    if (idN < 0) {
+      setIdN(ids.length - 1)
+    }
+    toId(ids[idN])
+  }, [idN])
+
   return (
     <div className='w-full h-full overflow-x-hidden'>
       <Name main={main} />
@@ -105,22 +118,34 @@ export default function App() {
                 return !prev
               })
             }}
+            title="Krysanne"
             className="flex items-center justify-center cursor-pointer w-8 md:w-10 text-center aspect-square card p-2 text-lg font-bolder bg-bg/50">
             <div>
-              {visible ?
-                <X /> :
-                <Bot />
-              }
+              <RobotHead
+                size={25}
+                shape="square"
+                state={visible ? aiStatus : "idle"} />
             </div>
           </div>
           : null}
         <div
           onClick={() => {
-            toId("hero")
+            setIdN(prev => prev - 1)
           }}
+          title="Previous Section"
           className="flex items-center justify-center cursor-pointer w-8 md:w-10 text-center aspect-square card p-2 text-lg font-bolder bg-bg/50">
           <div>
             <ArrowUp />
+          </div>
+        </div>
+        <div
+          title="Next Section"
+          onClick={() => {
+            setIdN(prev => prev + 1)
+          }}
+          className="flex items-center justify-center cursor-pointer w-8 md:w-10 text-center aspect-square card p-2 text-lg font-bolder bg-bg/50">
+          <div>
+            <ArrowDown />
           </div>
         </div>
       </div>
@@ -131,6 +156,8 @@ export default function App() {
           wakatime={wakatime}
           achievements={certificates}
           projects={projects.projects}
+
+          setAIStatus={setAIStatus}
 
           lookingAt={looking}
 
