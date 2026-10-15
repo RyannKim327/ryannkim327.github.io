@@ -239,7 +239,10 @@ export default function Chatbot({
         className="flex w-full p-1 px-2 _3d-card gap-2">
         <input
           onBlur={() => {
-            setAIStatus("sleeping")
+            setAIStatus("happy")
+            setTimeout(() => {
+              setAIStatus("sleeping")
+            }, Math.random() * 30000)
             setFocus(false)
           }}
           onFocusCapture={() => {

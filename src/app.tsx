@@ -13,14 +13,17 @@ import type { blogInterface, certsInterface, experiencesInterface, projectInterf
 import { ArrowDown, ArrowUp } from "lucide-react";
 import Chatbot from "./components/widgets/chatbot";
 import { RobotHead, type RobotHeadState } from "robot-heads";
+import Sections from "./components/widgets/sections";
 
 function toId(id: string) {
-  const _ = document.getElementById(id);
-  if (_) {
-    _.scrollIntoView({
+  const __ = document.getElementById(id)
+
+  if (__) {
+    __.scrollIntoView({
       behavior: "smooth",
     });
   }
+
 }
 
 const gather = Promise.all([
@@ -54,7 +57,6 @@ export default function App() {
   const [looking, setLooking] = useState("hero")
   const [visible, setVisible] = useState(false)
   const [idN, setIdN] = useState(0)
-
   const main = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -69,6 +71,7 @@ export default function App() {
           if (position >= 0 && position < 250) {
             console.log(id)
             setLooking(id)
+            setIdN(ids.indexOf(id))
           }
         };
       })
@@ -82,19 +85,20 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    const ids = ["hero", "about", "experiences", "certificates", "projects", "blogs", "footer"]
-    if (idN >= ids.length) {
+    const ids_ = ["hero", "about_", "experiences", "certificates", "projects", "blogs", "footer"]
+    if (idN >= ids_.length) {
       setIdN(0)
     }
     if (idN < 0) {
-      setIdN(ids.length - 1)
+      setIdN(ids_.length - 1)
     }
-    toId(ids[idN])
+    toId(ids_[idN])
   }, [idN])
 
   return (
     <div className='w-full h-full overflow-x-hidden'>
       <Name main={main} />
+      <Sections id={idN} />
       <div
         ref={main}
         className="absolute z-10 w-full h-full overflow-x-hidden overflow-y-auto">
@@ -119,10 +123,10 @@ export default function App() {
               })
             }}
             title="Krysanne"
-            className="flex items-center justify-center cursor-pointer w-8 md:w-10 text-center aspect-square card p-2 text-lg font-bolder bg-bg/50">
+            className="flex items-center justify-center cursor-pointer w-8 md:w-10 text-center aspect-square p-2 text-lg font-bolder">
             <div>
               <RobotHead
-                size={25}
+                size={50}
                 shape="square"
                 state={visible ? aiStatus : "idle"} />
             </div>

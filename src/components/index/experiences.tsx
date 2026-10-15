@@ -8,7 +8,7 @@ export default function Experiences({ data }: {
   return (
     <div className="bg-bg flex flex-col items-center w-full min-h-full">
       <Title id="experiences">Experiences</Title>
-      <div className="flex flex-col w-full gap-2 py-5">
+      <div id="experiences_section" className="flex flex-col w-full gap-2 py-5">
         {
           data.reverse().map((d: experiencesInterface, i: number) => {
             return (
