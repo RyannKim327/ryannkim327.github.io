@@ -13,32 +13,32 @@
     "test": "npx jest"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.3.3",
-    "axios": "^1.19.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "axios": "^1.21.0",
     "axios-cookiejar-support": "^7.0.0",
     "gh-pages": "^6.3.0",
-    "lucide-react": "^1.48.0",
+    "lucide-react": "^1.70.0",
     "page-mascot": "^0.1.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "react-router": "^8.3.0",
-    "react-toastify": "^11.1.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router": "^8.5.1",
+    "react-toastify": "^11.2.0",
     "robot-heads": "^0.3.0",
-    "tailwindcss": "^4.3.3",
-    "tough-cookie": "^6.0.2"
+    "tailwindcss": "^4.3.5",
+    "tough-cookie": "^6.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.7",
-    "@rolldown/plugin-babel": "^0.2.3",
+    "@babel/core": "^8.1.0",
+    "@rolldown/plugin-babel": "^0.3.0",
     "@types/babel__core": "^7.20.5",
     "@types/jest": "^30.0.0",
-    "@types/node": "^24.13.3",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.4",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
     "babel-plugin-react-compiler": "^1.0.0",
-    "oxlint": "^1.75.0",
-    "typescript": "~6.0.2",
-    "vite": "^8.2.0"
+    "oxlint": "^1.92.0",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6"
   }
 }
