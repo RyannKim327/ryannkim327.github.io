@@ -10,22 +10,20 @@ import axios from "axios";
 import Blogs from "./components/index/blogs";
 import Footer from "./components/index/footer";
 import type { blogInterface, certsInterface, experiencesInterface, projectInterface } from "@/interface";
-import { ArrowDown, ArrowUp } from "lucide-react";
 import Chatbot from "./components/widgets/chatbot";
 import { RobotHead, type RobotHeadState } from "robot-heads";
-import Sections from "./components/widgets/sections";
 import Feedback from "./components/index/feedback";
 
-function toId(id: string) {
-  const __ = document.getElementById(id)
-
-  if (__) {
-    __.scrollIntoView({
-      behavior: "smooth",
-    });
-  }
-
-}
+// function toId(id: string) {
+//   const __ = document.getElementById(id)
+//
+//   if (__) {
+//     __.scrollIntoView({
+//       behavior: "smooth",
+//     });
+//   }
+//
+// }
 
 const gather = Promise.all([
   get("blog?limit=6"),
