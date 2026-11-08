@@ -14,6 +14,7 @@ import { ArrowDown, ArrowUp } from "lucide-react";
 import Chatbot from "./components/widgets/chatbot";
 import { RobotHead, type RobotHeadState } from "robot-heads";
 import Sections from "./components/widgets/sections";
+import Feedback from "./components/index/feedback";
 
 function toId(id: string) {
   const __ = document.getElementById(id)
@@ -56,7 +57,6 @@ export default function App() {
   const [aiStatus, setAIStatus] = useState<RobotHeadState>("happy")
   const [looking, setLooking] = useState("hero")
   const [visible, setVisible] = useState(false)
-  const [idN, setIdN] = useState(0)
   const main = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -71,7 +71,6 @@ export default function App() {
           if (position >= 0 && position < 250) {
             console.log(id)
             setLooking(id)
-            setIdN(ids.indexOf(id))
           }
         };
       })
@@ -84,21 +83,9 @@ export default function App() {
     };
   }, [])
 
-  useEffect(() => {
-    const ids_ = ["hero", "about_", "experiences", "certificates", "projects", "blogs", "footer"]
-    if (idN >= ids_.length) {
-      setIdN(0)
-    }
-    if (idN < 0) {
-      setIdN(ids_.length - 1)
-    }
-    toId(ids_[idN])
-  }, [idN])
-
   return (
     <div className='w-full h-full overflow-x-hidden'>
       <Name main={main} />
-      <Sections id={idN} />
       <div
         ref={main}
         className="absolute z-10 w-full h-full overflow-x-hidden overflow-y-auto">
@@ -112,6 +99,7 @@ export default function App() {
             <Blogs data={blogs} />
           </>
           : null}
+        <Feedback />
         <Footer />
       </div>
       <div className="flex flex-col fixed z-100 right-10 bottom-10 gap-3">
@@ -132,26 +120,26 @@ export default function App() {
             </div>
           </div>
           : null}
-        <div
-          onClick={() => {
-            setIdN(prev => prev - 1)
-          }}
-          title="Previous Section"
-          className="flex items-center justify-center cursor-pointer w-8 md:w-10 text-center aspect-square card p-2 text-lg font-bolder bg-bg/50">
-          <div>
-            <ArrowUp />
-          </div>
-        </div>
-        <div
-          title="Next Section"
-          onClick={() => {
-            setIdN(prev => prev + 1)
-          }}
-          className="flex items-center justify-center cursor-pointer w-8 md:w-10 text-center aspect-square card p-2 text-lg font-bolder bg-bg/50">
-          <div>
-            <ArrowDown />
-          </div>
-        </div>
+        {/* <div */}
+        {/*   onClick={() => { */}
+        {/*     setIdN(prev => prev - 1) */}
+        {/*   }} */}
+        {/*   title="Previous Section" */}
+        {/*   className="flex items-center justify-center cursor-pointer w-8 md:w-10 text-center aspect-square card p-2 text-lg font-bolder bg-bg/50"> */}
+        {/*   <div> */}
+        {/*     <ArrowUp /> */}
+        {/*   </div> */}
+        {/* </div> */}
+        {/* <div */}
+        {/*   title="Next Section" */}
+        {/*   onClick={() => { */}
+        {/*     setIdN(prev => prev + 1) */}
+        {/*   }} */}
+        {/*   className="flex items-center justify-center cursor-pointer w-8 md:w-10 text-center aspect-square card p-2 text-lg font-bolder bg-bg/50"> */}
+        {/*   <div> */}
+        {/*     <ArrowDown /> */}
+        {/*   </div> */}
+        {/* </div> */}
       </div>
       {experiences && certificates && projects && blogs ?
         <Chatbot
