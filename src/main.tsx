@@ -11,6 +11,11 @@ import UserCertifications from './routes/users/certificates.tsx'
 import EditBlog from './routes/admin/edit-blog.tsx'
 import Blogs from './routes/users/blogs.tsx'
 import Download from './routes/users/download.tsx'
+import AdminDownload from './routes/admin/download.tsx'
+import AdminBlog from './routes/admin/blog.tsx'
+import AdminCertificates from './routes/admin/certificates.tsx'
+import AdminProject from './routes/admin/project.tsx'
+import AdminUpload from './routes/admin/upload.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -24,7 +29,12 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/download/:id" element={<Download />} />
           <Route path="/admin/" element={<Admin />}>
             <Route path="" element={<AdminDashboard />} />
+            <Route path="download" element={<AdminDownload />} />
+            <Route path="blog" element={<AdminBlog />} />
+            <Route path="certificates" element={<AdminCertificates />} />
+            <Route path="project" element={<AdminProject />} />
             <Route path="experiences" element={<AdminExperiences />} />
+            <Route path="upload" element={<AdminUpload />} />
             <Route path="edit-blog/:id" element={<EditBlog />} />
           </Route>
           <Route path="" element={<App />} />
