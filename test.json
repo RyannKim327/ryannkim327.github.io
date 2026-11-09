@@ -1,0 +1,7 @@
+{
+  "notebook": {
+    "name": "Notebook",
+    "description": "A simple note taking app with text and sketch based method.\n\n### What's new?\n\n1. Sketch with taking picture\n\n2. Text Based Noting\n\n3. Folder organizer\n\nExport as PDF/JSON\n\n4. Sharable notes thru json file.",
+    "downloadLink": "https://github.com/RyannKim327/notepad-flutter/releases/tag/v1.0.0%2B1"
+  }
+}

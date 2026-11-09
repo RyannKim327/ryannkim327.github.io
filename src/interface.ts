@@ -10,7 +10,7 @@ export interface api {
   content?: string
 }
 
-export type dataInterface = blogInterface | blogInterface[] | certsInterface[] | contactInterface[] | experiencesInterface[] | feedbackInterface[] | projectInterface
+export type dataInterface = blogInterface | blogInterface[] | certsInterface[] | contactInterface[] | downloadInterface | experiencesInterface[] | feedbackInterface[] | projectInterface
 
 export interface blogInterface {
   id: number,
@@ -31,6 +31,13 @@ export interface contactInterface {
   name: string,
   email: string,
   content: string
+}
+
+export interface downloadInterface {
+  id?: string
+  name: string
+  description: string
+  downloadLink: string
 }
 
 export interface experiencesInterface {
