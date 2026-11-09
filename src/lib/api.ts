@@ -5,8 +5,9 @@ import { CookieJar } from "tough-cookie";
 import { session } from "./storage";
 
 const jar = new CookieJar();
-// Add comment
-const URL = "https://portfolio-backend-pi-nine.vercel.app";
+const local = false
+
+const URL = local ? "http://localhost:8000" : "https://portfolio-backend-pi-nine.vercel.app";
 
 const base = wrapper(
   axios.create({
