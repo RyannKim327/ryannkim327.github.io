@@ -30,11 +30,11 @@ export default function Download() {
   }, [id])
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full">
+    <div className="flex flex-col items-center justify-center w-full h-full p-3">
       {data === null ?
         <div className="text-xl">404<span className="text-3xl font-bold">|</span>Not Found</div>
         :
-        <div className="flex flex-col p-2 gap-1 max-h-1/2 min-w-1/3 items-center card">
+        <div className="flex flex-col p-2 gap-1 max-h-1/2 min-w-1/3 md:max-w-[calc(80%-0.5rem)] items-center card">
           <span className="silk">{data?.name ?? "File Name"}</span>
           <Markdown className="self-start w-full overflow-y-auto" content={data?.description ?? ""} />
           <button onClick={() => {

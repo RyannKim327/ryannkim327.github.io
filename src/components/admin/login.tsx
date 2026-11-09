@@ -1,7 +1,8 @@
 import { post } from "@/lib/api"
 import { session } from "@/lib/storage"
-import React, { useEffect, useState } from "react"
-import { toast, ToastContainer } from "react-toastify"
+import { Loader2, LockKeyhole } from "lucide-react"
+import React, { useCallback, useEffect, useState } from "react"
+import { toast } from "react-toastify"
 
 export default function AdminLogin({
   setVerified
@@ -12,7 +13,7 @@ export default function AdminLogin({
   const [password, setPassword] = useState("")
   const [sending, setSending] = useState(false)
 
-  const checker = (admin: string | null, expiration: number) => {
+  const checker = useCallback((admin: string | null, expiration: number) => {
     const time = new Date().getTime();
     setVerified(
       admin !== undefined &&
@@ -23,9 +24,11 @@ export default function AdminLogin({
       session("admin", "");
       session("expiration", "");
     }
-  };
+  }, [setVerified]);
 
-  async function checkUser() {
+  async function checkUser(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    if (sending) return
     setSending(true)
     const access = await post("admin", {
       key: password
@@ -57,29 +60,41 @@ export default function AdminLogin({
       checker(admin_, time_)
     }, 1000 * 60 * 30)
     return () => clearInterval(interval)
-  }, [])
+  }, [checker])
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full">
-      <form className="flex flex-col gap-3 w-1/3 rounded items-center bg-card p-2" onSubmit={checkUser}>
-        <span className="text-[1.5rem] silk">Administrator Login</span>
-        <input
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setPassword(e.target.value)
-          }}
-          required={true}
-          type="password"
-          placeholder="Enter password"
-          className="bg-input p-2 rounded-md w-full" />
-
-        {sending ? null :
+    <div className="flex flex-col items-center justify-center w-full h-full p-4">
+      <form
+        className="flex w-full max-w-sm flex-col gap-4 rounded-xl border border-fg/10 bg-card p-6"
+        onSubmit={checkUser}>
+        <div className="flex flex-col items-center gap-2 text-center">
+          <span className="flex size-12 items-center justify-center rounded-full bg-input">
+            <LockKeyhole className="size-6" />
+          </span>
+          <span className="silk text-[1.5rem] leading-tight">Administrator Login</span>
+          <span className="text-[0.75rem] text-fg/60">Authorized personnel only</span>
+        </div>
+        <span className="flex flex-col">
+          <label htmlFor="password" className="px-3 text-[0.75rem] text-fg/60">Password</label>
           <input
-            type="submit"
-            className="card w-full"
-            value="Login" />
-        }
+            id="password"
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setPassword(e.target.value)
+            }}
+            required={true}
+            autoComplete="current-password"
+            type="password"
+            placeholder="Enter password"
+            className="bg-input p-2 rounded-md w-full outline-none ring-fg/20 focus:ring-2" />
+        </span>
+        <button
+          type="submit"
+          disabled={sending}
+          className="flex items-center justify-center gap-2 rounded-md bg-fg px-3 py-2 text-sm font-medium text-bg transition-opacity hover:opacity-90 disabled:opacity-60">
+          {sending ? <Loader2 className="size-4 animate-spin" /> : null}
+          {sending ? "Signing in..." : "Login"}
+        </button>
       </form>
-      <ToastContainer />
     </div>
   )
 }
