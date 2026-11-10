@@ -67,7 +67,6 @@ export default function App() {
         if (c) {
           const position = c.getBoundingClientRect().top
           if (position >= 0 && position < 250) {
-            console.log(id)
             setLooking(id)
           }
         };

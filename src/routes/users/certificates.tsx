@@ -18,7 +18,6 @@ export default function UserCertifications() {
         page: currentPage,
         limit: 6
       })
-      console.log(data)
       if (data.data) {
         setCertis(data.data as certsInterface[])
       }

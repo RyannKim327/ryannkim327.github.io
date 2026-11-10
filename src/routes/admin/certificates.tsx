@@ -16,7 +16,7 @@ export default function AdminCertificates() {
     if (sending) return
 
     setSending(true)
-    const access = await adminPost("certs", session("admin") as string, {
+    const access = await adminPost("certs/submit", session("admin") as string, {
       source: source.trim(),
       url: url.trim(),
       category: category.trim(),

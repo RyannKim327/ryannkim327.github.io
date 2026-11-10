@@ -102,7 +102,6 @@ export async function post(
     if (!session("token")) {
       try {
         const { data } = await base.get("set-cookie");
-        console.log(data.token)
         session("token", data.token)
       } catch {
         // Ignore if set-cookie is not implemented or already set

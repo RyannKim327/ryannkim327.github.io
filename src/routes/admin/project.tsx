@@ -17,7 +17,7 @@ export default function AdminProject() {
     if (sending) return
 
     setSending(true)
-    const access = await adminPost("project", session("admin") as string, {
+    const access = await adminPost("project/submit", session("admin") as string, {
       name: title.trim(),
       img: imageUrl.trim(),
       category: tags.split(",").map((tag) => tag.trim()).filter(Boolean),
