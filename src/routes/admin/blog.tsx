@@ -24,7 +24,7 @@ export default function AdminBlog() {
     }
 
     setSending(true)
-    const access = await adminPost("blog", session("admin") as string, {
+    const access = await adminPost("blog/submit", session("admin") as string, {
       title: title.trim(),
       content,
       tags: tags.split(",").map((tag) => tag.trim()).filter(Boolean),
