@@ -55,7 +55,7 @@ export default function Projects({ data }: { data: projectInterface }) {
       </div>
       <Modal
         visible={visible}
-        className="flex flex-col relative rounded-md w-2/3 aspect-video overflow-hidden"
+        className="flex flex-col relative rounded-md w-[calc(66.666%-0.5rem)] aspect-video overflow-hidden"
         setVisible={setVisible}>
 
         {project ?
@@ -63,7 +63,7 @@ export default function Projects({ data }: { data: projectInterface }) {
             {
               project.img ?
                 <img
-                  className="inset-0 w-full h-full object-fill"
+                  className="inset-0 h-full object-contain"
                   src={project.img ? retrieval("/retrieve", { file: project.img }) : ""}
                   alt={project.name} />
                 :

@@ -36,7 +36,6 @@ export default function Blogs() {
         limit: 6,
         page: page
       })
-      console.log(data.pages)
       if (data.pages) {
         setPages(data.pages)
       }
@@ -67,7 +66,6 @@ export default function Blogs() {
         limit: 6,
         page: page
       })
-      console.log(data.pages)
       if (data.pages) {
         setPages(data.pages)
       }
