@@ -38,6 +38,7 @@ export interface downloadInterface {
   name: string
   description: string
   downloadLink: string
+  downloads?: number
 }
 
 export interface experiencesInterface {
