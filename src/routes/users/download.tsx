@@ -1,6 +1,6 @@
 import { Markdown } from "@/components/widgets/markdown"
 import type { downloadInterface } from "@/interface"
-import { get } from "@/lib/api"
+import { get, post } from "@/lib/api"
 import {
   ArrowLeft,
   Check,
@@ -84,6 +84,7 @@ export default function Download() {
   const [result, setResult] = useState<Result | null>(null)
   const [retry, setRetry] = useState(0)
   const [copied, setCopied] = useState<"link" | "page" | null>(null)
+  const [opening, setOpening] = useState(false)
   const copiedTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const key = `${id ?? ""}:${retry}`
 
@@ -154,6 +155,32 @@ export default function Download() {
     setCopied(target)
     if (copiedTimer.current) clearTimeout(copiedTimer.current)
     copiedTimer.current = setTimeout(() => setCopied(null), 2000)
+  }
+
+  async function trackDownload() {
+    if (!id || opening) return
+    const href = safeLink(data?.downloadLink)?.href
+    if (!href) return
+
+    setOpening(true)
+    const tracked = await post("dlcounts", null, { id: id.toLowerCase() })
+    setOpening(false)
+
+    if (tracked.error) return
+
+    setResult((prev) =>
+      prev?.data
+        ? {
+          ...prev,
+          data: {
+            ...prev.data,
+            downloads: (prev.data.downloads ?? 0) + 1
+          }
+        }
+        : prev
+    )
+
+    window.open(href, "_blank", "noopener,noreferrer")
   }
 
   async function copyLink() {
@@ -252,6 +279,10 @@ export default function Download() {
                                 </>
                                 : <span>Shared file</span>
                             }
+                            <span className="flex items-center gap-1">
+                              <DownloadIcon className="size-3" />
+                              {data.downloads ?? 0} download{(data.downloads ?? 0) === 1 ? "" : "s"}
+                            </span>
                           </p>
                         </div>
                       </div>
@@ -277,14 +308,14 @@ export default function Download() {
                       <div className="flex flex-col gap-2 border-t border-fg/10 p-4 sm:flex-row md:p-6">
                         {
                           link ?
-                            <a
-                              href={link.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex flex-1 items-center justify-center gap-2 rounded-md bg-fg px-3 py-2 text-sm font-medium text-bg transition-opacity hover:opacity-90">
-                              <DownloadIcon className="size-4" />
-                              Download
-                            </a>
+                            <button
+                              type="button"
+                              onClick={trackDownload}
+                              disabled={opening}
+                              className="flex flex-1 items-center justify-center gap-2 rounded-md bg-fg px-3 py-2 text-sm font-medium text-bg transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60">
+                              {opening ? <Loader2 className="size-4 animate-spin" /> : <DownloadIcon className="size-4" />}
+                              {opening ? "Opening..." : "Download"}
+                            </button>
                             : <span className="flex flex-1 items-center justify-center gap-2 rounded-md bg-input px-3 py-2 text-sm text-fg/50">
                               <DownloadIcon className="size-4" />
                               Invalid download link

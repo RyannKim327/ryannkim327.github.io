@@ -96,6 +96,7 @@ export async function adminGet(
 export async function post(
   endpoint: string,
   body?: any,
+  params?: Record<string, any> | api | api[],
 ): Promise<api> {
   let code = 0;
   try {
@@ -109,6 +110,7 @@ export async function post(
     }
 
     const { data, status } = await base.post(endpoint, body, {
+      params,
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
