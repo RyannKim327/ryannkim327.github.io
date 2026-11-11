@@ -3,11 +3,7 @@ import { get } from "@/lib/api"
 import { use } from "react"
 import Title from "../widgets/title"
 
-const getFeedback = get("feedback")
-
-export default function Feedback() {
-  const api = use<api>(getFeedback)
-  const feedbacks = api.data as feedbackInterface[]
+export default function Feedback({ feedbacks }: { feedbacks: feedbackInterface[] }) {
 
   if (feedbacks.length <= 0) {
     return null

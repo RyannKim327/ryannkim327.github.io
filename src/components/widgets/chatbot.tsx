@@ -12,6 +12,7 @@ interface chats {
 
 type propsData = Record<string, any>
 
+
 export default function Chatbot({
   setVisible,
   visible,
@@ -65,6 +66,17 @@ export default function Chatbot({
       "Cheerful",
     ],
   };
+
+
+  const _sections = {
+    "hero": "Just use the information about the developer, you may also tell that he may able to scroll to bottom if he want to reach for Ryann Kim",
+    "about": "Tell something about Ryann Kim Sesgundo",
+    "experience": "Tell even the summary of what Ryann Kim achieve for years, you may use the certifications here",
+    "certifications": "Same with the experience",
+    "projects": "You may ask the user what he was looking for and then you may give him some lists of projects if there's any",
+    "blog": "Just tell some of Ryann Kim's blogs, but make priority the tutorial related",
+    "feedback": "Just give the summary of given feedback by the users from different applications",
+  }
 
   const chatResults = useRef<HTMLDivElement | null>(null)
   const [chat, setChat] = useState("")
@@ -148,7 +160,7 @@ export default function Chatbot({
       messages: [staticChat,
         {
           role: "system",
-          content: `Context: Ryann Kim's weekly coding activity ${JSON.stringify(wakatime)}`
+          content: `Context: Ryann Kim's weekly coding activity ${JSON.stringify(wakatime)}. Use this data for active projects and weekly coding progress and activities.`
         },
         {
           role: "system",
@@ -165,7 +177,11 @@ export default function Chatbot({
         },
         {
           role: "system",
-          content: `Context: The visitor is currently looking at the ${lookingAt} section.Instructions: Disregard any previous conversation history. If the visitor asks a question related to the content they are currently viewing, respond using only the data given for that section.`.trim()
+          content: `Context: Rely on this data of what you may response to user for each section ${JSON.stringify(_sections)}. You may ignore this if the question is not related to this
+          The visitor is currently looking at the ${lookingAt} section.`.trim()
+        }, {
+          role: "system",
+          content: "Don't forget that the data is all about Ryann Kim Sesgundo."
         }, ...chatLists]
     })
 
@@ -191,8 +207,9 @@ export default function Chatbot({
 
   return (
     <div
-      className={`flex flex-col fixed _3d-card bottom-10 right-15 md:right-25 z-100 bg-bg/95 text-fg transition-all delay-75 ${visible ? "h-[calc(75%-0.5rem)] w-[calc(75%-0.5rem)] md:w-[calc(30%-0.5rem)] opacity-100" : "w-0 h-0 opacity-0"}`}>
+      className={`flex flex-col fixed _3d-card bottom-10 right-15 md:right-25 z-100 bg-bg/95 text-fg transition-all delay-75 ${visible ? "h-[calc(75%-0.5rem)] w-[calc(75%-0.5rem)] md:w-[calc(30%-0.5rem)] opacity-100" : "w-0 h-0 opacity-0"} `}>
       <div className="flex justify-between p-2 px-2 border-b-fg border-b-2 border-b-solid select-none">
+
         <span className="flex items-center gap-2 silk"><Bot /> Krysanne</span>
         <span
           className="cursor-pointer"
@@ -212,7 +229,7 @@ export default function Chatbot({
         {
           chatLists.map((list: chats) => {
             return (
-              <div className={`flex flex-col gap-2 w-full p-3 ${list.role === "user" ? "items-end" : "items-start"}`}>
+              <div className={`flex flex-col gap-2 w-full p-3 ${list.role === "user" ? "items-end" : "items-start"} `}>
                 <span className="text-xs px-2">{list.role === "user" ? "You" : "Krysanne"}</span>
                 <Markdown
                   className={`p-2 ${list.role === "user" ? "_3d-chat max-w-[calc(75%-0.5rem)" : ""}]`}

@@ -16,6 +16,7 @@ import AdminBlog from './routes/admin/blog.tsx'
 import AdminCertificates from './routes/admin/certificates.tsx'
 import AdminProject from './routes/admin/project.tsx'
 import AdminUpload from './routes/admin/upload.tsx'
+import DownloadLists from './routes/users/download-lists.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -25,7 +26,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/projects" element={<UserProject />} />
           <Route path="/certificates" element={<UserCertifications />} />
-          <Route path="/download/" element={<Download />} />
+          <Route path="/download/" element={<DownloadLists />} />
           <Route path="/download/:id" element={<Download />} />
           <Route path="/admin/" element={<Admin />}>
             <Route path="" element={<AdminDashboard />} />
