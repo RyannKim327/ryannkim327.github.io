@@ -9,27 +9,17 @@ import { get } from "./lib/api";
 import axios from "axios";
 import Blogs from "./components/index/blogs";
 import Footer from "./components/index/footer";
-import type { blogInterface, certsInterface, experiencesInterface, projectInterface } from "@/interface";
+import type { blogInterface, certsInterface, experiencesInterface, feedbackInterface, projectInterface } from "@/interface";
 import Chatbot from "./components/widgets/chatbot";
 import { RobotHead, type RobotHeadState } from "robot-heads";
 import Feedback from "./components/index/feedback";
-
-// function toId(id: string) {
-//   const __ = document.getElementById(id)
-//
-//   if (__) {
-//     __.scrollIntoView({
-//       behavior: "smooth",
-//     });
-//   }
-//
-// }
 
 const gather = Promise.all([
   get("blog?limit=6"),
   get("certs?limit=6"),
   get("dev"),
   get("experiences"),
+  get("feedback"),
   axios.get(""), //https://api.github.com/users/RyannKim327/repos?sort=updated"),
   get("projects"),
   get("wakatime")
@@ -42,6 +32,7 @@ const ids = [
   "projects",
   "certificates",
   "blogs",
+  "feedback",
   "footer"
 ]
 
@@ -50,8 +41,9 @@ export default function App() {
   const blogs = access[0].data as blogInterface[]
   const certificates = access[1].data as certsInterface[]
   const experiences = access[3].data as experiencesInterface[]
-  const projects = access[5].data as projectInterface
-  const wakatime = access[6].data as Record<string, any>
+  const feedback = access[4].data as feedbackInterface[]
+  const projects = access[6].data as projectInterface
+  const wakatime = access[7].data as Record<string, any>
   const [aiStatus, setAIStatus] = useState<RobotHeadState>("happy")
   const [looking, setLooking] = useState("hero")
   const [visible, setVisible] = useState(false)
@@ -94,9 +86,9 @@ export default function App() {
             <Certificates data={certificates} />
             <Projects data={projects} />
             <Blogs data={blogs} />
+            <Feedback feedbacks={feedback} />
           </>
           : null}
-        <Feedback />
         <Footer />
       </div>
       <div className="flex flex-col fixed z-100 right-10 bottom-10 gap-3">
