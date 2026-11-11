@@ -1,6 +1,4 @@
-import type { api, feedbackInterface } from "@/interface"
-import { get } from "@/lib/api"
-import { use } from "react"
+import type { feedbackInterface } from "@/interface"
 import Title from "../widgets/title"
 
 export default function Feedback({ feedbacks }: { feedbacks: feedbackInterface[] }) {
