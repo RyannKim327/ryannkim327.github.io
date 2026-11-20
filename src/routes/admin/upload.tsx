@@ -8,18 +8,63 @@ interface TelegramFile {
   file_id: string
 }
 
-interface UploadResult {
+interface TelegramResult {
   video?: TelegramFile
   document?: TelegramFile
   photo?: TelegramFile[]
+  audio?: TelegramFile
+  animation?: TelegramFile
+}
+
+interface TelegramResponse {
+  ok?: boolean
+  description?: string
+  result?: TelegramResult
 }
 
 interface UploadResponse {
   error?: string
+  chunks?: number
+  parts?: TelegramResponse[]
   from?: {
     description?: string
-    result?: UploadResult
+    result?: TelegramResult
   }
+  result?: TelegramResult
+}
+
+function fileIdFromResult(result?: TelegramResult): string | null {
+  if (!result) return null
+
+  const file = result.video ?? result.document ?? result.audio ?? result.animation
+  if (file?.file_id) return file.file_id
+
+  const photos = result.photo?.filter((item) => item?.file_id)
+  if (photos && photos.length > 0) {
+    return photos[photos.length - 1].file_id
+  }
+
+  return null
+}
+
+function fileCodeFromResponse(res: UploadResponse): string | null {
+  if (Array.isArray(res.parts) && res.parts.length > 0) {
+    const codes: string[] = []
+
+    for (const part of res.parts) {
+      if (!part?.ok && part?.description) {
+        throw new Error(part.description)
+      }
+
+      const code = fileIdFromResult(part?.result)
+      if (!code) return null
+      codes.push(code)
+    }
+
+    return codes.join(",")
+  }
+
+  return fileIdFromResult(res.from?.result ?? res.result)
 }
 
 export default function AdminUpload() {
@@ -39,54 +84,51 @@ export default function AdminUpload() {
     }
 
     const formData = new FormData()
-    formData.append("file", file[0] as Blob)
+    formData.append("file", file[0])
 
     setSending(true)
-    const res = await adminPostMultipart(
-      "upload/submit",
-      session("admin") as string,
-      formData
-    ) as UploadResponse
-    setSending(false)
+    setFileCode("")
 
-    if (res.error) {
-      toast.error(res.error, {
+    try {
+      const res = await adminPostMultipart(
+        "upload/submit",
+        session("admin") as string,
+        formData
+      ) as UploadResponse
+
+      if (res.error) {
+        toast.error(res.error, {
+          position: "bottom-right"
+        })
+        return
+      }
+
+      if (res.from?.description) {
+        toast.error(res.from.description, {
+          position: "bottom-right"
+        })
+        return
+      }
+
+      const code = fileCodeFromResponse(res)
+      if (!code) {
+        toast.error("Upload failed", {
+          position: "bottom-right"
+        })
+        return
+      }
+
+      setFileCode(code)
+      toast.success("File uploaded successfully", {
         position: "bottom-right"
       })
-      return
-    }
-
-    if (res.from?.description) {
-      toast.error(res.from.description, {
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Upload failed", {
         position: "bottom-right"
       })
-      return
+    } finally {
+      setSending(false)
     }
-
-    const result = res.from?.result
-    if (!result) {
-      toast.error("Upload failed", {
-        position: "bottom-right"
-      })
-      return
-    }
-
-    if (result.video) {
-      setFileCode(result.video.file_id)
-    } else if (result.document) {
-      setFileCode(result.document.file_id)
-    } else if (result.photo && result.photo.length > 0) {
-      setFileCode(result.photo[result.photo.length - 1].file_id)
-    } else {
-      toast.error("Upload failed", {
-        position: "bottom-right"
-      })
-      return
-    }
-
-    toast.success("File uploaded successfully", {
-      position: "bottom-right"
-    })
   }
 
   return (
